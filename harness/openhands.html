@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>OpenHands Agent Canvas — Harness | 投机取巧</title>
+  <meta name="description" content="OpenHands Agent Canvas（OpenHands（All-Hands-AI））：「自托管的 agent 控制中心」 —— 官方 README 现在给它起的名字是 Agent Canvas， 定位原文： &gt; The self-hosted developer control cente" />
+  <link rel="canonical" href="https://agent.specul.com/harness/openhands.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="OpenHands Agent Canvas" />
+  <meta property="og:url" content="https://agent.specul.com/harness/openhands.html" />
+  <meta property="og:title" content="OpenHands Agent Canvas — Harness | 投机取巧" />
+  <meta property="og:description" content="OpenHands Agent Canvas（OpenHands（All-Hands-AI））：「自托管的 agent 控制中心」 —— 官方 README 现在给它起的名字是 Agent Canvas， 定位原文： &gt; The self-hosted developer control cente" />
+  <meta name="theme-color" content="#05080f" />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%238b7cf8'/%3E%3Cstop offset='1' stop-color='%2322d3c5'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='48' height='48' rx='12' fill='%2305080f'/%3E%3Cpath d='M14 32 L24 12 L34 32' fill='none' stroke='url(%23g)' stroke-width='2.4' stroke-linejoin='round'/%3E%3Ccircle cx='24' cy='27' r='2.4' fill='%2322d3c5'/%3E%3C/svg%3E" />
+  <link rel="stylesheet" href="../brand.css" />
+  <link rel="stylesheet" href="../site.css" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"OpenHands Agent Canvas","applicationCategory":"DeveloperApplication","url":"https://openhands.dev","sameAs":"https://openhands.dev","description":"「自托管的 agent 控制中心」 —— 官方 README 现在给它起的名字是 Agent Canvas， 定位原文： > The self-hosted developer control center for coding agents and automations. > Run OpenHands, Claude Code, Codex, Gemini, or any ACP-compatible agent > across local, remote, and cloud backends.","dateModified":"2026-10-01","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}</script>
+</head>
+<body class="brand-ambient">
+  <a class="t-skip" href="#main">跳到主要内容</a>
+  <header class="site-header">
+    <div class="container site-bar">
+      <a class="brand" href="https://specul.com/" title="投机取巧">
+        <span class="brand-dot" aria-hidden="true"></span>
+        <span class="brand-text">
+          <span class="brand-name" id="markName" data-zh-name="投机取巧" data-en-name="Speculative Speculation">投机取巧</span>
+        </span>
+      </a>
+      <nav class="nav-links" aria-label="站点导航">
+        <a href="https://specul.com/"><span data-zh>首页</span><span data-en>Home</span></a>
+        <a href="https://learn.specul.com/"><span data-zh>学 AI</span><span data-en>Learn</span></a>
+        <a href="https://agent.specul.com/" aria-current="page"><span data-zh>Agent</span><span data-en>Agent</span></a>
+        <a href="https://models.specul.com/"><span data-zh>本地模型</span><span data-en>Models</span></a>
+        <a href="https://nav.specul.com/"><span data-zh>导航</span><span data-en>Directory</span></a>
+        <span class="nav-tools">
+          <button class="icon-btn" id="themeBtn" type="button" aria-label="切换明暗主题" title="切换明暗主题">☾</button>
+          <button class="icon-btn" id="langBtn" type="button" aria-label="Switch language" title="Switch language">EN</button>
+        </span>
+      </nav>
+    </div>
+  </header>
+  <main id="main">
+    <div class="container detail">
+      <nav class="crumbs" aria-label="面包屑">
+        <a href="https://agent.specul.com/">Agent 图谱</a>
+        <a href="/">Agents</a>
+        <span aria-current="page">Harness</span>
+        <a href="/tools/">Tools</a>
+      </nav>
+      <a class="back" href="./">← Harness</a>
+
+      <div class="detail-head">
+        <div class="mark" style="--card-accent:#F97316" aria-hidden="true">OH</div>
+        <div>
+          <h1>OpenHands Agent Canvas</h1>
+          <div class="vendor is-caps">OpenHands（All-Hands-AI）</div>
+        </div>
+      </div>
+
+      <div class="badges">
+        <span class="tag on">TypeScript</span>
+        <span class="tag on">Python</span>
+        <span class="tag on">开源</span>
+        <span class="tag on">MIT</span>
+        <span class="tag on">自托管</span>
+        <span class="tag on">平台型</span>
+        <span class="tag on">WebUI</span>
+        <span class="tag on">调度层</span>
+        <span class="tag on">ACP</span>
+        <span class="tag on">沙箱</span>
+        <span class="tag on">定时任务</span>
+        <span class="tag on">webhook</span>
+        <span class="tag on">多后端</span>
+        <span class="badge accent">partial</span>
+        <span class="badge">lifecycle: active</span>
+        <span class="badge">核验 2026-10-01</span>
+      </div>
+
+            <p class="panel-lead"><strong>「自托管的 agent 控制中心」</strong> —— 官方 README 现在给它起的名字是 <strong>Agent Canvas</strong>，
+定位原文：
+
+&gt; The self-hosted developer control center for coding agents and automations.
+&gt; Run OpenHands, Claude Code, Codex, Gemini, or <strong>any ACP-compatible agent</strong>
+&gt; across local, remote, and cloud backends.</p>
+
+            <div class="panel is-slim">
+        <h2>适合与不适合</h2>
+        <p><strong>适合</strong>：agent 要放自己服务器 7×24 跑；需要定时/webhook 触发（Slack / GitHub / Linear / Notion）；
+想一个界面统管 Codex / Claude Code / Gemini 等多种 agent；需要 per-conversation 容器隔离；
+前端与运行时分离部署。
+<strong>不适合</strong>：只想把 agent 嵌进自己的 Python 进程（用 software-agent-sdk 或 OpenAI Agents SDK）；
+单机临时用一下（它是一整套栈）；需要细粒度多用户权限（本站未核验其能力）。</p>
+      </div>
+
+
+      <div class="block-head">
+        <h2 class="t-h2">固定坐标系</h2>
+        <p class="t-section-lead">8 个维度，与同赛道其他对象逐项可比。</p>
+      </div>
+      <dl class="axes">
+        <div class="axis">
+          <dt>模型与开放条件</dt>
+          <dd><strong>官方口径是「任何 LLM」，但这是特性表里的一句营销式表述，本站未取到完整 provider 清单。</strong> 已核验的部分：README 特性表有一行 &quot;Bring your own model — <strong>Use with any LLM</strong>&quot;， 指向官方文档 <code>usage/settings/llm-settings#llm-profiles</code>（LLM profiles，可配多套并存）。 ⚠ <strong>未核验</strong>：具体支持哪些 provider（是否走 LiteLLM 一类的网关层）、 本地量化模型能否接、以及「any LLM」在工具调用与 structured output 上的对齐度。 <strong>这一项对本对象尤其重要</strong>，因为它同时是别人的调度层 —— 「Codex / Claude Code 跑在它上面」时，能用哪些模型由那个 agent 自己决定，不由Canvas 决定。</dd>
+        </div>
+        <div class="axis">
+          <dt>运行位置</dt>
+          <dd><strong>四种官方部署形态并存，这是本对象最有实用价值的部分</strong>（README 四个Option 全核验）： <strong>Option 1 无沙箱本地跑</strong>：<code>npm install -g @openhands/agent-canvas</code> 然后 <code>agent-canvas</code>， 起完整本地栈，<strong>要 Node.js 24+ 与 uv</strong>；可用 <code>--frontend-only</code> / <code>--backend-only</code> 拆开跑。 <strong>Option 2 Docker 沙箱</strong>：<code>docker run</code> 官方镜像，需预先准备 <code>PROJECTS_PATH</code> 宿主目录， agent 可访问该目录下的项目。 <strong>Option 3 每会话独立容器</strong>：<code>OH_CONVERSATION_RUNTIME=docker agent-canvas</code>， 每次新会话起自己的容器与 Agent Server，适合并发跑多个 agent； 官方说明容器会挂载会话的 workspace 与持久化状态，<strong>容器替换后文件与对话历史仍在</strong>。 <strong>Option 4 从源码跑</strong>：clone + <code>npm install</code> + <code>npm run dev</code>。 入口统一在 <code>http://localhost:8000</code>（Docker 镜像是 <code>/canvas</code>）。 <strong>后端可远程切换</strong>：官方说 Agent Server 可跑在笔记本 / Mac Mini / 云上 VM / OpenHands Cloud，Canvas 前端可在多个 Server 间切换 —— <strong>这条是它作为「调度层」的核心能力</strong>。</dd>
+        </div>
+        <div class="axis">
+          <dt>本地文件</dt>
+          <dd><strong>本地文件访问范围由你选的部署形态决定，官方把这个变量讲得很清楚。</strong> 无沙箱形态：README 两次打 WARNING—— &quot;This runs the agent-server directly on the machine you&#39;re installing on — <strong>the agent will have full access to your filesystem!</strong>&quot; Docker 形态：访问范围收敛到 <code>PROJECTS_PATH</code> 挂载的目录。 每会话容器形态：官方提示<strong>共享同一宿主工作区的会话仍会共用同一批文件</strong>， 建议用独立目录或 worktree 避免冲突编辑。 ⚠ 后端远程时（云上 VM / Cloud），你的仓库要么在远端、要么靠工具从本地取 —— 具体同步机制本站未核验。</dd>
+        </div>
+        <div class="axis">
+          <dt>关机后的任务</dt>
+          <dd><strong>这是本对象最突出的强项，也是它与其他 harness 站对象最大的差别。</strong> 官方 README 明确：把 agent 跑在云上服务器的最大好处是 &quot;allows your agents to <strong>continue running even when your laptop is shut</strong>&quot;， 且更容易通过 Slack / GitHub / Datadog 等第三方服务触发。 配套有独立仓 <code>OpenHands/automation</code>（核验2026-10-01：Python，MIT，32★，活跃） 提供定时（schedule）与 webhook 事件触发两种触发方式， 官方特性表列了可集成的第三方：Slack、GitHub、Linear、Notion。 <strong>对照本站其余对象</strong>：OpenAI Agents SDK、Deep Agents、Codex SDK 的 thread 状态都在 自己进程 / 自己机器上，关了就没了；这是唯一把「关掉笔记本后 agent 仍在跑」当卖点做的。</dd>
+        </div>
+        <div class="axis">
+          <dt>工具与扩展</dt>
+          <dd><strong>工具面来自它所调度的那个 agent，而不是 Canvas 自己。</strong> 官方原文明确它能跑 &quot;OpenHands, Claude Code, Codex, Gemini, or any ACP-compatible agent&quot; —— 即<strong>通过 Agent Client Protocol（ACP）接入第三方 agent</strong>。 真正的工具/agent 定义在 <code>OpenHands/software-agent-sdk</code> （官方职责表：agents, tools, conversations, workspaces, events）。 ⚠ <strong>本对象没有以 MCP 为接口</strong>（README 与仓库结构里未见 MCP 相关表述）—— 它用的是 ACP。这两个协议的定位差异本站未展开，标记为未核验。</dd>
+        </div>
+        <div class="axis">
+          <dt>上下文与记忆</dt>
+          <dd><strong>⚠ 这一维度是本对象的重大信息缺口，本站明确记为未知。</strong> 已核验的只有持久化方向：<code>automation</code> 仓负责 run history， 每会话容器形态下官方说「workspace files and conversation history survive container replacement」。 <strong>但对话上下文长了之后如何压缩、摘要或落盘，README 与本文所引文档均未说明</strong>， software-agent-sdk 的具体上下文策略本站未核验。 按本站主张「状态 ≠ 上下文」：<strong>它把「状态」做得很完整（定时触发 + run 历史 + 容器可替换）， 但「上下文」这一侧本站拿不到证据</strong>，不能因为它有持久化就推断它有上下文管理。</dd>
+        </div>
+        <div class="axis">
+          <dt>权限与限制</dt>
+          <dd><strong>这是本对象最需要认真读的部分，也是它官方做得最细的一块。</strong> <strong>沙箱</strong>：见 local_files —— 官方提供 Docker 沙箱与每会话独立容器两种收敛手段， 但也明确提供了无沙箱形态并两次挂 WARNING。 <strong>认证</strong>：<code>docs/SELF_HOSTING.md</code>（核验 286行）给的是 <strong>API key 机制而非用户体系</strong>： 生成 key 用 <code>openssl rand -base64 32</code> 赋给 <code>LOCAL_BACKEND_API_KEY</code>； <code>--public</code> 模式下 <strong>key 不烘进前端</strong>，用户首次打开 UI 要手动粘贴 key 才能用， 之后每个 <code>/api/*</code> 请求都要带 <code>X-Session-API-Key</code> 头。 <strong>默认绑定是 loopback-only</strong>（127.0.0.1），官方说明这是为了让自动注入的 session key 不被局域网其他机器拿到；要监听 <code>0.0.0.0</code> 时 key 不再注入、改用同样的 API-key 输入界面。 官方还提醒用 <code>export</code> 而不是命令行参数传 key，避免出现在 <code>ps aux</code> 进程列表里。 <strong>暴露到公网时官方另有防火墙要求</strong>（Cloud Firewall / AWS Security Group / GCP firewall rule）。 ⚠ <strong>未核验</strong>：多用户与权限分级（这是它作为团队级平台最可能被追问的点， SELF_HOSTING.md 里的证据集中在「怎么保护单个 key」，未见用户/角色体系）。</dd>
+        </div>
+        <div class="axis">
+          <dt>适合什么任务</dt>
+          <dd><strong>适合</strong>：要把agent 放到自己服务器上 7×24 跑；需要定时或 webhook 触发（Slack / GitHub / Linear / Notion）； 想用一个界面统管多种agent（含Codex、Claude Code、Gemini 等 ACP 兼容的）； 需要 per-conversation 隔离容器；团队里前端/平台与 agent 运行时分离部署。 <strong>不适合</strong>：只想要一个轻量库把agent 嵌进自己的 Python 进程（用 software-agent-sdk 或 OpenAI Agents SDK）； 单机临时用一下（它是一整套栈，不是库）； 需要细粒度多用户权限与审计（本站未核验其能力）。</dd>
+        </div>
+      </dl>
+
+            <div class="panel warn">
+        <h2 class="warn">头号误解</h2>
+        <ul>
+          <li>以为是 Python SDK —— <strong>主仓是 TypeScript 的 Web 控制中心</strong>；编程入口在 <code>OpenHands/software-agent-sdk</code>（另 1,190★）</li>
+          <li>看仓库名与 description 以为是「AI 驱动的软件开发工具」 —— <strong>README 首屏标题已是 Agent Canvas</strong>，定位是控制中心</li>
+          <li>以为它是 Codex SDK / Claude Agent SDK 的竞品 —— <strong>它是它们的调度层</strong>（README 明确说能跑这些 agent）</li>
+          <li>直接跑 Option 1 就上线 —— 官方在该选项上打 WARNING：agent 对你的文件系统有全量访问权限</li>
+          <li>把 <code>--public</code> 模式理解成「更方便」—— 它是<strong>不把 key 烘进前端</strong>的防护手段，用于非本机访问</li>
+          <li>以为「有 run history」就等于「有上下文管理」—— 前者是状态，后者本站未核验</li>
+          <li>以为它用 MCP —— 它用的是 ACP（Agent Client Protocol），不是 MCP</li>
+        </ul>
+      </div>
+
+
+            <div class="panel is-slim">
+        <h2>价格</h2>
+        <table class="src">
+          <tbody>
+            <tr><th class="w-28">月度入口</th><td>开源自托管 Free（MIT，1 用户）/ Cloud Individual Free（1 用户，每日 10 轮对话）/ Enterprise 定制报价</td></tr>
+            <tr><th class="w-28">月度数值</th><td>$0</td></tr>
+            <tr><th class="w-28">额度说明</th><td><strong>本站收录的是可自托管的开源部分，不是商业版。</strong> 核验依据：主仓 MIT（经license API）、README 的四份 docker / npm 安装命令全部指向自建、 官方定价页（核验 2026-10-01）。 <strong>⚠ 本轮核验的结论可能与预期不同：官方定价页上没有「付费个人档」</strong>—— 三档里两档是$0，一档是定制： <strong>① Open Source — Free</strong>（本地跑：Web GUI + Terminal UI + CLI、Git 集成、 社区支持、model agnostic，<strong>1 用户</strong>、<strong>每日对话数 Unlimited</strong>）； <strong>② SaaS Individual — Free</strong>（云端访问，支持桌面与移动端、API 用于自动化与脚本、 Jira 与 Slack 集成，<strong>1 用户</strong>）； <strong>③ SaaS 或 Self-hosted Enterprise — Custom pricing</strong>（可部署在客户自有 VPC、 Enterprise SAML/SSO、<strong>每用户无限并发会话</strong>、Large Codebase SDK、 优先支持 + 共享 Slack 频道、<strong>Named Customer Engineer</strong>、<strong>用户数 Unlimited</strong>）。 <strong>最关键的一条硬数字：Individual 档「Max Daily Conversations = 10」。</strong> 对照 Open Source 档的同 一栏是 <strong>Unlimited</strong> —— <strong>即「免费」不等于「不限量」，云端免费档每天只有 10 轮对话， 本地自托管才是 Unlimited。</strong> 这是选型时极易踩的落差。 <strong>另一条重要机制（官方 FAQ 原文）</strong>：Individual 档<strong>支持自带 key（BYOK）</strong>， 没有 key 时可用 OpenHands LLM provider，官方强调 &quot;<strong>at cost, with no markup</strong>&quot;（按成本价、<strong>零加价</strong>，按量付费）—— 并可在 Settings &gt; API 生成 API key，供 CLI / Local Web UI / Software Agent SDK 使用。 ⚠ 「零加价」的<strong>实际单价表本站未核验</strong>，只能确认官方声明不加价。</td></tr>
+          </tbody>
+        </table>
+        <p class="fine mt-3">不同币种不做折算。优惠、地区、税费与登录后报价可能变化，购买前请到官方页面确认。</p>
+      </div>
+
+
+            <div class="panel is-slim">
+        <h2>未知项清单</h2>
+        <ul>
+          <li>「any LLM」的具体 provider 清单与能力对齐度</li>
+          <li>对话上下文压缩/摘要/落盘策略（<strong>本站最看重的维度，证据缺失</strong>）</li>
+          <li>多用户、角色与审计体系是否存在</li>
+          <li>ACP 与 MCP 的关系：能否复用已有 MCP server 生态</li>
+          <li><strong>Enterprise 的具体报价</strong>（官方仅标 Custom pricing / Contact Us）</li>
+          <li>OpenHands LLM provider「at cost, no markup」的<strong>实际单价表</strong>（官方声明不加价，数字未公开）</li>
+          <li>Individual 每日 10 轮之外，超出后的行为（停用 / 提示升级 / 其它，官方页未写）</li>
+          <li>后端远程部署时本地代码库的同步机制</li>
+          <li><code>software-agent-sdk</code> 的 API 形态与版本独立节奏</li>
+          <li>每会话容器在并发压测下的资源与稳定性</li>
+        </ul>
+      </div>
+
+
+      <div class="panel">
+        <h2>证据来源</h2>
+        <p class="t-sm">判断可回到以下一手源复核。本站核验日 2026-10-01，内容更新日 2026-10-01。</p>
+        <table class="src">
+          <thead><tr><th class="w-20">类型</th><th class="w-52">名称</th><th>链接</th></tr></thead>
+          <tbody>
+            <tr><td>repo</td><td>OpenHands/OpenHands · 仓库（Agent Canvas 控制中心，89,675★，MIT，核验 2026-10-01）</td><td><a href="https://github.com/OpenHands/OpenHands" target="_blank" rel="noopener">https://github.com/OpenHands/OpenHands</a></td></tr>
+            <tr><td>docs</td><td>主README（Agent Canvas 定位、四种部署形态、ACP 接入、Repository boundaries 表）</td><td><a href="https://github.com/OpenHands/OpenHands/blob/main/README.md" target="_blank" rel="noopener">https://github.com/OpenHands/OpenHands/blob/main/README.md</a></td></tr>
+            <tr><td>docs</td><td>docs/SELF_HOSTING.md（API key、--public 模式、loopback 默认、防火墙要求）</td><td><a href="https://github.com/OpenHands/OpenHands/blob/main/docs/SELF_HOSTING.md" target="_blank" rel="noopener">https://github.com/OpenHands/OpenHands/blob/main/docs/SELF_HOSTING.md</a></td></tr>
+            <tr><td>pricing</td><td>官方定价页（核验 2026-10-01：Open Source $0 / Cloud Individual $0 / Enterprise 定制；**Individual Max Daily Conversations = 10** 而 Open Source 为 Unlimited；BYOK 与 &quot;at cost, with no markup&quot;；Enterprise 可部署客户自有 VPC、SAML/SSO、RBAC、每用户无限并发）</td><td><a href="https://www.all-hands.dev/pricing" target="_blank" rel="noopener">https://www.all-hands.dev/pricing</a></td></tr>
+            <tr><td>repo</td><td>OpenHands/software-agent-sdk · 仓库（Python SDK 与 Agent Server 的真实所在，1,190★，MIT）</td><td><a href="https://github.com/OpenHands/software-agent-sdk" target="_blank" rel="noopener">https://github.com/OpenHands/software-agent-sdk</a></td></tr>
+            <tr><td>repo</td><td>OpenHands/automation · 仓库（定时与 webhook 分发，32★，MIT）</td><td><a href="https://github.com/OpenHands/automation" target="_blank" rel="noopener">https://github.com/OpenHands/automation</a></td></tr>
+            <tr><td>changelog</td><td>Releases（v1.24.0 @ 2026-09-25）</td><td><a href="https://github.com/OpenHands/OpenHands/releases" target="_blank" rel="noopener">https://github.com/OpenHands/OpenHands/releases</a></td></tr>
+            <tr><td>docs</td><td>官方文档 · LLM settings / LLM profiles（README 指向，本次未取到正文）</td><td><a href="https://docs.openhands.dev/openhands/usage/settings/llm-settings" target="_blank" rel="noopener">https://docs.openhands.dev/openhands/usage/settings/llm-settings</a></td></tr>
+            <tr><td>docs</td><td>官方文档 · ACP Agents（README 指向）</td><td><a href="https://docs.openhands.dev/openhands/usage/agent-canvas/acp-agents" target="_blank" rel="noopener">https://docs.openhands.dev/openhands/usage/agent-canvas/acp-agents</a></td></tr>
+            <tr><td>repo</td><td>npm 包@openhands/agent-canvas（README 安装入口）</td><td><a href="https://www.npmjs.com/package/@openhands/agent-canvas" target="_blank" rel="noopener">https://www.npmjs.com/package/@openhands/agent-canvas</a></td></tr>
+          </tbody>
+        </table>
+      </div>
+
+            <div class="panel is-slim">
+        <h2>实测记录</h2>
+        <p>本站尚未完成实测。测试协议见 <a href="https://github.com/speculcom/ai-agent-guide/blob/main/tracks/agents/tasks/_protocol.md" target="_blank" rel="noopener">tasks/_protocol.md</a>。
+
+<strong>实测建议</strong>（按本对象形态定制）：
+
+| # | 测什么 | 为什么值得测 |
+|:--:|---|---|
+| 1 | <code>software-agent-sdk</code> 单独用（不启 Canvas）能不能跑最小 agent | 决定你到底需不需要这一整套栈 |
+| 2 | 长任务（跨天）对话上下文如何处理、成本如何变化 | 补上本站最大的信息缺口 |
+| 3 | 每会话容器模式的<strong>真实隔离强度</strong>（同宿主工作区会共用文件这条要实测） | 官方已提示冲突风险 |
+| 4 | Docker 形态下 agent 能否绕过 <code>PROJECTS_PATH</code> 触达宿主其他路径 | 沙箱有效性是选型前提 |
+| 5 | 挂 Claude Code / Codex 作为 ACP agent 的实际接入成本 | 它最独特的卖点，值不值得取决于这个 |
+| 6 | webhook 触发的幂等性与重复触发处理 | 定时/webhook 是它的主打场景 |</p>
+      </div>
+
+
+            <div class="panel is-slim">
+        <h2>相关条目</h2>
+        <ul class="rel-list">
+          <li><span class="rel-t"><a href="./codex-sdk.html">Codex SDK</a></span><span class="rel-n"><strong>调度关系，不是竞争关系</strong>：README 明确 Agent Canvas 能跑 Codex。本档案讲的是「谁给你调度」，codex-sdk 讲的是「被调度的是什么」。</span></li>
+          <li><span class="rel-t"><a href="./claude-agent-sdk.html">Claude Agent SDK</a></span><span class="rel-n">同上，Claude Code 也是它声明可调度的 agent 之一。</span></li>
+          <li><span class="rel-t"><a href="./deepagents.html">Deep Agents</a></span><span class="rel-n">都是batteries-included 那一档，但 deepagents 是一个库、OpenHands 是一整套带Web UI 的栈。</span></li>
+          <li><span class="rel-t"><a href="./langgraph.html">LangGraph</a></span><span class="rel-n">若要的是「用代码定义流程」而非「用界面调度 agent」，编排框架才是对应层。</span></li>
+        </ul>
+      </div>
+
+
+      <p class="fine mt-6">
+        本页由 <a href="https://github.com/speculcom/ai-agent-guide" target="_blank" rel="noopener" class="link-brand">ai-agent-guide</a> 数据层生成（CC BY 4.0）。
+        方法论与坐标系定义见仓库内 <code>METHODOLOGY.md</code>。
+      </p>
+    </div>
+  </main>
+  <footer class="site-footer">
+    <div class="container foot-row">
+      <div class="foot-brand">
+        <span class="brand-dot" aria-hidden="true"></span>
+        <span class="foot-copy">© 2026 投机取巧 · <span data-zh>Specul</span><span data-en>Specul</span></span>
+      </div>
+      <nav class="foot-links" aria-label="页脚导航">
+          <a href="https://specul.com/"><span data-zh>首页</span><span data-en>Home</span></a>
+          <a href="https://learn.specul.com/">学 AI</a>
+          <a href="https://agent.specul.com/">Agent</a>
+          <a href="https://models.specul.com/">本地模型</a>
+          <a href="https://nav.specul.com/"><span data-zh>导航</span><span data-en>Directory</span></a>
+          <a href="https://github.com/speculcom/ai-agent-guide" target="_blank" rel="noopener">GitHub</a>
+      </nav>
+      <nav class="foot-legal-links" aria-label="法律">
+        <a href="https://specul.com/legal.html"><span data-zh>法律条款</span><span data-en>Legal terms</span></a>
+        <a href="https://specul.com/legal.html#s6"><span data-zh>免责声明</span><span data-en>Disclaimer</span></a>
+        <a href="https://specul.com/legal.html#s8"><span data-zh>隐私与本地存储</span><span data-en>Privacy</span></a>
+      </nav>
+    </div>
+  </footer>
+  <script src="../brand.js"></script>
+  <script>
+    (function () {
+      var root = document.documentElement;
+      function sync() { root.setAttribute('data-lang', root.lang === 'en' ? 'en' : 'zh'); }
+      new MutationObserver(sync).observe(root, { attributes: true, attributeFilter: ['lang'] });
+      sync();
+    })();
+  </script>
+</body>
+</html>
