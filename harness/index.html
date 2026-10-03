@@ -102,9 +102,10 @@
       <div class="container">
         <h2>按抽象层分组</h2>
         <p class="section-desc">同一层里也能差很远 —— 两个「编程底座」一个是纯原语、一个是全托管包装 CLI，所以先按抽象层分，再看具体对象。</p>
-        <div class="fam-block">
+        <div class="fam-block" data-family="coding-base">
           <div class="fam-head">
             <h3>编程底座 <span class="fam-n">3</span></h3>
+            <span class="fam-badge">编程底座</span>
             <p>给你 agent loop 或现成 CLI 的编程接口。这层的差别不在功能多少，而在<strong>它替你做多少决定</strong> —— 一个只给原语，一个把整套 CLI 连权限模型一起打包给你。</p>
           </div>
           <div class="grid">
@@ -152,9 +153,10 @@
         </article>
           </div>
         </div>
-        <div class="fam-block">
+        <div class="fam-block" data-family="orchestration">
           <div class="fam-head">
             <h3>编排框架 <span class="fam-n">4</span></h3>
+            <span class="fam-badge">编排框架</span>
             <p>把多步骤、多 Agent、要中断恢复的流程显式建成图。给的是控制力，代价是接线与状态管理都归你。</p>
           </div>
           <div class="grid">
@@ -216,9 +218,10 @@
         </article>
           </div>
         </div>
-        <div class="fam-block">
+        <div class="fam-block" data-family="general-harness">
           <div class="fam-head">
             <h3>通用 Harness <span class="fam-n">3</span></h3>
+            <span class="fam-badge">通用 Harness</span>
             <p>预置了规划、文件系统、记忆等一整套，面向通用长任务。开箱程度最高，可改性最低。</p>
           </div>
           <div class="grid">
