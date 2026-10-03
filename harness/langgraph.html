@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LangGraph — Harness | 投机取巧</title>
+  <meta name="description" content="LangGraph（LangChain Inc）：「低层编排框架」 —— 官方自述用词很克制，注意那个 low-level： &gt; Low-level orchestration framework for building stateful agents. 它自认不是开箱即用的高层封装，而是给「长时" />
+  <link rel="canonical" href="https://agent.specul.com/harness/langgraph.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="LangGraph" />
+  <meta property="og:url" content="https://agent.specul.com/harness/langgraph.html" />
+  <meta property="og:title" content="LangGraph — Harness | 投机取巧" />
+  <meta property="og:description" content="LangGraph（LangChain Inc）：「低层编排框架」 —— 官方自述用词很克制，注意那个 low-level： &gt; Low-level orchestration framework for building stateful agents. 它自认不是开箱即用的高层封装，而是给「长时" />
+  <meta name="theme-color" content="#05080f" />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%238b7cf8'/%3E%3Cstop offset='1' stop-color='%2322d3c5'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='48' height='48' rx='12' fill='%2305080f'/%3E%3Cpath d='M14 32 L24 12 L34 32' fill='none' stroke='url(%23g)' stroke-width='2.4' stroke-linejoin='round'/%3E%3Ccircle cx='24' cy='27' r='2.4' fill='%2322d3c5'/%3E%3C/svg%3E" />
+  <link rel="stylesheet" href="../brand.css" />
+  <link rel="stylesheet" href="../site.css" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"LangGraph","applicationCategory":"DeveloperApplication","url":"https://docs.langchain.com/oss/python/langgraph/","sameAs":"https://docs.langchain.com/oss/python/langgraph/","description":"「低层编排框架」 —— 官方自述用词很克制，注意那个 low-level： > Low-level orchestration framework for building stateful agents. 它自认不是开箱即用的高层封装，而是给「长时间运行、有状态」这件事打地基的底层设施。","dateModified":"2026-10-01"}</script>
+</head>
+<body class="brand-ambient">
+  <a class="t-skip" href="#main">跳到主要内容</a>
+  <header class="site-header">
+    <div class="container site-bar">
+      <a class="brand" href="https://specul.com/" title="投机取巧">
+        <span class="brand-dot" aria-hidden="true"></span>
+        <span class="brand-text">
+          <span class="brand-name" id="markName" data-zh-name="投机取巧" data-en-name="Speculative Speculation">投机取巧</span>
+        </span>
+      </a>
+      <nav class="nav-links" aria-label="站点导航">
+        <a href="https://specul.com/"><span data-zh>首页</span><span data-en>Home</span></a>
+        <a href="https://learn.specul.com/"><span data-zh>学 AI</span><span data-en>Learn</span></a>
+        <a href="https://agent.specul.com/" aria-current="page"><span data-zh>Agent</span><span data-en>Agent</span></a>
+        <a href="https://models.specul.com/"><span data-zh>本地模型</span><span data-en>Models</span></a>
+        <a href="https://nav.specul.com/"><span data-zh>导航</span><span data-en>Directory</span></a>
+        <span class="nav-tools">
+          <button class="icon-btn" id="themeBtn" type="button" aria-label="切换明暗主题" title="切换明暗主题">☾</button>
+          <button class="icon-btn" id="langBtn" type="button" aria-label="Switch language" title="Switch language">EN</button>
+        </span>
+      </nav>
+    </div>
+  </header>
+  <main id="main">
+    <div class="container detail">
+      <nav class="crumbs" aria-label="面包屑">
+        <a href="https://agent.specul.com/">Agent 图谱</a>
+        <a href="/">Agents</a>
+        <span aria-current="page">Harness</span>
+        <a href="/tools/">Tools</a>
+      </nav>
+      <a class="back" href="./">← Harness</a>
+
+      <div class="detail-head">
+        <div class="mark" style="--card-accent:#1C3C3C" aria-hidden="true">LG</div>
+        <div>
+          <h1>LangGraph</h1>
+          <div class="vendor is-caps">LangChain Inc</div>
+        </div>
+      </div>
+
+      <div class="badges">
+        <span class="tag on">Python</span>
+        <span class="tag on">开源</span>
+        <span class="tag on">MIT</span>
+        <span class="tag on">编排框架</span>
+        <span class="tag on">图执行</span>
+        <span class="tag on">持久化</span>
+        <span class="tag on">状态管理</span>
+        <span class="tag on">checkpoint</span>
+        <span class="tag on">superstep</span>
+        <span class="tag on">durable-execution</span>
+        <span class="tag on">HITL</span>
+        <span class="tag on">interrupts</span>
+        <span class="tag on">长期记忆</span>
+        <span class="tag on">LangChain</span>
+        <span class="badge accent">verified</span>
+        <span class="badge">lifecycle: active</span>
+        <span class="badge">核验 2026-10-01</span>
+      </div>
+
+            <p class="panel-lead"><strong>「低层编排框架」</strong> —— 官方自述用词很克制，注意那个 low-level：
+
+&gt; Low-level orchestration framework for building <strong>stateful</strong> agents.
+
+它自认不是开箱即用的高层封装，而是给「长时间运行、有状态」这件事打地基的底层设施。</p>
+
+            <div class="panel is-slim">
+        <h2>适合与不适合</h2>
+        <p><strong>适合</strong>：agent 流程要跑很久且必须能从中断处精确恢复；要人工在流程中间介入并改状态；
+要分开管理工作记忆与跨会话记忆；需要显式图结构（分支、循环、子图）。
+<strong>不适合</strong>：需要内建沙箱或文件级权限边界（本站未核验其机制）；
+想要开箱即用的文件系统与子代理（走 Deep Agents）；不想额外依赖 LangChain 生态。</p>
+      </div>
+
+
+      <div class="block-head">
+        <h2 class="t-h2">固定坐标系</h2>
+        <p class="t-section-lead">8 个维度，与同赛道其他对象逐项可比。</p>
+      </div>
+      <dl class="axes">
+        <div class="axis">
+          <dt>模型与开放条件</dt>
+          <dd><strong>LangGraph 本身不谈模型 —— 这是它作为低层框架的设计取向。</strong> README 的五项能力（durable execution / HITL / memory / LangSmith 调试 / 生产部署） 全部与模型无关，没有一处列出 provider。 官方生态位是 LangChain 全家桶：模型接入通常经 LangChain 的集成层 （这也意味着<strong>你可能需要装 langchain 及其 provider 包才能接模型</strong>， ⚠ 但 LangGraph 官方明确说了&quot;can be used without LangChain&quot; —— README 末尾原文： &quot;LangGraph is built by LangChain Inc, the creators of LangChain, but <strong>can be used without LangChain</strong>&quot;， <strong>这句是本站判断「不是强绑定」的关键依据</strong>。零依赖直连哪些 provider 未核验。</dd>
+        </div>
+        <div class="axis">
+          <dt>运行位置</dt>
+          <dd><strong>纯库，没有运行时服务。</strong> 安装就是 <code>pip install -U langgraph</code>， 没有 CLI 启服务、没有容器编排命令、没有 Web UI（Web UI 在 Deep Agents / LangSmith 那侧）。 官方把运行形态交给两处：<strong>你自己跑</strong>，或 <strong>LangSmith Deployment</strong>（独立商业平台）。 ⚠ <strong>未核验</strong>：LangGraph 应用在生产环境的推荐部署形态（官方指向 LangSmith， 而 LangSmith 是收费产品 —— 这意味着「怎么部署」这个问题的答案落在一个商业产品上）。</dd>
+        </div>
+        <div class="axis">
+          <dt>本地文件</dt>
+          <dd><strong>⚠ 不在 LangGraph 的职责范围内，这一点要说清。</strong> README 讲文件系统的唯一位置是把 Deep Agents 作为高层包推荐 （&quot;leverage file systems for complex tasks&quot;）， <strong>即文件能力被归到上层封装，而不是底层图引擎</strong>。 LangGraph 本身给的是<strong>状态容器</strong>（checkpoint 里存的是 graph state）， 至于 agent 要不要读写磁盘、用什么工具读写，不归它管。 <strong>本站判断（推断）</strong>：想要文件系统，得自己接工具或走 Deep Agents 那一层。</dd>
+        </div>
+        <div class="axis">
+          <dt>关机后的任务</dt>
+          <dd><strong>这是它最强的一维，且有官方明文。</strong> README 特性列表第一条 <strong>Durable execution</strong>： &quot;Build agents that <strong>persist through failures</strong> and can run for extended periods, <strong>automatically resuming from exactly where they left off</strong>.&quot; 配套是独立子包 <code>langgraph-checkpoint</code>（核验 <code>libs/checkpoint</code>）： Checkpointers &quot;provide a persistence layer for LangGraph: they <strong>save graph state at every superstep</strong>, enabling human-in-the-loop, memory between interactions, <strong>durable execution</strong>, and more.&quot; ⚠ 这句话是本站见过<strong>对「状态持久化」最明确的官方定义</strong>—— 落盘粒度是 superstep（图的一个步进），不是「会话结束时」也不是「每轮对话后」。 ⚠ 但要诚实：<strong>跨机器 / 多进程并发下的恢复语义本站未核验</strong>， checkpoint 的并发写与冲突处理需要自己确认。</dd>
+        </div>
+        <div class="axis">
+          <dt>工具与扩展</dt>
+          <dd><strong>⚠ 本维度也是 LangGraph 明确不负责的。</strong> README 五项能力里没有工具系统；工具接入经 LangChain 生态 （本站判断：LangGraph 负责图与状态，工具由LangChain 或你自己的函数提供）。 <strong>本站不把它与本站 MCP 站的9 个 server 关联</strong> —— 没有证据表明 LangGraph 自带 MCP 客户端。 ⚠ LangChain 生态是否有统一 MCP 接入层，本次未核验。</dd>
+        </div>
+        <div class="axis">
+          <dt>上下文与记忆</dt>
+          <dd><strong>⚠ 这一维度是本站最想强调的一条：LangGraph 把「状态」和「记忆」分开给了两套机制。</strong> README 特性列表第三条 <strong>Comprehensive memory</strong> 原文： &quot;Create truly stateful agents with both <strong>short-term working memory for ongoing reasoning</strong> and <strong>long-term persistent memory across sessions</strong>.&quot; <strong>这句话里两个时间尺度的区分，正是本站「状态 ≠ 上下文」主张的同构表达</strong> —— checkpoint 存的是流程状态（状态面）， 而 memory 是另设的一层（记忆面），两者不是一个东西。 ⚠ <strong>未核验</strong>：memory 的短期部分具体如何裁剪上下文（是否就是压缩/摘要）、 长期记忆的存储后端与检索方式、本站所需的「大工具输出落盘」是否属其能力范围。 <strong>但有一点可以确定</strong>：它是本站收录对象里<strong>唯一在README 首屏就明确区分 「working memory」与「persistent memory across sessions」</strong> 的。</dd>
+        </div>
+        <div class="axis">
+          <dt>权限与限制</dt>
+          <dd><strong>官方给的是 human-in-the-loop，且是「检查并修改状态」级别，不只是确认。</strong> README 特性列表第二条原文： &quot;Seamlessly incorporate human oversight by <strong>inspecting and modifying agent state at any point during execution</strong>.&quot; 文档在 <code>langgraph/interrupts</code>。 <strong>与其它对象对比，这一点有实质差别</strong>（三者的介入层次递进， 此处用行内列举是因为本解析器不支持嵌套块内的列表写法）： <a href="./openai-agents-sdk.html">OpenAI Agents SDK</a> 的 guardrail 是<strong>校验内容</strong>（输入/输出合不合规）、 <a href="./google-adk.html">Google ADK</a> 的 Tool Confirmation 是<strong>拦执行</strong>（这个工具要不要跑）、 <strong>LangGraph 的 interrupts 是改状态</strong>（在任意执行点检查并修改图的状态）。 ⚠ <strong>但要说清：它明确给的不是沙箱或权限边界。</strong> README 未提及文件系统权限模型、网络访问控制、工具级白名单 —— 与本站收录的 OpenHands（明确的 Docker 沙箱 + API key 机制）、 Codex SDK（源码里三档 SandboxMode 枚举）形成对照， <strong>LangGraph 在这一维度上目前查不到官方机制</strong>。</dd>
+        </div>
+        <div class="axis">
+          <dt>适合什么任务</dt>
+          <dd><strong>适合</strong>：agent 流程要跑很久且必须能从中断处精确恢复； 需要人工在流程中间介入并修改状态；要把「工作记忆」与「跨会话长期记忆」分开管理； 需要显式图结构（分支、循环、子图）；团队用 Python。 <strong>不适合</strong>：需要内建沙箱或文件级权限边界（本站未核验其机制）； 想要开箱即用的文件系统与子代理（走 Deep Agents，它是 LangGraph 上的高层包）； 不想额外依赖 LangChain 生态（模型接入通常要经它）。</dd>
+        </div>
+      </dl>
+
+            <div class="panel warn">
+        <h2 class="warn">头号误解</h2>
+        <ul>
+          <li>把 Deep Agents 与 LangGraph 当两个竞品 —— <strong>Deep Agents 是建在 LangGraph 上的高层包</strong>（README 明确）</li>
+          <li>用 releases/latest 判版本 —— <strong>monorepo 的 latest 不可靠</strong>：本条实测 latest 返回</li>
+          <li><code>cli==0.4.32.dev0</code>（子包 dev 版），主包版本需从 release 列表里挑（本次核验主包为 1.2.12）</li>
+          <li>把 checkpoint 持久化读成「上下文管理」—— checkpoint 存的是 <strong>graph state</strong>，</li>
+          <li>上下文压缩与记忆是 README 里另设的 memory 那一层</li>
+          <li>以为它自带文件系统或工具系统 —— 这两样它都不管，要么自己接，要么走 Deep Agents</li>
+          <li>以为 interrupts 是权限护栏 —— 它是「检查并修改状态」，不划文件/网络边界</li>
+          <li>以为装完 LangGraph 就够了 —— 官方首屏就引导用 LangSmith 做调试与部署，那是商业产品</li>
+        </ul>
+      </div>
+
+
+            <div class="panel is-slim">
+        <h2>价格</h2>
+        <table class="src">
+          <tbody>
+            <tr><th class="w-28">月度入口</th><td>框架免费（MIT）；LangSmith（调试/评估/部署）是独立商业产品</td></tr>
+            <tr><th class="w-28">额度说明</th><td><strong>框架 MIT 与 LangSmith 是两件事。</strong> README 里 LangSmith 出现 4 次，分别指向调试可视化、agent eval 与部署平台， <strong>README 首屏也放了一个 TIP 引导去用 LangSmith</strong>（&quot;For developing, debugging, and deploying AI agents and LLM applications, see LangSmith&quot;）。 ⚠ LangSmith 的定价、免费额度、以及不开它LangGraph 是否完整可用，本站未核验。 另有 LangSmith Deployment（官方描述里有&quot;Discover, reuse, configure, and share agents across teams&quot;），属托管平台，本条不收录。</td></tr>
+          </tbody>
+        </table>
+        <p class="fine mt-3">不同币种不做折算。优惠、地区、税费与登录后报价可能变化，购买前请到官方页面确认。</p>
+      </div>
+
+
+            <div class="panel is-slim">
+        <h2>未知项清单</h2>
+        <ul>
+          <li>checkpoint 在跨机器 / 多进程并发下的写冲突与恢复语义</li>
+          <li>superstep 级落盘的性能与写入量代价</li>
+          <li>短期记忆的具体裁剪策略、长期记忆的后端与检索方式</li>
+          <li>模型 provider 的零依赖接法（不经 LangChain 时）</li>
+          <li>LangChain 生态是否有统一 MCP 接入层</li>
+          <li>interrupts 修改状态后的重入边界</li>
+          <li>LangSmith 的定价、免费额度，以及不用它时 LangGraph 是否完整可用</li>
+          <li>Python 与 JS/TS 版的能力对齐度</li>
+        </ul>
+      </div>
+
+
+      <div class="panel">
+        <h2>证据来源</h2>
+        <p class="t-sm">判断可回到以下一手源复核。本站核验日 2026-10-01，内容更新日 2026-10-01。</p>
+        <table class="src">
+          <thead><tr><th class="w-20">类型</th><th class="w-52">名称</th><th>链接</th></tr></thead>
+          <tbody>
+            <tr><td>repo</td><td>langchain-ai/langgraph · 仓库（42,538★，MIT，核验 2026-10-01）</td><td><a href="https://github.com/langchain-ai/langgraph" target="_blank" rel="noopener">https://github.com/langchain-ai/langgraph</a></td></tr>
+            <tr><td>docs</td><td>主 README（定位、Durable execution / HITL / memory 三项能力、Deep Agents 关系、Pregel 溯源）</td><td><a href="https://github.com/langchain-ai/langgraph/blob/main/README.md" target="_blank" rel="noopener">https://github.com/langchain-ai/langgraph/blob/main/README.md</a></td></tr>
+            <tr><td>docs</td><td>libs/checkpoint/README.md（&quot;save graph state at every superstep&quot; 原文）</td><td><a href="https://github.com/langchain-ai/langgraph/blob/main/libs/checkpoint/README.md" target="_blank" rel="noopener">https://github.com/langchain-ai/langgraph/blob/main/libs/checkpoint/README.md</a></td></tr>
+            <tr><td>docs</td><td>官方文档 · Durable execution</td><td><a href="https://docs.langchain.com/oss/python/langgraph/durable-execution" target="_blank" rel="noopener">https://docs.langchain.com/oss/python/langgraph/durable-execution</a></td></tr>
+            <tr><td>docs</td><td>官方文档 · Interrupts（HITL）</td><td><a href="https://docs.langchain.com/oss/python/langgraph/interrupts" target="_blank" rel="noopener">https://docs.langchain.com/oss/python/langgraph/interrupts</a></td></tr>
+            <tr><td>docs</td><td>官方文档 · Memory（短期工作记忆 vs 跨会话长期记忆）</td><td><a href="https://docs.langchain.com/oss/python/langgraph/memory" target="_blank" rel="noopener">https://docs.langchain.com/oss/python/langgraph/memory</a></td></tr>
+            <tr><td>docs</td><td>官方文档首页</td><td><a href="https://docs.langchain.com/oss/python/langgraph/overview" target="_blank" rel="noopener">https://docs.langchain.com/oss/python/langgraph/overview</a></td></tr>
+            <tr><td>docs</td><td>Deep Agents 文档（README 指向的「higher-level package built on LangGraph」）</td><td><a href="https://docs.langchain.com/oss/python/deepagents/overview" target="_blank" rel="noopener">https://docs.langchain.com/oss/python/deepagents/overview</a></td></tr>
+            <tr><td>repo</td><td>langchain-ai/langgraphjs · JS/TS 版独立仓</td><td><a href="https://github.com/langchain-ai/langgraphjs" target="_blank" rel="noopener">https://github.com/langchain-ai/langgraphjs</a></td></tr>
+            <tr><td>changelog</td><td>Releases（主包 1.2.12 @ 2026-09-21；latest 为子包 cli==0.4.32.dev0）</td><td><a href="https://github.com/langchain-ai/langgraph/releases" target="_blank" rel="noopener">https://github.com/langchain-ai/langgraph/releases</a></td></tr>
+          </tbody>
+        </table>
+      </div>
+
+            <div class="panel is-slim">
+        <h2>实测记录</h2>
+        <p>本站尚未完成实测。测试协议见 <a href="https://github.com/speculcom/ai-agent-guide/blob/main/tracks/agents/tasks/_protocol.md" target="_blank" rel="noopener">tasks/_protocol.md</a>。
+
+<strong>实测建议</strong>（按编排框架 + 持久化维度定制）：
+
+| # | 测什么 | 为什么值得测 |
+|:--:|---|---|
+| 1 | 长流程跑到一半kill 进程，恢复后是否真的从中断点继续 | 「exactly where they left off」是官方明文承诺，必须验证 |
+| 2 | <strong>superstep 粒度落盘在长任务下的写入开销</strong> | 官方说每个 superstep 都存，step 多时I/O 成本未知 |
+| 3 | Postgres checkpointer 在多进程并发下的冲突行为 | 本站最担心的点，未核验 |
+| 4 | interrupts 中途修改状态后，图的重入行为 | 官方说可 modify agent state，边界未核验 |
+| 5 | 短期记忆的裁剪策略（是否即压缩/摘要）与成本 | 补上 context 维度的缺口 |
+| 6 | 用 LangGraph 最小示例 vs Deep Agents 同等需求的代码量差 | 量化「低层」这个自评到底多低层 |</p>
+      </div>
+
+
+            <div class="panel is-slim">
+        <h2>相关条目</h2>
+        <ul class="rel-list">
+          <li><span class="rel-t"><a href="./deepagents.html">Deep Agents</a></span><span class="rel-n"><strong>同公司、上下层关系，不是竞品</strong>：README 明示Deep Agents 是 built on LangGraph 的高层包（带规划、子代理、文件系统）。要开箱还是要底座，这是本站最该给用户看的一张对照表。</span></li>
+          <li><span class="rel-t"><a href="./google-adk.html">Google ADK</a></span><span class="rel-n"><strong>编排家族内的对照</strong>：同为图执行编排框架，ADK 给 Workflow Runtime + state management，LangGraph 给每superstep 落盘的 checkpoint。</span></li>
+          <li><span class="rel-t"><a href="./crewai.html">CrewAI</a></span><span class="rel-n">同为编排框架，抽象中心不同（角色/任务 vs 图节点）。</span></li>
+          <li><span class="rel-t"><a href="./openai-agents-sdk.html">OpenAI Agents SDK</a></span><span class="rel-n">形态相反：那个是单 agent 原语 + 内建 guardrail；本条是低层图引擎 + 状态持久化，不提供工具系统。</span></li>
+        </ul>
+      </div>
+
+
+      <p class="fine mt-6">
+        本页由 <a href="https://github.com/speculcom/ai-agent-guide" target="_blank" rel="noopener" class="link-brand">ai-agent-guide</a> 数据层生成（CC BY 4.0）。
+        方法论与坐标系定义见仓库内 <code>METHODOLOGY.md</code>。
+      </p>
+    </div>
+  </main>
+  <footer class="site-footer">
+    <div class="container foot-row">
+      <div class="foot-brand">
+        <span class="brand-dot" aria-hidden="true"></span>
+        <span class="foot-copy">© 2026 投机取巧 · <span data-zh>Specul</span><span data-en>Specul</span></span>
+      </div>
+      <nav class="foot-links" aria-label="页脚导航">
+          <a href="https://specul.com/"><span data-zh>首页</span><span data-en>Home</span></a>
+          <a href="https://learn.specul.com/">学 AI</a>
+          <a href="https://agent.specul.com/">Agent</a>
+          <a href="https://models.specul.com/">本地模型</a>
+          <a href="https://nav.specul.com/"><span data-zh>导航</span><span data-en>Directory</span></a>
+          <a href="https://github.com/speculcom/ai-agent-guide" target="_blank" rel="noopener">GitHub</a>
+      </nav>
+      <nav class="foot-legal-links" aria-label="法律">
+        <a href="https://specul.com/legal.html"><span data-zh>法律条款</span><span data-en>Legal terms</span></a>
+        <a href="https://specul.com/legal.html#s6"><span data-zh>免责声明</span><span data-en>Disclaimer</span></a>
+        <a href="https://specul.com/legal.html#s8"><span data-zh>隐私与本地存储</span><span data-en>Privacy</span></a>
+      </nav>
+    </div>
+  </footer>
+  <script src="../brand.js"></script>
+  <script>
+    (function () {
+      var root = document.documentElement;
+      function sync() { root.setAttribute('data-lang', root.lang === 'en' ? 'en' : 'zh'); }
+      new MutationObserver(sync).observe(root, { attributes: true, attributeFilter: ['lang'] });
+      sync();
+    })();
+  </script>
+</body>
+</html>
