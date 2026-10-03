@@ -105,7 +105,7 @@ AI glasses 形态「coming soon」）；
         </div>
         <div class="axis">
           <dt>关机后的任务</dt>
-          <dd><strong>官方明确写了关闭应用后的行为</strong>，这一句比「常驻」更具体： 「For tasks that take more time, Muse keeps working after people close the app, and comes back when something changes or when it needs approval, like before it sends an email or makes a purchase」。 即<strong>后台持续 + 遇审批才回来</strong>。 另有一处官方原句用了「proactively」： 「a personal AI agent that proactively helps with people&#39;s goals and suggests ideas」，以及能「make suggestions unprompted」。 ⚠ <strong>但官方未说明后台自主时拿到的是只读还是读写工具</strong> （Dot 明确写了只读，本条未拿到对应表述）—— <strong>这一项未核验，不要替它补上。</strong></dd>
+          <dd><strong>官方明确写了关闭应用后的行为</strong>，这一句比「常驻」更具体： 「For tasks that take more time, Muse keeps working after people close the app, and comes back when something changes or when it needs approval, like before it sends an email or makes a purchase」。 即<strong>后台持续 + 遇审批才回来</strong>。 <strong>「回来」的触发条件官方列了三类</strong>（帮助中心审批页）：任务有进展（状态栏实时显示 「Is working」/「Making something」/「Is updating memory」）、 到了定时任务或提醒的时间（助手图标内 <strong>Upcoming</strong> 列出 scheduled tasks 与 reminders， 且每个 scheduled task 可单独设审批）、以及需要你批准的那一刻。 另有一处官方原句用了「proactively」： 「a personal AI agent that proactively helps with people&#39;s goals and suggests ideas」，以及能「make suggestions unprompted」。 <strong>触发源不止你发指令</strong> —— 帮助中心 Connector 页写了反向推送： 「Some Connectors can also share information proactively with Muse. For example, calendar Connectors can update Muse automatically when there are changes in your schedule」，且<strong>这类 Connector 会在连接前标明</strong>。 <strong>后台自主时是只读还是读写，本条给的是机制而非原句</strong>（2026-10-03 补齐）： 默认权限档下「your Muse will ask for permission before every write action and important read actions」，而 Connector 页写默认态是 「Muse will not take <strong>many important actions</strong>, like sending an email, without your approval」（注意是 many，不是 every）。 两句合起来的后果是明确的：<strong>后台期间读操作照常跑，任何写操作都必须回前台等批准</strong> —— 这正好对上发布页那句「comes back ... when it needs approval, like before it sends an email or makes a purchase」。 <strong>这不是官方那句「后台是只读」的原文，是从两处权限条款推出的机制结论</strong>， 与Dot 官方明写只读不同，<strong>不要当成同一句话引用</strong>。</dd>
         </div>
         <div class="axis">
           <dt>工具与扩展</dt>
@@ -113,11 +113,11 @@ AI glasses 形态「coming soon」）；
         </div>
         <div class="axis">
           <dt>上下文与记忆</dt>
-          <dd><strong>记忆机制是官方卖点之一</strong>，原文： 「Muse also remembers what matters to a person, so it can make suggestions unprompted and act on details that person only mentioned once」， 官方举的例子很具体（把 Instagram 存的菜谱reel 变成购物清单、 记住朋友饮食禁忌后再发邀请）。 <strong>删除侧也有官方机制</strong>：「You can delete any message you send to Muse, Side Chats with Muse, and files in your virtual machine」， 支持重置，也支持忘掉特定主题（forget skill）。 官方也提醒残留：「Muse may still remember information it learned from what you deleted」——<strong>这条限定值得记，删除不等于抹掉已学到的。</strong> <strong>上下文窗口大小与记忆存储实现，官方发布页未给，本次未核验。</strong></dd>
+          <dd><strong>记忆机制是官方卖点之一</strong>，原文： 「Muse also remembers what matters to a person, so it can make suggestions unprompted and act on details that person only mentioned once」， 官方举的例子很具体（把 Instagram 存的菜谱 reel 变成购物清单、 记住朋友饮食禁忌后再发邀请）。 帮助中心另有一句把记忆的<strong>来源</strong>说清了： 「Muse is designed to remember context from your conversations, so you can refer back to things you&#39;ve discussed before」 ——即对话本身是记忆的一等来源，不只是你显式要求记住的东西。 <strong>存储形态官方写了是可查的文件，不是黑盒</strong>： 「You can find out what Muse remembers about you at any time by asking directly, or by viewing files like your MEMORY.md」。 forget skill 的机制也写明了，顺便带一个<strong>官方自带的限定词</strong>： 「Forgetting works by asking Muse to look for information about a specific person, topic or matter in its memories and supporting files and remove it <strong>to the best of its ability</strong>」—— <strong>「尽其所能」不是保证抹净</strong>，这个 hedge 值得单独记。 <strong>删除侧也有官方机制</strong>：「You can delete any message you send to Muse, Side Chats with Muse, and files in your virtual machine」， 支持重置，也支持忘掉特定主题（forget skill）。 官方也提醒残留：「Muse may still remember information it learned from what you deleted」——<strong>这条限定值得记，删除不等于抹掉已学到的。</strong> <strong>残留不止删除这一条路径（2026-10-03 补）</strong>：断开 Connector 也不清记忆—— 「Information that Muse previously used to perform tasks with that Connector might still remain in Muse&#39;s memories and your conversation history」。 <strong>对比之下 reset 才是硬边界</strong>：「Resetting Muse permanently deletes all information, chat history, files and active tasks. <strong>This cannot be undone.</strong>」 ⚠ <strong>上下文窗口大小官方没有公布</strong>，未见任何官方数字。 另有一处工程细节官方提到但未展开：VM「maintains backups to help protect your agent&#39;s history from data loss」——<strong>有备份机制，但备份保留多久、 与删除语义怎么 interplay，两页都没写。</strong></dd>
         </div>
         <div class="axis">
           <dt>权限与限制</dt>
-          <dd><strong>本条最独特的设计：独立 Sentinel agent 做审批。</strong> 官方原文： 「A separate Sentinel agent runs on that same machine, kept apart from Muse at the system level. Nothing Muse does reaches the internet unless the Sentinel approves it, and it asks the person for permission when needed」。 <strong>即审批不由 Muse 自己判断，而是与它系统级隔离的另一个 agent 判断。</strong> 这与 Dot 的「自动审核」在实现层不同（Dot 未说明审核器是否独立）。 其余：敏感动作前询问（发邮件、购买）； 「Muse shows people a complete audit trail of everything it has done and plans to do」 （<strong>审计面比 Dot 的活动视图更宽 —— 含「计划要做的事」</strong>）； 用户自行选 app 与权限粒度（「for things like email, people choose what Muse can do, whether it reads their mail or can also send on their behalf」）； <strong>凭据隔离</strong>：「Muse has no visibility into people&#39;s passwords or payment methods. Any credentials a person shares with Muse go into secure storage」， 且「Muse also cannot see passwords a person types into the browser themselves」； <strong>训练开关</strong>：「People can also opt out of their interactions being used to train Meta&#39;s AI models」（帮助中心页补充：设置默认开，可随时改，改动也适用于历史交互）； <strong>不与广告系统共享</strong>：Muse 官方两处都写了不把对话或 VM 数据给 Meta 广告系统 （帮助中心页补充：即使 Accounts Center 里绑了其他 Meta 产品也一样）。 ⚠ 帮助中心页有一处<strong>尚未实现的承诺</strong>：Muse Confidential VM —— 官方写「In the future / Later this year」， 即<strong>整台 VM 用只有用户持有的密钥加密、连 Meta 都读不了</strong>，<strong>当前不可用</strong>。</dd>
+          <dd><strong>本条最独特的设计：独立 Sentinel agent 做审批。</strong> 官方原文： 「A separate Sentinel agent runs on that same machine, kept apart from Muse at the system level. Nothing Muse does reaches the internet unless the Sentinel approves it, and it asks the person for permission when needed」。 <strong>即审批不由 Muse 自己判断，而是与它系统级隔离的另一个 agent 判断。</strong> 这与 Dot 的「自动审核」在实现层不同（Dot 未说明审核器是否独立）。 其余：敏感动作前询问（发邮件、购买）； 「Muse shows people a complete audit trail of everything it has done and plans to do」 （<strong>审计面比 Dot 的活动视图更宽 —— 含「计划要做的事」</strong>）； 用户自行选 app 与权限粒度（「for things like email, people choose what Muse can do, whether it reads their mail or can also send on their behalf」）； <strong>凭据隔离</strong>：「Muse has no visibility into people&#39;s passwords or payment methods. Any credentials a person shares with Muse go into secure storage」， 且「Muse also cannot see passwords a person types into the browser themselves」； 帮助中心把机制写得更细：用凭据前会过三道检查（连的是不是预期服务、 是不是你授权的、你有没有给过这类动作的许可）； <strong>训练开关</strong>：「People can also opt out of their interactions being used to train Meta&#39;s AI models」（帮助中心页补充：设置默认开，可随时改，改动也适用于历史交互； 开启时仍会移除姓名/邮箱/电话/SSN 等部分身份信息，并与账号脱钩）； <strong>不与广告系统共享</strong>：Muse 官方两处都写了不把对话或 VM 数据给 Meta 广告系统 （帮助中心页补充：即使 Accounts Center 里绑了其他 Meta 产品也一样）。 <strong>⚠ 官方自己承认 prompt injection 未解决（2026-10-03 补，一手措辞）</strong>： 「Websites, emails, files and connected services can contain instructions intended to manipulate an AI agent. This is sometimes called a prompt injection attack. Muse uses multiple protections to help detect and resist these attempts. These include model training, automated detection systems, and limits on the information and services Muse can access during a task.」 <strong>关键一句</strong>：「Important permission and security checks operate separately from the AI model, meaning that they don&#39;t rely only on Muse recognizing that an instruction may be malicious.」—— <strong>官方承认「模型自己认出恶意指令」不足以兜底</strong>，这与 Sentinel 的设计动机一致。 官方也照例写了「No automated system is perfect」，并要求用户自行复核活动。 <strong>⚠ Custom Connector 是官方自己标出的风险口（2026-10-03 补）</strong>： 用户可让 Muse 现造一个连接器，官方随即给出警告： 「Meta doesn&#39;t review custom connectors or how they use your information, so grant access with caution and review the provider&#39;s privacy policies.」—— <strong>这是官方承认存在审查盲区</strong>，评估第三方接入时必须算进去。 反向的权限收敛也有官方条款：「Many Connectors can also be set up so that Muse is only able to retrieve data, but not take actions (like sending a calendar invite)」——<strong>读-only 连接器是官方提供的降权手段。</strong> ⚠ 帮助中心页有一处<strong>尚未实现的承诺</strong>：Muse Confidential VM —— 官方写「In the future / Later this year」， 即<strong>整台 VM 用只有用户持有的密钥加密、连 Meta 都读不了</strong>，<strong>当前不可用</strong>。</dd>
         </div>
         <div class="axis">
           <dt>适合什么任务</dt>
@@ -132,7 +132,9 @@ AI glasses 形态「coming soon」）；
           <li>把 Sentinel 当成「Muse 自己会先问一下」 —— 它是系统级隔离的独立 agent</li>
           <li>以为删消息就等于抹掉了记忆 —— 官方明说可能仍记得已学到的内容</li>
           <li>以为「free for most」等于全功能免费 —— 边界未量化，且订阅档价格未核验</li>
-          <li>以为后台自主也像 Dot 那样是只读的 —— Muse 官方未给对应表述，不能替它补</li>
+          <li>把 Muse 的后台权限说成「官方写了只读」 —— 官方给的是机制（写操作必审批），不是只读原句</li>
+          <li>以为断开 Connector 就清掉了相关记忆 —— 官方写明might still remain</li>
+          <li>以为 forget skill 是保证抹净 —— 官方措辞是 to the best of its ability</li>
         </ul>
       </div>
 
@@ -154,12 +156,12 @@ AI glasses 形态「coming soon」）；
         <h2>未知项清单</h2>
         <ul>
           <li>订阅档位价格与各档额度</li>
-          <li>免费档「most of what people need」的边界在哪</li>
-          <li>后台自主时拿到的是只读还是读写工具（官方未给）</li>
-          <li>上下文窗口大小与记忆存储实现</li>
-          <li>Confidential VM 的上线时间与形态</li>
+          <li>上下文窗口大小（官方无任何数字）</li>
           <li>Sentinel 的判定标准与误判处理</li>
+          <li>Confidential VM 的上线时间与形态</li>
+          <li>VM 备份的保留时长，及其与删除语义的相互作用</li>
           <li>非美国地区的可用性与功能差异</li>
+          <li>免费档「most of what people need」的边界在哪</li>
         </ul>
       </div>
 
@@ -171,7 +173,9 @@ AI glasses 形态「coming soon」）；
           <thead><tr><th class="w-20">类型</th><th class="w-52">名称</th><th>链接</th></tr></thead>
           <tbody>
             <tr><td>official</td><td>Meta · Introducing Muse: The World&#39;s First Personal AI Agent Built for Everyone（官方 Newsroom 发布页，2026-09-08，正文 7,655 字逐节取）</td><td><a href="https://about.fb.com/news/2026/09/introducing-muse/" target="_blank" rel="noopener">https://about.fb.com/news/2026/09/introducing-muse/</a></td></tr>
-            <tr><td>docs</td><td>Meta Help Centre · How Muse handles your privacy, safety and security（VM 隔离 / Sentinel / Secure Credentials / 训练开关 / 审计）</td><td><a href="https://www.meta.com/help/1047255454427887/" target="_blank" rel="noopener">https://www.meta.com/help/1047255454427887/</a></td></tr>
+            <tr><td>docs</td><td>Meta Help Centre · How Muse handles your privacy, safety and security（VM 隔离 / Sentinel / Secure Credentials / 训练开关 / 审计 / prompt injection 官方自认 / 删除与forget 语义）</td><td><a href="https://www.meta.com/help/1047255454427887/" target="_blank" rel="noopener">https://www.meta.com/help/1047255454427887/</a></td></tr>
+            <tr><td>docs</td><td>Meta Help Centre · How Muse works with your guidance and approval（read vs write actions 定义 / 两档权限设置 / 五个审批选项 / Activity log / Upcoming / 可逆性）</td><td><a href="https://meta.com/help/1385290430137537/" target="_blank" rel="noopener">https://meta.com/help/1385290430137537/</a></td></tr>
+            <tr><td>docs</td><td>Meta Help Centre · How Muse works with Connectors（Connector 机制 / 只读连接器 / 自定义连接器的官方警告 / 断开后记忆残留）</td><td><a href="https://meta.com/help/1687253048996149/" target="_blank" rel="noopener">https://meta.com/help/1687253048996149/</a></td></tr>
             <tr><td>changelog</td><td>Meta · Meta AI glasses release notes（Muse Spark 跨形态复用、上市地区）</td><td><a href="https://meta.com/help/1809764829519902/" target="_blank" rel="noopener">https://meta.com/help/1809764829519902/</a></td></tr>
           </tbody>
         </table>
