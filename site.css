@@ -7,33 +7,11 @@
    原则：内容层不定义字号、颜色、间距——那些只看 brand.css。
    ========================================================================== */
 
-/* ─────────────────────────────────────────────────────────────
-   站点强调色 · agent Agent — 蓝（工程、编排）
-   暗色蓝配深色前景 7.2:1；亮色蓝配白字 5.1:1
-   暗色主题下强调色很亮，配白字只有 1.6~1.7:1（按钮会糊），
-   所以 --brand-on 用深色前景；亮色主题用深强调色 + 白字。
-   ⚠ 只改这四个变量。中性色与间距必须继承 brand.css ——
-     各站 site.css 的头注释就是这么约定的，改中性色会让六站脱钩。
-   ───────────────────────────────────────────────────────────── */
-
-html:not([data-theme="light"]) {
-  --brand: #5aa9f5;
-  --brand-on: #04121f;
-  --brand-soft: rgba(90, 169, 245, .14);
-  --brand-line: rgba(90, 169, 245, .34);
-}
-
-html[data-theme="light"] {
-  --brand: #1f6fc4;
-  --brand-on: #ffffff;
-  --brand-soft: rgba(31, 111, 196, .10);
-  --brand-line: rgba(31, 111, 196, .30);
-}
-
-
 /* ── 旧类名 → 新设计系统的桥接 ────────────────────────────────────────── */
 .hero {
-  padding: var(--sp-7) 0 var(--sp-6);
+  /* 2026-10-03：原--sp-7(80) 0 --sp-6(52) → 留白实测 80/52，
+     与 www(40) / models(32) 不同档。改用 --section-pad 体系，全站同一节奏。 */
+  padding: calc(var(--section-pad) * 2) 0 var(--section-pad);
   border-bottom: 0;
 }
 .kicker {
@@ -62,7 +40,7 @@ h1 {
   font-variant-numeric: tabular-nums; margin-right: 3px;
 }
 
-.section { padding-block: var(--sp-6); border-top: 1px solid var(--line); }
+.section { padding-block: var(--section-pad); border-top: 1px solid var(--line); }
 .section:first-of-type { border-top: 0; }
 .section > h2 {
   font-size: var(--fs-xl); font-weight: 700;
@@ -144,13 +122,32 @@ h1 {
    validate 把 family 定为必填枚举，注释写明「决定首页矩阵怎么分组」。
    分组标题里必须带这一层的判别理由（不只是名字），否则分组只是装饰。
    ────────────────────────────────────────────────────────────────────── */
-.fam-block { margin-bottom: var(--sp-6); }
+/* harness 站的family 分组 = 「抽象层」内容维度。
+   2026-10-03：用 --c-layer 色板给三类上色（原语 / 编排 / 开箱）。
+   为什么：**色彩比留白更省空间** —— 原来靠 margin-bottom: var(--sp-6) 分组，
+   一组一道52px 留白，三个分组就有 156px 纯空白；现在色条 + 徽章承担分组识别，
+   留白收进 --section-pad。这正是「空间利用率高 + 配色区分内容」同时成立的点。 */
+.fam-block { margin-bottom: var(--section-pad); }
 .fam-block:last-child { margin-bottom: 0; }
-.fam-head { margin-bottom: var(--sp-3); }
+.fam-head { margin-bottom: var(--sp-3); display: flex; align-items: baseline; gap: var(--sp-3); }
 .fam-head h3 {
   display: flex; align-items: baseline; gap: var(--sp-2);
   font-size: var(--fs-lg); font-weight: 700; letter-spacing: -.012em;
-  margin: 0 0 var(--sp-1);
+  margin: 0;
+}
+/* 分组色条：2px 竖条替代上下留白做分组标识 */
+.fam-head::before {
+  content: ""; width: 3px; align-self: stretch; border-radius: 2px;
+  background: var(--fam-c, var(--c-layer)); flex-shrink: 0;
+}
+/* 三类各一色（相邻不重用，避免读成渐变） */
+.fam-block[data-family="primitive"] { --fam-c: var(--c-form);--fam-soft: var(--c-form-soft); }
+.fam-block[data-family="orchestration"] { --fam-c: var(--c-layer); --fam-soft: var(--c-layer-soft); }
+.fam-block[data-family="turnkey"] { --fam-c: var(--c-use);   --fam-soft: var(--c-use-soft); }
+.fam-badge {
+  font-size: var(--fs-micro); font-weight: 600; line-height: 1; letter-spacing: .02em;
+  color: var(--fam-c, var(--c-layer)); background: var(--fam-soft, var(--c-layer-soft));
+  padding: 4px 9px; border-radius: 999px; flex-shrink: 0;
 }
 .fam-n {
   font-size: var(--fs-micro); font-weight: 600; line-height: 1;
@@ -424,7 +421,7 @@ th.w-28 { width: 112px; } th.w-52 { width: 208px; }
 .block-head .t-section-lead { margin-bottom: var(--sp-3); }
 
 /* ── 详情页 ────────────────────────────────────────────────────────── */
-.detail { padding-block: var(--sp-6) var(--sp-7); }
+.detail { padding-block: var(--section-pad) calc(var(--section-pad) * 1.5); }
 .back {
   font-size: var(--fs-xs); color: var(--ink-dim);
   display: inline-flex; align-items: center; gap: 6px;
@@ -434,8 +431,10 @@ th.w-28 { width: 112px; } th.w-52 { width: 208px; }
 .detail-head { display: flex; align-items: flex-start; gap: var(--sp-3); margin-bottom: var(--sp-4); }
 .detail-head .mark { width: 52px; height: 52px; font-size: 20px; border-radius: 13px; }
 .detail-head h1 {
-  font-size: var(--fs-2xl); line-height: var(--lh-tight);
-  font-weight: 800; letter-spacing: -.028em; margin: 0 0 4px;
+  /* 2026-10-03：原 --fs-2xl(30px) → 实测详情页 h1 仅 30px，而首页 66px，差 2.2 倍。
+     这条规则特异性 (0,1,1) 高于 brand.css 的裸 h1，所以必须在这里改才生效。 */
+  font-size: var(--display-sub); line-height: var(--lh-tight);
+  font-weight: 800; letter-spacing: -.028em; margin: 0 0 var(--sp-2);
 }
 .badges { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: var(--sp-5); }
 .badge {
