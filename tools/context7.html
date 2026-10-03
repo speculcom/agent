@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Context7 — Tools | 投机取巧</title>
+  <meta name="description" content="Context7（Upstash）：MCP 赛道上唯一的远程托管条目 —— 为 Agent 提供版本感知的库文档，MIT 开源但核心服务在 Upstash 侧。" />
+  <link rel="canonical" href="https://agent.specul.com/tools/context7.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Context7" />
+  <meta property="og:url" content="https://agent.specul.com/tools/context7.html" />
+  <meta property="og:title" content="Context7 — Tools | 投机取巧" />
+  <meta property="og:description" content="Context7（Upstash）：MCP 赛道上唯一的远程托管条目 —— 为 Agent 提供版本感知的库文档，MIT 开源但核心服务在 Upstash 侧。" />
+  <meta name="theme-color" content="#05080f" />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%238b7cf8'/%3E%3Cstop offset='1' stop-color='%2322d3c5'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='48' height='48' rx='12' fill='%2305080f'/%3E%3Cpath d='M14 32 L24 12 L34 32' fill='none' stroke='url(%23g)' stroke-width='2.4' stroke-linejoin='round'/%3E%3Ccircle cx='24' cy='27' r='2.4' fill='%2322d3c5'/%3E%3C/svg%3E" />
+  <link rel="stylesheet" href="../brand.css" />
+  <link rel="stylesheet" href="../site.css" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Context7","applicationCategory":"DeveloperApplication","url":"https://github.com/upstash/context7","sameAs":"https://github.com/upstash/context7","description":"MCP 赛道上唯一的远程托管条目 —— 为 Agent 提供版本感知的库文档，MIT 开源但核心服务在 Upstash 侧。","dateModified":"2026-10-01","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}</script>
+</head>
+<body class="brand-ambient">
+  <a class="t-skip" href="#main">跳到主要内容</a>
+  <header class="site-header">
+    <div class="container site-bar">
+      <a class="brand" href="https://specul.com/" title="投机取巧">
+        <span class="brand-dot" aria-hidden="true"></span>
+        <span class="brand-text">
+          <span class="brand-name" id="markName" data-zh-name="投机取巧" data-en-name="Speculative Speculation">投机取巧</span>
+        </span>
+      </a>
+      <nav class="nav-links" aria-label="站点导航">
+        <a href="https://specul.com/"><span data-zh>首页</span><span data-en>Home</span></a>
+        <a href="https://learn.specul.com/"><span data-zh>学 AI</span><span data-en>Learn</span></a>
+        <a href="https://agent.specul.com/" aria-current="page"><span data-zh>Agent</span><span data-en>Agent</span></a>
+        <a href="https://models.specul.com/"><span data-zh>本地模型</span><span data-en>Models</span></a>
+        <a href="https://nav.specul.com/"><span data-zh>导航</span><span data-en>Directory</span></a>
+        <span class="nav-tools">
+          <button class="icon-btn" id="themeBtn" type="button" aria-label="切换明暗主题" title="切换明暗主题">☾</button>
+          <button class="icon-btn" id="langBtn" type="button" aria-label="Switch language" title="Switch language">EN</button>
+        </span>
+      </nav>
+    </div>
+  </header>
+  <main id="main">
+    <div class="container detail">
+      <nav class="crumbs" aria-label="面包屑">
+        <a href="https://agent.specul.com/">Agent 图谱</a>
+        <a href="/">Agents</a>
+        <a href="/harness/">Harness</a>
+        <span aria-current="page">Tools</span>
+      </nav>
+      <a class="back" href="./">← Tools</a>
+
+      <div class="detail-head">
+        <div class="mark" style="--card-accent:#F97316" aria-hidden="true">C7</div>
+        <div>
+          <h1>Context7</h1>
+          <div class="vendor is-caps">Upstash</div>
+        </div>
+      </div>
+
+      <div class="badges">
+        <span class="tag on">检索</span>
+        <span class="tag on">网络</span>
+        <span class="tag on">远程</span>
+        <span class="badge accent">partial</span>
+        <span class="badge">lifecycle: active</span>
+        <span class="badge">核验 2026-10-01</span>
+      </div>
+
+            <p class="panel-lead"><strong>MCP 赛道上唯一的远程托管条目</strong> —— 为 Agent 提供版本感知的库文档，MIT 开源但核心服务在 Upstash 侧。</p>
+
+            <div class="panel is-slim">
+        <h2>适合与不适合</h2>
+        <p>需要查当前版本库文档的场景：库升级后的 API 变更、
+新版本引入的配置项、模型不确定的第三方库用法。</p>
+        <p class="warn-p"><strong>不适合</strong>涉密场景**——查询内容会发送到 Upstash 服务器，需先评估数据出境。
+也不适合查内部代码或私有库。</p>
+      </div>
+
+
+      <div class="block-head">
+        <h2 class="t-h2">固定坐标系</h2>
+        <p class="t-section-lead">11 个维度，与同赛道其他对象逐项可比。</p>
+      </div>
+      <dl class="axes">
+        <div class="axis">
+          <dt>模型与开放条件</dt>
+          <dd>本身不调用模型，是被客户端调用的接口实现。 为 Agent 提供<strong>版本感知的库与 API 文档</strong>， 解决模型训练数据滞后导致的使用错误。</dd>
+        </div>
+        <div class="axis">
+          <dt>运行位置</dt>
+          <dd><strong>远程托管 HTTP 服务</strong>（<code>https://mcp.context7.com/mcp</code>）， 由 Upstash 运营。<strong>这是本赛道唯一默认走远程的条目</strong>， 其余 reference server 均为本地 stdio 进程。</dd>
+        </div>
+        <div class="axis">
+          <dt>本地文件</dt>
+          <dd><strong>无任何本地文件访问能力</strong>。纯文档检索服务。</dd>
+        </div>
+        <div class="axis">
+          <dt>关机后的任务</dt>
+          <dd><strong>作为远程托管服务始终可用</strong>，与客户端进程生命周期无关—— 这是本赛道唯一不受本机开关影响的条目。 但<strong>服务可用性取决于 Upstash 侧的服务状态</strong>， 本仓库的 releases 不能保证服务端可用性，两者需分开判断。</dd>
+        </div>
+        <div class="axis">
+          <dt>工具与扩展</dt>
+          <dd>提供 MCP 工具用于检索库文档。 README 强调正确用法：使用 Library Id、<strong>指定版本</strong>（Specify a Version）、 以及通过 rule 声明「需要库文档时总是使用 Context7」。 输出为结构化文档内容。</dd>
+        </div>
+        <div class="axis">
+          <dt>上下文与记忆</dt>
+          <dd>无跨会话记忆，但<strong>文档检索本身是&quot;外部记忆&quot;</strong>—— 弥补模型训练数据滞后，这是它的核心定位。</dd>
+        </div>
+        <div class="axis">
+          <dt>权限与限制</dt>
+          <dd><strong>权限风险与本地 server 完全不同</strong>： 不碰本地文件，但要<strong>把查询内容发送到 Upstash 服务器</strong>。 传入 Library Id 与具体问题即产生网络请求。 认证用 API Key（<code>Authorization: Bearer YOUR_API_KEY</code>）。 无独立审批机制。</dd>
+        </div>
+        <div class="axis">
+          <dt>适合什么任务</dt>
+          <dd>需要查当前版本库文档的场景：库升级后的 API 变更、 新版本引入的配置项、模型不确定的第三方库用法。 不适合查内部代码或私有库。</dd>
+        </div>
+        <div class="axis">
+          <dt>传输方式</dt>
+          <dd><strong>远程 Streamable HTTP</strong>，服务端点为 <code>https://mcp.context7.com/mcp</code>。 <strong>本赛道唯一以远程服务为默认形态的条目</strong>—— 其余官方 reference server 均为本地 stdio 进程。</dd>
+        </div>
+        <div class="axis">
+          <dt>认证机制</dt>
+          <dd><strong>需 API Key</strong>，通过 <code>Authorization: Bearer YOUR_API_KEY</code> 头传递。 README 说明可经 OAuth 流程由安装器自动生成 key。 <strong>额度档位本轮已核验（2026-10-01，官方 plans 页）</strong>： Free <strong>1,000 次/月</strong>（Search API + Context API 合计）、 Pro <strong>2,000 次/席位/月</strong>、超出 <strong>$5 / 1,000 次</strong>不阻塞。 另Free 档本身就用 OAuth 2.0（官方对比表把 OAuth 2.0 列为 Free 的能力）。 ⚠ <strong>Free 超出额度后的确切行为官方页面未给答案正文</strong>，只列了问题标题。</dd>
+        </div>
+        <div class="axis">
+          <dt>权限范围</dt>
+          <dd><strong>无本地权限风险，但有数据出境风险</strong>： 查询内容会发送到 Upstash 服务器。 传入的库名与问题文本属于对外传输内容， 涉密场景需评估。 <strong>本轮补一条官方对隐私的明确承诺</strong>（官方 FAQ 标题即 &quot;How do you keep the privacy of my queries?&quot;）： 查询只发<strong>文档问题与库名/ID</strong>， 不发完整 prompt、源代码与对话历史； 且官方要求agent 不要在查询里带凭据、个人数据或专有代码。 服务端自身的文档索引范围由 Upstash 掌握，客户端不可见。</dd>
+        </div>
+      </dl>
+
+            <div class="panel warn">
+        <h2 class="warn">头号误解</h2>
+        <ul>
+          <li>以为是纯本地工具，实际查询会发到 Upstash 的远程服务器</li>
+          <li>不指定版本号会拿到不匹配的文档，README 专门强调Specify a Version</li>
+          <li>以为开源就等于全部本地，代码 MIT 但核心是托管服务</li>
+        </ul>
+      </div>
+
+
+            <div class="panel is-slim">
+        <h2>价格</h2>
+        <table class="src">
+          <tbody>
+            <tr><th class="w-28">月度入口</th><td>Free $0（1,000 次/月）；Pro $10 每席位/月（2,000 次/席位）；Enterprise 定制</td></tr>
+            <tr><th class="w-28">月度数值</th><td>$0</td></tr>
+            <tr><th class="w-28">年付</th><td>官方未列年付档（页面只有月付 per seat）</td></tr>
+            <tr><th class="w-28">额度说明</th><td><strong>开源部分为 MIT，但索引/解析/服务端是Upstash 的私有托管服务</strong> —— 官方 README 自己划了界：这个仓只托管 MCP server 的源码， API 后端、解析引擎与爬取引擎均为私有。 <strong>定价（2026-10-01 核验官方 context7.com/docs/plans-pricing.md，该页是 plans 页的 307 目标）</strong>： | 档 | 价格 | 含额度 | 超出计费 | |---|---|---|---| | <strong>Free</strong> | <strong>$0</strong> | <strong>1,000 次/月</strong>（Search API + Context API） | 阻塞 | | <strong>Pro</strong> | <strong>$10 每席位/月</strong> | <strong>2,000 次/席位</strong> | <strong>Unlimited（$5 / 1,000 次）</strong> | | <strong>Enterprise</strong> | <strong>Custom</strong> | Custom | Custom | <strong>另有一项独立计费项（易被漏看）</strong>： <strong>Private Repo Parsing = $5 / 1M tokens</strong> —— 私有库文档解析按token 单独计费， 与 API 调用额度是<strong>两个独立的钱包</strong>。 <strong>Free 档的三项能力</strong>（官方对比表）：Public Repos、Access Control、OAuth 2.0。 <strong>Pro 解锁</strong>：Private Repos、Team Collaboration、<strong>Unlimited API Calls</strong>。 <strong>Enterprise 解锁</strong>：SOC-2、SSO（SAML / OIDC）、<strong>Self-Hosted（On-Premise）</strong>， 且支持把额度与私有解析都按Custom 定制。 <strong>⚠ 一条必须提醒的口径冲突</strong>：多个第三方站（aicoolies / decodo 等，2026-09 前后） 称Pro 是「5,000 次/席位」，<strong>与官方页面的 2,000 不一致</strong>。 本档案按官方页面写<strong>2,000</strong>，第三方数字视为旧制或臆测。 ⚠ Free 档超出 1,000 次后的<strong>具体行为</strong>（完全阻塞 / 降速 / 每日 bonus） 官方页面只列了问题标题、未给答案正文，本档案不做推测。</td></tr>
+          </tbody>
+        </table>
+        <p class="fine mt-3">不同币种不做折算。优惠、地区、税费与登录后报价可能变化，购买前请到官方页面确认。</p>
+      </div>
+
+
+            <div class="panel is-slim">
+        <h2>未知项清单</h2>
+        <ul>
+          <li><strong>Free 档超出 1,000 次/月后的确切行为</strong>（官方页面只列了问题标题，未给答案正文；不做推测）</li>
+          <li>Enterprise 的具体报价</li>
+          <li>文档索引的覆盖范围与更新频率（官方有「Keeping Libraries Fresh」专题，本轮未取正文）</li>
+          <li>服务端 SLA</li>
+          <li>官方隐私声明（只发查询与库名、不发源码与对话历史）<strong>未实测验证</strong></li>
+        </ul>
+      </div>
+
+
+      <div class="panel">
+        <h2>证据来源</h2>
+        <p class="t-sm">判断可回到以下一手源复核。本站核验日 2026-10-01，内容更新日 2026-10-01。</p>
+        <table class="src">
+          <thead><tr><th class="w-20">类型</th><th class="w-52">名称</th><th>链接</th></tr></thead>
+          <tbody>
+            <tr><td>docs</td><td>Upstash · Context7 README（API Key 与远程端点说明、**「本仓只托管 MCP server 源码，API 后端/解析/爬虫为私有」的自述**）</td><td><a href="https://github.com/upstash/context7" target="_blank" rel="noopener">https://github.com/upstash/context7</a></td></tr>
+            <tr><td>pricing</td><td>官方 Pricing &amp; Plans（核验 2026-10-01：Free $0/1,000 次每月、Pro $10 每席位每月/2,000 次每席位/超出 $5 每 1,000 次、Private Repo Parsing $5 每 1M tokens、Enterprise Custom 含 SOC-2/SSO/Self-Hosted；**与第三方「Pro 5,000 次」冲突，按官方 2,000**）</td><td><a href="https://context7.com/docs/plans-pricing.md" target="_blank" rel="noopener">https://context7.com/docs/plans-pricing.md</a></td></tr>
+            <tr><td>changelog</td><td>Upstash · Context7 Releases（ctx7@0.5.12）</td><td><a href="https://github.com/upstash/context7/releases" target="_blank" rel="noopener">https://github.com/upstash/context7/releases</a></td></tr>
+            <tr><td>changelog</td><td>Upstash · Context7 Commits</td><td><a href="https://github.com/upstash/context7/commits/main" target="_blank" rel="noopener">https://github.com/upstash/context7/commits/main</a></td></tr>
+            <tr><td>docs</td><td>Model Context Protocol · 规范</td><td><a href="https://modelcontextprotocol.io/specification" target="_blank" rel="noopener">https://modelcontextprotocol.io/specification</a></td></tr>
+          </tbody>
+        </table>
+      </div>
+
+            <div class="panel is-slim">
+        <h2>实测记录</h2>
+        <p>本站尚未完成实测。测试协议见 <a href="https://github.com/speculcom/ai-agent-guide/blob/main/tracks/agents/tasks/_protocol.md" target="_blank" rel="noopener">tasks/_protocol.md</a>。
+
+<strong>实测建议</strong>：这个 server 的实测重点与其他条目不同——
+要测的是<strong>文档准确度</strong>（给定库与版本，返回的文档是否匹配当前 API），
+而非能否调用成功。</p>
+      </div>
+
+
+            <div class="panel is-slim">
+        <h2>相关条目</h2>
+        <ul class="rel-list">
+          <li><span class="rel-t"><a href="./playwright.html">Playwright MCP Server</a></span><span class="rel-n">同为社区维护，权限设计更透明</span></li>
+          <li><span class="rel-t"><a href="./fetch.html">Fetch MCP Server</a></span><span class="rel-n">同为网络访问方向</span></li>
+        </ul>
+      </div>
+
+
+      <p class="fine mt-6">
+        本页由 <a href="https://github.com/speculcom/ai-agent-guide" target="_blank" rel="noopener" class="link-brand">ai-agent-guide</a> 数据层生成（CC BY 4.0）。
+        方法论与坐标系定义见仓库内 <code>METHODOLOGY.md</code>。
+      </p>
+    </div>
+  </main>
+  <footer class="site-footer">
+    <div class="container foot-row">
+      <div class="foot-brand">
+        <span class="brand-dot" aria-hidden="true"></span>
+        <span class="foot-copy">© 2026 投机取巧 · <span data-zh>Specul</span><span data-en>Specul</span></span>
+      </div>
+      <nav class="foot-links" aria-label="页脚导航">
+          <a href="https://specul.com/"><span data-zh>首页</span><span data-en>Home</span></a>
+          <a href="https://learn.specul.com/">学 AI</a>
+          <a href="https://agent.specul.com/">Agent</a>
+          <a href="https://models.specul.com/">本地模型</a>
+          <a href="https://nav.specul.com/"><span data-zh>导航</span><span data-en>Directory</span></a>
+          <a href="https://github.com/speculcom/ai-agent-guide" target="_blank" rel="noopener">GitHub</a>
+      </nav>
+      <nav class="foot-legal-links" aria-label="法律">
+        <a href="https://specul.com/legal.html"><span data-zh>法律条款</span><span data-en>Legal terms</span></a>
+        <a href="https://specul.com/legal.html#s6"><span data-zh>免责声明</span><span data-en>Disclaimer</span></a>
+        <a href="https://specul.com/legal.html#s8"><span data-zh>隐私与本地存储</span><span data-en>Privacy</span></a>
+      </nav>
+    </div>
+  </footer>
+  <script src="../brand.js"></script>
+  <script>
+    (function () {
+      var root = document.documentElement;
+      function sync() { root.setAttribute('data-lang', root.lang === 'en' ? 'en' : 'zh'); }
+      new MutationObserver(sync).observe(root, { attributes: true, attributeFilter: ['lang'] });
+      sync();
+    })();
+  </script>
+</body>
+</html>
