@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GitHub Copilot — Agents | 投机取巧</title>
+  <meta name="description" content="GitHub Copilot（GitHub / Microsoft）：形态最广、生态最依附 GitHub 的一个——从网站到 CLI 到主流编辑器全覆盖，且能把任务委派给 Claude / Codex（Preview）。" />
+  <link rel="canonical" href="https://agent.specul.com/copilot.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="GitHub Copilot" />
+  <meta property="og:url" content="https://agent.specul.com/copilot.html" />
+  <meta property="og:title" content="GitHub Copilot — Agents | 投机取巧" />
+  <meta property="og:description" content="GitHub Copilot（GitHub / Microsoft）：形态最广、生态最依附 GitHub 的一个——从网站到 CLI 到主流编辑器全覆盖，且能把任务委派给 Claude / Codex（Preview）。" />
+  <meta name="theme-color" content="#05080f" />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%238b7cf8'/%3E%3Cstop offset='1' stop-color='%2322d3c5'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='48' height='48' rx='12' fill='%2305080f'/%3E%3Cpath d='M14 32 L24 12 L34 32' fill='none' stroke='url(%23g)' stroke-width='2.4' stroke-linejoin='round'/%3E%3Ccircle cx='24' cy='27' r='2.4' fill='%2322d3c5'/%3E%3C/svg%3E" />
+  <link rel="stylesheet" href="brand.css" />
+  <link rel="stylesheet" href="site.css" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"GitHub Copilot","applicationCategory":"DeveloperApplication","url":"https://github.com/features/copilot","sameAs":"https://github.com/features/copilot","description":"形态最广、生态最依附 GitHub 的一个——从网站到 CLI 到主流编辑器全覆盖，且能把任务委派给 Claude / Codex（Preview）。","dateModified":"2026-09-29","offers":{"@type":"Offer","price":"10","priceCurrency":"USD"}}</script>
+</head>
+<body class="brand-ambient">
+  <a class="t-skip" href="#main">跳到主要内容</a>
+  <header class="site-header">
+    <div class="container site-bar">
+      <a class="brand" href="https://specul.com/" title="投机取巧">
+        <span class="brand-dot" aria-hidden="true"></span>
+        <span class="brand-text">
+          <span class="brand-name" id="markName" data-zh-name="投机取巧" data-en-name="Speculative Speculation">投机取巧</span>
+        </span>
+      </a>
+      <nav class="nav-links" aria-label="站点导航">
+        <a href="https://specul.com/"><span data-zh>首页</span><span data-en>Home</span></a>
+        <a href="https://learn.specul.com/"><span data-zh>学 AI</span><span data-en>Learn</span></a>
+        <a href="https://agent.specul.com/" aria-current="page"><span data-zh>Agent</span><span data-en>Agent</span></a>
+        <a href="https://models.specul.com/"><span data-zh>本地模型</span><span data-en>Models</span></a>
+        <a href="https://nav.specul.com/"><span data-zh>导航</span><span data-en>Directory</span></a>
+        <span class="nav-tools">
+          <button class="icon-btn" id="themeBtn" type="button" aria-label="切换明暗主题" title="切换明暗主题">☾</button>
+          <button class="icon-btn" id="langBtn" type="button" aria-label="Switch language" title="Switch language">EN</button>
+        </span>
+      </nav>
+    </div>
+  </header>
+  <main id="main">
+    <div class="container detail">
+      <nav class="crumbs" aria-label="面包屑">
+        <a href="https://agent.specul.com/">Agent 图谱</a>
+        <span aria-current="page">Agents</span>
+        <a href="/harness/">Harness</a>
+        <a href="/tools/">Tools</a>
+      </nav>
+      <a class="back" href="./">← Agents</a>
+
+      <div class="detail-head">
+        <div class="mark" style="--card-accent:#24292F" aria-hidden="true">GH</div>
+        <div>
+          <h1>GitHub Copilot</h1>
+          <div class="vendor is-caps">GitHub / Microsoft</div>
+        </div>
+      </div>
+
+      <div class="badges">
+        <span class="tag on">编程</span>
+        <span class="tag on">IDE</span>
+        <span class="tag on">混合</span>
+        <span class="tag on">云端</span>
+        <span class="tag on">协作</span>
+        <span class="badge accent">partial</span>
+        <span class="badge">lifecycle: active</span>
+        <span class="badge">核验 2026-09-29</span>
+      </div>
+
+            <p class="panel-lead"><strong>形态最广、生态最依附 GitHub</strong> 的一个——从网站到 CLI 到主流编辑器全覆盖，且能把任务委派给 Claude / Codex（Preview）。</p>
+
+            <div class="panel is-slim">
+        <h2>适合与不适合</h2>
+        <p>已在 GitHub 生态内（用 PR / Issue / Actions 工作）的人。
+需要最广编辑器覆盖的人（VS Code / JetBrains / Eclipse / Xcode 都能用）。
+企业采购需要额度池治理与管理员支出控制的人。</p>
+        <p class="warn-p"><strong>不适合</strong>要求定价一次讲清的人——
+本次未能逐档确认价格数字，必须自行到官网核对。
+也不适合依赖第三方 agent 委派的场景（官方标注为 Preview）。</p>
+      </div>
+
+
+      <div class="block-head">
+        <h2 class="t-h2">固定坐标系</h2>
+        <p class="t-section-lead">8 个维度，与同赛道其他对象逐项可比。</p>
+      </div>
+      <dl class="axes">
+        <div class="axis">
+          <dt>模型与开放条件</dt>
+          <dd>由 GitHub / Microsoft 提供，绑定 GitHub 账号体系。 <strong>「Delegate tasks to third-party coding agents like Claude by Anthropic and OpenAI Codex（Preview）」—— 官方明确标注可把任务委派给第三方 agent（Claude、Codex）， 且标注为 Preview。</strong> <strong>具体模型清单与选择方式本次未核验。</strong></dd>
+        </div>
+        <div class="axis">
+          <dt>运行位置</dt>
+          <dd><strong>形态最广的一个</strong>： GitHub 网站本身（含 github.com 与 GitHub Mobile）、 Copilot app、Copilot CLI、 以及 VS Code / Visual Studio / JetBrains / Eclipse / Xcode 等编辑器。 另有 Codespaces 提供的即时开发环境。</dd>
+        </div>
+        <div class="axis">
+          <dt>本地文件</dt>
+          <dd>通过编辑器扩展或 GitHub 平台访问代码。 <strong>索引策略本次未核验。</strong></dd>
+        </div>
+        <div class="axis">
+          <dt>关机后的任务</dt>
+          <dd><strong>有明确的 cloud agent 形态</strong>： 「Assign work to Copilot to research, plan, and write code — with or without a pull request」， 即云端智能体可以研究、规划、写代码并（可选）创建 PR。 <strong>客户端关闭后的行为本次未核验。</strong></dd>
+        </div>
+        <div class="axis">
+          <dt>工具与扩展</dt>
+          <dd><strong>MCP 是官方平台级能力</strong>—— 导航栏即有独立的「MCP Registry / Integrate external tools」条目。 支持自定义指令与自定义 agent。 <strong>File diff reviews in code editors</strong> 在更高档位提供。</dd>
+        </div>
+        <div class="axis">
+          <dt>上下文与记忆</dt>
+          <dd>有 App modernization for Java and .NET（把工作分配给 Copilot， 由它创建 pull request）。 <strong>上下文窗口与跨会话记忆本次未核验。</strong></dd>
+        </div>
+        <div class="axis">
+          <dt>权限与限制</dt>
+          <dd><strong>依赖 GitHub 的权限体系</strong>—— 天然与仓库、PR、组织策略集成。 <strong>具体的审批机制与沙箱设计本次未核验。</strong> Enterprise 相关能力受组织策略控制。</dd>
+        </div>
+        <div class="axis">
+          <dt>适合什么任务</dt>
+          <dd>已在 GitHub 生态内（用 PR / Issue / Actions 工作）的人； 需要最广编辑器覆盖的人（VS Code / JetBrains / Eclipse / Xcode 都能用）； 企业采购需要额度池治理与管理员支出控制的人。 只想试 AI 补全的人可用 Copilot Free（有限额度）。</dd>
+        </div>
+      </dl>
+
+            <div class="panel warn">
+        <h2 class="warn">头号误解</h2>
+        <ul>
+          <li>把 Flex allotment 当固定额度，官方明确说它会变</li>
+          <li>忽略 Preview 状态的第三方 agent 委派（Claude / Codex）</li>
+          <li>以为个人档也有额度池共享，Pooled usage 仅 Business / Enterprise</li>
+        </ul>
+      </div>
+
+
+            <div class="panel is-slim">
+        <h2>价格</h2>
+        <table class="src">
+          <tbody>
+            <tr><th class="w-28">月度入口</th><td>Copilot Free（2,000 补全/月）/ Pro $10 / Pro+ $39 / Max $100 每月</td></tr>
+            <tr><th class="w-28">月度数值</th><td>$10</td></tr>
+            <tr><th class="w-28">年付</th><td>年付按档折算（Pro $15、Pro+ $70、Max $200 每月等值），无统一折算率</td></tr>
+            <tr><th class="w-28">额度说明</th><td><strong>2026-10-01 用 Playwright 渲染官方 plans 页后逐档确认，月付/年付两套口径都拿到</strong>： 个人四档 —— Free $0（<strong>每月 2,000 次补全</strong>，chat 与 agent 用量有限）、 Pro $10/月、Pro+ $39/月、Max $100/月；这三档的 agent 与 chat 配额均为 <strong>Unlimited</strong>。 <strong>月付额度</strong>：Pro $15、Pro+ $70、Max $200 每月总credits（官方标注序号 6的附加说明）。 团队每用户每月 —— Pro $10、Pro+ $39、Max $100（另有 Enterprise 定制）。 <strong>年付口径数字不同</strong>（Pro $15、Pro+ $70、Max $200），页面同时呈现两套， 本站按「月付=当年付折扣后」理解，但<strong>具体折算率官方未单列，勿自行推算</strong>。 另有机制：Flex allotment（官方明确标注「Flex allotments may change over time」， 即额度可变）、可额外购买 GitHub AI Credits、 Business/Enterprise 有 Pooled usage（组织内共享额度 + 管理员支出控制）。</td></tr>
+          </tbody>
+        </table>
+        <p class="fine mt-3">不同币种不做折算。优惠、地区、税费与登录后报价可能变化，购买前请到官方页面确认。</p>
+      </div>
+
+
+            <div class="panel is-slim">
+        <h2>未知项清单</h2>
+        <ul>
+          <li>各档位的完整价格对照（本次未能逐档确认）</li>
+          <li>具体模型清单与选择方式</li>
+          <li>索引策略</li>
+          <li>上下文窗口与跨会话记忆</li>
+          <li>审批机制与沙箱设计</li>
+          <li>第三方 agent 委派的实际可用范围</li>
+          <li>企业策略如何影响可用能力</li>
+        </ul>
+      </div>
+
+
+      <div class="panel">
+        <h2>证据来源</h2>
+        <p class="t-sm">判断可回到以下一手源复核。本站核验日 2026-09-29，内容更新日 2026-09-29。</p>
+        <table class="src">
+          <thead><tr><th class="w-20">类型</th><th class="w-52">名称</th><th>链接</th></tr></thead>
+          <tbody>
+            <tr><td>pricing</td><td>GitHub · Copilot 定价与 plans 页（功能逐项对照）</td><td><a href="https://github.com/features/copilot/plans" target="_blank" rel="noopener">https://github.com/features/copilot/plans</a></td></tr>
+            <tr><td>docs</td><td>GitHub · Copilot 官方文档</td><td><a href="https://docs.github.com/en/copilot" target="_blank" rel="noopener">https://docs.github.com/en/copilot</a></td></tr>
+            <tr><td>changelog</td><td>GitHub · Changelog（Copilot 标签）</td><td><a href="https://github.blog/changelog/label/copilot/" target="_blank" rel="noopener">https://github.blog/changelog/label/copilot/</a></td></tr>
+          </tbody>
+        </table>
+      </div>
+
+            <div class="panel is-slim">
+        <h2>实测记录</h2>
+        <p>本站尚未完成实测。测试协议见 <a href="https://github.com/speculcom/ai-agent-guide/blob/main/tracks/agents/tasks/_protocol.md" target="_blank" rel="noopener">tasks/_protocol.md</a>。
+
+<strong>实测建议</strong>：重点测<strong>第三方 agent 委派（Preview）</strong>的实际可用性——
+这是本赛道唯一有这个能力的对象，值得先验证。</p>
+      </div>
+
+
+            <div class="panel is-slim">
+        <h2>相关条目</h2>
+        <ul class="rel-list">
+          <li><span class="rel-t"><a href="./cursor.html">Cursor</a></span><span class="rel-n">同赛道，架构更激进（自托管 + 子智能体编排）</span></li>
+          <li><span class="rel-t"><a href="./windsurf.html">Windsurf</a></span><span class="rel-n">同赛道，已改称 Devin Desktop</span></li>
+        </ul>
+      </div>
+
+
+      <p class="fine mt-6">
+        本页由 <a href="https://github.com/speculcom/ai-agent-guide" target="_blank" rel="noopener" class="link-brand">ai-agent-guide</a> 数据层生成（CC BY 4.0）。
+        方法论与坐标系定义见仓库内 <code>METHODOLOGY.md</code>。
+      </p>
+    </div>
+  </main>
+  <footer class="site-footer">
+    <div class="container foot-row">
+      <div class="foot-brand">
+        <span class="brand-dot" aria-hidden="true"></span>
+        <span class="foot-copy">© 2026 投机取巧 · <span data-zh>Specul</span><span data-en>Specul</span></span>
+      </div>
+      <nav class="foot-links" aria-label="页脚导航">
+          <a href="https://specul.com/"><span data-zh>首页</span><span data-en>Home</span></a>
+          <a href="https://learn.specul.com/">学 AI</a>
+          <a href="https://agent.specul.com/">Agent</a>
+          <a href="https://models.specul.com/">本地模型</a>
+          <a href="https://nav.specul.com/"><span data-zh>导航</span><span data-en>Directory</span></a>
+          <a href="https://github.com/speculcom/ai-agent-guide" target="_blank" rel="noopener">GitHub</a>
+      </nav>
+      <nav class="foot-legal-links" aria-label="法律">
+        <a href="https://specul.com/legal.html"><span data-zh>法律条款</span><span data-en>Legal terms</span></a>
+        <a href="https://specul.com/legal.html#s6"><span data-zh>免责声明</span><span data-en>Disclaimer</span></a>
+        <a href="https://specul.com/legal.html#s8"><span data-zh>隐私与本地存储</span><span data-en>Privacy</span></a>
+      </nav>
+    </div>
+  </footer>
+  <script src="brand.js"></script>
+  <script>
+    (function () {
+      var root = document.documentElement;
+      function sync() { root.setAttribute('data-lang', root.lang === 'en' ? 'en' : 'zh'); }
+      new MutationObserver(sync).observe(root, { attributes: true, attributeFilter: ['lang'] });
+      sync();
+    })();
+  </script>
+</body>
+</html>
