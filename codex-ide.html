@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Codex IDE 扩展 — Agents | 投机取巧</title>
+  <meta name="description" content="Codex IDE 扩展（OpenAI）：不是独立 IDE，是装进 VS Code / Cursor / Windsurf 的扩展——通过 app server 与 CLI 共享同一套会话机制。" />
+  <link rel="canonical" href="https://agent.specul.com/codex-ide.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Codex IDE 扩展" />
+  <meta property="og:url" content="https://agent.specul.com/codex-ide.html" />
+  <meta property="og:title" content="Codex IDE 扩展 — Agents | 投机取巧" />
+  <meta property="og:description" content="Codex IDE 扩展（OpenAI）：不是独立 IDE，是装进 VS Code / Cursor / Windsurf 的扩展——通过 app server 与 CLI 共享同一套会话机制。" />
+  <meta name="theme-color" content="#05080f" />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%238b7cf8'/%3E%3Cstop offset='1' stop-color='%2322d3c5'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='48' height='48' rx='12' fill='%2305080f'/%3E%3Cpath d='M14 32 L24 12 L34 32' fill='none' stroke='url(%23g)' stroke-width='2.4' stroke-linejoin='round'/%3E%3Ccircle cx='24' cy='27' r='2.4' fill='%2322d3c5'/%3E%3C/svg%3E" />
+  <link rel="stylesheet" href="brand.css" />
+  <link rel="stylesheet" href="site.css" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Codex IDE 扩展","applicationCategory":"DeveloperApplication","url":"https://developers.openai.com/codex/ide","sameAs":"https://developers.openai.com/codex/ide","description":"不是独立 IDE，是装进 VS Code / Cursor / Windsurf 的扩展——通过 app server 与 CLI 共享同一套会话机制。","dateModified":"2026-09-29"}</script>
+</head>
+<body class="brand-ambient">
+  <a class="t-skip" href="#main">跳到主要内容</a>
+  <header class="site-header">
+    <div class="container site-bar">
+      <a class="brand" href="https://specul.com/" title="投机取巧">
+        <span class="brand-dot" aria-hidden="true"></span>
+        <span class="brand-text">
+          <span class="brand-name" id="markName" data-zh-name="投机取巧" data-en-name="Speculative Speculation">投机取巧</span>
+        </span>
+      </a>
+      <nav class="nav-links" aria-label="站点导航">
+        <a href="https://specul.com/"><span data-zh>首页</span><span data-en>Home</span></a>
+        <a href="https://learn.specul.com/"><span data-zh>学 AI</span><span data-en>Learn</span></a>
+        <a href="https://agent.specul.com/" aria-current="page"><span data-zh>Agent</span><span data-en>Agent</span></a>
+        <a href="https://models.specul.com/"><span data-zh>本地模型</span><span data-en>Models</span></a>
+        <a href="https://nav.specul.com/"><span data-zh>导航</span><span data-en>Directory</span></a>
+        <span class="nav-tools">
+          <button class="icon-btn" id="themeBtn" type="button" aria-label="切换明暗主题" title="切换明暗主题">☾</button>
+          <button class="icon-btn" id="langBtn" type="button" aria-label="Switch language" title="Switch language">EN</button>
+        </span>
+      </nav>
+    </div>
+  </header>
+  <main id="main">
+    <div class="container detail">
+      <nav class="crumbs" aria-label="面包屑">
+        <a href="https://agent.specul.com/">Agent 图谱</a>
+        <span aria-current="page">Agents</span>
+        <a href="/harness/">Harness</a>
+        <a href="/tools/">Tools</a>
+      </nav>
+      <a class="back" href="./">← Agents</a>
+
+      <div class="detail-head">
+        <div class="mark" style="--card-accent:#10A37F" aria-hidden="true">C</div>
+        <div>
+          <h1>Codex IDE 扩展</h1>
+          <div class="vendor is-caps">OpenAI</div>
+        </div>
+      </div>
+
+      <div class="badges">
+        <span class="tag on">编程</span>
+        <span class="tag on">IDE</span>
+        <span class="tag on">本地</span>
+        <span class="badge accent">partial</span>
+        <span class="badge">lifecycle: active</span>
+        <span class="badge">核验 2026-09-29</span>
+      </div>
+
+            <p class="panel-lead"><strong>不是独立 IDE，是装进 VS Code / Cursor / Windsurf 的扩展</strong>——通过 app server 与 CLI 共享同一套会话机制。</p>
+
+            <div class="panel is-slim">
+        <h2>适合与不适合</h2>
+        <p>已在用 VS Code / Cursor / Windsurf 等编辑器，
+希望在同一环境里用 Codex 而不切换工具的人。
+需要 IDE 与 CLI 共享会话的人（app server 架构）。</p>
+        <p class="warn-p"><strong>不适合</strong>需要独立编辑器的人——
+本形态必须依附已有编辑器，无法单独使用。
+也不适合要求「权限行为在 IDE 与 CLI 严格一致」的场景，
+本次未核验两者是否一致。</p>
+      </div>
+
+
+      <div class="block-head">
+        <h2 class="t-h2">固定坐标系</h2>
+        <p class="t-section-lead">8 个维度，与同赛道其他对象逐项可比。</p>
+      </div>
+      <dl class="axes">
+        <div class="axis">
+          <dt>模型与开放条件</dt>
+          <dd>与 CLI 形态相同：OpenAI 自家模型。 <strong>具体模型清单与 IDE 形态下的映射本次未核验。</strong></dd>
+        </div>
+        <div class="axis">
+          <dt>运行位置</dt>
+          <dd><strong>IDE 形态是扩展，不是独立编辑器。</strong> 官方 README 原文： &quot;If you want Codex in your code editor (VS Code, Cursor, Windsurf), install in your IDE.&quot; 即<strong>装进 VS Code / Cursor / Windsurf 这类已有编辑器</strong>。 这与 Zed（独立编辑器）、Cline Desktop（原生应用）是不同形态。</dd>
+        </div>
+        <div class="axis">
+          <dt>本地文件</dt>
+          <dd>通过宿主编辑器访问工作区文件。 <strong>索引与上下文构建策略本次未核验</strong>—— 需查 developers.openai.com/codex/ide，该站在本环境 curl 返回 403。</dd>
+        </div>
+        <div class="axis">
+          <dt>关机后的任务</dt>
+          <dd>依赖宿主编辑器进程，编辑器关闭即停止。 <strong>是否有云端任务形态本次未核验。</strong></dd>
+        </div>
+        <div class="axis">
+          <dt>工具与扩展</dt>
+          <dd><strong>具体工具集本次未核验。</strong> 可参考 <a href="/codex-cli.html">CLI 形态</a> 的架构信息： app server 架构意味着 IDE 扩展与 CLI 共享同一后端。</dd>
+        </div>
+        <div class="axis">
+          <dt>上下文与记忆</dt>
+          <dd><strong>app server 架构是本工具的关键设计</strong>—— 线程可启动、续接与恢复， IDE 扩展与 CLI 通过 app server 共享同一套会话机制。 <strong>具体上下文窗口与压缩策略本次未核验。</strong></dd>
+        </div>
+        <div class="axis">
+          <dt>权限与限制</dt>
+          <dd><strong>审批与沙箱的具体形态本次未核验。</strong> CLI 形态已确认「沙箱与审批边界跟随运行环境」， 但 IDE 扩展形态是否一致，<strong>不能假设，需单独核验</strong>。</dd>
+        </div>
+        <div class="axis">
+          <dt>适合什么任务</dt>
+          <dd>已在用 VS Code / Cursor / Windsurf 等编辑器， 希望在同一环境里用 Codex 而不切换工具的人。 需要 IDE 与 CLI 共享会话的人（app server 架构）。</dd>
+        </div>
+      </dl>
+
+            <div class="panel warn">
+        <h2 class="warn">头号误解</h2>
+        <ul>
+          <li>把它当成独立 IDE，其实质是装进已有编辑器的扩展</li>
+          <li>以为 IDE 扩展与 CLI 是两套独立系统，app server 架构让它们共享会话</li>
+          <li>套用 CLI 的权限行为到 IDE 扩展，本次未核验两者是否一致</li>
+        </ul>
+      </div>
+
+
+            <div class="panel is-slim">
+        <h2>价格</h2>
+        <table class="src">
+          <tbody>
+            <tr><th class="w-28">月度入口</th><td>随 ChatGPT 套餐，档位见定价页</td></tr>
+            <tr><th class="w-28">年付</th><td>未核验年付报价</td></tr>
+            <tr><th class="w-28">额度说明</th><td>与 <a href="/codex-cli.html">CLI 形态</a> 共享同一授权： 随 ChatGPT 订阅。 <strong>API 计费与订阅不是同一额度。</strong> 官方 IDE 文档站在本次采集环境对 curl 返回 403， 定价与额度细节本次未核验，记为未知。</td></tr>
+          </tbody>
+        </table>
+        <p class="fine mt-3">不同币种不做折算。优惠、地区、税费与登录后报价可能变化，购买前请到官方页面确认。</p>
+      </div>
+
+
+            <div class="panel is-slim">
+        <h2>未知项清单</h2>
+        <ul>
+          <li>IDE 形态的完整工具集</li>
+          <li>索引与上下文构建策略（部分由宿主编辑器决定）</li>
+          <li>审批与沙箱在 IDE 形态下的具体行为</li>
+          <li>上下文窗口与压缩策略</li>
+          <li>是否支持自带 provider</li>
+        </ul>
+      </div>
+
+
+      <div class="panel">
+        <h2>证据来源</h2>
+        <p class="t-sm">判断可回到以下一手源复核。本站核验日 2026-09-29，内容更新日 2026-09-29。</p>
+        <table class="src">
+          <thead><tr><th class="w-20">类型</th><th class="w-52">名称</th><th>链接</th></tr></thead>
+          <tbody>
+            <tr><td>docs</td><td>OpenAI · Codex IDE 文档</td><td><a href="https://developers.openai.com/codex/ide" target="_blank" rel="noopener">https://developers.openai.com/codex/ide</a></td></tr>
+            <tr><td>repo</td><td>OpenAI · Codex 仓库 README（含 IDE 安装说明）</td><td><a href="https://github.com/openai/codex" target="_blank" rel="noopener">https://github.com/openai/codex</a></td></tr>
+            <tr><td>changelog</td><td>OpenAI · Codex CLI Releases（rust-v0.158.0 @ 2026-09-28）</td><td><a href="https://github.com/openai/codex/releases" target="_blank" rel="noopener">https://github.com/openai/codex/releases</a></td></tr>
+          </tbody>
+        </table>
+      </div>
+
+            <div class="panel is-slim">
+        <h2>实测记录</h2>
+        <p>本站尚未完成实测。测试协议见 <a href="https://github.com/speculcom/ai-agent-guide/blob/main/tracks/agents/tasks/_protocol.md" target="_blank" rel="noopener">tasks/_protocol.md</a>。
+
+<strong>实测建议</strong>：重点测 <strong>app server 的会话续接</strong>——
+在 IDE 开会话、切到 CLI 继续，看状态是否完整保留。
+这是它架构上最有价值也最需要验证的点。</p>
+      </div>
+
+
+            <div class="panel is-slim">
+        <h2>相关条目</h2>
+        <ul class="rel-list">
+          <li><span class="rel-t"><a href="./claude-code.html">Claude Code</a></span><span class="rel-n">同为「扩展 + CLI」双形态架构</span></li>
+          <li><span class="rel-t"><a href="./zed.html">Zed</a></span><span class="rel-n">同赛道的另一端：独立编辑器</span></li>
+          <li><span class="rel-t"><a href="./cline.html">Cline</a></span><span class="rel-n">三形态全覆盖的另一实现</span></li>
+        </ul>
+      </div>
+
+
+      <p class="fine mt-6">
+        本页由 <a href="https://github.com/speculcom/ai-agent-guide" target="_blank" rel="noopener" class="link-brand">ai-agent-guide</a> 数据层生成（CC BY 4.0）。
+        方法论与坐标系定义见仓库内 <code>METHODOLOGY.md</code>。
+      </p>
+    </div>
+  </main>
+  <footer class="site-footer">
+    <div class="container foot-row">
+      <div class="foot-brand">
+        <span class="brand-dot" aria-hidden="true"></span>
+        <span class="foot-copy">© 2026 投机取巧 · <span data-zh>Specul</span><span data-en>Specul</span></span>
+      </div>
+      <nav class="foot-links" aria-label="页脚导航">
+          <a href="https://specul.com/"><span data-zh>首页</span><span data-en>Home</span></a>
+          <a href="https://learn.specul.com/">学 AI</a>
+          <a href="https://agent.specul.com/">Agent</a>
+          <a href="https://models.specul.com/">本地模型</a>
+          <a href="https://nav.specul.com/"><span data-zh>导航</span><span data-en>Directory</span></a>
+          <a href="https://github.com/speculcom/ai-agent-guide" target="_blank" rel="noopener">GitHub</a>
+      </nav>
+      <nav class="foot-legal-links" aria-label="法律">
+        <a href="https://specul.com/legal.html"><span data-zh>法律条款</span><span data-en>Legal terms</span></a>
+        <a href="https://specul.com/legal.html#s6"><span data-zh>免责声明</span><span data-en>Disclaimer</span></a>
+        <a href="https://specul.com/legal.html#s8"><span data-zh>隐私与本地存储</span><span data-en>Privacy</span></a>
+      </nav>
+    </div>
+  </footer>
+  <script src="brand.js"></script>
+  <script>
+    (function () {
+      var root = document.documentElement;
+      function sync() { root.setAttribute('data-lang', root.lang === 'en' ? 'en' : 'zh'); }
+      new MutationObserver(sync).observe(root, { attributes: true, attributeFilter: ['lang'] });
+      sync();
+    })();
+  </script>
+</body>
+</html>
