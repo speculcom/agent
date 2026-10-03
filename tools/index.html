@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>给 agent 装的工具 — 缺什么，装什么 —— 给 agent 装的 MCP 工具 | 投机取巧</title>
+  <meta name="description" content="MCP server 的权限范围、传输方式与输出可用性。收录标准：已发布为可安装的 MCP server、有官方仓库或文档可回溯、近 30 天有实质更新。这里是能力缺口查表，不是选型对比。" />
+  <link rel="canonical" href="https://agent.specul.com/tools/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="给 agent 装的工具" />
+  <meta property="og:url" content="https://agent.specul.com/tools/" />
+  <meta property="og:title" content="给 agent 装的工具 — 缺什么，装什么 —— 给 agent 装的 MCP 工具 | 投机取巧" />
+  <meta property="og:description" content="MCP server 的权限范围、传输方式与输出可用性。收录标准：已发布为可安装的 MCP server、有官方仓库或文档可回溯、近 30 天有实质更新。这里是能力缺口查表，不是选型对比。" />
+  <meta name="theme-color" content="#05080f" />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%238b7cf8'/%3E%3Cstop offset='1' stop-color='%2322d3c5'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='48' height='48' rx='12' fill='%2305080f'/%3E%3Cpath d='M14 32 L24 12 L34 32' fill='none' stroke='url(%23g)' stroke-width='2.4' stroke-linejoin='round'/%3E%3Ccircle cx='24' cy='27' r='2.4' fill='%2322d3c5'/%3E%3C/svg%3E" />
+  <link rel="stylesheet" href="../brand.css" />
+  <link rel="stylesheet" href="../site.css" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"CollectionPage","name":"给 agent 装的工具","description":"MCP server 的权限范围、传输方式与输出可用性。收录标准：已发布为可安装的 MCP server、有官方仓库或文档可回溯、近 30 天有实质更新。这里是能力缺口查表，不是选型对比。","url":"https://agent.specul.com/tools/","isPartOf":{"@type":"WebSite","name":"Specul","url":"https://specul.com/"},"about":[{"@type":"SoftwareApplication","name":"Context7","applicationCategory":"DeveloperApplication","url":"https://github.com/upstash/context7"},{"@type":"SoftwareApplication","name":"Everything MCP Server","applicationCategory":"DeveloperApplication","url":"https://github.com/modelcontextprotocol/servers/tree/main/src/everything"},{"@type":"SoftwareApplication","name":"Fetch MCP Server","applicationCategory":"DeveloperApplication","url":"https://github.com/modelcontextprotocol/servers/tree/main/src/fetch"},{"@type":"SoftwareApplication","name":"Filesystem MCP Server","applicationCategory":"DeveloperApplication","url":"https://www.npmjs.com/package/@modelcontextprotocol/server-filesystem"},{"@type":"SoftwareApplication","name":"Git MCP Server","applicationCategory":"DeveloperApplication","url":"https://github.com/modelcontextprotocol/servers/tree/main/src/git"},{"@type":"SoftwareApplication","name":"Knowledge Graph Memory Server","applicationCategory":"DeveloperApplication","url":"https://www.npmjs.com/package/@modelcontextprotocol/server-memory"},{"@type":"SoftwareApplication","name":"Playwright MCP Server","applicationCategory":"DeveloperApplication","url":"https://github.com/microsoft/playwright-mcp"},{"@type":"SoftwareApplication","name":"Sequential Thinking MCP Server","applicationCategory":"DeveloperApplication","url":"https://www.npmjs.com/package/@modelcontextprotocol/server-sequential-thinking"},{"@type":"SoftwareApplication","name":"Time MCP Server","applicationCategory":"DeveloperApplication","url":"https://github.com/modelcontextprotocol/servers/tree/main/src/time"}]}</script>
+</head>
+<body class="brand-ambient">
+  <a class="t-skip" href="#main">跳到主要内容</a>
+  <header class="site-header">
+    <div class="container site-bar">
+      <a class="brand" href="https://specul.com/" title="投机取巧">
+        <span class="brand-dot" aria-hidden="true"></span>
+        <span class="brand-text">
+          <span class="brand-name" id="markName" data-zh-name="投机取巧" data-en-name="Speculative Speculation">投机取巧</span>
+        </span>
+      </a>
+      <nav class="nav-links" aria-label="站点导航">
+        <a href="https://specul.com/"><span data-zh>首页</span><span data-en>Home</span></a>
+        <a href="https://learn.specul.com/"><span data-zh>学 AI</span><span data-en>Learn</span></a>
+        <a href="https://agent.specul.com/" aria-current="page"><span data-zh>Agent</span><span data-en>Agent</span></a>
+        <a href="https://models.specul.com/"><span data-zh>本地模型</span><span data-en>Models</span></a>
+        <a href="https://nav.specul.com/"><span data-zh>导航</span><span data-en>Directory</span></a>
+        <span class="nav-tools">
+          <button class="icon-btn" id="themeBtn" type="button" aria-label="切换明暗主题" title="切换明暗主题">☾</button>
+          <button class="icon-btn" id="langBtn" type="button" aria-label="Switch language" title="Switch language">EN</button>
+        </span>
+      </nav>
+    </div>
+  </header>
+  <main id="main">
+    <section class="hero">
+      <div class="container">
+        <p class="kicker">Agent 图谱 · Tools</p>
+        <h1 class="t-hero">给 agent 装的工具</h1>
+        <p class="lede">MCP server 的权限范围、传输方式与输出可用性。收录标准：已发布为可安装的 MCP server、有官方仓库或文档可回溯、近 30 天有实质更新。这里是能力缺口查表，不是选型对比。</p>
+        <div class="hero-meta">
+          <span><b>9</b> 个对象</span>
+          <span><b>11</b> 个固定维度</span>
+          <span><b>8</b> 个已完整核验</span>
+          <span>最后核验 <b>2026-10-01</b></span>
+        </div>
+      </div>
+    </section>
+
+    <nav class="part-bar" aria-label="站内分区">
+      <div class="container">
+        <a href="/" style="--pa:#8b7cf8"><b>Agents</b><span>装在编辑器、终端，或厂商云里</span></a>
+        <a href="/harness/" style="--pa:#3b82f6"><b>Harness</b><span>运行时、编排框架、SDK</span></a>
+        <a href="/tools/" aria-current="page" style="--pa:#22d3c5"><b>Tools</b><span>缺什么，装什么 —— 给 agent 装的 MCP 工具</span></a>
+      </div>
+    </nav>
+
+    
+    <section class="section guide-band">
+      <div class="container">
+        <h2>先回答一件事：你到底缺什么能力</h2>
+        <p class="section-desc">MCP 不是「让 AI 更聪明」，是<strong>给 AI 接上它本来够不到的东西</strong>。如果你要的只是聊天和写代码，你不需要它。<strong>你装，它调</strong>——9 个条目全是官方 reference server，不含第三方。</p>
+        <ol class="guide-list">
+          <li class="guide-step">
+            <div class="guide-q"><span class="guide-n">1</span>我要读写本地文件 / 操作 Git</div>
+            <div class="guide-a"><strong>filesystem、git</strong><span class="guide-why">两个都是读写权限，git 那一类值得先看 scope 里能限制到哪些目录。</span></div>
+          </li>
+          <li class="guide-step">
+            <div class="guide-q"><span class="guide-n">2</span>我要它记住东西、跨会话召回</div>
+            <div class="guide-a"><strong>memory</strong><span class="guide-why">这是最容易被误解的一类——<strong>它不是「模型记忆」</strong>，是外部知识图谱存储。</span></div>
+          </li>
+          <li class="guide-step">
+            <div class="guide-q"><span class="guide-n">3</span>我要让 AI 上网拿资料</div>
+            <div class="guide-a"><strong>context7、fetch</strong><span class="guide-why">风险最高的一类是 fetch：档案里引了官方警告——<strong>可访问本地与内网 IP，无地址白名单、无审批机制</strong>。</span></div>
+          </li>
+          <li class="guide-step">
+            <div class="guide-q"><span class="guide-n">4</span>我要控制真实浏览器</div>
+            <div class="guide-a"><strong>playwright</strong><span class="guide-why">注意官方<strong>明确声明来源限制不是安全边界</strong>，需要真隔离得用 <code>--isolated</code> 或容器化网络策略。</span></div>
+          </li>
+          <li class="guide-step">
+            <div class="guide-q"><span class="guide-n">5</span>我要点时间 / 拆解推理 / 跨平台搜文件</div>
+            <div class="guide-a"><strong>time、sequential-thinking、everything</strong><span class="guide-why">三个都是只读，风险最低。</span></div>
+          </li>
+        </ol>
+        <p class="guide-foot">⚠ 一个容易忽略的维度：<strong>数据出境</strong>。Context7 是本分区唯一以远程服务为默认形态的条目，查询内容会发到 Upstash 服务器；其余八个都是本地 stdio 进程。另外——<strong>装 MCP 需要你手动做，调用不需要</strong>：server 启动后自动把工具清单报给你的客户端，之后调不调、什么时候调，由 agent 自己判断，你只在审批环节介入。</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <h2>全部对象</h2>
+        <p class="section-desc">按统一坐标系排列。点开任一对象可看到 模型与开放条件 / 运行位置 / 本地文件 / 关机后的任务 / 工具与扩展 / 上下文与记忆 / 权限与限制 / 适合什么任务 / 传输方式 / 认证机制 / 权限范围 的完整记录、证据链接与未知项清单。</p>
+        <div class="grid">
+        <article class="card" style="--card-accent:#F97316">
+          <div class="card-top">
+            <div class="mark" aria-hidden="true">C7</div>
+            <div class="card-id">
+              <h3><a href="./context7.html">Context7</a></h3>
+              <div class="vendor">Upstash</div>
+            </div>
+          </div>
+          <p class="tagline">MCP 赛道上唯一的远程托管条目 —— 为 Agent 提供版本感知的库文档，MIT 开源但核心服务在 Upstash 侧。</p>
+          <div class="card-foot">
+            <span class="t-state is-warn">部分核验</span>
+            <a class="more" href="./context7.html" aria-label="Context7 详情">详情 →</a>
+          </div>
+        </article>
+        <article class="card" style="--card-accent:#A29BFE">
+          <div class="card-top">
+            <div class="mark" aria-hidden="true">E</div>
+            <div class="card-id">
+              <h3><a href="./everything.html">Everything MCP Server</a></h3>
+              <div class="vendor">Model Context Protocol</div>
+            </div>
+          </div>
+          <p class="tagline">不是可用工具——官方明说这是给 MCP 客户端开发者做功能测试的 server，唯一用途是验证客户端协议实现是否正确。</p>
+          <div class="card-foot">
+            <span class="t-state is-ok">已核验</span>
+            <a class="more" href="./everything.html" aria-label="Everything MCP Server 详情">详情 →</a>
+          </div>
+        </article>
+        <article class="card" style="--card-accent:#FF6B6B">
+          <div class="card-top">
+            <div class="mark" aria-hidden="true">F</div>
+            <div class="card-id">
+              <h3><a href="./fetch.html">Fetch MCP Server</a></h3>
+              <div class="vendor">Model Context Protocol</div>
+            </div>
+          </div>
+          <p class="tagline">把网页内容转成 Markdown 的 reference server，官方在其 README 里明确标注了安全警告：它能访</p>
+          <div class="card-foot">
+            <span class="t-state is-ok">已核验</span>
+            <a class="more" href="./fetch.html" aria-label="Fetch MCP Server 详情">详情 →</a>
+          </div>
+        </article>
+        <article class="card" style="--card-accent:#4A90D9">
+          <div class="card-top">
+            <div class="mark" aria-hidden="true">FS</div>
+            <div class="card-id">
+              <h3><a href="./filesystem.html">Filesystem MCP Server</a></h3>
+              <div class="vendor">Model Context Protocol</div>
+            </div>
+          </div>
+          <p class="tagline">MCP 官方 reference server 里的文件操作实现，强制显式声明允许目录，不允许静默访问全盘。</p>
+          <div class="card-foot">
+            <span class="t-state is-ok">已核验</span>
+            <a class="more" href="./filesystem.html" aria-label="Filesystem MCP Server 详情">详情 →</a>
+          </div>
+        </article>
+        <article class="card" style="--card-accent:#F14E32">
+          <div class="card-top">
+            <div class="mark" aria-hidden="true">G</div>
+            <div class="card-id">
+              <h3><a href="./git.html">Git MCP Server</a></h3>
+              <div class="vendor">Model Context Protocol</div>
+            </div>
+          </div>
+          <p class="tagline">MCP 官方 reference server 里的版本控制实现，作用域限定在指定 git 仓库，但具备完整的本地写操作能力</p>
+          <div class="card-foot">
+            <span class="t-state is-ok">已核验</span>
+            <a class="more" href="./git.html" aria-label="Git MCP Server 详情">详情 →</a>
+          </div>
+        </article>
+        <article class="card" style="--card-accent:#7B61FF">
+          <div class="card-top">
+            <div class="mark" aria-hidden="true">M</div>
+            <div class="card-id">
+              <h3><a href="./memory.html">Knowledge Graph Memory Server</a></h3>
+              <div class="vendor">Model Context Protocol</div>
+            </div>
+          </div>
+          <p class="tagline">用本地知识图谱实现跨会话持久记忆的 reference server，记忆落盘、跨会话共享、无访问控制。</p>
+          <div class="card-foot">
+            <span class="t-state is-ok">已核验</span>
+            <a class="more" href="./memory.html" aria-label="Knowledge Graph Memory Server 详情">详情 →</a>
+          </div>
+        </article>
+        <article class="card" style="--card-accent:#2D9CDB">
+          <div class="card-top">
+            <div class="mark" aria-hidden="true">P</div>
+            <div class="card-id">
+              <h3><a href="./playwright.html">Playwright MCP Server</a></h3>
+              <div class="vendor">Microsoft</div>
+            </div>
+          </div>
+          <p class="tagline">微软维护的浏览器自动化 server，用无障碍树而非截图驱动——不需要视觉模型，输出是结构化快照。</p>
+          <div class="card-foot">
+            <span class="t-state is-ok">已核验</span>
+            <a class="more" href="./playwright.html" aria-label="Playwright MCP Server 详情">详情 →</a>
+          </div>
+        </article>
+        <article class="card" style="--card-accent:#4ECDC4">
+          <div class="card-top">
+            <div class="mark" aria-hidden="true">S</div>
+            <div class="card-id">
+              <h3><a href="./sequential-thinking.html">Sequential Thinking MCP Server</a></h3>
+              <div class="vendor">Model Context Protocol</div>
+            </div>
+          </div>
+          <p class="tagline">提供单个 sequential_thinking 工具，让 Agent 以可修订、可分支的方式逐步推进复杂问题——它不产生智</p>
+          <div class="card-foot">
+            <span class="t-state is-ok">已核验</span>
+            <a class="more" href="./sequential-thinking.html" aria-label="Sequential Thinking MCP Server 详情">详情 →</a>
+          </div>
+        </article>
+        <article class="card" style="--card-accent:#95A5A6">
+          <div class="card-top">
+            <div class="mark" aria-hidden="true">T</div>
+            <div class="card-id">
+              <h3><a href="./time.html">Time MCP Server</a></h3>
+              <div class="vendor">Model Context Protocol</div>
+            </div>
+          </div>
+          <p class="tagline">只做两件事：查当前时间、换时区。无文件无网络，是权限风险最低的一类 server。</p>
+          <div class="card-foot">
+            <span class="t-state is-ok">已核验</span>
+            <a class="more" href="./time.html" aria-label="Time MCP Server 详情">详情 →</a>
+          </div>
+        </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section status-band">
+      <div class="container">
+        <div class="status-inner">
+          <div class="status-mark" aria-hidden="true">!</div>
+          <div>
+            <h2>本站目前是「核验快照」，还没有实测数据</h2>
+            <p>
+              下面每个 server 的权限范围、传输方式与工具清单都能回到官方 README 核对，但<strong>我们还没有在真实客户端里跑过它们</strong>。
+              实测协议已经写好（统一任务、统一验收、记录人工介入与返工次数），任务清单也已就绪，
+              <strong>尚未执行</strong>。
+            </p>
+            <p class="t-sm">
+              MCP server 的风险不在「能不能干活」，而在<strong>权限边界是否清楚、越界是否被拒</strong>。
+              真正的选型请用你自己的输入、预算与验收标准跑一遍。
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <h2>11 个维度，每格都能回溯</h2>
+        <p class="section-desc">
+          所有对象在同一坐标系下被描述（MCP 服务器另有 3 个特有维度）。
+          点开任一对象，每一格下面都有官方源链接与核验日期——不认同可以自己回去查。
+        </p>
+        <div class="t-mesh axis-mesh">
+          <div class="axis-cell">
+            <span class="t-index">01</span>
+            <h3 class="axis-name">模型与开放条件</h3>
+            <p class="axis-ask">用谁的模型？能不能换第三方？多模型路由怎么配？</p>
+          </div>
+          <div class="axis-cell">
+            <span class="t-index">02</span>
+            <h3 class="axis-name">运行位置</h3>
+            <p class="axis-ask">本地 / 云端 / 混合？索引在本地还是云端？远程控制不等于云端执行。</p>
+          </div>
+          <div class="axis-cell">
+            <span class="t-index">03</span>
+            <h3 class="axis-name">本地文件</h3>
+            <p class="axis-ask">能访问多大范围？未打开的大文件怎么读？符号级能力如何？</p>
+          </div>
+          <div class="axis-cell">
+            <span class="t-index">04</span>
+            <h3 class="axis-name">关机后的任务</h3>
+            <p class="axis-ask">电脑关了还能继续跑吗？这是本地形态最常见的误解来源。</p>
+          </div>
+          <div class="axis-cell">
+            <span class="t-index">05</span>
+            <h3 class="axis-name">工具与扩展</h3>
+            <p class="axis-ask">工具链有多宽：MCP · LSP · 插件 · Hooks · 自定义指令。</p>
+          </div>
+          <div class="axis-cell">
+            <span class="t-index">06</span>
+            <h3 class="axis-name">上下文与记忆</h3>
+            <p class="axis-ask">索引算法、上下文窗口、会话恢复与分叉、跨会话记忆边界。</p>
+          </div>
+          <div class="axis-cell">
+            <span class="t-index">07</span>
+            <h3 class="axis-name">权限与限制</h3>
+            <p class="axis-ask">沙箱与审批边界、凭据管理、数据是否出境、额度如何计算。</p>
+          </div>
+          <div class="axis-cell">
+            <span class="t-index">08</span>
+            <h3 class="axis-name">适合什么任务</h3>
+            <p class="axis-ask">最擅长什么任务？什么情况下别用它？</p>
+          </div>
+          <div class="axis-cell">
+            <span class="t-index">09</span>
+            <h3 class="axis-name">传输方式</h3>
+            <p class="axis-ask">客户端怎么连上它：stdio / SSE / Streamable HTTP / 远程。</p>
+          </div>
+          <div class="axis-cell">
+            <span class="t-index">10</span>
+            <h3 class="axis-name">认证机制</h3>
+            <p class="axis-ask">怎么证明身份。注意认证 ≠ 授权，前者是「你是谁」，后者是「你能做什么」。</p>
+          </div>
+          <div class="axis-cell">
+            <span class="t-index">11</span>
+            <h3 class="axis-name">权限范围</h3>
+            <p class="axis-ask">能碰到多少东西？能改吗？能删吗？能收紧吗？这是 MCP 赛道第一优先级。</p>
+          </div>
+        </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <h2>全部数据一览</h2>
+        <p class="section-desc">同一张表横向对比。点对象名进详情页看逐格证据。</p>
+        <div class="table-wrap">
+          <table class="cmp">
+            <thead>
+              <tr>
+                <th>对象</th><th>形态</th><th>厂商</th><th>适合</th><th>核验日</th><th>状态</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><a href="./context7.html"><span class="td-mark" style="--card-accent:#F97316">C7</span>Context7</a></td>
+                <td class="td-vendor">MCP</td>
+                <td class="td-vendor">Upstash</td>
+                <td class="td-fit">需要查当前版本库文档的场景：库升级后的 API 变更、 新版本引入的配置项、模型不确定的第三方库用法。 不适合查内部代码或私有库。</td>
+                <td class="td-date">2026-10-01</td>
+                <td><span class="td-conf partial">partial</span></td>
+              </tr>
+              <tr>
+                <td><a href="./everything.html"><span class="td-mark" style="--card-accent:#A29BFE">E</span>Everything MCP Server</a></td>
+                <td class="td-vendor">MCP</td>
+                <td class="td-vendor">Model Context Protocol</td>
+                <td class="td-fit">仅适合一件事：测试你的 MCP 客户端是否正确实现了协议。 不适合任何实际任务场景。</td>
+                <td class="td-date">2026-09-29</td>
+                <td><span class="td-conf verified">verified</span></td>
+              </tr>
+              <tr>
+                <td><a href="./fetch.html"><span class="td-mark" style="--card-accent:#FF6B6B">F</span>Fetch MCP Server</a></td>
+                <td class="td-vendor">MCP</td>
+                <td class="td-vendor">Model Context Protocol</td>
+                <td class="td-fit">把公开网页内容转成 Markdown 供 Agent 读取。 不适合在能访问内网的环境中使用， 也不适合需要登录态的页面。</td>
+                <td class="td-date">2026-09-29</td>
+                <td><span class="td-conf verified">verified</span></td>
+              </tr>
+              <tr>
+                <td><a href="./filesystem.html"><span class="td-mark" style="--card-accent:#4A90D9">FS</span>Filesystem MCP Server</a></td>
+                <td class="td-vendor">MCP</td>
+                <td class="td-vendor">Model Context Protocol</td>
+                <td class="td-fit">让 Agent 安全读写指定目录内的文本与媒体文件。 不适合需要删除操作或需要跨目录聚合的场景。</td>
+                <td class="td-date">2026-09-29</td>
+                <td><span class="td-conf verified">verified</span></td>
+              </tr>
+              <tr>
+                <td><a href="./git.html"><span class="td-mark" style="--card-accent:#F14E32">G</span>Git MCP Server</a></td>
+                <td class="td-vendor">MCP</td>
+                <td class="td-vendor">Model Context Protocol</td>
+                <td class="td-fit">让 Agent 读取仓库状态、历史与 diff，并在受控前提下执行提交与分支操作。 不适合需要 push / PR / 远程仓库管理的场景（</td>
+                <td class="td-date">2026-09-29</td>
+                <td><span class="td-conf verified">verified</span></td>
+              </tr>
+              <tr>
+                <td><a href="./memory.html"><span class="td-mark" style="--card-accent:#7B61FF">M</span>Knowledge Graph Memory Server</a></td>
+                <td class="td-vendor">MCP</td>
+                <td class="td-vendor">Model Context Protocol</td>
+                <td class="td-fit">让 Agent 跨会话记住用户偏好、项目背景等长期信息。 不适合存放需要审计或追溯的场景（图谱会原地修改）。</td>
+                <td class="td-date">2026-09-29</td>
+                <td><span class="td-conf verified">verified</span></td>
+              </tr>
+              <tr>
+                <td><a href="./playwright.html"><span class="td-mark" style="--card-accent:#2D9CDB">P</span>Playwright MCP Server</a></td>
+                <td class="td-vendor">MCP</td>
+                <td class="td-vendor">Microsoft</td>
+                <td class="td-fit">需要浏览器自动化且要保持会话状态的场景： 探索性自动化、自愈测试、长时自主工作流。 不适合高吞吐编码 agent——README 自己建议这</td>
+                <td class="td-date">2026-09-29</td>
+                <td><span class="td-conf verified">verified</span></td>
+              </tr>
+              <tr>
+                <td><a href="./sequential-thinking.html"><span class="td-mark" style="--card-accent:#4ECDC4">S</span>Sequential Thinking MCP Server</a></td>
+                <td class="td-vendor">MCP</td>
+                <td class="td-vendor">Model Context Protocol</td>
+                <td class="td-fit">让 Agent 用结构化、可修订、可分支的方式推进复杂问题的分析。 不适合简单任务（增加调用轮次无收益）。</td>
+                <td class="td-date">2026-09-29</td>
+                <td><span class="td-conf verified">verified</span></td>
+              </tr>
+              <tr>
+                <td><a href="./time.html"><span class="td-mark" style="--card-accent:#95A5A6">T</span>Time MCP Server</a></td>
+                <td class="td-vendor">MCP</td>
+                <td class="td-vendor">Model Context Protocol</td>
+                <td class="td-fit">给 Agent 提供可靠的时间与时区换算能力。 适合需要避免模型猜时间的场景（如日程、跨时区协作）。</td>
+                <td class="td-date">2026-09-29</td>
+                <td><span class="td-conf verified">verified</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <h2>为什么这里不给总分排名</h2>
+        <p class="section-desc">这不是省略，是方法上的明确取舍。</p>
+        <div class="panel">
+          <ul>
+            <li><strong>缺统一实测，就不给分。</strong>跨工具的跑分口径不同——题目、预算、执行环境都不一样，A 的 90 分和 B 的 88 分不可比。</li>
+            <li><strong>「未知」是合法答案。</strong>查不到就写「未知」并说明为什么，不用推测填充。缺信息本身也是信息。</li>
+            <li><strong>每条判断挂官方源。</strong>来源链接、类型与核验日都在详情页里，可以逐条回去复核。</li>
+            <li><strong>lifecycle 单独标注。</strong>核验日新不等于数据有效——上游归档后数据会失效，所以单独标 <code>active</code> / <code>maintenance</code> / <code>archived</code>。</li>
+            <li><strong>不同层不混排。</strong>成品 agent、自己搭的底座、给 agent 装的工具是三种角色，坐标系不同；硬合成一张 33 行的表只会制造假的可比性。</li>
+          </ul>
+        </div>
+        <div class="panel">
+          <h2>可信度标记怎么读</h2>
+          <p class="t-sm mb-3">详情页与上表都带 <code>confidence</code>，它反映<strong>本站数据的完整度</strong>，不是对产品的评价。</p>
+          <table class="src is-flush">
+            <tbody>
+              <tr><th class="w-24"><span class="td-conf verified">verified</span></th><td>11 个维度均有官方源支撑，且核验日在 90 天内</td></tr>
+              <tr><th><span class="td-conf partial">partial</span></th><td>部分维度标为未知，或官方文档不可访问，或核验日超过 90 天</td></tr>
+              <tr><th><span class="td-conf stale">stale</span></th><td>官方已发布重大变化，本站尚未核验</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="panel">
+          <h2>本站当前的完整度</h2>
+          <p class="t-sm mb-2">
+            数据层用 <code>node scripts/audit-gaps.mjs</code> 可随时复核这个数字。
+            以下是最近一次核验的快照（核验日 2026-09-29）：
+          </p>
+          <table class="src is-flush mb-3">
+            <thead><tr><th>形态</th><th>已补齐</th><th>说明</th></tr></thead>
+            <tbody>
+              <tr><td class="nw">MCP 服务器</td>
+                <td class="nw"><strong>69/99</strong></td>
+                <td class="td-vendor">官方 README 信息充分，70% 维度已核验</td></tr>
+            </tbody>
+          </table>
+          <p><strong class="em">全站合计 120/211 维度已补齐（57%）</strong></p>
+          <p class="t-sm">
+            剩余未补齐项分三类：<strong>官方未公开</strong>（索引算法、沙箱实现细节本就不对外说明）、
+            <strong>需实测才能确定</strong>（大仓库表现、CI 无 TTY 行为）、
+            <strong>客观渠道不可达</strong>。
+          </p>
+          <p class="t-sm">
+            我们选择留白而不是填「已支持」——错误的成本最终由使用者承担。
+          </p>
+        </div>
+        <div class="panel">
+          <h2>数据来源与复核方式</h2>
+          <p>全部数据来自开源仓库 <a href="https://github.com/speculcom/ai-agent-guide" target="_blank" rel="noopener" class="link-brand">speculcom/ai-agent-guide</a>（CC BY 4.0）。</p>
+          <p>每个条目都是纯 Markdown + frontmatter，含 8 个维度、证据链接、核验日与可信度标记。仓库内含：</p>
+          <ul>
+            <li><code>METHODOLOGY.md</code> —— 方法论总纲与四条核心规则</li>
+            <li><code>axes/</code> —— 每个维度的定义与判定标准（含正反例）</li>
+            <li><code>SCHEMA.md</code> —— 数据格式规范与构建校验规则</li>
+            <li><code>tracks/*/tasks/_protocol.md</code> —— 实测协议（<strong>尚未执行</strong>，故本站暂无实测结论）</li>
+          </ul>
+          <p class="t-sm">发现错误或有新证据，欢迎提 Issue 或 PR——每条修正都会注明依据与影响范围。</p>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="site-footer">
+    <div class="container foot-row">
+      <div class="foot-brand">
+        <span class="brand-dot" aria-hidden="true"></span>
+        <span class="foot-copy">© 2026 投机取巧 · <span data-zh>Specul</span><span data-en>Specul</span></span>
+      </div>
+      <nav class="foot-links" aria-label="页脚导航">
+          <a href="https://specul.com/"><span data-zh>首页</span><span data-en>Home</span></a>
+          <a href="https://learn.specul.com/">学 AI</a>
+          <a href="https://agent.specul.com/">Agent</a>
+          <a href="https://models.specul.com/">本地模型</a>
+          <a href="https://nav.specul.com/"><span data-zh>导航</span><span data-en>Directory</span></a>
+          <a href="https://github.com/speculcom/ai-coding-agent-atlas" target="_blank" rel="noopener">GitHub</a>
+      </nav>
+      <nav class="foot-legal-links" aria-label="法律">
+        <a href="https://specul.com/legal.html"><span data-zh>法律条款</span><span data-en>Legal terms</span></a>
+        <a href="https://specul.com/legal.html#s6"><span data-zh>免责声明</span><span data-en>Disclaimer</span></a>
+        <a href="https://specul.com/legal.html#s8"><span data-zh>隐私与本地存储</span><span data-en>Privacy</span></a>
+      </nav>
+    </div>
+  </footer>
+  <script src="../brand.js"></script>
+  <script>
+    (function () {
+      var root = document.documentElement;
+      function sync() { root.setAttribute('data-lang', root.lang === 'en' ? 'en' : 'zh'); }
+      new MutationObserver(sync).observe(root, { attributes: true, attributeFilter: ['lang'] });
+      sync();
+    })();
+  </script>
+</body>
+</html>
