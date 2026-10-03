@@ -20,7 +20,7 @@ MCP server 的权限范围、传输方式与输出可用性。收录标准：已
 | 对象 | 形态 | 厂商 | 可信度 | 核验日 |
 |---|---|---|---|---|
 | [Context7](./context7.html) | MCP | Upstash | partial | 2026-10-01 |
-| [Everything MCP Server](./everything.html) | MCP | Model Context Protocol | verified | 2026-09-29 |
+| [Everything MCP Server](./everything.html) | MCP | Model Context Protocol | partial | 2026-09-29 |
 | [Fetch MCP Server](./fetch.html) | MCP | Model Context Protocol | verified | 2026-09-29 |
 | [Filesystem MCP Server](./filesystem.html) | MCP | Model Context Protocol | verified | 2026-09-29 |
 | [Git MCP Server](./git.html) | MCP | Model Context Protocol | verified | 2026-09-29 |
@@ -37,7 +37,7 @@ MCP server 的权限范围、传输方式与输出可用性。收录标准：已
 | `partial` | 部分维度标为未知，或官方文档不可访问，或核验日超过 90 天 |
 | `stale` | 官方已发布重大变化，本站尚未核验 |
 
-当前 9 个对象中，**8 个为 verified**。
+当前 9 个对象中，**7 个为 verified**。
 
 ## 数据来源
 
