@@ -114,7 +114,7 @@
         </div>
         <div class="axis">
           <dt>权限与限制</dt>
-          <dd><strong>官方发布页对权限的描述比另两家薄，这是本条最需要标注的短板。</strong> 已核验的只有三处： ① 回调即审批 —— 「only come back when something needs your approval」、 「Leaves every send for you to approve in your inbox or navigator」； ② 例行任务自带保守动词 —— declutterer「Only discards or unsubscribes if you say so」、 refunds manager「Comes back with the refund or discount it recovered」 （不自行执行退款，把结果拿回来）； ③ 一个值得记的设计 —— Website builder 官方写 「Helps configure plugins, delivers a live URL, and adds redirect rules」， <strong>即它连改域名解析都做，但官网未把它列为需审批项。</strong> <strong>未核验的（不要替它补）</strong>： 审批粒度（哪些动作算敏感）、是否有类似 Dot 的自动审核、 凭据如何保管、是否有权限规则可自定义、是否有审计日志。 ⚠ 三份档案里<strong>只有本条完全没有权限机制描述</strong>。</dd>
+          <dd><strong>官方发布页对权限的描述比另两家薄，但官方域内另有一份 Bot 治理规范补上了一部分</strong> （2026-10-03 补，文档性质见正文「那份治理规范怎么读」一节）。 发布页已核验的三处： 已核验的只有三处： ① 回调即审批 —— 「only come back when something needs your approval」、 「Leaves every send for you to approve in your inbox or navigator」； ② 例行任务自带保守动词 —— declutterer「Only discards or unsubscribes if you say so」、 refunds manager「Comes back with the refund or discount it recovered」 （不自行执行退款，把结果拿回来）； ③ 一个值得记的设计 —— Website builder 官方写 「Helps configure plugins, delivers a live URL, and adds redirect rules」， <strong>即它连改域名解析都做，但官网未把它列为需审批项。</strong> <strong>⚠ 官方域内 <code>x.ai/bot/…</code> 的Bot 治理规范给出了一份明确的审批清单</strong> （原文「Explicit approval required before…」），逐条列出的必审动作包括： 创建/编辑/复制/隐藏/删除 Bot；保存或实质修改 Skill； 创建/启用/编辑/暂停 Routine；创建或变更群聊； 安装或认证连接器；<strong>扩张权限</strong>；写入外部源；发送或发布； 联系外部人员；<strong>采购、转账、改定价、商业承诺</strong>；删除或覆写数据；改动生产环境； 接受法律条款；敏感雇佣/医疗/法律/财务决策；创建公开分享链接或市场提交。 <strong>三条与本档案直接相关的</strong>： 「<strong>Do not infer approval from silence, vague agreement, a previous approval, another version, or an example</strong>」——<strong>沉默不算同意</strong>， 这与 Dot 的「always ask」是不同强度的档位； 「Approval applies only to the <strong>exact action, target, scope, version, configuration, connection, permission, and schedule</strong>」——<strong>审批不外溢</strong>， 换一个版本或配置就不再有效； 「<strong>Never delete a Bot automatically</strong>」+ 「Agents cannot be deleted by another agent; <strong>the user deletes from the sidebar</strong>」。 另有两条凭据规则：「<strong>Never store credentials</strong>」、 「Never request passwords, passkeys, 2FA, private keys, recovery codes, payment confirmations, or API secrets in chat」。 <strong>⚠ 仍未核验</strong>：是否有类似 Dot 的<strong>自动审核器</strong>、是否有<strong>可自定义的权限规则界面</strong>、 <strong>审计日志</strong>长什么样、凭据的<strong>技术保管方式</strong>（只知「不存凭据」的规约， 不知如何加密或隔离）、以及上述规范是<strong>产品级强制</strong>还是<strong>单个 Bot 的行为约束</strong>。 ⚠ 三份档案里<strong>本条仍是最薄的一份</strong> —— 补上的是行为规约，不是产品机制说明。</dd>
         </div>
         <div class="axis">
           <dt>适合什么任务</dt>
@@ -151,10 +151,11 @@
         <h2>未知项清单</h2>
         <ul>
           <li><strong>底层模型是哪个</strong>（官方未点名）</li>
-          <li><strong>审批粒度与审批器设计</strong>（官方未描述）</li>
-          <li><strong>凭据如何保管</strong>（官方未描述）</li>
-          <li><strong>是否有可自定义的权限规则</strong>（官方未描述）</li>
+          <li><strong>是否有自动审核器</strong>（Dot 有，Grok Bot 发布页未描述）</li>
+          <li><strong>凭据如何保管</strong>（只知规范要求「Never store credentials」，技术方式未说明）</li>
+          <li><strong>是否有可自定义的权限规则界面</strong>（规范给了清单，但未说明用户能否自己配）</li>
           <li><strong>是否有审计日志</strong>（官方未描述）</li>
+          <li>那份 Bot 行为规范是产品级强制，还是单个 Bot 的约束（文档未说明适用范围）</li>
           <li>独立用量的具体数值</li>
           <li>免费额度的存在与边界（官方只说分主套餐计算，没说是否可免费用）</li>
           <li>地区可用性（官方只写端，不含国家清单）</li>
@@ -171,6 +172,7 @@
           <tbody>
             <tr><td>official</td><td>xAI · Introducing Grok Bot（官方首发页，2026-08-11 beta 上线）</td><td><a href="https://x.ai/news/introducing-grok-bot" target="_blank" rel="noopener">https://x.ai/news/introducing-grok-bot</a></td></tr>
             <tr><td>changelog</td><td>xAI · Grok Bot is now included with more plans（官方扩大范围公告）</td><td><a href="https://x.ai/news/grok-bot-more-plans" target="_blank" rel="noopener">https://x.ai/news/grok-bot-more-plans</a></td></tr>
+            <tr><td>docs</td><td>xAI · Bot 行为治理规范（x.ai/bot公开页，**补上审批必审动作清单**；性质是行为约束非产品文档，见正文「那份治理规范怎么读」）</td><td><a href="https://x.ai/bot/KZ9xav0Qad1U5QigEn7rh" target="_blank" rel="noopener">https://x.ai/bot/KZ9xav0Qad1U5QigEn7rh</a></td></tr>
             <tr><td>official</td><td>xAI · Introducing Grok 4.6（**仅用于确认底层模型未点名**，两页无互引）</td><td><a href="https://x.ai/news/grok-4-6" target="_blank" rel="noopener">https://x.ai/news/grok-4-6</a></td></tr>
           </tbody>
         </table>
