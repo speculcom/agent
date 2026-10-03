@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CrewAI — Harness | 投机取巧</title>
+  <meta name="description" content="CrewAI（CrewAI Inc）：「用角色分工和业务流程来组织多 agent 协作」 —— 官方自述： &gt; Framework for orchestrating role-playing, autonomous AI agents. 「role-playing」这个词容易让人低估它—— 同一份" />
+  <link rel="canonical" href="https://agent.specul.com/harness/crewai.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="CrewAI" />
+  <meta property="og:url" content="https://agent.specul.com/harness/crewai.html" />
+  <meta property="og:title" content="CrewAI — Harness | 投机取巧" />
+  <meta property="og:description" content="CrewAI（CrewAI Inc）：「用角色分工和业务流程来组织多 agent 协作」 —— 官方自述： &gt; Framework for orchestrating role-playing, autonomous AI agents. 「role-playing」这个词容易让人低估它—— 同一份" />
+  <meta name="theme-color" content="#05080f" />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%238b7cf8'/%3E%3Cstop offset='1' stop-color='%2322d3c5'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='48' height='48' rx='12' fill='%2305080f'/%3E%3Cpath d='M14 32 L24 12 L34 32' fill='none' stroke='url(%23g)' stroke-width='2.4' stroke-linejoin='round'/%3E%3Ccircle cx='24' cy='27' r='2.4' fill='%2322d3c5'/%3E%3C/svg%3E" />
+  <link rel="stylesheet" href="../brand.css" />
+  <link rel="stylesheet" href="../site.css" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"CrewAI","applicationCategory":"DeveloperApplication","url":"https://crewai.com","sameAs":"https://crewai.com","description":"「用角色分工和业务流程来组织多 agent 协作」 —— 官方自述： > Framework for orchestrating role-playing, autonomous AI agents. 「role-playing」这个词容易让人低估它—— 同一份 README 里也写着 production-grade，并明确承诺 \"Move from experiment to production without changing frameworks\"。","dateModified":"2026-10-01","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}</script>
+</head>
+<body class="brand-ambient">
+  <a class="t-skip" href="#main">跳到主要内容</a>
+  <header class="site-header">
+    <div class="container site-bar">
+      <a class="brand" href="https://specul.com/" title="投机取巧">
+        <span class="brand-dot" aria-hidden="true"></span>
+        <span class="brand-text">
+          <span class="brand-name" id="markName" data-zh-name="投机取巧" data-en-name="Speculative Speculation">投机取巧</span>
+        </span>
+      </a>
+      <nav class="nav-links" aria-label="站点导航">
+        <a href="https://specul.com/"><span data-zh>首页</span><span data-en>Home</span></a>
+        <a href="https://learn.specul.com/"><span data-zh>学 AI</span><span data-en>Learn</span></a>
+        <a href="https://agent.specul.com/" aria-current="page"><span data-zh>Agent</span><span data-en>Agent</span></a>
+        <a href="https://models.specul.com/"><span data-zh>本地模型</span><span data-en>Models</span></a>
+        <a href="https://nav.specul.com/"><span data-zh>导航</span><span data-en>Directory</span></a>
+        <span class="nav-tools">
+          <button class="icon-btn" id="themeBtn" type="button" aria-label="切换明暗主题" title="切换明暗主题">☾</button>
+          <button class="icon-btn" id="langBtn" type="button" aria-label="Switch language" title="Switch language">EN</button>
+        </span>
+      </nav>
+    </div>
+  </header>
+  <main id="main">
+    <div class="container detail">
+      <nav class="crumbs" aria-label="面包屑">
+        <a href="https://agent.specul.com/">Agent 图谱</a>
+        <a href="/">Agents</a>
+        <span aria-current="page">Harness</span>
+        <a href="/tools/">Tools</a>
+      </nav>
+      <a class="back" href="./">← Harness</a>
+
+      <div class="detail-head">
+        <div class="mark" style="--card-accent:#EB6658" aria-hidden="true">CA</div>
+        <div>
+          <h1>CrewAI</h1>
+          <div class="vendor is-caps">CrewAI Inc</div>
+        </div>
+      </div>
+
+      <div class="badges">
+        <span class="tag on">Python</span>
+        <span class="tag on">开源</span>
+        <span class="tag on">MIT</span>
+        <span class="tag on">编排框架</span>
+        <span class="tag on">多Agent</span>
+        <span class="tag on">Crew</span>
+        <span class="tag on">Flow</span>
+        <span class="tag on">事件驱动</span>
+        <span class="tag on">状态管理</span>
+        <span class="tag on">MCP</span>
+        <span class="tag on">A2A</span>
+        <span class="tag on">Ollama</span>
+        <span class="tag on">本地模型</span>
+        <span class="tag on">角色分工</span>
+        <span class="badge accent">partial</span>
+        <span class="badge">lifecycle: active</span>
+        <span class="badge">核验 2026-10-01</span>
+      </div>
+
+            <p class="panel-lead"><strong>「用角色分工和业务流程来组织多 agent 协作」</strong> —— 官方自述：
+
+&gt; Framework for orchestrating <strong>role-playing</strong>, autonomous AI agents.
+
+<strong>「role-playing」这个词容易让人低估它</strong>—— 同一份 README 里也写着
+production-grade，并明确承诺 &quot;Move from experiment to production <strong>without changing frameworks</strong>&quot;。</p>
+
+            <div class="panel is-slim">
+        <h2>适合与不适合</h2>
+        <p><strong>适合</strong>：任务能被表述成「一支有角色分工的团队」；需要业务逻辑留在普通 Python 里
+并显式控制执行路径；想在本地模型上跑；需要 MCP 与 A2A。
+<strong>不适合</strong>：需要官方明确的沙箱或文件/网络权限边界；需要把工作记忆与长期记忆分开管理；
+需要 checkpointing 开箱即用。</p>
+      </div>
+
+
+      <div class="block-head">
+        <h2 class="t-h2">固定坐标系</h2>
+        <p class="t-section-lead">8 个维度，与同赛道其他对象逐项可比。</p>
+      </div>
+      <dl class="axes">
+        <div class="axis">
+          <dt>模型与开放条件</dt>
+          <dd><strong>官方给了明确的默认与本地路径，是本站编排框架里对模型接入说得最具体的。</strong> README「Connecting Your Crew to a Model」原文： &quot;CrewAI supports using various LLMs through a variety of connection options. By default your agents will use the <strong>OpenAI API</strong> when querying the model. However, there are several other ways to allow your agents to connect to models. For example, you can configure your agents to use a <strong>local model via the Ollama tool</strong>.&quot; README FAQ 补充：<strong>LM Studio</strong> 也能接（&quot;Tools like Ollama and LM Studio allow seamless integration&quot;）。 <strong>这一条对本站读者特别有价值</strong>：本地量化模型在这三个编排框架里， 只有 CrewAI 在 README 首屏级别点名了具体工具。 ⚠ <strong>未核验</strong>：完整 provider 清单（官方文档 <code>learn/llm-connections</code> 本次未取到正文）、 换 provider 后工具调用与 structured output 的可靠性。</dd>
+        </div>
+        <div class="axis">
+          <dt>运行位置</dt>
+          <dd><strong>纯库，官方口径是「从原型到生产不用换框架」。</strong> 安装是 pip 包（README Getting Started 走 pip install + crewai CLI）， 无托管服务。README「When to Use CrewAI」里的一句值得引用作为定位依据： &quot;Move from experiment to production <strong>without changing frameworks</strong>.&quot; <strong>它对状态持久化是「随系统成长再加」的定位</strong>（README 两处原文）： &quot;Add tools, memory, <strong>checkpointing</strong>, and async execution <strong>as your system grows</strong>&quot;、 &quot;Add deterministic steps, human input, structured outputs, and <strong>checkpointing as your system grows</strong>&quot;。 ⚠ <strong>未核验</strong>：checkpointing 的落盘粒度与后端（对比 LangGraph 的 &quot;save graph state at every superstep&quot; 有明确说明，本条 README 未给）。</dd>
+        </div>
+        <div class="axis">
+          <dt>本地文件</dt>
+          <dd><strong>⚠ 不在它职责范围内。</strong> README 里文件系统不是一项能力，没有给默认的文件访问边界或沙箱机制。 ⚠ <strong>未核验</strong>：容器部署时的默认权限（README 未涉及部署形态）、 本地运行时 agent 对文件系统的访问范围。</dd>
+        </div>
+        <div class="axis">
+          <dt>关机后的任务</dt>
+          <dd><strong>Flow 的 state management 是官方明文，checkpointing 的定位是「按需添加」。</strong> README 里 Flow 的描述包含 &quot;event-driven workflows with <strong>state, branching, routing</strong>&quot;， FAQ 进一步说 Flow 适合 &quot;detailed execution paths and <strong>secure state management</strong>&quot;。 示例代码（README「Using Crews and Flows Together」段）显示状态是<strong>结构化 Pydantic 模型</strong>： <code>class MarketState(BaseModel)</code>，Flow[MarketState] 里直接读写 <code>self.state.sentiment</code> 等字段， 并按 <code>self.state.confidence</code> 的数值阈值分支。 <strong>这就是本站要找的「状态」</strong> —— 显式、结构化、可分支判断。 ⚠ <strong>但落盘与跨进程恢复本站未核验</strong>：README 说 checkpointing 是 &quot;as your system grows&quot; 才加的进阶项，没说默认有没有。</dd>
+        </div>
+        <div class="axis">
+          <dt>工具与扩展</dt>
+          <dd><strong>官方明确列了 MCP 与 A2A 两项，这是它的一个强项。</strong> README Key Features 原文：&quot;Use tools, <strong>memory, knowledge, checkpointing</strong>, async execution, and <strong>MCP/A2A support</strong> for more capable production agents.&quot; 另外 README 里CrewAI 自己托管了一个文档 MCP server（<code>docs.crewai.com/mcp</code>）， 可供 AI 编程助手查询它的 API 细节（README「Build with AI」段提到的 <code>ask-docs</code>）。 ⚠ <strong>未核验</strong>：MCP 是核心依赖还是可选 extra（README 未说明； 对比 OpenAI Agents SDK 把 <code>mcp&gt;=1.19.0</code> 放在 <code>dependencies</code> 里）。 <strong>A2A（Agent-to-Agent）</strong> 是本站首次出现的协议名，其规范与实践本站未研究。</dd>
+        </div>
+        <div class="axis">
+          <dt>上下文与记忆</dt>
+          <dd><strong>⚠ memory 与 knowledge 出现了，但压缩/摘要策略未核验。</strong> README 出现的与记忆相关的表述有两处，均无机制细节： Key Features 里的 &quot;memory, <strong>knowledge</strong>, checkpointing&quot;、 以及「Build with AI」段展示的 agent 配置项清单 &quot;Configuring agents — role, goal, backstory, tools, LLMs, <strong>memory</strong>, guardrails&quot;。 <strong>官方没有区分「工作记忆」与「长期记忆」</strong>（这一点与 <a href="./langgraph.html">LangGraph</a> 明确区分 working memory / persistent memory across sessions 形成对照）。 ⚠ <strong>未核验</strong>：memory 的作用域（单 agent / 单 crew / 全局）、 存储后端、裁剪或摘要策略、知识（knowledge）与记忆的关系。</dd>
+        </div>
+        <div class="axis">
+          <dt>权限与限制</dt>
+          <dd><strong>⚠ 本维度是本站最明显的缺口：只有 guardrails 一项，且机制未核验。</strong> README 出现 guardrails 的唯一位置是 agent 配置项清单 （&quot;role, goal, backstory, tools, LLMs, memory, <strong>guardrails</strong>&quot;）， <strong>没有任何机制说明</strong> —— 是输出校验、是权限边界、还是人工确认，均未说明。 对照本站其它对象：OpenAI Agents SDK 的 guardrails 明确分 input/output 双向校验 + human-in-the-loop；Google ADK 的 Tool Confirmation 明确是「执行前确认」； LangGraph 的 interrupts 明确是「改状态」。<strong>CrewAI 这一项三样都不是。</strong> ⚠ <strong>未核验</strong>：guardrails 的类型与强度、沙箱机制、文件与网络访问控制。</dd>
+        </div>
+        <div class="axis">
+          <dt>适合什么任务</dt>
+          <dd><strong>适合</strong>：任务能被表述成「一支有角色分工的团队」（Crews）； 需要业务逻辑留在普通 Python 里并显式控制执行路径（Flows）； 想在本地模型上跑（官方点名 Ollama / LM Studio）； 需要 MCP 与 A2A 接入；Python 栈。 <strong>不适合</strong>：需要官方明确的沙箱或文件/网络权限边界（本站未核验其机制）； 需要把「工作记忆」与「跨会话长期记忆」分开管理（LangGraph 有明确表述）； 需要 checkpointing 开箱即用（官方把它定位为「随系统成长再加」的进阶项）。</dd>
+        </div>
+      </dl>
+
+            <div class="panel warn">
+        <h2 class="warn">头号误解</h2>
+        <ul>
+          <li>以为是「角色扮演玩具」—— 官方定位是 production-grade，README 明写 Move from experiment to production without changing frameworks</li>
+          <li>把 Crew Control Plane 的能力当成开源版自带 —— tracing / 集中管控 / 企业安全 / 24×7 支持 /本地与云部署都是 CrewAI AMP 的卖点</li>
+          <li>以为 memory 和 knowledge 是两套持久化 —— README 只并列了名词，没有任何机制说明</li>
+          <li>把 guardrails 当权限护栏 —— README 只在配置项清单里列了这个名字，机制未说明</li>
+          <li>以为 checkpointing 默认就有 —— 官方两处都写成 as your system grows，是进阶项</li>
+          <li>以为开了 Flow 就有状态持久化 —— Flow 给的是 state management，落盘与跨进程恢复未核验</li>
+        </ul>
+      </div>
+
+
+            <div class="panel is-slim">
+        <h2>价格</h2>
+        <table class="src">
+          <tbody>
+            <tr><th class="w-28">月度入口</th><td>OSS 框架免费（MIT，自托管不限次数）；AMP 托管平台 Basic $0 / Enterprise 定制</td></tr>
+            <tr><th class="w-28">月度数值</th><td>$0</td></tr>
+            <tr><th class="w-28">额度说明</th><td><strong>开源部分与商业部分要分清。</strong> 核验依据：仓库 MIT（经license API）、README 的 pip 安装路径、官方定价页（核验 2026-10-01）。 商业线是 README 单列一节的 <strong>Crew Control Plane</strong>（对外称 CrewAI AMP）。 <strong>⚠ 官方定价页当前只列两档，且这一条本身就是个坑</strong>： <strong>Basic $0</strong>（Visual editor + AI copilot、GitHub 集成、 <strong>每月 50 次 workflow executions</strong>，且<strong>上限就是 50 次</strong>， 官方对比表里 Basic 的「Additional executions」一栏写的是「—」， <strong>即没有自助加购通道</strong>）与<strong>Enterprise 定制</strong>（SSO / RBAC / workload identity / PII redaction / policies；部署可选 CrewAI 云、你的自有 VPC、或你自己的基础设施； 45 天 onboarding；forward deployed engineering 与培训按需另购）。 Enterprise 的执行次数是 &quot;Sized to workflow&quot; + <strong>Flexible overage</strong>，即按实际用量谈。 <strong>⚠ 第三方定价站上的数字与官方页不一致，本站不采信</strong>：抓取时多个来源分别给出 Professional ~$25/mo、Basic $99/mo、Standard $6K/yr、Ultra $120K/yr 等， <strong>官方定价页上不存在这些档位</strong>（只有 Basic 与 Enterprise 两档）， 应属旧制或臆测。<strong>本站只写官方页面上能读到的两档。</strong> <strong>另一条要读出来的事实</strong>：Enterprise 明确写部署可落在 <strong>CrewAI 云 / 客户自有 VPC / 客户自有基础设施</strong> —— 即 README 说的 &quot;On-premise and Cloud Deployment Options&quot; 在商业侧确实兑现， 也<strong>没有强制必须联网授权的表述</strong>。</td></tr>
+          </tbody>
+        </table>
+        <p class="fine mt-3">不同币种不做折算。优惠、地区、税费与登录后报价可能变化，购买前请到官方页面确认。</p>
+      </div>
+
+
+            <div class="panel is-slim">
+        <h2>未知项清单</h2>
+        <ul>
+          <li>guardrails 的类型、强度与拦截范围</li>
+          <li>沙箱机制、文件与网络访问控制的默认值</li>
+          <li>memory 的作用域、存储后端、裁剪与摘要策略</li>
+          <li>knowledge 与 memory 的关系</li>
+          <li>checkpointing 的落盘粒度、后端与跨进程恢复语义</li>
+          <li>完整 provider 清单与换provider 的能力对齐度</li>
+          <li>MCP 是核心依赖还是可选 extra</li>
+          <li>A2A（Agent-to-Agent）规范与生态现状</li>
+          <li>AMP Enterprise 的具体报价（官方仅标 Custom）</li>
+          <li>Basic 档50 次/月上限之后，除Enterprise 洽谈外是否有自助加购路径（官方对比表该栏为「—」）</li>
+          <li>MCP/A2A 接入的实际使用门槛</li>
+        </ul>
+      </div>
+
+
+      <div class="panel">
+        <h2>证据来源</h2>
+        <p class="t-sm">判断可回到以下一手源复核。本站核验日 2026-10-01，内容更新日 2026-10-01。</p>
+        <table class="src">
+          <thead><tr><th class="w-20">类型</th><th class="w-52">名称</th><th>链接</th></tr></thead>
+          <tbody>
+            <tr><td>repo</td><td>crewAIInc/crewAI · 仓库（59,246★，MIT，核验 2026-10-01）</td><td><a href="https://github.com/crewAIInc/crewAI" target="_blank" rel="noopener">https://github.com/crewAIInc/crewAI</a></td></tr>
+            <tr><td>docs</td><td>主 README（Crews/Flows 双抽象、七项 Key Features、Crew Control Plane 商业段、模型接入、FAQ）</td><td><a href="https://github.com/crewAIInc/crewAI/blob/main/README.md" target="_blank" rel="noopener">https://github.com/crewAIInc/crewAI/blob/main/README.md</a></td></tr>
+            <tr><td>docs</td><td>官方文档 · Connect CrewAI to LLMs（README 指向，完整 provider 清单）</td><td><a href="https://docs.crewai.com/en/learn/llm-connections" target="_blank" rel="noopener">https://docs.crewai.com/en/learn/llm-connections</a></td></tr>
+            <tr><td>docs</td><td>CrewAI AMP（商业控制面，本次未取到页面）</td><td><a href="https://crewai.com" target="_blank" rel="noopener">https://crewai.com</a></td></tr>
+            <tr><td>changelog</td><td>Releases（1.15.23 @ 2026-09-28）</td><td><a href="https://github.com/crewAIInc/crewAI/releases" target="_blank" rel="noopener">https://github.com/crewAIInc/crewAI/releases</a></td></tr>
+            <tr><td>repo</td><td>crewAI-examples · 官方示例集</td><td><a href="https://github.com/crewAIInc/crewAI-examples" target="_blank" rel="noopener">https://github.com/crewAIInc/crewAI-examples</a></td></tr>
+            <tr><td>docs</td><td>CrewAI 文档 MCP server（README「Build with AI」段提到）</td><td><a href="https://docs.crewai.com/mcp" target="_blank" rel="noopener">https://docs.crewai.com/mcp</a></td></tr>
+          </tbody>
+        </table>
+      </div>
+
+            <div class="panel is-slim">
+        <h2>实测记录</h2>
+        <p>本站尚未完成实测。测试协议见 <a href="https://github.com/speculcom/ai-agent-guide/blob/main/tracks/agents/tasks/_protocol.md" target="_blank" rel="noopener">tasks/_protocol.md</a>。
+
+<strong>实测建议</strong>（按编排框架 + 角色抽象维度定制）：
+
+| # | 测什么 | 为什么值得测 |
+|:--:|---|---|
+| 1 | 同一需求用 Crew 实现 vs 用 Flow 实现，代码量与可读性差多少 | 验证双抽象是否真的各有用处 |
+| 2 | 用 Ollama 接本地量化模型跑完一个 Crew | 官方点名支持，值得验证真实可行性 |
+| 3 | <strong>guardrails 到底拦什么</strong>（输出校验？工具调用？文件访问？） | 本站最大的缺口，选型前必须清 |
+| 4 | checkpointing 开箱状态：默认有没有、开箱在哪 | 官方写「随系统成长再加」，要确认默认行为 |
+| 5 | Crew 之间传递信息的开销（角色扮演的 token 成本） | 角色协作通常吃 token，要量 |
+| 6 | Flow 的 state 在崩溃后能否恢复 | 与 LangGraph 的 superstep 落盘对比 |</p>
+      </div>
+
+
+            <div class="panel is-slim">
+        <h2>相关条目</h2>
+        <ul class="rel-list">
+          <li><span class="rel-t"><a href="./google-adk.html">Google ADK</a></span><span class="rel-n"><strong>编排家族对照</strong>：同为图/流程编排，ADK 用 Workflow Runtime 的节点与路由，CrewAI 用 Crew（角色协作）+ Flow（事件驱动）两套抽象。CrewAI 另给了 MCP/A2A 支持。</span></li>
+          <li><span class="rel-t"><a href="./langgraph.html">LangGraph</a></span><span class="rel-n"><strong>状态持久化路线的差别最大的一条</strong>：LangGraph 明确给出「每 superstep 落盘 checkpoint」，CrewAI 把 checkpointing 定位成「随系统成长再加」的进阶项，粒度与后端均未核验。</span></li>
+          <li><span class="rel-t"><a href="./deepagents.html">Deep Agents</a></span><span class="rel-n">同属「快速起步」一侧，但抽象不同：Deep Agents 是 batteries-included harness，CrewAI 是 Crew/Flow 双抽象的编排框架。</span></li>
+          <li><span class="rel-t"><a href="./openai-agents-sdk.html">OpenAI Agents SDK</a></span><span class="rel-n">反面对照：那个是单 agent 原语 + 明确的 guardrail 机制；CrewAI 的权限维度目前只有 guardrails 一个未说明机制的名词。</span></li>
+        </ul>
+      </div>
+
+
+      <p class="fine mt-6">
+        本页由 <a href="https://github.com/speculcom/ai-agent-guide" target="_blank" rel="noopener" class="link-brand">ai-agent-guide</a> 数据层生成（CC BY 4.0）。
+        方法论与坐标系定义见仓库内 <code>METHODOLOGY.md</code>。
+      </p>
+    </div>
+  </main>
+  <footer class="site-footer">
+    <div class="container foot-row">
+      <div class="foot-brand">
+        <span class="brand-dot" aria-hidden="true"></span>
+        <span class="foot-copy">© 2026 投机取巧 · <span data-zh>Specul</span><span data-en>Specul</span></span>
+      </div>
+      <nav class="foot-links" aria-label="页脚导航">
+          <a href="https://specul.com/"><span data-zh>首页</span><span data-en>Home</span></a>
+          <a href="https://learn.specul.com/">学 AI</a>
+          <a href="https://agent.specul.com/">Agent</a>
+          <a href="https://models.specul.com/">本地模型</a>
+          <a href="https://nav.specul.com/"><span data-zh>导航</span><span data-en>Directory</span></a>
+          <a href="https://github.com/speculcom/ai-agent-guide" target="_blank" rel="noopener">GitHub</a>
+      </nav>
+      <nav class="foot-legal-links" aria-label="法律">
+        <a href="https://specul.com/legal.html"><span data-zh>法律条款</span><span data-en>Legal terms</span></a>
+        <a href="https://specul.com/legal.html#s6"><span data-zh>免责声明</span><span data-en>Disclaimer</span></a>
+        <a href="https://specul.com/legal.html#s8"><span data-zh>隐私与本地存储</span><span data-en>Privacy</span></a>
+      </nav>
+    </div>
+  </footer>
+  <script src="../brand.js"></script>
+  <script>
+    (function () {
+      var root = document.documentElement;
+      function sync() { root.setAttribute('data-lang', root.lang === 'en' ? 'en' : 'zh'); }
+      new MutationObserver(sync).observe(root, { attributes: true, attributeFilter: ['lang'] });
+      sync();
+    })();
+  </script>
+</body>
+</html>
