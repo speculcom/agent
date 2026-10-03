@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Filesystem MCP Server — Tools | 投机取巧</title>
+  <meta name="description" content="Filesystem MCP Server（Model Context Protocol）：MCP 官方 reference server 里的文件操作实现，强制显式声明允许目录，不允许静默访问全盘。" />
+  <link rel="canonical" href="https://agent.specul.com/tools/filesystem.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Filesystem MCP Server" />
+  <meta property="og:url" content="https://agent.specul.com/tools/filesystem.html" />
+  <meta property="og:title" content="Filesystem MCP Server — Tools | 投机取巧" />
+  <meta property="og:description" content="Filesystem MCP Server（Model Context Protocol）：MCP 官方 reference server 里的文件操作实现，强制显式声明允许目录，不允许静默访问全盘。" />
+  <meta name="theme-color" content="#05080f" />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%238b7cf8'/%3E%3Cstop offset='1' stop-color='%2322d3c5'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='48' height='48' rx='12' fill='%2305080f'/%3E%3Cpath d='M14 32 L24 12 L34 32' fill='none' stroke='url(%23g)' stroke-width='2.4' stroke-linejoin='round'/%3E%3Ccircle cx='24' cy='27' r='2.4' fill='%2322d3c5'/%3E%3C/svg%3E" />
+  <link rel="stylesheet" href="../brand.css" />
+  <link rel="stylesheet" href="../site.css" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Filesystem MCP Server","applicationCategory":"DeveloperApplication","url":"https://www.npmjs.com/package/@modelcontextprotocol/server-filesystem","sameAs":"https://github.com/modelcontextprotocol/servers/tree/main/src/filesystem","description":"MCP 官方 reference server 里的文件操作实现，强制显式声明允许目录，不允许静默访问全盘。","dateModified":"2026-09-29"}</script>
+</head>
+<body class="brand-ambient">
+  <a class="t-skip" href="#main">跳到主要内容</a>
+  <header class="site-header">
+    <div class="container site-bar">
+      <a class="brand" href="https://specul.com/" title="投机取巧">
+        <span class="brand-dot" aria-hidden="true"></span>
+        <span class="brand-text">
+          <span class="brand-name" id="markName" data-zh-name="投机取巧" data-en-name="Speculative Speculation">投机取巧</span>
+        </span>
+      </a>
+      <nav class="nav-links" aria-label="站点导航">
+        <a href="https://specul.com/"><span data-zh>首页</span><span data-en>Home</span></a>
+        <a href="https://learn.specul.com/"><span data-zh>学 AI</span><span data-en>Learn</span></a>
+        <a href="https://agent.specul.com/" aria-current="page"><span data-zh>Agent</span><span data-en>Agent</span></a>
+        <a href="https://models.specul.com/"><span data-zh>本地模型</span><span data-en>Models</span></a>
+        <a href="https://nav.specul.com/"><span data-zh>导航</span><span data-en>Directory</span></a>
+        <span class="nav-tools">
+          <button class="icon-btn" id="themeBtn" type="button" aria-label="切换明暗主题" title="切换明暗主题">☾</button>
+          <button class="icon-btn" id="langBtn" type="button" aria-label="Switch language" title="Switch language">EN</button>
+        </span>
+      </nav>
+    </div>
+  </header>
+  <main id="main">
+    <div class="container detail">
+      <nav class="crumbs" aria-label="面包屑">
+        <a href="https://agent.specul.com/">Agent 图谱</a>
+        <a href="/">Agents</a>
+        <a href="/harness/">Harness</a>
+        <span aria-current="page">Tools</span>
+      </nav>
+      <a class="back" href="./">← Tools</a>
+
+      <div class="detail-head">
+        <div class="mark" style="--card-accent:#4A90D9" aria-hidden="true">FS</div>
+        <div>
+          <h1>Filesystem MCP Server</h1>
+          <div class="vendor is-caps">Model Context Protocol</div>
+        </div>
+      </div>
+
+      <div class="badges">
+        <span class="tag on">文件</span>
+        <span class="tag on">本地</span>
+        <span class="tag on">只读</span>
+        <span class="tag on">读写</span>
+        <span class="badge accent">verified</span>
+        <span class="badge">lifecycle: active</span>
+        <span class="badge">核验 2026-09-29</span>
+      </div>
+
+            <p class="panel-lead">MCP 官方 reference server 里的文件操作实现，<strong>强制显式声明允许目录，不允许静默访问全盘</strong>。</p>
+
+            <div class="panel is-slim">
+        <h2>适合与不适合</h2>
+        <p>让 Agent 在明确指定的目录内读写文本与媒体文件。需要目录边界清晰、
+且不需要删除操作时。</p>
+        <p class="warn-p"><strong>不适合</strong>需要删除操作、需要跨目录聚合，
+或需要任意路径访问的场景——本 server 的设计目标就是收紧这个边界。</p>
+      </div>
+
+
+      <div class="block-head">
+        <h2 class="t-h2">固定坐标系</h2>
+        <p class="t-section-lead">11 个维度，与同赛道其他对象逐项可比。</p>
+      </div>
+      <dl class="axes">
+        <div class="axis">
+          <dt>模型与开放条件</dt>
+          <dd>本身不调用模型，是被客户端调用的接口实现。 协议兼容性取决于客户端实现，仓库未声明最低协议版本。</dd>
+        </div>
+        <div class="axis">
+          <dt>运行位置</dt>
+          <dd>本地 Node.js 子进程，通过 stdio 与客户端通信。 生命周期绑定客户端进程，客户端退出即停止。</dd>
+        </div>
+        <div class="axis">
+          <dt>本地文件</dt>
+          <dd>核心能力。<strong>默认不支持无限制访问</strong>： 必须通过命令行参数指定允许目录，或客户端支持 Roots 协议动态下发。 <strong>若无参数启动且客户端不支持 roots，server 在初始化阶段直接报错。</strong></dd>
+        </div>
+        <div class="axis">
+          <dt>关机后的任务</dt>
+          <dd>不支持。本地 stdio 进程随客户端生死， 无独立守护或云端执行形态。</dd>
+        </div>
+        <div class="axis">
+          <dt>工具与扩展</dt>
+          <dd>提供 11 个工具：read_text_file、read_media_file、read_multiple_files、 write_file、edit_file、create_directory、list_directory、 list_directory_with_sizes、move_file、search_files、directory_tree。 输出为结构化内容，可直接消费。</dd>
+        </div>
+        <div class="axis">
+          <dt>上下文与记忆</dt>
+          <dd>无状态。每次调用独立，不保留会话记忆。 list_allowed_directories 可查询当前生效目录。</dd>
+        </div>
+        <div class="axis">
+          <dt>权限与限制</dt>
+          <dd><strong>无独立审批机制</strong>，权限边界完全由允许目录决定。 全部文件操作限制在允许目录内，越界会被拒绝。 <strong>注意：提供 write_file / edit_file / move_file / create_directory， 属可写但无删除工具的组合。</strong></dd>
+        </div>
+        <div class="axis">
+          <dt>适合什么任务</dt>
+          <dd>让 Agent 安全读写指定目录内的文本与媒体文件。 不适合需要删除操作或需要跨目录聚合的场景。</dd>
+        </div>
+        <div class="axis">
+          <dt>传输方式</dt>
+          <dd>仅 stdio。本地 Node.js 进程，通过标准输入输出通信。 未声明支持 SSE 或 Streamable HTTP。</dd>
+        </div>
+        <div class="axis">
+          <dt>认证机制</dt>
+          <dd>无独立认证层。stdio 形态继承启动它的客户端用户的全部文件权限。 权限边界不是认证机制，而是目录白名单。</dd>
+        </div>
+        <div class="axis">
+          <dt>权限范围</dt>
+          <dd><strong>默认范围窄且强制显式</strong>：必须通过命令行参数指定允许目录， 或客户端支持 Roots 协议动态下发。 无参数且客户端不支持 roots 时，server 初始化即报错。 <strong>不提供删除工具</strong>；提供写入、编辑、移动、建目录。 可用 list_allowed_directories 查询当前生效目录。</dd>
+        </div>
+      </dl>
+
+            <div class="panel warn">
+        <h2 class="warn">头号误解</h2>
+        <ul>
+          <li>以为官方仓库的 server 可以直接上生产，README 明确声明仅供参考实现</li>
+          <li>不传目录参数就启动，会在初始化阶段报错而不是静默访问全盘</li>
+          <li>以为没给 write 类工具就不能改文件，write_file / edit_file 确实可写</li>
+        </ul>
+      </div>
+
+
+            <div class="panel is-slim">
+        <h2>价格</h2>
+        <table class="src">
+          <tbody>
+            <tr><th class="w-28">月度入口</th><td>无商业费用</td></tr>
+            <tr><th class="w-28">年付</th><td>无商业费用</td></tr>
+            <tr><th class="w-28">额度说明</th><td>npm 发布为 @modelcontextprotocol/server-filesystem，开源无授权费。 实际成本来自所访问资源所在机器与账号，不来自本 server。</td></tr>
+          </tbody>
+        </table>
+        <p class="fine mt-3">不同币种不做折算。优惠、地区、税费与登录后报价可能变化，购买前请到官方页面确认。</p>
+      </div>
+
+
+            <div class="panel is-slim">
+        <h2>未知项清单</h2>
+        <ul>
+          <li>最低协议版本要求（仓库未声明）</li>
+          <li>是否支持 Streamable HTTP（仓库未声明）</li>
+          <li>输出结构的具体 schema（需读源码或实测）</li>
+          <li>各工具在路径不存在时的错误信息质量</li>
+        </ul>
+      </div>
+
+
+      <div class="panel">
+        <h2>证据来源</h2>
+        <p class="t-sm">判断可回到以下一手源复核。本站核验日 2026-09-29，内容更新日 2026-09-29。</p>
+        <table class="src">
+          <thead><tr><th class="w-20">类型</th><th class="w-52">名称</th><th>链接</th></tr></thead>
+          <tbody>
+            <tr><td>changelog</td><td>MCP · Servers Releases（2026.8.31 / 2026.8.18 / 2026.7.10）</td><td><a href="https://github.com/modelcontextprotocol/servers/releases" target="_blank" rel="noopener">https://github.com/modelcontextprotocol/servers/releases</a></td></tr>
+            <tr><td>changelog</td><td>MCP · Filesystem 目录变更历史</td><td><a href="https://github.com/modelcontextprotocol/servers/commits/main/src/filesystem" target="_blank" rel="noopener">https://github.com/modelcontextprotocol/servers/commits/main/src/filesystem</a></td></tr>
+            <tr><td>docs</td><td>MCP · Filesystem Server</td><td><a href="https://github.com/modelcontextprotocol/servers/tree/main/src/filesystem" target="_blank" rel="noopener">https://github.com/modelcontextprotocol/servers/tree/main/src/filesystem</a></td></tr>
+            <tr><td>repo</td><td>MCP · Servers 仓库 README（含生产环境免责声明）</td><td><a href="https://github.com/modelcontextprotocol/servers" target="_blank" rel="noopener">https://github.com/modelcontextprotocol/servers</a></td></tr>
+            <tr><td>docs</td><td>MCP · 规范</td><td><a href="https://modelcontextprotocol.io/specification" target="_blank" rel="noopener">https://modelcontextprotocol.io/specification</a></td></tr>
+          </tbody>
+        </table>
+      </div>
+
+            <div class="panel is-slim">
+        <h2>实测记录</h2>
+        <p>本站尚未完成实测。测试协议见 <a href="https://github.com/speculcom/ai-agent-guide/blob/main/tracks/agents/tasks/_protocol.md" target="_blank" rel="noopener">tasks/_protocol.md</a>。</p>
+      </div>
+
+
+            <div class="panel is-slim">
+        <h2>相关条目</h2>
+        <ul class="rel-list">
+          <li><span class="rel-t"><a href="./git.html">Git MCP Server</a></span><span class="rel-n">版本控制方向</span></li>
+          <li><span class="rel-t"><a href="./memory.html">Memory MCP Server</a></span><span class="rel-n">跨会话记忆方向</span></li>
+        </ul>
+      </div>
+
+
+      <p class="fine mt-6">
+        本页由 <a href="https://github.com/speculcom/ai-agent-guide" target="_blank" rel="noopener" class="link-brand">ai-agent-guide</a> 数据层生成（CC BY 4.0）。
+        方法论与坐标系定义见仓库内 <code>METHODOLOGY.md</code>。
+      </p>
+    </div>
+  </main>
+  <footer class="site-footer">
+    <div class="container foot-row">
+      <div class="foot-brand">
+        <span class="brand-dot" aria-hidden="true"></span>
+        <span class="foot-copy">© 2026 投机取巧 · <span data-zh>Specul</span><span data-en>Specul</span></span>
+      </div>
+      <nav class="foot-links" aria-label="页脚导航">
+          <a href="https://specul.com/"><span data-zh>首页</span><span data-en>Home</span></a>
+          <a href="https://learn.specul.com/">学 AI</a>
+          <a href="https://agent.specul.com/">Agent</a>
+          <a href="https://models.specul.com/">本地模型</a>
+          <a href="https://nav.specul.com/"><span data-zh>导航</span><span data-en>Directory</span></a>
+          <a href="https://github.com/speculcom/ai-agent-guide" target="_blank" rel="noopener">GitHub</a>
+      </nav>
+      <nav class="foot-legal-links" aria-label="法律">
+        <a href="https://specul.com/legal.html"><span data-zh>法律条款</span><span data-en>Legal terms</span></a>
+        <a href="https://specul.com/legal.html#s6"><span data-zh>免责声明</span><span data-en>Disclaimer</span></a>
+        <a href="https://specul.com/legal.html#s8"><span data-zh>隐私与本地存储</span><span data-en>Privacy</span></a>
+      </nav>
+    </div>
+  </footer>
+  <script src="../brand.js"></script>
+  <script>
+    (function () {
+      var root = document.documentElement;
+      function sync() { root.setAttribute('data-lang', root.lang === 'en' ? 'en' : 'zh'); }
+      new MutationObserver(sync).observe(root, { attributes: true, attributeFilter: ['lang'] });
+      sync();
+    })();
+  </script>
+</body>
+</html>
