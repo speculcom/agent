@@ -100,11 +100,11 @@
         </div>
         <div class="axis">
           <dt>本地文件</dt>
-          <dd><strong>默认完全隔离</strong>。官方原文： 「除非你选择连接自己的计算机，否则你的计算机及其中的内容始终与它隔离」。 Dot 的文件都在它自己的云端环境里。 <strong>它怎么读取你已连接应用里的文件，官方未展开说明，本次未核验。</strong></dd>
+          <dd><strong>默认完全隔离</strong>。官方原文： 「除非你选择连接自己的计算机，否则你的计算机及其中的内容始终与它隔离」。 Dot 的文件都在它自己的云端环境里。 <strong>授权连接本机后能做什么，官方安全文档给了具体例子</strong>（2026-10-03 补）： 「你也可以选择连接自己的计算机，让 Dot 以更多方式提供帮助， 例如<strong>分析保存在桌面上的电子表格</strong>，或使用设备上安装的编程工具」。 即本机授权不是「打开文件权限」这一项， 而是<strong>桌面文件 + 设备上已装的开发工具</strong>两类。 <strong>云端工作空间内部还有一层沙盒</strong>： 「在每个 Dot 受保护的工作空间内，<strong>沙盒机制会限制该 Dot 可以访问的代码和工具</strong>， 帮助控制有害代码或错误命令的影响范围」。 <strong>多租户隔离也写明了</strong>：「将不同用户的云端环境彼此隔离」， 且「Dot 运行代码的环境，与协调其工作及<strong>执行关键防护措施的系统相互独立</strong>」。 <strong>⚠ 只读工具在已连接应用里究竟能读到什么程度，官方仍未给量化边界</strong> （只给了「无法发送消息、更改应用内容」这类否定式描述）。</dd>
         </div>
         <div class="axis">
           <dt>关机后的任务</dt>
-          <dd><strong>这一维度是它最强的一项，官方专门有整节讲</strong>： 「即使你没有直接与 Dot 互动，它也会在后台寻找能帮上忙的地方。 我们将其称为『主动研究』」。 官方还写明关闭应用后仍在继续推进工作， 以及「你的 Dot 可以接手项目并自主推进，即使它同时还在处理其他几个项目」。 ⚠ <strong>「主动研究」期间用的是只读工具</strong> —— 官方原文： 「在此过程中，它会通过仅具备只读权限的工具访问你已连接的应用。 这些工具无法发送消息、更改应用内容，也无法控制你的浏览器或计算机」。 <strong>这行限定条件很重要</strong>：后台自主 ≠ 后台可改。</dd>
+          <dd><strong>这一维度是它最强的一项，官方专门有整节讲</strong>： 「即使你没有直接与 Dot 互动，它也会在后台寻找能帮上忙的地方。 我们将其称为『主动研究』」。 官方还写明关闭应用后仍在继续推进工作， 以及「你的 Dot 可以接手项目并自主推进，即使它同时还在处理其他几个项目」。 <strong>多任务并行是官方明说的能力，不是推测</strong>。 <strong>工作空间是持续存在的</strong>：「每个 Dot 都有自己的云端计算机，可以在其中浏览网页、 分析信息、创建文件和运行工具。即使你没有主动参与， Dot 也能在这些工作空间中<strong>持续推进工作</strong>」。 ⚠ <strong>「主动研究」期间用的是只读工具</strong> —— 官方原文： 「在此过程中，它会通过仅具备只读权限的工具访问你已连接的应用。 这些工具无法发送消息、更改应用内容，也无法控制你的浏览器或计算机」。 <strong>这行限定条件很重要</strong>：后台自主 ≠ 后台可改。 <strong>⚠ 后台工作不是无条件跑下去的</strong>（2026-10-03 补）： 官方安全文档明确监控可以在执行中暂停它 —— 「如果安全监控在 Dot 正在进行的工作中发现风险，<strong>它可以暂停该工作</strong>， 并向你显示警告」；发布页版本写的是「可以暂停或停止 Dot 的工作」。 <strong>所以「关机后仍在推进」的准确表述是：仍在推进，但可能中途被拦下。</strong></dd>
         </div>
         <div class="axis">
           <dt>工具与扩展</dt>
@@ -112,11 +112,11 @@
         </div>
         <div class="axis">
           <dt>上下文与记忆</dt>
-          <dd><strong>跨渠道保留上下文</strong> —— 官方原文： 「dot 会在各个渠道间保留上下文，因此无论你通过哪个渠道联系它， 它都能掌握完整的上下文信息」。 渠道含 ChatGPT（桌面/网页/移动）、Slack、Teams、短信（官方写「即将推出」）、语音通话。 官方强调学习机制：「能在长期使用中从反馈里学习」「合作越多， Dot 就越了解你的偏好、思考方式，以及你心目中好工作的标准」。 <strong>上下文窗口大小、记忆的具体实现，官方发布页未给出，本次未核验。</strong></dd>
+          <dd><strong>跨渠道保留上下文</strong> —— 官方原文： 「dot 会在各个渠道间保留上下文，因此无论你通过哪个渠道联系它， 它都能掌握完整的上下文信息」。 渠道含 ChatGPT（桌面/网页/移动）、Slack、Teams、短信（官方写「即将推出」）、语音通话。 <strong>跨渠道共享的载体官方写明了是「项目」</strong>： 「你可以在 ChatGPT 中启动项目，<strong>通过 Slack 与负责该项目的团队共享上下文</strong>， 再让 dot 继续推进工作」—— 即上下文挂在项目上而不是挂在某个渠道上，这是它能跨渠道的机制前提。 官方强调学习机制：「能在长期使用中从反馈里学习」「合作越多， Dot 就越了解你的偏好、思考方式，以及你心目中好工作的标准」。 <strong>⚠ 训练数据默认不用于改进模型，但有一条重要例外</strong>（2026-10-03 补， 此前档案漏了这条）：官方原文「默认情况下，我们<strong>不会</strong>使用 ChatGPT Business、Enterprise 或 Edu 工作空间中的内容来改进模型」。 <strong>限定在三个工作空间档位</strong>——按发布页字面， 个人档与 Pro 档的去向官方在此页<strong>没有同样的表述</strong>， 这三档之间是否存在差异，官方页面未说明。<strong>不要把「不用来训练」推广到所有档位。</strong> <strong>上下文窗口大小与记忆存储实现，官方两个页面均未给数字。</strong></dd>
         </div>
         <div class="axis">
           <dt>权限与限制</dt>
-          <dd><strong>本档案权限信息最完整的一份，官方有独立两节。</strong> 分三层： ① 自定义规则 —— 官方原文「通过自定义规则，你可以允许特定操作、 要求先获批准，或禁止这些操作」，且<strong>「内置安全要求始终有效」</strong> （即自定义规则只能在官方底线之上收紧，不能放松）； ② 自动审核 —— 「对于可能影响你的账户或分享信息的操作，Dot 会通过自动审核」， 官方说明审核判据是「是否符合你的指令、自定义规则和安全要求」， 且明确「更改密码等特定敏感任务始终需要由你亲自完成」； ③ 凭据隔离 —— 「登录受支持的网站时，Dot 可以使用已保存的密码， 而无需向模型透露这些密码」。 <strong>审计面</strong>：官方提供活动视图（activity view）可跟进进度含后台工作。 ⚠ 官方同一页也写了「Dot 仍可能出错，因此，请务必检查可能产生重要影响的工作成果」。</dd>
+          <dd><strong>本档案权限信息最完整的一份，官方有独立两节。</strong> 分三层： ① 自定义规则 —— 官方原文「通过自定义规则，你可以允许特定操作、 要求先获批准，或禁止这些操作」，且<strong>「内置安全要求始终有效」</strong> （即自定义规则只能在官方底线之上收紧，不能放松）； ② 自动审核 —— 「对于可能影响你的账户或分享信息的操作，Dot 会通过自动审核」， 官方说明审核判据是「是否符合你的指令、自定义规则和安全要求」， 且明确「更改密码等特定敏感任务始终需要由你亲自完成」； ③ 凭据隔离 —— 「登录受支持的网站时，Dot 可以使用已保存的密码， 而无需向模型透露这些密码」。 <strong>④ 运行期监控会真的拦下来（2026-10-03 补，此前档案缺这一层）</strong>： 官方安全文档写「我们还会在 Dot <strong>规划和执行操作时进行监控</strong>， 查找潜在有害行为，例如超出你的指令范围，或试图绕过防护措施。 <strong>如果安全监控在 Dot 正在进行的工作中发现风险，它可以暂停该工作， 并向你显示警告，供你查看</strong>」。 <strong>这是「审核」与「执行」分离的实证</strong> —— 不是只在动作前拦， 也能在执行中停下。这是它与 Meta Muse「审批交给另一个 agent」最接近的一层， 但官方<strong>未说明这个监控器是否独立于模型</strong>（Muse 明写了 Sentinel 系统级隔离， Dot 没写）—— <strong>这一项不要替它补。</strong> <strong>审计面</strong>：官方提供活动视图（activity view）可跟进进度含后台工作。 ⚠ 官方同一页也写了「Dot 仍可能出错，因此，请务必检查可能产生重要影响的工作成果」。</dd>
         </div>
         <div class="axis">
           <dt>适合什么任务</dt>
@@ -131,6 +131,8 @@
           <li>以为自定义规则能放宽官方限制 —— 官方明确「内置安全要求始终有效」</li>
           <li>把 Dot 当独立产品去订阅 —— 它是 Pro / Business Premium 附带的权益</li>
           <li>以为 Enterprise 默认可用 —— 官方明确默认关闭、需工作空间管理员启用</li>
+          <li>把「内容不用于训练」推广到所有档位 —— 官方只点了 Business / Enterprise / Edu</li>
+          <li>以为后台工作会一直跑到底 —— 官方明写安全监控可在执行中暂停它</li>
         </ul>
       </div>
 
@@ -153,9 +155,10 @@
         <ul>
           <li>上下文窗口大小与记忆的具体实现</li>
           <li>「主动研究」的触发条件与频率</li>
-          <li>Dot 读取已连接应用里文件的具体机制</li>
-          <li>安全博客与系统卡描述的监测机制细节</li>
-          <li>已连接应用在<strong>只读</strong>工具下究竟能读到什么程度</li>
+          <li>已连接应用在<strong>只读</strong>工具下究竟能读到什么程度（官方只给否定式描述）</li>
+          <li>安全监控系统的检出率 / 误报率（官方只写「红队测试」，无数字）</li>
+          <li>运行期监控器是否独立于模型（Muse 明写 Sentinel 隔离，Dot 未说明）</li>
+          <li>「不用客户内容改进模型」是否也覆盖个人档与 Pro 档（官方只点了 Business/Enterprise/Edu）</li>
           <li>不同地区/账号的 rollout 差异</li>
         </ul>
       </div>
@@ -168,6 +171,7 @@
           <thead><tr><th class="w-20">类型</th><th class="w-52">名称</th><th>链接</th></tr></thead>
           <tbody>
             <tr><td>official</td><td>OpenAI · Introducing Dot（官方发布页，2026-09-29，正文 5,166 字逐节取）</td><td><a href="https://openai.com/index/introducing-dots/" target="_blank" rel="noopener">https://openai.com/index/introducing-dots/</a></td></tr>
+            <tr><td>official</td><td>OpenAI · 我们如何将安全性、信息安全和隐私保护融入 Dot（官方安全文档，2026-10-03 取到正文：沙盒机制 / 多租户隔离 / 执行环境与防护系统分离 / 运行期监控可暂停工作 / 授权本机后分析桌面表格 / prompt injection 官方承认）</td><td><a href="https://openai.com/index/how-we-build-safety-security-and-privacy-into-dots/" target="_blank" rel="noopener">https://openai.com/index/how-we-build-safety-security-and-privacy-into-dots/</a></td></tr>
             <tr><td>official</td><td>OpenAI · DevDay 2026 回顾（Dots 的方案范围与 Enterprise beta 状态）</td><td><a href="https://openai.com/index/devday-2026-recap" target="_blank" rel="noopener">https://openai.com/index/devday-2026-recap</a></td></tr>
             <tr><td>changelog</td><td>OpenAI · 产品发布记录（Product News and Updates，2026-09-29「隆重推出 Dot」）</td><td><a href="https://help.openai.com/en/articles/6825453-chatgpt-release-notes" target="_blank" rel="noopener">https://help.openai.com/en/articles/6825453-chatgpt-release-notes</a></td></tr>
           </tbody>
