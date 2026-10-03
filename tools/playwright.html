@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Playwright MCP Server — Tools | 投机取巧</title>
+  <meta name="description" content="Playwright MCP Server（Microsoft）：微软维护的浏览器自动化 server，用无障碍树而非截图驱动——不需要视觉模型，输出是结构化快照。" />
+  <link rel="canonical" href="https://agent.specul.com/tools/playwright.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Playwright MCP Server" />
+  <meta property="og:url" content="https://agent.specul.com/tools/playwright.html" />
+  <meta property="og:title" content="Playwright MCP Server — Tools | 投机取巧" />
+  <meta property="og:description" content="Playwright MCP Server（Microsoft）：微软维护的浏览器自动化 server，用无障碍树而非截图驱动——不需要视觉模型，输出是结构化快照。" />
+  <meta name="theme-color" content="#05080f" />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%238b7cf8'/%3E%3Cstop offset='1' stop-color='%2322d3c5'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='48' height='48' rx='12' fill='%2305080f'/%3E%3Cpath d='M14 32 L24 12 L34 32' fill='none' stroke='url(%23g)' stroke-width='2.4' stroke-linejoin='round'/%3E%3Ccircle cx='24' cy='27' r='2.4' fill='%2322d3c5'/%3E%3C/svg%3E" />
+  <link rel="stylesheet" href="../brand.css" />
+  <link rel="stylesheet" href="../site.css" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Playwright MCP Server","applicationCategory":"DeveloperApplication","url":"https://github.com/microsoft/playwright-mcp","sameAs":"https://github.com/microsoft/playwright-mcp","description":"微软维护的浏览器自动化 server，用无障碍树而非截图驱动——不需要视觉模型，输出是结构化快照。","dateModified":"2026-09-29"}</script>
+</head>
+<body class="brand-ambient">
+  <a class="t-skip" href="#main">跳到主要内容</a>
+  <header class="site-header">
+    <div class="container site-bar">
+      <a class="brand" href="https://specul.com/" title="投机取巧">
+        <span class="brand-dot" aria-hidden="true"></span>
+        <span class="brand-text">
+          <span class="brand-name" id="markName" data-zh-name="投机取巧" data-en-name="Speculative Speculation">投机取巧</span>
+        </span>
+      </a>
+      <nav class="nav-links" aria-label="站点导航">
+        <a href="https://specul.com/"><span data-zh>首页</span><span data-en>Home</span></a>
+        <a href="https://learn.specul.com/"><span data-zh>学 AI</span><span data-en>Learn</span></a>
+        <a href="https://agent.specul.com/" aria-current="page"><span data-zh>Agent</span><span data-en>Agent</span></a>
+        <a href="https://models.specul.com/"><span data-zh>本地模型</span><span data-en>Models</span></a>
+        <a href="https://nav.specul.com/"><span data-zh>导航</span><span data-en>Directory</span></a>
+        <span class="nav-tools">
+          <button class="icon-btn" id="themeBtn" type="button" aria-label="切换明暗主题" title="切换明暗主题">☾</button>
+          <button class="icon-btn" id="langBtn" type="button" aria-label="Switch language" title="Switch language">EN</button>
+        </span>
+      </nav>
+    </div>
+  </header>
+  <main id="main">
+    <div class="container detail">
+      <nav class="crumbs" aria-label="面包屑">
+        <a href="https://agent.specul.com/">Agent 图谱</a>
+        <a href="/">Agents</a>
+        <a href="/harness/">Harness</a>
+        <span aria-current="page">Tools</span>
+      </nav>
+      <a class="back" href="./">← Tools</a>
+
+      <div class="detail-head">
+        <div class="mark" style="--card-accent:#2D9CDB" aria-hidden="true">P</div>
+        <div>
+          <h1>Playwright MCP Server</h1>
+          <div class="vendor is-caps">Microsoft</div>
+        </div>
+      </div>
+
+      <div class="badges">
+        <span class="tag on">浏览器</span>
+        <span class="tag on">网络</span>
+        <span class="tag on">本地</span>
+        <span class="tag on">只读</span>
+        <span class="badge accent">verified</span>
+        <span class="badge">lifecycle: active</span>
+        <span class="badge">核验 2026-09-29</span>
+      </div>
+
+            <p class="panel-lead">微软维护的浏览器自动化 server，<strong>用无障碍树而非截图驱动</strong>——不需要视觉模型，输出是结构化快照。</p>
+
+            <div class="panel is-slim">
+        <h2>适合与不适合</h2>
+        <p>需要浏览器自动化<strong>且要保持会话状态</strong>的场景：
+探索性自动化、自愈测试、长时自主工作流。</p>
+        <p class="warn-p"><strong>不适合</strong>高吞吐编码 agent**——README 自己建议这类场景改用
+Playwright CLI + SKILLS，因为 MCP 形态要加载大工具 schema 和无障碍树，
+token 效率更低。
+也不适合需要真正网络隔离的场景：官方明确声明来源限制不构成安全边界。</p>
+      </div>
+
+
+      <div class="block-head">
+        <h2 class="t-h2">固定坐标系</h2>
+        <p class="t-section-lead">11 个维度，与同赛道其他对象逐项可比。</p>
+      </div>
+      <dl class="axes">
+        <div class="axis">
+          <dt>模型与开放条件</dt>
+          <dd>本身不调用模型，是被客户端调用的接口实现。 <strong>用 Playwright 的无障碍树（accessibility tree）而非像素输入</strong>， 因此不需要视觉模型，输出为结构化快照。</dd>
+        </div>
+        <div class="axis">
+          <dt>运行位置</dt>
+          <dd>本地 Node.js 进程（需 Node.js 18+），通过 stdio 通信。 也提供 HTTP endpoint 模式与浏览器扩展模式（Edge / Chrome）。 默认有头模式，可用 --headless 切换。</dd>
+        </div>
+        <div class="axis">
+          <dt>本地文件</dt>
+          <dd><strong>无本地文件访问能力</strong>。核心能力是浏览器控制。 用户 profile 默认落盘在 Playwright 缓存目录（按 workspace hash 隔离）， 用 --isolated 可改为仅存内存。</dd>
+        </div>
+        <div class="axis">
+          <dt>关机后的任务</dt>
+          <dd>浏览器进程可保持常驻。--idle-timeout 控制空闲关闭： <strong>headless 默认 1 小时关闭，headed 模式默认永不关闭</strong>； 下次工具调用会重新拉起浏览器。</dd>
+        </div>
+        <div class="axis">
+          <dt>工具与扩展</dt>
+          <dd>提供完整的浏览器自动化工具集（导航、点击、输入、快照、截图等）。 输出以无障碍树结构为主，是结构化数据，可直接消费。 <strong>具体工具清单需读仓库文档，本站未逐条核验。</strong></dd>
+        </div>
+        <div class="axis">
+          <dt>上下文与记忆</dt>
+          <dd><strong>保持浏览器上下文是本 server 的核心价值</strong>—— README 明确指出 MCP 形态适合需要持久状态、 丰富内省与迭代推理的 agentic loop， 例如探索性自动化、自愈测试、长时自主工作流。</dd>
+        </div>
+        <div class="axis">
+          <dt>权限与限制</dt>
+          <dd><strong>需要给浏览器授予权限，且官方明确说明限制手段不是安全边界。</strong> --grant-permissions 可授予 geolocation、clipboard-read、clipboard-write 等权限。 <strong>--allowed-origins 与 --blocked-origins 的文档原文明确写着 「does not serve as a security boundary」且不影响重定向。</strong> 默认允许所有来源。</dd>
+        </div>
+        <div class="axis">
+          <dt>适合什么任务</dt>
+          <dd>需要浏览器自动化且要保持会话状态的场景： 探索性自动化、自愈测试、长时自主工作流。 <strong>不适合高吞吐编码 agent</strong>——README 自己建议这类场景改用 Playwright CLI + SKILLS，因为 token 效率更高。</dd>
+        </div>
+        <div class="axis">
+          <dt>传输方式</dt>
+          <dd>支持 <strong>stdio</strong>，另提供 <strong>HTTP endpoint</strong> 模式（--endpoint） 与浏览器扩展连接模式（--extension，需装 Playwright 扩展，仅 Edge / Chrome）。 --shared-browser-context 可让多个 HTTP 客户端共用同一浏览器上下文。</dd>
+        </div>
+        <div class="axis">
+          <dt>认证机制</dt>
+          <dd>stdio 形态无独立认证层，继承客户端用户权限。 <strong>HTTP endpoint 模式的认证机制仓库未说明，本次未核验。</strong></dd>
+        </div>
+        <div class="axis">
+          <dt>权限范围</dt>
+          <dd><strong>控制的是浏览器而非文件</strong>，但风险面同样宽： 默认允许访问所有来源（--allowed-origins 默认放行全部）， 且可被授予地理位置、剪贴板读写等浏览器权限。 官方<strong>明确声明来源限制不是安全边界</strong>， 需要真正隔离时应使用 --isolated 或容器化网络策略。</dd>
+        </div>
+      </dl>
+
+            <div class="panel warn">
+        <h2 class="warn">头号误解</h2>
+        <ul>
+          <li>以为 allowed-origins 能当访问白名单，官方明说不构成安全边界且不防重定向</li>
+          <li>以为无头模式会常驻，实际 headless 默认 1 小时空闲即关，headed 默认永不关</li>
+          <li>在高吞吐编码场景硬上 MCP，官方自己建议改用 CLI + SKILLS</li>
+        </ul>
+      </div>
+
+
+            <div class="panel is-slim">
+        <h2>价格</h2>
+        <table class="src">
+          <tbody>
+            <tr><th class="w-28">月度入口</th><td>无商业费用</td></tr>
+            <tr><th class="w-28">年付</th><td>无商业费用</td></tr>
+            <tr><th class="w-28">额度说明</th><td>Apache-2.0 开源，无授权费。 实际成本来自浏览器运行与目标网站的访问，不来自本 server。</td></tr>
+          </tbody>
+        </table>
+        <p class="fine mt-3">不同币种不做折算。优惠、地区、税费与登录后报价可能变化，购买前请到官方页面确认。</p>
+      </div>
+
+
+            <div class="panel is-slim">
+        <h2>未知项清单</h2>
+        <ul>
+          <li>完整工具清单（需读仓库文档）</li>
+          <li>HTTP endpoint 模式的认证机制</li>
+          <li>多客户端共用上下文时的状态隔离程度</li>
+          <li>重定向绕过来源限制的具体表现</li>
+        </ul>
+      </div>
+
+
+      <div class="panel">
+        <h2>证据来源</h2>
+        <p class="t-sm">判断可回到以下一手源复核。本站核验日 2026-09-29，内容更新日 2026-09-29。</p>
+        <table class="src">
+          <thead><tr><th class="w-20">类型</th><th class="w-52">名称</th><th>链接</th></tr></thead>
+          <tbody>
+            <tr><td>docs</td><td>Microsoft · Playwright MCP README（含来源限制免责声明）</td><td><a href="https://github.com/microsoft/playwright-mcp" target="_blank" rel="noopener">https://github.com/microsoft/playwright-mcp</a></td></tr>
+            <tr><td>changelog</td><td>Microsoft · Playwright MCP Releases（v0.0.83 / v0.0.82 / v0.0.81）</td><td><a href="https://github.com/microsoft/playwright-mcp/releases" target="_blank" rel="noopener">https://github.com/microsoft/playwright-mcp/releases</a></td></tr>
+            <tr><td>changelog</td><td>Microsoft · Playwright MCP Commits</td><td><a href="https://github.com/microsoft/playwright-mcp/commits/main" target="_blank" rel="noopener">https://github.com/microsoft/playwright-mcp/commits/main</a></td></tr>
+            <tr><td>docs</td><td>Model Context Protocol · 规范</td><td><a href="https://modelcontextprotocol.io/specification" target="_blank" rel="noopener">https://modelcontextprotocol.io/specification</a></td></tr>
+          </tbody>
+        </table>
+      </div>
+
+            <div class="panel is-slim">
+        <h2>实测记录</h2>
+        <p>本站尚未完成实测。测试协议见 <a href="https://github.com/speculcom/ai-agent-guide/blob/main/tracks/agents/tasks/_protocol.md" target="_blank" rel="noopener">tasks/_protocol.md</a>。
+
+<strong>实测建议</strong>：重点测 token 消耗——同一任务下 MCP 形态 vs 截图形态的
+上下文占用差异，这是官方选型建议的核心依据，值得量化。</p>
+      </div>
+
+
+            <div class="panel is-slim">
+        <h2>相关条目</h2>
+        <ul class="rel-list">
+          <li><span class="rel-t"><a href="./fetch.html">Fetch MCP Server</a></span><span class="rel-n">同为网络访问方向，官方同样明确标注了安全警告</span></li>
+          <li><span class="rel-t"><a href="./everything.html">Everything MCP Server</a></span><span class="rel-n">测试用 server，不适合生产</span></li>
+        </ul>
+      </div>
+
+
+      <p class="fine mt-6">
+        本页由 <a href="https://github.com/speculcom/ai-agent-guide" target="_blank" rel="noopener" class="link-brand">ai-agent-guide</a> 数据层生成（CC BY 4.0）。
+        方法论与坐标系定义见仓库内 <code>METHODOLOGY.md</code>。
+      </p>
+    </div>
+  </main>
+  <footer class="site-footer">
+    <div class="container foot-row">
+      <div class="foot-brand">
+        <span class="brand-dot" aria-hidden="true"></span>
+        <span class="foot-copy">© 2026 投机取巧 · <span data-zh>Specul</span><span data-en>Specul</span></span>
+      </div>
+      <nav class="foot-links" aria-label="页脚导航">
+          <a href="https://specul.com/"><span data-zh>首页</span><span data-en>Home</span></a>
+          <a href="https://learn.specul.com/">学 AI</a>
+          <a href="https://agent.specul.com/">Agent</a>
+          <a href="https://models.specul.com/">本地模型</a>
+          <a href="https://nav.specul.com/"><span data-zh>导航</span><span data-en>Directory</span></a>
+          <a href="https://github.com/speculcom/ai-agent-guide" target="_blank" rel="noopener">GitHub</a>
+      </nav>
+      <nav class="foot-legal-links" aria-label="法律">
+        <a href="https://specul.com/legal.html"><span data-zh>法律条款</span><span data-en>Legal terms</span></a>
+        <a href="https://specul.com/legal.html#s6"><span data-zh>免责声明</span><span data-en>Disclaimer</span></a>
+        <a href="https://specul.com/legal.html#s8"><span data-zh>隐私与本地存储</span><span data-en>Privacy</span></a>
+      </nav>
+    </div>
+  </footer>
+  <script src="../brand.js"></script>
+  <script>
+    (function () {
+      var root = document.documentElement;
+      function sync() { root.setAttribute('data-lang', root.lang === 'en' ? 'en' : 'zh'); }
+      new MutationObserver(sync).observe(root, { attributes: true, attributeFilter: ['lang'] });
+      sync();
+    })();
+  </script>
+</body>
+</html>
