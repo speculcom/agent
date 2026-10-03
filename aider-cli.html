@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aider — Agents | 投机取巧</title>
+  <meta name="description" content="Aider（Aider-AI）：Git 集成是核心设计而非附加功能的终端 pair programming 工具——AI 改动始终在版本控制里，可 diff 可撤销。" />
+  <link rel="canonical" href="https://agent.specul.com/aider-cli.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Aider" />
+  <meta property="og:url" content="https://agent.specul.com/aider-cli.html" />
+  <meta property="og:title" content="Aider — Agents | 投机取巧" />
+  <meta property="og:description" content="Aider（Aider-AI）：Git 集成是核心设计而非附加功能的终端 pair programming 工具——AI 改动始终在版本控制里，可 diff 可撤销。" />
+  <meta name="theme-color" content="#05080f" />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%238b7cf8'/%3E%3Cstop offset='1' stop-color='%2322d3c5'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='48' height='48' rx='12' fill='%2305080f'/%3E%3Cpath d='M14 32 L24 12 L34 32' fill='none' stroke='url(%23g)' stroke-width='2.4' stroke-linejoin='round'/%3E%3Ccircle cx='24' cy='27' r='2.4' fill='%2322d3c5'/%3E%3C/svg%3E" />
+  <link rel="stylesheet" href="brand.css" />
+  <link rel="stylesheet" href="site.css" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Aider","applicationCategory":"DeveloperApplication","url":"https://github.com/Aider-AI/aider","sameAs":"https://github.com/Aider-AI/aider","description":"Git 集成是核心设计而非附加功能的终端 pair programming 工具——AI 改动始终在版本控制里，可 diff 可撤销。","dateModified":"2026-09-29"}</script>
+</head>
+<body class="brand-ambient">
+  <a class="t-skip" href="#main">跳到主要内容</a>
+  <header class="site-header">
+    <div class="container site-bar">
+      <a class="brand" href="https://specul.com/" title="投机取巧">
+        <span class="brand-dot" aria-hidden="true"></span>
+        <span class="brand-text">
+          <span class="brand-name" id="markName" data-zh-name="投机取巧" data-en-name="Speculative Speculation">投机取巧</span>
+        </span>
+      </a>
+      <nav class="nav-links" aria-label="站点导航">
+        <a href="https://specul.com/"><span data-zh>首页</span><span data-en>Home</span></a>
+        <a href="https://learn.specul.com/"><span data-zh>学 AI</span><span data-en>Learn</span></a>
+        <a href="https://agent.specul.com/" aria-current="page"><span data-zh>Agent</span><span data-en>Agent</span></a>
+        <a href="https://models.specul.com/"><span data-zh>本地模型</span><span data-en>Models</span></a>
+        <a href="https://nav.specul.com/"><span data-zh>导航</span><span data-en>Directory</span></a>
+        <span class="nav-tools">
+          <button class="icon-btn" id="themeBtn" type="button" aria-label="切换明暗主题" title="切换明暗主题">☾</button>
+          <button class="icon-btn" id="langBtn" type="button" aria-label="Switch language" title="Switch language">EN</button>
+        </span>
+      </nav>
+    </div>
+  </header>
+  <main id="main">
+    <div class="container detail">
+      <nav class="crumbs" aria-label="面包屑">
+        <a href="https://agent.specul.com/">Agent 图谱</a>
+        <span aria-current="page">Agents</span>
+        <a href="/harness/">Harness</a>
+        <a href="/tools/">Tools</a>
+      </nav>
+      <a class="back" href="./">← Agents</a>
+
+      <div class="detail-head">
+        <div class="mark" style="--card-accent:#D4A27F" aria-hidden="true">A</div>
+        <div>
+          <h1>Aider</h1>
+          <div class="vendor is-caps">Aider-AI</div>
+        </div>
+      </div>
+
+      <div class="badges">
+        <span class="tag on">编程</span>
+        <span class="tag on">终端</span>
+        <span class="tag on">本地</span>
+        <span class="tag on">开源</span>
+        <span class="badge accent">partial</span>
+        <span class="badge">lifecycle: maintenance</span>
+        <span class="badge">核验 2026-09-29</span>
+      </div>
+
+            <p class="panel-lead">Git 集成是<strong>核心设计而非附加功能</strong>的终端 pair programming 工具——AI 改动始终在版本控制里，可 diff 可撤销。</p>
+
+            <div class="panel is-slim">
+        <h2>适合与不适合</h2>
+        <p>需要 AI 改动始终留在 git 版本控制里、可 diff 可撤销的场景。
+需要连接本地模型或多家云端模型的用户。</p>
+        <p class="warn-p"><strong>不适合</strong>需要新模型支持或依赖上游修复的场景——
+最新 release 停在 2025-08，维护状态为 maintenance。</p>
+      </div>
+
+
+      <div class="block-head">
+        <h2 class="t-h2">固定坐标系</h2>
+        <p class="t-section-lead">8 个维度，与同赛道其他对象逐项可比。</p>
+      </div>
+      <dl class="axes">
+        <div class="axis">
+          <dt>模型与开放条件</dt>
+          <dd><strong>支持云端与本地 LLM，可连接几乎任何模型</strong>， 明确包含本地模型选项。 README 当前推荐的模型是 Claude 3.7 Sonnet、DeepSeek R1 &amp; Chat V3、 OpenAI o1 / o3-mini / GPT-4o。 <strong>注意：这份推荐列表停留在上一代模型， 与该项目 13 个月未发 release 的状态一致，参考时需自行核对当前可用模型。</strong></dd>
+        </div>
+        <div class="axis">
+          <dt>运行位置</dt>
+          <dd>本地 <strong>Python</strong> 进程，在终端内运行（PyPI 包 aider-chat，官方徽章显示 680 万次安装）。 生命周期绑定终端会话，退出即结束。 另有 watch 常驻形态（见 <a href="/aider.html">IDE 形态条目</a>）。</dd>
+        </div>
+        <div class="axis">
+          <dt>本地文件</dt>
+          <dd><strong>Repo Map 是本工具的核心机制</strong>（官方文档 <code>docs/repomap.md</code> 原文）： Aider 使用「一份简洁的整个 git 仓库的地图」， 包含<strong>最重要的类与函数及其类型与调用签名</strong>。 <strong>每次用户提出改动请求时，repo map 都随请求一起发给模型</strong>， map 包含仓库文件列表 + 每个文件的关键符号。 <strong>两个作用</strong>（文档明确列出）： 一是帮助它理解正在编辑的代码及其与代码库其他部分的关系； 二是帮助它写新代码时<strong>复用代码库里已有的库、模块与抽象</strong>。 支持 100+ 编程语言。 <strong>大仓库的 repo map 耗时与 token 开销本次未实测，记为未知。</strong></dd>
+        </div>
+        <div class="axis">
+          <dt>关机后的任务</dt>
+          <dd>不支持终端形态的后台长任务。 另有 watch 模式（见 <a href="/aider.html">IDE 形态条目</a>）： 常驻监听文件变化并响应编辑器里的 AI 注释， <strong>但那是本地进程常驻，不是云端后台</strong>。</dd>
+        </div>
+        <div class="axis">
+          <dt>工具与扩展</dt>
+          <dd>文件编辑 + <strong>Git 操作</strong>。<strong>README 强调 Git 集成本身就是核心功能</strong>： 自动用合理的 commit message 提交， 可用熟悉的 git 工具 diff、管理与撤销 AI 改动。 官方文档另有 <code>docs/languages.md</code>（语言支持）与 <code>docs/git.md</code>。 <strong>MCP 接入方式本次未核验，记为未知。</strong></dd>
+        </div>
+        <div class="axis">
+          <dt>上下文与记忆</dt>
+          <dd><strong>Repo Map 提供全库结构视图</strong>，每次请求随附（见 local_files）。 <strong>上下文窗口大小与压缩策略本次未核验，记为未知。</strong></dd>
+        </div>
+        <div class="axis">
+          <dt>权限与限制</dt>
+          <dd><strong>具备自动提交能力</strong>（auto-commit），这是它的一体化设计而非附加功能。 撤销路径是 <strong>git 本身</strong>（不是工具提供的回滚功能）—— README 明确说「用熟悉的 git 工具 diff、管理与撤销 AI 的改动」。 <strong>沙箱机制与「执行命令前是否询问」本次未核验，记为未知。</strong></dd>
+        </div>
+        <div class="axis">
+          <dt>适合什么任务</dt>
+          <dd>希望 AI 改动始终留在 git 版本控制里、可 diff 可撤销的场景。 需要连接本地模型或多家云端模型的用户。 需要「写新代码时复用已有抽象」的人（Repo Map 的第二个作用）。 <strong>不适合需要活跃维护与新模型支持的场景</strong>（见下方维护状态）。</dd>
+        </div>
+      </dl>
+
+            <div class="panel warn">
+        <h2 class="warn">头号误解</h2>
+        <ul>
+          <li>以为还在积极维护，最新 release 停在 2025-08-09，距采集日 13 个月</li>
+          <li>以为 README 推荐的模型是最新的，推列表仍停留在上一代</li>
+          <li>以为自动提交是副作用，实际这是它的核心设计，需要先熟悉 git 撤销流程</li>
+        </ul>
+      </div>
+
+
+            <div class="panel is-slim">
+        <h2>价格</h2>
+        <table class="src">
+          <tbody>
+            <tr><th class="w-28">月度入口</th><td>开源免费，模型费用另计</td></tr>
+            <tr><th class="w-28">年付</th><td>开源免费，模型费用另计</td></tr>
+            <tr><th class="w-28">额度说明</th><td>Apache-2.0 开源，PyPI 包为 aider-chat（官方徽章显示 680 万次安装）。 <strong>模型调用费用完全由用户自付</strong>—— 支持云端与本地 LLM，包括 OpenRouter 等平台与本地模型。</td></tr>
+          </tbody>
+        </table>
+        <p class="fine mt-3">不同币种不做折算。优惠、地区、税费与登录后报价可能变化，购买前请到官方页面确认。</p>
+      </div>
+
+
+            <div class="panel is-slim">
+        <h2>未知项清单</h2>
+        <ul>
+          <li>Repo Map 的具体算法与 token 预算控制</li>
+          <li>上下文窗口与压缩策略</li>
+          <li>是否支持 MCP</li>
+          <li>执行命令前是否有确认机制</li>
+          <li>watch 模式的具体行为</li>
+        </ul>
+      </div>
+
+
+      <div class="panel">
+        <h2>证据来源</h2>
+        <p class="t-sm">判断可回到以下一手源复核。本站核验日 2026-09-29，内容更新日 2026-09-29。</p>
+        <table class="src">
+          <thead><tr><th class="w-20">类型</th><th class="w-52">名称</th><th>链接</th></tr></thead>
+          <tbody>
+            <tr><td>repo</td><td>Aider · 仓库 README</td><td><a href="https://github.com/Aider-AI/aider" target="_blank" rel="noopener">https://github.com/Aider-AI/aider</a></td></tr>
+            <tr><td>changelog</td><td>Aider · Releases（v0.86.0 @ 2025-08-09 为最新）</td><td><a href="https://github.com/Aider-AI/aider/releases" target="_blank" rel="noopener">https://github.com/Aider-AI/aider/releases</a></td></tr>
+            <tr><td>docs</td><td>Aider · 官方文档站</td><td><a href="https://aider.chat/docs/" target="_blank" rel="noopener">https://aider.chat/docs/</a></td></tr>
+            <tr><td>changelog</td><td>Aider · 变更历史</td><td><a href="https://aider.chat/HISTORY.html" target="_blank" rel="noopener">https://aider.chat/HISTORY.html</a></td></tr>
+          </tbody>
+        </table>
+      </div>
+
+            <div class="panel is-slim">
+        <h2>实测记录</h2>
+        <p>本站尚未完成实测。测试协议见 <a href="https://github.com/speculcom/ai-agent-guide/blob/main/tracks/agents/tasks/_protocol.md" target="_blank" rel="noopener">tasks/_protocol.md</a>。
+
+<strong>实测建议</strong>：这个工具的实测重点应放在
+<strong>「自动提交 + 撤销」这条链路是否顺畅</strong>——
+因为这是它与其他工具最大的工作流差异。</p>
+      </div>
+
+
+            <div class="panel is-slim">
+        <h2>相关条目</h2>
+        <ul class="rel-list">
+          <li><span class="rel-t"><a href="./codex-cli.html">Codex CLI</a></span><span class="rel-n">同类工具，维护活跃</span></li>
+          <li><span class="rel-t"><a href="./opencode.html">OpenCode</a></span><span class="rel-n">同类工具，更新频繁</span></li>
+        </ul>
+      </div>
+
+
+      <p class="fine mt-6">
+        本页由 <a href="https://github.com/speculcom/ai-agent-guide" target="_blank" rel="noopener" class="link-brand">ai-agent-guide</a> 数据层生成（CC BY 4.0）。
+        方法论与坐标系定义见仓库内 <code>METHODOLOGY.md</code>。
+      </p>
+    </div>
+  </main>
+  <footer class="site-footer">
+    <div class="container foot-row">
+      <div class="foot-brand">
+        <span class="brand-dot" aria-hidden="true"></span>
+        <span class="foot-copy">© 2026 投机取巧 · <span data-zh>Specul</span><span data-en>Specul</span></span>
+      </div>
+      <nav class="foot-links" aria-label="页脚导航">
+          <a href="https://specul.com/"><span data-zh>首页</span><span data-en>Home</span></a>
+          <a href="https://learn.specul.com/">学 AI</a>
+          <a href="https://agent.specul.com/">Agent</a>
+          <a href="https://models.specul.com/">本地模型</a>
+          <a href="https://nav.specul.com/"><span data-zh>导航</span><span data-en>Directory</span></a>
+          <a href="https://github.com/speculcom/ai-agent-guide" target="_blank" rel="noopener">GitHub</a>
+      </nav>
+      <nav class="foot-legal-links" aria-label="法律">
+        <a href="https://specul.com/legal.html"><span data-zh>法律条款</span><span data-en>Legal terms</span></a>
+        <a href="https://specul.com/legal.html#s6"><span data-zh>免责声明</span><span data-en>Disclaimer</span></a>
+        <a href="https://specul.com/legal.html#s8"><span data-zh>隐私与本地存储</span><span data-en>Privacy</span></a>
+      </nav>
+    </div>
+  </footer>
+  <script src="brand.js"></script>
+  <script>
+    (function () {
+      var root = document.documentElement;
+      function sync() { root.setAttribute('data-lang', root.lang === 'en' ? 'en' : 'zh'); }
+      new MutationObserver(sync).observe(root, { attributes: true, attributeFilter: ['lang'] });
+      sync();
+    })();
+  </script>
+</body>
+</html>
