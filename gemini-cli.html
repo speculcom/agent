@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gemini CLI — Agents | 投机取巧</title>
+  <meta name="description" content="Gemini CLI（Google）：Google 官方的开源终端 agent，npx 免安装 + 明确 MCP 支持 + 非交互脚本模式，是三者里工程化最完整的。" />
+  <link rel="canonical" href="https://agent.specul.com/gemini-cli.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Gemini CLI" />
+  <meta property="og:url" content="https://agent.specul.com/gemini-cli.html" />
+  <meta property="og:title" content="Gemini CLI — Agents | 投机取巧" />
+  <meta property="og:description" content="Gemini CLI（Google）：Google 官方的开源终端 agent，npx 免安装 + 明确 MCP 支持 + 非交互脚本模式，是三者里工程化最完整的。" />
+  <meta name="theme-color" content="#05080f" />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%238b7cf8'/%3E%3Cstop offset='1' stop-color='%2322d3c5'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='48' height='48' rx='12' fill='%2305080f'/%3E%3Cpath d='M14 32 L24 12 L34 32' fill='none' stroke='url(%23g)' stroke-width='2.4' stroke-linejoin='round'/%3E%3Ccircle cx='24' cy='27' r='2.4' fill='%2322d3c5'/%3E%3C/svg%3E" />
+  <link rel="stylesheet" href="brand.css" />
+  <link rel="stylesheet" href="site.css" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Gemini CLI","applicationCategory":"DeveloperApplication","url":"https://github.com/google-gemini/gemini-cli","sameAs":"https://github.com/google-gemini/gemini-cli","description":"Google 官方的开源终端 agent，npx 免安装 + 明确 MCP 支持 + 非交互脚本模式，是三者里工程化最完整的。","dateModified":"2026-09-29","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}</script>
+</head>
+<body class="brand-ambient">
+  <a class="t-skip" href="#main">跳到主要内容</a>
+  <header class="site-header">
+    <div class="container site-bar">
+      <a class="brand" href="https://specul.com/" title="投机取巧">
+        <span class="brand-dot" aria-hidden="true"></span>
+        <span class="brand-text">
+          <span class="brand-name" id="markName" data-zh-name="投机取巧" data-en-name="Speculative Speculation">投机取巧</span>
+        </span>
+      </a>
+      <nav class="nav-links" aria-label="站点导航">
+        <a href="https://specul.com/"><span data-zh>首页</span><span data-en>Home</span></a>
+        <a href="https://learn.specul.com/"><span data-zh>学 AI</span><span data-en>Learn</span></a>
+        <a href="https://agent.specul.com/" aria-current="page"><span data-zh>Agent</span><span data-en>Agent</span></a>
+        <a href="https://models.specul.com/"><span data-zh>本地模型</span><span data-en>Models</span></a>
+        <a href="https://nav.specul.com/"><span data-zh>导航</span><span data-en>Directory</span></a>
+        <span class="nav-tools">
+          <button class="icon-btn" id="themeBtn" type="button" aria-label="切换明暗主题" title="切换明暗主题">☾</button>
+          <button class="icon-btn" id="langBtn" type="button" aria-label="Switch language" title="Switch language">EN</button>
+        </span>
+      </nav>
+    </div>
+  </header>
+  <main id="main">
+    <div class="container detail">
+      <nav class="crumbs" aria-label="面包屑">
+        <a href="https://agent.specul.com/">Agent 图谱</a>
+        <span aria-current="page">Agents</span>
+        <a href="/harness/">Harness</a>
+        <a href="/tools/">Tools</a>
+      </nav>
+      <a class="back" href="./">← Agents</a>
+
+      <div class="detail-head">
+        <div class="mark" style="--card-accent:#4285F4" aria-hidden="true">G</div>
+        <div>
+          <h1>Gemini CLI</h1>
+          <div class="vendor is-caps">Google</div>
+        </div>
+      </div>
+
+      <div class="badges">
+        <span class="tag on">编程</span>
+        <span class="tag on">终端</span>
+        <span class="tag on">本地</span>
+        <span class="tag on">开源</span>
+        <span class="badge accent">partial</span>
+        <span class="badge">lifecycle: active</span>
+        <span class="badge">核验 2026-09-29</span>
+      </div>
+
+            <p class="panel-lead">Google 官方的开源终端 agent，<strong>npx 免安装 + 明确 MCP 支持 + 非交互脚本模式</strong>，是三者里工程化最完整的。</p>
+
+            <div class="panel is-slim">
+        <h2>适合与不适合</h2>
+        <p>需要 npx 免安装快速试用、需要 MCP 扩展、需要脚本化非交互运行（CI）的场景。
+尤其适合想把 Gemini 多模态生成（Imagen / Veo / Lyria）接进工作流的用户。
+需要大上下文窗口的人（1M token，本赛道明确写出上限的少数）。
+需要「改动可回退」保证的人（shadow Git 检查点 + <code>/restore</code>）。
+需要项目级长期指令文件的人（GEMINI.md）。</p>
+        <p class="warn-p"><strong>不适合</strong>需要明确额度边界的场景——
+额度政策本次未核验，记为未知。</p>
+      </div>
+
+
+      <div class="block-head">
+        <h2 class="t-h2">固定坐标系</h2>
+        <p class="t-section-lead">8 个维度，与同赛道其他对象逐项可比。</p>
+      </div>
+      <dl class="axes">
+        <div class="axis">
+          <dt>模型与开放条件</dt>
+          <dd>Google 自家 <strong>Gemini 系列模型</strong>，README 标注 <strong>1M token context window</strong> （1M 上下文窗口），是本赛道少数明确写出上下文上限的。 <strong>2026-10-01 官方产品页补充</strong>：当前 IDE 侧主力是 <strong>Gemini 2.5</strong>， <strong>Gemini 3 标注「coming soon」，走 Preview release channel</strong>。 另有<strong>代码库感知窗口 1M token</strong>、<strong>代码自定义库上限 20,000 个仓库</strong> （Gemini Code Assist 官方quota 数值）。 <strong>未核验</strong>：CLI 侧具体可切换的模型清单与版本映射（官方 README 未列全，站点未取到正文）， 此处保持未知，不做推断。</dd>
+        </div>
+        <div class="axis">
+          <dt>运行位置</dt>
+          <dd>本地进程，在终端运行。 <strong>README 强调「Using npx (no installation required)」—— npx 免安装形态降低了上手门槛。</strong></dd>
+        </div>
+        <div class="axis">
+          <dt>本地文件</dt>
+          <dd>内置文件操作工具（README 标注「🔧 Built-in tools: Google Search grounding, file operations, shell」）。 <strong>检查点机制明确且实现方式值得记录</strong>（<code>docs/cli/checkpointing.md</code>）： 每当你批准一个会修改文件系统的工具（<code>write_file</code>、<code>replace</code> 等）， CLI <strong>自动在 home 目录下的一个专用 shadow Git 仓库 （<code>~/.gemini/history/&lt;project_hash&gt;</code>）里做一次提交</strong>， 快照项目的完整状态； <strong>关键点：这个 shadow 仓库不干扰你自己的项目 Git 仓库。</strong> 同时保存完整对话历史与即将执行的工具调用， 可用 <code>/restore</code> 回退。 <strong>索引算法与大仓库表现本次未核验。</strong></dd>
+        </div>
+        <div class="axis">
+          <dt>关机后的任务</dt>
+          <dd>不支持终端形态的后台长任务。 <strong>是否有其他运行形态本次未核验。</strong></dd>
+        </div>
+        <div class="axis">
+          <dt>工具与扩展</dt>
+          <dd><strong>明确支持 MCP</strong>（README 标注「🔌 Extensible: MCP support for custom」）， 并给出独立文档页 <code>/docs/tools/mcp-server</code>。 README 举例说明可用 MCP 接入图像生成能力（Imagen / Veo / Lyria）。 内置工具还包括 <strong>Google Search grounding</strong>（搜索接地）与 <strong>shell</strong>。 <strong>另明确支持非交互模式用于脚本自动化</strong> （README 有独立的「Non-interactive mode for scripts」章节）。</dd>
+        </div>
+        <div class="axis">
+          <dt>上下文与记忆</dt>
+          <dd><strong>1M token 上下文窗口</strong>（README：Gemini 3 models with 1M token context window）， 是本赛道明确写出上限的少数。 <strong>自定义上下文文件 <code>GEMINI.md</code></strong> 用于定制项目行为 （README 标注「Custom context files (GEMINI.md) to tailor behavior for your projects」， 文档路径 <code>/docs/cli/gemini-md</code>）—— 相当于项目级的长期指令。 <strong>上下文压缩策略本次未核验。</strong></dd>
+        </div>
+        <div class="axis">
+          <dt>权限与限制</dt>
+          <dd><strong>两个明确的官方机制</strong>（README 均有独立文档入口）： 一是 <strong>Sandboxing &amp; Security</strong>（文档路径 <code>/docs/cli/sandbox</code>）， 提供安全的执行环境； 二是 <strong>Trusted Folders</strong>（文档路径 <code>/docs/cli/trusted-folders</code>）， 按文件夹控制执行策略。 另有面向企业的部署与管理文档（<code>/docs/cli/enterprise</code>）。 仓库 <code>docs/</code> 下有独立的 <code>hooks/</code> 目录，说明支持钩子机制。 <strong>具体的沙箱档位、默认信任范围与审批粒度本次未核验，记为未知。</strong> 但「按文件夹控制执行策略」这个设计本身值得注意—— 它把权限边界绑定到目录而非全局开关。 <strong>检查点的 shadow Git 机制</strong>也算一层安全网： 修改文件系统前自动快照，可 <code>/restore</code> 回退。</dd>
+        </div>
+        <div class="axis">
+          <dt>适合什么任务</dt>
+          <dd>需要无安装快速试用、需要 MCP 扩展、需要脚本化非交互运行的场景。 尤其适合想把 Gemini 的多模态生成能力接进 Agent 工作流的场景。</dd>
+        </div>
+      </dl>
+
+            <div class="panel warn">
+        <h2 class="warn">头号误解</h2>
+        <ul>
+          <li>以为开源就无限用，额度政策未核验</li>
+          <li>以为 npx 形态会污染本地环境，实际是免安装的临时运行</li>
+          <li>忽略 MCP 能力，README 明确把它列为可扩展特性</li>
+        </ul>
+      </div>
+
+
+            <div class="panel is-slim">
+        <h2>价格</h2>
+        <table class="src">
+          <tbody>
+            <tr><th class="w-28">月度入口</th><td>个人层免费（无需信用卡），Code Assist 个人版 6,000 代码请求/日 + 240 对话/日</td></tr>
+            <tr><th class="w-28">月度数值</th><td>$0</td></tr>
+            <tr><th class="w-28">年付</th><td>个人层无年付（免费）；Google Developer Program Premium 为 $299/年</td></tr>
+            <tr><th class="w-28">额度说明</th><td>Apache-2.0 开源，支持 npx 直接运行无需安装。 <strong>2026-10-01 按官方 quotas 文档核实额度（此前记为未知）</strong>： 免费层「Gemini Code Assist for individuals」<strong>无需信用卡</strong>，额度为 <strong>每天 6,000 次代码相关请求</strong>（代码生成与补全）+ <strong>每天 240 次对话请求</strong>； 每用户<strong>每秒 2 次请求</strong>。 <strong>最关键的一条机制（直接影响选型）：CLI 与代理模式额度合并计算</strong>—— 官方原文「Quotas for requests from Gemini Code Assist agent mode and Gemini CLI are combined」， 且「一个提示可能产生多个模型请求」，额度按<strong>与任意模型版本或系列（Pro、Flash）的全部互动次数累计</strong>， 跨模型不分开计算。达到上限后须等配额重置才能继续。 付费层：Gemini Code Assist Standard <strong>1,500 请求/用户/日</strong>、Enterprise <strong>2,000</strong>； 云端版另给 960 次/日的 Cloud Assist 面板请求。个体开发者可订阅 Google AI Pro / AI Ultra / Developer Program premium 以提高上限。 Gemini CLI on GitHub 的用量<strong>不计入常规额度</strong>（独立配额，PR 审查每天至少 100 次）。</td></tr>
+          </tbody>
+        </table>
+        <p class="fine mt-3">不同币种不做折算。优惠、地区、税费与登录后报价可能变化，购买前请到官方页面确认。</p>
+      </div>
+
+
+            <div class="panel is-slim">
+        <h2>未知项清单</h2>
+        <ul>
+          <li>模型额度政策与免费额度边界</li>
+          <li>具体可用模型清单</li>
+          <li>索引策略与大仓库表现</li>
+          <li>上下文压缩策略</li>
+          <li>沙箱档位与默认信任范围</li>
+          <li>Trusted Folders 的默认行为</li>
+        </ul>
+      </div>
+
+
+      <div class="panel">
+        <h2>证据来源</h2>
+        <p class="t-sm">判断可回到以下一手源复核。本站核验日 2026-09-29，内容更新日 2026-09-29。</p>
+        <table class="src">
+          <thead><tr><th class="w-20">类型</th><th class="w-52">名称</th><th>链接</th></tr></thead>
+          <tbody>
+            <tr><td>repo</td><td>Google · Gemini CLI 仓库 README</td><td><a href="https://github.com/google-gemini/gemini-cli" target="_blank" rel="noopener">https://github.com/google-gemini/gemini-cli</a></td></tr>
+            <tr><td>changelog</td><td>Google · Gemini CLI Releases</td><td><a href="https://github.com/google-gemini/gemini-cli/releases" target="_blank" rel="noopener">https://github.com/google-gemini/gemini-cli/releases</a></td></tr>
+            <tr><td>docs</td><td>Google · Gemini CLI 官方文档</td><td><a href="https://google-gemini.github.io/gemini-cli/" target="_blank" rel="noopener">https://google-gemini.github.io/gemini-cli/</a></td></tr>
+            <tr><td>docs</td><td>Google · Gemini CLI MCP Server 文档</td><td><a href="https://www.geminicli.com/docs/tools/mcp-server" target="_blank" rel="noopener">https://www.geminicli.com/docs/tools/mcp-server</a></td></tr>
+          </tbody>
+        </table>
+      </div>
+
+            <div class="panel is-slim">
+        <h2>实测记录</h2>
+        <p>本站尚未完成实测。测试协议见 <a href="https://github.com/speculcom/ai-agent-guide/blob/main/tracks/agents/tasks/_protocol.md" target="_blank" rel="noopener">tasks/_protocol.md</a>。
+
+<strong>实测建议</strong>：这个工具的实测重点应放在三处
+（README 或官方文档明确宣传但需要验证的）：
+1. <strong>npx 免安装的实际启动速度</strong>
+2. <strong>非交互模式在 CI（无 TTY）环境下是否真的可用</strong>
+3. <strong>shadow Git 检查点在 Windows 上的行为</strong>
+   （文档说路径是 <code>~/.gemini/history/</code>，Windows 上是否有兼容问题待验）</p>
+      </div>
+
+
+            <div class="panel is-slim">
+        <h2>相关条目</h2>
+        <ul class="rel-list">
+          <li><span class="rel-t"><a href="./codex-cli.html">Codex CLI</a></span><span class="rel-n">同类 OpenAI 官方工具</span></li>
+          <li><span class="rel-t"><a href="./crush.html">Crush</a></span><span class="rel-n">同类工具，MCP 传输方式标注更细</span></li>
+        </ul>
+      </div>
+
+
+      <p class="fine mt-6">
+        本页由 <a href="https://github.com/speculcom/ai-agent-guide" target="_blank" rel="noopener" class="link-brand">ai-agent-guide</a> 数据层生成（CC BY 4.0）。
+        方法论与坐标系定义见仓库内 <code>METHODOLOGY.md</code>。
+      </p>
+    </div>
+  </main>
+  <footer class="site-footer">
+    <div class="container foot-row">
+      <div class="foot-brand">
+        <span class="brand-dot" aria-hidden="true"></span>
+        <span class="foot-copy">© 2026 投机取巧 · <span data-zh>Specul</span><span data-en>Specul</span></span>
+      </div>
+      <nav class="foot-links" aria-label="页脚导航">
+          <a href="https://specul.com/"><span data-zh>首页</span><span data-en>Home</span></a>
+          <a href="https://learn.specul.com/">学 AI</a>
+          <a href="https://agent.specul.com/">Agent</a>
+          <a href="https://models.specul.com/">本地模型</a>
+          <a href="https://nav.specul.com/"><span data-zh>导航</span><span data-en>Directory</span></a>
+          <a href="https://github.com/speculcom/ai-agent-guide" target="_blank" rel="noopener">GitHub</a>
+      </nav>
+      <nav class="foot-legal-links" aria-label="法律">
+        <a href="https://specul.com/legal.html"><span data-zh>法律条款</span><span data-en>Legal terms</span></a>
+        <a href="https://specul.com/legal.html#s6"><span data-zh>免责声明</span><span data-en>Disclaimer</span></a>
+        <a href="https://specul.com/legal.html#s8"><span data-zh>隐私与本地存储</span><span data-en>Privacy</span></a>
+      </nav>
+    </div>
+  </footer>
+  <script src="brand.js"></script>
+  <script>
+    (function () {
+      var root = document.documentElement;
+      function sync() { root.setAttribute('data-lang', root.lang === 'en' ? 'en' : 'zh'); }
+      new MutationObserver(sync).observe(root, { attributes: true, attributeFilter: ['lang'] });
+      sync();
+    })();
+  </script>
+</body>
+</html>
