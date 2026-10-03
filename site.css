@@ -83,7 +83,7 @@ h1 {
   flex-shrink: 0;
   display: inline-grid; place-items: center;
   width: 18px; height: 18px; border-radius: 50%;
-  font-size: 10.5px; font-weight: 700; line-height: 1;
+  font-size: 11px; font-weight: 700; line-height: 1;
   color: var(--accent, var(--brand));
   border: 1px solid color-mix(in srgb, var(--accent, var(--brand)) 42%, transparent);
   background: color-mix(in srgb, var(--accent, var(--brand)) 11%, transparent);
@@ -116,6 +116,18 @@ h1 {
   .guide-q, .guide-a, .guide-why, .guide-foot { min-width: 0; overflow-wrap: anywhere; }
   .guide-a { padding-left: 0; }
   .guide-n { display: none; }  /* 序号已由列表序号表达，去掉圆圈省出整行宽度 */
+}
+
+/* 站点强调色 · agent Agent — 蓝（工程、编排）
+   2026-10-03：原先只加在产物 site.css 上，重建就丢 → 必须写进真相源。
+   暗色蓝配深色前景 7.6:1；亮色蓝配白字 5.1:1。 */
+html:not([data-theme="light"]) {
+  --brand: #5aa9f5; --brand-on: #04121f;
+  --brand-soft: rgba(90, 169, 245, .14); --brand-line: rgba(90, 169, 245, .34);
+}
+html[data-theme="light"] {
+  --brand: #1f6fc4; --brand-on: #ffffff;
+  --brand-soft: rgba(31, 111, 196, .10); --brand-line: rgba(31, 111, 196, .30);
 }
 
 /* ── harness 站的family 分组 ────────────────────────────────────────────────
@@ -280,7 +292,7 @@ h1 {
   background: var(--accent, var(--brand));
 }
 .panel code {
-  font-size: .92em; background: var(--bg-inset);
+  font-size: var(--fs-xs); background: var(--bg-inset);
   padding: 1px 5px; border-radius: 4px; color: var(--ink);
 }
 
@@ -321,7 +333,7 @@ table.src a:hover { text-decoration: underline; }
 .td-mark {
   display: inline-grid; place-items: center;
   width: 22px; height: 22px; border-radius: 6px;
-  font-size: 10.5px; font-weight: 700; vertical-align: -5px; margin-right: 8px;
+  font-size: 11px; font-weight: 700; vertical-align: -5px; margin-right: 8px;
   color: var(--card-accent, var(--accent, var(--brand)));
   background: color-mix(in srgb, var(--card-accent, var(--accent, var(--brand))) 14%, transparent);
   border: 1px solid color-mix(in srgb, var(--card-accent, var(--accent, var(--brand))) 30%, transparent);
@@ -468,7 +480,7 @@ th.w-28 { width: 112px; } th.w-52 { width: 208px; }
 }
 .axis dd code {
   background: var(--bg-inset); padding: 1px 5px;
-  border-radius: 4px; font-size: .92em;
+  border-radius: 4px; font-size: var(--fs-xs);
 }
 dl.axes { margin: 0; }
 
