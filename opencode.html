@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>OpenCode — Agents | 投机取巧</title>
+  <meta name="description" content="OpenCode（OpenCode）：MIT 许可的多 provider 编程 harness，运行 bash 命令前会询问权限，并支持 ACP 载入。" />
+  <link rel="canonical" href="https://agent.specul.com/opencode.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="OpenCode" />
+  <meta property="og:url" content="https://agent.specul.com/opencode.html" />
+  <meta property="og:title" content="OpenCode — Agents | 投机取巧" />
+  <meta property="og:description" content="OpenCode（OpenCode）：MIT 许可的多 provider 编程 harness，运行 bash 命令前会询问权限，并支持 ACP 载入。" />
+  <meta name="theme-color" content="#05080f" />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%238b7cf8'/%3E%3Cstop offset='1' stop-color='%2322d3c5'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='48' height='48' rx='12' fill='%2305080f'/%3E%3Cpath d='M14 32 L24 12 L34 32' fill='none' stroke='url(%23g)' stroke-width='2.4' stroke-linejoin='round'/%3E%3Ccircle cx='24' cy='27' r='2.4' fill='%2322d3c5'/%3E%3C/svg%3E" />
+  <link rel="stylesheet" href="brand.css" />
+  <link rel="stylesheet" href="site.css" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"OpenCode","applicationCategory":"DeveloperApplication","url":"https://opencode.ai","sameAs":"https://github.com/sst/opencode","description":"MIT 许可的多 provider 编程 harness，运行 bash 命令前会询问权限，并支持 ACP 载入。","dateModified":"2026-09-29"}</script>
+</head>
+<body class="brand-ambient">
+  <a class="t-skip" href="#main">跳到主要内容</a>
+  <header class="site-header">
+    <div class="container site-bar">
+      <a class="brand" href="https://specul.com/" title="投机取巧">
+        <span class="brand-dot" aria-hidden="true"></span>
+        <span class="brand-text">
+          <span class="brand-name" id="markName" data-zh-name="投机取巧" data-en-name="Speculative Speculation">投机取巧</span>
+        </span>
+      </a>
+      <nav class="nav-links" aria-label="站点导航">
+        <a href="https://specul.com/"><span data-zh>首页</span><span data-en>Home</span></a>
+        <a href="https://learn.specul.com/"><span data-zh>学 AI</span><span data-en>Learn</span></a>
+        <a href="https://agent.specul.com/" aria-current="page"><span data-zh>Agent</span><span data-en>Agent</span></a>
+        <a href="https://models.specul.com/"><span data-zh>本地模型</span><span data-en>Models</span></a>
+        <a href="https://nav.specul.com/"><span data-zh>导航</span><span data-en>Directory</span></a>
+        <span class="nav-tools">
+          <button class="icon-btn" id="themeBtn" type="button" aria-label="切换明暗主题" title="切换明暗主题">☾</button>
+          <button class="icon-btn" id="langBtn" type="button" aria-label="Switch language" title="Switch language">EN</button>
+        </span>
+      </nav>
+    </div>
+  </header>
+  <main id="main">
+    <div class="container detail">
+      <nav class="crumbs" aria-label="面包屑">
+        <a href="https://agent.specul.com/">Agent 图谱</a>
+        <span aria-current="page">Agents</span>
+        <a href="/harness/">Harness</a>
+        <a href="/tools/">Tools</a>
+      </nav>
+      <a class="back" href="./">← Agents</a>
+
+      <div class="detail-head">
+        <div class="mark" style="--card-accent:#E5705A" aria-hidden="true">OC</div>
+        <div>
+          <h1>OpenCode</h1>
+          <div class="vendor is-caps">OpenCode</div>
+        </div>
+      </div>
+
+      <div class="badges">
+        <span class="tag on">编程</span>
+        <span class="tag on">终端</span>
+        <span class="tag on">本地</span>
+        <span class="tag on">开源</span>
+        <span class="badge accent">partial</span>
+        <span class="badge">lifecycle: active</span>
+        <span class="badge">核验 2026-09-29</span>
+      </div>
+
+            <p class="panel-lead">MIT 许可的多 provider 编程 harness，<strong>运行 bash 命令前会询问权限</strong>，并支持 ACP 载入。</p>
+
+            <div class="panel is-slim">
+        <h2>适合与不适合</h2>
+        <p>需要多 provider 可切换、重视 bash 命令执行前确认的用户。
+ACP 生态参与者。</p>
+        <p class="warn-p"><strong>不适合</strong>需要完全免打扰的自动化场景——
+执行命令前询问会打断流程，需确认 YOLO 模式的具体开关方式。</p>
+      </div>
+
+
+      <div class="block-head">
+        <h2 class="t-h2">固定坐标系</h2>
+        <p class="t-section-lead">8 个维度，与同赛道其他对象逐项可比。</p>
+      </div>
+      <dl class="axes">
+        <div class="axis">
+          <dt>模型与开放条件</dt>
+          <dd>多 provider 接入的编程 harness。 <strong>README 提到 provider 支持列表较长</strong>， 但<strong>具体可接入的 provider 清单本次未核验</strong>，记为未知。 是否支持本地模型本次未核验。</dd>
+        </div>
+        <div class="axis">
+          <dt>运行位置</dt>
+          <dd>本地进程，在终端运行。提供多平台安装方式（macOS Homebrew / Windows Scoop 等）。 生命周期绑定终端会话。</dd>
+        </div>
+        <div class="axis">
+          <dt>本地文件</dt>
+          <dd>面向真实代码仓库的编程能力。 <strong>索引策略与大仓库表现本次未核验，记为未知。</strong></dd>
+        </div>
+        <div class="axis">
+          <dt>关机后的任务</dt>
+          <dd>不支持终端形态的后台长任务。 <strong>是否有其他形态（本地服务 / 远程）本次未核验。</strong></dd>
+        </div>
+        <div class="axis">
+          <dt>工具与扩展</dt>
+          <dd>工具链包含 bash 命令执行、子代理能力。 <strong>README 明确提到内置一个「通用子代理」用于复杂搜索与多步任务</strong>。 MCP 接入方式本次未核验。</dd>
+        </div>
+        <div class="axis">
+          <dt>上下文与记忆</dt>
+          <dd><strong>ACP（Agent Client Protocol）载入能力是其差异化设计</strong>—— 在恢复与分叉时保留模型、effort 与模式边界。 具体上下文窗口与压缩策略本次未核验。</dd>
+        </div>
+        <div class="axis">
+          <dt>权限与限制</dt>
+          <dd><strong>README 记录了「YOLO」模式相关内容，并提到运行 bash 命令前会询问权限</strong>。 这是与多数工具默认自动执行不同的设计。 <strong>具体审批粒度与是否可配置本次未核验，记为未知。</strong></dd>
+        </div>
+        <div class="axis">
+          <dt>适合什么任务</dt>
+          <dd>需要多 provider 可切换、且重视命令执行前确认的用户。 ACP 生态参与者。</dd>
+        </div>
+      </dl>
+
+            <div class="panel warn">
+        <h2 class="warn">头号误解</h2>
+        <ul>
+          <li>把 provider 支持列表当成有额度，连接器可用不等于有模型订阅权限</li>
+          <li>以为默认全权执行命令，README 提到 bash 命令前会询问</li>
+          <li>以为可以用某个 provider 就免费，模型费用仍需自付</li>
+        </ul>
+      </div>
+
+
+            <div class="panel is-slim">
+        <h2>价格</h2>
+        <table class="src">
+          <tbody>
+            <tr><th class="w-28">月度入口</th><td>开源免费，模型费用另计</td></tr>
+            <tr><th class="w-28">年付</th><td>开源免费，模型费用另计</td></tr>
+            <tr><th class="w-28">额度说明</th><td>MIT 开源，无授权费。 模型调用费用由用户自付——支持多 provider 接入， 也支持连接本地模型。</td></tr>
+          </tbody>
+        </table>
+        <p class="fine mt-3">不同币种不做折算。优惠、地区、税费与登录后报价可能变化，购买前请到官方页面确认。</p>
+      </div>
+
+
+            <div class="panel is-slim">
+        <h2>未知项清单</h2>
+        <ul>
+          <li>完整 provider 清单与各 provider 的接入方式</li>
+          <li>是否支持本地模型</li>
+          <li>索引策略与大仓库表现</li>
+          <li>YOLO 模式的具体开关与风险</li>
+          <li>MCP 接入方式</li>
+        </ul>
+      </div>
+
+
+      <div class="panel">
+        <h2>证据来源</h2>
+        <p class="t-sm">判断可回到以下一手源复核。本站核验日 2026-09-29，内容更新日 2026-09-29。</p>
+        <table class="src">
+          <thead><tr><th class="w-20">类型</th><th class="w-52">名称</th><th>链接</th></tr></thead>
+          <tbody>
+            <tr><td>repo</td><td>OpenCode · 仓库 README</td><td><a href="https://github.com/sst/opencode" target="_blank" rel="noopener">https://github.com/sst/opencode</a></td></tr>
+            <tr><td>changelog</td><td>OpenCode · Releases（v1.18.33 @ 2026-09-28）</td><td><a href="https://github.com/sst/opencode/releases" target="_blank" rel="noopener">https://github.com/sst/opencode/releases</a></td></tr>
+            <tr><td>changelog</td><td>OpenCode · 官方站 Changelog</td><td><a href="https://opencode.ai/changelog" target="_blank" rel="noopener">https://opencode.ai/changelog</a></td></tr>
+            <tr><td>docs</td><td>OpenCode · 官方文档</td><td><a href="https://opencode.ai/docs" target="_blank" rel="noopener">https://opencode.ai/docs</a></td></tr>
+          </tbody>
+        </table>
+      </div>
+
+            <div class="panel is-slim">
+        <h2>实测记录</h2>
+        <p>本站尚未完成实测。测试协议见 <a href="https://github.com/speculcom/ai-agent-guide/blob/main/tracks/agents/tasks/_protocol.md" target="_blank" rel="noopener">tasks/_protocol.md</a>。
+
+<strong>实测建议</strong>：这个工具的实测重点应放在
+<strong>「命令执行前的询问」这个设计在长任务中的实际打断成本</strong>——
+这是它与全权执行类工具的核心工作流差异。</p>
+      </div>
+
+
+            <div class="panel is-slim">
+        <h2>相关条目</h2>
+        <ul class="rel-list">
+          <li><span class="rel-t"><a href="./aider-cli.html">Aider</a></span><span class="rel-n">同类工具但已放缓维护</span></li>
+          <li><span class="rel-t"><a href="./codex-cli.html">Codex CLI</a></span><span class="rel-n">同类工具，架构侧重点不同</span></li>
+        </ul>
+      </div>
+
+
+      <p class="fine mt-6">
+        本页由 <a href="https://github.com/speculcom/ai-agent-guide" target="_blank" rel="noopener" class="link-brand">ai-agent-guide</a> 数据层生成（CC BY 4.0）。
+        方法论与坐标系定义见仓库内 <code>METHODOLOGY.md</code>。
+      </p>
+    </div>
+  </main>
+  <footer class="site-footer">
+    <div class="container foot-row">
+      <div class="foot-brand">
+        <span class="brand-dot" aria-hidden="true"></span>
+        <span class="foot-copy">© 2026 投机取巧 · <span data-zh>Specul</span><span data-en>Specul</span></span>
+      </div>
+      <nav class="foot-links" aria-label="页脚导航">
+          <a href="https://specul.com/"><span data-zh>首页</span><span data-en>Home</span></a>
+          <a href="https://learn.specul.com/">学 AI</a>
+          <a href="https://agent.specul.com/">Agent</a>
+          <a href="https://models.specul.com/">本地模型</a>
+          <a href="https://nav.specul.com/"><span data-zh>导航</span><span data-en>Directory</span></a>
+          <a href="https://github.com/speculcom/ai-agent-guide" target="_blank" rel="noopener">GitHub</a>
+      </nav>
+      <nav class="foot-legal-links" aria-label="法律">
+        <a href="https://specul.com/legal.html"><span data-zh>法律条款</span><span data-en>Legal terms</span></a>
+        <a href="https://specul.com/legal.html#s6"><span data-zh>免责声明</span><span data-en>Disclaimer</span></a>
+        <a href="https://specul.com/legal.html#s8"><span data-zh>隐私与本地存储</span><span data-en>Privacy</span></a>
+      </nav>
+    </div>
+  </footer>
+  <script src="brand.js"></script>
+  <script>
+    (function () {
+      var root = document.documentElement;
+      function sync() { root.setAttribute('data-lang', root.lang === 'en' ? 'en' : 'zh'); }
+      new MutationObserver(sync).observe(root, { attributes: true, attributeFilter: ['lang'] });
+      sync();
+    })();
+  </script>
+</body>
+</html>
