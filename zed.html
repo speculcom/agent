@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Zed — Agents | 投机取巧</title>
+  <meta name="description" content="Zed（Zed Industries）：不是「又一个 AI 编码工具」，而是三种 agent path 的编排层 —— 能在同一个编辑器里用 Zed 原生 Agent，也能挂 Claude / Codex / OpenCode / Copilot / Cursor。" />
+  <link rel="canonical" href="https://agent.specul.com/zed.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Zed" />
+  <meta property="og:url" content="https://agent.specul.com/zed.html" />
+  <meta property="og:title" content="Zed — Agents | 投机取巧" />
+  <meta property="og:description" content="Zed（Zed Industries）：不是「又一个 AI 编码工具」，而是三种 agent path 的编排层 —— 能在同一个编辑器里用 Zed 原生 Agent，也能挂 Claude / Codex / OpenCode / Copilot / Cursor。" />
+  <meta name="theme-color" content="#05080f" />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%238b7cf8'/%3E%3Cstop offset='1' stop-color='%2322d3c5'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='48' height='48' rx='12' fill='%2305080f'/%3E%3Cpath d='M14 32 L24 12 L34 32' fill='none' stroke='url(%23g)' stroke-width='2.4' stroke-linejoin='round'/%3E%3Ccircle cx='24' cy='27' r='2.4' fill='%2322d3c5'/%3E%3C/svg%3E" />
+  <link rel="stylesheet" href="brand.css" />
+  <link rel="stylesheet" href="site.css" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Zed","applicationCategory":"DeveloperApplication","url":"https://zed.dev","sameAs":"https://zed.dev","description":"不是「又一个 AI 编码工具」，而是三种 agent path 的编排层 —— 能在同一个编辑器里用 Zed 原生 Agent，也能挂 Claude / Codex / OpenCode / Copilot / Cursor。","dateModified":"2026-09-29","offers":{"@type":"Offer","price":"10","priceCurrency":"USD"}}</script>
+</head>
+<body class="brand-ambient">
+  <a class="t-skip" href="#main">跳到主要内容</a>
+  <header class="site-header">
+    <div class="container site-bar">
+      <a class="brand" href="https://specul.com/" title="投机取巧">
+        <span class="brand-dot" aria-hidden="true"></span>
+        <span class="brand-text">
+          <span class="brand-name" id="markName" data-zh-name="投机取巧" data-en-name="Speculative Speculation">投机取巧</span>
+        </span>
+      </a>
+      <nav class="nav-links" aria-label="站点导航">
+        <a href="https://specul.com/"><span data-zh>首页</span><span data-en>Home</span></a>
+        <a href="https://learn.specul.com/"><span data-zh>学 AI</span><span data-en>Learn</span></a>
+        <a href="https://agent.specul.com/" aria-current="page"><span data-zh>Agent</span><span data-en>Agent</span></a>
+        <a href="https://models.specul.com/"><span data-zh>本地模型</span><span data-en>Models</span></a>
+        <a href="https://nav.specul.com/"><span data-zh>导航</span><span data-en>Directory</span></a>
+        <span class="nav-tools">
+          <button class="icon-btn" id="themeBtn" type="button" aria-label="切换明暗主题" title="切换明暗主题">☾</button>
+          <button class="icon-btn" id="langBtn" type="button" aria-label="Switch language" title="Switch language">EN</button>
+        </span>
+      </nav>
+    </div>
+  </header>
+  <main id="main">
+    <div class="container detail">
+      <nav class="crumbs" aria-label="面包屑">
+        <a href="https://agent.specul.com/">Agent 图谱</a>
+        <span aria-current="page">Agents</span>
+        <a href="/harness/">Harness</a>
+        <a href="/tools/">Tools</a>
+      </nav>
+      <a class="back" href="./">← Agents</a>
+
+      <div class="detail-head">
+        <div class="mark" style="--card-accent:#3AB7FF" aria-hidden="true">Z</div>
+        <div>
+          <h1>Zed</h1>
+          <div class="vendor is-caps">Zed Industries</div>
+        </div>
+      </div>
+
+      <div class="badges">
+        <span class="tag on">编程</span>
+        <span class="tag on">IDE</span>
+        <span class="tag on">本地</span>
+        <span class="tag on">协作</span>
+        <span class="badge accent">partial</span>
+        <span class="badge">lifecycle: active</span>
+        <span class="badge">核验 2026-09-29</span>
+      </div>
+
+            <p class="panel-lead"><strong>不是「又一个 AI 编码工具」，而是三种 agent path 的编排层</strong> —— 能在同一个编辑器里用 Zed 原生 Agent，也能挂 Claude / Codex / OpenCode / Copilot / Cursor。</p>
+
+            <div class="panel is-slim">
+        <h2>适合与不适合</h2>
+        <p>重视编辑器性能（Rust）、语法解析准确度（Tree-sitter）与多人协作的场景。
+<strong>想在一个编辑器里混用原生 Agent 与外部 CLI Agent</strong> 的用户 —— 这是它最独特的价值。</p>
+        <p class="warn-p"><strong>不适合</strong>把「编辑器自带 AI」当唯一卖点去找的用户 ——
+Zed 的定位是 agent 的编排层，不是「我自带一个模型」。
+也不适合需要实测才知道大仓库表现的人 —— 索引策略官方未公开说明。</p>
+      </div>
+
+
+      <div class="block-head">
+        <h2 class="t-h2">固定坐标系</h2>
+        <p class="t-section-lead">8 个维度，与同赛道其他对象逐项可比。</p>
+      </div>
+      <dl class="axes">
+        <div class="axis">
+          <dt>模型与开放条件</dt>
+          <dd><strong>官方列出 5 条模型接入路径</strong>（docs/src/ai/llm-providers.md）： 一是 Zed-Hosted Models（经 Zed 计费）； 二是 API Access（用自己的 provider 额度，含 Anthropic 兼容与 OpenAI 兼容两种）； 三是 Use an Existing Subscription（复用已付费的 ChatGPT / Claude / Copilot 等）； 四是 Use a Gateway（经 OpenRouter / Bedrock / Vercel 等网关路由）； 五是 <strong>Use a Local Model</strong>（本地运行或自托管）。 <strong>路径选择由用户决定，不是绑定的单一供应商。</strong></dd>
+        </div>
+        <div class="axis">
+          <dt>运行位置</dt>
+          <dd><strong>本地桌面应用</strong>（Rust 实现，非浏览器端）。 官方自述来自 Atom 与 Tree-sitter 的创造者，主打性能与多人协作。 文档含 <code>dev-containers.md</code>（开发容器）与 <code>toolchains.md</code>（工具链管理）。 关闭应用即停止。</dd>
+        </div>
+        <div class="axis">
+          <dt>本地文件</dt>
+          <dd>直接读写工作区，<strong>基于 Tree-sitter 做语法解析</strong>（其核心优势之一）， 为符号级编辑提供基础。 文档站有 <code>edit-prediction.md</code>（编辑预测），且<strong>编辑预测有独立的 provider 配置</strong> （与 LLM provider 分开设置）。 <strong>索引算法与大仓库表现本次未核验，记为未知。</strong></dd>
+        </div>
+        <div class="axis">
+          <dt>关机后的任务</dt>
+          <dd><strong>官方明确区分三类 agent path</strong>，其中 External Agents 与 Terminal Threads 依赖外部进程（ACP agent 进程 / 原生 CLI）， 因此<strong>其在线条件取决于那个外部工具，而非 Zed 本身</strong>。 Zed 不提供云端后台执行。<strong>具体行为本次未核验，记为未知。</strong></dd>
+        </div>
+        <div class="axis">
+          <dt>工具与扩展</dt>
+          <dd><strong>明确支持 MCP</strong>，官方文档 <code>mcp.md</code> 列明当前支持 <strong>Tools 与 Prompts</strong> 两类特性 （Discovery / Sampling / Elicitation 尚未覆盖，官方欢迎贡献）。 另处理 <code>notifications/tools/list_changed</code>—— server 运行时增删改工具时 Zed 自动重载列表，无需重启 server。 MCP 可通过两种方式接入：作为 extension 安装，或在 Settings → AI → MCP Servers 里添加本地 / 远程 server。 官方列出的热门 extension server 包括 Context7、GitHub、Puppeteer、Gem、 Brave Search、Framelink Figma、Resend 等。</dd>
+        </div>
+        <div class="axis">
+          <dt>上下文与记忆</dt>
+          <dd><strong>Zed Agent 的上下文由 instructions + skills + MCP 组合而成</strong> （见 agents.md 的 Zed Agent 行）。 支持并行 agent（<code>parallel-agents.md</code>），线程类型分三类。 <strong>上下文窗口大小与压缩策略本次未核验，记为未知。</strong></dd>
+        </div>
+        <div class="axis">
+          <dt>权限与限制</dt>
+          <dd><strong>权限边界跟随所选的 agent path</strong>—— Zed Agent 用 Zed 配置的 provider 与原生工具； External Agents 用 ACP agent 进程<strong>自己的 auth/config</strong>； Terminal Threads 用<strong>原生 CLI 的 auth/config</strong>。 也就是说选了外部 agent，权限就由那个工具决定。 <strong>沙箱与审批的具体形态本次未核验，记为未知。</strong></dd>
+        </div>
+        <div class="axis">
+          <dt>适合什么任务</dt>
+          <dd>重视编辑器性能（Rust 实现）、语法解析准确度（Tree-sitter）与多人协作的场景。 <strong>想在一个编辑器里同时用 Zed 原生 Agent 和外部 CLI Agent（Claude / Codex / OpenCode / Copilot / Cursor）的用户</strong> —— 这是 Zed 最独特的价值：它是 agent 的<strong>运行与编排层</strong>，不是单一 agent。</dd>
+        </div>
+      </dl>
+
+            <div class="panel warn">
+        <h2 class="warn">头号误解</h2>
+        <ul>
+          <li>把 Zed 当成又一个 AI 编码工具，它实际是「三种 agent path 的编排层」，能用 Claude / Codex / OpenCode / Cursor</li>
+          <li>以为模型是绑定的，实际有 5 条接入路径，含本地模型与复用现有订阅</li>
+          <li>选了 External Agent 后以为权限由 Zed 管，实际由那个 agent 自己的 auth/config 决定</li>
+        </ul>
+      </div>
+
+
+            <div class="panel is-slim">
+        <h2>价格</h2>
+        <table class="src">
+          <tbody>
+            <tr><th class="w-28">月度入口</th><td>Personal $0 永久免费 / Pro $10 每月 / Business $30 每席位每月</td></tr>
+            <tr><th class="w-28">月度数值</th><td>$10</td></tr>
+            <tr><th class="w-28">年付</th><td>官方定价页只列月付；年付折扣未在页面列出，记为未知</td></tr>
+            <tr><th class="w-28">额度说明</th><td><strong>2026-10-01 渲染官方 pricing 页后逐档确认</strong>： Personal $0 <strong>forever</strong>（<strong>2,000 次接受的编辑预测</strong>， 且可<strong>自带 API key 或接外部 agent 如 Claude Agent / Codex CLI</strong>）、 Pro $10/月（含 $5 token额度，超出按用量计费）、Business $30/席位/月（<strong>无免费试用</strong>）。 Pro 有 Free Trial，官方注明试用期内<strong>只有 GPT-6 Luna 这一个托管模型可用</strong>。 <strong>关键结论：编辑器本身的免费层与模型额度是解耦的</strong> —— Personal 免费版就能用你自己的 key 或外部 agent，不买 Pro 也能用 Agent 功能。 模型接入另有 <strong>5 条路径</strong>（官方文档列明）：Zed-Hosted Models（经 Zed 计费）、 API Access、Existing Subscription（复用 ChatGPT / Claude / Copilot 订阅）、 Gateway（OpenRouter / Bedrock / Vercel 等）、Local Model（本地或自托管）。</td></tr>
+          </tbody>
+        </table>
+        <p class="fine mt-3">不同币种不做折算。优惠、地区、税费与登录后报价可能变化，购买前请到官方页面确认。</p>
+      </div>
+
+
+            <div class="panel is-slim">
+        <h2>未知项清单</h2>
+        <ul>
+          <li>索引算法与大仓库表现</li>
+          <li>上下文窗口与压缩策略</li>
+          <li>沙箱与审批的具体形态</li>
+          <li>编辑器定价与模型额度的关系</li>
+          <li>客户端关闭后各 agent path 的行为</li>
+        </ul>
+      </div>
+
+
+      <div class="panel">
+        <h2>证据来源</h2>
+        <p class="t-sm">判断可回到以下一手源复核。本站核验日 2026-09-29，内容更新日 2026-09-29。</p>
+        <table class="src">
+          <thead><tr><th class="w-20">类型</th><th class="w-52">名称</th><th>链接</th></tr></thead>
+          <tbody>
+            <tr><td>docs</td><td>Zed · LLM Providers（五条模型接入路径）</td><td><a href="https://zed.dev/docs/ai/llm-providers" target="_blank" rel="noopener">https://zed.dev/docs/ai/llm-providers</a></td></tr>
+            <tr><td>docs</td><td>Zed · Agents（三类 agent path 对比）</td><td><a href="https://zed.dev/docs/ai/agents" target="_blank" rel="noopener">https://zed.dev/docs/ai/agents</a></td></tr>
+            <tr><td>docs</td><td>Zed · MCP（支持的协议特性与三种 agent path 的 MCP 行为）</td><td><a href="https://zed.dev/docs/ai/mcp" target="_blank" rel="noopener">https://zed.dev/docs/ai/mcp</a></td></tr>
+            <tr><td>changelog</td><td>Zed · Releases（v1.21.0 @ 2026-09-23）</td><td><a href="https://github.com/zed-industries/zed/releases" target="_blank" rel="noopener">https://github.com/zed-industries/zed/releases</a></td></tr>
+            <tr><td>repo</td><td>Zed · 仓库</td><td><a href="https://github.com/zed-industries/zed" target="_blank" rel="noopener">https://github.com/zed-industries/zed</a></td></tr>
+            <tr><td>docs</td><td>Zed · 文档站</td><td><a href="https://zed.dev/docs" target="_blank" rel="noopener">https://zed.dev/docs</a></td></tr>
+          </tbody>
+        </table>
+      </div>
+
+            <div class="panel is-slim">
+        <h2>实测记录</h2>
+        <p>本站尚未完成实测。测试协议见 <a href="https://github.com/speculcom/ai-agent-guide/blob/main/tracks/agents/tasks/_protocol.md" target="_blank" rel="noopener">tasks/_protocol.md</a>。
+
+<strong>实测建议</strong>：这个工具的实测重点应是<strong>混合 agent 场景</strong> ——
+比如在 Zed 里挂 Claude Code 做 T01 任务，与直接用 Claude Code CLI 对比，
+验证「编排层 + 外部 agent」是否比纯 CLI 更顺手，还是只是多一层壳。</p>
+      </div>
+
+
+            <div class="panel is-slim">
+        <h2>相关条目</h2>
+        <ul class="rel-list">
+          <li><span class="rel-t"><a href="./cline.html">Cline</a></span><span class="rel-n">同为三形态覆盖，但形态是 Zed Agent / 外部 / 终端而非编辑器扩展</span></li>
+          <li><span class="rel-t"><a href="./claude-code.html">Claude Code</a></span><span class="rel-n">可作为 Zed 的 External Agent 运行</span></li>
+          <li><span class="rel-t"><a href="./aider.html">Aider</a></span><span class="rel-n">同属「编辑器外挂 watch 模式」思路</span></li>
+        </ul>
+      </div>
+
+
+      <p class="fine mt-6">
+        本页由 <a href="https://github.com/speculcom/ai-agent-guide" target="_blank" rel="noopener" class="link-brand">ai-agent-guide</a> 数据层生成（CC BY 4.0）。
+        方法论与坐标系定义见仓库内 <code>METHODOLOGY.md</code>。
+      </p>
+    </div>
+  </main>
+  <footer class="site-footer">
+    <div class="container foot-row">
+      <div class="foot-brand">
+        <span class="brand-dot" aria-hidden="true"></span>
+        <span class="foot-copy">© 2026 投机取巧 · <span data-zh>Specul</span><span data-en>Specul</span></span>
+      </div>
+      <nav class="foot-links" aria-label="页脚导航">
+          <a href="https://specul.com/"><span data-zh>首页</span><span data-en>Home</span></a>
+          <a href="https://learn.specul.com/">学 AI</a>
+          <a href="https://agent.specul.com/">Agent</a>
+          <a href="https://models.specul.com/">本地模型</a>
+          <a href="https://nav.specul.com/"><span data-zh>导航</span><span data-en>Directory</span></a>
+          <a href="https://github.com/speculcom/ai-agent-guide" target="_blank" rel="noopener">GitHub</a>
+      </nav>
+      <nav class="foot-legal-links" aria-label="法律">
+        <a href="https://specul.com/legal.html"><span data-zh>法律条款</span><span data-en>Legal terms</span></a>
+        <a href="https://specul.com/legal.html#s6"><span data-zh>免责声明</span><span data-en>Disclaimer</span></a>
+        <a href="https://specul.com/legal.html#s8"><span data-zh>隐私与本地存储</span><span data-en>Privacy</span></a>
+      </nav>
+    </div>
+  </footer>
+  <script src="brand.js"></script>
+  <script>
+    (function () {
+      var root = document.documentElement;
+      function sync() { root.setAttribute('data-lang', root.lang === 'en' ? 'en' : 'zh'); }
+      new MutationObserver(sync).observe(root, { attributes: true, attributeFilter: ['lang'] });
+      sync();
+    })();
+  </script>
+</body>
+</html>
