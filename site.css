@@ -32,7 +32,7 @@ h1 {
 }
 .lede {
   color: var(--ink-mid); font-size: 17px; line-height: 1.72;
-  max-width: 60ch; margin: 0;
+  max-width: var(--measure-wide); margin: 0;
 }
 .hero-meta {
   display: flex; flex-wrap: wrap; gap: var(--sp-2) var(--sp-5);
@@ -51,7 +51,7 @@ h1 {
 }
 .section > .section-desc {
   color: var(--ink-dim); font-size: var(--fs-sm); line-height: 1.72;
-  margin: 0 0 var(--sp-5); max-width: 68ch;
+  margin: 0 0 var(--sp-5); max-width: var(--measure);
 }
 
 /* ── 「从这里开始」引导区 ────────────────────────────────────────────────
@@ -63,7 +63,7 @@ h1 {
 .guide-list {
   list-style: none; margin: 0 0 var(--sp-5); padding: 0;
   display: grid; gap: var(--sp-2);
-  max-width: 92ch;
+  max-width: var(--measure);
 }
 .guide-step {
   display: grid;
@@ -101,7 +101,7 @@ h1 {
 .guide-why { color: var(--ink-faint); font-size: var(--fs-xs); line-height: 1.62; }
 .guide-foot {
   font-size: var(--fs-xs); color: var(--ink-dim); line-height: 1.7;
-  margin: 0; max-width: 82ch;
+  margin: 0; max-width: var(--measure);
   padding-top: var(--sp-3); border-top: 1px solid var(--line);
 }
 .guide-foot strong { color: var(--ink-mid); }
