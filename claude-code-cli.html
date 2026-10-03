@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Claude Code CLI — Agents | 投机取巧</title>
+  <meta name="description" content="Claude Code CLI（Anthropic）：本赛道数据质量最高、发布最频繁的条目 —— 自带 CHANGELOG + Atom feed，权限设计颗粒度最细。" />
+  <link rel="canonical" href="https://agent.specul.com/claude-code-cli.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Claude Code CLI" />
+  <meta property="og:url" content="https://agent.specul.com/claude-code-cli.html" />
+  <meta property="og:title" content="Claude Code CLI — Agents | 投机取巧" />
+  <meta property="og:description" content="Claude Code CLI（Anthropic）：本赛道数据质量最高、发布最频繁的条目 —— 自带 CHANGELOG + Atom feed，权限设计颗粒度最细。" />
+  <meta name="theme-color" content="#05080f" />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%238b7cf8'/%3E%3Cstop offset='1' stop-color='%2322d3c5'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='48' height='48' rx='12' fill='%2305080f'/%3E%3Cpath d='M14 32 L24 12 L34 32' fill='none' stroke='url(%23g)' stroke-width='2.4' stroke-linejoin='round'/%3E%3Ccircle cx='24' cy='27' r='2.4' fill='%2322d3c5'/%3E%3C/svg%3E" />
+  <link rel="stylesheet" href="brand.css" />
+  <link rel="stylesheet" href="site.css" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Claude Code CLI","applicationCategory":"DeveloperApplication","url":"https://code.claude.com/docs/en/overview","sameAs":"https://github.com/anthropics/claude-code","description":"本赛道数据质量最高、发布最频繁的条目 —— 自带 CHANGELOG + Atom feed，权限设计颗粒度最细。","dateModified":"2026-09-29"}</script>
+</head>
+<body class="brand-ambient">
+  <a class="t-skip" href="#main">跳到主要内容</a>
+  <header class="site-header">
+    <div class="container site-bar">
+      <a class="brand" href="https://specul.com/" title="投机取巧">
+        <span class="brand-dot" aria-hidden="true"></span>
+        <span class="brand-text">
+          <span class="brand-name" id="markName" data-zh-name="投机取巧" data-en-name="Speculative Speculation">投机取巧</span>
+        </span>
+      </a>
+      <nav class="nav-links" aria-label="站点导航">
+        <a href="https://specul.com/"><span data-zh>首页</span><span data-en>Home</span></a>
+        <a href="https://learn.specul.com/"><span data-zh>学 AI</span><span data-en>Learn</span></a>
+        <a href="https://agent.specul.com/" aria-current="page"><span data-zh>Agent</span><span data-en>Agent</span></a>
+        <a href="https://models.specul.com/"><span data-zh>本地模型</span><span data-en>Models</span></a>
+        <a href="https://nav.specul.com/"><span data-zh>导航</span><span data-en>Directory</span></a>
+        <span class="nav-tools">
+          <button class="icon-btn" id="themeBtn" type="button" aria-label="切换明暗主题" title="切换明暗主题">☾</button>
+          <button class="icon-btn" id="langBtn" type="button" aria-label="Switch language" title="Switch language">EN</button>
+        </span>
+      </nav>
+    </div>
+  </header>
+  <main id="main">
+    <div class="container detail">
+      <nav class="crumbs" aria-label="面包屑">
+        <a href="https://agent.specul.com/">Agent 图谱</a>
+        <span aria-current="page">Agents</span>
+        <a href="/harness/">Harness</a>
+        <a href="/tools/">Tools</a>
+      </nav>
+      <a class="back" href="./">← Agents</a>
+
+      <div class="detail-head">
+        <div class="mark" style="--card-accent:#D97757" aria-hidden="true">CC</div>
+        <div>
+          <h1>Claude Code CLI</h1>
+          <div class="vendor is-caps">Anthropic</div>
+        </div>
+      </div>
+
+      <div class="badges">
+        <span class="tag on">编程</span>
+        <span class="tag on">终端</span>
+        <span class="tag on">本地</span>
+        <span class="badge accent">verified</span>
+        <span class="badge">lifecycle: active</span>
+        <span class="badge">核验 2026-09-29</span>
+      </div>
+
+            <p class="panel-lead"><strong>本赛道数据质量最高、发布最频繁的条目</strong> —— 自带 CHANGELOG + Atom feed，权限设计颗粒度最细。</p>
+
+            <div class="panel is-slim">
+        <h2>适合与不适合</h2>
+        <p>重视权限可控性、需要 MCP 生态、希望用 Anthropic 官方模型的用户。
+需要订阅更新通知的用户（本条目自带 Atom feed）。</p>
+        <p class="warn-p"><strong>不适合</strong>需要开源许可、自托管或闭源分发的场景——
+许可明确为 proprietary，源码公开不等于可自由使用。</p>
+      </div>
+
+
+      <div class="block-head">
+        <h2 class="t-h2">固定坐标系</h2>
+        <p class="t-section-lead">8 个维度，与同赛道其他对象逐项可比。</p>
+      </div>
+      <dl class="axes">
+        <div class="axis">
+          <dt>模型与开放条件</dt>
+          <dd>Anthropic 自家 Claude 系列。 <strong>v2.1.284（2026-09-28）新增 Claude Sonnet 5.5（<code>claude-sonnet-5-5</code>）， 官方标注为 Anthropic API 上的默认 Sonnet 模型：1M 上下文、 $2/$10 per Mtok、缓存读取 $0.20/Mtok。</strong></dd>
+        </div>
+        <div class="axis">
+          <dt>运行位置</dt>
+          <dd>本地进程，在终端运行。生命周期绑定终端会话。 仓库含 <code>.devcontainer</code>，说明支持容器化开发环境。</dd>
+        </div>
+        <div class="axis">
+          <dt>本地文件</dt>
+          <dd><strong>权限模型与工作目录强绑定</strong>—— CHANGELOG 记录 auto 模式在「读取工作目录之外的文件前」会询问， 且新增了「Yes, but ask again next time」选项： <strong>允许这一次读取，之后仍继续询问</strong>。 1M 上下文档位（见 model_access）。</dd>
+        </div>
+        <div class="axis">
+          <dt>关机后的任务</dt>
+          <dd><strong>不支持</strong>终端形态的后台长任务。 是否有云端形态本次未核验。</dd>
+        </div>
+        <div class="axis">
+          <dt>工具与扩展</dt>
+          <dd><strong>MCP 支持完整且在持续加强</strong>—— v2.1.284 新增 <code>/mcp reconnect all</code>： 一次性重试所有连接失败或待认证的 MCP server。 同版本修复了「恢复会话时 MCP 工具调用报 No such tool available 但 server 其实仍在连接」的问题，现在会<strong>等待最多 10 秒</strong>。</dd>
+        </div>
+        <div class="axis">
+          <dt>上下文与记忆</dt>
+          <dd><strong>上下文压缩机制有明确的边界处理</strong>—— v2.1.284 修复了「压缩后仍超长导致 Prompt is too long 持久报错」的问题： 现在会<strong>再压缩一次，并保留更少的近期对话</strong>。 这说明它确实有多轮压缩能力，且边界情况在持续修补。</dd>
+        </div>
+        <div class="axis">
+          <dt>权限与限制</dt>
+          <dd><strong>权限设计的颗粒度在本赛道里最细</strong>： auto 模式按路径询问（工作目录外读取需确认）， 且提供「允许这一次」的中间选项； 托管策略支持 <code>availableModels</code> 与 <code>enforceAvailableModels</code> 控制可用模型， 并在策略不匹配时<strong>启动即警告</strong>； <code>/usage</code> 显示额度消耗与上限。</dd>
+        </div>
+        <div class="axis">
+          <dt>适合什么任务</dt>
+          <dd>重视权限可控性、需要 MCP 生态、希望用 Anthropic 官方模型的用户。 <strong>不适合需要开源许可或自托管的场景</strong>（许可明确 proprietary）。</dd>
+        </div>
+      </dl>
+
+            <div class="panel warn">
+        <h2 class="warn">头号误解</h2>
+        <ul>
+          <li>以为 GitHub 有仓库就是开源，LICENSE.md 是 All rights reserved + 商用条款</li>
+          <li>忽略「工作目录外读取需询问」这个默认值，第一次用可能被打断</li>
+          <li>误以为压缩能解决所有超长问题，官方仍在修「压缩后仍超长」的边界</li>
+        </ul>
+      </div>
+
+
+            <div class="panel is-slim">
+        <h2>价格</h2>
+        <table class="src">
+          <tbody>
+            <tr><th class="w-28">月度入口</th><td>随 Claude 订阅，档位见定价页</td></tr>
+            <tr><th class="w-28">年付</th><td>未核验年付报价</td></tr>
+            <tr><th class="w-28">额度说明</th><td><strong>仓库 LICENSE.md 明确：© Anthropic PBC. All rights reserved. Use is subject to Anthropic&#39;s Commercial Terms of Service。</strong> <strong>这不是开源许可</strong>，是 proprietary + 商用条款约束。 模型费用随 Claude 订阅；<strong>API 与订阅的关系本次未核验</strong>。</td></tr>
+          </tbody>
+        </table>
+        <p class="fine mt-3">不同币种不做折算。优惠、地区、税费与登录后报价可能变化，购买前请到官方页面确认。</p>
+      </div>
+
+
+            <div class="panel is-slim">
+        <h2>未知项清单</h2>
+        <ul>
+          <li>完整工具清单</li>
+          <li>沙箱实现的具体方式</li>
+          <li>是否支持本地模型</li>
+          <li>API 调用与订阅额度的关系</li>
+          <li>商业条款的具体限制内容</li>
+        </ul>
+      </div>
+
+
+      <div class="panel">
+        <h2>证据来源</h2>
+        <p class="t-sm">判断可回到以下一手源复核。本站核验日 2026-09-29，内容更新日 2026-09-29。</p>
+        <table class="src">
+          <thead><tr><th class="w-20">类型</th><th class="w-52">名称</th><th>链接</th></tr></thead>
+          <tbody>
+            <tr><td>repo</td><td>Anthropic · Claude Code 仓库</td><td><a href="https://github.com/anthropics/claude-code" target="_blank" rel="noopener">https://github.com/anthropics/claude-code</a></td></tr>
+            <tr><td>changelog</td><td>Anthropic · Claude Code CHANGELOG</td><td><a href="https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md" target="_blank" rel="noopener">https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md</a></td></tr>
+            <tr><td>changelog</td><td>Anthropic · Claude Code Releases（v2.1.284 @ 2026-09-28）</td><td><a href="https://github.com/anthropics/claude-code/releases" target="_blank" rel="noopener">https://github.com/anthropics/claude-code/releases</a></td></tr>
+            <tr><td>changelog</td><td>Anthropic · Claude Code Atom feed（可直接订阅更新）</td><td><a href="https://github.com/anthropics/claude-code/blob/main/feed.xml" target="_blank" rel="noopener">https://github.com/anthropics/claude-code/blob/main/feed.xml</a></td></tr>
+            <tr><td>docs</td><td>Anthropic · 官方文档</td><td><a href="https://code.claude.com/docs/en/overview" target="_blank" rel="noopener">https://code.claude.com/docs/en/overview</a></td></tr>
+            <tr><td>docs</td><td>Anthropic · Commercial Terms of Service</td><td><a href="https://www.anthropic.com/legal/commercial-terms" target="_blank" rel="noopener">https://www.anthropic.com/legal/commercial-terms</a></td></tr>
+          </tbody>
+        </table>
+      </div>
+
+            <div class="panel is-slim">
+        <h2>实测记录</h2>
+        <p>本站尚未完成实测。测试协议见 <a href="https://github.com/speculcom/ai-agent-guide/blob/main/tracks/agents/tasks/_protocol.md" target="_blank" rel="noopener">tasks/_protocol.md</a>。
+
+<strong>实测建议</strong>：重点测<strong>「允许这一次」审批选项在长任务中的实际打断频率</strong>，
+以及<strong>恢复会话时的 MCP 重连行为</strong>（官方刚修的地方最值得验证）。</p>
+      </div>
+
+
+            <div class="panel is-slim">
+        <h2>相关条目</h2>
+        <ul class="rel-list">
+          <li><span class="rel-t"><a href="./codex-cli.html">Codex CLI</a></span><span class="rel-n">同类 OpenAI 官方工具</span></li>
+          <li><span class="rel-t"><a href="./opencode.html">OpenCode</a></span><span class="rel-n">开源替代方案</span></li>
+        </ul>
+      </div>
+
+
+      <p class="fine mt-6">
+        本页由 <a href="https://github.com/speculcom/ai-agent-guide" target="_blank" rel="noopener" class="link-brand">ai-agent-guide</a> 数据层生成（CC BY 4.0）。
+        方法论与坐标系定义见仓库内 <code>METHODOLOGY.md</code>。
+      </p>
+    </div>
+  </main>
+  <footer class="site-footer">
+    <div class="container foot-row">
+      <div class="foot-brand">
+        <span class="brand-dot" aria-hidden="true"></span>
+        <span class="foot-copy">© 2026 投机取巧 · <span data-zh>Specul</span><span data-en>Specul</span></span>
+      </div>
+      <nav class="foot-links" aria-label="页脚导航">
+          <a href="https://specul.com/"><span data-zh>首页</span><span data-en>Home</span></a>
+          <a href="https://learn.specul.com/">学 AI</a>
+          <a href="https://agent.specul.com/">Agent</a>
+          <a href="https://models.specul.com/">本地模型</a>
+          <a href="https://nav.specul.com/"><span data-zh>导航</span><span data-en>Directory</span></a>
+          <a href="https://github.com/speculcom/ai-agent-guide" target="_blank" rel="noopener">GitHub</a>
+      </nav>
+      <nav class="foot-legal-links" aria-label="法律">
+        <a href="https://specul.com/legal.html"><span data-zh>法律条款</span><span data-en>Legal terms</span></a>
+        <a href="https://specul.com/legal.html#s6"><span data-zh>免责声明</span><span data-en>Disclaimer</span></a>
+        <a href="https://specul.com/legal.html#s8"><span data-zh>隐私与本地存储</span><span data-en>Privacy</span></a>
+      </nav>
+    </div>
+  </footer>
+  <script src="brand.js"></script>
+  <script>
+    (function () {
+      var root = document.documentElement;
+      function sync() { root.setAttribute('data-lang', root.lang === 'en' ? 'en' : 'zh'); }
+      new MutationObserver(sync).observe(root, { attributes: true, attributeFilter: ['lang'] });
+      sync();
+    })();
+  </script>
+</body>
+</html>
