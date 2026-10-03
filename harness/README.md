@@ -19,15 +19,15 @@ Agent 运行时 / 编排框架 / SDK 的责任边界、状态持久化能力与�
 
 | 对象 | 形态 | 厂商 | 可信度 | 核验日 |
 |---|---|---|---|---|
-| [Claude Agent SDK](./claude-agent-sdk.html) | 编程底座 | Anthropic | verified | 2026-09-30 |
-| [Codex SDK](./codex-sdk.html) | 编程底座 | OpenAI | verified | 2026-10-01 |
+| [Claude Agent SDK](./claude-agent-sdk.html) | 编程底座 | Anthropic | partial | 2026-09-30 |
+| [Codex SDK](./codex-sdk.html) | 编程底座 | OpenAI | partial | 2026-10-01 |
 | [CrewAI](./crewai.html) | 编排框架 | CrewAI Inc | partial | 2026-10-01 |
-| [Deep Agents](./deepagents.html) | 通用 Harness | LangChain | verified | 2026-09-30 |
+| [Deep Agents](./deepagents.html) | 通用 Harness | LangChain | partial | 2026-09-30 |
 | [Google ADK（Agent Development Kit）](./google-adk.html) | 编排框架 | Google | partial | 2026-10-01 |
 | [Hermes Agent](./hermes-agent.html) | 通用 Harness | Nous Research | partial | 2026-10-01 |
-| [LangGraph](./langgraph.html) | 编排框架 | LangChain Inc | verified | 2026-10-01 |
+| [LangGraph](./langgraph.html) | 编排框架 | LangChain Inc | partial | 2026-10-01 |
 | [LlamaIndex Framework](./llamaindex.html) | 编排框架 | LlamaIndex（run-llama） | partial | 2026-10-01 |
-| [OpenAI Agents SDK](./openai-agents-sdk.html) | 编程底座 | OpenAI | verified | 2026-09-30 |
+| [OpenAI Agents SDK](./openai-agents-sdk.html) | 编程底座 | OpenAI | partial | 2026-09-30 |
 | [OpenHands Agent Canvas](./openhands.html) | 通用 Harness | OpenHands（All-Hands-AI） | partial | 2026-10-01 |
 
 ## 可信度标记
@@ -38,7 +38,7 @@ Agent 运行时 / 编排框架 / SDK 的责任边界、状态持久化能力与�
 | `partial` | 部分维度标为未知，或官方文档不可访问，或核验日超过 90 天 |
 | `stale` | 官方已发布重大变化，本站尚未核验 |
 
-当前 10 个对象中，**5 个为 verified**。
+当前 10 个对象中，**0 个为 verified**。
 
 ## 数据来源
 
