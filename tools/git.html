@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Git MCP Server — Tools | 投机取巧</title>
+  <meta name="description" content="Git MCP Server（Model Context Protocol）：MCP 官方 reference server 里的版本控制实现，作用域限定在指定 git 仓库，但具备完整的本地写操作能力。" />
+  <link rel="canonical" href="https://agent.specul.com/tools/git.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Git MCP Server" />
+  <meta property="og:url" content="https://agent.specul.com/tools/git.html" />
+  <meta property="og:title" content="Git MCP Server — Tools | 投机取巧" />
+  <meta property="og:description" content="Git MCP Server（Model Context Protocol）：MCP 官方 reference server 里的版本控制实现，作用域限定在指定 git 仓库，但具备完整的本地写操作能力。" />
+  <meta name="theme-color" content="#05080f" />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%238b7cf8'/%3E%3Cstop offset='1' stop-color='%2322d3c5'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='48' height='48' rx='12' fill='%2305080f'/%3E%3Cpath d='M14 32 L24 12 L34 32' fill='none' stroke='url(%23g)' stroke-width='2.4' stroke-linejoin='round'/%3E%3Ccircle cx='24' cy='27' r='2.4' fill='%2322d3c5'/%3E%3C/svg%3E" />
+  <link rel="stylesheet" href="../brand.css" />
+  <link rel="stylesheet" href="../site.css" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Git MCP Server","applicationCategory":"DeveloperApplication","url":"https://github.com/modelcontextprotocol/servers/tree/main/src/git","sameAs":"https://github.com/modelcontextprotocol/servers/tree/main/src/git","description":"MCP 官方 reference server 里的版本控制实现，作用域限定在指定 git 仓库，但具备完整的本地写操作能力。","dateModified":"2026-09-29"}</script>
+</head>
+<body class="brand-ambient">
+  <a class="t-skip" href="#main">跳到主要内容</a>
+  <header class="site-header">
+    <div class="container site-bar">
+      <a class="brand" href="https://specul.com/" title="投机取巧">
+        <span class="brand-dot" aria-hidden="true"></span>
+        <span class="brand-text">
+          <span class="brand-name" id="markName" data-zh-name="投机取巧" data-en-name="Speculative Speculation">投机取巧</span>
+        </span>
+      </a>
+      <nav class="nav-links" aria-label="站点导航">
+        <a href="https://specul.com/"><span data-zh>首页</span><span data-en>Home</span></a>
+        <a href="https://learn.specul.com/"><span data-zh>学 AI</span><span data-en>Learn</span></a>
+        <a href="https://agent.specul.com/" aria-current="page"><span data-zh>Agent</span><span data-en>Agent</span></a>
+        <a href="https://models.specul.com/"><span data-zh>本地模型</span><span data-en>Models</span></a>
+        <a href="https://nav.specul.com/"><span data-zh>导航</span><span data-en>Directory</span></a>
+        <span class="nav-tools">
+          <button class="icon-btn" id="themeBtn" type="button" aria-label="切换明暗主题" title="切换明暗主题">☾</button>
+          <button class="icon-btn" id="langBtn" type="button" aria-label="Switch language" title="Switch language">EN</button>
+        </span>
+      </nav>
+    </div>
+  </header>
+  <main id="main">
+    <div class="container detail">
+      <nav class="crumbs" aria-label="面包屑">
+        <a href="https://agent.specul.com/">Agent 图谱</a>
+        <a href="/">Agents</a>
+        <a href="/harness/">Harness</a>
+        <span aria-current="page">Tools</span>
+      </nav>
+      <a class="back" href="./">← Tools</a>
+
+      <div class="detail-head">
+        <div class="mark" style="--card-accent:#F14E32" aria-hidden="true">G</div>
+        <div>
+          <h1>Git MCP Server</h1>
+          <div class="vendor is-caps">Model Context Protocol</div>
+        </div>
+      </div>
+
+      <div class="badges">
+        <span class="tag on">版本控制</span>
+        <span class="tag on">本地</span>
+        <span class="tag on">读写</span>
+        <span class="badge accent">verified</span>
+        <span class="badge">lifecycle: active</span>
+        <span class="badge">核验 2026-09-29</span>
+      </div>
+
+            <p class="panel-lead">MCP 官方 reference server 里的版本控制实现，<strong>作用域限定在指定 git 仓库，但具备完整的本地写操作能力</strong>。</p>
+
+            <div class="panel is-slim">
+        <h2>适合与不适合</h2>
+        <p>读取仓库状态、历史与 diff，并在受控前提下执行提交与分支操作。
+需要明确作用域边界（限于传入的 git 仓库）的场景。</p>
+        <p class="warn-p"><strong>不适合</strong>需要 push / 创建 PR / 远程仓库管理的场景——
+本 server 只做本地操作，原 github server 已归档。</p>
+      </div>
+
+
+      <div class="block-head">
+        <h2 class="t-h2">固定坐标系</h2>
+        <p class="t-section-lead">11 个维度，与同赛道其他对象逐项可比。</p>
+      </div>
+      <dl class="axes">
+        <div class="axis">
+          <dt>模型与开放条件</dt>
+          <dd>本身不调用模型，是被客户端调用的接口实现。 直接调用本机 git 命令行，继承本机 git 版本与配置。</dd>
+        </div>
+        <div class="axis">
+          <dt>运行位置</dt>
+          <dd>本地进程，通过 stdio 通信； 也支持容器部署（Docker / Podman），但需显式挂载仓库目录。 2026-08-30 修复了容器 bind mount 在 Docker / Podman / SELinux 下的安全与兼容问题。</dd>
+        </div>
+        <div class="axis">
+          <dt>本地文件</dt>
+          <dd><strong>通过 git 操作仓库，不需要任意文件读写</strong>。 每个工具都要求传入 repo_path，作用域限于该 git 仓库。 仓库内文件内容通过 git show / git_log 等命令间接读取。</dd>
+        </div>
+        <div class="axis">
+          <dt>关机后的任务</dt>
+          <dd>不支持。本地进程随客户端生死； 容器部署时取决于容器编排方式，不受本 server 自身控制。</dd>
+        </div>
+        <div class="axis">
+          <dt>工具与扩展</dt>
+          <dd>提供 11 个工具，含 git_status、git_diff_unstaged、git_diff_staged、 git_diff、git_commit、git_add、git_reset、git_log、 git_create_branch、git_checkout、git_show。 <strong>含 4 个写操作</strong>（commit / add / reset / checkout）， 输出为结构化文本或 diff，可直接消费。</dd>
+        </div>
+        <div class="axis">
+          <dt>上下文与记忆</dt>
+          <dd>无跨会话记忆。状态完全由 git 仓库本身承载， 会话断开不影响仓库状态。</dd>
+        </div>
+        <div class="axis">
+          <dt>权限与限制</dt>
+          <dd><strong>无独立审批机制</strong>。权限边界等于本机 git 用户的文件权限， 且<strong>具备完整写操作能力</strong>，包括提交、重置暂存区与切换分支。 git_reset 只取消暂存，不丢弃工作区改动； 但 git_checkout 可切换到任意分支。</dd>
+        </div>
+        <div class="axis">
+          <dt>适合什么任务</dt>
+          <dd>让 Agent 读取仓库状态、历史与 diff，并在受控前提下执行提交与分支操作。 不适合需要 push / PR / 远程仓库管理的场景（本 server 不提供远程操作）。</dd>
+        </div>
+        <div class="axis">
+          <dt>传输方式</dt>
+          <dd>支持 stdio。README 同时给出容器部署方式（Docker / Podman）。 <strong>是否支持 SSE 或 Streamable HTTP，仓库未声明，本次未核验。</strong></dd>
+        </div>
+        <div class="axis">
+          <dt>认证机制</dt>
+          <dd>无独立认证层。stdio 形态继承客户端用户的 git 权限； 容器形态的认证取决于容器编排配置，仓库未说明。</dd>
+        </div>
+        <div class="axis">
+          <dt>权限范围</dt>
+          <dd><strong>作用域限定在传入的 git 仓库</strong>，比 filesystem server 更收敛。 但<strong>具备完整写操作能力</strong>（commit / add / reset / checkout）， 无独立审批。切分支可改变工作区状态，需注意。</dd>
+        </div>
+      </dl>
+
+            <div class="panel warn">
+        <h2 class="warn">头号误解</h2>
+        <ul>
+          <li>以为是只读工具，实际能 commit 和切换分支</li>
+          <li>以为容器部署后能直接访问宿主仓库，不挂载就读不到</li>
+          <li>以为它能 push 或创建 PR，本 server 只做本地操作</li>
+        </ul>
+      </div>
+
+
+            <div class="panel is-slim">
+        <h2>价格</h2>
+        <table class="src">
+          <tbody>
+            <tr><th class="w-28">月度入口</th><td>无商业费用</td></tr>
+            <tr><th class="w-28">年付</th><td>无商业费用</td></tr>
+            <tr><th class="w-28">额度说明</th><td>随 MCP servers 仓库分发，无授权费。 实际成本来自本机 git 环境与所操作的仓库，不来自本 server。</td></tr>
+          </tbody>
+        </table>
+        <p class="fine mt-3">不同币种不做折算。优惠、地区、税费与登录后报价可能变化，购买前请到官方页面确认。</p>
+      </div>
+
+
+            <div class="panel is-slim">
+        <h2>未知项清单</h2>
+        <ul>
+          <li>是否支持 SSE / Streamable HTTP（仓库未声明）</li>
+          <li>容器形态下的认证机制</li>
+          <li>Python MCP 1.x 具体版本下限对功能的影响</li>
+          <li><code>git_log</code> 新 schema 的确切结构</li>
+        </ul>
+      </div>
+
+
+      <div class="panel">
+        <h2>证据来源</h2>
+        <p class="t-sm">判断可回到以下一手源复核。本站核验日 2026-09-29，内容更新日 2026-09-29。</p>
+        <table class="src">
+          <thead><tr><th class="w-20">类型</th><th class="w-52">名称</th><th>链接</th></tr></thead>
+          <tbody>
+            <tr><td>docs</td><td>MCP · Git Server</td><td><a href="https://github.com/modelcontextprotocol/servers/tree/main/src/git" target="_blank" rel="noopener">https://github.com/modelcontextprotocol/servers/tree/main/src/git</a></td></tr>
+            <tr><td>changelog</td><td>MCP · Git 目录变更历史</td><td><a href="https://github.com/modelcontextprotocol/servers/commits/main/src/git" target="_blank" rel="noopener">https://github.com/modelcontextprotocol/servers/commits/main/src/git</a></td></tr>
+            <tr><td>changelog</td><td>MCP · Servers Releases</td><td><a href="https://github.com/modelcontextprotocol/servers/releases" target="_blank" rel="noopener">https://github.com/modelcontextprotocol/servers/releases</a></td></tr>
+            <tr><td>repo</td><td>MCP · Servers 仓库 README（生产环境免责声明）</td><td><a href="https://github.com/modelcontextprotocol/servers" target="_blank" rel="noopener">https://github.com/modelcontextprotocol/servers</a></td></tr>
+          </tbody>
+        </table>
+      </div>
+
+            <div class="panel is-slim">
+        <h2>实测记录</h2>
+        <p>本站尚未完成实测。测试协议见 <a href="https://github.com/speculcom/ai-agent-guide/blob/main/tracks/agents/tasks/_protocol.md" target="_blank" rel="noopener">tasks/_protocol.md</a>。</p>
+      </div>
+
+
+            <div class="panel is-slim">
+        <h2>相关条目</h2>
+        <ul class="rel-list">
+          <li><span class="rel-t"><a href="./filesystem.html">Filesystem MCP Server</a></span><span class="rel-n">同仓库，作用域设计更保守</span></li>
+          <li><span class="rel-t"><a href="./memory.html">Memory MCP Server</a></span><span class="rel-n">跨会话记忆方向</span></li>
+        </ul>
+      </div>
+
+
+      <p class="fine mt-6">
+        本页由 <a href="https://github.com/speculcom/ai-agent-guide" target="_blank" rel="noopener" class="link-brand">ai-agent-guide</a> 数据层生成（CC BY 4.0）。
+        方法论与坐标系定义见仓库内 <code>METHODOLOGY.md</code>。
+      </p>
+    </div>
+  </main>
+  <footer class="site-footer">
+    <div class="container foot-row">
+      <div class="foot-brand">
+        <span class="brand-dot" aria-hidden="true"></span>
+        <span class="foot-copy">© 2026 投机取巧 · <span data-zh>Specul</span><span data-en>Specul</span></span>
+      </div>
+      <nav class="foot-links" aria-label="页脚导航">
+          <a href="https://specul.com/"><span data-zh>首页</span><span data-en>Home</span></a>
+          <a href="https://learn.specul.com/">学 AI</a>
+          <a href="https://agent.specul.com/">Agent</a>
+          <a href="https://models.specul.com/">本地模型</a>
+          <a href="https://nav.specul.com/"><span data-zh>导航</span><span data-en>Directory</span></a>
+          <a href="https://github.com/speculcom/ai-agent-guide" target="_blank" rel="noopener">GitHub</a>
+      </nav>
+      <nav class="foot-legal-links" aria-label="法律">
+        <a href="https://specul.com/legal.html"><span data-zh>法律条款</span><span data-en>Legal terms</span></a>
+        <a href="https://specul.com/legal.html#s6"><span data-zh>免责声明</span><span data-en>Disclaimer</span></a>
+        <a href="https://specul.com/legal.html#s8"><span data-zh>隐私与本地存储</span><span data-en>Privacy</span></a>
+      </nav>
+    </div>
+  </footer>
+  <script src="../brand.js"></script>
+  <script>
+    (function () {
+      var root = document.documentElement;
+      function sync() { root.setAttribute('data-lang', root.lang === 'en' ? 'en' : 'zh'); }
+      new MutationObserver(sync).observe(root, { attributes: true, attributeFilter: ['lang'] });
+      sync();
+    })();
+  </script>
+</body>
+</html>
