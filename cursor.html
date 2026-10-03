@@ -15,7 +15,7 @@
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%238b7cf8'/%3E%3Cstop offset='1' stop-color='%2322d3c5'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='48' height='48' rx='12' fill='%2305080f'/%3E%3Cpath d='M14 32 L24 12 L34 32' fill='none' stroke='url(%23g)' stroke-width='2.4' stroke-linejoin='round'/%3E%3Ccircle cx='24' cy='27' r='2.4' fill='%2322d3c5'/%3E%3C/svg%3E" />
   <link rel="stylesheet" href="brand.css" />
   <link rel="stylesheet" href="site.css" />
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Cursor","applicationCategory":"DeveloperApplication","url":"https://cursor.com","sameAs":"https://cursor.com","description":"本赛道架构最激进的三个之一：云端 Agent 合上笔记本不中断、自托管代码不出网、代码审查拆成两个 bot 分工。","dateModified":"2026-09-29","offers":{"@type":"Offer","price":"20","priceCurrency":"USD"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Cursor","applicationCategory":"DeveloperApplication","url":"https://cursor.com","sameAs":"https://cursor.com","description":"本赛道架构最激进的三个之一：云端 Agent 合上笔记本不中断、自托管代码不出网、代码审查拆成两个 bot 分工。","dateModified":"2026-10-03","offers":{"@type":"Offer","price":"20","priceCurrency":"USD"}}</script>
 </head>
 <body class="brand-ambient">
   <a class="t-skip" href="#main">跳到主要内容</a>
@@ -65,7 +65,7 @@
         <span class="tag on">云端</span>
         <span class="badge accent">partial</span>
         <span class="badge">lifecycle: active</span>
-        <span class="badge">核验 2026-09-29</span>
+        <span class="badge">核验 2026-10-03</span>
       </div>
 
             <p class="panel-lead"><strong>本赛道架构最激进的三个之一</strong>：云端 Agent 合上笔记本不中断、自托管代码不出网、代码审查拆成两个 bot 分工。</p>
@@ -95,7 +95,7 @@
         </div>
         <div class="axis">
           <dt>本地文件</dt>
-          <dd>通过 VS Code 衍生的编辑器形态访问工作区文件。 自托管形态下代码与产物不离开你的基础设施。 <strong>索引策略与大仓库表现本次未核验。</strong></dd>
+          <dd>通过 VS Code 衍生的编辑器形态访问工作区文件。 自托管形态下代码与产物不离开你的基础设施。 <strong>索引策略官方写了（2026-10-03 补，取自官方 Search 文档页）</strong>： 检索用自研的 <strong>Instant Grep</strong>，官方称在大型代码库上优于 <code>ripgrep</code>， 「runs automatically; no configuration needed」，无需配置。 <strong>一条值得单独记的数据边界（官方原文）</strong>： 「Instant Grep <strong>builds and queries its index on your machine</strong>. Cursor does not upload file paths or code to build a search index, and it <strong>does not store embeddings of your codebase for search</strong>」。 即<strong>检索索引完全在本机，且官方明说不为检索存embedding</strong>。 ⚠ 但同一页紧接着留了一句：「When Agent opens a match, <strong>that file content can still be included in the model request</strong>」—— <strong>「建索引不出本机」≠「文件内容不出本机」</strong>，命中后内容照样进模型请求。 <strong>Explore 子智能体是官方给的上下文控制手段</strong>：跑在独立上下文窗口、 用更快的模型、执行并行搜索后<strong>只回传相关发现</strong>， 「returning only the relevant findings」—— 官方明说这是为了避免「把原始文件内容整段倒进主对话」。 ⚠ <strong>大仓库的索引性能与规模上限，官方文档未给数字。</strong></dd>
         </div>
         <div class="axis">
           <dt>关机后的任务</dt>
@@ -103,7 +103,7 @@
         </div>
         <div class="axis">
           <dt>工具与扩展</dt>
-          <dd>Pro+ 及以上档官方列出 <strong>MCP、技能（Skills）和钩子（Hooks）</strong>， 以及云端智能体与按用量计费的 Bugbot（智能体驱动的代码审查）。 Teams 档另有面向内部规则、技能与插件的团队应用市场。 <strong>具体工具清单与 MCP 接入细节本次未核验。</strong></dd>
+          <dd>Pro+ 及以上档官方列出 <strong>MCP、技能（Skills）和钩子（Hooks）</strong>， 以及云端智能体与按用量计费的 Bugbot（智能体驱动的代码审查）。 Teams 档另有面向内部规则、技能与插件的团队应用市场。 <strong>MCP 接入细节（2026-10-03 补，取自官方 MCP 文档页）</strong>： <strong>三种传输方式</strong> —— <code>stdio</code>（本地，由 Cursor 启动，shell 命令启动，手动认证）、 <code>SSE</code> 与 <code>Streamable HTTP</code>（均可本地或远程部署为服务器，多用户，OAuth 认证）。 <strong>协议能力六项全支持</strong>：Tools / Prompts / Resources / Roots / Elicitation / Apps。 <strong>配置分两层</strong>：项目级 <code>.cursor/mcp.json</code>（可用 <code>${workspaceFolder}</code>）、 全局 <code>~/.cursor/mjsson</code>（可用 <code>${userHome}</code>）； 变量插值支持 <code>${env:NAME}</code>、<code>${userHome}</code>、<code>${workspaceFolder}</code>、 <code>${pathSeparator}</code>，且支持 <code>envFile</code> 从 <code>.env</code> 读密钥（仅 stdio）。 <strong>工具审批默认开启</strong>：「Cursor asks for approval before using MCP tools by default」， 且<strong>工具级 allowlist 可限制某服务器哪些工具能自动运行</strong>。 <strong>每个 MCP 服务器有独立网络模式</strong>：Allow all / Allowlist / Deny all / <strong>No sandbox</strong>。 ⚠ 注意 <code>~</code> 是 home 目录，与「Pro+」无关。 <strong>Hooks 事件清单（2026-10-03 补，取自官方 Hooks 与插件参考页）</strong>： agent 钩子 18 个 —— <code>sessionStart</code> <code>sessionEnd</code> <code>preToolUse</code> <code>postToolUse</code> <code>postToolUseFailure</code> <code>subagentStart</code> <code>subagentStop</code> <code>beforeShellExecution</code> <code>afterShellExecution</code> <code>beforeMCPExecution</code> <code>afterMCPExecution</code> <code>beforeReadFile</code> <code>afterFileEdit</code> <code>beforeSubmitPrompt</code> <code>preCompact</code> <code>stop</code> <code>afterAgentResponse</code> <code>afterAgentThought</code>；另有 Tab 钩子 <code>beforeTabFileRead</code> <code>afterTabFileEdit</code> 与应用生命周期 <code>workspaceOpen</code>。 钩子是<strong>命令型</strong>（<code>{&quot;command&quot;: &quot;./hooks/audit.sh&quot;}</code>，可带 <code>matcher</code> 过滤）， 官方给了 TypeScript 变体（由 Bun 驱动）可做结构化 I/O 与 HTTP。</dd>
         </div>
         <div class="axis">
           <dt>上下文与记忆</dt>
@@ -158,13 +158,16 @@
 
       <div class="panel">
         <h2>证据来源</h2>
-        <p class="t-sm">判断可回到以下一手源复核。本站核验日 2026-09-29，内容更新日 2026-09-29。</p>
+        <p class="t-sm">判断可回到以下一手源复核。本站核验日 2026-10-03，内容更新日 2026-09-29。</p>
         <table class="src">
           <thead><tr><th class="w-20">类型</th><th class="w-52">名称</th><th>链接</th></tr></thead>
           <tbody>
             <tr><td>changelog</td><td>Cursor · Changelog（Projects / 自托管 / Rollouts + Security Review）</td><td><a href="https://cursor.com/changelog" target="_blank" rel="noopener">https://cursor.com/changelog</a></td></tr>
             <tr><td>pricing</td><td>Cursor · 官方定价页（5 档结构）</td><td><a href="https://cursor.com/pricing" target="_blank" rel="noopener">https://cursor.com/pricing</a></td></tr>
             <tr><td>docs</td><td>Cursor · 官方文档</td><td><a href="https://cursor.com/docs" target="_blank" rel="noopener">https://cursor.com/docs</a></td></tr>
+            <tr><td>docs</td><td>Cursor Docs · Model Context Protocol (MCP)（传输方式/协议能力/配置位置/变量插值/工具审批/网络模式，2026-10-03 取到正文）</td><td><a href="https://cursor.com/docs/context/mcp" target="_blank" rel="noopener">https://cursor.com/docs/context/mcp</a></td></tr>
+            <tr><td>docs</td><td>Cursor Docs · Search · Instant Grep（本机索引 / 不存embedding 的官方声明 / Explore 子智能体）</td><td><a href="https://cursor.com/docs/agent/tools/search" target="_blank" rel="noopener">https://cursor.com/docs/agent/tools/search</a></td></tr>
+            <tr><td>docs</td><td>Cursor Docs · 插件参考（Hooks 事件清单与 hooks.json 格式）</td><td><a href="https://cursor.com/docs/reference/plugins" target="_blank" rel="noopener">https://cursor.com/docs/reference/plugins</a></td></tr>
           </tbody>
         </table>
       </div>
