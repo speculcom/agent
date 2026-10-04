@@ -1,6 +1,6 @@
 # Agent 图谱 · 给 agent 装的工具
 
-> 缺什么，装什么 —— 给 agent 装的 MCP 工具
+> <span data-zh>缺什么，装什么 —— 给 agent 装的 MCP 工具</span><span data-en>Fill the gap — MCP tools an agent can install</span>
 
 **agent.specul.com/tools/** · 独立信息项目（非厂商官方榜单）
 
@@ -33,8 +33,8 @@ MCP server 的权限范围、传输方式与输出可用性。收录标准：已
 
 | 标记 | 含义 |
 |---|---|
-| `verified` | 11 个维度均有官方源支撑，核验日在 90 天内 |
-| `partial` | 部分维度标为未知，或官方文档不可访问，或核验日超过 90 天 |
+| `verified` | all 11 dimensions backed by official sources, checked within 90 days |
+| `partial` | some dimensions unknown, or official docs unreachable, or checked over 90 days ago |
 | `stale` | 官方已发布重大变化，本站尚未核验 |
 
 当前 9 个对象中，**7 个为 verified**。
@@ -50,9 +50,9 @@ MCP server 的权限范围、传输方式与输出可用性。收录标准：已
 
 | 分区 | 主题 | 对象数 |
 |---|---|---|
-| [Agents](/) | 装在编辑器、终端，或厂商云里 | 17 |
-| [Harness](/harness/) | 运行时、编排框架、SDK | 10 |
-| [Tools](/tools/) | 缺什么，装什么 —— 给 agent 装的 MCP 工具 | 9 |
+| [Agents](/) | <span data-zh>装在编辑器、终端，或厂商云里</span><span data-en>Installed in an editor, a terminal, or a vendor cloud</span> | 17 |
+| [Harness](/harness/) | <span data-zh>运行时、编排框架、SDK</span><span data-en>Runtimes, orchestration frameworks, SDKs</span> | 10 |
+| [Tools](/tools/) | <span data-zh>缺什么，装什么 —— 给 agent 装的 MCP 工具</span><span data-en>Fill the gap — MCP tools an agent can install</span> | 9 |
 
 ---
 
