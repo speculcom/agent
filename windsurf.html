@@ -65,62 +65,65 @@
         <span class="tag on">云端</span>
         <span class="badge accent">partial</span>
         <span class="badge">lifecycle: active</span>
-        <span class="badge">核验 2026-09-29</span>
+        <span class="badge"><span data-zh>核验</span><span data-en>Checked</span> 2026-09-29</span>
       </div>
 
-            <p class="panel-lead"><strong>已改称 Devin Desktop</strong>（被 Cognition 收购后）——有自研模型 SWE-2、支持 ACP preview、有过 Restricted Mode 的 CVE 修复记录。</p>
+            <p class="panel-lead"><strong>已改称 Devin Desktop</strong>（被 Cognition 收购后）——有自研模型 SWE-2、支持 ACP preview、有过 Restricted Mode 的 CVE 修复记录。<span data-en><strong>Now renamed Devin Desktop</strong> (after the Cognition acquisition) — has its own SWE-2 model, supports ACP preview, and has a CVE fix history involving Restricted Mode.</span></p>
 
             <div class="panel is-slim">
-        <h2>适合与不适合</h2>
-        <p>需要多模型供应商可选（不想被单一模型绑定）的人。
+        <h2><span data-zh>适合与不适合</span><span data-en>When to use it, when not to</span></h2>
+<span data-zh>        <p>需要多模型供应商可选（不想被单一模型绑定）的人。
 需要 ACP 以接入自定义 agent 的人（注意是 preview）。
 需要远程主机（SSH / WSL）支持的人。</p>
         <p class="warn-p"><strong>不适合</strong>单纯为一个编辑功能付费的人——
-Free 档已含无限 inline edits 与无限 Tab 补全。</p>
+Free 档已含无限 inline edits 与无限 Tab 补全。</p></span><span data-en>        <p>People who want a choice of model providers rather than being locked to one.
+People who need ACP to attach a custom agent (note it is preview).
+People who need remote host support (SSH / WSL).</p>
+        <p class="warn-p"><strong>Not a fit for</strong> paying for one editing feature alone — the Free tier already includes unlimited inline edits and unlimited Tab completion.</p></span>
       </div>
 
 
       <div class="block-head">
-        <h2 class="t-h2">固定坐标系</h2>
-        <p class="t-section-lead">8 个维度，与同赛道其他对象逐项可比。</p>
+        <h2 class="t-h2"><span data-zh>固定坐标系</span><span data-en>Fixed coordinate system</span></h2>
+        <p class="t-section-lead">8 <span data-zh>个维度</span><span data-en>dimensions</span>, <span data-zh>与同赛道其他对象逐项可比</span><span data-en>each comparable item by item against others in the same track</span>.</p>
       </div>
       <dl class="axes">
         <div class="axis">
-          <dt>模型与开放条件</dt>
+          <dt><span data-zh>模型与开放条件</span><span data-en>Model & openness</span></dt>
           <dd><strong>Pro 档明确列出供应商</strong>：OpenAI、Claude、Gemini、<strong>SpaceXAI</strong> 以及领先开源模型。 <strong>自有模型 SWE-2 官方标注「Free use of SWE-2」</strong>， 定价页顶部另标注「SWE-2, our latest model, is now available」。 <strong>Free 档标注「有限模型可用性」（Limited model availability）。</strong></dd>
         </div>
         <div class="axis">
-          <dt>运行位置</dt>
+          <dt><span data-zh>运行位置</span><span data-en>Where it runs</span></dt>
           <dd><strong>重要变更：Windsurf 已改称 Devin Desktop</strong>—— 官方文档标题为「agent-native editor」的稳定版本发布说明， 下载页同时提供 macOS（Apple Silicon / Intel）、 Windows（arm64 / x64）与 Linux x64 for Debian。 <strong>支持 SSH 或 WSL 主机上的文件夹选择</strong>。</dd>
         </div>
         <div class="axis">
-          <dt>本地文件</dt>
+          <dt><span data-zh>本地文件</span><span data-en>Local files</span></dt>
           <dd>本地编辑器，直接读写工作区。 <strong>支持从 Explorer 拖文件到智能体面板、 或把编辑器选区发送到聊天</strong>。 <strong>索引策略与大仓库表现本次未核验。</strong></dd>
         </div>
         <div class="axis">
-          <dt>关机后的任务</dt>
+          <dt><span data-zh>关机后的任务</span><span data-en>Tasks after shutdown</span></dt>
           <dd>Pro 档明确列出 <strong>Devin Cloud 云端智能体</strong>（Access to cloud agents）。 <strong>客户端关闭后的行为本次未核验。</strong></dd>
         </div>
         <div class="axis">
-          <dt>工具与扩展</dt>
+          <dt><span data-zh>工具与扩展</span><span data-en>Tools & extensions</span></dt>
           <dd><strong>支持 Agent Client Protocol（ACP）</strong>—— 文档站有「Agent Client Protocol (preview)」与 「Building a custom ACP agent」两个专页，说明 ACP 处于 preview 阶段。 <strong>MCP 支持有一个重要细节</strong>： changelog 记录 ACP 客户端传入的 MCP server 现在可被智能体使用并列出， <strong>包括 HTTP 与 SSE 类型的 MCP server</strong>。</dd>
         </div>
         <div class="axis">
-          <dt>上下文与记忆</dt>
+          <dt><span data-zh>上下文与记忆</span><span data-en>Context & memory</span></dt>
           <dd>changelog 记录：切回最近查看过的 10 个会话之一时， 会立即显示其 transcript。 <strong>这说明有会话历史机制，但上下文窗口大小与压缩策略本次未核验。</strong></dd>
         </div>
         <div class="axis">
-          <dt>权限与限制</dt>
+          <dt><span data-zh>权限与限制</span><span data-en>Permissions & limits</span></dt>
           <dd><strong>有明确的安全机制与 CVE 修复记录</strong>： changelog 记录修复了 Restricted Mode 的一个绕过 （CVE-2026-81376）—— 原本只检查点号形式的受限工作区设置， 现在也检查嵌套对象形式。 <strong>这条值得注意：受限模式曾可被嵌套对象绕过。</strong></dd>
         </div>
         <div class="axis">
-          <dt>适合什么任务</dt>
+          <dt><span data-zh>适合什么任务</span><span data-en>Best for</span></dt>
           <dd>需要多模型供应商可选（不想被单一模型绑定）的人； 需要 ACP 以接入自定义 agent 的人（注意是 preview）； 需要远程主机（SSH / WSL）支持的人。 Free 档适合只需要无限 inline edits 与无限 Tab 补全的人。</dd>
         </div>
       </dl>
 
             <div class="panel warn">
-        <h2 class="warn">头号误解</h2>
+        <h2 class="warn"><span data-zh>头号误解</span><span data-en>Top misconception</span></h2>
         <ul>
           <li>不知道产品已改称 Devin Desktop，搜 Windsurf 可能找不到对应文档</li>
           <li>以为 Teams 是单一按席位计费，实际是「方案月费 + $40/全职席位」两层</li>
@@ -130,21 +133,21 @@ Free 档已含无限 inline edits 与无限 Tab 补全。</p>
 
 
             <div class="panel is-slim">
-        <h2>价格</h2>
+        <h2><span data-zh>价格</span><span data-en>Pricing</span></h2>
         <table class="src">
           <tbody>
-            <tr><th class="w-28">月度入口</th><td>Free $0 / Pro $20 每月 / Max $200 每月 / Teams 席位 $40 每月</td></tr>
-            <tr><th class="w-28">月度数值</th><td>$20</td></tr>
-            <tr><th class="w-28">年付</th><td>官方定价页只列月付；年付价未列出，记为未知</td></tr>
-            <tr><th class="w-28">额度说明</th><td><strong>2026-10-01 官方定价页全文核实</strong>：Free $0、Pro $20/月、<strong>Max $200/月（新档）</strong>、 Teams = <strong>$80/月团队基础费 + 每全职开发者席位 $40/月</strong>（上限 200 用户）、 Enterprise 洽谈。Pro 含 OpenAI / Claude / Gemini / SpaceXAI 前沿模型与领先开源模型、 完整模型可用性、可按 API 定价加购用量。 Free 层（官方原文口径）：Light quota（额度较紧）、有限模型可用性、 <strong>无限 inline edits</strong>、<strong>无限 Tab 补全</strong> —— 补全不限量但 agent 额度有限。 <strong>Devin Desktop 与 CLI 在 2026-10-10 前免费</strong>，可访问 Devin Cloud 云端智能体。 <strong>两家官方来源数字不一致，不要当成已核实</strong>： ① 定价页写 Pro $20/mo、Max $200/mo； ② 官方博客《An Update to Our Pricing》（pricing-v2）写 Pro $15/mo、Pro Ultimate $60/mo、 Teams $30/user/mo —— 该文是 2025 年的旧制（明确说「消除 flow action credits、 只按 user prompt 计费」），<strong>现行定价页的 $20 / $200 应视为当前口径</strong>， 但本站未能确认博客是否已完全失效，故保留两条。 另：Windsurf 品牌已并入 Devin —— 定价页标题现为「Plans and Pricing | Devin」， 页脚法律实体为 Exafunction, Inc.</td></tr>
+            <tr><th class="w-28"><span data-zh>月度入口</span><span data-en>Monthly entry</span></th><td><span data-zh>Free $0 / Pro $20 每月 / Max $200 每月 / Teams 席位 $40 每月</span><span data-en>Free $0 / Pro $20 每月 / Max $200 每月 / Teams 席位 $40 每月</span></td></tr>
+            <tr><th class="w-28"><span data-zh>月度数值</span><span data-en>Monthly price</span></th><td>20</td></tr>
+            <tr><th class="w-28"><span data-zh>年付</span><span data-en>Annual</span></th><td><span data-zh>官方定价页只列月付；年付价未列出，记为未知</span><span data-en>官方定价页只列月付；年付价未列出，记为未知</span></td></tr>
+            <tr><th class="w-28"><span data-zh>额度说明</span><span data-en>Quota note</span></th><td><span data-zh>**2026-10-01 官方定价页全文核实**：Free $0、Pro $20/月、**Max $200/月（新档）**、 Teams = **$80/月团队基础费 + 每全职开发者席位 $40/月**（上限 200 用户）、 Enterprise 洽谈。Pro 含 OpenAI / Claude / Gemini / SpaceXAI 前沿模型与领先开源模型、 完整模型可用性、可按 API 定价加购用量。 Free 层（官方原文口径）：Light quota（额度较紧）、有限模型可用性、 **无限 inline edits**、**无限 Tab 补全** —— 补全不限量但 agent 额度有限。 **Devin Desktop 与 CLI 在 2026-10-10 前免费**，可访问 Devin Cloud 云端智能体。 **两家官方来源数字不一致，不要当成已核实**： ① 定价页写 Pro $20/mo、Max $200/mo； ② 官方博客《An Update to Our Pricing》（pricing-v2）写 Pro $15/mo、Pro Ultimate $60/mo、 Teams $30/user/mo —— 该文是 2025 年的旧制（明确说「消除 flow action credits、 只按 user prompt 计费」），**现行定价页的 $20 / $200 应视为当前口径**， 但本站未能确认博客是否已完全失效，故保留两条。 另：Windsurf 品牌已并入 Devin —— 定价页标题现为「Plans and Pricing | Devin」， 页脚法律实体为 Exafunction, Inc.</span><span data-en>**2026-10-01 官方定价页全文核实**：Free $0、Pro $20/月、**Max $200/月（新档）**、 Teams = **$80/月团队基础费 + 每全职开发者席位 $40/月**（上限 200 用户）、 Enterprise 洽谈。Pro 含 OpenAI / Claude / Gemini / SpaceXAI 前沿模型与领先开源模型、 完整模型可用性、可按 API 定价加购用量。 Free 层（官方原文口径）：Light quota（额度较紧）、有限模型可用性、 **无限 inline edits**、**无限 Tab 补全** —— 补全不限量但 agent 额度有限。 **Devin Desktop 与 CLI 在 2026-10-10 前免费**，可访问 Devin Cloud 云端智能体。 **两家官方来源数字不一致，不要当成已核实**： ① 定价页写 Pro $20/mo、Max $200/mo； ② 官方博客《An Update to Our Pricing》（pricing-v2）写 Pro $15/mo、Pro Ultimate $60/mo、 Teams $30/user/mo —— 该文是 2025 年的旧制（明确说「消除 flow action credits、 只按 user prompt 计费」），**现行定价页的 $20 / $200 应视为当前口径**， 但本站未能确认博客是否已完全失效，故保留两条。 另：Windsurf 品牌已并入 Devin —— 定价页标题现为「Plans and Pricing | Devin」， 页脚法律实体为 Exafunction, Inc.</span></td></tr>
           </tbody>
         </table>
-        <p class="fine mt-3">不同币种不做折算。优惠、地区、税费与登录后报价可能变化，购买前请到官方页面确认。</p>
+        <p class="fine mt-3"><span data-zh>不同币种不做折算。优惠、地区、税费与登录后报价可能变化，购买前请到官方页面确认。</span><span data-en>No currency conversion. Discounts, regions, tax and post-login pricing can change — confirm on the official page before buying.</span></p>
       </div>
 
 
             <div class="panel is-slim">
-        <h2>未知项清单</h2>
+        <h2><span data-zh>未知项清单</span><span data-en>Known unknowns</span></h2>
         <ul>
           <li>Free 与 Pro 的具体价格数字</li>
           <li>SWE-2 与第三方模型的优先级关系</li>
@@ -157,10 +160,10 @@ Free 档已含无限 inline edits 与无限 Tab 补全。</p>
 
 
       <div class="panel">
-        <h2>证据来源</h2>
-        <p class="t-sm">判断可回到以下一手源复核。本站核验日 2026-09-29，内容更新日 2026-09-29。</p>
+        <h2><span data-zh>证据来源</span><span data-en>Evidence sources</span></h2>
+        <p class="t-sm"><span data-zh>判断可回到以下一手源复核。本站核验日</span><span data-en>Every judgement can be rechecked against the primary sources below. Verified on</span> 2026-09-29，<span data-zh>内容更新日</span><span data-en>content updated on</span> 2026-09-29。</p>
         <table class="src">
-          <thead><tr><th class="w-20">类型</th><th class="w-52">名称</th><th>链接</th></tr></thead>
+          <thead><tr><th class="w-20"><span data-zh>类型</span><span data-en>Type</span></th><th class="w-52"><span data-zh>名称</span><span data-en>Name</span></th><th><span data-zh>链接</span><span data-en>Link</span></th></tr></thead>
           <tbody>
             <tr><td>pricing</td><td>Windsurf · 官方定价页（Free / Pro / Teams 结构与能力）</td><td><a href="https://windsurf.com/pricing" target="_blank" rel="noopener">https://windsurf.com/pricing</a></td></tr>
             <tr><td>changelog</td><td>Windsurf · 官方 Changelog（Devin Desktop 发布说明 + CVE 修复）</td><td><a href="https://windsurf.com/changelog" target="_blank" rel="noopener">https://windsurf.com/changelog</a></td></tr>
@@ -171,7 +174,7 @@ Free 档已含无限 inline edits 与无限 Tab 补全。</p>
       </div>
 
             <div class="panel is-slim">
-        <h2>实测记录</h2>
+        <h2><span data-zh>实测记录</span><span data-en>Measured runs</span></h2>
         <p>本站尚未完成实测。测试协议见 <a href="https://github.com/speculcom/ai-agent-guide/blob/main/tracks/agents/tasks/_protocol.md" target="_blank" rel="noopener">tasks/_protocol.md</a>。
 
 <strong>实测建议</strong>：重点测两处
@@ -181,7 +184,7 @@ Free 档已含无限 inline edits 与无限 Tab 补全。</p>
 
 
             <div class="panel is-slim">
-        <h2>相关条目</h2>
+        <h2><span data-zh>相关条目</span><span data-en>Related entries</span></h2>
         <ul class="rel-list">
           <li><span class="rel-t"><a href="./cursor.html">Cursor</a></span><span class="rel-n">同赛道同为「混合 + 云端」形态</span></li>
           <li><span class="rel-t"><a href="./cline.html">Cline</a></span><span class="rel-n">ACP 另一个实现方</span></li>
@@ -190,7 +193,7 @@ Free 档已含无限 inline edits 与无限 Tab 补全。</p>
 
 
       <p class="fine mt-6">
-        本页由 <a href="https://github.com/speculcom/ai-agent-guide" target="_blank" rel="noopener" class="link-brand">ai-agent-guide</a> 数据层生成（CC BY 4.0）。
+        <span data-zh>本页由</span><span data-en>This page is generated from the</span> <a href="https://github.com/speculcom/ai-agent-guide" target="_blank" rel="noopener" class="link-brand">ai-agent-guide</a> <span data-zh>数据层生成（CC BY 4.0）。</span><span data-en>data layer (CC BY 4.0).</span>
         方法论与坐标系定义见仓库内 <code>METHODOLOGY.md</code>。
       </p>
     </div>
