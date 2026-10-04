@@ -47,66 +47,66 @@
         <h1 class="t-hero">自己搭的底座</h1>
         <p class="lede">Agent 运行时 / 编排框架 / SDK 的责任边界、状态持久化能力与权限模型。收录标准：提供 Agent 运行时或编排层、有官方文档可回溯、近 30 天有实质更新。</p>
         <div class="hero-meta">
-          <span><b>10</b> 个对象</span>
-          <span><b>8</b> 个固定维度</span>
-          <span><b>0</b> 个已完整核验</span>
-          <span>最后核验 <b>2026-10-01</b></span>
+          <span><b>10</b> <span data-zh>个对象</span><span data-en>objects</span></span>
+          <span><b>8</b> <span data-zh>个固定维度</span><span data-en>fixed dimensions</span></span>
+          <span><b>0</b> <span data-zh>个已完整核验</span><span data-en>fully verified</span></span>
+          <span><span data-zh>最后核验</span><span data-en>Last checked</span> <b>2026-10-01</b></span>
         </div>
       </div>
     </section>
 
     <nav class="part-bar" aria-label="站内分区">
       <div class="container">
-        <a href="/" style="--pa:#8b7cf8"><b>Agents</b><span>装在编辑器、终端，或厂商云里</span></a>
-        <a href="/harness/" aria-current="page" style="--pa:#3b82f6"><b>Harness</b><span>运行时、编排框架、SDK</span></a>
-        <a href="/tools/" style="--pa:#22d3c5"><b>Tools</b><span>缺什么，装什么 —— 给 agent 装的 MCP 工具</span></a>
+        <a href="/" style="--pa:#8b7cf8"><b>Agents</b><span><span data-zh>装在编辑器、终端，或厂商云里</span><span data-en>Installed in an editor, a terminal, or a vendor cloud</span></span></a>
+        <a href="/harness/" aria-current="page" style="--pa:#3b82f6"><b>Harness</b><span><span data-zh>运行时、编排框架、SDK</span><span data-en>Runtimes, orchestration frameworks, SDKs</span></span></a>
+        <a href="/tools/" style="--pa:#22d3c5"><b>Tools</b><span><span data-zh>缺什么，装什么 —— 给 agent 装的 MCP 工具</span><span data-en>Fill the gap — MCP tools an agent can install</span></span></a>
       </div>
     </nav>
 
     
     <section class="section guide-band">
       <div class="container">
-        <h2>先回答一件事：你要不要自己搭</h2>
-        <p class="section-desc">这是本分区存在的唯一理由。<strong>如果现成产品已经够用，正确答案是「不要搭」</strong>——那就去 <a href="/">成品 Agent</a>，不用往下看。真要自己搭，第一步是认清你要的抽象层。</p>
+        <h2><span data-zh>先回答一件事：你要不要自己搭</span><span data-en>Answer one question first: do you need to build one at all</span></h2>
+        <p class="section-desc"><span data-zh>这是本分区存在的唯一理由。<strong>如果现成产品已经够用，正确答案是「不要搭」</strong>——那就去 <a href="/">成品 Agent</a>，不用往下看。真要自己搭，第一步是认清你要的抽象层。</span><span data-en>This is the only reason this section exists. <strong>If a finished product already does the job, the right answer is "do not build"</strong> — go to <a href="/">Finished Agents</a> and stop reading. If you really are building, the first step is being clear which abstraction layer you want.</span></p>
         <ol class="guide-list">
           <li class="guide-step">
-            <div class="guide-q"><span class="guide-n">1</span>我要最细的控制权，文件系统我自己管</div>
-            <div class="guide-a"><strong><strong>原语型</strong>（primitives-only）</strong><span class="guide-why">只给你 agent loop 的原语，不替你决定文件系统 / 规划 / 记忆怎么做 —— OpenAI Agents SDK 是这一类。</span></div>
+            <div class="guide-q"><span class="guide-n">1</span><span data-zh>我要最细的控制权，文件系统我自己管</span><span data-en>I want the finest control and will manage the filesystem myself</span></div>
+            <div class="guide-a"><strong><span data-zh><strong>原语型</strong>（primitives-only）</span><span data-en><strong>Primitives only</strong></span></strong><span class="guide-why"><span data-zh>只给你 agent loop 的原语，不替你决定文件系统 / 规划 / 记忆怎么做 —— OpenAI Agents SDK 是这一类。</span><span data-en>You get the raw agent-loop primitives and it does not decide for you how the filesystem, planning or memory work — OpenAI Agents SDK is in this group.</span></span></div>
           </li>
           <li class="guide-step">
-            <div class="guide-q"><span class="guide-n">2</span>我要一个成熟 CLI 直接变成 API 对象</div>
-            <div class="guide-a"><strong><strong>包装既有 CLI</strong></strong><span class="guide-why">Claude Agent SDK 捆绑完整 CLI，默认给全工具无沙箱 —— 你省了造轮子，但权限模型是继承来的。</span></div>
+            <div class="guide-q"><span class="guide-n">2</span><span data-zh>我要一个成熟 CLI 直接变成 API 对象</span><span data-en>I want a mature CLI turned into an API object</span></div>
+            <div class="guide-a"><strong><span data-zh><strong>包装既有 CLI</strong></span><span data-en><strong>Wrapping an existing CLI</strong></span></strong><span class="guide-why"><span data-zh>Claude Agent SDK 捆绑完整 CLI，默认给全工具无沙箱 —— 你省了造轮子，但权限模型是继承来的。</span><span data-en>Claude Agent SDK bundles a complete CLI with all tools and no sandbox — you save reinventing it, but the permission model is inherited.</span></span></div>
           </li>
           <li class="guide-step">
-            <div class="guide-q"><span class="guide-n">3</span>我要开箱即跑的通用长任务助手</div>
-            <div class="guide-a"><strong><strong>batteries-included</strong></strong><span class="guide-why">Deep Agents 官方自述 opinionated：预置更多东西，也替你做了更多决定。</span></div>
+            <div class="guide-q"><span class="guide-n">3</span><span data-zh>我要开箱即跑的通用长任务助手</span><span data-en>I want a general long-task assistant that works out of the box</span></div>
+            <div class="guide-a"><strong><span data-zh><strong>batteries-included</strong></span><span data-en><strong>Batteries included</strong></span></strong><span class="guide-why"><span data-zh>Deep Agents 官方自述 opinionated：预置更多东西，也替你做了更多决定。</span><span data-en>Deep Agents describes itself as opinionated: more is preset, and more has been decided for you.</span></span></div>
           </li>
           <li class="guide-step">
-            <div class="guide-q"><span class="guide-n">4</span>流程要图、要能中断恢复、要多 Agent 协作</div>
-            <div class="guide-a"><strong><strong>编排框架</strong>：LangGraph / Google ADK / CrewAI</strong><span class="guide-why">LangGraph 的落盘粒度最明确（每 superstep 存一次图状态），ADK 的图执行引擎最完整，CrewAI 用「角色分工 + 事件流程」两套抽象。</span></div>
+            <div class="guide-q"><span class="guide-n">4</span><span data-zh>流程要图、要能中断恢复、要多 Agent 协作</span><span data-en>I need a graph, interruptible resumption, and multi-agent collaboration</span></div>
+            <div class="guide-a"><strong><span data-zh><strong>编排框架</strong>：LangGraph / Google ADK / CrewAI</span><span data-en><strong>Orchestration frameworks</strong>: LangGraph / Google ADK / CrewAI</span></strong><span class="guide-why"><span data-zh>LangGraph 的落盘粒度最明确（每 superstep 存一次图状态），ADK 的图执行引擎最完整，CrewAI 用「角色分工 + 事件流程」两套抽象。</span><span data-en>LangGraph has the clearest checkpoint granularity (graph state saved every superstep), ADK has the most complete graph execution engine, CrewAI uses two abstractions: role division and event flow.</span></span></div>
           </li>
           <li class="guide-step">
-            <div class="guide-q"><span class="guide-n">5</span>我要它常驻、跨平台、能定时跑</div>
-            <div class="guide-a"><strong><strong>平台型 / 常驻型</strong>：OpenHands / Hermes Agent</strong><span class="guide-why">OpenHands 是带 Web UI 的自托管控制中心；Hermes 更进一步——能挂 Telegram/Discord/Slack/WhatsApp/Signal/Email 六平台，还能 cron 无人值守。</span></div>
+            <div class="guide-q"><span class="guide-n">5</span><span data-zh>我要它常驻、跨平台、能定时跑</span><span data-en>I want it resident, cross-platform, able to run on a schedule</span></div>
+            <div class="guide-a"><strong><span data-zh><strong>平台型 / 常驻型</strong>：OpenHands / Hermes Agent</span><span data-en><strong>Platform / resident type</strong>: OpenHands / Hermes Agent</span></strong><span class="guide-why"><span data-zh>OpenHands 是带 Web UI 的自托管控制中心；Hermes 更进一步——能挂 Telegram/Discord/Slack/WhatsApp/Signal/Email 六平台，还能 cron 无人值守。</span><span data-en>OpenHands is a self-hosted control centre with a web UI; Hermes goes further — it attaches to Telegram, Discord, Slack, WhatsApp, Signal and Email, and can run unattended on cron.</span></span></div>
           </li>
           <li class="guide-step">
-            <div class="guide-q"><span class="guide-n">6</span>我只想要个工具用，不想维护</div>
-            <div class="guide-a"><strong>不该来这个分区</strong><span class="guide-why">这属于「不自建」那一侧，见 <a href="/">成品 Agent</a>。</span></div>
+            <div class="guide-q"><span class="guide-n">6</span><span data-zh>我只想要个工具用，不想维护</span><span data-en>I just want a tool to use, not something to maintain</span></div>
+            <div class="guide-a"><strong><span data-zh>不该来这个分区</span><span data-en>You should not be in this section</span></strong><span class="guide-why"><span data-zh>这属于「不自建」那一侧，见 <a href="/">成品 Agent</a>。</span><span data-en>That belongs on the "do not build" side — see <a href="/">Finished Agents</a>.</span></span></div>
           </li>
         </ol>
-        <p class="guide-foot">⚠ 三个最容易踩的坑：<strong>「状态」和「上下文」不是一回事</strong>——压缩上下文会丢信息，状态持久化才是长期可靠运行的前提（各家在这两层的完备程度差别很大）；<strong>「provider 无关」不等于「本地模型可用」</strong>（Claude Agent SDK 只支持 Claude，CrewAI 则点名支持 Ollama）；<strong>编排框架不给沙箱</strong>——权限边界要自己确认。</p>
+        <p class="guide-foot"><span data-zh>⚠ 三个最容易踩的坑：<strong>「状态」和「上下文」不是一回事</strong>——压缩上下文会丢信息，状态持久化才是长期可靠运行的前提（各家在这两层的完备程度差别很大）；<strong>「provider 无关」不等于「本地模型可用」</strong>（Claude Agent SDK 只支持 Claude，CrewAI 则点名支持 Ollama）；<strong>编排框架不给沙箱</strong>——权限边界要自己确认。</span><span data-en>⚠ Three traps people fall into most easily: <strong>"state" and "context" are not the same thing</strong> — compressing context loses information, while state persistence is what makes long-term reliable operation possible (and vendors differ a lot in how complete these two layers are). <strong>"provider-agnostic" does not mean "local models work"</strong> — Claude Agent SDK supports only Claude, while CrewAI explicitly names Ollama support. <strong>Orchestration frameworks provide no sandbox</strong> — you have to establish the permission boundary yourself.</span></p>
       </div>
     </section>
 
     <section class="section">
       <div class="container">
-        <h2>按抽象层分组</h2>
-        <p class="section-desc">同一层里也能差很远 —— 两个「编程底座」一个是纯原语、一个是全托管包装 CLI，所以先按抽象层分，再看具体对象。</p>
+        <h2><span data-zh>按抽象层分组</span><span data-en>By abstraction layer</span></h2>
+        <p class="section-desc"><span data-zh>同一层里也能差很远 —— 两个「编程底座」一个是纯原语、一个是全托管包装 CLI，所以先按抽象层分，再看具体对象。</span><span data-en>Even within a layer the gap is wide — of two "coding bases", one is pure primitives and one is a fully managed CLI wrapper. So group by abstraction first, then look at the object.</span></p>
         <div class="fam-block" data-family="coding-base">
           <div class="fam-head">
-            <h3>编程底座 <span class="fam-n">3</span></h3>
-            <span class="fam-badge">编程底座</span>
-            <p>给你 agent loop 或现成 CLI 的编程接口。这层的差别不在功能多少，而在<strong>它替你做多少决定</strong> —— 一个只给原语，一个把整套 CLI 连权限模型一起打包给你。</p>
+            <h3><span data-zh>编程底座</span><span data-en>Coding base</span> <span class="fam-n">3</span></h3>
+            <span class="fam-badge"><span data-zh>编程底座</span><span data-en>Coding base</span></span>
+            <p><span data-zh>给你 agent loop 或现成 CLI 的编程接口。这层的差别不在功能多少，而在<strong>它替你做多少决定</strong> —— 一个只给原语，一个把整套 CLI 连权限模型一起打包给你。</span><span data-en>A programming interface giving you an agent loop or an existing CLI. The difference here is not how much it does but <strong>how many decisions it makes for you</strong> — one hands you primitives, the other packages the whole CLI along with its permission model.</span></p>
           </div>
           <div class="grid">
         <article class="card" style="--card-accent:#D97757">
@@ -117,10 +117,10 @@
               <div class="vendor">Anthropic</div>
             </div>
           </div>
-          <p class="tagline">「Claude Code 的编程接口」 —— 不是自建 agent 框架，是把一个成熟的 coding CLI 变成 Pyt</p>
+          <p class="tagline"><span data-zh>「Claude Code 的编程接口」 —— 不是自建 agent 框架，是把一个成熟的 coding CLI 变成 Pyt</span><span data-en>"The programming interface to Claude Code" — not a framework f</span></p>   // line 已是双节点，勿走 esc -->
           <div class="card-foot">
-            <span class="t-state is-warn">部分核验</span>
-            <a class="more" href="./claude-agent-sdk.html" aria-label="Claude Agent SDK 详情">详情 →</a>
+            <span class="t-state is-warn"><span data-zh>部分核验</span><span data-en>Partly verified</span></span>
+            <a class="more" href="./claude-agent-sdk.html" aria-label="Claude Agent SDK 详情"><span data-zh>详情 →</span><span data-en>Details →</span></a>
           </div>
         </article>
         <article class="card" style="--card-accent:#10A37F">
@@ -131,10 +131,10 @@
               <div class="vendor">OpenAI</div>
             </div>
           </div>
-          <p class="tagline">「把 Codex CLI 变成 Node 进程里可驱动的对象」 —— 官方 README 首句就是 「Embed the C</p>
+          <p class="tagline"><span data-zh>「把 Codex CLI 变成 Node 进程里可驱动的对象」 —— 官方 README 首句就是 「Embed the C</span><span data-en>"Turns the Codex CLI into an object you can drive inside a Nod</span></p>   // line 已是双节点，勿走 esc -->
           <div class="card-foot">
-            <span class="t-state is-warn">部分核验</span>
-            <a class="more" href="./codex-sdk.html" aria-label="Codex SDK 详情">详情 →</a>
+            <span class="t-state is-warn"><span data-zh>部分核验</span><span data-en>Partly verified</span></span>
+            <a class="more" href="./codex-sdk.html" aria-label="Codex SDK 详情"><span data-zh>详情 →</span><span data-en>Details →</span></a>
           </div>
         </article>
         <article class="card" style="--card-accent:#10A37F">
@@ -145,19 +145,19 @@
               <div class="vendor">OpenAI</div>
             </div>
           </div>
-          <p class="tagline">「primitives-only 的多agent harness」 —— 官方自述 lightweight yet powe</p>
+          <p class="tagline"><span data-zh>「primitives-only 的多agent harness」 —— 官方自述 lightweight yet powe</span><span data-en>"A primitives-only multi-agent harness" — the official descrip</span></p>   // line 已是双节点，勿走 esc -->
           <div class="card-foot">
-            <span class="t-state is-warn">部分核验</span>
-            <a class="more" href="./openai-agents-sdk.html" aria-label="OpenAI Agents SDK 详情">详情 →</a>
+            <span class="t-state is-warn"><span data-zh>部分核验</span><span data-en>Partly verified</span></span>
+            <a class="more" href="./openai-agents-sdk.html" aria-label="OpenAI Agents SDK 详情"><span data-zh>详情 →</span><span data-en>Details →</span></a>
           </div>
         </article>
           </div>
         </div>
         <div class="fam-block" data-family="orchestration">
           <div class="fam-head">
-            <h3>编排框架 <span class="fam-n">4</span></h3>
-            <span class="fam-badge">编排框架</span>
-            <p>把多步骤、多 Agent、要中断恢复的流程显式建成图。给的是控制力，代价是接线与状态管理都归你。</p>
+            <h3><span data-zh>编排框架</span><span data-en>Orchestration</span> <span class="fam-n">4</span></h3>
+            <span class="fam-badge"><span data-zh>编排框架</span><span data-en>Orchestration</span></span>
+            <p><span data-zh>把多步骤、多 Agent、要中断恢复的流程显式建成图。给的是控制力，代价是接线与状态管理都归你。</span><span data-en>Makes multi-step, multi-agent flows with resumable state explicit graphs. It gives you control; the cost is that wiring and state management are yours.</span></p>
           </div>
           <div class="grid">
         <article class="card" style="--card-accent:#EB6658">
@@ -168,10 +168,10 @@
               <div class="vendor">CrewAI Inc</div>
             </div>
           </div>
-          <p class="tagline">「用角色分工和业务流程来组织多 agent 协作」 —— 官方自述： &gt; Framework for orchestrati</p>
+          <p class="tagline"><span data-zh>「用角色分工和业务流程来组织多 agent 协作」 —— 官方自述： > Framework for orchestrati</span><span data-en>"Organises multi-agent collaboration through role division and</span></p>   // line 已是双节点，勿走 esc -->
           <div class="card-foot">
-            <span class="t-state is-warn">部分核验</span>
-            <a class="more" href="./crewai.html" aria-label="CrewAI 详情">详情 →</a>
+            <span class="t-state is-warn"><span data-zh>部分核验</span><span data-en>Partly verified</span></span>
+            <a class="more" href="./crewai.html" aria-label="CrewAI 详情"><span data-zh>详情 →</span><span data-en>Details →</span></a>
           </div>
         </article>
         <article class="card" style="--card-accent:#4285F4">
@@ -182,10 +182,10 @@
               <div class="vendor">Google</div>
             </div>
           </div>
-          <p class="tagline">「code-first 的 agent 编排框架，核心资产是一个图执行引擎」 —— 官方 README 第一项特性就说明了它</p>
+          <p class="tagline"><span data-zh>「code-first 的 agent 编排框架，核心资产是一个图执行引擎」 —— 官方 README 第一项特性就说明了它</span><span data-en>"A code-first agent orchestration framework whose core asset i</span></p>   // line 已是双节点，勿走 esc -->
           <div class="card-foot">
-            <span class="t-state is-warn">部分核验</span>
-            <a class="more" href="./google-adk.html" aria-label="Google ADK（Agent Development Kit） 详情">详情 →</a>
+            <span class="t-state is-warn"><span data-zh>部分核验</span><span data-en>Partly verified</span></span>
+            <a class="more" href="./google-adk.html" aria-label="Google ADK（Agent Development Kit） 详情"><span data-zh>详情 →</span><span data-en>Details →</span></a>
           </div>
         </article>
         <article class="card" style="--card-accent:#1C3C3C">
@@ -196,10 +196,10 @@
               <div class="vendor">LangChain Inc</div>
             </div>
           </div>
-          <p class="tagline">「低层编排框架」 —— 官方自述用词很克制，注意那个 low-level： &gt; Low-level orchestratio</p>
+          <p class="tagline"><span data-zh>「低层编排框架」 —— 官方自述用词很克制，注意那个 low-level： > Low-level orchestratio</span><span data-en>"A low-level orchestration framework" — note that deliberate w</span></p>   // line 已是双节点，勿走 esc -->
           <div class="card-foot">
-            <span class="t-state is-warn">部分核验</span>
-            <a class="more" href="./langgraph.html" aria-label="LangGraph 详情">详情 →</a>
+            <span class="t-state is-warn"><span data-zh>部分核验</span><span data-en>Partly verified</span></span>
+            <a class="more" href="./langgraph.html" aria-label="LangGraph 详情"><span data-zh>详情 →</span><span data-en>Details →</span></a>
           </div>
         </article>
         <article class="card" style="--card-accent:#7C3AED">
@@ -210,19 +210,19 @@
               <div class="vendor">LlamaIndex（run-llama）</div>
             </div>
           </div>
-          <p class="tagline">⚠ 但先得说清一件事：官方已明确把公司重心从「编排框架」移走了。 README 首屏 NOTE 段落原文（核验 2026-1</p>
+          <p class="tagline"><span data-zh>⚠ 但先得说清一件事：官方已明确把公司重心从「编排框架」移走了。 README 首屏 NOTE 段落原文（核验 2026-1</span><span data-en>⚠ One thing to state first: the project has explicitly moved i</span></p>   // line 已是双节点，勿走 esc -->
           <div class="card-foot">
-            <span class="t-state is-warn">部分核验</span>
-            <a class="more" href="./llamaindex.html" aria-label="LlamaIndex Framework 详情">详情 →</a>
+            <span class="t-state is-warn"><span data-zh>部分核验</span><span data-en>Partly verified</span></span>
+            <a class="more" href="./llamaindex.html" aria-label="LlamaIndex Framework 详情"><span data-zh>详情 →</span><span data-en>Details →</span></a>
           </div>
         </article>
           </div>
         </div>
         <div class="fam-block" data-family="general-harness">
           <div class="fam-head">
-            <h3>通用 Harness <span class="fam-n">3</span></h3>
-            <span class="fam-badge">通用 Harness</span>
-            <p>预置了规划、文件系统、记忆等一整套，面向通用长任务。开箱程度最高，可改性最低。</p>
+            <h3><span data-zh>通用 Harness</span><span data-en>General harness</span> <span class="fam-n">3</span></h3>
+            <span class="fam-badge"><span data-zh>通用 Harness</span><span data-en>General harness</span></span>
+            <p><span data-zh>预置了规划、文件系统、记忆等一整套，面向通用长任务。开箱程度最高，可改性最低。</span><span data-en>Presets planning, filesystem, memory and the rest, aimed at general long-running tasks. Most ready out of the box, least modifiable.</span></p>
           </div>
           <div class="grid">
         <article class="card" style="--card-accent:#10A37F">
@@ -233,10 +233,10 @@
               <div class="vendor">LangChain</div>
             </div>
           </div>
-          <p class="tagline">「batteries-included agent harness」 —— 官方自述：开箱即跑、面向长任务多步流程、 不改代</p>
+          <p class="tagline"><span data-zh>「batteries-included agent harness」 —— 官方自述：开箱即跑、面向长任务多步流程、 不改代</span><span data-en>"A batteries-included agent harness" — described officially as</span></p>   // line 已是双节点，勿走 esc -->
           <div class="card-foot">
-            <span class="t-state is-warn">部分核验</span>
-            <a class="more" href="./deepagents.html" aria-label="Deep Agents 详情">详情 →</a>
+            <span class="t-state is-warn"><span data-zh>部分核验</span><span data-en>Partly verified</span></span>
+            <a class="more" href="./deepagents.html" aria-label="Deep Agents 详情"><span data-zh>详情 →</span><span data-en>Details →</span></a>
           </div>
         </article>
         <article class="card" style="--card-accent:#FFD700">
@@ -247,10 +247,10 @@
               <div class="vendor">Nous Research</div>
             </div>
           </div>
-          <p class="tagline">「唯一带学习闭环的常驻个人助手」 —— 官方 README 这么写： &gt; The self-improving AI age</p>
+          <p class="tagline"><span data-zh>「唯一带学习闭环的常驻个人助手」 —— 官方 README 这么写： > The self-improving AI age</span><span data-en>"The only resident personal assistant with a learning loop" — </span></p>   // line 已是双节点，勿走 esc -->
           <div class="card-foot">
-            <span class="t-state is-warn">部分核验</span>
-            <a class="more" href="./hermes-agent.html" aria-label="Hermes Agent 详情">详情 →</a>
+            <span class="t-state is-warn"><span data-zh>部分核验</span><span data-en>Partly verified</span></span>
+            <a class="more" href="./hermes-agent.html" aria-label="Hermes Agent 详情"><span data-zh>详情 →</span><span data-en>Details →</span></a>
           </div>
         </article>
         <article class="card" style="--card-accent:#F97316">
@@ -261,10 +261,10 @@
               <div class="vendor">OpenHands（All-Hands-AI）</div>
             </div>
           </div>
-          <p class="tagline">「自托管的 agent 控制中心」 —— 官方 README 现在给它起的名字是 Agent Canvas， 定位原文： &gt;</p>
+          <p class="tagline"><span data-zh>「自托管的 agent 控制中心」 —— 官方 README 现在给它起的名字是 Agent Canvas， 定位原文： ></span><span data-en>"A self-hosted control centre for agents" — the official READM</span></p>   // line 已是双节点，勿走 esc -->
           <div class="card-foot">
-            <span class="t-state is-warn">部分核验</span>
-            <a class="more" href="./openhands.html" aria-label="OpenHands Agent Canvas 详情">详情 →</a>
+            <span class="t-state is-warn"><span data-zh>部分核验</span><span data-en>Partly verified</span></span>
+            <a class="more" href="./openhands.html" aria-label="OpenHands Agent Canvas 详情"><span data-zh>详情 →</span><span data-en>Details →</span></a>
           </div>
         </article>
           </div>
@@ -277,14 +277,14 @@
         <div class="status-inner">
           <div class="status-mark" aria-hidden="true">!</div>
           <div>
-            <h2>本站目前是「核验快照」，还没有实测数据</h2>
+            <h2><span data-zh>本站目前是「核验快照」，还没有实测数据</span><span data-en>This site is currently a verification snapshot — no measured runs yet</span></h2>
             <p>
-              下面每一个字段都能回到官方原文核对，但<strong>我们还没有在同一批任务上跑过这些工具</strong>。
+              <span data-zh>下面每一个字段都能回到官方原文核对，但<strong>我们还没有在同一批任务上跑过这些工具</strong>。</span><span data-en>Every field below can be traced back to the official source, but <strong>we have not yet run these tools on the same batch of tasks</strong>.</span>
               实测协议已经写好（统一任务、统一验收、记录人工介入与返工次数），任务清单也已就绪，
-              <strong>尚未执行</strong>。
+              <span data-zh><strong>尚未执行</strong>。</span><span data-en><strong>not yet run</strong>.</span>
             </p>
             <p class="t-sm">
-              所以本站给的是<strong>能力边界与证据</strong>，不是「哪个更好用」的结论。
+              <span data-zh>所以本站给的是<strong>能力边界与证据</strong>，不是「哪个更好用」的结论。</span><span data-en>So what this site gives you is <strong>capability boundaries and evidence</strong>, not a verdict on which is better to use.</span>
               真正的选型请用你自己的输入、预算与验收标准跑一遍。
             </p>
           </div>
@@ -294,51 +294,51 @@
 
     <section class="section">
       <div class="container">
-        <h2>8 个维度，每格都能回溯</h2>
+        <h2><span data-zh>8 个维度，每格都能回溯</span><span data-en>8 dimensions, every cell traceable</span></h2>
         <p class="section-desc">
-          所有对象在同一坐标系下被描述。
-          点开任一对象，每一格下面都有官方源链接与核验日期——不认同可以自己回去查。
+          <span data-zh>所有对象在同一坐标系下被描述。</span><span data-en>All objects are described on the same coordinate system.</span>
+          <span data-zh>点开任一对象，每一格下面都有官方源链接与核验日期——不认同可以自己回去查。</span><span data-en>Open any object and every cell carries an official source link and a checked date — disagree and verify it yourself.</span>
         </p>
         <div class="t-mesh axis-mesh">
           <div class="axis-cell">
             <span class="t-index">01</span>
-            <h3 class="axis-name">模型与开放条件</h3>
-            <p class="axis-ask">用谁的模型？能不能换第三方？多模型路由怎么配？</p>
+            <h3 class="axis-name"><span data-zh>模型与开放条件</span><span data-en>Model & openness</span></h3>
+            <p class="axis-ask"><span data-zh>用谁的模型？能不能换第三方？多模型路由怎么配？</span><span data-en>Whose model does it use? Can you switch to a third party? How is multi-model routing configured?</span></p>
           </div>
           <div class="axis-cell">
             <span class="t-index">02</span>
-            <h3 class="axis-name">运行位置</h3>
-            <p class="axis-ask">本地 / 云端 / 混合？索引在本地还是云端？远程控制不等于云端执行。</p>
+            <h3 class="axis-name"><span data-zh>运行位置</span><span data-en>Where it runs</span></h3>
+            <p class="axis-ask"><span data-zh>本地 / 云端 / 混合？索引在本地还是云端？远程控制不等于云端执行。</span><span data-en>Local, cloud or hybrid? Is the index local or remote? Remote control is not the same as cloud execution.</span></p>
           </div>
           <div class="axis-cell">
             <span class="t-index">03</span>
-            <h3 class="axis-name">本地文件</h3>
-            <p class="axis-ask">能访问多大范围？未打开的大文件怎么读？符号级能力如何？</p>
+            <h3 class="axis-name"><span data-zh>本地文件</span><span data-en>Local files</span></h3>
+            <p class="axis-ask"><span data-zh>能访问多大范围？未打开的大文件怎么读？符号级能力如何？</span><span data-en>How wide an area can it reach? How does it read large files you have not opened? How capable is it at the symbol level?</span></p>
           </div>
           <div class="axis-cell">
             <span class="t-index">04</span>
-            <h3 class="axis-name">关机后的任务</h3>
-            <p class="axis-ask">电脑关了还能继续跑吗？这是本地形态最常见的误解来源。</p>
+            <h3 class="axis-name"><span data-zh>关机后的任务</span><span data-en>Tasks after shutdown</span></h3>
+            <p class="axis-ask"><span data-zh>电脑关了还能继续跑吗？这是本地形态最常见的误解来源。</span><span data-en>Does it keep running once the computer is off? This is the most common misconception about local forms.</span></p>
           </div>
           <div class="axis-cell">
             <span class="t-index">05</span>
-            <h3 class="axis-name">工具与扩展</h3>
-            <p class="axis-ask">工具链有多宽：MCP · LSP · 插件 · Hooks · 自定义指令。</p>
+            <h3 class="axis-name"><span data-zh>工具与扩展</span><span data-en>Tools & extensions</span></h3>
+            <p class="axis-ask"><span data-zh>工具链有多宽：MCP · LSP · 插件 · Hooks · 自定义指令。</span><span data-en>How wide is the toolchain: MCP · LSP · plugins · hooks · custom instructions?</span></p>
           </div>
           <div class="axis-cell">
             <span class="t-index">06</span>
-            <h3 class="axis-name">上下文与记忆</h3>
-            <p class="axis-ask">索引算法、上下文窗口、会话恢复与分叉、跨会话记忆边界。</p>
+            <h3 class="axis-name"><span data-zh>上下文与记忆</span><span data-en>Context & memory</span></h3>
+            <p class="axis-ask"><span data-zh>索引算法、上下文窗口、会话恢复与分叉、跨会话记忆边界。</span><span data-en>Indexing algorithm, context window, session resume and fork, and the boundary of cross-session memory.</span></p>
           </div>
           <div class="axis-cell">
             <span class="t-index">07</span>
-            <h3 class="axis-name">权限与限制</h3>
-            <p class="axis-ask">沙箱与审批边界、凭据管理、数据是否出境、额度如何计算。</p>
+            <h3 class="axis-name"><span data-zh>权限与限制</span><span data-en>Permissions & limits</span></h3>
+            <p class="axis-ask"><span data-zh>沙箱与审批边界、凭据管理、数据是否出境、额度如何计算。</span><span data-en>Sandbox and approval boundaries, credential handling, whether data leaves your machine, and how quota is charged.</span></p>
           </div>
           <div class="axis-cell">
             <span class="t-index">08</span>
-            <h3 class="axis-name">适合什么任务</h3>
-            <p class="axis-ask">最擅长什么任务？什么情况下别用它？</p>
+            <h3 class="axis-name"><span data-zh>适合什么任务</span><span data-en>Best for</span></h3>
+            <p class="axis-ask"><span data-zh>最擅长什么任务？什么情况下别用它？</span><span data-en>What tasks is it best at? When should you not use it?</span></p>
           </div>
         </div>
         </div>
@@ -347,93 +347,93 @@
 
     <section class="section">
       <div class="container">
-        <h2>全部数据一览</h2>
-        <p class="section-desc">同一张表横向对比。点对象名进详情页看逐格证据。</p>
+        <h2><span data-zh>全部数据一览</span><span data-en>All data at a glance</span></h2>
+        <p class="section-desc"><span data-zh>同一张表横向对比。点对象名进详情页看逐格证据。</span><span data-en>The same table side by side. Click an object name to see per-cell evidence.</span></p>
         <div class="table-wrap">
           <table class="cmp">
             <thead>
               <tr>
-                <th>对象</th><th>形态</th><th>厂商</th><th>适合</th><th>核验日</th><th>状态</th>
+                <th><span data-zh>对象</span><span data-en>Object</span></th><th><span data-zh>形态</span><span data-en>Form</span></th><th><span data-zh>厂商</span><span data-en>Vendor</span></th><th><span data-zh>适合</span><span data-en>Best for</span></th><th><span data-zh>核验日</span><span data-en>Checked</span></th><th><span data-zh>状态</span><span data-en>Status</span></th>
               </tr>
             </thead>
             <tbody>
               <tr>
                 <td><a href="./claude-agent-sdk.html"><span class="td-mark" style="--card-accent:#D97757">CA</span>Claude Agent SDK</a></td>
-                <td class="td-vendor">编程底座</td>
+                <td class="td-vendor">harness</td>
                 <td class="td-vendor">Anthropic</td>
-                <td class="td-fit">适合：想要一个已经被打磨过的 coding agent（工具集、权限链、hooks、session fork 都在） 并且团队用 Pytho</td>
+                <td class="td-fit"><span data-zh>适合：想要一个已经被打磨过的 coding agent（工具集、权限链、hooks、session fork 都在） 并且团队用 Pytho</span><span data-en>Fits: you want a coding agent that has already been polished (tool set</span></td>
                 <td class="td-date">2026-09-30</td>
                 <td><span class="td-conf partial">partial</span></td>
               </tr>
               <tr>
                 <td><a href="./codex-sdk.html"><span class="td-mark" style="--card-accent:#10A37F">CX</span>Codex SDK</a></td>
-                <td class="td-vendor">编程底座</td>
+                <td class="td-vendor">harness</td>
                 <td class="td-vendor">OpenAI</td>
-                <td class="td-fit">适合：要把 Codex 塞进自己的 Node 应用 / Electron 应用 / CI； 需要非交互执行；需要精确的文件级权限规则；Typ</td>
+                <td class="td-fit"><span data-zh>适合：要把 Codex 塞进自己的 Node 应用 / Electron 应用 / CI； 需要非交互执行；需要精确的文件级权限规则；Typ</span><span data-en>Fits: embedding Codex into a Node / Electron app or CI; needing non-in</span></td>
                 <td class="td-date">2026-10-01</td>
                 <td><span class="td-conf partial">partial</span></td>
               </tr>
               <tr>
                 <td><a href="./crewai.html"><span class="td-mark" style="--card-accent:#EB6658">CA</span>CrewAI</a></td>
-                <td class="td-vendor">编排框架</td>
+                <td class="td-vendor">harness</td>
                 <td class="td-vendor">CrewAI Inc</td>
-                <td class="td-fit">适合：任务能被表述成「一支有角色分工的团队」（Crews）； 需要业务逻辑留在普通 Python 里并显式控制执行路径（Flows）； 想在</td>
+                <td class="td-fit"><span data-zh>适合：任务能被表述成「一支有角色分工的团队」（Crews）； 需要业务逻辑留在普通 Python 里并显式控制执行路径（Flows）； 想在</span><span data-en>Fits: tasks that can be expressed as "a team with defined roles"; busi</span></td>
                 <td class="td-date">2026-10-01</td>
                 <td><span class="td-conf partial">partial</span></td>
               </tr>
               <tr>
                 <td><a href="./deepagents.html"><span class="td-mark" style="--card-accent:#10A37F">DA</span>Deep Agents</a></td>
-                <td class="td-vendor">通用 Harness</td>
+                <td class="td-vendor">harness</td>
                 <td class="td-vendor">LangChain</td>
-                <td class="td-fit">适合：要一个开箱即用、默认调优好、面向长任务多步流程的通用 Agent； 不想自己拼 filesystem / 记忆 / 子代理；已经在 L</td>
+                <td class="td-fit"><span data-zh>适合：要一个开箱即用、默认调优好、面向长任务多步流程的通用 Agent； 不想自己拼 filesystem / 记忆 / 子代理；已经在 L</span><span data-en>Fits: you want a general agent that works out of the box, is tuned by </span></td>
                 <td class="td-date">2026-09-30</td>
                 <td><span class="td-conf partial">partial</span></td>
               </tr>
               <tr>
                 <td><a href="./google-adk.html"><span class="td-mark" style="--card-accent:#4285F4">GA</span>Google ADK（Agent Development Kit）</a></td>
-                <td class="td-vendor">编排框架</td>
+                <td class="td-vendor">harness</td>
                 <td class="td-vendor">Google</td>
-                <td class="td-fit">适合：需要把多个 agent 组织成有分支、有循环、有人工介入的确定性流程； 要用代码优先（code-first）定义 agent 与工具，</td>
+                <td class="td-fit"><span data-zh>适合：需要把多个 agent 组织成有分支、有循环、有人工介入的确定性流程； 要用代码优先（code-first）定义 agent 与工具，</span><span data-en>Fits: organising multiple agents into deterministic flows with branche</span></td>
                 <td class="td-date">2026-10-01</td>
                 <td><span class="td-conf partial">partial</span></td>
               </tr>
               <tr>
                 <td><a href="./hermes-agent.html"><span class="td-mark" style="--card-accent:#FFD700">HA</span>Hermes Agent</a></td>
-                <td class="td-vendor">通用 Harness</td>
+                <td class="td-vendor">harness</td>
                 <td class="td-vendor">Nous Research</td>
-                <td class="td-fit">适合：想要一个常驻的跨平台个人助手（Telegram/Discord/Slack/WhatsApp/Signal/Email）； 把它放在云</td>
+                <td class="td-fit"><span data-zh>适合：想要一个常驻的跨平台个人助手（Telegram/Discord/Slack/WhatsApp/Signal/Email）； 把它放在云</span><span data-en>Fits: a resident cross-platform personal assistant; running on a cloud</span></td>
                 <td class="td-date">2026-10-01</td>
                 <td><span class="td-conf partial">partial</span></td>
               </tr>
               <tr>
                 <td><a href="./langgraph.html"><span class="td-mark" style="--card-accent:#1C3C3C">LG</span>LangGraph</a></td>
-                <td class="td-vendor">编排框架</td>
+                <td class="td-vendor">harness</td>
                 <td class="td-vendor">LangChain Inc</td>
-                <td class="td-fit">适合：agent 流程要跑很久且必须能从中断处精确恢复； 需要人工在流程中间介入并修改状态；要把「工作记忆」与「跨会话长期记忆」分开管理； </td>
+                <td class="td-fit"><span data-zh>适合：agent 流程要跑很久且必须能从中断处精确恢复； 需要人工在流程中间介入并修改状态；要把「工作记忆」与「跨会话长期记忆」分开管理； </span><span data-en>Fits: agent flows that run long and must resume precisely from an inte</span></td>
                 <td class="td-date">2026-10-01</td>
                 <td><span class="td-conf partial">partial</span></td>
               </tr>
               <tr>
                 <td><a href="./llamaindex.html"><span class="td-mark" style="--card-accent:#7C3AED">LI</span>LlamaIndex Framework</a></td>
-                <td class="td-vendor">编排框架</td>
+                <td class="td-vendor">harness</td>
                 <td class="td-vendor">LlamaIndex（run-llama）</td>
-                <td class="td-fit">适合：核心任务是把外部数据源（API / PDF / 文档 / SQL）接进来做检索与问答， 且需要 300+ 现成集成里的某一个；团队 P</td>
+                <td class="td-fit"><span data-zh>适合：核心任务是把外部数据源（API / PDF / 文档 / SQL）接进来做检索与问答， 且需要 300+ 现成集成里的某一个；团队 P</span><span data-en>Fits: the core task is bringing external data sources in for retrieval</span></td>
                 <td class="td-date">2026-10-01</td>
                 <td><span class="td-conf partial">partial</span></td>
               </tr>
               <tr>
                 <td><a href="./openai-agents-sdk.html"><span class="td-mark" style="--card-accent:#10A37F">OA</span>OpenAI Agents SDK</a></td>
-                <td class="td-vendor">编程底座</td>
+                <td class="td-vendor">harness</td>
                 <td class="td-vendor">OpenAI</td>
-                <td class="td-fit">适合：想要「薄 harness」—— 只要 agent loop 原语，filesystem / 规划 / 记忆都想自己挑； 需要 guar</td>
+                <td class="td-fit"><span data-zh>适合：想要「薄 harness」—— 只要 agent loop 原语，filesystem / 规划 / 记忆都想自己挑； 需要 guar</span><span data-en>Fits: you want a thin harness with built-in guardrails / human-in-the-</span></td>
                 <td class="td-date">2026-09-30</td>
                 <td><span class="td-conf partial">partial</span></td>
               </tr>
               <tr>
                 <td><a href="./openhands.html"><span class="td-mark" style="--card-accent:#F97316">OH</span>OpenHands Agent Canvas</a></td>
-                <td class="td-vendor">通用 Harness</td>
+                <td class="td-vendor">harness</td>
                 <td class="td-vendor">OpenHands（All-Hands-AI）</td>
-                <td class="td-fit">适合：要把agent 放到自己服务器上 7×24 跑；需要定时或 webhook 触发（Slack / GitHub / Linear / </td>
+                <td class="td-fit"><span data-zh>适合：要把agent 放到自己服务器上 7×24 跑；需要定时或 webhook 触发（Slack / GitHub / Linear / </span><span data-en>Fits: the agent needs to run 7×24 on your own server; scheduled or web</span></td>
                 <td class="td-date">2026-10-01</td>
                 <td><span class="td-conf partial">partial</span></td>
               </tr>
@@ -445,55 +445,55 @@
 
     <section class="section">
       <div class="container">
-        <h2>为什么这里不给总分排名</h2>
-        <p class="section-desc">这不是省略，是方法上的明确取舍。</p>
+        <h2><span data-zh>为什么这里不给总分排名</span><span data-en>Why there is no overall ranking</span></h2>
+        <p class="section-desc"><span data-zh>这不是省略，是方法上的明确取舍。</span><span data-en>This is not an omission but a deliberate methodological choice.</span></p>
         <div class="panel">
           <ul>
-            <li><strong>缺统一实测，就不给分。</strong>跨工具的跑分口径不同——题目、预算、执行环境都不一样，A 的 90 分和 B 的 88 分不可比。</li>
-            <li><strong>「未知」是合法答案。</strong>查不到就写「未知」并说明为什么，不用推测填充。缺信息本身也是信息。</li>
-            <li><strong>每条判断挂官方源。</strong>来源链接、类型与核验日都在详情页里，可以逐条回去复核。</li>
+            <li><span data-zh><strong>缺统一实测，就不给分。</strong>跨工具的跑分口径不同——题目、预算、执行环境都不一样，A 的 90 分和 B 的 88 分不可比。</span><span data-en><strong>No shared measurement, no score.</strong> Benchmarks across tools use different rules — different questions, budgets and environments. A 90 and a B 88 are not comparable.</span></li>
+            <li><span data-zh><strong>「未知」是合法答案。</strong></span><span data-en><strong>"Unknown" is a legitimate answer.</strong></span>查不到就写「未知」并说明为什么，不用推测填充。缺信息本身也是信息。</li>
+            <li><span data-zh><strong>每条判断挂官方源。</strong></span><span data-en><strong>Every judgement links to an official source.</strong></span>来源链接、类型与核验日都在详情页里，可以逐条回去复核。</li>
             <li><strong>lifecycle 单独标注。</strong>核验日新不等于数据有效——上游归档后数据会失效，所以单独标 <code>active</code> / <code>maintenance</code> / <code>archived</code>。</li>
             <li><strong>不同层不混排。</strong>成品 agent、自己搭的底座、给 agent 装的工具是三种角色，坐标系不同；硬合成一张 33 行的表只会制造假的可比性。</li>
           </ul>
         </div>
         <div class="panel">
-          <h2>可信度标记怎么读</h2>
+          <h2><span data-zh>可信度标记怎么读</span><span data-en>How to read the confidence marks</span></h2>
           <p class="t-sm mb-3">详情页与上表都带 <code>confidence</code>，它反映<strong>本站数据的完整度</strong>，不是对产品的评价。</p>
           <table class="src is-flush">
             <tbody>
-              <tr><th class="w-24"><span class="td-conf verified">verified</span></th><td>8 个维度均有官方源支撑，且核验日在 90 天内</td></tr>
-              <tr><th><span class="td-conf partial">partial</span></th><td>部分维度标为未知，或官方文档不可访问，或核验日超过 90 天</td></tr>
-              <tr><th><span class="td-conf stale">stale</span></th><td>官方已发布重大变化，本站尚未核验</td></tr>
+              <tr><th class="w-24"><span class="td-conf verified">verified</span></th><td><span data-zh>8 个维度均有官方源支撑，且核验日在 90 天内</span><span data-en>all 8 dimensions have official sources and were checked within 90 days</span></td></tr>
+              <tr><th><span class="td-conf partial">partial</span></th><td><span data-zh>部分维度标为未知，或官方文档不可访问，或核验日超过 90 天</span><span data-en>some dimensions are marked unknown, or the official docs were unreachable, or checked over 90 days ago</span></td></tr>
+              <tr><th><span class="td-conf stale">stale</span></th><td><span data-zh>官方已发布重大变化，本站尚未核验</span><span data-en>the vendor has shipped a significant change that this site has not re-checked</span></td></tr>
             </tbody>
           </table>
         </div>
         <div class="panel">
-          <h2>本站当前的完整度</h2>
+          <h2><span data-zh>本站当前的完整度</span><span data-en>Current completeness on this site</span></h2>
           <p class="t-sm mb-2">
             数据层用 <code>node scripts/audit-gaps.mjs</code> 可随时复核这个数字。
             以下是最近一次核验的快照（核验日 2026-09-29）：
           </p>
-          <p><strong class="em">全站合计 120/211 维度已补齐（57%）</strong></p>
+          <p><strong class="em"><span data-zh>全站合计 120/211 维度已补齐</span><span data-en>Site-wide 120/211 dimensions filled</span>（57%）</strong></p>
           <p class="t-sm">
             剩余未补齐项分三类：<strong>官方未公开</strong>（索引算法、沙箱实现细节本就不对外说明）、
             <strong>需实测才能确定</strong>（大仓库表现、CI 无 TTY 行为）、
             <strong>客观渠道不可达</strong>。
           </p>
           <p class="t-sm">
-            我们选择留白而不是填「已支持」——错误的成本最终由使用者承担。
+            <span data-zh>我们选择留白而不是填「已支持」——错误的成本最终由使用者承担。</span><span data-en>We chose to leave a blank rather than fill in "supported" — the cost of an error is ultimately borne by whoever uses it.</span>
           </p>
         </div>
         <div class="panel">
-          <h2>数据来源与复核方式</h2>
-          <p>全部数据来自开源仓库 <a href="https://github.com/speculcom/ai-agent-guide" target="_blank" rel="noopener" class="link-brand">speculcom/ai-agent-guide</a>（CC BY 4.0）。</p>
-          <p>每个条目都是纯 Markdown + frontmatter，含 8 个维度、证据链接、核验日与可信度标记。仓库内含：</p>
+          <h2><span data-zh>数据来源与复核方式</span><span data-en>Sources and how to re-check them</span></h2>
+          <p><span data-zh>全部数据来自开源仓库</span><span data-en>All data comes from the open-source repository</span> <a href="https://github.com/speculcom/ai-agent-guide" target="_blank" rel="noopener" class="link-brand">speculcom/ai-agent-guide</a>（CC BY 4.0）。</p>
+          <p><span data-zh>每个条目都是纯 Markdown + frontmatter，含 8 个维度、证据链</span><span data-en>Every entry is plain Markdown plus frontmatter, carrying 8 dimensions and an evidence chain</span>接、核验日与可信度标记。仓库内含：</p>
           <ul>
             <li><code>METHODOLOGY.md</code> —— 方法论总纲与四条核心规则</li>
             <li><code>axes/</code> —— 每个维度的定义与判定标准（含正反例）</li>
             <li><code>SCHEMA.md</code> —— 数据格式规范与构建校验规则</li>
-            <li><code>tracks/*/tasks/_protocol.md</code> —— 实测协议（<strong>尚未执行</strong>，故本站暂无实测结论）</li>
+            <li><code>tracks/*/tasks/_protocol.md</code> —— 实测协议(<span data-zh><strong>尚未执行</strong></span><span data-en><strong>not yet run</strong></span><span data-zh>，故本站暂无实测结论</span><span data-en>, so this site has no measured conclusions</span>)</li>
           </ul>
-          <p class="t-sm">发现错误或有新证据，欢迎提 Issue 或 PR——每条修正都会注明依据与影响范围。</p>
+          <p class="t-sm"><span data-zh>发现错误或有新证据，欢迎提 Issue 或 PR——每条修正都会注明依据与影响范围。</span><span data-en>Found an error or have new evidence? Open an issue or a PR — each correction notes its basis and blast radius.</span></p>
         </div>
       </div>
     </section>
