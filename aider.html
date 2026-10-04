@@ -65,63 +65,66 @@
         <span class="tag on">开源</span>
         <span class="badge accent">partial</span>
         <span class="badge">lifecycle: maintenance</span>
-        <span class="badge">核验 2026-09-29</span>
+        <span class="badge"><span data-zh>核验</span><span data-en>Checked</span> 2026-09-29</span>
       </div>
 
-            <p class="panel-lead"><strong>不是编辑器插件，是一种使用模式</strong>——Aider 常驻 watch 你的文件，你在任意编辑器里加 AI 注释，它就响应。</p>
+            <p class="panel-lead"><strong>不是编辑器插件，是一种使用模式</strong>——Aider 常驻 watch 你的文件，你在任意编辑器里加 AI 注释，它就响应。<span data-en><strong>Not an editor plugin but a usage mode</strong> — Aider stays resident and watches your files; add an AI comment in any editor and it responds.</span></p>
 
             <div class="panel is-slim">
-        <h2>适合与不适合</h2>
-        <p>习惯在任意编辑器里工作，不愿切换到专门的 Agent 界面的人。
+        <h2><span data-zh>适合与不适合</span><span data-en>When to use it, when not to</span></h2>
+<span data-zh>        <p>习惯在任意编辑器里工作，不愿切换到专门的 Agent 界面的人。
 需要「加注释 → 自动响应」这种轻量交互的人。</p>
         <p class="warn-p"><strong>不适合</strong>要求严格审批的场景——
 watch 模式的确认机制本次未核验，
 且常驻进程下更容易产生未经确认的改动。
-也不适合需要云端后台运行的场景，它依赖本机进程。</p>
+也不适合需要云端后台运行的场景，它依赖本机进程。</p></span><span data-en>        <p>People who work in whatever editor they like and refuse to move to a dedicated agent interface.
+People who want lightweight interaction: add a comment, get a response.</p>
+        <p class="warn-p"><strong>Not a fit for</strong> scenarios requiring strict approval — the confirmation mechanism in watch mode was not verified this round, and a resident process makes unconfirmed changes more likely.
+Also not a fit for cloud background execution; it depends on a local process.</p></span>
       </div>
 
 
       <div class="block-head">
-        <h2 class="t-h2">固定坐标系</h2>
-        <p class="t-section-lead">8 个维度，与同赛道其他对象逐项可比。</p>
+        <h2 class="t-h2"><span data-zh>固定坐标系</span><span data-en>Fixed coordinate system</span></h2>
+        <p class="t-section-lead">8 <span data-zh>个维度</span><span data-en>dimensions</span>, <span data-zh>与同赛道其他对象逐项可比</span><span data-en>each comparable item by item against others in the same track</span>.</p>
       </div>
       <dl class="axes">
         <div class="axis">
-          <dt>模型与开放条件</dt>
+          <dt><span data-zh>模型与开放条件</span><span data-en>Model & openness</span></dt>
           <dd>与 CLI 形态相同：支持云端与本地 LLM，可连接几乎任何模型。 <strong>README 当前推荐列表停留在上一代模型 （Claude 3.7 Sonnet / DeepSeek R1 / OpenAI o1 等）， 与该项目 13 个月未发 release 的状态一致，参考时需自行核对。</strong></dd>
         </div>
         <div class="axis">
-          <dt>运行位置</dt>
+          <dt><span data-zh>运行位置</span><span data-en>Where it runs</span></dt>
           <dd><strong>不是编辑器插件，而是一种使用模式</strong>： Aider 在后台 watch 你的文件， 你在任意 IDE 或文本编辑器里加 AI 注释，它就响应。 官方文档标题即为「Aider in your IDE」， 但实现上跑的是 <strong>Aider 自己的浏览器 UI</strong>。 <strong>这与 Cline / Codex 的「编辑器扩展」是不同的形态。</strong></dd>
         </div>
         <div class="axis">
-          <dt>本地文件</dt>
+          <dt><span data-zh>本地文件</span><span data-en>Local files</span></dt>
           <dd>watch 文件变化并响应 AI 注释。 <strong>核心的 Repo Map 能力与 CLI 形态完全相同</strong>（同一项目的同一机制， 官方文档 <code>docs/repomap.md</code>）：用「一份简洁的整个 git 仓库的地图」提供上下文， 含最重要的类与函数及其类型与调用签名；每次改动请求都随附该 map。 <strong>它的第二个作用在 watch 模式下尤其有用</strong>—— 帮助写新代码时复用代码库里已有的库、模块与抽象。 支持 100+ 编程语言。 <strong>大仓库的 repo map 耗时与 token 开销本次未实测，记为未知。</strong></dd>
         </div>
         <div class="axis">
-          <dt>关机后的任务</dt>
+          <dt><span data-zh>关机后的任务</span><span data-en>Tasks after shutdown</span></dt>
           <dd><strong>需要 Aider 进程常驻</strong>才能响应注释—— 这与「后台云端任务」不是一回事。 <strong>进程关闭后 watch 即失效</strong>， 也不存在客户端关闭后继续运行的云端形态。</dd>
         </div>
         <div class="axis">
-          <dt>工具与扩展</dt>
+          <dt><span data-zh>工具与扩展</span><span data-en>Tools & extensions</span></dt>
           <dd>文件编辑 + Git 自动提交（与 CLI 形态相同的核心机制）。 watch 模式下可从编辑器直接拖文件到智能体面板， 或把编辑器选区发送到对话。 <strong>MCP 支持本次未核验，记为未知。</strong></dd>
         </div>
         <div class="axis">
-          <dt>上下文与记忆</dt>
+          <dt><span data-zh>上下文与记忆</span><span data-en>Context & memory</span></dt>
           <dd>Repo Map 提供全库结构视图，每次请求随附（见 local_files）。 <strong>上下文窗口大小与压缩策略本次未核验。</strong></dd>
         </div>
         <div class="axis">
-          <dt>权限与限制</dt>
+          <dt><span data-zh>权限与限制</span><span data-en>Permissions & limits</span></dt>
           <dd><strong>具备自动提交能力</strong>（与 CLI 形态一致）—— AI 的改动会直接进入 git 历史。 <strong>watch 模式下是否每次询问本次未核验。</strong> 这是本条目最需要补全的一项： 常驻进程 + 自动提交 + 无确认，风险叠加。</dd>
         </div>
         <div class="axis">
-          <dt>适合什么任务</dt>
+          <dt><span data-zh>适合什么任务</span><span data-en>Best for</span></dt>
           <dd>习惯在任意编辑器里工作，不愿切换到专门的 Agent 界面的人。 需要「加注释 → 自动响应」这种轻量交互的人。</dd>
         </div>
       </dl>
 
             <div class="panel warn">
-        <h2 class="warn">头号误解</h2>
+        <h2 class="warn"><span data-zh>头号误解</span><span data-en>Top misconception</span></h2>
         <ul>
           <li>以为它是编辑器插件，实际是 Aider 常驻进程 + 浏览器 UI</li>
           <li>把 watch 模式当成云端后台任务，它需要本机进程一直运行</li>
@@ -131,20 +134,20 @@ watch 模式的确认机制本次未核验，
 
 
             <div class="panel is-slim">
-        <h2>价格</h2>
+        <h2><span data-zh>价格</span><span data-en>Pricing</span></h2>
         <table class="src">
           <tbody>
-            <tr><th class="w-28">月度入口</th><td>开源免费，模型费用另计</td></tr>
-            <tr><th class="w-28">年付</th><td>开源免费，模型费用另计</td></tr>
-            <tr><th class="w-28">额度说明</th><td>Apache-2.0 开源。与 <a href="/aider-cli.html">CLI 形态</a> 同一项目， <strong>无额外授权费用</strong>。模型调用费用由用户自付。</td></tr>
+            <tr><th class="w-28"><span data-zh>月度入口</span><span data-en>Monthly entry</span></th><td><span data-zh>开源免费，模型费用另计</span><span data-en>开源免费，模型费用另计</span></td></tr>
+            <tr><th class="w-28"><span data-zh>年付</span><span data-en>Annual</span></th><td><span data-zh>开源免费，模型费用另计</span><span data-en>开源免费，模型费用另计</span></td></tr>
+            <tr><th class="w-28"><span data-zh>额度说明</span><span data-en>Quota note</span></th><td><span data-zh>Apache-2.0 开源。与 [CLI 形态](../../cli/products/aider-cli.md) 同一项目， **无额外授权费用**。模型调用费用由用户自付。</span><span data-en>Apache-2.0 开源。与 [CLI 形态](../../cli/products/aider-cli.md) 同一项目， **无额外授权费用**。模型调用费用由用户自付。</span></td></tr>
           </tbody>
         </table>
-        <p class="fine mt-3">不同币种不做折算。优惠、地区、税费与登录后报价可能变化，购买前请到官方页面确认。</p>
+        <p class="fine mt-3"><span data-zh>不同币种不做折算。优惠、地区、税费与登录后报价可能变化，购买前请到官方页面确认。</span><span data-en>No currency conversion. Discounts, regions, tax and post-login pricing can change — confirm on the official page before buying.</span></p>
       </div>
 
 
             <div class="panel is-slim">
-        <h2>未知项清单</h2>
+        <h2><span data-zh>未知项清单</span><span data-en>Known unknowns</span></h2>
         <ul>
           <li>watch 模式下是否每次询问</li>
           <li>MCP 支持情况</li>
@@ -155,10 +158,10 @@ watch 模式的确认机制本次未核验，
 
 
       <div class="panel">
-        <h2>证据来源</h2>
-        <p class="t-sm">判断可回到以下一手源复核。本站核验日 2026-09-29，内容更新日 2026-09-29。</p>
+        <h2><span data-zh>证据来源</span><span data-en>Evidence sources</span></h2>
+        <p class="t-sm"><span data-zh>判断可回到以下一手源复核。本站核验日</span><span data-en>Every judgement can be rechecked against the primary sources below. Verified on</span> 2026-09-29，<span data-zh>内容更新日</span><span data-en>content updated on</span> 2026-09-29。</p>
         <table class="src">
-          <thead><tr><th class="w-20">类型</th><th class="w-52">名称</th><th>链接</th></tr></thead>
+          <thead><tr><th class="w-20"><span data-zh>类型</span><span data-en>Type</span></th><th class="w-52"><span data-zh>名称</span><span data-en>Name</span></th><th><span data-zh>链接</span><span data-en>Link</span></th></tr></thead>
           <tbody>
             <tr><td>docs</td><td>Aider · Watch 模式官方文档（Aider in your IDE）</td><td><a href="https://aider.chat/docs/usage/watch.html" target="_blank" rel="noopener">https://aider.chat/docs/usage/watch.html</a></td></tr>
             <tr><td>repo</td><td>Aider · 仓库</td><td><a href="https://github.com/Aider-AI/aider" target="_blank" rel="noopener">https://github.com/Aider-AI/aider</a></td></tr>
@@ -168,7 +171,7 @@ watch 模式的确认机制本次未核验，
       </div>
 
             <div class="panel is-slim">
-        <h2>实测记录</h2>
+        <h2><span data-zh>实测记录</span><span data-en>Measured runs</span></h2>
         <p>本站尚未完成实测。测试协议见 <a href="https://github.com/speculcom/ai-agent-guide/blob/main/tracks/agents/tasks/_protocol.md" target="_blank" rel="noopener">tasks/_protocol.md</a>。
 
 <strong>实测建议</strong>：这个工具的实测重点应是
@@ -178,7 +181,7 @@ watch 模式的确认机制本次未核验，
 
 
             <div class="panel is-slim">
-        <h2>相关条目</h2>
+        <h2><span data-zh>相关条目</span><span data-en>Related entries</span></h2>
         <ul class="rel-list">
           <li><span class="rel-t"><a href="./aider-cli.html">Aider CLI</a></span><span class="rel-n">同一项目的终端形态</span></li>
           <li><span class="rel-t"><a href="./cline.html">Cline</a></span><span class="rel-n">三形态覆盖，但形态相互独立</span></li>
@@ -187,7 +190,7 @@ watch 模式的确认机制本次未核验，
 
 
       <p class="fine mt-6">
-        本页由 <a href="https://github.com/speculcom/ai-agent-guide" target="_blank" rel="noopener" class="link-brand">ai-agent-guide</a> 数据层生成（CC BY 4.0）。
+        <span data-zh>本页由</span><span data-en>This page is generated from the</span> <a href="https://github.com/speculcom/ai-agent-guide" target="_blank" rel="noopener" class="link-brand">ai-agent-guide</a> <span data-zh>数据层生成（CC BY 4.0）。</span><span data-en>data layer (CC BY 4.0).</span>
         方法论与坐标系定义见仓库内 <code>METHODOLOGY.md</code>。
       </p>
     </div>
