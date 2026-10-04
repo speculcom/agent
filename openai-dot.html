@@ -68,64 +68,68 @@
         <span class="tag on">订阅制</span>
         <span class="badge accent">partial</span>
         <span class="badge">lifecycle: active</span>
-        <span class="badge">核验 2026-10-03</span>
+        <span class="badge"><span data-zh>核验</span><span data-en>Checked</span> 2026-10-03</span>
       </div>
 
-            <p class="panel-lead"><strong>本机什么都不装，所有工作发生在 OpenAI 的云端机器上</strong>——官方给的能力边界写得很直白：独立云端电脑 + 自带浏览器 + 插件接4,000 多款应用，关机后仍在推进工作。</p>
+            <p class="panel-lead"><strong>本机什么都不装，所有工作发生在 OpenAI 的云端机器上</strong>——官方给的能力边界写得很直白：独立云端电脑 + 自带浏览器 + 插件接4,000 多款应用，关机后仍在推进工作。<span data-en><strong>Nothing installs locally; all work happens on OpenAI&#39;s cloud machine</strong> — the stated capability boundary is blunt: a standalone cloud computer plus its own browser plus plugins into 4,000+ apps, and it keeps progressing after you shut down.</span></p>
 
             <div class="panel is-slim">
-        <h2>适合与不适合</h2>
-        <p><strong>适合</strong>（官方自己给的场景，可直接当选型依据）：
+        <h2><span data-zh>适合与不适合</span><span data-en>When to use it, when not to</span></h2>
+<span data-zh>        <p><strong>适合</strong>（官方自己给的场景，可直接当选型依据）：
 要的是「PR 交给你审、附演示视频」「产品范围变了发布材料自动跟上」
 「新数据到了论文图表自己更新」这类<strong>跨工具、跨时段</strong>的活。</p>
         <p class="warn-p"><strong>不适合</strong>：
 想自己挑模型的人（模型被指定）；
 数据不能出本机的人（默认云端，只有授权后才碰本机）；
-要随时插手精细控制流的人（本机 IDE / CLI 形态更合适）。</p>
+要随时插手精细控制流的人（本机 IDE / CLI 形态更合适）。</p></span><span data-en>        <p><strong>Fits</strong> (scenarios the vendor itself gives, usable directly as selection criteria): work that is <strong>cross-tool and cross-time</strong> — &quot;hand me the PR for review, with a demo video&quot;, &quot;the product scope changed so the release materials keep up&quot;, &quot;new data arrived so the paper&#39;s charts update themselves&quot;.</p>
+        <p class="warn-p"><strong>Not a fit for</strong>:
+people who want to pick the model themselves (the model is fixed);
+people whose data must not leave the machine (cloud by default, touching your machine only once authorised);
+people who want fine-grained control over the flow (the local IDE / CLI forms suit that better).</p></span>
       </div>
 
 
       <div class="block-head">
-        <h2 class="t-h2">固定坐标系</h2>
-        <p class="t-section-lead">8 个维度，与同赛道其他对象逐项可比。</p>
+        <h2 class="t-h2"><span data-zh>固定坐标系</span><span data-en>Fixed coordinate system</span></h2>
+        <p class="t-section-lead">8 <span data-zh>个维度</span><span data-en>dimensions</span>, <span data-zh>与同赛道其他对象逐项可比</span><span data-en>each comparable item by item against others in the same track</span>.</p>
       </div>
       <dl class="axes">
         <div class="axis">
-          <dt>模型与开放条件</dt>
+          <dt><span data-zh>模型与开放条件</span><span data-en>Model & openness</span></dt>
           <dd><strong>模型不是用户能选的，是厂商指定的</strong> —— 官方发布页原文「它们由 GPT‑6 Astra 驱动」。 即：Dot 跑在GPT-6 Astra 上，没有模型选择入口。 这与本分区的IDE / CLI 形态形成对照：那两类里模型通常可选， <strong>厂商云形态把「选模型」这件事整个拿掉了。</strong></dd>
         </div>
         <div class="axis">
-          <dt>运行位置</dt>
+          <dt><span data-zh>运行位置</span><span data-en>Where it runs</span></dt>
           <dd><strong>形态的答案就是本产品</strong>： 官方原文「拥有独立的云端电脑」，并有「自己的浏览器」， 且「你随时都能打开 dot 的电脑，检查它的工作」。 官方还写明另一种授权方式：「你也可以授权 Dot 连接并使用你自己的设备， 例如笔记本电脑，让它直接在你的工作环境中与你协作」—— <strong>所以 runtime 有两种</strong>：默认厂商云VM，可授权访问本机。</dd>
         </div>
         <div class="axis">
-          <dt>本地文件</dt>
+          <dt><span data-zh>本地文件</span><span data-en>Local files</span></dt>
           <dd><strong>默认完全隔离</strong>。官方原文： 「除非你选择连接自己的计算机，否则你的计算机及其中的内容始终与它隔离」。 Dot 的文件都在它自己的云端环境里。 <strong>授权连接本机后能做什么，官方安全文档给了具体例子</strong>（2026-10-03 补）： 「你也可以选择连接自己的计算机，让 Dot 以更多方式提供帮助， 例如<strong>分析保存在桌面上的电子表格</strong>，或使用设备上安装的编程工具」。 即本机授权不是「打开文件权限」这一项， 而是<strong>桌面文件 + 设备上已装的开发工具</strong>两类。 <strong>云端工作空间内部还有一层沙盒</strong>： 「在每个 Dot 受保护的工作空间内，<strong>沙盒机制会限制该 Dot 可以访问的代码和工具</strong>， 帮助控制有害代码或错误命令的影响范围」。 <strong>多租户隔离也写明了</strong>：「将不同用户的云端环境彼此隔离」， 且「Dot 运行代码的环境，与协调其工作及<strong>执行关键防护措施的系统相互独立</strong>」。 <strong>⚠ 只读工具在已连接应用里究竟能读到什么程度，官方仍未给量化边界</strong> （只给了「无法发送消息、更改应用内容」这类否定式描述）。</dd>
         </div>
         <div class="axis">
-          <dt>关机后的任务</dt>
+          <dt><span data-zh>关机后的任务</span><span data-en>Tasks after shutdown</span></dt>
           <dd><strong>这一维度是它最强的一项，官方专门有整节讲</strong>： 「即使你没有直接与 Dot 互动，它也会在后台寻找能帮上忙的地方。 我们将其称为『主动研究』」。 官方还写明关闭应用后仍在继续推进工作， 以及「你的 Dot 可以接手项目并自主推进，即使它同时还在处理其他几个项目」。 <strong>多任务并行是官方明说的能力，不是推测</strong>。 <strong>工作空间是持续存在的</strong>：「每个 Dot 都有自己的云端计算机，可以在其中浏览网页、 分析信息、创建文件和运行工具。即使你没有主动参与， Dot 也能在这些工作空间中<strong>持续推进工作</strong>」。 ⚠ <strong>「主动研究」期间用的是只读工具</strong> —— 官方原文： 「在此过程中，它会通过仅具备只读权限的工具访问你已连接的应用。 这些工具无法发送消息、更改应用内容，也无法控制你的浏览器或计算机」。 <strong>这行限定条件很重要</strong>：后台自主 ≠ 后台可改。 <strong>⚠ 后台工作不是无条件跑下去的</strong>（2026-10-03 补）： 官方安全文档明确监控可以在执行中暂停它 —— 「如果安全监控在 Dot 正在进行的工作中发现风险，<strong>它可以暂停该工作</strong>， 并向你显示警告」；发布页版本写的是「可以暂停或停止 Dot 的工作」。 <strong>所以「关机后仍在推进」的准确表述是：仍在推进，但可能中途被拦下。</strong></dd>
         </div>
         <div class="axis">
-          <dt>工具与扩展</dt>
+          <dt><span data-zh>工具与扩展</span><span data-en>Tools & extensions</span></dt>
           <dd><strong>插件生态是核心卖点</strong>，官方原文「通过我们的插件生态， 它们可以轻松连接 4,000 多款应用」。 官方明确说应用来源是「你已连接的应用」， 且内置了应用控制选项来管理权限。 另有：可把编码类任务交给 Codex（DevDay 上Codex 本身也宣布云端化）； 正与 Microsoft合作把专职 Dot 接进 Agent 365 的治理与安全控制。</dd>
         </div>
         <div class="axis">
-          <dt>上下文与记忆</dt>
+          <dt><span data-zh>上下文与记忆</span><span data-en>Context & memory</span></dt>
           <dd><strong>跨渠道保留上下文</strong> —— 官方原文： 「dot 会在各个渠道间保留上下文，因此无论你通过哪个渠道联系它， 它都能掌握完整的上下文信息」。 渠道含 ChatGPT（桌面/网页/移动）、Slack、Teams、短信（官方写「即将推出」）、语音通话。 <strong>跨渠道共享的载体官方写明了是「项目」</strong>： 「你可以在 ChatGPT 中启动项目，<strong>通过 Slack 与负责该项目的团队共享上下文</strong>， 再让 dot 继续推进工作」—— 即上下文挂在项目上而不是挂在某个渠道上，这是它能跨渠道的机制前提。 官方强调学习机制：「能在长期使用中从反馈里学习」「合作越多， Dot 就越了解你的偏好、思考方式，以及你心目中好工作的标准」。 <strong>⚠ 训练数据默认不用于改进模型，但有一条重要例外</strong>（2026-10-03 补， 此前档案漏了这条）：官方原文「默认情况下，我们<strong>不会</strong>使用 ChatGPT Business、Enterprise 或 Edu 工作空间中的内容来改进模型」。 <strong>限定在三个工作空间档位</strong>——按发布页字面， 个人档与 Pro 档的去向官方在此页<strong>没有同样的表述</strong>， 这三档之间是否存在差异，官方页面未说明。<strong>不要把「不用来训练」推广到所有档位。</strong> <strong>上下文窗口大小与记忆存储实现，官方两个页面均未给数字。</strong></dd>
         </div>
         <div class="axis">
-          <dt>权限与限制</dt>
+          <dt><span data-zh>权限与限制</span><span data-en>Permissions & limits</span></dt>
           <dd><strong>本档案权限信息最完整的一份，官方有独立两节。</strong> 分三层： ① 自定义规则 —— 官方原文「通过自定义规则，你可以允许特定操作、 要求先获批准，或禁止这些操作」，且<strong>「内置安全要求始终有效」</strong> （即自定义规则只能在官方底线之上收紧，不能放松）； ② 自动审核 —— 「对于可能影响你的账户或分享信息的操作，Dot 会通过自动审核」， 官方说明审核判据是「是否符合你的指令、自定义规则和安全要求」， 且明确「更改密码等特定敏感任务始终需要由你亲自完成」； ③ 凭据隔离 —— 「登录受支持的网站时，Dot 可以使用已保存的密码， 而无需向模型透露这些密码」。 <strong>④ 运行期监控会真的拦下来（2026-10-03 补，此前档案缺这一层）</strong>： 官方安全文档写「我们还会在 Dot <strong>规划和执行操作时进行监控</strong>， 查找潜在有害行为，例如超出你的指令范围，或试图绕过防护措施。 <strong>如果安全监控在 Dot 正在进行的工作中发现风险，它可以暂停该工作， 并向你显示警告，供你查看</strong>」。 <strong>这是「审核」与「执行」分离的实证</strong> —— 不是只在动作前拦， 也能在执行中停下。这是它与 Meta Muse「审批交给另一个 agent」最接近的一层， 但官方<strong>未说明这个监控器是否独立于模型</strong>（Muse 明写了 Sentinel 系统级隔离， Dot 没写）—— <strong>这一项不要替它补。</strong> <strong>审计面</strong>：官方提供活动视图（activity view）可跟进进度含后台工作。 ⚠ 官方同一页也写了「Dot 仍可能出错，因此，请务必检查可能产生重要影响的工作成果」。</dd>
         </div>
         <div class="axis">
-          <dt>适合什么任务</dt>
+          <dt><span data-zh>适合什么任务</span><span data-en>Best for</span></dt>
           <dd>官方给的是<strong>岗位化场景</strong>，值得直接抄成选型依据： 把反馈转成经过测试的修复（交完整 PR 附演示视频）、 产品范围变化时调整发布方案、拿到新证据后重跑分析并更新论文图表、 销售提案随需求变化更新、内容制作自动完成。 反过来说它<strong>不适合</strong>：要自己挑模型的人；数据不能出本机的人； 需要随时接管的精细控制流（本机 IDE/CLI 形态更合适）。</dd>
         </div>
       </dl>
 
             <div class="panel warn">
-        <h2 class="warn">头号误解</h2>
+        <h2 class="warn"><span data-zh>头号误解</span><span data-en>Top misconception</span></h2>
         <ul>
           <li>把「主动研究」理解成后台可以随便改你的东西 —— 官方限定那是只读工具</li>
           <li>以为自定义规则能放宽官方限制 —— 官方明确「内置安全要求始终有效」</li>
@@ -138,20 +142,20 @@
 
 
             <div class="panel is-slim">
-        <h2>价格</h2>
+        <h2><span data-zh>价格</span><span data-en>Pricing</span></h2>
         <table class="src">
           <tbody>
-            <tr><th class="w-28">月度入口</th><td>含在 ChatGPT Pro / Business Premium 订阅内，无独立 Dot 定价</td></tr>
-            <tr><th class="w-28">年付</th><td>官方未单列 Dot 的年付口径</td></tr>
-            <tr><th class="w-28">额度说明</th><td><strong>2026-10-03 以官方发布页正文为准（Playwright 渲染，5,166 字）</strong>： 「Pro 或 Business Premium 套餐已包含你的首个 Dot，无需额外付费。」 <strong>没有独立的 Dot 定价页</strong> —— 它不是一个能单独买的产品， 是订阅附带的权益。所以下面这行model: freemium 指「随主订阅附带」， 不代表有免费档。 另两条官方数字（都与计费直接相关，容易漏）： 「与 Dot 的对话不会占用你的 ChatGPT 使用额度」—— <strong>但</strong>「当你让 Dot 在 Codex 或 ChatGPT 工作中启动或管理任务时， 这些任务仍会照常计入你的使用额度」。 即：Dot 自己的对话免费，它派出去的活儿照常算用量。 Enterprise 用户含 Edu / Healthcare 需管理员启用后试 beta（默认关闭）。</td></tr>
+            <tr><th class="w-28"><span data-zh>月度入口</span><span data-en>Monthly entry</span></th><td><span data-zh>含在 ChatGPT Pro / Business Premium 订阅内，无独立 Dot 定价</span><span data-en>含在 ChatGPT Pro / Business Premium 订阅内，无独立 Dot 定价</span></td></tr>
+            <tr><th class="w-28"><span data-zh>年付</span><span data-en>Annual</span></th><td><span data-zh>官方未单列 Dot 的年付口径</span><span data-en>官方未单列 Dot 的年付口径</span></td></tr>
+            <tr><th class="w-28"><span data-zh>额度说明</span><span data-en>Quota note</span></th><td><span data-zh>**2026-10-03 以官方发布页正文为准（Playwright 渲染，5,166 字）**： 「Pro 或 Business Premium 套餐已包含你的首个 Dot，无需额外付费。」 **没有独立的 Dot 定价页** —— 它不是一个能单独买的产品， 是订阅附带的权益。所以下面这行model: freemium 指「随主订阅附带」， 不代表有免费档。 另两条官方数字（都与计费直接相关，容易漏）： 「与 Dot 的对话不会占用你的 ChatGPT 使用额度」—— **但**「当你让 Dot 在 Codex 或 ChatGPT 工作中启动或管理任务时， 这些任务仍会照常计入你的使用额度」。 即：Dot 自己的对话免费，它派出去的活儿照常算用量。 Enterprise 用户含 Edu / Healthcare 需管理员启用后试 beta（默认关闭）。</span><span data-en>**2026-10-03 以官方发布页正文为准（Playwright 渲染，5,166 字）**： 「Pro 或 Business Premium 套餐已包含你的首个 Dot，无需额外付费。」 **没有独立的 Dot 定价页** —— 它不是一个能单独买的产品， 是订阅附带的权益。所以下面这行model: freemium 指「随主订阅附带」， 不代表有免费档。 另两条官方数字（都与计费直接相关，容易漏）： 「与 Dot 的对话不会占用你的 ChatGPT 使用额度」—— **但**「当你让 Dot 在 Codex 或 ChatGPT 工作中启动或管理任务时， 这些任务仍会照常计入你的使用额度」。 即：Dot 自己的对话免费，它派出去的活儿照常算用量。 Enterprise 用户含 Edu / Healthcare 需管理员启用后试 beta（默认关闭）。</span></td></tr>
           </tbody>
         </table>
-        <p class="fine mt-3">不同币种不做折算。优惠、地区、税费与登录后报价可能变化，购买前请到官方页面确认。</p>
+        <p class="fine mt-3"><span data-zh>不同币种不做折算。优惠、地区、税费与登录后报价可能变化，购买前请到官方页面确认。</span><span data-en>No currency conversion. Discounts, regions, tax and post-login pricing can change — confirm on the official page before buying.</span></p>
       </div>
 
 
             <div class="panel is-slim">
-        <h2>未知项清单</h2>
+        <h2><span data-zh>未知项清单</span><span data-en>Known unknowns</span></h2>
         <ul>
           <li>上下文窗口大小与记忆的具体实现</li>
           <li>「主动研究」的触发条件与频率</li>
@@ -165,10 +169,10 @@
 
 
       <div class="panel">
-        <h2>证据来源</h2>
-        <p class="t-sm">判断可回到以下一手源复核。本站核验日 2026-10-03，内容更新日 2026-10-03。</p>
+        <h2><span data-zh>证据来源</span><span data-en>Evidence sources</span></h2>
+        <p class="t-sm"><span data-zh>判断可回到以下一手源复核。本站核验日</span><span data-en>Every judgement can be rechecked against the primary sources below. Verified on</span> 2026-10-03，<span data-zh>内容更新日</span><span data-en>content updated on</span> 2026-10-03。</p>
         <table class="src">
-          <thead><tr><th class="w-20">类型</th><th class="w-52">名称</th><th>链接</th></tr></thead>
+          <thead><tr><th class="w-20"><span data-zh>类型</span><span data-en>Type</span></th><th class="w-52"><span data-zh>名称</span><span data-en>Name</span></th><th><span data-zh>链接</span><span data-en>Link</span></th></tr></thead>
           <tbody>
             <tr><td>official</td><td>OpenAI · Introducing Dot（官方发布页，2026-09-29，正文 5,166 字逐节取）</td><td><a href="https://openai.com/index/introducing-dots/" target="_blank" rel="noopener">https://openai.com/index/introducing-dots/</a></td></tr>
             <tr><td>official</td><td>OpenAI · 我们如何将安全性、信息安全和隐私保护融入 Dot（官方安全文档，2026-10-03 取到正文：沙盒机制 / 多租户隔离 / 执行环境与防护系统分离 / 运行期监控可暂停工作 / 授权本机后分析桌面表格 / prompt injection 官方承认）</td><td><a href="https://openai.com/index/how-we-build-safety-security-and-privacy-into-dots/" target="_blank" rel="noopener">https://openai.com/index/how-we-build-safety-security-and-privacy-into-dots/</a></td></tr>
@@ -179,7 +183,7 @@
       </div>
 
             <div class="panel is-slim">
-        <h2>实测记录</h2>
+        <h2><span data-zh>实测记录</span><span data-en>Measured runs</span></h2>
         <p>本站尚未完成实测。测试协议见 <a href="https://github.com/speculcom/ai-agent-guide/blob/main/tracks/agents/tasks/_protocol.md" target="_blank" rel="noopener">tasks/_protocol.md</a>。
 
 <strong>实测建议</strong>：这三份厂商云 agent 的比较维度集中在 <code>background</code> 与 <code>permissions</code>，
@@ -190,7 +194,7 @@
 
 
             <div class="panel is-slim">
-        <h2>相关条目</h2>
+        <h2><span data-zh>相关条目</span><span data-en>Related entries</span></h2>
         <ul class="rel-list">
           <li><span class="rel-t"><a href="./meta-muse.html">Meta Muse</a></span><span class="rel-n">同期发布，<strong>凭据隔离机制几乎同构</strong>，可对照看</span></li>
           <li><span class="rel-t"><a href="./grok-bot.html">xAI Grok Bot</a></span><span class="rel-n">同期发布，第三方官方页可核对</span></li>
@@ -201,7 +205,7 @@
 
 
       <p class="fine mt-6">
-        本页由 <a href="https://github.com/speculcom/ai-agent-guide" target="_blank" rel="noopener" class="link-brand">ai-agent-guide</a> 数据层生成（CC BY 4.0）。
+        <span data-zh>本页由</span><span data-en>This page is generated from the</span> <a href="https://github.com/speculcom/ai-agent-guide" target="_blank" rel="noopener" class="link-brand">ai-agent-guide</a> <span data-zh>数据层生成（CC BY 4.0）。</span><span data-en>data layer (CC BY 4.0).</span>
         方法论与坐标系定义见仓库内 <code>METHODOLOGY.md</code>。
       </p>
     </div>
