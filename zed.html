@@ -65,62 +65,65 @@
         <span class="tag on">协作</span>
         <span class="badge accent">partial</span>
         <span class="badge">lifecycle: active</span>
-        <span class="badge">核验 2026-09-29</span>
+        <span class="badge"><span data-zh>核验</span><span data-en>Checked</span> 2026-09-29</span>
       </div>
 
-            <p class="panel-lead"><strong>不是「又一个 AI 编码工具」，而是三种 agent path 的编排层</strong> —— 能在同一个编辑器里用 Zed 原生 Agent，也能挂 Claude / Codex / OpenCode / Copilot / Cursor。</p>
+            <p class="panel-lead"><strong>不是「又一个 AI 编码工具」，而是三种 agent path 的编排层</strong> —— 能在同一个编辑器里用 Zed 原生 Agent，也能挂 Claude / Codex / OpenCode / Copilot / Cursor。<span data-en><strong>Not &quot;yet another AI coding tool&quot; but an orchestration layer for three agent paths</strong> — use Zed&#39;s native agent in the same editor, or attach Claude / Codex / OpenCode / Copilot / Cursor.</span></p>
 
             <div class="panel is-slim">
-        <h2>适合与不适合</h2>
-        <p>重视编辑器性能（Rust）、语法解析准确度（Tree-sitter）与多人协作的场景。
+        <h2><span data-zh>适合与不适合</span><span data-en>When to use it, when not to</span></h2>
+<span data-zh>        <p>重视编辑器性能（Rust）、语法解析准确度（Tree-sitter）与多人协作的场景。
 <strong>想在一个编辑器里混用原生 Agent 与外部 CLI Agent</strong> 的用户 —— 这是它最独特的价值。</p>
         <p class="warn-p"><strong>不适合</strong>把「编辑器自带 AI」当唯一卖点去找的用户 ——
 Zed 的定位是 agent 的编排层，不是「我自带一个模型」。
-也不适合需要实测才知道大仓库表现的人 —— 索引策略官方未公开说明。</p>
+也不适合需要实测才知道大仓库表现的人 —— 索引策略官方未公开说明。</p></span><span data-en>        <p>Scenarios where editor performance (Rust), syntactic parsing accuracy (Tree-sitter) and multi-user collaboration matter.
+<strong>Users who want to mix the native agent with external CLI agents in one editor</strong> — this is its most distinctive value.</p>
+        <p class="warn-p"><strong>Not a fit for</strong> people looking for an editor whose only selling point is built-in AI — Zed positions itself as an orchestration layer for agents, not as &quot;I ship my own model&quot;.
+Also not a fit if you need hands-on measurements of large-repository behaviour — the indexing strategy is not publicly documented.</p></span>
       </div>
 
 
       <div class="block-head">
-        <h2 class="t-h2">固定坐标系</h2>
-        <p class="t-section-lead">8 个维度，与同赛道其他对象逐项可比。</p>
+        <h2 class="t-h2"><span data-zh>固定坐标系</span><span data-en>Fixed coordinate system</span></h2>
+        <p class="t-section-lead">8 <span data-zh>个维度</span><span data-en>dimensions</span>, <span data-zh>与同赛道其他对象逐项可比</span><span data-en>each comparable item by item against others in the same track</span>.</p>
       </div>
       <dl class="axes">
         <div class="axis">
-          <dt>模型与开放条件</dt>
+          <dt><span data-zh>模型与开放条件</span><span data-en>Model & openness</span></dt>
           <dd><strong>官方列出 5 条模型接入路径</strong>（docs/src/ai/llm-providers.md）： 一是 Zed-Hosted Models（经 Zed 计费）； 二是 API Access（用自己的 provider 额度，含 Anthropic 兼容与 OpenAI 兼容两种）； 三是 Use an Existing Subscription（复用已付费的 ChatGPT / Claude / Copilot 等）； 四是 Use a Gateway（经 OpenRouter / Bedrock / Vercel 等网关路由）； 五是 <strong>Use a Local Model</strong>（本地运行或自托管）。 <strong>路径选择由用户决定，不是绑定的单一供应商。</strong></dd>
         </div>
         <div class="axis">
-          <dt>运行位置</dt>
+          <dt><span data-zh>运行位置</span><span data-en>Where it runs</span></dt>
           <dd><strong>本地桌面应用</strong>（Rust 实现，非浏览器端）。 官方自述来自 Atom 与 Tree-sitter 的创造者，主打性能与多人协作。 文档含 <code>dev-containers.md</code>（开发容器）与 <code>toolchains.md</code>（工具链管理）。 关闭应用即停止。</dd>
         </div>
         <div class="axis">
-          <dt>本地文件</dt>
+          <dt><span data-zh>本地文件</span><span data-en>Local files</span></dt>
           <dd>直接读写工作区，<strong>基于 Tree-sitter 做语法解析</strong>（其核心优势之一）， 为符号级编辑提供基础。 文档站有 <code>edit-prediction.md</code>（编辑预测），且<strong>编辑预测有独立的 provider 配置</strong> （与 LLM provider 分开设置）。 <strong>索引算法与大仓库表现本次未核验，记为未知。</strong></dd>
         </div>
         <div class="axis">
-          <dt>关机后的任务</dt>
+          <dt><span data-zh>关机后的任务</span><span data-en>Tasks after shutdown</span></dt>
           <dd><strong>官方明确区分三类 agent path</strong>，其中 External Agents 与 Terminal Threads 依赖外部进程（ACP agent 进程 / 原生 CLI）， 因此<strong>其在线条件取决于那个外部工具，而非 Zed 本身</strong>。 Zed 不提供云端后台执行。<strong>具体行为本次未核验，记为未知。</strong></dd>
         </div>
         <div class="axis">
-          <dt>工具与扩展</dt>
+          <dt><span data-zh>工具与扩展</span><span data-en>Tools & extensions</span></dt>
           <dd><strong>明确支持 MCP</strong>，官方文档 <code>mcp.md</code> 列明当前支持 <strong>Tools 与 Prompts</strong> 两类特性 （Discovery / Sampling / Elicitation 尚未覆盖，官方欢迎贡献）。 另处理 <code>notifications/tools/list_changed</code>—— server 运行时增删改工具时 Zed 自动重载列表，无需重启 server。 MCP 可通过两种方式接入：作为 extension 安装，或在 Settings → AI → MCP Servers 里添加本地 / 远程 server。 官方列出的热门 extension server 包括 Context7、GitHub、Puppeteer、Gem、 Brave Search、Framelink Figma、Resend 等。</dd>
         </div>
         <div class="axis">
-          <dt>上下文与记忆</dt>
+          <dt><span data-zh>上下文与记忆</span><span data-en>Context & memory</span></dt>
           <dd><strong>Zed Agent 的上下文由 instructions + skills + MCP 组合而成</strong> （见 agents.md 的 Zed Agent 行）。 支持并行 agent（<code>parallel-agents.md</code>），线程类型分三类。 <strong>上下文窗口大小与压缩策略本次未核验，记为未知。</strong></dd>
         </div>
         <div class="axis">
-          <dt>权限与限制</dt>
+          <dt><span data-zh>权限与限制</span><span data-en>Permissions & limits</span></dt>
           <dd><strong>权限边界跟随所选的 agent path</strong>—— Zed Agent 用 Zed 配置的 provider 与原生工具； External Agents 用 ACP agent 进程<strong>自己的 auth/config</strong>； Terminal Threads 用<strong>原生 CLI 的 auth/config</strong>。 也就是说选了外部 agent，权限就由那个工具决定。 <strong>沙箱与审批的具体形态本次未核验，记为未知。</strong></dd>
         </div>
         <div class="axis">
-          <dt>适合什么任务</dt>
+          <dt><span data-zh>适合什么任务</span><span data-en>Best for</span></dt>
           <dd>重视编辑器性能（Rust 实现）、语法解析准确度（Tree-sitter）与多人协作的场景。 <strong>想在一个编辑器里同时用 Zed 原生 Agent 和外部 CLI Agent（Claude / Codex / OpenCode / Copilot / Cursor）的用户</strong> —— 这是 Zed 最独特的价值：它是 agent 的<strong>运行与编排层</strong>，不是单一 agent。</dd>
         </div>
       </dl>
 
             <div class="panel warn">
-        <h2 class="warn">头号误解</h2>
+        <h2 class="warn"><span data-zh>头号误解</span><span data-en>Top misconception</span></h2>
         <ul>
           <li>把 Zed 当成又一个 AI 编码工具，它实际是「三种 agent path 的编排层」，能用 Claude / Codex / OpenCode / Cursor</li>
           <li>以为模型是绑定的，实际有 5 条接入路径，含本地模型与复用现有订阅</li>
@@ -130,21 +133,21 @@ Zed 的定位是 agent 的编排层，不是「我自带一个模型」。
 
 
             <div class="panel is-slim">
-        <h2>价格</h2>
+        <h2><span data-zh>价格</span><span data-en>Pricing</span></h2>
         <table class="src">
           <tbody>
-            <tr><th class="w-28">月度入口</th><td>Personal $0 永久免费 / Pro $10 每月 / Business $30 每席位每月</td></tr>
-            <tr><th class="w-28">月度数值</th><td>$10</td></tr>
-            <tr><th class="w-28">年付</th><td>官方定价页只列月付；年付折扣未在页面列出，记为未知</td></tr>
-            <tr><th class="w-28">额度说明</th><td><strong>2026-10-01 渲染官方 pricing 页后逐档确认</strong>： Personal $0 <strong>forever</strong>（<strong>2,000 次接受的编辑预测</strong>， 且可<strong>自带 API key 或接外部 agent 如 Claude Agent / Codex CLI</strong>）、 Pro $10/月（含 $5 token额度，超出按用量计费）、Business $30/席位/月（<strong>无免费试用</strong>）。 Pro 有 Free Trial，官方注明试用期内<strong>只有 GPT-6 Luna 这一个托管模型可用</strong>。 <strong>关键结论：编辑器本身的免费层与模型额度是解耦的</strong> —— Personal 免费版就能用你自己的 key 或外部 agent，不买 Pro 也能用 Agent 功能。 模型接入另有 <strong>5 条路径</strong>（官方文档列明）：Zed-Hosted Models（经 Zed 计费）、 API Access、Existing Subscription（复用 ChatGPT / Claude / Copilot 订阅）、 Gateway（OpenRouter / Bedrock / Vercel 等）、Local Model（本地或自托管）。</td></tr>
+            <tr><th class="w-28"><span data-zh>月度入口</span><span data-en>Monthly entry</span></th><td><span data-zh>Personal $0 永久免费 / Pro $10 每月 / Business $30 每席位每月</span><span data-en>Personal $0 永久免费 / Pro $10 每月 / Business $30 每席位每月</span></td></tr>
+            <tr><th class="w-28"><span data-zh>月度数值</span><span data-en>Monthly price</span></th><td>10</td></tr>
+            <tr><th class="w-28"><span data-zh>年付</span><span data-en>Annual</span></th><td><span data-zh>官方定价页只列月付；年付折扣未在页面列出，记为未知</span><span data-en>官方定价页只列月付；年付折扣未在页面列出，记为未知</span></td></tr>
+            <tr><th class="w-28"><span data-zh>额度说明</span><span data-en>Quota note</span></th><td><span data-zh>**2026-10-01 渲染官方 pricing 页后逐档确认**： Personal $0 **forever**（**2,000 次接受的编辑预测**， 且可**自带 API key 或接外部 agent 如 Claude Agent / Codex CLI**）、 Pro $10/月（含 $5 token额度，超出按用量计费）、Business $30/席位/月（**无免费试用**）。 Pro 有 Free Trial，官方注明试用期内**只有 GPT-6 Luna 这一个托管模型可用**。 **关键结论：编辑器本身的免费层与模型额度是解耦的** —— Personal 免费版就能用你自己的 key 或外部 agent，不买 Pro 也能用 Agent 功能。 模型接入另有 **5 条路径**（官方文档列明）：Zed-Hosted Models（经 Zed 计费）、 API Access、Existing Subscription（复用 ChatGPT / Claude / Copilot 订阅）、 Gateway（OpenRouter / Bedrock / Vercel 等）、Local Model（本地或自托管）。</span><span data-en>**2026-10-01 渲染官方 pricing 页后逐档确认**： Personal $0 **forever**（**2,000 次接受的编辑预测**， 且可**自带 API key 或接外部 agent 如 Claude Agent / Codex CLI**）、 Pro $10/月（含 $5 token额度，超出按用量计费）、Business $30/席位/月（**无免费试用**）。 Pro 有 Free Trial，官方注明试用期内**只有 GPT-6 Luna 这一个托管模型可用**。 **关键结论：编辑器本身的免费层与模型额度是解耦的** —— Personal 免费版就能用你自己的 key 或外部 agent，不买 Pro 也能用 Agent 功能。 模型接入另有 **5 条路径**（官方文档列明）：Zed-Hosted Models（经 Zed 计费）、 API Access、Existing Subscription（复用 ChatGPT / Claude / Copilot 订阅）、 Gateway（OpenRouter / Bedrock / Vercel 等）、Local Model（本地或自托管）。</span></td></tr>
           </tbody>
         </table>
-        <p class="fine mt-3">不同币种不做折算。优惠、地区、税费与登录后报价可能变化，购买前请到官方页面确认。</p>
+        <p class="fine mt-3"><span data-zh>不同币种不做折算。优惠、地区、税费与登录后报价可能变化，购买前请到官方页面确认。</span><span data-en>No currency conversion. Discounts, regions, tax and post-login pricing can change — confirm on the official page before buying.</span></p>
       </div>
 
 
             <div class="panel is-slim">
-        <h2>未知项清单</h2>
+        <h2><span data-zh>未知项清单</span><span data-en>Known unknowns</span></h2>
         <ul>
           <li>索引算法与大仓库表现</li>
           <li>上下文窗口与压缩策略</li>
@@ -156,10 +159,10 @@ Zed 的定位是 agent 的编排层，不是「我自带一个模型」。
 
 
       <div class="panel">
-        <h2>证据来源</h2>
-        <p class="t-sm">判断可回到以下一手源复核。本站核验日 2026-09-29，内容更新日 2026-09-29。</p>
+        <h2><span data-zh>证据来源</span><span data-en>Evidence sources</span></h2>
+        <p class="t-sm"><span data-zh>判断可回到以下一手源复核。本站核验日</span><span data-en>Every judgement can be rechecked against the primary sources below. Verified on</span> 2026-09-29，<span data-zh>内容更新日</span><span data-en>content updated on</span> 2026-09-29。</p>
         <table class="src">
-          <thead><tr><th class="w-20">类型</th><th class="w-52">名称</th><th>链接</th></tr></thead>
+          <thead><tr><th class="w-20"><span data-zh>类型</span><span data-en>Type</span></th><th class="w-52"><span data-zh>名称</span><span data-en>Name</span></th><th><span data-zh>链接</span><span data-en>Link</span></th></tr></thead>
           <tbody>
             <tr><td>docs</td><td>Zed · LLM Providers（五条模型接入路径）</td><td><a href="https://zed.dev/docs/ai/llm-providers" target="_blank" rel="noopener">https://zed.dev/docs/ai/llm-providers</a></td></tr>
             <tr><td>docs</td><td>Zed · Agents（三类 agent path 对比）</td><td><a href="https://zed.dev/docs/ai/agents" target="_blank" rel="noopener">https://zed.dev/docs/ai/agents</a></td></tr>
@@ -172,7 +175,7 @@ Zed 的定位是 agent 的编排层，不是「我自带一个模型」。
       </div>
 
             <div class="panel is-slim">
-        <h2>实测记录</h2>
+        <h2><span data-zh>实测记录</span><span data-en>Measured runs</span></h2>
         <p>本站尚未完成实测。测试协议见 <a href="https://github.com/speculcom/ai-agent-guide/blob/main/tracks/agents/tasks/_protocol.md" target="_blank" rel="noopener">tasks/_protocol.md</a>。
 
 <strong>实测建议</strong>：这个工具的实测重点应是<strong>混合 agent 场景</strong> ——
@@ -182,7 +185,7 @@ Zed 的定位是 agent 的编排层，不是「我自带一个模型」。
 
 
             <div class="panel is-slim">
-        <h2>相关条目</h2>
+        <h2><span data-zh>相关条目</span><span data-en>Related entries</span></h2>
         <ul class="rel-list">
           <li><span class="rel-t"><a href="./cline.html">Cline</a></span><span class="rel-n">同为三形态覆盖，但形态是 Zed Agent / 外部 / 终端而非编辑器扩展</span></li>
           <li><span class="rel-t"><a href="./claude-code.html">Claude Code</a></span><span class="rel-n">可作为 Zed 的 External Agent 运行</span></li>
@@ -192,7 +195,7 @@ Zed 的定位是 agent 的编排层，不是「我自带一个模型」。
 
 
       <p class="fine mt-6">
-        本页由 <a href="https://github.com/speculcom/ai-agent-guide" target="_blank" rel="noopener" class="link-brand">ai-agent-guide</a> 数据层生成（CC BY 4.0）。
+        <span data-zh>本页由</span><span data-en>This page is generated from the</span> <a href="https://github.com/speculcom/ai-agent-guide" target="_blank" rel="noopener" class="link-brand">ai-agent-guide</a> <span data-zh>数据层生成（CC BY 4.0）。</span><span data-en>data layer (CC BY 4.0).</span>
         方法论与坐标系定义见仓库内 <code>METHODOLOGY.md</code>。
       </p>
     </div>
