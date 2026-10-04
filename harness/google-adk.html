@@ -137,13 +137,14 @@
             <div class="panel warn">
         <h2 class="warn"><span data-zh>头号误解</span><span data-en>Top misconception</span></h2>
         <ul>
-          <li>以为是「Google 版 OpenAI Agents SDK」—— <strong>它是编排框架</strong>，核心资产是 Workflow Runtime 的图执行引擎，不是单 agent 原语</li>
-          <li>把 <code>state management</code> 读成「有上下文管理」—— 前者是流程状态，后者本站未核验</li>
-          <li>把 MCP 当成它的核心依赖 —— README 只把 MCP 列为工具来源之一，与 OpenAI Agents SDK 把 <code>mcp&gt;=1.19.0</code> 放进 <code>dependencies</code> 不是一回事</li>
-          <li>以为 Tool Confirmation 等于沙箱 —— 它是「执行前问一句」，不是边界划定</li>
-          <li>以为开源免费等于零成本 —— Cloud Run / Vertex Agent Engine 的云费用自理，且有 <code>GOOGLE_GENAI_USE_ENTERPRISE</code> 开关</li>
-          <li>以为只有 Python —— 还有独立的 TypeScript 仓（<code>google/adk-js</code>，1,426★），本站按粒度只收录 Python 主体</li>
-          <li>搞混仓库名 —— 样例仓显示为 <code>google/adk-recipes</code>，描述里写的是 adk-samples</li>
+
+          <li><span data-zh>以为是「Google 版 OpenAI Agents SDK」—— <strong>它是编排框架</strong>，核心资产是 Workflow Runtime 的图执行引擎，不是单 agent 原语</span><span data-en>Assuming it is &quot;Google&#39;s version of the OpenAI Agents SDK&quot; — <strong>it is an orchestration framework</strong> whose core asset is the Workflow Runtime graph engine, not single-agent primitives</span></li>
+          <li><span data-zh>把 <code>state management</code> 读成「有上下文管理」—— 前者是流程状态，后者本站未核验</span><span data-en>Reading <code>state management</code> as &quot;has context management&quot; — the former is process state; the latter was not verified here</span></li>
+          <li><span data-zh>把 MCP 当成它的核心依赖 —— README 只把 MCP 列为工具来源之一，与 OpenAI Agents SDK 把 <code>mcp&gt;=1.19.0</code> 放进 <code>dependencies</code> 不是一回事</span><span data-en>Treating MCP as a core dependency — the README lists MCP only as one tool source, which is not the same as OpenAI Agents SDK putting <code>mcp&gt;=1.19.0</code> in <code>dependencies</code></span></li>
+          <li><span data-zh>以为 Tool Confirmation 等于沙箱 —— 它是「执行前问一句」，不是边界划定</span><span data-en>Assuming Tool Confirmation equals a sandbox — it is &quot;ask once before running&quot;, not a boundary</span></li>
+          <li><span data-zh>以为开源免费等于零成本 —— Cloud Run / Vertex Agent Engine 的云费用自理，且有 <code>GOOGLE_GENAI_USE_ENTERPRISE</code> 开关</span><span data-en>Assuming open source and free means zero cost — Cloud Run / Vertex Agent Engine costs are yours, and there is a <code>GOOGLE_GENAI_USE_ENTERPRISE</code> switch</span></li>
+          <li><span data-zh>以为只有 Python —— 还有独立的 TypeScript 仓（<code>google/adk-js</code>，1,426★），本站按粒度只收录 Python 主体</span><span data-en>Assuming it is Python-only — there is a separate TypeScript repo (<code>google/adk-js</code>, 1,426★); this site indexes the Python body only, at that granularity</span></li>
+          <li><span data-zh>搞混仓库名 —— 样例仓显示为 <code>google/adk-recipes</code>，描述里写的是 adk-samples</span><span data-en>Mixing up repo names — the sample repo shows as <code>google/adk-recipes</code> while the description says adk-samples</span></li>
         </ul>
       </div>
 
