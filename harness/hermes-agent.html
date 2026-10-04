@@ -77,7 +77,7 @@
         <span class="tag on">自托管</span>
         <span class="badge accent">partial</span>
         <span class="badge">lifecycle: active</span>
-        <span class="badge">核验 2026-10-01</span>
+        <span class="badge"><span data-zh>核验</span><span data-en>Checked</span> 2026-10-01</span>
       </div>
 
             <p class="panel-lead"><strong>「唯一带学习闭环的常驻个人助手」</strong> —— 官方 README 这么写：
@@ -90,59 +90,60 @@
 &gt; <strong>It&#39;s not tied to your laptop</strong> — talk to it from Telegram while it works on a cloud VM.
 
 ⚠ <strong>本站对「the only agent」这句话的态度</strong>：这是<strong>官方自我宣传语</strong>，
-本站<strong>未做跨产品对比测试来验证 &quot;only&quot; 是否成立</strong>。记录为官方声明，不是本站结论。</p>
+本站<strong>未做跨产品对比测试来验证 &quot;only&quot; 是否成立</strong>。记录为官方声明，不是本站结论。<span data-en><strong>&quot;The only resident personal assistant with a learning loop&quot;</strong> — the official README puts it as &quot;The self-improving AI agent&quot; built by Nous Research.</span></p>
 
             <div class="panel is-slim">
-        <h2>适合与不适合</h2>
-        <p><strong>适合</strong>：想要常驻的跨平台个人助手；放云 VM / serverless 不绑在自己笔记本；
+        <h2><span data-zh>适合与不适合</span><span data-en>When to use it, when not to</span></h2>
+<span data-zh>        <p><strong>适合</strong>：想要常驻的跨平台个人助手；放云 VM / serverless 不绑在自己笔记本；
 需要定时任务无人值守；需要跨会话记忆与技能自积累；想用自建 endpoint 或多provider；
 需要命令级审批 + DM 配对做安全边界。
 <strong>不适合</strong>：只做编程任务；需要当嵌入式 SDK；需要「状态 vs 上下文」分层保证；
-需要企业级多用户与审计。</p>
+需要企业级多用户与审计。</p></span><span data-en>        <p><strong>Fits</strong>: a resident cross-platform personal assistant; running on a cloud VM / serverless rather than tied to your laptop; scheduled unattended tasks; cross-session memory and self-accumulating skills; using your own endpoint or multiple providers; command-level approval plus DM pairing as a security boundary.
+<strong>Not a fit</strong>: coding tasks only; use as an embedded SDK; a &quot;state vs context&quot; layered guarantee; enterprise multi-user and audit.</p></span>
       </div>
 
 
       <div class="block-head">
-        <h2 class="t-h2">固定坐标系</h2>
-        <p class="t-section-lead">8 个维度，与同赛道其他对象逐项可比。</p>
+        <h2 class="t-h2"><span data-zh>固定坐标系</span><span data-en>Fixed coordinate system</span></h2>
+        <p class="t-section-lead">8 <span data-zh>个维度</span><span data-en>dimensions</span>, <span data-zh>与同赛道其他对象逐项可比</span><span data-en>each comparable item by item against others in the same track</span>.</p>
       </div>
       <dl class="axes">
         <div class="axis">
-          <dt>模型与开放条件</dt>
+          <dt><span data-zh>模型与开放条件</span><span data-en>Model & openness</span></dt>
           <dd><strong>官方给了四种路径并强调无锁定，是本站收录对象里对模型自由度表述最直白的。</strong> README 原文：&quot;Use any model you want — <strong>Nous Portal</strong>, <strong>OpenRouter, OpenAI, your own endpoint</strong>, and many others. <strong>Switch with <code>hermes model</code> — no code changes, no lock-in.</strong>&quot; <strong>「your own endpoint」这一条对本站读者最有用</strong> —— 自建网关/自托管推理可以直接接。 换模型的操作是<strong>运行时命令 <code>/model [provider:model]</code></strong>（CLI 与消息平台共用， 见 CLI vs Messaging 对照表），不是改代码。 ⚠ <strong>未核验</strong>：完整 provider 清单（官方 <code>docs/integrations/providers</code> 未取到正文）、 换模型后的能力对齐度、本地量化模型在多后端下的行为差异。</dd>
         </div>
         <div class="axis">
-          <dt>运行位置</dt>
+          <dt><span data-zh>运行位置</span><span data-en>Where it runs</span></dt>
           <dd><strong>这是本对象最强的一维：七种终端后端 + 两个入口。</strong> README 原文列举：&quot;<strong>Seven terminal backends</strong> — <strong>local, Docker, SSH, Singularity, Modal, Daytona, and Vercel Sandbox</strong>.&quot; 官方特别指出 <strong>Daytona 与 Modal 提供 serverless persistence</strong> —— &quot;your agent&#39;s environment <strong>hibernates when idle and wakes on demand</strong>, costing nearly nothing between sessions&quot;。 <strong>两个入口</strong>（README 有专门的 CLI vs Messaging 对照表）： 终端 TUI 启动 <code>hermes</code>；或跑 gateway 后从 <strong>Telegram / Discord / Slack / WhatsApp / Signal / Email</strong> 以及 Home Assistant 聊天。 ⚠ 这对本站是最有价值的一格：<strong>它是唯一收录对象里明确说「agent 可以跑在云 VM 上、 你从 Telegram 指挥它」的</strong> —— 与OpenHands 的「关掉笔记本后agent 仍在跑」是同一类诉求， 但它把这个能力做成了默认形态而不是可选部署项。</dd>
         </div>
         <div class="axis">
-          <dt>本地文件</dt>
+          <dt><span data-zh>本地文件</span><span data-en>Local files</span></dt>
           <dd><strong>本地文件能力通过终端后端间接获得，且有明确的隔离机制（见 permissions）。</strong> 它的工作区由所选后端决定（local 后端 = 本机，Docker/SSH/Singularity 等各有隔离）。 <strong>Context Files 是官方的一等概念</strong>（文档 <code>features/context-files</code>）： &quot;Project context that shapes every conversation&quot; —— 项目上下文文件会影响<strong>每一次</strong>对话。 ⚠ <strong>未核验</strong>：context files 的确切格式与加载优先级、 工作区与「本地文件」的边界在哪（local 后端下的默认文件访问范围）。</dd>
         </div>
         <div class="axis">
-          <dt>关机后的任务</dt>
+          <dt><span data-zh>关机后的任务</span><span data-en>Tasks after shutdown</span></dt>
           <dd><strong>这一维它是全站最强的，而且有官方三重机制。</strong> <strong>① 内建cron 调度器</strong>：官方特性表写&quot;Built-in <strong>cron scheduler</strong> with delivery to any platform. Daily reports, nightly backups, weekly audits — all in natural language, <strong>running unattended</strong>.&quot;（文档 <code>features/cron</code>）。 <strong>② serverless 休眠后唤醒</strong>：Daytona / Modal 后端空闲时休眠、需唤醒 —— 本站未核验唤醒延迟。 <strong>③ 常驻网关进程</strong>：gateway 一旦运行，就能从六个消息平台随时触发。 ⚠ <strong>未核验</strong>：cron 未触发任务的补偿逻辑、网关断线后的任务补跑、 跨休眠/唤醒的状态一致性。</dd>
         </div>
         <div class="axis">
-          <dt>工具与扩展</dt>
+          <dt><span data-zh>工具与扩展</span><span data-en>Tools & extensions</span></dt>
           <dd><strong>官方说 40+ 工具，并且明确支持 MCP。</strong> 文档目录里有独立的 &quot;<strong>Tools &amp; Toolsets</strong>&quot; 页，副标题原文 &quot;<strong>40+ tools</strong>, toolset system, <strong>terminal backends</strong>&quot;（文档 <code>features/tools</code>）。 <strong>MCP Integration</strong> 也是独立文档页：&quot;Connect <strong>any MCP server</strong> for extended capabilities&quot; （文档 <code>features/mcp</code>）。 <strong>还有一项很特别的能力：子代理 RPC。</strong> 官方原文：&quot;Spawn <strong>isolated subagents</strong> for parallel workstreams. <strong>Write Python scripts that call tools via RPC</strong>, collapsing multi-step pipelines into <strong>zero-context-cost turns</strong>.&quot; ⚠ 「zero-context-cost」这个说法本站<strong>理解为「把多步管线移到上下文之外执行」</strong> （即产物只回传结果），<strong>官方未给出具体的上下文节省量，本站标记为推断</strong>。 社区还维护了一个 Linux 桌面控制 MCP server（computer-use-linux， AT-SPI 无障碍树 + Wayland/X11 输入 + 截图），README 明确写了它是给 &quot;Hermes and other MCP hosts&quot; 用的。</dd>
         </div>
         <div class="axis">
-          <dt>上下文与记忆</dt>
+          <dt><span data-zh>上下文与记忆</span><span data-en>Context & memory</span></dt>
           <dd><strong>⚠ 这是本站最看重的一维，而它恰好是本对象宣传力度最大的 —— 必须分开核实。</strong> <strong>官方声明（README 特性表 &quot;A closed learning loop&quot; 一行原文）</strong>： &quot;Agent-curated memory with <strong>periodic nudges</strong>. Autonomous skill creation after complex tasks. <strong>Skills self-improve during use.</strong> <strong>FTS5 session search with LLM summarization for cross-session recall.</strong> Honcho dialectic user modeling. Compatible with the agentskills.io open standard.&quot; <strong>但只要把官方给的机制逐个归位，就会发现它不是一个维度而是三个</strong>： | 官方说法 | 本站归类 | 说明 | |---|---|---| | periodic nudges（自我提示） | 状态面 | 机制触发器，不是压缩算法 | | FTS5 session search + LLM summarization | <strong>上下文面 ✅</strong> | 检索 + 摘要，<strong>这是真正的上下文管理</strong> | | Skills（自主创建 + 使用中自我改进） | 独立一层 | 程序性记忆，与对话上下文不同 | | Honcho dialectic user modeling | 独立一层 | 对用户的长期建模 | <strong>关键区分点：它有明确的 <code>/compress</code> 命令</strong>（CLI 与消息平台都有， 对照表里与 <code>/usage</code>、<code>/insights</code> 并列），<strong>说明压缩是用户显式触发的， 而不是自动的</strong>。 <strong>能落到文件名的证据</strong>（来自 &quot;Migrating from OpenClaw&quot; 章节，这是少见的官方一手清单）： <code>SOUL.md</code>（persona）、<code>MEMORY.md</code> 与 <code>USER.md</code>（记忆条目）、<code>AGENTS.md</code>（工作区指令）、 以及 <code>~/.hermes/skills/openclaw-imports/</code>（技能目录）。 <strong>这说明记忆是明文的 markdown 文件，可读可迁移</strong> —— 对本站读者来说是重要优点。</dd>
         </div>
         <div class="axis">
-          <dt>权限与限制</dt>
+          <dt><span data-zh>权限与限制</span><span data-en>Permissions & limits</span></dt>
           <dd><strong>官方文档目录里有一节独立的 &quot;Security&quot;，这是本站判断它权限面做得比较细的依据。</strong> 该节副标题原文（核验自 README 文档目录表）： &quot;<strong>Command approval, DM pairing, container isolation</strong>&quot;。 逐项解读： <strong>① Command approval</strong> —— 命令级审批（与 OpenHands 的 API key、 Codex SDK 的 ApprovalMode 属不同层面的做法；本站未核验其粒度与默认值）。 <strong>② DM pairing</strong> —— 私聊配对，即<strong>只有配对过的用户能指挥它</strong>。 <strong>这一点在六个消息平台入口的前提下极其重要</strong> —— 一个能通过 Telegram/WhatsApp 接指令、还能在文件系统上动手的 agent， 「谁能给它下指令」就是最关键的安全问题。 <strong>③ Container isolation</strong> —— 容器隔离。 ⚠ <strong>未核验</strong>：三者的默认状态（默认开还是默认关）、 command approval 的粒度与是否可白名单化、 gateway 暴露面与端口安全。 ⚠ 另有一处需要注意：<code>hermes claw migrate --preset user-data</code> 之类的迁移会涉及 API keys（README 列出 Telegram / OpenRouter / OpenAI / Anthropic / ElevenLabs）， <strong>迁移脚本本身接触密钥</strong> —— 用 dry-run 预览是官方给的手段。</dd>
         </div>
         <div class="axis">
-          <dt>适合什么任务</dt>
+          <dt><span data-zh>适合什么任务</span><span data-en>Best for</span></dt>
           <dd><strong>适合</strong>：想要一个<strong>常驻的跨平台个人助手</strong>（Telegram/Discord/Slack/WhatsApp/Signal/Email）； 把它放在云VM / serverless 上而不绑在自己笔记本；需要定时任务无人值守跑； 需要跨会话记忆与技能自积累；想用自建 endpoint 或 OpenRouter 等多provider； 需要命令级审批与 DM 配对做安全边界。 <strong>不适合</strong>：只做编程任务（它是通用助手，编程只是其一）； 需要拿它当嵌入式 SDK（它是完整运行时，不是库）； 需要详细的「状态 vs 上下文」分层保证（它机制多但官方没按这两层分）； 需要企业级多用户与审计（本次未核验）。</dd>
         </div>
       </dl>
 
             <div class="panel warn">
-        <h2 class="warn">头号误解</h2>
+        <h2 class="warn"><span data-zh>头号误解</span><span data-en>Top misconception</span></h2>
         <ul>
           <li>当成编程框架用 —— <strong>它是通用个人助手</strong>，编程只是它能做的事之一，形态与 LangGraph/CrewAI 完全不同</li>
           <li>相信「the only agent with a built-in learning loop」是本站结论—— <strong>那是官方宣传语，本站未做跨产品对比验证</strong></li>
@@ -156,20 +157,20 @@
 
 
             <div class="panel is-slim">
-        <h2>价格</h2>
+        <h2><span data-zh>价格</span><span data-en>Pricing</span></h2>
         <table class="src">
           <tbody>
-            <tr><th class="w-28">月度入口</th><td>框架免费（MIT）；推理按你选的 provider 计费；Nous Portal 另有订阅（免费层 + 付费档，官网未公开定价页）</td></tr>
-            <tr><th class="w-28">月度数值</th><td>$0</td></tr>
-            <tr><th class="w-28">额度说明</th><td><strong>框架 MIT 免费，推理与后端资源自理。</strong> 核验依据：仓库 MIT（经 license API）、README 的安装命令与 Nous Portal 入口。 <strong>有三条可能产生额外成本的路</strong>： （1）OpenAI / Anthropic 等按量的API； （2）<strong>Modal / Daytona 等 serverless 后端</strong> —— 官方说这两家提供 &quot;serverless persistence&quot;，agent 环境空闲时休眠、按需唤醒，&quot;costing nearly nothing between sessions&quot;； （3）自建GPU 集群或 $5 VPS（官方举例）。 <strong>⚠ Nous Portal 的计费本轮核验结果是「官网不公开，只有第三方口径」</strong>： 抓取 <code>portal.nousresearch.com</code> 首页<strong>只有定性描述，没有一个价格数字</strong> —— 原文是 &quot;the models, the tools, the cloud&quot;、模型目录 &quot;spans hundreds of models from every frontier lab, with <strong>free options and Portal-only discounts</strong>&quot;，只说有免费选项和 Portal 专属折扣， <strong>没给任何档位与金额</strong>。<code>portal.nousresearch.com/pricing</code> 返回 <strong>404（Page not found）</strong>。 四个互相独立的第三方来源（hostinger、moscarillo、aiidelist、standardcompute、 toolin）给出一致口径：<strong>Free $0 / Plus $20 每月含 $22 额度 / Super $100 含 $110 / Ultra $200 含 $220</strong>，另称付费档含Tool Gateway （搜索/图像/语音/浏览器自动化）、免费档不含额度也不含 Tool Gateway、 额度可按月 rollover（有上限）。 ⚠ <strong>这些数字本站标为「第三方口径，未获官方确认」</strong> —— 四个来源一致不等于官方确认，且按 v3 铁律「未知就说未知」，不写成已核实。 <strong>选型前请以登录后 Portal 内的账单页为准。</strong> <strong>另有一条值得单独记</strong>：有第三方明确写出 「$20 买到 $22 额度是<strong>预付计量表</strong>，不是包月无限」—— 即订阅价 ≠ 月度账单，实际取决于用量。长agent 循环能几天烧完一档额度。 ⚠ 该说法本身也来自第三方，本站未实证。</td></tr>
+            <tr><th class="w-28"><span data-zh>月度入口</span><span data-en>Monthly entry</span></th><td><span data-zh>框架免费（MIT）；推理按你选的 provider 计费；Nous Portal 另有订阅（免费层 + 付费档，官网未公开定价页）</span><span data-en>框架免费（MIT）；推理按你选的 provider 计费；Nous Portal 另有订阅（免费层 + 付费档，官网未公开定价页）</span></td></tr>
+            <tr><th class="w-28"><span data-zh>月度数值</span><span data-en>Monthly price</span></th><td>0</td></tr>
+            <tr><th class="w-28"><span data-zh>额度说明</span><span data-en>Quota note</span></th><td><span data-zh>**框架 MIT 免费，推理与后端资源自理。** 核验依据：仓库 MIT（经 license API）、README 的安装命令与 Nous Portal 入口。 **有三条可能产生额外成本的路**： （1）OpenAI / Anthropic 等按量的API； （2）**Modal / Daytona 等 serverless 后端** —— 官方说这两家提供 "serverless persistence"，agent 环境空闲时休眠、按需唤醒，"costing nearly nothing between sessions"； （3）自建GPU 集群或 $5 VPS（官方举例）。 **⚠ Nous Portal 的计费本轮核验结果是「官网不公开，只有第三方口径」**： 抓取 `portal.nousresearch.com` 首页**只有定性描述，没有一个价格数字** —— 原文是 "the models, the tools, the cloud"、模型目录 "spans hundreds of models from every frontier lab, with **free options and Portal-only discounts**"，只说有免费选项和 Portal 专属折扣， **没给任何档位与金额**。`portal.nousresearch.com/pricing` 返回 **404（Page not found）**。 四个互相独立的第三方来源（hostinger、moscarillo、aiidelist、standardcompute、 toolin）给出一致口径：**Free $0 / Plus $20 每月含 $22 额度 / Super $100 含 $110 / Ultra $200 含 $220**，另称付费档含Tool Gateway （搜索/图像/语音/浏览器自动化）、免费档不含额度也不含 Tool Gateway、 额度可按月 rollover（有上限）。 ⚠ **这些数字本站标为「第三方口径，未获官方确认」** —— 四个来源一致不等于官方确认，且按 v3 铁律「未知就说未知」，不写成已核实。 **选型前请以登录后 Portal 内的账单页为准。** **另有一条值得单独记**：有第三方明确写出 「$20 买到 $22 额度是**预付计量表**，不是包月无限」—— 即订阅价 ≠ 月度账单，实际取决于用量。长agent 循环能几天烧完一档额度。 ⚠ 该说法本身也来自第三方，本站未实证。</span><span data-en>**框架 MIT 免费，推理与后端资源自理。** 核验依据：仓库 MIT（经 license API）、README 的安装命令与 Nous Portal 入口。 **有三条可能产生额外成本的路**： （1）OpenAI / Anthropic 等按量的API； （2）**Modal / Daytona 等 serverless 后端** —— 官方说这两家提供 "serverless persistence"，agent 环境空闲时休眠、按需唤醒，"costing nearly nothing between sessions"； （3）自建GPU 集群或 $5 VPS（官方举例）。 **⚠ Nous Portal 的计费本轮核验结果是「官网不公开，只有第三方口径」**： 抓取 `portal.nousresearch.com` 首页**只有定性描述，没有一个价格数字** —— 原文是 "the models, the tools, the cloud"、模型目录 "spans hundreds of models from every frontier lab, with **free options and Portal-only discounts**"，只说有免费选项和 Portal 专属折扣， **没给任何档位与金额**。`portal.nousresearch.com/pricing` 返回 **404（Page not found）**。 四个互相独立的第三方来源（hostinger、moscarillo、aiidelist、standardcompute、 toolin）给出一致口径：**Free $0 / Plus $20 每月含 $22 额度 / Super $100 含 $110 / Ultra $200 含 $220**，另称付费档含Tool Gateway （搜索/图像/语音/浏览器自动化）、免费档不含额度也不含 Tool Gateway、 额度可按月 rollover（有上限）。 ⚠ **这些数字本站标为「第三方口径，未获官方确认」** —— 四个来源一致不等于官方确认，且按 v3 铁律「未知就说未知」，不写成已核实。 **选型前请以登录后 Portal 内的账单页为准。** **另有一条值得单独记**：有第三方明确写出 「$20 买到 $22 额度是**预付计量表**，不是包月无限」—— 即订阅价 ≠ 月度账单，实际取决于用量。长agent 循环能几天烧完一档额度。 ⚠ 该说法本身也来自第三方，本站未实证。</span></td></tr>
           </tbody>
         </table>
-        <p class="fine mt-3">不同币种不做折算。优惠、地区、税费与登录后报价可能变化，购买前请到官方页面确认。</p>
+        <p class="fine mt-3"><span data-zh>不同币种不做折算。优惠、地区、税费与登录后报价可能变化，购买前请到官方页面确认。</span><span data-en>No currency conversion. Discounts, regions, tax and post-login pricing can change — confirm on the official page before buying.</span></p>
       </div>
 
 
             <div class="panel is-slim">
-        <h2>未知项清单</h2>
+        <h2><span data-zh>未知项清单</span><span data-en>Known unknowns</span></h2>
         <ul>
           <li>command approval 的粒度、是否可白名单化、默认状态</li>
           <li>container isolation 的默认状态与覆盖范围</li>
@@ -190,10 +191,10 @@
 
 
       <div class="panel">
-        <h2>证据来源</h2>
-        <p class="t-sm">判断可回到以下一手源复核。本站核验日 2026-10-01，内容更新日 2026-10-01。</p>
+        <h2><span data-zh>证据来源</span><span data-en>Evidence sources</span></h2>
+        <p class="t-sm"><span data-zh>判断可回到以下一手源复核。本站核验日</span><span data-en>Every judgement can be rechecked against the primary sources below. Verified on</span> 2026-10-01，<span data-zh>内容更新日</span><span data-en>content updated on</span> 2026-10-01。</p>
         <table class="src">
-          <thead><tr><th class="w-20">类型</th><th class="w-52">名称</th><th>链接</th></tr></thead>
+          <thead><tr><th class="w-20"><span data-zh>类型</span><span data-en>Type</span></th><th class="w-52"><span data-zh>名称</span><span data-en>Name</span></th><th><span data-zh>链接</span><span data-en>Link</span></th></tr></thead>
           <tbody>
             <tr><td>repo</td><td>NousResearch/hermes-agent · 仓库（250,401★，MIT，核验 2026-10-01）</td><td><a href="https://github.com/NousResearch/hermes-agent" target="_blank" rel="noopener">https://github.com/NousResearch/hermes-agent</a></td></tr>
             <tr><td>docs</td><td>主 README（定位、六项特性表含七种终端后端与学习闭环、CLI vs Messaging 对照表、文档目录、安全与 MCP 页、OpenClaw 迁移清单）</td><td><a href="https://github.com/NousResearch/hermes-agent/blob/main/README.md" target="_blank" rel="noopener">https://github.com/NousResearch/hermes-agent/blob/main/README.md</a></td></tr>
@@ -213,7 +214,7 @@
       </div>
 
             <div class="panel is-slim">
-        <h2>实测记录</h2>
+        <h2><span data-zh>实测记录</span><span data-en>Measured runs</span></h2>
         <p>本站尚未完成实测。测试协议见 <a href="https://github.com/speculcom/ai-agent-guide/blob/main/tracks/agents/tasks/_protocol.md" target="_blank" rel="noopener">tasks/_protocol.md</a>。
 
 <strong>实测建议</strong>（按通用助手 + 常驻形态定制）：
@@ -231,7 +232,7 @@
 
 
             <div class="panel is-slim">
-        <h2>相关条目</h2>
+        <h2><span data-zh>相关条目</span><span data-en>Related entries</span></h2>
         <ul class="rel-list">
           <li><span class="rel-t"><a href="./openhands.html">OpenHands</a></span><span class="rel-n"><strong>常驻诉求的同类，但形态不同</strong>：两者都主打「关掉笔记本后agent 仍在跑」。OpenHands 是带 Web UI 的控制中心 + 定时/webhook 触发；本对象是 TUI + 六个消息平台 + 内建 cron，且定位是通用助手而非纯编程。</span></li>
           <li><span class="rel-t"><a href="./deepagents.html">Deep Agents</a></span><span class="rel-n">同为 general-harness 家族，但 Deep Agents 面向编程任务（filesystem + 子代理是卖点），本对象面向跨平台常驻的个人助手。</span></li>
@@ -241,7 +242,7 @@
 
 
       <p class="fine mt-6">
-        本页由 <a href="https://github.com/speculcom/ai-agent-guide" target="_blank" rel="noopener" class="link-brand">ai-agent-guide</a> 数据层生成（CC BY 4.0）。
+        <span data-zh>本页由</span><span data-en>This page is generated from the</span> <a href="https://github.com/speculcom/ai-agent-guide" target="_blank" rel="noopener" class="link-brand">ai-agent-guide</a> <span data-zh>数据层生成（CC BY 4.0）。</span><span data-en>data layer (CC BY 4.0).</span>
         方法论与坐标系定义见仓库内 <code>METHODOLOGY.md</code>。
       </p>
     </div>
