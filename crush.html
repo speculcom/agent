@@ -64,62 +64,65 @@
         <span class="tag on">本地</span>
         <span class="badge accent">partial</span>
         <span class="badge">lifecycle: active</span>
-        <span class="badge">核验 2026-09-29</span>
+        <span class="badge"><span data-zh>核验</span><span data-en>Checked</span> 2026-09-29</span>
       </div>
 
-            <p class="panel-lead">Charm 生态的 TUI 编码 agent，<strong>MCP 三种传输方式标注最完整</strong>，并提供官方订阅方案 Hyper。</p>
+            <p class="panel-lead">Charm 生态的 TUI 编码 agent，<strong>MCP 三种传输方式标注最完整</strong>，并提供官方订阅方案 Hyper。<span data-en>A TUI coding agent in the Charm ecosystem, with <strong>the most complete annotation of the three MCP transports</strong>, plus an official subscription plan, Hyper.</span></p>
 
             <div class="panel is-slim">
-        <h2>适合与不适合</h2>
-        <p>喜欢 Charm 生态终端体验（TUI 审美与交互）的用户。
+        <h2><span data-zh>适合与不适合</span><span data-en>When to use it, when not to</span></h2>
+<span data-zh>        <p>喜欢 Charm 生态终端体验（TUI 审美与交互）的用户。
 需要明确 MCP 传输方式（http / stdio / sse 三种都支持）的人。
 想在官方订阅方案 Hyper 与自带 key 之间切换的人。</p>
         <p class="warn-p"><strong>不适合</strong>需要明确开源许可做二次分发的场景——
-GitHub 识别为 NOASSERTION，条款未核验。</p>
+GitHub 识别为 NOASSERTION，条款未核验。</p></span><span data-en>        <p>Users who like the Charm ecosystem&#39;s terminal experience (TUI aesthetics and interaction).
+People who need explicit MCP transports (all three of http / stdio / sse are supported).
+People who want to switch between the official Hyper subscription and their own key.</p>
+        <p class="warn-p"><strong>Not a fit for</strong> scenarios needing a clear open-source licence for redistribution — GitHub reports NOASSERTION and the terms were not verified.</p></span>
       </div>
 
 
       <div class="block-head">
-        <h2 class="t-h2">固定坐标系</h2>
-        <p class="t-section-lead">8 个维度，与同赛道其他对象逐项可比。</p>
+        <h2 class="t-h2"><span data-zh>固定坐标系</span><span data-en>Fixed coordinate system</span></h2>
+        <p class="t-section-lead">8 <span data-zh>个维度</span><span data-en>dimensions</span>, <span data-zh>与同赛道其他对象逐项可比</span><span data-en>each comparable item by item against others in the same track</span>.</p>
       </div>
       <dl class="axes">
         <div class="axis">
-          <dt>模型与开放条件</dt>
+          <dt><span data-zh>模型与开放条件</span><span data-en>Model & openness</span></dt>
           <dd>多 provider 接入。 <strong>README 明确 Hyper（来自 Charm）是 Crush 的官方 provider，采用订阅制</strong>； 同时说明也可以用 Anthropic、OpenAI 等其他 provider， 自选 provider 并粘贴 API key，也可用环境变量配置首选 provider。 <strong>完整的 provider 清单本次未核验。</strong></dd>
         </div>
         <div class="axis">
-          <dt>运行位置</dt>
+          <dt><span data-zh>运行位置</span><span data-en>Where it runs</span></dt>
           <dd>本地进程，在终端运行（由 Charm 的终端库构建 TUI）。 提供 Homebrew / NPM / Arch Linux 等安装方式。 <strong>支持多客户端共享同一 workspace</strong>—— 指向同一工作目录的第二个客户端会附着到已存在的 workspace， 共享会话列表、消息历史、权限队列、LSP 与 MCP 状态。 <strong>但每次新调用都会启动新进程</strong>，所以 first-wins 规则会影响共享 workspace 的配置。</dd>
         </div>
         <div class="axis">
-          <dt>本地文件</dt>
+          <dt><span data-zh>本地文件</span><span data-en>Local files</span></dt>
           <dd><strong>LSP 增强上下文</strong>（README 原文「LSP-Enhanced: Crush uses LSPs for additional context, just like you do」）—— 与人一样靠 LSP 拿额外上下文。 <strong>按项目维护多个工作会话与上下文</strong> （README「Session-Based: maintain multiple work sessions and contexts per project」）。 <strong>可在会话中途切换模型且保留上下文</strong> （README「Flexible: switch LLMs mid-session while preserving context」）。 <strong>索引算法与大仓库耗时本次未核验。</strong></dd>
         </div>
         <div class="axis">
-          <dt>关机后的任务</dt>
+          <dt><span data-zh>关机后的任务</span><span data-en>Tasks after shutdown</span></dt>
           <dd>不支持终端形态的后台长任务。 <strong>是否有其他运行形态本次未核验。</strong></dd>
         </div>
         <div class="axis">
-          <dt>工具与扩展</dt>
+          <dt><span data-zh>工具与扩展</span><span data-en>Tools & extensions</span></dt>
           <dd><strong>明确支持 MCP，且传输方式标注最完整</strong>： README 写明支持 <code>http</code>、<code>stdio</code> 和 <code>sse</code> 三种。 这是本赛道里把 MCP 传输方式写清楚的少数几个之一。 另支持自定义配置文件 <code>~/.config/crush/crushrc</code> （Windows 为 <code>%USERPROFILE%\.config\crush\crushrc</code>）， 且<strong>可按机器条件覆盖配置</strong>（示例里用 <code>$HOSTNAME</code> 判断）。 模型可通过 <code>model add ollama/llama3.3 --name &quot;Llama 3.3&quot; --context-window 128000</code> 手动添加——<strong>支持本地模型且可显式声明其上下文窗口</strong>。</dd>
         </div>
         <div class="axis">
-          <dt>上下文与记忆</dt>
+          <dt><span data-zh>上下文与记忆</span><span data-en>Context & memory</span></dt>
           <dd><strong>LSP 提供额外上下文</strong>（见 local_files）。 <strong>按项目维护多个工作会话与上下文</strong>（per-project sessions）。 <strong>切换模型时保留上下文</strong>——这是本赛道少见的明确承诺， 因为换模型通常也意味着换上下文策略。 <strong>上下文压缩策略本次未核验。</strong></dd>
         </div>
         <div class="axis">
-          <dt>权限与限制</dt>
+          <dt><span data-zh>权限与限制</span><span data-en>Permissions & limits</span></dt>
           <dd><strong>默认每次工具调用都询问</strong>（README「By default, Crush will ask you for permission before running tool calls」）， 可在配置里 <code>permissions allow view edit</code> 免确认特定工具。 官方原文对免确认模式的措辞是 &quot;Use this with care&quot;（谨慎使用）。 另有 <code>--yolo</code> 开关可整体放宽审批； <strong>该 flag 遵循「first-wins」规则</strong>—— 同一 cwd 下首个客户端的设置会锁定后续客户端的行为， 不一致时会打一行 debug 日志记录这种不匹配。 <strong>多客户端同时接入同一目录时需注意这个规则。</strong> 凭据配置也支持按机器分叉（可用 <code>$HOSTNAME</code> 条件覆盖）。</dd>
         </div>
         <div class="axis">
-          <dt>适合什么任务</dt>
+          <dt><span data-zh>适合什么任务</span><span data-en>Best for</span></dt>
           <dd>喜欢 Charm 生态的终端体验（TUI 审美与交互）。 需要在多个 provider 间切换，或想用官方订阅方案 Hyper 的用户。 <strong>想中途换模型且不丢上下文的人</strong>（README 明确承诺）。 想用本地模型并显式声明其上下文窗口的人。 需要 MCP 三种传输都支持的人。</dd>
         </div>
       </dl>
 
             <div class="panel warn">
-        <h2 class="warn">头号误解</h2>
+        <h2 class="warn"><span data-zh>头号误解</span><span data-en>Top misconception</span></h2>
         <ul>
           <li>以为许可证明确可商用，GitHub 识别为 NOASSERTION，条款未核验</li>
           <li>以为只能用自己的模型，实际上可以接 Anthropic / OpenAI 等</li>
@@ -129,20 +132,20 @@ GitHub 识别为 NOASSERTION，条款未核验。</p>
 
 
             <div class="panel is-slim">
-        <h2>价格</h2>
+        <h2><span data-zh>价格</span><span data-en>Pricing</span></h2>
         <table class="src">
           <tbody>
-            <tr><th class="w-28">月度入口</th><td>开源免费，模型费用另计</td></tr>
-            <tr><th class="w-28">年付</th><td>开源免费，模型费用另计</td></tr>
-            <tr><th class="w-28">额度说明</th><td>许可证为 GitHub 未识别类型（NOASSERTION）， <strong>具体条款本次未核验，商用前须自行确认</strong>。 模型费用由用户自付。</td></tr>
+            <tr><th class="w-28"><span data-zh>月度入口</span><span data-en>Monthly entry</span></th><td><span data-zh>开源免费，模型费用另计</span><span data-en>开源免费，模型费用另计</span></td></tr>
+            <tr><th class="w-28"><span data-zh>年付</span><span data-en>Annual</span></th><td><span data-zh>开源免费，模型费用另计</span><span data-en>开源免费，模型费用另计</span></td></tr>
+            <tr><th class="w-28"><span data-zh>额度说明</span><span data-en>Quota note</span></th><td><span data-zh>许可证为 GitHub 未识别类型（NOASSERTION）， **具体条款本次未核验，商用前须自行确认**。 模型费用由用户自付。</span><span data-en>许可证为 GitHub 未识别类型（NOASSERTION）， **具体条款本次未核验，商用前须自行确认**。 模型费用由用户自付。</span></td></tr>
           </tbody>
         </table>
-        <p class="fine mt-3">不同币种不做折算。优惠、地区、税费与登录后报价可能变化，购买前请到官方页面确认。</p>
+        <p class="fine mt-3"><span data-zh>不同币种不做折算。优惠、地区、税费与登录后报价可能变化，购买前请到官方页面确认。</span><span data-en>No currency conversion. Discounts, regions, tax and post-login pricing can change — confirm on the official page before buying.</span></p>
       </div>
 
 
             <div class="panel is-slim">
-        <h2>未知项清单</h2>
+        <h2><span data-zh>未知项清单</span><span data-en>Known unknowns</span></h2>
         <ul>
           <li><strong>许可证具体条款</strong>（GitHub 识别为 NOASSERTION）</li>
           <li>Hyper 订阅的价格与额度</li>
@@ -155,10 +158,10 @@ GitHub 识别为 NOASSERTION，条款未核验。</p>
 
 
       <div class="panel">
-        <h2>证据来源</h2>
-        <p class="t-sm">判断可回到以下一手源复核。本站核验日 2026-09-29，内容更新日 2026-09-29。</p>
+        <h2><span data-zh>证据来源</span><span data-en>Evidence sources</span></h2>
+        <p class="t-sm"><span data-zh>判断可回到以下一手源复核。本站核验日</span><span data-en>Every judgement can be rechecked against the primary sources below. Verified on</span> 2026-09-29，<span data-zh>内容更新日</span><span data-en>content updated on</span> 2026-09-29。</p>
         <table class="src">
-          <thead><tr><th class="w-20">类型</th><th class="w-52">名称</th><th>链接</th></tr></thead>
+          <thead><tr><th class="w-20"><span data-zh>类型</span><span data-en>Type</span></th><th class="w-52"><span data-zh>名称</span><span data-en>Name</span></th><th><span data-zh>链接</span><span data-en>Link</span></th></tr></thead>
           <tbody>
             <tr><td>repo</td><td>Charm · Crush 仓库 README</td><td><a href="https://github.com/charmbracelet/crush" target="_blank" rel="noopener">https://github.com/charmbracelet/crush</a></td></tr>
             <tr><td>changelog</td><td>Charm · Crush Releases</td><td><a href="https://github.com/charmbracelet/crush/releases" target="_blank" rel="noopener">https://github.com/charmbracelet/crush/releases</a></td></tr>
@@ -169,7 +172,7 @@ GitHub 识别为 NOASSERTION，条款未核验。</p>
       </div>
 
             <div class="panel is-slim">
-        <h2>实测记录</h2>
+        <h2><span data-zh>实测记录</span><span data-en>Measured runs</span></h2>
         <p>本站尚未完成实测。测试协议见 <a href="https://github.com/speculcom/ai-agent-guide/blob/main/tracks/agents/tasks/_protocol.md" target="_blank" rel="noopener">tasks/_protocol.md</a>。
 
 <strong>实测建议</strong>：重点测<strong>非 TTY 环境下的表现</strong>——
@@ -178,7 +181,7 @@ GitHub 识别为 NOASSERTION，条款未核验。</p>
 
 
             <div class="panel is-slim">
-        <h2>相关条目</h2>
+        <h2><span data-zh>相关条目</span><span data-en>Related entries</span></h2>
         <ul class="rel-list">
           <li><span class="rel-t"><a href="./opencode.html">OpenCode</a></span><span class="rel-n">同类多 provider 工具，MCP 支持</span></li>
           <li><span class="rel-t"><a href="./gemini-cli.html">Gemini CLI</a></span><span class="rel-n">同类工具，工程化更完整</span></li>
@@ -187,7 +190,7 @@ GitHub 识别为 NOASSERTION，条款未核验。</p>
 
 
       <p class="fine mt-6">
-        本页由 <a href="https://github.com/speculcom/ai-agent-guide" target="_blank" rel="noopener" class="link-brand">ai-agent-guide</a> 数据层生成（CC BY 4.0）。
+        <span data-zh>本页由</span><span data-en>This page is generated from the</span> <a href="https://github.com/speculcom/ai-agent-guide" target="_blank" rel="noopener" class="link-brand">ai-agent-guide</a> <span data-zh>数据层生成（CC BY 4.0）。</span><span data-en>data layer (CC BY 4.0).</span>
         方法论与坐标系定义见仓库内 <code>METHODOLOGY.md</code>。
       </p>
     </div>
