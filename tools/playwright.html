@@ -136,9 +136,10 @@ token 效率更低。
             <div class="panel warn">
         <h2 class="warn"><span data-zh>头号误解</span><span data-en>Top misconception</span></h2>
         <ul>
-          <li>以为 allowed-origins 能当访问白名单，官方明说不构成安全边界且不防重定向</li>
-          <li>以为无头模式会常驻，实际 headless 默认 1 小时空闲即关，headed 默认永不关</li>
-          <li>在高吞吐编码场景硬上 MCP，官方自己建议改用 CLI + SKILLS</li>
+
+          <li><span data-zh>以为 allowed-origins 能当访问白名单，官方明说不构成安全边界且不防重定向</span><span data-en>Assuming allowed-origins works as an access allowlist — the official docs state it is not a security boundary and does not guard redirects</span></li>
+          <li><span data-zh>以为无头模式会常驻，实际 headless 默认 1 小时空闲即关，headed 默认永不关</span><span data-en>Assuming headless mode stays resident — headless closes after an hour idle by default; headed never closes</span></li>
+          <li><span data-zh>在高吞吐编码场景硬上 MCP，官方自己建议改用 CLI + SKILLS</span><span data-en>Driving MCP in a high-throughput coding workload — the official guidance is to use the CLI + SKILLS instead</span></li>
         </ul>
       </div>
 
