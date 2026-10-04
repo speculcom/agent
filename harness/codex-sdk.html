@@ -71,65 +71,66 @@
         <span class="tag on">审批模式</span>
         <span class="badge accent">partial</span>
         <span class="badge">lifecycle: active</span>
-        <span class="badge">核验 2026-10-01</span>
+        <span class="badge"><span data-zh>核验</span><span data-en>Checked</span> 2026-10-01</span>
       </div>
 
             <p class="panel-lead"><strong>「把 Codex CLI 变成 Node 进程里可驱动的对象」</strong> —— 官方 README 首句就是
 「Embed the Codex agent in your workflows and apps」，第二句划清了形态：
 &gt; The TypeScript SDK <strong>wraps</strong> the <code>codex</code> CLI from <code>@openai/codex</code>.
-&gt; It <strong>spawns the CLI</strong> and exchanges JSONL events over stdin/stdout.</p>
+&gt; It <strong>spawns the CLI</strong> and exchanges JSONL events over stdin/stdout.<span data-en><strong>&quot;Turns the Codex CLI into an object you can drive inside a Node process&quot;</strong> — the official README opens with &quot;Embed the Codex agent in your workflows and apps&quot;; the second sentence settles the form: the TypeScript SDK wraps the <code>codex</code> CLI, spawns it and exchanges JSONL events over stdin/stdout.</span></p>
 
             <div class="panel is-slim">
-        <h2>适合与不适合</h2>
-        <p><strong>适合</strong>：要把 Codex 塞进 Node / Electron 应用或 CI；需要非交互执行；
+        <h2><span data-zh>适合与不适合</span><span data-en>When to use it, when not to</span></h2>
+<span data-zh>        <p><strong>适合</strong>：要把 Codex 塞进 Node / Electron 应用或 CI；需要非交互执行；
 需要精确到路径的权限规则；TS 或 Python 栈。
 <strong>不适合</strong>：想要一个纯库、不愿多背一个 CLI 子进程（用 OpenAI Agents SDK）；
 目标目录不是 Git 仓库又不愿开 <code>skipGitRepoCheck</code>；
-需要 SDK 层自己管上下文压缩。</p>
+需要 SDK 层自己管上下文压缩。</p></span><span data-en>        <p><strong>Fits</strong>: embedding Codex into a Node / Electron app or CI; needing non-interactive execution; needing path-precise permission rules; a TypeScript or Python stack.
+<strong>Not a fit</strong>: wanting a pure library without carrying an extra CLI subprocess (use OpenAI Agents SDK); a target directory that is not a git repository and where you do not want to enable <code>skipGitRepoCheck</code>; needing the SDK layer to manage context compaction itself.</p></span>
       </div>
 
 
       <div class="block-head">
-        <h2 class="t-h2">固定坐标系</h2>
-        <p class="t-section-lead">8 个维度，与同赛道其他对象逐项可比。</p>
+        <h2 class="t-h2"><span data-zh>固定坐标系</span><span data-en>Fixed coordinate system</span></h2>
+        <p class="t-section-lead">8 <span data-zh>个维度</span><span data-en>dimensions</span>, <span data-zh>与同赛道其他对象逐项可比</span><span data-en>each comparable item by item against others in the same track</span>.</p>
       </div>
       <dl class="axes">
         <div class="axis">
-          <dt>模型与开放条件</dt>
+          <dt><span data-zh>模型与开放条件</span><span data-en>Model & openness</span></dt>
           <dd><strong>两条路径，本站的判断是「默认走OpenAI，但架构上没锁死」</strong>。 证据一：README 里的配置示例 <code>baseUrl</code> 会被翻译成 <code>--config openai_base_url=...</code> 传给 CLI， 即<strong>换 API 端点是一等配置项</strong>（原文：If you set <code>baseUrl</code>, the SDK passes it as a <code>--config openai_base_url=...</code> override）。 证据二：<code>codex-rs</code> 源码里 <code>model_providers</code> 是正式配置项（站内搜索 162 处引用， 分布在 <code>config/src/thread_config.rs</code>、<code>core/src/config/requirements.rs</code> 等）。 证据三：<code>ThreadOptions</code> 有独立的 <code>model?: string</code> 字段。 <strong>但要说清</strong>：SDK 本身没有任何「provider-agnostic」表述，也没有像 OpenAI Agents SDK 那样列出可选 extra（litellm / any-llm）。 <strong>换第三方模型后工具调用与 structured output 的可靠性，本站未核验。</strong></dd>
         </div>
         <div class="axis">
-          <dt>运行位置</dt>
+          <dt><span data-zh>运行位置</span><span data-en>Where it runs</span></dt>
           <dd><strong>进程形态是「你的 Node 进程 + 一个被 spawn 的 CLI 子进程」</strong>。 README 的 <code>env</code> 参数说明值得注意：「By default, the Codex CLI <strong>inherits the Node.js process environment</strong>」，你可以整体控制 CLI 看到哪些环境变量， 官方给的用途是 sandboxed hosts like Electron apps。 SDK 仍会在这之上注入自己需要的变量（如 <code>CODEX_API_KEY</code>）。 <strong>这条对 Electron / 桌面应用集成是决定性的</strong>，官方明确点了这个场景。</dd>
         </div>
         <div class="axis">
-          <dt>本地文件</dt>
+          <dt><span data-zh>本地文件</span><span data-en>Local files</span></dt>
           <dd><strong>本地文件是 CLI 的原生能力，SDK 侧只需给工作目录</strong>。 <code>workingDirectory</code> 设置运行目录；<code>additionalDirectories</code> 可追加额外目录； 另有 <code>local_image</code> 类型的输入条目可把本地图片传给 CLI（走 <code>--image</code>）。 <strong>一个必须知道的行为</strong>：Codex <strong>要求工作目录是一个 Git 仓库</strong>， 否则拒绝运行（官方原文：To avoid unrecoverable errors, Codex requires the working directory to be a Git repository）——可以用 <code>skipGitRepoCheck</code> 跳过。 <strong>这对选型是硬约束</strong>：非 Git 目录（纯数据目录、临时目录）里开箱即用不了。</dd>
         </div>
         <div class="axis">
-          <dt>关机后的任务</dt>
+          <dt><span data-zh>关机后的任务</span><span data-en>Tasks after shutdown</span></dt>
           <dd><strong>最值得注意的一点：这是本站收录对象里唯一官方明确支持「非交互执行」的</strong>。 仓库里有 <code>docs/exec.md</code>，标题就是 Non-interactive mode（正文只留外链， 指向 developers.openai.com/codex/noninteractive）。 与 CLI 站那份档案里 Gemini CLI 是「唯一明确支持非交互」的对照正好构成一组： <strong>在这个 harness 站里，Codex SDK 同样是非交互执行这条路的主要候选。</strong> 线程持久化有官方支撑：README 说 Threads are persisted in <code>~/.codex/sessions</code>， 内存里的 Thread 对象丢了可以用 <code>resumeThread()</code> 重建继续。 <strong>注意 ~/.codex/sessions 是文件目录而非数据库</strong> —— 意味着状态与进程同机器， 跨机迁移与并发写的语义本站未核验。</dd>
         </div>
         <div class="axis">
-          <dt>工具与扩展</dt>
+          <dt><span data-zh>工具与扩展</span><span data-en>Tools & extensions</span></dt>
           <dd><strong>工具面完全由 CLI 决定，SDK 不新增也不裁剪</strong>。README 全文没有出现 MCP。 SDK 侧你拿到的是<strong>结构化事件流</strong>：<code>runStreamed()</code> 返回 async generator， 事件类型包括 <code>item.completed</code>（工具调用、流式响应、文件变更通知） 与 <code>turn.completed</code>（含 usage 统计）。 <strong>Structured output 是 SDK 明确支持的一等能力</strong>： <code>outputSchema</code> 可传 JSON Schema，也有官方推荐的 Zod 转换路径 （<code>zodToJsonSchema(schema, { target: &quot;openAi&quot; })</code>）。 <strong>注意这里有个命名陷阱</strong>：那个target 是 <code>&quot;openAi&quot;</code>， 但它产出的是 JSON Schema 给任意遵守该schema 的模型用，不代表只能 OpenAI。 本站点MCP 收录的 9 个 server 里没有它的位置 —— <strong>Codex CLI 是否支持 MCP、 本站未核验</strong>（SDK README 未提，主仓 docs 目录里也没有 mcp.md）。</dd>
         </div>
         <div class="axis">
-          <dt>上下文与记忆</dt>
+          <dt><span data-zh>上下文与记忆</span><span data-en>Context & memory</span></dt>
           <dd><strong>本站最关心的维度，本对象提供的是「会话续接」而不是「上下文管理」</strong>。 证据是 <code>resumeThread(threadId)</code>：能恢复对话继续跑，但没有压缩、摘要或落盘机制。 换句话说：<code>Thread</code> 解决的是<strong>可靠续跑</strong>（本站主张的「状态」面）， 不解决<strong>长上下文</strong>（本站主张的「上下文」面）。 <strong>要压上下文只能靠 CLI 侧的配置或换模型</strong>，SDK 层没有暴露相关选项。</dd>
         </div>
         <div class="axis">
-          <dt>权限与限制</dt>
+          <dt><span data-zh>权限与限制</span><span data-en>Permissions & limits</span></dt>
           <dd><strong>这是本站核对下来最有价值的一处发现 —— 它把 CLI 站那份档案里标为「未核验」的问题补上了</strong>。 证据来自 SDK 源码 <code>sdk/typescript/src/threadOptions.ts</code> 的类型定义（不是文档，是源码）： <code>ApprovalMode = &quot;never&quot; | &quot;on-request&quot; | &quot;on-failure&quot; | &quot;untrusted&quot;</code> —— <strong>四种审批模式</strong>； <code>SandboxMode = &quot;read-only&quot; | &quot;workspace-write&quot; | &quot;danger-full-access&quot;</code> —— <strong>三档沙箱</strong>。 网络单独控制：<code>networkAccessEnabled?: boolean</code>、<code>webSearchMode?: &quot;disabled&quot; | &quot;cached&quot; | &quot;live&quot;</code>、 <code>webSearchEnabled?: boolean</code>。 推理强度可调：<code>ModelReasoningEffort</code> 有 <strong>8 档</strong> （minimal / low / medium / high / xhigh / max / ultra / persistent）。 <strong>另一层权限机制是配置透传</strong>：SDK 支持 <code>config</code>（自动展平成 dotted path转 TOML 传给 <code>--config</code>） 与 <code>configOverrides</code>（原始 TOML 逐条透传）。官方示例直接给出了文件系统级规则： <code>permissions.audit.filesystem={&quot;:root&quot;=&quot;read&quot;,&quot;/path/to/project/.env&quot;=&quot;deny&quot;}</code>， 即<strong>可以按路径精确拒绝读.env 这类文件</strong>。官方说明优先级： 原始 overrides &gt;结构化 config &gt; SDK 托管设置。 ⚠ <strong>三档沙箱各档在具体平台（Windows / macOS / Linux）上的实现差异本站未核验</strong> （docs/sandbox.md 正文只有外链）。</dd>
         </div>
         <div class="axis">
-          <dt>适合什么任务</dt>
+          <dt><span data-zh>适合什么任务</span><span data-en>Best for</span></dt>
           <dd><strong>适合</strong>：要把 Codex 塞进自己的 Node 应用 / Electron 应用 / CI； 需要非交互执行；需要精确的文件级权限规则；TypeScript 或 Python 栈； 已经决定用 OpenAI 模型但想让模型层可换。 <strong>不适合</strong>：想要一个纯库、不想额外背一个 CLI 子进程（用 OpenAI Agents SDK）； 目标目录不是 Git 仓库又不愿开<code>skipGitRepoCheck</code>； 需要 SDK 层自己做上下文压缩（本站未核验 CLI 侧是否有可配的压缩策略）。</dd>
         </div>
       </dl>
 
             <div class="panel warn">
-        <h2 class="warn">头号误解</h2>
+        <h2 class="warn"><span data-zh>头号误解</span><span data-en>Top misconception</span></h2>
         <ul>
           <li>以为 v3 计划里的 openai/codex-sdk 存在 —— 该仓 404，SDK 是 monorepo 子目录</li>
           <li>以为 SDK 版本号能反映能力 —— package.json 里是 0.0.0-dev，实际版本跟CLI 走（当前 0.159.3）</li>
@@ -141,19 +142,19 @@
 
 
             <div class="panel is-slim">
-        <h2>价格</h2>
+        <h2><span data-zh>价格</span><span data-en>Pricing</span></h2>
         <table class="src">
           <tbody>
-            <tr><th class="w-28">月度入口</th><td>SDK 本身免费（Apache-2.0），推理按你接的 provider 计费</td></tr>
-            <tr><th class="w-28">额度说明</th><td><strong>三条计费路径要分清</strong>： （1）SDK 与 CLI 都开源免费，跑起来要 OpenAI API key 或 ChatGPT 额度； （2）可以配 <code>baseUrl</code> 指向自建/第三方网关，此时计费跟着那个网关走； （3）OpenAI 另有 Codex Web（chatgpt.com/codex）这条云端产品线， 那是订阅制，与本地 SDK 不是同一件事。</td></tr>
+            <tr><th class="w-28"><span data-zh>月度入口</span><span data-en>Monthly entry</span></th><td><span data-zh>SDK 本身免费（Apache-2.0），推理按你接的 provider 计费</span><span data-en>SDK 本身免费（Apache-2.0），推理按你接的 provider 计费</span></td></tr>
+            <tr><th class="w-28"><span data-zh>额度说明</span><span data-en>Quota note</span></th><td><span data-zh>**三条计费路径要分清**： （1）SDK 与 CLI 都开源免费，跑起来要 OpenAI API key 或 ChatGPT 额度； （2）可以配 `baseUrl` 指向自建/第三方网关，此时计费跟着那个网关走； （3）OpenAI 另有 Codex Web（chatgpt.com/codex）这条云端产品线， 那是订阅制，与本地 SDK 不是同一件事。</span><span data-en>**三条计费路径要分清**： （1）SDK 与 CLI 都开源免费，跑起来要 OpenAI API key 或 ChatGPT 额度； （2）可以配 `baseUrl` 指向自建/第三方网关，此时计费跟着那个网关走； （3）OpenAI 另有 Codex Web（chatgpt.com/codex）这条云端产品线， 那是订阅制，与本地 SDK 不是同一件事。</span></td></tr>
           </tbody>
         </table>
-        <p class="fine mt-3">不同币种不做折算。优惠、地区、税费与登录后报价可能变化，购买前请到官方页面确认。</p>
+        <p class="fine mt-3"><span data-zh>不同币种不做折算。优惠、地区、税费与登录后报价可能变化，购买前请到官方页面确认。</span><span data-en>No currency conversion. Discounts, regions, tax and post-login pricing can change — confirm on the official page before buying.</span></p>
       </div>
 
 
             <div class="panel is-slim">
-        <h2>未知项清单</h2>
+        <h2><span data-zh>未知项清单</span><span data-en>Known unknowns</span></h2>
         <ul>
           <li>三档沙箱在 Windows / macOS / Linux 的实现差异（尤其 Windows 是否走 WSL）</li>
           <li>Codex CLI 是否支持 MCP，若支持则能力边界如何</li>
@@ -167,10 +168,10 @@
 
 
       <div class="panel">
-        <h2>证据来源</h2>
-        <p class="t-sm">判断可回到以下一手源复核。本站核验日 2026-10-01，内容更新日 2026-10-01。</p>
+        <h2><span data-zh>证据来源</span><span data-en>Evidence sources</span></h2>
+        <p class="t-sm"><span data-zh>判断可回到以下一手源复核。本站核验日</span><span data-en>Every judgement can be rechecked against the primary sources below. Verified on</span> 2026-10-01，<span data-zh>内容更新日</span><span data-en>content updated on</span> 2026-10-01。</p>
         <table class="src">
-          <thead><tr><th class="w-20">类型</th><th class="w-52">名称</th><th>链接</th></tr></thead>
+          <thead><tr><th class="w-20"><span data-zh>类型</span><span data-en>Type</span></th><th class="w-52"><span data-zh>名称</span><span data-en>Name</span></th><th><span data-zh>链接</span><span data-en>Link</span></th></tr></thead>
           <tbody>
             <tr><td>repo</td><td>openai/codex · 仓库（monorepo，SDK 在 sdk/ 子目录）</td><td><a href="https://github.com/openai/codex" target="_blank" rel="noopener">https://github.com/openai/codex</a></td></tr>
             <tr><td>docs</td><td>TypeScript SDK README（包裹 CLI、JSONL 通信、thread/turn、resume、config 透传）</td><td><a href="https://github.com/openai/codex/tree/main/sdk/typescript" target="_blank" rel="noopener">https://github.com/openai/codex/tree/main/sdk/typescript</a></td></tr>
@@ -186,7 +187,7 @@
       </div>
 
             <div class="panel is-slim">
-        <h2>实测记录</h2>
+        <h2><span data-zh>实测记录</span><span data-en>Measured runs</span></h2>
         <p>本站尚未完成实测。测试协议见 <a href="https://github.com/speculcom/ai-agent-guide/blob/main/tracks/agents/tasks/_protocol.md" target="_blank" rel="noopener">tasks/_protocol.md</a>。
 
 <strong>实测建议</strong>（按本 SDK 形态定制）：
@@ -203,7 +204,7 @@
 
 
             <div class="panel is-slim">
-        <h2>相关条目</h2>
+        <h2><span data-zh>相关条目</span><span data-en>Related entries</span></h2>
         <ul class="rel-list">
           <li><span class="rel-t"><a href="./claude-agent-sdk.html">Claude Agent SDK</a></span><span class="rel-n"><strong>本站最该对照的一对</strong>：同样是 CLI 包装型（捆绑 / spawn CLI + 进程通信），但Claude 侧 README 明说只支持 Claude、没有 provider 旁路，而本 SDK 有 <code>baseUrl</code> 与 <code>model_providers</code>。</span></li>
           <li><span class="rel-t"><a href="./openai-agents-sdk.html">OpenAI Agents SDK</a></span><span class="rel-n">同一家厂商的两种形态：那个是纯 Python 库（primitives-only），这个是 Node + CLI 子进程包装。选型第一问就是「要不要多背一个 CLI 进程」。</span></li>
@@ -214,7 +215,7 @@
 
 
       <p class="fine mt-6">
-        本页由 <a href="https://github.com/speculcom/ai-agent-guide" target="_blank" rel="noopener" class="link-brand">ai-agent-guide</a> 数据层生成（CC BY 4.0）。
+        <span data-zh>本页由</span><span data-en>This page is generated from the</span> <a href="https://github.com/speculcom/ai-agent-guide" target="_blank" rel="noopener" class="link-brand">ai-agent-guide</a> <span data-zh>数据层生成（CC BY 4.0）。</span><span data-en>data layer (CC BY 4.0).</span>
         方法论与坐标系定义见仓库内 <code>METHODOLOGY.md</code>。
       </p>
     </div>
