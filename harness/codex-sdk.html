@@ -129,11 +129,12 @@
             <div class="panel warn">
         <h2 class="warn"><span data-zh>头号误解</span><span data-en>Top misconception</span></h2>
         <ul>
-          <li>以为 v3 计划里的 openai/codex-sdk 存在 —— 该仓 404，SDK 是 monorepo 子目录</li>
-          <li>以为 SDK 版本号能反映能力 —— package.json 里是 0.0.0-dev，实际版本跟CLI 走（当前 0.159.3）</li>
-          <li>在非 Git 目录里开箱即用就跑不了 —— CLI 要求工作目录是 Git 仓库，必须显式跳过</li>
-          <li>把 <code>sandbox_workspace_write.network_access</code> 与 SDK 的 <code>networkAccessEnabled</code> 当成两套东西 —— 后者才是 SDK 层入口，前者是 config透传的写法</li>
-          <li>把 OpenAI Agents SDK（纯 Python 库）当成本 SDK 的同类替代 —— 形态不同，见 layer_position</li>
+
+          <li><span data-zh>以为 v3 计划里的 openai/codex-sdk 存在 —— 该仓 404，SDK 是 monorepo 子目录</span><span data-en>Assuming openai/codex-sdk from the v3 roadmap exists — that repo 404s; the SDK is a subdirectory of the monorepo</span></li>
+          <li><span data-zh>以为 SDK 版本号能反映能力 —— package.json 里是 0.0.0-dev，实际版本跟CLI 走（当前 0.159.3）</span><span data-en>Assuming the SDK version number reflects the capability — package.json says 0.0.0-dev; the real version tracks the CLI (currently 0.159.3)</span></li>
+          <li><span data-zh>在非 Git 目录里开箱即用就跑不了 —— CLI 要求工作目录是 Git 仓库，必须显式跳过</span><span data-en>Expecting it to work out of the box outside a Git directory — the CLI requires the working directory to be a Git repository, so you must skip explicitly</span></li>
+          <li><span data-zh>把 <code>sandbox_workspace_write.network_access</code> 与 SDK 的 <code>networkAccessEnabled</code> 当成两套东西 —— 后者才是 SDK 层入口，前者是 config透传的写法</span><span data-en>Treating <code>sandbox_workspace_write.network_access</code> and the SDK&#39;s <code>networkAccessEnabled</code> as two separate things — the latter is the SDK-level entry point; the former is a config passthrough</span></li>
+          <li><span data-zh>把 OpenAI Agents SDK（纯 Python 库）当成本 SDK 的同类替代 —— 形态不同，见 layer_position</span><span data-en>Treating OpenAI Agents SDK (a pure Python library) as a like-for-like alternative — the forms differ, see layer_position</span></li>
         </ul>
       </div>
 
