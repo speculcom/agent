@@ -47,57 +47,57 @@
         <h1 class="t-hero">给 agent 装的工具</h1>
         <p class="lede">MCP server 的权限范围、传输方式与输出可用性。收录标准：已发布为可安装的 MCP server、有官方仓库或文档可回溯、近 30 天有实质更新。这里是能力缺口查表，不是选型对比。</p>
         <div class="hero-meta">
-          <span><b>9</b> 个对象</span>
-          <span><b>11</b> 个固定维度</span>
-          <span><b>7</b> 个已完整核验</span>
-          <span>最后核验 <b>2026-10-01</b></span>
+          <span><b>9</b> <span data-zh>个对象</span><span data-en>objects</span></span>
+          <span><b>11</b> <span data-zh>个固定维度</span><span data-en>fixed dimensions</span></span>
+          <span><b>7</b> <span data-zh>个已完整核验</span><span data-en>fully verified</span></span>
+          <span><span data-zh>最后核验</span><span data-en>Last checked</span> <b>2026-10-01</b></span>
         </div>
       </div>
     </section>
 
     <nav class="part-bar" aria-label="站内分区">
       <div class="container">
-        <a href="/" style="--pa:#8b7cf8"><b>Agents</b><span>装在编辑器、终端，或厂商云里</span></a>
-        <a href="/harness/" style="--pa:#3b82f6"><b>Harness</b><span>运行时、编排框架、SDK</span></a>
-        <a href="/tools/" aria-current="page" style="--pa:#22d3c5"><b>Tools</b><span>缺什么，装什么 —— 给 agent 装的 MCP 工具</span></a>
+        <a href="/" style="--pa:#8b7cf8"><b>Agents</b><span><span data-zh>装在编辑器、终端，或厂商云里</span><span data-en>Installed in an editor, a terminal, or a vendor cloud</span></span></a>
+        <a href="/harness/" style="--pa:#3b82f6"><b>Harness</b><span><span data-zh>运行时、编排框架、SDK</span><span data-en>Runtimes, orchestration frameworks, SDKs</span></span></a>
+        <a href="/tools/" aria-current="page" style="--pa:#22d3c5"><b>Tools</b><span><span data-zh>缺什么，装什么 —— 给 agent 装的 MCP 工具</span><span data-en>Fill the gap — MCP tools an agent can install</span></span></a>
       </div>
     </nav>
 
     
     <section class="section guide-band">
       <div class="container">
-        <h2>先回答一件事：你到底缺什么能力</h2>
-        <p class="section-desc">MCP 不是「让 AI 更聪明」，是<strong>给 AI 接上它本来够不到的东西</strong>。如果你要的只是聊天和写代码，你不需要它。<strong>你装，它调</strong>——9 个条目全是官方 reference server，不含第三方。</p>
+        <h2><span data-zh>先回答一件事：你到底缺什么能力</span><span data-en>Answer one question first: what capability are you actually missing</span></h2>
+        <p class="section-desc"><span data-zh>MCP 不是「让 AI 更聪明」，是<strong>给 AI 接上它本来够不到的东西</strong>。如果你要的只是聊天和写代码，你不需要它。<strong>你装，它调</strong>——9 个条目全是官方 reference server，不含第三方。</span><span data-en>MCP is not "making AI smarter" — it is <strong>giving AI access to what it could not otherwise reach</strong>. If all you want is chat and writing code, you do not need it. <strong>You install it, the AI calls it</strong> — all 9 entries are official reference servers, none are third-party.</span></p>
         <ol class="guide-list">
           <li class="guide-step">
-            <div class="guide-q"><span class="guide-n">1</span>我要读写本地文件 / 操作 Git</div>
-            <div class="guide-a"><strong>filesystem、git</strong><span class="guide-why">两个都是读写权限，git 那一类值得先看 scope 里能限制到哪些目录。</span></div>
+            <div class="guide-q"><span class="guide-n">1</span><span data-zh>我要读写本地文件 / 操作 Git</span><span data-en>I need to read/write local files / work with Git</span></div>
+            <div class="guide-a"><strong><span data-zh>filesystem、git</span><span data-en>filesystem, git</span></strong><span class="guide-why"><span data-zh>两个都是读写权限，git 那一类值得先看 scope 里能限制到哪些目录。</span><span data-en>Both have read and write permissions; for the git category it is worth checking what directories the scope can be limited to.</span></span></div>
           </li>
           <li class="guide-step">
-            <div class="guide-q"><span class="guide-n">2</span>我要它记住东西、跨会话召回</div>
-            <div class="guide-a"><strong>memory</strong><span class="guide-why">这是最容易被误解的一类——<strong>它不是「模型记忆」</strong>，是外部知识图谱存储。</span></div>
+            <div class="guide-q"><span class="guide-n">2</span><span data-zh>我要它记住东西、跨会话召回</span><span data-en>I need it to remember things across sessions</span></div>
+            <div class="guide-a"><strong><span data-zh>memory</span><span data-en>memory</span></strong><span class="guide-why"><span data-zh>这是最容易被误解的一类——<strong>它不是「模型记忆」</strong>，是外部知识图谱存储。</span><span data-en>This is the most misunderstood category — <strong>it is not "model memory"</strong> but an external knowledge-graph store.</span></span></div>
           </li>
           <li class="guide-step">
-            <div class="guide-q"><span class="guide-n">3</span>我要让 AI 上网拿资料</div>
-            <div class="guide-a"><strong>context7、fetch</strong><span class="guide-why">风险最高的一类是 fetch：档案里引了官方警告——<strong>可访问本地与内网 IP，无地址白名单、无审批机制</strong>。</span></div>
+            <div class="guide-q"><span class="guide-n">3</span><span data-zh>我要让 AI 上网拿资料</span><span data-en>I need AI to reach the web for material</span></div>
+            <div class="guide-a"><strong><span data-zh>context7、fetch</span><span data-en>context7, fetch</span></strong><span class="guide-why"><span data-zh>风险最高的一类是 fetch：档案里引了官方警告——<strong>可访问本地与内网 IP，无地址白名单、无审批机制</strong>。</span><span data-en>fetch carries the highest risk: the entry quotes an official warning — <strong>it can reach local and internal IPs, with no address allowlist and no approval mechanism</strong>.</span></span></div>
           </li>
           <li class="guide-step">
-            <div class="guide-q"><span class="guide-n">4</span>我要控制真实浏览器</div>
-            <div class="guide-a"><strong>playwright</strong><span class="guide-why">注意官方<strong>明确声明来源限制不是安全边界</strong>，需要真隔离得用 <code>--isolated</code> 或容器化网络策略。</span></div>
+            <div class="guide-q"><span class="guide-n">4</span><span data-zh>我要控制真实浏览器</span><span data-en>I need to drive a real browser</span></div>
+            <div class="guide-a"><strong><span data-zh>playwright</span><span data-en>playwright</span></strong><span class="guide-why"><span data-zh>注意官方<strong>明确声明来源限制不是安全边界</strong>，需要真隔离得用 <code>--isolated</code> 或容器化网络策略。</span><span data-en>Note the official <strong>explicit statement that source restrictions are not a security boundary</strong>; real isolation requires `--isolated` or a containerised network policy.</span></span></div>
           </li>
           <li class="guide-step">
-            <div class="guide-q"><span class="guide-n">5</span>我要点时间 / 拆解推理 / 跨平台搜文件</div>
-            <div class="guide-a"><strong>time、sequential-thinking、everything</strong><span class="guide-why">三个都是只读，风险最低。</span></div>
+            <div class="guide-q"><span class="guide-n">5</span><span data-zh>我要点时间 / 拆解推理 / 跨平台搜文件</span><span data-en>I want time / decomposition / cross-platform file search</span></div>
+            <div class="guide-a"><strong><span data-zh>time、sequential-thinking、everything</span><span data-en>time, sequential-thinking, everything</span></strong><span class="guide-why"><span data-zh>三个都是只读，风险最低。</span><span data-en>All three are read-only, so risk is lowest.</span></span></div>
           </li>
         </ol>
-        <p class="guide-foot">⚠ 一个容易忽略的维度：<strong>数据出境</strong>。Context7 是本分区唯一以远程服务为默认形态的条目，查询内容会发到 Upstash 服务器；其余八个都是本地 stdio 进程。另外——<strong>装 MCP 需要你手动做，调用不需要</strong>：server 启动后自动把工具清单报给你的客户端，之后调不调、什么时候调，由 agent 自己判断，你只在审批环节介入。</p>
+        <p class="guide-foot"><span data-zh>⚠ 一个容易忽略的维度：<strong>数据出境</strong>。Context7 是本分区唯一以远程服务为默认形态的条目，查询内容会发到 Upstash 服务器；其余八个都是本地 stdio 进程。另外——<strong>装 MCP 需要你手动做，调用不需要</strong>：server 启动后自动把工具清单报给你的客户端，之后调不调、什么时候调，由 agent 自己判断，你只在审批环节介入。</span><span data-en>⚠ An easily overlooked dimension: <strong>data leaving the country</strong>. Context7 is the only entry in this section whose default form is a remote service — queries are sent to Upstash's servers, while the other eight are local stdio processes. And — <strong>installing an MCP server is manual; calling it is not</strong>: once running, the server reports its tool list to your client automatically, and after that the agent decides whether and when to call it. You only get involved at the approval step.</span></p>
       </div>
     </section>
 
     <section class="section">
       <div class="container">
-        <h2>全部对象</h2>
-        <p class="section-desc">按统一坐标系排列。点开任一对象可看到 模型与开放条件 / 运行位置 / 本地文件 / 关机后的任务 / 工具与扩展 / 上下文与记忆 / 权限与限制 / 适合什么任务 / 传输方式 / 认证机制 / 权限范围 的完整记录、证据链接与未知项清单。</p>
+        <h2><span data-zh>全部对象</span><span data-en>All objects</span></h2>
+        <p class="section-desc"><span data-zh>按统一坐标系排列。点开任一对象可看到 模型与开放条件 / 运行位置 / 本地文件 / 关机后的任务 / 工具与扩展 / 上下文与记忆 / 权限与限制 / 适合什么任务 / 传输方式 / 认证机制 / 权限范围 的完整记录、证据链接与未知项清单。</span><span data-en>Everything on one coordinate system. Open any object to see its full record across 模型与开放条件 / 运行位置 / 本地文件 / 关机后的任务 / 工具与扩展 / 上下文与记忆 / 权限与限制 / 适合什么任务 / 传输方式 / 认证机制 / 权限范围, with source links and a list of unknowns.</span></p>
         <div class="grid">
         <article class="card" style="--card-accent:#F97316">
           <div class="card-top">
@@ -107,10 +107,10 @@
               <div class="vendor">Upstash</div>
             </div>
           </div>
-          <p class="tagline">MCP 赛道上唯一的远程托管条目 —— 为 Agent 提供版本感知的库文档，MIT 开源但核心服务在 Upstash 侧。</p>
+          <p class="tagline"><span data-zh>MCP 赛道上唯一的远程托管条目 —— 为 Agent 提供版本感知的库文档，MIT 开源但核心服务在 Upstash 侧。</span><span data-en>The only remotely hosted entry in the MCP track — version-awar</span></p>   // line 已是双节点，勿走 esc -->
           <div class="card-foot">
-            <span class="t-state is-warn">部分核验</span>
-            <a class="more" href="./context7.html" aria-label="Context7 详情">详情 →</a>
+            <span class="t-state is-warn"><span data-zh>部分核验</span><span data-en>Partly verified</span></span>
+            <a class="more" href="./context7.html" aria-label="Context7 详情"><span data-zh>详情 →</span><span data-en>Details →</span></a>
           </div>
         </article>
         <article class="card" style="--card-accent:#A29BFE">
@@ -121,10 +121,10 @@
               <div class="vendor">Model Context Protocol</div>
             </div>
           </div>
-          <p class="tagline">不是可用工具——官方明说这是给 MCP 客户端开发者做功能测试的 server，唯一用途是验证客户端协议实现是否正确。</p>
+          <p class="tagline"><span data-zh>不是可用工具——官方明说这是给 MCP 客户端开发者做功能测试的 server，唯一用途是验证客户端协议实现是否正确。</span><span data-en>Not a usable tool — the official page states plainly that this</span></p>   // line 已是双节点，勿走 esc -->
           <div class="card-foot">
-            <span class="t-state is-warn">部分核验</span>
-            <a class="more" href="./everything.html" aria-label="Everything MCP Server 详情">详情 →</a>
+            <span class="t-state is-warn"><span data-zh>部分核验</span><span data-en>Partly verified</span></span>
+            <a class="more" href="./everything.html" aria-label="Everything MCP Server 详情"><span data-zh>详情 →</span><span data-en>Details →</span></a>
           </div>
         </article>
         <article class="card" style="--card-accent:#FF6B6B">
@@ -135,10 +135,10 @@
               <div class="vendor">Model Context Protocol</div>
             </div>
           </div>
-          <p class="tagline">把网页内容转成 Markdown 的 reference server，官方在其 README 里明确标注了安全警告：它能访</p>
+          <p class="tagline"><span data-zh>把网页内容转成 Markdown 的 reference server，官方在其 README 里明确标注了安全警告：它能访</span><span data-en>A reference server that converts web pages to Markdown, with a</span></p>   // line 已是双节点，勿走 esc -->
           <div class="card-foot">
-            <span class="t-state is-ok">已核验</span>
-            <a class="more" href="./fetch.html" aria-label="Fetch MCP Server 详情">详情 →</a>
+            <span class="t-state is-ok"><span data-zh>已核验</span><span data-en>Verified</span></span>
+            <a class="more" href="./fetch.html" aria-label="Fetch MCP Server 详情"><span data-zh>详情 →</span><span data-en>Details →</span></a>
           </div>
         </article>
         <article class="card" style="--card-accent:#4A90D9">
@@ -149,10 +149,10 @@
               <div class="vendor">Model Context Protocol</div>
             </div>
           </div>
-          <p class="tagline">MCP 官方 reference server 里的文件操作实现，强制显式声明允许目录，不允许静默访问全盘。</p>
+          <p class="tagline"><span data-zh>MCP 官方 reference server 里的文件操作实现，强制显式声明允许目录，不允许静默访问全盘。</span><span data-en>The file-operation implementation among MCP's official referen</span></p>   // line 已是双节点，勿走 esc -->
           <div class="card-foot">
-            <span class="t-state is-ok">已核验</span>
-            <a class="more" href="./filesystem.html" aria-label="Filesystem MCP Server 详情">详情 →</a>
+            <span class="t-state is-ok"><span data-zh>已核验</span><span data-en>Verified</span></span>
+            <a class="more" href="./filesystem.html" aria-label="Filesystem MCP Server 详情"><span data-zh>详情 →</span><span data-en>Details →</span></a>
           </div>
         </article>
         <article class="card" style="--card-accent:#F14E32">
@@ -163,10 +163,10 @@
               <div class="vendor">Model Context Protocol</div>
             </div>
           </div>
-          <p class="tagline">MCP 官方 reference server 里的版本控制实现，作用域限定在指定 git 仓库，但具备完整的本地写操作能力</p>
+          <p class="tagline"><span data-zh>MCP 官方 reference server 里的版本控制实现，作用域限定在指定 git 仓库，但具备完整的本地写操作能力</span><span data-en>The version-control implementation among MCP's official refere</span></p>   // line 已是双节点，勿走 esc -->
           <div class="card-foot">
-            <span class="t-state is-ok">已核验</span>
-            <a class="more" href="./git.html" aria-label="Git MCP Server 详情">详情 →</a>
+            <span class="t-state is-ok"><span data-zh>已核验</span><span data-en>Verified</span></span>
+            <a class="more" href="./git.html" aria-label="Git MCP Server 详情"><span data-zh>详情 →</span><span data-en>Details →</span></a>
           </div>
         </article>
         <article class="card" style="--card-accent:#7B61FF">
@@ -177,10 +177,10 @@
               <div class="vendor">Model Context Protocol</div>
             </div>
           </div>
-          <p class="tagline">用本地知识图谱实现跨会话持久记忆的 reference server，记忆落盘、跨会话共享、无访问控制。</p>
+          <p class="tagline"><span data-zh>用本地知识图谱实现跨会话持久记忆的 reference server，记忆落盘、跨会话共享、无访问控制。</span><span data-en>A reference server implementing cross-session persistent memor</span></p>   // line 已是双节点，勿走 esc -->
           <div class="card-foot">
-            <span class="t-state is-ok">已核验</span>
-            <a class="more" href="./memory.html" aria-label="Knowledge Graph Memory Server 详情">详情 →</a>
+            <span class="t-state is-ok"><span data-zh>已核验</span><span data-en>Verified</span></span>
+            <a class="more" href="./memory.html" aria-label="Knowledge Graph Memory Server 详情"><span data-zh>详情 →</span><span data-en>Details →</span></a>
           </div>
         </article>
         <article class="card" style="--card-accent:#2D9CDB">
@@ -191,10 +191,10 @@
               <div class="vendor">Microsoft</div>
             </div>
           </div>
-          <p class="tagline">微软维护的浏览器自动化 server，用无障碍树而非截图驱动——不需要视觉模型，输出是结构化快照。</p>
+          <p class="tagline"><span data-zh>微软维护的浏览器自动化 server，用无障碍树而非截图驱动——不需要视觉模型，输出是结构化快照。</span><span data-en>A browser automation server maintained by Microsoft, driven by</span></p>   // line 已是双节点，勿走 esc -->
           <div class="card-foot">
-            <span class="t-state is-ok">已核验</span>
-            <a class="more" href="./playwright.html" aria-label="Playwright MCP Server 详情">详情 →</a>
+            <span class="t-state is-ok"><span data-zh>已核验</span><span data-en>Verified</span></span>
+            <a class="more" href="./playwright.html" aria-label="Playwright MCP Server 详情"><span data-zh>详情 →</span><span data-en>Details →</span></a>
           </div>
         </article>
         <article class="card" style="--card-accent:#4ECDC4">
@@ -205,10 +205,10 @@
               <div class="vendor">Model Context Protocol</div>
             </div>
           </div>
-          <p class="tagline">提供单个 sequential_thinking 工具，让 Agent 以可修订、可分支的方式逐步推进复杂问题——它不产生智</p>
+          <p class="tagline"><span data-zh>提供单个 sequential_thinking 工具，让 Agent 以可修订、可分支的方式逐步推进复杂问题——它不产生智</span><span data-en>Provides a single sequential_thinking tool that lets an agent </span></p>   // line 已是双节点，勿走 esc -->
           <div class="card-foot">
-            <span class="t-state is-ok">已核验</span>
-            <a class="more" href="./sequential-thinking.html" aria-label="Sequential Thinking MCP Server 详情">详情 →</a>
+            <span class="t-state is-ok"><span data-zh>已核验</span><span data-en>Verified</span></span>
+            <a class="more" href="./sequential-thinking.html" aria-label="Sequential Thinking MCP Server 详情"><span data-zh>详情 →</span><span data-en>Details →</span></a>
           </div>
         </article>
         <article class="card" style="--card-accent:#95A5A6">
@@ -219,10 +219,10 @@
               <div class="vendor">Model Context Protocol</div>
             </div>
           </div>
-          <p class="tagline">只做两件事：查当前时间、换时区。无文件无网络，是权限风险最低的一类 server。</p>
+          <p class="tagline"><span data-zh>只做两件事：查当前时间、换时区。无文件无网络，是权限风险最低的一类 server。</span><span data-en>A reference server providing date and time information to agen</span></p>   // line 已是双节点，勿走 esc -->
           <div class="card-foot">
-            <span class="t-state is-ok">已核验</span>
-            <a class="more" href="./time.html" aria-label="Time MCP Server 详情">详情 →</a>
+            <span class="t-state is-ok"><span data-zh>已核验</span><span data-en>Verified</span></span>
+            <a class="more" href="./time.html" aria-label="Time MCP Server 详情"><span data-zh>详情 →</span><span data-en>Details →</span></a>
           </div>
         </article>
         </div>
@@ -234,11 +234,11 @@
         <div class="status-inner">
           <div class="status-mark" aria-hidden="true">!</div>
           <div>
-            <h2>本站目前是「核验快照」，还没有实测数据</h2>
+            <h2><span data-zh>本站目前是「核验快照」，还没有实测数据</span><span data-en>This site is currently a verification snapshot — no measured runs yet</span></h2>
             <p>
               下面每个 server 的权限范围、传输方式与工具清单都能回到官方 README 核对，但<strong>我们还没有在真实客户端里跑过它们</strong>。
               实测协议已经写好（统一任务、统一验收、记录人工介入与返工次数），任务清单也已就绪，
-              <strong>尚未执行</strong>。
+              <span data-zh><strong>尚未执行</strong>。</span><span data-en><strong>not yet run</strong>.</span>
             </p>
             <p class="t-sm">
               MCP server 的风险不在「能不能干活」，而在<strong>权限边界是否清楚、越界是否被拒</strong>。
@@ -251,66 +251,66 @@
 
     <section class="section">
       <div class="container">
-        <h2>11 个维度，每格都能回溯</h2>
+        <h2><span data-zh>11 个维度，每格都能回溯</span><span data-en>11 dimensions, every cell traceable</span></h2>
         <p class="section-desc">
-          所有对象在同一坐标系下被描述（MCP 服务器另有 3 个特有维度）。
-          点开任一对象，每一格下面都有官方源链接与核验日期——不认同可以自己回去查。
+          <span data-zh>所有对象在同一坐标系下被描述（MCP 服务器另有 3 个特有维度）。</span><span data-en>All objects are described on the same coordinate system (MCP servers have 3 additional dimensions).</span>
+          <span data-zh>点开任一对象，每一格下面都有官方源链接与核验日期——不认同可以自己回去查。</span><span data-en>Open any object and every cell carries an official source link and a checked date — disagree and verify it yourself.</span>
         </p>
         <div class="t-mesh axis-mesh">
           <div class="axis-cell">
             <span class="t-index">01</span>
-            <h3 class="axis-name">模型与开放条件</h3>
-            <p class="axis-ask">用谁的模型？能不能换第三方？多模型路由怎么配？</p>
+            <h3 class="axis-name"><span data-zh>模型与开放条件</span><span data-en>Model & openness</span></h3>
+            <p class="axis-ask"><span data-zh>用谁的模型？能不能换第三方？多模型路由怎么配？</span><span data-en>Whose model does it use? Can you switch to a third party? How is multi-model routing configured?</span></p>
           </div>
           <div class="axis-cell">
             <span class="t-index">02</span>
-            <h3 class="axis-name">运行位置</h3>
-            <p class="axis-ask">本地 / 云端 / 混合？索引在本地还是云端？远程控制不等于云端执行。</p>
+            <h3 class="axis-name"><span data-zh>运行位置</span><span data-en>Where it runs</span></h3>
+            <p class="axis-ask"><span data-zh>本地 / 云端 / 混合？索引在本地还是云端？远程控制不等于云端执行。</span><span data-en>Local, cloud or hybrid? Is the index local or remote? Remote control is not the same as cloud execution.</span></p>
           </div>
           <div class="axis-cell">
             <span class="t-index">03</span>
-            <h3 class="axis-name">本地文件</h3>
-            <p class="axis-ask">能访问多大范围？未打开的大文件怎么读？符号级能力如何？</p>
+            <h3 class="axis-name"><span data-zh>本地文件</span><span data-en>Local files</span></h3>
+            <p class="axis-ask"><span data-zh>能访问多大范围？未打开的大文件怎么读？符号级能力如何？</span><span data-en>How wide an area can it reach? How does it read large files you have not opened? How capable is it at the symbol level?</span></p>
           </div>
           <div class="axis-cell">
             <span class="t-index">04</span>
-            <h3 class="axis-name">关机后的任务</h3>
-            <p class="axis-ask">电脑关了还能继续跑吗？这是本地形态最常见的误解来源。</p>
+            <h3 class="axis-name"><span data-zh>关机后的任务</span><span data-en>Tasks after shutdown</span></h3>
+            <p class="axis-ask"><span data-zh>电脑关了还能继续跑吗？这是本地形态最常见的误解来源。</span><span data-en>Does it keep running once the computer is off? This is the most common misconception about local forms.</span></p>
           </div>
           <div class="axis-cell">
             <span class="t-index">05</span>
-            <h3 class="axis-name">工具与扩展</h3>
-            <p class="axis-ask">工具链有多宽：MCP · LSP · 插件 · Hooks · 自定义指令。</p>
+            <h3 class="axis-name"><span data-zh>工具与扩展</span><span data-en>Tools & extensions</span></h3>
+            <p class="axis-ask"><span data-zh>工具链有多宽：MCP · LSP · 插件 · Hooks · 自定义指令。</span><span data-en>How wide is the toolchain: MCP · LSP · plugins · hooks · custom instructions?</span></p>
           </div>
           <div class="axis-cell">
             <span class="t-index">06</span>
-            <h3 class="axis-name">上下文与记忆</h3>
-            <p class="axis-ask">索引算法、上下文窗口、会话恢复与分叉、跨会话记忆边界。</p>
+            <h3 class="axis-name"><span data-zh>上下文与记忆</span><span data-en>Context & memory</span></h3>
+            <p class="axis-ask"><span data-zh>索引算法、上下文窗口、会话恢复与分叉、跨会话记忆边界。</span><span data-en>Indexing algorithm, context window, session resume and fork, and the boundary of cross-session memory.</span></p>
           </div>
           <div class="axis-cell">
             <span class="t-index">07</span>
-            <h3 class="axis-name">权限与限制</h3>
-            <p class="axis-ask">沙箱与审批边界、凭据管理、数据是否出境、额度如何计算。</p>
+            <h3 class="axis-name"><span data-zh>权限与限制</span><span data-en>Permissions & limits</span></h3>
+            <p class="axis-ask"><span data-zh>沙箱与审批边界、凭据管理、数据是否出境、额度如何计算。</span><span data-en>Sandbox and approval boundaries, credential handling, whether data leaves your machine, and how quota is charged.</span></p>
           </div>
           <div class="axis-cell">
             <span class="t-index">08</span>
-            <h3 class="axis-name">适合什么任务</h3>
-            <p class="axis-ask">最擅长什么任务？什么情况下别用它？</p>
+            <h3 class="axis-name"><span data-zh>适合什么任务</span><span data-en>Best for</span></h3>
+            <p class="axis-ask"><span data-zh>最擅长什么任务？什么情况下别用它？</span><span data-en>What tasks is it best at? When should you not use it?</span></p>
           </div>
           <div class="axis-cell">
             <span class="t-index">09</span>
-            <h3 class="axis-name">传输方式</h3>
-            <p class="axis-ask">客户端怎么连上它：stdio / SSE / Streamable HTTP / 远程。</p>
+            <h3 class="axis-name"><span data-zh>传输方式</span><span data-en>Transport</span></h3>
+            <p class="axis-ask"><span data-zh>客户端怎么连上它：stdio / SSE / Streamable HTTP / 远程。</span><span data-en>How the client connects to it: stdio / SSE / Streamable HTTP / remote.</span></p>
           </div>
           <div class="axis-cell">
             <span class="t-index">10</span>
-            <h3 class="axis-name">认证机制</h3>
-            <p class="axis-ask">怎么证明身份。注意认证 ≠ 授权，前者是「你是谁」，后者是「你能做什么」。</p>
+            <h3 class="axis-name"><span data-zh>认证机制</span><span data-en>Authentication</span></h3>
+            <p class="axis-ask"><span data-zh>怎么证明身份。注意认证 ≠ 授权，前者是「你是谁」，后者是「你能做什么」。</span><span data-en>How identity is proved. Note that authentication is not authorisation: the former is who you are, the latter is what you may do.</span></p>
           </div>
           <div class="axis-cell">
             <span class="t-index">11</span>
-            <h3 class="axis-name">权限范围</h3>
-            <p class="axis-ask">能碰到多少东西？能改吗？能删吗？能收紧吗？这是 MCP 赛道第一优先级。</p>
+            <h3 class="axis-name"><span data-zh>权限范围</span><span data-en>Permission scope</span></h3>
+            <p class="axis-ask"><span data-zh>能碰到多少东西？能改吗？能删吗？能收紧吗？这是 MCP 赛道第一优先级。</span><span data-en>How much can it reach? Can it modify? Delete? Be tightened? This is the first priority in the MCP track.</span></p>
           </div>
         </div>
         </div>
@@ -319,85 +319,85 @@
 
     <section class="section">
       <div class="container">
-        <h2>全部数据一览</h2>
-        <p class="section-desc">同一张表横向对比。点对象名进详情页看逐格证据。</p>
+        <h2><span data-zh>全部数据一览</span><span data-en>All data at a glance</span></h2>
+        <p class="section-desc"><span data-zh>同一张表横向对比。点对象名进详情页看逐格证据。</span><span data-en>The same table side by side. Click an object name to see per-cell evidence.</span></p>
         <div class="table-wrap">
           <table class="cmp">
             <thead>
               <tr>
-                <th>对象</th><th>形态</th><th>厂商</th><th>适合</th><th>核验日</th><th>状态</th>
+                <th><span data-zh>对象</span><span data-en>Object</span></th><th><span data-zh>形态</span><span data-en>Form</span></th><th><span data-zh>厂商</span><span data-en>Vendor</span></th><th><span data-zh>适合</span><span data-en>Best for</span></th><th><span data-zh>核验日</span><span data-en>Checked</span></th><th><span data-zh>状态</span><span data-en>Status</span></th>
               </tr>
             </thead>
             <tbody>
               <tr>
                 <td><a href="./context7.html"><span class="td-mark" style="--card-accent:#F97316">C7</span>Context7</a></td>
-                <td class="td-vendor">MCP</td>
+                <td class="td-vendor"><span data-zh>MCP</span><span data-en>MCP</span></td>
                 <td class="td-vendor">Upstash</td>
-                <td class="td-fit">需要查当前版本库文档的场景：库升级后的 API 变更、 新版本引入的配置项、模型不确定的第三方库用法。 不适合查内部代码或私有库。</td>
+                <td class="td-fit"><span data-zh>需要查当前版本库文档的场景：库升级后的 API 变更、 新版本引入的配置项、模型不确定的第三方库用法。 不适合查内部代码或私有库。</span><span data-en>Scenarios needing current-version library documentation: API changes a</span></td>
                 <td class="td-date">2026-10-01</td>
                 <td><span class="td-conf partial">partial</span></td>
               </tr>
               <tr>
                 <td><a href="./everything.html"><span class="td-mark" style="--card-accent:#A29BFE">E</span>Everything MCP Server</a></td>
-                <td class="td-vendor">MCP</td>
+                <td class="td-vendor"><span data-zh>MCP</span><span data-en>MCP</span></td>
                 <td class="td-vendor">Model Context Protocol</td>
-                <td class="td-fit">仅适合一件事：测试你的 MCP 客户端是否正确实现了协议。 不适合任何实际任务场景。</td>
+                <td class="td-fit"><span data-zh>仅适合一件事：测试你的 MCP 客户端是否正确实现了协议。 不适合任何实际任务场景。</span><span data-en>Scenarios where you are testing an MCP client implementation rather th</span></td>
                 <td class="td-date">2026-09-29</td>
                 <td><span class="td-conf partial">partial</span></td>
               </tr>
               <tr>
                 <td><a href="./fetch.html"><span class="td-mark" style="--card-accent:#FF6B6B">F</span>Fetch MCP Server</a></td>
-                <td class="td-vendor">MCP</td>
+                <td class="td-vendor"><span data-zh>MCP</span><span data-en>MCP</span></td>
                 <td class="td-vendor">Model Context Protocol</td>
-                <td class="td-fit">把公开网页内容转成 Markdown 供 Agent 读取。 不适合在能访问内网的环境中使用， 也不适合需要登录态的页面。</td>
+                <td class="td-fit"><span data-zh>把公开网页内容转成 Markdown 供 Agent 读取。 不适合在能访问内网的环境中使用， 也不适合需要登录态的页面。</span><span data-en>Scenarios needing to pull a web page's content as Markdown for an agen</span></td>
                 <td class="td-date">2026-09-29</td>
                 <td><span class="td-conf verified">verified</span></td>
               </tr>
               <tr>
                 <td><a href="./filesystem.html"><span class="td-mark" style="--card-accent:#4A90D9">FS</span>Filesystem MCP Server</a></td>
-                <td class="td-vendor">MCP</td>
+                <td class="td-vendor"><span data-zh>MCP</span><span data-en>MCP</span></td>
                 <td class="td-vendor">Model Context Protocol</td>
-                <td class="td-fit">让 Agent 安全读写指定目录内的文本与媒体文件。 不适合需要删除操作或需要跨目录聚合的场景。</td>
+                <td class="td-fit"><span data-zh>让 Agent 安全读写指定目录内的文本与媒体文件。 不适合需要删除操作或需要跨目录聚合的场景。</span><span data-en>Scenarios where an agent must read or write within explicitly declared</span></td>
                 <td class="td-date">2026-09-29</td>
                 <td><span class="td-conf verified">verified</span></td>
               </tr>
               <tr>
                 <td><a href="./git.html"><span class="td-mark" style="--card-accent:#F14E32">G</span>Git MCP Server</a></td>
-                <td class="td-vendor">MCP</td>
+                <td class="td-vendor"><span data-zh>MCP</span><span data-en>MCP</span></td>
                 <td class="td-vendor">Model Context Protocol</td>
-                <td class="td-fit">让 Agent 读取仓库状态、历史与 diff，并在受控前提下执行提交与分支操作。 不适合需要 push / PR / 远程仓库管理的场景（</td>
+                <td class="td-fit"><span data-zh>让 Agent 读取仓库状态、历史与 diff，并在受控前提下执行提交与分支操作。 不适合需要 push / PR / 远程仓库管理的场景（</span><span data-en>Scenarios where an agent should make version-control operations inside</span></td>
                 <td class="td-date">2026-09-29</td>
                 <td><span class="td-conf verified">verified</span></td>
               </tr>
               <tr>
                 <td><a href="./memory.html"><span class="td-mark" style="--card-accent:#7B61FF">M</span>Knowledge Graph Memory Server</a></td>
-                <td class="td-vendor">MCP</td>
+                <td class="td-vendor"><span data-zh>MCP</span><span data-en>MCP</span></td>
                 <td class="td-vendor">Model Context Protocol</td>
-                <td class="td-fit">让 Agent 跨会话记住用户偏好、项目背景等长期信息。 不适合存放需要审计或追溯的场景（图谱会原地修改）。</td>
+                <td class="td-fit"><span data-zh>让 Agent 跨会话记住用户偏好、项目背景等长期信息。 不适合存放需要审计或追溯的场景（图谱会原地修改）。</span><span data-en>Scenarios needing cross-session memory that survives restarts and is q</span></td>
                 <td class="td-date">2026-09-29</td>
                 <td><span class="td-conf verified">verified</span></td>
               </tr>
               <tr>
                 <td><a href="./playwright.html"><span class="td-mark" style="--card-accent:#2D9CDB">P</span>Playwright MCP Server</a></td>
-                <td class="td-vendor">MCP</td>
+                <td class="td-vendor"><span data-zh>MCP</span><span data-en>MCP</span></td>
                 <td class="td-vendor">Microsoft</td>
-                <td class="td-fit">需要浏览器自动化且要保持会话状态的场景： 探索性自动化、自愈测试、长时自主工作流。 不适合高吞吐编码 agent——README 自己建议这</td>
+                <td class="td-fit"><span data-zh>需要浏览器自动化且要保持会话状态的场景： 探索性自动化、自愈测试、长时自主工作流。 不适合高吞吐编码 agent——README 自己建议这</span><span data-en>Scenarios where an agent must operate a real browser and read the page</span></td>
                 <td class="td-date">2026-09-29</td>
                 <td><span class="td-conf verified">verified</span></td>
               </tr>
               <tr>
                 <td><a href="./sequential-thinking.html"><span class="td-mark" style="--card-accent:#4ECDC4">S</span>Sequential Thinking MCP Server</a></td>
-                <td class="td-vendor">MCP</td>
+                <td class="td-vendor"><span data-zh>MCP</span><span data-en>MCP</span></td>
                 <td class="td-vendor">Model Context Protocol</td>
-                <td class="td-fit">让 Agent 用结构化、可修订、可分支的方式推进复杂问题的分析。 不适合简单任务（增加调用轮次无收益）。</td>
+                <td class="td-fit"><span data-zh>让 Agent 用结构化、可修订、可分支的方式推进复杂问题的分析。 不适合简单任务（增加调用轮次无收益）。</span><span data-en>Scenarios where a complex problem benefits from being worked through s</span></td>
                 <td class="td-date">2026-09-29</td>
                 <td><span class="td-conf verified">verified</span></td>
               </tr>
               <tr>
                 <td><a href="./time.html"><span class="td-mark" style="--card-accent:#95A5A6">T</span>Time MCP Server</a></td>
-                <td class="td-vendor">MCP</td>
+                <td class="td-vendor"><span data-zh>MCP</span><span data-en>MCP</span></td>
                 <td class="td-vendor">Model Context Protocol</td>
-                <td class="td-fit">给 Agent 提供可靠的时间与时区换算能力。 适合需要避免模型猜时间的场景（如日程、跨时区协作）。</td>
+                <td class="td-fit"><span data-zh>给 Agent 提供可靠的时间与时区换算能力。 适合需要避免模型猜时间的场景（如日程、跨时区协作）。</span><span data-en>Scenarios where an agent needs the current date and time to reason abo</span></td>
                 <td class="td-date">2026-09-29</td>
                 <td><span class="td-conf verified">verified</span></td>
               </tr>
@@ -409,63 +409,63 @@
 
     <section class="section">
       <div class="container">
-        <h2>为什么这里不给总分排名</h2>
-        <p class="section-desc">这不是省略，是方法上的明确取舍。</p>
+        <h2><span data-zh>为什么这里不给总分排名</span><span data-en>Why there is no overall ranking</span></h2>
+        <p class="section-desc"><span data-zh>这不是省略，是方法上的明确取舍。</span><span data-en>This is not an omission but a deliberate methodological choice.</span></p>
         <div class="panel">
           <ul>
-            <li><strong>缺统一实测，就不给分。</strong>跨工具的跑分口径不同——题目、预算、执行环境都不一样，A 的 90 分和 B 的 88 分不可比。</li>
-            <li><strong>「未知」是合法答案。</strong>查不到就写「未知」并说明为什么，不用推测填充。缺信息本身也是信息。</li>
-            <li><strong>每条判断挂官方源。</strong>来源链接、类型与核验日都在详情页里，可以逐条回去复核。</li>
+            <li><span data-zh><strong>缺统一实测，就不给分。</strong>跨工具的跑分口径不同——题目、预算、执行环境都不一样，A 的 90 分和 B 的 88 分不可比。</span><span data-en><strong>No shared measurement, no score.</strong> Benchmarks across tools use different rules — different questions, budgets and environments. A 90 and a B 88 are not comparable.</span></li>
+            <li><span data-zh><strong>「未知」是合法答案。</strong></span><span data-en><strong>"Unknown" is a legitimate answer.</strong></span>查不到就写「未知」并说明为什么，不用推测填充。缺信息本身也是信息。</li>
+            <li><span data-zh><strong>每条判断挂官方源。</strong></span><span data-en><strong>Every judgement links to an official source.</strong></span>来源链接、类型与核验日都在详情页里，可以逐条回去复核。</li>
             <li><strong>lifecycle 单独标注。</strong>核验日新不等于数据有效——上游归档后数据会失效，所以单独标 <code>active</code> / <code>maintenance</code> / <code>archived</code>。</li>
             <li><strong>不同层不混排。</strong>成品 agent、自己搭的底座、给 agent 装的工具是三种角色，坐标系不同；硬合成一张 33 行的表只会制造假的可比性。</li>
           </ul>
         </div>
         <div class="panel">
-          <h2>可信度标记怎么读</h2>
+          <h2><span data-zh>可信度标记怎么读</span><span data-en>How to read the confidence marks</span></h2>
           <p class="t-sm mb-3">详情页与上表都带 <code>confidence</code>，它反映<strong>本站数据的完整度</strong>，不是对产品的评价。</p>
           <table class="src is-flush">
             <tbody>
-              <tr><th class="w-24"><span class="td-conf verified">verified</span></th><td>11 个维度均有官方源支撑，且核验日在 90 天内</td></tr>
-              <tr><th><span class="td-conf partial">partial</span></th><td>部分维度标为未知，或官方文档不可访问，或核验日超过 90 天</td></tr>
-              <tr><th><span class="td-conf stale">stale</span></th><td>官方已发布重大变化，本站尚未核验</td></tr>
+              <tr><th class="w-24"><span class="td-conf verified">verified</span></th><td><span data-zh>11 个维度均有官方源支撑，且核验日在 90 天内</span><span data-en>all 11 dimensions have official sources and were checked within 90 days</span></td></tr>
+              <tr><th><span class="td-conf partial">partial</span></th><td><span data-zh>部分维度标为未知，或官方文档不可访问，或核验日超过 90 天</span><span data-en>some dimensions are marked unknown, or the official docs were unreachable, or checked over 90 days ago</span></td></tr>
+              <tr><th><span class="td-conf stale">stale</span></th><td><span data-zh>官方已发布重大变化，本站尚未核验</span><span data-en>the vendor has shipped a significant change that this site has not re-checked</span></td></tr>
             </tbody>
           </table>
         </div>
         <div class="panel">
-          <h2>本站当前的完整度</h2>
+          <h2><span data-zh>本站当前的完整度</span><span data-en>Current completeness on this site</span></h2>
           <p class="t-sm mb-2">
             数据层用 <code>node scripts/audit-gaps.mjs</code> 可随时复核这个数字。
             以下是最近一次核验的快照（核验日 2026-09-29）：
           </p>
           <table class="src is-flush mb-3">
-            <thead><tr><th>形态</th><th>已补齐</th><th>说明</th></tr></thead>
+            <thead><tr><th><span data-zh>形态</span><span data-en>Form</span></th><th><span data-zh>已补齐</span><span data-en>Filled</span></th><th><span data-zh>说明</span><span data-en>Meaning</span></th></tr></thead>
             <tbody>
-              <tr><td class="nw">MCP 服务器</td>
+              <tr><td class="nw"><span data-zh>MCP 服务器</span><span data-en>MCP server</span></td>
                 <td class="nw"><strong>69/99</strong></td>
                 <td class="td-vendor">官方 README 信息充分，70% 维度已核验</td></tr>
             </tbody>
           </table>
-          <p><strong class="em">全站合计 120/211 维度已补齐（57%）</strong></p>
+          <p><strong class="em"><span data-zh>全站合计 120/211 维度已补齐</span><span data-en>Site-wide 120/211 dimensions filled</span>（57%）</strong></p>
           <p class="t-sm">
             剩余未补齐项分三类：<strong>官方未公开</strong>（索引算法、沙箱实现细节本就不对外说明）、
             <strong>需实测才能确定</strong>（大仓库表现、CI 无 TTY 行为）、
             <strong>客观渠道不可达</strong>。
           </p>
           <p class="t-sm">
-            我们选择留白而不是填「已支持」——错误的成本最终由使用者承担。
+            <span data-zh>我们选择留白而不是填「已支持」——错误的成本最终由使用者承担。</span><span data-en>We chose to leave a blank rather than fill in "supported" — the cost of an error is ultimately borne by whoever uses it.</span>
           </p>
         </div>
         <div class="panel">
-          <h2>数据来源与复核方式</h2>
-          <p>全部数据来自开源仓库 <a href="https://github.com/speculcom/ai-agent-guide" target="_blank" rel="noopener" class="link-brand">speculcom/ai-agent-guide</a>（CC BY 4.0）。</p>
-          <p>每个条目都是纯 Markdown + frontmatter，含 8 个维度、证据链接、核验日与可信度标记。仓库内含：</p>
+          <h2><span data-zh>数据来源与复核方式</span><span data-en>Sources and how to re-check them</span></h2>
+          <p><span data-zh>全部数据来自开源仓库</span><span data-en>All data comes from the open-source repository</span> <a href="https://github.com/speculcom/ai-agent-guide" target="_blank" rel="noopener" class="link-brand">speculcom/ai-agent-guide</a>（CC BY 4.0）。</p>
+          <p><span data-zh>每个条目都是纯 Markdown + frontmatter，含 8 个维度、证据链</span><span data-en>Every entry is plain Markdown plus frontmatter, carrying 8 dimensions and an evidence chain</span>接、核验日与可信度标记。仓库内含：</p>
           <ul>
             <li><code>METHODOLOGY.md</code> —— 方法论总纲与四条核心规则</li>
             <li><code>axes/</code> —— 每个维度的定义与判定标准（含正反例）</li>
             <li><code>SCHEMA.md</code> —— 数据格式规范与构建校验规则</li>
-            <li><code>tracks/*/tasks/_protocol.md</code> —— 实测协议（<strong>尚未执行</strong>，故本站暂无实测结论）</li>
+            <li><code>tracks/*/tasks/_protocol.md</code> —— 实测协议(<span data-zh><strong>尚未执行</strong></span><span data-en><strong>not yet run</strong></span><span data-zh>，故本站暂无实测结论</span><span data-en>, so this site has no measured conclusions</span>)</li>
           </ul>
-          <p class="t-sm">发现错误或有新证据，欢迎提 Issue 或 PR——每条修正都会注明依据与影响范围。</p>
+          <p class="t-sm"><span data-zh>发现错误或有新证据，欢迎提 Issue 或 PR——每条修正都会注明依据与影响范围。</span><span data-en>Found an error or have new evidence? Open an issue or a PR — each correction notes its basis and blast radius.</span></p>
         </div>
       </div>
     </section>
