@@ -134,9 +134,10 @@
             <div class="panel warn">
         <h2 class="warn"><span data-zh>头号误解</span><span data-en>Top misconception</span></h2>
         <ul>
-          <li>以为官方仓库的 server 可以直接上生产，README 明确声明仅供参考实现</li>
-          <li>不传目录参数就启动，会在初始化阶段报错而不是静默访问全盘</li>
-          <li>以为没给 write 类工具就不能改文件，write_file / edit_file 确实可写</li>
+
+          <li><span data-zh>以为官方仓库的 server 可以直接上生产，README 明确声明仅供参考实现</span><span data-en>Assuming the official repo&#39;s server is production-ready — the README states it is a reference implementation only</span></li>
+          <li><span data-zh>不传目录参数就启动，会在初始化阶段报错而不是静默访问全盘</span><span data-en>Starting it without a directory argument — it errors at initialisation rather than silently touching the whole disk</span></li>
+          <li><span data-zh>以为没给 write 类工具就不能改文件，write_file / edit_file 确实可写</span><span data-en>Assuming that withholding write tools prevents file changes — write_file / edit_file do write</span></li>
         </ul>
       </div>
 
