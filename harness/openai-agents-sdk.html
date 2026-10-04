@@ -125,10 +125,11 @@
             <div class="panel warn">
         <h2 class="warn"><span data-zh>头号误解</span><span data-en>Top misconception</span></h2>
         <ul>
-          <li>以为「provider-agnostic」= 换provider 零改动 —— 文档给了 100+ 的承诺但没给量化保证，本站标记为未核验</li>
-          <li>以为 SandboxAgent 在 Windows 上开箱可用 —— 本地路径只有 <code>UnixLocalSandboxClient</code>（macOS/Linux），Windows 要走 Docker 或 hosted</li>
-          <li>以为 Guardrails 能当权限护栏用 —— 它是输入/输出校验，不是沙箱边界；两者能解决的风险类型不同</li>
-          <li>以为这是 OpenAI 闭源 SDK 的「官方壳」 —— 它本身是 MIT 开源框架，官方明确「committed to continuing to build the Agents SDK as an open source framework」</li>
+
+          <li><span data-zh>以为「provider-agnostic」= 换provider 零改动 —— 文档给了 100+ 的承诺但没给量化保证，本站标记为未核验</span><span data-en>Reading &quot;provider-agnostic&quot; as &quot;switching providers costs nothing&quot; — the docs promise 100+ without a quantified guarantee; this site marks it unverified</span></li>
+          <li><span data-zh>以为 SandboxAgent 在 Windows 上开箱可用 —— 本地路径只有 <code>UnixLocalSandboxClient</code>（macOS/Linux），Windows 要走 Docker 或 hosted</span><span data-en>Assuming SandboxAgent works out of the box on Windows — the local path is only <code>UnixLocalSandboxClient</code> (macOS/Linux); Windows needs Docker or hosted</span></li>
+          <li><span data-zh>以为 Guardrails 能当权限护栏用 —— 它是输入/输出校验，不是沙箱边界；两者能解决的风险类型不同</span><span data-en>Assuming Guardrails work as a permission boundary — they are input/output validation, not a sandbox boundary; they address different risk types</span></li>
+          <li><span data-zh>以为这是 OpenAI 闭源 SDK 的「官方壳」 —— 它本身是 MIT 开源框架，官方明确「committed to continuing to build the Agents SDK as an open source framework」</span><span data-en>Assuming this is an official shell around OpenAI&#39;s closed-source SDK — it is itself an MIT-licensed framework, and the official docs state they are &quot;committed to continuing to build the Agents SDK as an open source framework&quot;</span></li>
         </ul>
       </div>
 
