@@ -4,7 +4,7 @@
 
 **agent.specul.com** · 独立信息项目（非厂商官方榜单）
 
-按角色分三层：自己跑的成品 agent、自己搭的运行时与 SDK、给 agent 装的 MCP 工具。三层的坐标系不同，不做横向排名。
+<span data-zh>按角色分三层：自己跑的成品 agent、自己搭的运行时与 SDK、给 agent 装的 MCP 工具。三层的坐标系不同，不做横向排名。</span><span data-en>Three layers by role: finished agents you run yourself, runtimes and SDKs you assemble yourself, and MCP tools you install for an agent. The three layers use different coordinate systems, so this site does not rank across them.</span>
 
 ## 三个分区，坐标系不同
 
