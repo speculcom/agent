@@ -65,62 +65,65 @@
         <span class="tag on">云端</span>
         <span class="badge accent">partial</span>
         <span class="badge">lifecycle: active</span>
-        <span class="badge">核验 2026-10-03</span>
+        <span class="badge"><span data-zh>核验</span><span data-en>Checked</span> 2026-10-03</span>
       </div>
 
-            <p class="panel-lead"><strong>本赛道架构最激进的三个之一</strong>：云端 Agent 合上笔记本不中断、自托管代码不出网、代码审查拆成两个 bot 分工。</p>
+            <p class="panel-lead"><strong>本赛道架构最激进的三个之一</strong>：云端 Agent 合上笔记本不中断、自托管代码不出网、代码审查拆成两个 bot 分工。<span data-en><strong>One of the three most architecturally aggressive here</strong>: a cloud agent that keeps running when you close the laptop, self-hosted code that never leaves the network, and code review split across two bots.</span></p>
 
             <div class="panel is-slim">
-        <h2>适合与不适合</h2>
-        <p>需要云端 Agent 且希望合上笔记本任务继续跑的人。
+        <h2><span data-zh>适合与不适合</span><span data-en>When to use it, when not to</span></h2>
+<span data-zh>        <p>需要云端 Agent 且希望合上笔记本任务继续跑的人。
 需要长周期（数月级）上下文维持与大规模子智能体编排的人。
 <strong>代码不能离开自有基础设施的企业</strong>（自托管形态）。</p>
         <p class="warn-p"><strong>不适合</strong>要求定价透明到可直接比较的人——
-各档额度倍数（1x / 3x / 20x）官方未给出具体请求数或 token 量，只有倍数表述。</p>
+各档额度倍数（1x / 3x / 20x）官方未给出具体请求数或 token 量，只有倍数表述。</p></span><span data-en>        <p>People who want a cloud agent that keeps running when they close the laptop.
+People who need long-horizon (months) context retention and large-scale sub-agent orchestration.
+<strong>Companies whose code must not leave their own infrastructure</strong> (the self-hosted form).</p>
+        <p class="warn-p"><strong>Not a fit for</strong> anyone requiring pricing transparent enough to compare directly — the official quota multipliers (1x / 3x / 20x) are given as multiples only, with no concrete request or token figures.</p></span>
       </div>
 
 
       <div class="block-head">
-        <h2 class="t-h2">固定坐标系</h2>
-        <p class="t-section-lead">8 个维度，与同赛道其他对象逐项可比。</p>
+        <h2 class="t-h2"><span data-zh>固定坐标系</span><span data-en>Fixed coordinate system</span></h2>
+        <p class="t-section-lead">8 <span data-zh>个维度</span><span data-en>dimensions</span>, <span data-zh>与同赛道其他对象逐项可比</span><span data-en>each comparable item by item against others in the same track</span>.</p>
       </div>
       <dl class="axes">
         <div class="axis">
-          <dt>模型与开放条件</dt>
+          <dt><span data-zh>模型与开放条件</span><span data-en>Model & openness</span></dt>
           <dd><strong>三档个人付费都标「Access to frontier models」，Pro / Pro+ / Ultra 的差别是额度倍数 而非模型可得性</strong>（官方原文分别为 extended / 3x / 20x Pro limits on Agent）—— 这一条与常见误解相反，值得单独记。 官方首页列出可选模型范围为<strong>OpenAI / Anthropic / Gemini / SpaceXAI / Cursor 自研</strong>， Auto 模式的具体候选（2026-10-01 官网示例）：Grok 4.7、GPT-5.6 Sol、 Fable 5.1、Max Opus 5.5、Gemini 3.1 Pro、Composer 2.5。 <strong>Cursor Router</strong> 按 cost / balance / intelligence 三档在多模型间路由， 官方说明按被路由到的模型标价计费；Router 先在 Teams / Enterprise 推出， 个人档「数月后」跟进。Hobby 档仅可用 Auto 模型。 供应方已明确不止一家：导航含 Grok / Grok Bot，各档另列「Grok 使用额度」。</dd>
         </div>
         <div class="axis">
-          <dt>运行位置</dt>
+          <dt><span data-zh>运行位置</span><span data-en>Where it runs</span></dt>
           <dd><strong>支持云端与自托管两种形态，这是本赛道最独特的架构</strong>。 2026-09-02 官方推出自托管支持： 代码库、构建产物与密钥保留在你自己基础设施内运行的机器上， 由智能体在本地处理工具调用。 另有 My Machines 形态——把单台笔记本或 VM 连到账户用于个人工作流。 官方文档同时说明 Cursor Router 可在<strong>编辑器 / CLI / Cursor SDK / iOS 应用</strong>中使用。</dd>
         </div>
         <div class="axis">
-          <dt>本地文件</dt>
+          <dt><span data-zh>本地文件</span><span data-en>Local files</span></dt>
           <dd>通过 VS Code 衍生的编辑器形态访问工作区文件。 自托管形态下代码与产物不离开你的基础设施。 <strong>索引策略官方写了（2026-10-03 补，取自官方 Search 文档页）</strong>： 检索用自研的 <strong>Instant Grep</strong>，官方称在大型代码库上优于 <code>ripgrep</code>， 「runs automatically; no configuration needed」，无需配置。 <strong>一条值得单独记的数据边界（官方原文）</strong>： 「Instant Grep <strong>builds and queries its index on your machine</strong>. Cursor does not upload file paths or code to build a search index, and it <strong>does not store embeddings of your codebase for search</strong>」。 即<strong>检索索引完全在本机，且官方明说不为检索存embedding</strong>。 ⚠ 但同一页紧接着留了一句：「When Agent opens a match, <strong>that file content can still be included in the model request</strong>」—— <strong>「建索引不出本机」≠「文件内容不出本机」</strong>，命中后内容照样进模型请求。 <strong>Explore 子智能体是官方给的上下文控制手段</strong>：跑在独立上下文窗口、 用更快的模型、执行并行搜索后<strong>只回传相关发现</strong>， 「returning only the relevant findings」—— 官方明说这是为了避免「把原始文件内容整段倒进主对话」。 ⚠ <strong>大仓库的索引性能与规模上限，官方文档未给数字。</strong></dd>
         </div>
         <div class="axis">
-          <dt>关机后的任务</dt>
+          <dt><span data-zh>关机后的任务</span><span data-en>Tasks after shutdown</span></dt>
           <dd><strong>云端 Agent 能力很强且有官方明确表述</strong>： 「项目」在云端独立计算机上运行， <strong>合上笔记本电脑也不会中断</strong>； 需要本机测试时，协调智能体会启动本地智能体。 官方另称可让协调智能体监听 Slack 频道、按计划运行、 跟踪所有 PR，<strong>主动行动而无需等待提示</strong>。</dd>
         </div>
         <div class="axis">
-          <dt>工具与扩展</dt>
+          <dt><span data-zh>工具与扩展</span><span data-en>Tools & extensions</span></dt>
           <dd>Pro+ 及以上档官方列出 <strong>MCP、技能（Skills）和钩子（Hooks）</strong>， 以及云端智能体与按用量计费的 Bugbot（智能体驱动的代码审查）。 Teams 档另有面向内部规则、技能与插件的团队应用市场。 <strong>MCP 接入细节（2026-10-03 补，取自官方 MCP 文档页）</strong>： <strong>三种传输方式</strong> —— <code>stdio</code>（本地，由 Cursor 启动，shell 命令启动，手动认证）、 <code>SSE</code> 与 <code>Streamable HTTP</code>（均可本地或远程部署为服务器，多用户，OAuth 认证）。 <strong>协议能力六项全支持</strong>：Tools / Prompts / Resources / Roots / Elicitation / Apps。 <strong>配置分两层</strong>：项目级 <code>.cursor/mcp.json</code>（可用 <code>${workspaceFolder}</code>）、 全局 <code>~/.cursor/mjsson</code>（可用 <code>${userHome}</code>）； 变量插值支持 <code>${env:NAME}</code>、<code>${userHome}</code>、<code>${workspaceFolder}</code>、 <code>${pathSeparator}</code>，且支持 <code>envFile</code> 从 <code>.env</code> 读密钥（仅 stdio）。 <strong>工具审批默认开启</strong>：「Cursor asks for approval before using MCP tools by default」， 且<strong>工具级 allowlist 可限制某服务器哪些工具能自动运行</strong>。 <strong>每个 MCP 服务器有独立网络模式</strong>：Allow all / Allowlist / Deny all / <strong>No sandbox</strong>。 ⚠ 注意 <code>~</code> 是 home 目录，与「Pro+」无关。 <strong>Hooks 事件清单（2026-10-03 补，取自官方 Hooks 与插件参考页）</strong>： agent 钩子 18 个 —— <code>sessionStart</code> <code>sessionEnd</code> <code>preToolUse</code> <code>postToolUse</code> <code>postToolUseFailure</code> <code>subagentStart</code> <code>subagentStop</code> <code>beforeShellExecution</code> <code>afterShellExecution</code> <code>beforeMCPExecution</code> <code>afterMCPExecution</code> <code>beforeReadFile</code> <code>afterFileEdit</code> <code>beforeSubmitPrompt</code> <code>preCompact</code> <code>stop</code> <code>afterAgentResponse</code> <code>afterAgentThought</code>；另有 Tab 钩子 <code>beforeTabFileRead</code> <code>afterTabFileEdit</code> 与应用生命周期 <code>workspaceOpen</code>。 钩子是<strong>命令型</strong>（<code>{&quot;command&quot;: &quot;./hooks/audit.sh&quot;}</code>，可带 <code>matcher</code> 过滤）， 官方给了 TypeScript 变体（由 Bun 驱动）可做结构化 I/O 与 HTTP。</dd>
         </div>
         <div class="axis">
-          <dt>上下文与记忆</dt>
+          <dt><span data-zh>上下文与记忆</span><span data-en>Context & memory</span></dt>
           <dd><strong>「项目」的核心设计是长期上下文维持</strong>—— 官方原文：能在长达数月的工作中持续保持上下文， 将任务委派给成千上万个子智能体， 还可无需提示自动执行周期性工作。 共享上下文会在多个云端与本地机器间同步： 一个智能体摸清如何测试某服务后，后续智能体可直接复用。</dd>
         </div>
         <div class="axis">
-          <dt>权限与限制</dt>
+          <dt><span data-zh>权限与限制</span><span data-en>Permissions & limits</span></dt>
           <dd><strong>安全审查以 bot 形式提供，且分两个职责</strong>： Security Review 结合全库上下文读每个 PR，报告可被利用的缺陷 （注入、认证绕过、密钥提交、SSRF、不安全反序列化、 引入已知漏洞的依赖变更等），每项标明严重级别、攻击路径与修复建议； <strong>代码风格与质量问题仍由 Bugbot 负责</strong>。 支持为仓库添加规则（如外部调用必须走哪个客户端、 哪些表不能在请求处理程序里查），Security Review 会在每个 PR 强制执行。 <strong>草稿 PR 会被跳过。</strong></dd>
         </div>
         <div class="axis">
-          <dt>适合什么任务</dt>
+          <dt><span data-zh>适合什么任务</span><span data-en>Best for</span></dt>
           <dd>需要云端 Agent 且希望合上笔记本任务继续跑的人； 需要长周期（数月级）上下文维持与大规模子智能体编排的人； <strong>代码不能离开自有基础设施的企业</strong>（自托管形态）。 Free 档适合想低成本试智能体的人（有限额度 + Composer 访问）。</dd>
         </div>
       </dl>
 
             <div class="panel warn">
-        <h2 class="warn">头号误解</h2>
+        <h2 class="warn"><span data-zh>头号误解</span><span data-en>Top misconception</span></h2>
         <ul>
           <li>把 Cursor 当成纯本地编辑器，2026-09-02 起已有自托管形态，代码可以不离开你的基础设施</li>
           <li>把云端能力当成「有入口就行」，官方明确说合上笔记本不会中断</li>
@@ -130,21 +133,21 @@
 
 
             <div class="panel is-slim">
-        <h2>价格</h2>
+        <h2><span data-zh>价格</span><span data-en>Pricing</span></h2>
         <table class="src">
           <tbody>
-            <tr><th class="w-28">月度入口</th><td>Pro $20 / Pro+ $60 / Ultra $200（个人三档），Hobby 免费</td></tr>
-            <tr><th class="w-28">月度数值</th><td>$20</td></tr>
-            <tr><th class="w-28">年付</th><td>官方帮助页说明年付通过 dashboard 的 Upgrade 切换，未取到统一折算价</td></tr>
-            <tr><th class="w-28">额度说明</th><td>官方定价页（cursor.com/pricing）与帮助页（cursor.com/help/account-and-billing/pricing） 列出个人 4 档 + 团队 3 档，<strong>价格已按2026-10-01 官方页核实</strong>： Hobby 免费（无需信用卡，有限智能体请求 + Composer 访问）、 Pro $20/mo、Pro+ $60/mo、Ultra $200/mo； Teams Standard $40/用户/mo、Teams Premium $120/用户/mo；Enterprise 定制。 <strong>Pro+ / Ultra 不是「前沿模型专属」而是额度倍数</strong>： 官方原文 Pro+ =「3x Pro limits on Agent」，Ultra =「20x Pro limits on Agent」， 三档都写「Access to frontier models」。Hobby 另有印度专属付费层₹649/mo（含税）。 所有价格<strong>不含税</strong>；超额用量按各模型标价后付费（on-demand billed in arrears）。</td></tr>
+            <tr><th class="w-28"><span data-zh>月度入口</span><span data-en>Monthly entry</span></th><td><span data-zh>Pro $20 / Pro+ $60 / Ultra $200（个人三档），Hobby 免费</span><span data-en>Pro $20 / Pro+ $60 / Ultra $200（个人三档），Hobby 免费</span></td></tr>
+            <tr><th class="w-28"><span data-zh>月度数值</span><span data-en>Monthly price</span></th><td>20</td></tr>
+            <tr><th class="w-28"><span data-zh>年付</span><span data-en>Annual</span></th><td><span data-zh>官方帮助页说明年付通过 dashboard 的 Upgrade 切换，未取到统一折算价</span><span data-en>官方帮助页说明年付通过 dashboard 的 Upgrade 切换，未取到统一折算价</span></td></tr>
+            <tr><th class="w-28"><span data-zh>额度说明</span><span data-en>Quota note</span></th><td><span data-zh>官方定价页（cursor.com/pricing）与帮助页（cursor.com/help/account-and-billing/pricing） 列出个人 4 档 + 团队 3 档，**价格已按2026-10-01 官方页核实**： Hobby 免费（无需信用卡，有限智能体请求 + Composer 访问）、 Pro $20/mo、Pro+ $60/mo、Ultra $200/mo； Teams Standard $40/用户/mo、Teams Premium $120/用户/mo；Enterprise 定制。 **Pro+ / Ultra 不是「前沿模型专属」而是额度倍数**： 官方原文 Pro+ =「3x Pro limits on Agent」，Ultra =「20x Pro limits on Agent」， 三档都写「Access to frontier models」。Hobby 另有印度专属付费层₹649/mo（含税）。 所有价格**不含税**；超额用量按各模型标价后付费（on-demand billed in arrears）。</span><span data-en>官方定价页（cursor.com/pricing）与帮助页（cursor.com/help/account-and-billing/pricing） 列出个人 4 档 + 团队 3 档，**价格已按2026-10-01 官方页核实**： Hobby 免费（无需信用卡，有限智能体请求 + Composer 访问）、 Pro $20/mo、Pro+ $60/mo、Ultra $200/mo； Teams Standard $40/用户/mo、Teams Premium $120/用户/mo；Enterprise 定制。 **Pro+ / Ultra 不是「前沿模型专属」而是额度倍数**： 官方原文 Pro+ =「3x Pro limits on Agent」，Ultra =「20x Pro limits on Agent」， 三档都写「Access to frontier models」。Hobby 另有印度专属付费层₹649/mo（含税）。 所有价格**不含税**；超额用量按各模型标价后付费（on-demand billed in arrears）。</span></td></tr>
           </tbody>
         </table>
-        <p class="fine mt-3">不同币种不做折算。优惠、地区、税费与登录后报价可能变化，购买前请到官方页面确认。</p>
+        <p class="fine mt-3"><span data-zh>不同币种不做折算。优惠、地区、税费与登录后报价可能变化，购买前请到官方页面确认。</span><span data-en>No currency conversion. Discounts, regions, tax and post-login pricing can change — confirm on the official page before buying.</span></p>
       </div>
 
 
             <div class="panel is-slim">
-        <h2>未知项清单</h2>
+        <h2><span data-zh>未知项清单</span><span data-en>Known unknowns</span></h2>
         <ul>
           <li>各档位的具体价格数字</li>
           <li>完整模型清单与切换机制</li>
@@ -157,10 +160,10 @@
 
 
       <div class="panel">
-        <h2>证据来源</h2>
-        <p class="t-sm">判断可回到以下一手源复核。本站核验日 2026-10-03，内容更新日 2026-09-29。</p>
+        <h2><span data-zh>证据来源</span><span data-en>Evidence sources</span></h2>
+        <p class="t-sm"><span data-zh>判断可回到以下一手源复核。本站核验日</span><span data-en>Every judgement can be rechecked against the primary sources below. Verified on</span> 2026-10-03，<span data-zh>内容更新日</span><span data-en>content updated on</span> 2026-09-29。</p>
         <table class="src">
-          <thead><tr><th class="w-20">类型</th><th class="w-52">名称</th><th>链接</th></tr></thead>
+          <thead><tr><th class="w-20"><span data-zh>类型</span><span data-en>Type</span></th><th class="w-52"><span data-zh>名称</span><span data-en>Name</span></th><th><span data-zh>链接</span><span data-en>Link</span></th></tr></thead>
           <tbody>
             <tr><td>changelog</td><td>Cursor · Changelog（Projects / 自托管 / Rollouts + Security Review）</td><td><a href="https://cursor.com/changelog" target="_blank" rel="noopener">https://cursor.com/changelog</a></td></tr>
             <tr><td>pricing</td><td>Cursor · 官方定价页（5 档结构）</td><td><a href="https://cursor.com/pricing" target="_blank" rel="noopener">https://cursor.com/pricing</a></td></tr>
@@ -173,7 +176,7 @@
       </div>
 
             <div class="panel is-slim">
-        <h2>实测记录</h2>
+        <h2><span data-zh>实测记录</span><span data-en>Measured runs</span></h2>
         <p>本站尚未完成实测。测试协议见 <a href="https://github.com/speculcom/ai-agent-guide/blob/main/tracks/agents/tasks/_protocol.md" target="_blank" rel="noopener">tasks/_protocol.md</a>。
 
 <strong>实测建议</strong>：这个工具的实测重点应是
@@ -183,7 +186,7 @@
 
 
             <div class="panel is-slim">
-        <h2>相关条目</h2>
+        <h2><span data-zh>相关条目</span><span data-en>Related entries</span></h2>
         <ul class="rel-list">
           <li><span class="rel-t"><a href="./codex-ide.html">Codex IDE 扩展</a></span><span class="rel-n">同为多形态但自托管未确认</span></li>
           <li><span class="rel-t"><a href="./claude-code.html">Claude Code IDE 扩展</a></span><span class="rel-n">同赛道，权限设计更细</span></li>
@@ -192,7 +195,7 @@
 
 
       <p class="fine mt-6">
-        本页由 <a href="https://github.com/speculcom/ai-agent-guide" target="_blank" rel="noopener" class="link-brand">ai-agent-guide</a> 数据层生成（CC BY 4.0）。
+        <span data-zh>本页由</span><span data-en>This page is generated from the</span> <a href="https://github.com/speculcom/ai-agent-guide" target="_blank" rel="noopener" class="link-brand">ai-agent-guide</a> <span data-zh>数据层生成（CC BY 4.0）。</span><span data-en>data layer (CC BY 4.0).</span>
         方法论与坐标系定义见仓库内 <code>METHODOLOGY.md</code>。
       </p>
     </div>
