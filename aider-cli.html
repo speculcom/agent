@@ -65,61 +65,63 @@
         <span class="tag on">开源</span>
         <span class="badge accent">partial</span>
         <span class="badge">lifecycle: maintenance</span>
-        <span class="badge">核验 2026-09-29</span>
+        <span class="badge"><span data-zh>核验</span><span data-en>Checked</span> 2026-09-29</span>
       </div>
 
-            <p class="panel-lead">Git 集成是<strong>核心设计而非附加功能</strong>的终端 pair programming 工具——AI 改动始终在版本控制里，可 diff 可撤销。</p>
+            <p class="panel-lead">Git 集成是<strong>核心设计而非附加功能</strong>的终端 pair programming 工具——AI 改动始终在版本控制里，可 diff 可撤销。<span data-en>A terminal pair-programming tool where <strong>Git integration is core design, not an add-on</strong> — AI changes always live in version control, diffable and revertible.</span></p>
 
             <div class="panel is-slim">
-        <h2>适合与不适合</h2>
-        <p>需要 AI 改动始终留在 git 版本控制里、可 diff 可撤销的场景。
+        <h2><span data-zh>适合与不适合</span><span data-en>When to use it, when not to</span></h2>
+<span data-zh>        <p>需要 AI 改动始终留在 git 版本控制里、可 diff 可撤销的场景。
 需要连接本地模型或多家云端模型的用户。</p>
         <p class="warn-p"><strong>不适合</strong>需要新模型支持或依赖上游修复的场景——
-最新 release 停在 2025-08，维护状态为 maintenance。</p>
+最新 release 停在 2025-08，维护状态为 maintenance。</p></span><span data-en>        <p>Scenarios where AI changes must stay in git version control, diffable and revertible.
+Users who need to connect local models or several cloud providers.</p>
+        <p class="warn-p"><strong>Not a fit for</strong> scenarios needing a new model release or relying on upstream fixes — the latest release stopped at 2025-08 and maintenance status is maintenance.</p></span>
       </div>
 
 
       <div class="block-head">
-        <h2 class="t-h2">固定坐标系</h2>
-        <p class="t-section-lead">8 个维度，与同赛道其他对象逐项可比。</p>
+        <h2 class="t-h2"><span data-zh>固定坐标系</span><span data-en>Fixed coordinate system</span></h2>
+        <p class="t-section-lead">8 <span data-zh>个维度</span><span data-en>dimensions</span>, <span data-zh>与同赛道其他对象逐项可比</span><span data-en>each comparable item by item against others in the same track</span>.</p>
       </div>
       <dl class="axes">
         <div class="axis">
-          <dt>模型与开放条件</dt>
+          <dt><span data-zh>模型与开放条件</span><span data-en>Model & openness</span></dt>
           <dd><strong>支持云端与本地 LLM，可连接几乎任何模型</strong>， 明确包含本地模型选项。 README 当前推荐的模型是 Claude 3.7 Sonnet、DeepSeek R1 &amp; Chat V3、 OpenAI o1 / o3-mini / GPT-4o。 <strong>注意：这份推荐列表停留在上一代模型， 与该项目 13 个月未发 release 的状态一致，参考时需自行核对当前可用模型。</strong></dd>
         </div>
         <div class="axis">
-          <dt>运行位置</dt>
+          <dt><span data-zh>运行位置</span><span data-en>Where it runs</span></dt>
           <dd>本地 <strong>Python</strong> 进程，在终端内运行（PyPI 包 aider-chat，官方徽章显示 680 万次安装）。 生命周期绑定终端会话，退出即结束。 另有 watch 常驻形态（见 <a href="/aider.html">IDE 形态条目</a>）。</dd>
         </div>
         <div class="axis">
-          <dt>本地文件</dt>
+          <dt><span data-zh>本地文件</span><span data-en>Local files</span></dt>
           <dd><strong>Repo Map 是本工具的核心机制</strong>（官方文档 <code>docs/repomap.md</code> 原文）： Aider 使用「一份简洁的整个 git 仓库的地图」， 包含<strong>最重要的类与函数及其类型与调用签名</strong>。 <strong>每次用户提出改动请求时，repo map 都随请求一起发给模型</strong>， map 包含仓库文件列表 + 每个文件的关键符号。 <strong>两个作用</strong>（文档明确列出）： 一是帮助它理解正在编辑的代码及其与代码库其他部分的关系； 二是帮助它写新代码时<strong>复用代码库里已有的库、模块与抽象</strong>。 支持 100+ 编程语言。 <strong>大仓库的 repo map 耗时与 token 开销本次未实测，记为未知。</strong></dd>
         </div>
         <div class="axis">
-          <dt>关机后的任务</dt>
+          <dt><span data-zh>关机后的任务</span><span data-en>Tasks after shutdown</span></dt>
           <dd>不支持终端形态的后台长任务。 另有 watch 模式（见 <a href="/aider.html">IDE 形态条目</a>）： 常驻监听文件变化并响应编辑器里的 AI 注释， <strong>但那是本地进程常驻，不是云端后台</strong>。</dd>
         </div>
         <div class="axis">
-          <dt>工具与扩展</dt>
+          <dt><span data-zh>工具与扩展</span><span data-en>Tools & extensions</span></dt>
           <dd>文件编辑 + <strong>Git 操作</strong>。<strong>README 强调 Git 集成本身就是核心功能</strong>： 自动用合理的 commit message 提交， 可用熟悉的 git 工具 diff、管理与撤销 AI 改动。 官方文档另有 <code>docs/languages.md</code>（语言支持）与 <code>docs/git.md</code>。 <strong>MCP 接入方式本次未核验，记为未知。</strong></dd>
         </div>
         <div class="axis">
-          <dt>上下文与记忆</dt>
+          <dt><span data-zh>上下文与记忆</span><span data-en>Context & memory</span></dt>
           <dd><strong>Repo Map 提供全库结构视图</strong>，每次请求随附（见 local_files）。 <strong>上下文窗口大小与压缩策略本次未核验，记为未知。</strong></dd>
         </div>
         <div class="axis">
-          <dt>权限与限制</dt>
+          <dt><span data-zh>权限与限制</span><span data-en>Permissions & limits</span></dt>
           <dd><strong>具备自动提交能力</strong>（auto-commit），这是它的一体化设计而非附加功能。 撤销路径是 <strong>git 本身</strong>（不是工具提供的回滚功能）—— README 明确说「用熟悉的 git 工具 diff、管理与撤销 AI 的改动」。 <strong>沙箱机制与「执行命令前是否询问」本次未核验，记为未知。</strong></dd>
         </div>
         <div class="axis">
-          <dt>适合什么任务</dt>
+          <dt><span data-zh>适合什么任务</span><span data-en>Best for</span></dt>
           <dd>希望 AI 改动始终留在 git 版本控制里、可 diff 可撤销的场景。 需要连接本地模型或多家云端模型的用户。 需要「写新代码时复用已有抽象」的人（Repo Map 的第二个作用）。 <strong>不适合需要活跃维护与新模型支持的场景</strong>（见下方维护状态）。</dd>
         </div>
       </dl>
 
             <div class="panel warn">
-        <h2 class="warn">头号误解</h2>
+        <h2 class="warn"><span data-zh>头号误解</span><span data-en>Top misconception</span></h2>
         <ul>
           <li>以为还在积极维护，最新 release 停在 2025-08-09，距采集日 13 个月</li>
           <li>以为 README 推荐的模型是最新的，推列表仍停留在上一代</li>
@@ -129,20 +131,20 @@
 
 
             <div class="panel is-slim">
-        <h2>价格</h2>
+        <h2><span data-zh>价格</span><span data-en>Pricing</span></h2>
         <table class="src">
           <tbody>
-            <tr><th class="w-28">月度入口</th><td>开源免费，模型费用另计</td></tr>
-            <tr><th class="w-28">年付</th><td>开源免费，模型费用另计</td></tr>
-            <tr><th class="w-28">额度说明</th><td>Apache-2.0 开源，PyPI 包为 aider-chat（官方徽章显示 680 万次安装）。 <strong>模型调用费用完全由用户自付</strong>—— 支持云端与本地 LLM，包括 OpenRouter 等平台与本地模型。</td></tr>
+            <tr><th class="w-28"><span data-zh>月度入口</span><span data-en>Monthly entry</span></th><td><span data-zh>开源免费，模型费用另计</span><span data-en>开源免费，模型费用另计</span></td></tr>
+            <tr><th class="w-28"><span data-zh>年付</span><span data-en>Annual</span></th><td><span data-zh>开源免费，模型费用另计</span><span data-en>开源免费，模型费用另计</span></td></tr>
+            <tr><th class="w-28"><span data-zh>额度说明</span><span data-en>Quota note</span></th><td><span data-zh>Apache-2.0 开源，PyPI 包为 aider-chat（官方徽章显示 680 万次安装）。 **模型调用费用完全由用户自付**—— 支持云端与本地 LLM，包括 OpenRouter 等平台与本地模型。</span><span data-en>Apache-2.0 开源，PyPI 包为 aider-chat（官方徽章显示 680 万次安装）。 **模型调用费用完全由用户自付**—— 支持云端与本地 LLM，包括 OpenRouter 等平台与本地模型。</span></td></tr>
           </tbody>
         </table>
-        <p class="fine mt-3">不同币种不做折算。优惠、地区、税费与登录后报价可能变化，购买前请到官方页面确认。</p>
+        <p class="fine mt-3"><span data-zh>不同币种不做折算。优惠、地区、税费与登录后报价可能变化，购买前请到官方页面确认。</span><span data-en>No currency conversion. Discounts, regions, tax and post-login pricing can change — confirm on the official page before buying.</span></p>
       </div>
 
 
             <div class="panel is-slim">
-        <h2>未知项清单</h2>
+        <h2><span data-zh>未知项清单</span><span data-en>Known unknowns</span></h2>
         <ul>
           <li>Repo Map 的具体算法与 token 预算控制</li>
           <li>上下文窗口与压缩策略</li>
@@ -154,10 +156,10 @@
 
 
       <div class="panel">
-        <h2>证据来源</h2>
-        <p class="t-sm">判断可回到以下一手源复核。本站核验日 2026-09-29，内容更新日 2026-09-29。</p>
+        <h2><span data-zh>证据来源</span><span data-en>Evidence sources</span></h2>
+        <p class="t-sm"><span data-zh>判断可回到以下一手源复核。本站核验日</span><span data-en>Every judgement can be rechecked against the primary sources below. Verified on</span> 2026-09-29，<span data-zh>内容更新日</span><span data-en>content updated on</span> 2026-09-29。</p>
         <table class="src">
-          <thead><tr><th class="w-20">类型</th><th class="w-52">名称</th><th>链接</th></tr></thead>
+          <thead><tr><th class="w-20"><span data-zh>类型</span><span data-en>Type</span></th><th class="w-52"><span data-zh>名称</span><span data-en>Name</span></th><th><span data-zh>链接</span><span data-en>Link</span></th></tr></thead>
           <tbody>
             <tr><td>repo</td><td>Aider · 仓库 README</td><td><a href="https://github.com/Aider-AI/aider" target="_blank" rel="noopener">https://github.com/Aider-AI/aider</a></td></tr>
             <tr><td>changelog</td><td>Aider · Releases（v0.86.0 @ 2025-08-09 为最新）</td><td><a href="https://github.com/Aider-AI/aider/releases" target="_blank" rel="noopener">https://github.com/Aider-AI/aider/releases</a></td></tr>
@@ -168,7 +170,7 @@
       </div>
 
             <div class="panel is-slim">
-        <h2>实测记录</h2>
+        <h2><span data-zh>实测记录</span><span data-en>Measured runs</span></h2>
         <p>本站尚未完成实测。测试协议见 <a href="https://github.com/speculcom/ai-agent-guide/blob/main/tracks/agents/tasks/_protocol.md" target="_blank" rel="noopener">tasks/_protocol.md</a>。
 
 <strong>实测建议</strong>：这个工具的实测重点应放在
@@ -178,7 +180,7 @@
 
 
             <div class="panel is-slim">
-        <h2>相关条目</h2>
+        <h2><span data-zh>相关条目</span><span data-en>Related entries</span></h2>
         <ul class="rel-list">
           <li><span class="rel-t"><a href="./codex-cli.html">Codex CLI</a></span><span class="rel-n">同类工具，维护活跃</span></li>
           <li><span class="rel-t"><a href="./opencode.html">OpenCode</a></span><span class="rel-n">同类工具，更新频繁</span></li>
@@ -187,7 +189,7 @@
 
 
       <p class="fine mt-6">
-        本页由 <a href="https://github.com/speculcom/ai-agent-guide" target="_blank" rel="noopener" class="link-brand">ai-agent-guide</a> 数据层生成（CC BY 4.0）。
+        <span data-zh>本页由</span><span data-en>This page is generated from the</span> <a href="https://github.com/speculcom/ai-agent-guide" target="_blank" rel="noopener" class="link-brand">ai-agent-guide</a> <span data-zh>数据层生成（CC BY 4.0）。</span><span data-en>data layer (CC BY 4.0).</span>
         方法论与坐标系定义见仓库内 <code>METHODOLOGY.md</code>。
       </p>
     </div>
