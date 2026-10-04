@@ -65,64 +65,69 @@
         <span class="tag on">开源</span>
         <span class="badge accent">partial</span>
         <span class="badge">lifecycle: active</span>
-        <span class="badge">核验 2026-09-29</span>
+        <span class="badge"><span data-zh>核验</span><span data-en>Checked</span> 2026-09-29</span>
       </div>
 
-            <p class="panel-lead">Google 官方的开源终端 agent，<strong>npx 免安装 + 明确 MCP 支持 + 非交互脚本模式</strong>，是三者里工程化最完整的。</p>
+            <p class="panel-lead">Google 官方的开源终端 agent，<strong>npx 免安装 + 明确 MCP 支持 + 非交互脚本模式</strong>，是三者里工程化最完整的。<span data-en>Google&#39;s official open-source terminal agent — <strong>no install via npx, explicit MCP support, and a non-interactive script mode</strong>; the most complete engineering of the three.</span></p>
 
             <div class="panel is-slim">
-        <h2>适合与不适合</h2>
-        <p>需要 npx 免安装快速试用、需要 MCP 扩展、需要脚本化非交互运行（CI）的场景。
+        <h2><span data-zh>适合与不适合</span><span data-en>When to use it, when not to</span></h2>
+<span data-zh>        <p>需要 npx 免安装快速试用、需要 MCP 扩展、需要脚本化非交互运行（CI）的场景。
 尤其适合想把 Gemini 多模态生成（Imagen / Veo / Lyria）接进工作流的用户。
 需要大上下文窗口的人（1M token，本赛道明确写出上限的少数）。
 需要「改动可回退」保证的人（shadow Git 检查点 + <code>/restore</code>）。
 需要项目级长期指令文件的人（GEMINI.md）。</p>
         <p class="warn-p"><strong>不适合</strong>需要明确额度边界的场景——
-额度政策本次未核验，记为未知。</p>
+额度政策本次未核验，记为未知。</p></span><span data-en>        <p>Scenarios needing quick trials without install via npx, MCP extensions, and scripted non-interactive runs (CI).
+Especially suitable for wiring Gemini&#39;s multimodal generation (Imagen / Veo / Lyria) into a workflow.
+People who need a large context window (1M tokens — one of the few in this track with the limit stated).
+People who need guaranteed revertibility (shadow Git checkpoints plus <code>/restore</code>).
+People who need project-level long-term instruction files (GEMINI.md).</p>
+        <p class="warn-p"><strong>Not a fit for</strong> scenarios needing clear quota boundaries — the quota policy was not verified this round and is recorded as unknown.</p></span>
       </div>
 
 
       <div class="block-head">
-        <h2 class="t-h2">固定坐标系</h2>
-        <p class="t-section-lead">8 个维度，与同赛道其他对象逐项可比。</p>
+        <h2 class="t-h2"><span data-zh>固定坐标系</span><span data-en>Fixed coordinate system</span></h2>
+        <p class="t-section-lead">8 <span data-zh>个维度</span><span data-en>dimensions</span>, <span data-zh>与同赛道其他对象逐项可比</span><span data-en>each comparable item by item against others in the same track</span>.</p>
       </div>
       <dl class="axes">
         <div class="axis">
-          <dt>模型与开放条件</dt>
+          <dt><span data-zh>模型与开放条件</span><span data-en>Model & openness</span></dt>
           <dd>Google 自家 <strong>Gemini 系列模型</strong>，README 标注 <strong>1M token context window</strong> （1M 上下文窗口），是本赛道少数明确写出上下文上限的。 <strong>2026-10-01 官方产品页补充</strong>：当前 IDE 侧主力是 <strong>Gemini 2.5</strong>， <strong>Gemini 3 标注「coming soon」，走 Preview release channel</strong>。 另有<strong>代码库感知窗口 1M token</strong>、<strong>代码自定义库上限 20,000 个仓库</strong> （Gemini Code Assist 官方quota 数值）。 <strong>未核验</strong>：CLI 侧具体可切换的模型清单与版本映射（官方 README 未列全，站点未取到正文）， 此处保持未知，不做推断。</dd>
         </div>
         <div class="axis">
-          <dt>运行位置</dt>
+          <dt><span data-zh>运行位置</span><span data-en>Where it runs</span></dt>
           <dd>本地进程，在终端运行。 <strong>README 强调「Using npx (no installation required)」—— npx 免安装形态降低了上手门槛。</strong></dd>
         </div>
         <div class="axis">
-          <dt>本地文件</dt>
+          <dt><span data-zh>本地文件</span><span data-en>Local files</span></dt>
           <dd>内置文件操作工具（README 标注「🔧 Built-in tools: Google Search grounding, file operations, shell」）。 <strong>检查点机制明确且实现方式值得记录</strong>（<code>docs/cli/checkpointing.md</code>）： 每当你批准一个会修改文件系统的工具（<code>write_file</code>、<code>replace</code> 等）， CLI <strong>自动在 home 目录下的一个专用 shadow Git 仓库 （<code>~/.gemini/history/&lt;project_hash&gt;</code>）里做一次提交</strong>， 快照项目的完整状态； <strong>关键点：这个 shadow 仓库不干扰你自己的项目 Git 仓库。</strong> 同时保存完整对话历史与即将执行的工具调用， 可用 <code>/restore</code> 回退。 <strong>索引算法与大仓库表现本次未核验。</strong></dd>
         </div>
         <div class="axis">
-          <dt>关机后的任务</dt>
+          <dt><span data-zh>关机后的任务</span><span data-en>Tasks after shutdown</span></dt>
           <dd>不支持终端形态的后台长任务。 <strong>是否有其他运行形态本次未核验。</strong></dd>
         </div>
         <div class="axis">
-          <dt>工具与扩展</dt>
+          <dt><span data-zh>工具与扩展</span><span data-en>Tools & extensions</span></dt>
           <dd><strong>明确支持 MCP</strong>（README 标注「🔌 Extensible: MCP support for custom」）， 并给出独立文档页 <code>/docs/tools/mcp-server</code>。 README 举例说明可用 MCP 接入图像生成能力（Imagen / Veo / Lyria）。 内置工具还包括 <strong>Google Search grounding</strong>（搜索接地）与 <strong>shell</strong>。 <strong>另明确支持非交互模式用于脚本自动化</strong> （README 有独立的「Non-interactive mode for scripts」章节）。</dd>
         </div>
         <div class="axis">
-          <dt>上下文与记忆</dt>
+          <dt><span data-zh>上下文与记忆</span><span data-en>Context & memory</span></dt>
           <dd><strong>1M token 上下文窗口</strong>（README：Gemini 3 models with 1M token context window）， 是本赛道明确写出上限的少数。 <strong>自定义上下文文件 <code>GEMINI.md</code></strong> 用于定制项目行为 （README 标注「Custom context files (GEMINI.md) to tailor behavior for your projects」， 文档路径 <code>/docs/cli/gemini-md</code>）—— 相当于项目级的长期指令。 <strong>上下文压缩策略本次未核验。</strong></dd>
         </div>
         <div class="axis">
-          <dt>权限与限制</dt>
+          <dt><span data-zh>权限与限制</span><span data-en>Permissions & limits</span></dt>
           <dd><strong>两个明确的官方机制</strong>（README 均有独立文档入口）： 一是 <strong>Sandboxing &amp; Security</strong>（文档路径 <code>/docs/cli/sandbox</code>）， 提供安全的执行环境； 二是 <strong>Trusted Folders</strong>（文档路径 <code>/docs/cli/trusted-folders</code>）， 按文件夹控制执行策略。 另有面向企业的部署与管理文档（<code>/docs/cli/enterprise</code>）。 仓库 <code>docs/</code> 下有独立的 <code>hooks/</code> 目录，说明支持钩子机制。 <strong>具体的沙箱档位、默认信任范围与审批粒度本次未核验，记为未知。</strong> 但「按文件夹控制执行策略」这个设计本身值得注意—— 它把权限边界绑定到目录而非全局开关。 <strong>检查点的 shadow Git 机制</strong>也算一层安全网： 修改文件系统前自动快照，可 <code>/restore</code> 回退。</dd>
         </div>
         <div class="axis">
-          <dt>适合什么任务</dt>
+          <dt><span data-zh>适合什么任务</span><span data-en>Best for</span></dt>
           <dd>需要无安装快速试用、需要 MCP 扩展、需要脚本化非交互运行的场景。 尤其适合想把 Gemini 的多模态生成能力接进 Agent 工作流的场景。</dd>
         </div>
       </dl>
 
             <div class="panel warn">
-        <h2 class="warn">头号误解</h2>
+        <h2 class="warn"><span data-zh>头号误解</span><span data-en>Top misconception</span></h2>
         <ul>
           <li>以为开源就无限用，额度政策未核验</li>
           <li>以为 npx 形态会污染本地环境，实际是免安装的临时运行</li>
@@ -132,21 +137,21 @@
 
 
             <div class="panel is-slim">
-        <h2>价格</h2>
+        <h2><span data-zh>价格</span><span data-en>Pricing</span></h2>
         <table class="src">
           <tbody>
-            <tr><th class="w-28">月度入口</th><td>个人层免费（无需信用卡），Code Assist 个人版 6,000 代码请求/日 + 240 对话/日</td></tr>
-            <tr><th class="w-28">月度数值</th><td>$0</td></tr>
-            <tr><th class="w-28">年付</th><td>个人层无年付（免费）；Google Developer Program Premium 为 $299/年</td></tr>
-            <tr><th class="w-28">额度说明</th><td>Apache-2.0 开源，支持 npx 直接运行无需安装。 <strong>2026-10-01 按官方 quotas 文档核实额度（此前记为未知）</strong>： 免费层「Gemini Code Assist for individuals」<strong>无需信用卡</strong>，额度为 <strong>每天 6,000 次代码相关请求</strong>（代码生成与补全）+ <strong>每天 240 次对话请求</strong>； 每用户<strong>每秒 2 次请求</strong>。 <strong>最关键的一条机制（直接影响选型）：CLI 与代理模式额度合并计算</strong>—— 官方原文「Quotas for requests from Gemini Code Assist agent mode and Gemini CLI are combined」， 且「一个提示可能产生多个模型请求」，额度按<strong>与任意模型版本或系列（Pro、Flash）的全部互动次数累计</strong>， 跨模型不分开计算。达到上限后须等配额重置才能继续。 付费层：Gemini Code Assist Standard <strong>1,500 请求/用户/日</strong>、Enterprise <strong>2,000</strong>； 云端版另给 960 次/日的 Cloud Assist 面板请求。个体开发者可订阅 Google AI Pro / AI Ultra / Developer Program premium 以提高上限。 Gemini CLI on GitHub 的用量<strong>不计入常规额度</strong>（独立配额，PR 审查每天至少 100 次）。</td></tr>
+            <tr><th class="w-28"><span data-zh>月度入口</span><span data-en>Monthly entry</span></th><td><span data-zh>个人层免费（无需信用卡），Code Assist 个人版 6,000 代码请求/日 + 240 对话/日</span><span data-en>个人层免费（无需信用卡），Code Assist 个人版 6,000 代码请求/日 + 240 对话/日</span></td></tr>
+            <tr><th class="w-28"><span data-zh>月度数值</span><span data-en>Monthly price</span></th><td>0</td></tr>
+            <tr><th class="w-28"><span data-zh>年付</span><span data-en>Annual</span></th><td><span data-zh>个人层无年付（免费）；Google Developer Program Premium 为 $299/年</span><span data-en>个人层无年付（免费）；Google Developer Program Premium 为 $299/年</span></td></tr>
+            <tr><th class="w-28"><span data-zh>额度说明</span><span data-en>Quota note</span></th><td><span data-zh>Apache-2.0 开源，支持 npx 直接运行无需安装。 **2026-10-01 按官方 quotas 文档核实额度（此前记为未知）**： 免费层「Gemini Code Assist for individuals」**无需信用卡**，额度为 **每天 6,000 次代码相关请求**（代码生成与补全）+ **每天 240 次对话请求**； 每用户**每秒 2 次请求**。 **最关键的一条机制（直接影响选型）：CLI 与代理模式额度合并计算**—— 官方原文「Quotas for requests from Gemini Code Assist agent mode and Gemini CLI are combined」， 且「一个提示可能产生多个模型请求」，额度按**与任意模型版本或系列（Pro、Flash）的全部互动次数累计**， 跨模型不分开计算。达到上限后须等配额重置才能继续。 付费层：Gemini Code Assist Standard **1,500 请求/用户/日**、Enterprise **2,000**； 云端版另给 960 次/日的 Cloud Assist 面板请求。个体开发者可订阅 Google AI Pro / AI Ultra / Developer Program premium 以提高上限。 Gemini CLI on GitHub 的用量**不计入常规额度**（独立配额，PR 审查每天至少 100 次）。</span><span data-en>Apache-2.0 开源，支持 npx 直接运行无需安装。 **2026-10-01 按官方 quotas 文档核实额度（此前记为未知）**： 免费层「Gemini Code Assist for individuals」**无需信用卡**，额度为 **每天 6,000 次代码相关请求**（代码生成与补全）+ **每天 240 次对话请求**； 每用户**每秒 2 次请求**。 **最关键的一条机制（直接影响选型）：CLI 与代理模式额度合并计算**—— 官方原文「Quotas for requests from Gemini Code Assist agent mode and Gemini CLI are combined」， 且「一个提示可能产生多个模型请求」，额度按**与任意模型版本或系列（Pro、Flash）的全部互动次数累计**， 跨模型不分开计算。达到上限后须等配额重置才能继续。 付费层：Gemini Code Assist Standard **1,500 请求/用户/日**、Enterprise **2,000**； 云端版另给 960 次/日的 Cloud Assist 面板请求。个体开发者可订阅 Google AI Pro / AI Ultra / Developer Program premium 以提高上限。 Gemini CLI on GitHub 的用量**不计入常规额度**（独立配额，PR 审查每天至少 100 次）。</span></td></tr>
           </tbody>
         </table>
-        <p class="fine mt-3">不同币种不做折算。优惠、地区、税费与登录后报价可能变化，购买前请到官方页面确认。</p>
+        <p class="fine mt-3"><span data-zh>不同币种不做折算。优惠、地区、税费与登录后报价可能变化，购买前请到官方页面确认。</span><span data-en>No currency conversion. Discounts, regions, tax and post-login pricing can change — confirm on the official page before buying.</span></p>
       </div>
 
 
             <div class="panel is-slim">
-        <h2>未知项清单</h2>
+        <h2><span data-zh>未知项清单</span><span data-en>Known unknowns</span></h2>
         <ul>
           <li>模型额度政策与免费额度边界</li>
           <li>具体可用模型清单</li>
@@ -159,10 +164,10 @@
 
 
       <div class="panel">
-        <h2>证据来源</h2>
-        <p class="t-sm">判断可回到以下一手源复核。本站核验日 2026-09-29，内容更新日 2026-09-29。</p>
+        <h2><span data-zh>证据来源</span><span data-en>Evidence sources</span></h2>
+        <p class="t-sm"><span data-zh>判断可回到以下一手源复核。本站核验日</span><span data-en>Every judgement can be rechecked against the primary sources below. Verified on</span> 2026-09-29，<span data-zh>内容更新日</span><span data-en>content updated on</span> 2026-09-29。</p>
         <table class="src">
-          <thead><tr><th class="w-20">类型</th><th class="w-52">名称</th><th>链接</th></tr></thead>
+          <thead><tr><th class="w-20"><span data-zh>类型</span><span data-en>Type</span></th><th class="w-52"><span data-zh>名称</span><span data-en>Name</span></th><th><span data-zh>链接</span><span data-en>Link</span></th></tr></thead>
           <tbody>
             <tr><td>repo</td><td>Google · Gemini CLI 仓库 README</td><td><a href="https://github.com/google-gemini/gemini-cli" target="_blank" rel="noopener">https://github.com/google-gemini/gemini-cli</a></td></tr>
             <tr><td>changelog</td><td>Google · Gemini CLI Releases</td><td><a href="https://github.com/google-gemini/gemini-cli/releases" target="_blank" rel="noopener">https://github.com/google-gemini/gemini-cli/releases</a></td></tr>
@@ -173,7 +178,7 @@
       </div>
 
             <div class="panel is-slim">
-        <h2>实测记录</h2>
+        <h2><span data-zh>实测记录</span><span data-en>Measured runs</span></h2>
         <p>本站尚未完成实测。测试协议见 <a href="https://github.com/speculcom/ai-agent-guide/blob/main/tracks/agents/tasks/_protocol.md" target="_blank" rel="noopener">tasks/_protocol.md</a>。
 
 <strong>实测建议</strong>：这个工具的实测重点应放在三处
@@ -186,7 +191,7 @@
 
 
             <div class="panel is-slim">
-        <h2>相关条目</h2>
+        <h2><span data-zh>相关条目</span><span data-en>Related entries</span></h2>
         <ul class="rel-list">
           <li><span class="rel-t"><a href="./codex-cli.html">Codex CLI</a></span><span class="rel-n">同类 OpenAI 官方工具</span></li>
           <li><span class="rel-t"><a href="./crush.html">Crush</a></span><span class="rel-n">同类工具，MCP 传输方式标注更细</span></li>
@@ -195,7 +200,7 @@
 
 
       <p class="fine mt-6">
-        本页由 <a href="https://github.com/speculcom/ai-agent-guide" target="_blank" rel="noopener" class="link-brand">ai-agent-guide</a> 数据层生成（CC BY 4.0）。
+        <span data-zh>本页由</span><span data-en>This page is generated from the</span> <a href="https://github.com/speculcom/ai-agent-guide" target="_blank" rel="noopener" class="link-brand">ai-agent-guide</a> <span data-zh>数据层生成（CC BY 4.0）。</span><span data-en>data layer (CC BY 4.0).</span>
         方法论与坐标系定义见仓库内 <code>METHODOLOGY.md</code>。
       </p>
     </div>
