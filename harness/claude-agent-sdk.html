@@ -124,12 +124,13 @@
             <div class="panel warn">
         <h2 class="warn"><span data-zh>头号误解</span><span data-en>Top misconception</span></h2>
         <ul>
-          <li>以为它是「Anthropic 版的 OpenAI Agents SDK」—— <strong>不是</strong>。它是 Claude Code CLI 的 SDK，能力来自那个 CLI，不是框架自带</li>
-          <li>以为 <code>allowed_tools</code> 能限制工具集 —— 官方明确「It does not remove tools from Claude&#39;s toolset」，禁用要用 <code>disallowed_tools</code></li>
-          <li>以为默认是安全的 —— 默认是 <strong>full toolset（Read/Write/Edit/Bash）</strong>，且没有沙箱层</li>
-          <li>以为改了 system prompt 立刻生效 —— 会被 snapshot 冻结，要compact 或新会话才生效（除非 snapshot=False）</li>
-          <li>以为 MIT = 无附加条款 —— 受 Anthropic 商业条款约束（见正文）</li>
-          <li>以为 TS 版授权与 Python 版一致 —— <strong>核验发现 TS 版无 LICENSE 文件、license API 返回 null，授权状态不明</strong>（核验 2026-09-30）</li>
+
+          <li><span data-zh>以为它是「Anthropic 版的 OpenAI Agents SDK」—— <strong>不是</strong>。它是 Claude Code CLI 的 SDK，能力来自那个 CLI，不是框架自带</span><span data-en>Assuming it is &quot;Anthropic&#39;s version of the OpenAI Agents SDK&quot; — <strong>it is not</strong>. It is the SDK for the Claude Code CLI; its capabilities come from that CLI, not from the framework</span></li>
+          <li><span data-zh>以为 <code>allowed_tools</code> 能限制工具集 —— 官方明确「It does not remove tools from Claude&#39;s toolset」，禁用要用 <code>disallowed_tools</code></span><span data-en>Assuming <code>allowed_tools</code> restricts the toolset — the official docs state &quot;It does not remove tools from Claude&#39;s toolset&quot;; use <code>disallowed_tools</code> to disable</span></li>
+          <li><span data-zh>以为默认是安全的 —— 默认是 <strong>full toolset（Read/Write/Edit/Bash）</strong>，且没有沙箱层</span><span data-en>Assuming the default is safe — the default is the <strong>full toolset (Read/Write/Edit/Bash) with no sandbox layer</strong></span></li>
+          <li><span data-zh>以为改了 system prompt 立刻生效 —— 会被 snapshot 冻结，要compact 或新会话才生效（除非 snapshot=False）</span><span data-en>Assuming a system prompt change takes effect immediately — it is frozen by a snapshot; compact or start a new session (unless snapshot=False)</span></li>
+          <li><span data-zh>以为 MIT = 无附加条款 —— 受 Anthropic 商业条款约束（见正文）</span><span data-en>Assuming MIT means no additional terms — Anthropic&#39;s commercial terms still apply (see the body above)</span></li>
+          <li><span data-zh>以为 TS 版授权与 Python 版一致 —— <strong>核验发现 TS 版无 LICENSE 文件、license API 返回 null，授权状态不明</strong>（核验 2026-09-30）</span><span data-en>Assuming the TypeScript build is licensed like the Python one — <strong>verification found no LICENSE file in the TS build and the licence API returns null, so its licensing status is unknown</strong> (checked 2026-09-30)</span></li>
         </ul>
       </div>
 
