@@ -4,7 +4,7 @@
 
 **agent.specul.com/harness/** · 独立信息项目（非厂商官方榜单）
 
-Agent 运行时 / 编排框架 / SDK 的责任边界、状态持久化能力与权限模型。收录标准：提供 Agent 运行时或编排层、有官方文档可回溯、近 30 天有实质更新。
+<span data-zh>Agent 运行时 / 编排框架 / SDK 的责任边界、状态持久化能力与权限模型。收录标准：提供 Agent 运行时或编排层、有官方文档可回溯、近 30 天有实质更新。</span><span data-en>The responsibility boundaries of agent runtimes, orchestration frameworks and SDKs, plus state persistence and permission models. Admission criteria: provides an agent runtime or orchestration layer, has official documentation that can be traced back, and has substantive updates within the last 30 days.</span>
 
 本站共 3 个分区（`agents` / `harness` / `tools`），本 README 描述「Harness」这一个。
 
