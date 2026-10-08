@@ -4,7 +4,7 @@
 
 **agent.specul.com/tools/** · 独立信息项目（非厂商官方榜单）
 
-MCP server 的权限范围、传输方式与输出可用性。收录标准：已发布为可安装的 MCP server、有官方仓库或文档可回溯、近 30 天有实质更新。这里是能力缺口查表，不是选型对比。
+<span data-zh>MCP server 的权限范围、传输方式与输出可用性。收录标准：已发布为可安装的 MCP server、有官方仓库或文档可回溯、近 30 天有实质更新。这里是能力缺口查表，不是选型对比。</span><span data-en>The permission scope, transport and output usability of MCP servers. Admission criteria: released as an installable MCP server, has an official repository or documentation that can be traced back, and has substantive updates within the last 30 days. This is a capability-gap reference table, not a selection comparison.</span>
 
 本站共 3 个分区（`agents` / `harness` / `tools`），本 README 描述「Tools」这一个。
 
