@@ -15,7 +15,7 @@
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%238b7cf8'/%3E%3Cstop offset='1' stop-color='%2322d3c5'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='48' height='48' rx='12' fill='%2305080f'/%3E%3Cpath d='M14 32 L24 12 L34 32' fill='none' stroke='url(%23g)' stroke-width='2.4' stroke-linejoin='round'/%3E%3Ccircle cx='24' cy='27' r='2.4' fill='%2322d3c5'/%3E%3C/svg%3E" />
   <link rel="stylesheet" href="brand.css" />
   <link rel="stylesheet" href="site.css" />
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"OpenCode","applicationCategory":"DeveloperApplication","url":"https://opencode.ai","sameAs":"https://github.com/sst/opencode","description":"MIT 许可的多 provider 编程 harness，运行 bash 命令前会询问权限，并支持 ACP 载入。","dateModified":"2026-09-29"}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"OpenCode","applicationCategory":"DeveloperApplication","url":"https://opencode.ai","sameAs":"https://github.com/sst/opencode","description":"MIT 许可的多 provider 编程 harness，运行 bash 命令前会询问权限，并支持 ACP 载入。","dateModified":"2026-10-08"}</script>
 </head>
 <body class="brand-ambient">
   <a class="t-skip" href="#main"><span data-zh>跳到主要内容</span><span data-en>Skip to main content</span></a>
@@ -39,8 +39,34 @@
           <button class="icon-btn" id="langBtn" type="button" aria-label="Switch language" title="Switch language">EN</button>
         </span>
       </nav>
+      <!-- B6（2026-10-09）：与共享 shell 同步加的移动端导航入口。
+           ⚠ 本文件是 agent 站**自己的** shell 副本（它多一层分区切换），
+             所以每次改共享 shell 的骨架，这里也要跟一次 —— 这是双份实现固有的代价。
+             样式与行为都在共享 brand.css / brand.js 里，这里只出标记。 -->
+      <button class="nav-burger" type="button" aria-label="打开菜单" aria-expanded="false" aria-controls="navDrawer">
+        <i></i><i></i><i></i>
+      </button>
     </div>
   </header>
+  <div class="nav-scrim"></div>
+  <aside class="nav-drawer" id="navDrawer" aria-hidden="true" aria-label="站点导航">
+    <div class="nav-drawer-h">
+      <span class="brand-name"><span data-zh>投机取巧</span><span data-en>Speculative Speculation</span></span>
+      <button class="nav-dclose" type="button" aria-label="关闭">×</button>
+    </div>
+    <nav class="nav-drawer-list">
+      <a href="https://specul.com/"><span><span data-zh>首页</span><span data-en>Home</span></span><span class="ar" aria-hidden="true">→</span></a>
+      <a href="https://learn.specul.com/"><span><span data-zh>学 AI</span><span data-en>Learn</span></span><span class="ar" aria-hidden="true">→</span></a>
+      <a href="https://agent.specul.com/" aria-current="page"><span><span data-zh>Agent</span><span data-en>Agent</span></span><span class="ar" aria-hidden="true">→</span></a>
+      <a href="https://models.specul.com/"><span><span data-zh>本地模型</span><span data-en>Models</span></span><span class="ar" aria-hidden="true">→</span></a>
+      <a href="https://vg.specul.com/"><span><span data-zh>AI 做游戏</span><span data-en>Vibe Gaming</span></span><span class="ar" aria-hidden="true">→</span></a>
+      <a href="https://nav.specul.com/"><span><span data-zh>导航</span><span data-en>Directory</span></span><span class="ar" aria-hidden="true">→</span></a>
+    </nav>
+    <div class="nav-drawer-foot">
+      <p><span data-zh>6 个站，各管一件事</span><span data-en>Six sites, one job each</span></p>
+      <nav><a href="https://specul.com/legal.html"><span data-zh>法律条款</span><span data-en>Legal terms</span></a></nav>
+    </div>
+  </aside>
   <main id="main">
     <div class="container detail">
       <nav class="crumbs" aria-label="面包屑">
@@ -66,10 +92,10 @@
         <span class="tag on">开源</span>
         <span class="badge accent">partial</span>
         <span class="badge">lifecycle: active</span>
-        <span class="badge"><span data-zh>核验</span><span data-en>Checked</span> 2026-09-29</span>
+        <span class="badge"><span data-zh>核验</span><span data-en>Checked</span> 2026-10-08</span>
       </div>
 
-            <p class="panel-lead"><span data-zh>An MIT-licensed multi-provider programming harness that <strong>asks permission before running bash commands</strong>, and supports loading via ACP.</span><span data-en>An MIT-licensed multi-provider programming harness that <strong>asks permission before running bash commands</strong>, and supports loading via ACP.</span></p>
+            <p class="panel-lead"><span data-zh>MIT 许可的多 provider 编程 harness，<strong>运行 bash 命令前会询问权限</strong>，并支持 ACP 载入。</span><span data-en>An MIT-licensed multi-provider programming harness that <strong>asks permission before running bash commands</strong>, and supports loading via ACP.</span></p>
 
             <div class="panel is-slim">
         <h2><span data-zh>适合与不适合</span><span data-en>When to use it, when not to</span></h2>
@@ -89,7 +115,7 @@ Participants in the ACP ecosystem.</p>
       <dl class="axes">
         <div class="axis">
           <dt><span data-zh>模型与开放条件</span><span data-en>Model & openness</span></dt>
-          <dd>多 provider 接入的编程 harness。 <strong>README 提到 provider 支持列表较长</strong>， 但<strong>具体可接入的 provider 清单本次未核验</strong>，记为未知。 是否支持本地模型本次未核验。</dd>
+          <dd>多 provider 接入的编程 harness。官方 <code>models</code> 与 <code>providers</code> 页原文： OpenCode 用 AI SDK 与 Models.dev，<strong>支持 75+ LLM 提供商， 也支持运行本地模型</strong>。目录含 302.AI、Amazon Bedrock、Anthropic、 Azure OpenAI、DeepSeek、Google Vertex AI、Groq、Hugging Face、 llama.cpp、LM Studio、Ollama、OpenAI、OpenRouter、xAI、Z.AI、ZenMux 等。 凭据经 <code>/connect</code> 存入 <code>~/.local/share/opencode/auth.json</code>； 可用 <code>enabled_providers</code> / <code>disabled_providers</code> 白黑名单， 也能自定义 provider（<code>npm</code> + <code>baseURL</code>，含 OpenAI 兼容）； 另有官方精选清单 OpenCode Zen。<strong>本地模型可接</strong>—— 官方点名 llama.cpp、LM Studio、Ollama、Atomic Chat。 注意：用 Claude Pro/Max 订阅接入「不是 Anthropic 官方支持的用法」。</dd>
         </div>
         <div class="axis">
           <dt><span data-zh>运行位置</span><span data-en>Where it runs</span></dt>
@@ -97,23 +123,23 @@ Participants in the ACP ecosystem.</p>
         </div>
         <div class="axis">
           <dt><span data-zh>本地文件</span><span data-en>Local files</span></dt>
-          <dd>面向真实代码仓库的编程能力。 <strong>索引策略与大仓库表现本次未核验，记为未知。</strong></dd>
+          <dd>面向真实代码仓库的编程能力。<code>read</code>/<code>edit</code>/<code>write</code>/<code>grep</code>/<code>glob</code> 直接读写工作区；<code>grep</code>/<code>glob</code> 底层用 ripgrep，<strong>默认遵循 <code>.gitignore</code></strong>。 <strong>访问范围默认限定在启动时的工作目录</strong>——越界路径须在 <code>permission</code> 里用 <code>external_directory</code> 显式放行（如 <code>~/projects/personal/<strong></code>）。 <code>read</code> 默认 allow，但 </strong><code>.env</code> / <code>.env.*</code> 默认 deny<strong>（<code>.env.example</code> allow）。 <code>@</code> 键可模糊搜索项目文件；文件变动有 <code>watcher</code>（可配 <code>ignore</code>）。 符号能力来自 </strong>LSP 工具（实验性）<strong>：需 <code>OPENCODE_EXPERIMENTAL_LSP_TOOL=true</code> 并自配 LSP 服务器，支持 goToDefinition / findReferences / hover 等。 </strong>官方未见代码库向量化索引的描述**（已查 tools / config / permissions 页）。</dd>
         </div>
         <div class="axis">
           <dt><span data-zh>关机后的任务</span><span data-en>Tasks after shutdown</span></dt>
-          <dd>不支持终端形态的后台长任务。 <strong>是否有其他形态（本地服务 / 远程）本次未核验。</strong></dd>
+          <dd>终端形态，本地进程，生命周期绑定会话。官方另有 <code>opencode serve</code> （无头 HTTP 服务器）与 <code>opencode web</code> / 桌面应用——<strong>都跑在你自己的机器上</strong>， 为客户提供会话 API（含 <code>prompt_async</code> 异步发送），执行环境归你自己， 不是厂商托管云。<strong>官方未见「客户端关闭后仍继续 / 关机续跑」的云端后台能力</strong> （已查 server 页与 docs 概览）。</dd>
         </div>
         <div class="axis">
           <dt><span data-zh>工具与扩展</span><span data-en>Tools & extensions</span></dt>
-          <dd>工具链包含 bash 命令执行、子代理能力。 <strong>README 明确提到内置一个「通用子代理」用于复杂搜索与多步任务</strong>。 MCP 接入方式本次未核验。</dd>
+          <dd><strong>内置工具官方逐项列出</strong>：bash、edit、write、read、grep、glob、 lsp（实验性）、patch、skill、todowrite、webfetch、 websearch（Exa，需 OpenCode 提供商或 <code>OPENCODE_ENABLE_EXA</code>）、question， 另有 <code>task</code> 派发子代理。内置代理含 build、plan、general、explore、 scout、compaction、title、summary。<strong>MCP 接入方式已核到</strong>： 本地 <code>type:&quot;local&quot;</code> 与远程 <code>type:&quot;remote&quot;</code> 两类，支持 OAuth 动态客户端注册（RFC 7591）与 <code>opencode mcp auth</code> 等命令； 还支持自定义工具与插件（hooks）。</dd>
         </div>
         <div class="axis">
           <dt><span data-zh>上下文与记忆</span><span data-en>Context & memory</span></dt>
-          <dd><strong>ACP（Agent Client Protocol）载入能力是其差异化设计</strong>—— 在恢复与分叉时保留模型、effort 与模式边界。 具体上下文窗口与压缩策略本次未核验。</dd>
+          <dd><strong>ACP（Agent Client Protocol）载入能力是其差异化设计</strong>—— 在恢复与分叉时保留模型、effort 与模式边界。 会话机制已核到：<code>/session</code> API 支持创建、<strong>fork（在某条消息处分叉）</strong>、 revert/unrevert 与 summarize；TUI 有 <code>/undo</code>、<code>/redo</code>、<code>/share</code>。 <strong>压缩策略官方给了配置</strong>——<code>compaction</code> 项：<code>auto</code>（默认 true， 上下文满时自动压缩会话）、<code>prune</code>（删旧工具输出省 token，默认 false）、 <code>reserved</code>（压缩缓冲）。另有 compaction / title / summary 三个内置代理。</dd>
         </div>
         <div class="axis">
           <dt><span data-zh>权限与限制</span><span data-en>Permissions & limits</span></dt>
-          <dd><strong>README 记录了「YOLO」模式相关内容，并提到运行 bash 命令前会询问权限</strong>。 这是与多数工具默认自动执行不同的设计。 <strong>具体审批粒度与是否可配置本次未核验，记为未知。</strong></dd>
+          <dd><strong>权限策略已核到</strong>：<code>permission</code> 配置决定每个操作是自动运行、 提示审批还是阻止，三档 <code>&quot;allow&quot;</code> / <code>&quot;ask&quot;</code> / <code>&quot;deny&quot;</code>。 可按工具细粒度配置，支持通配符与对象语法（如 bash 的 <code>git *</code> allow、<code>rm *</code> deny，<strong>最后匹配的规则优先</strong>）。 可配权限键：read / edit（涵盖 edit、write、patch）/ glob / grep / bash / task / skill / lsp / webfetch / websearch / external_directory / doom_loop。<strong>默认值宽松</strong>：多数 allow， <code>doom_loop</code> 与 <code>external_directory</code> 为 ask；<code>read</code> 为 allow 但 <code>.env</code> / <code>.env.*</code> 默认 deny。官方 config 页亦称「默认允许所有操作， 无需明确批准」。审批 UI 给 once / always / reject， 且可对每个代理单独覆盖。v1.1.1 起旧版 <code>tools</code> 布尔配置并入 <code>permission</code>。</dd>
         </div>
         <div class="axis">
           <dt><span data-zh>适合什么任务</span><span data-en>Best for</span></dt>
@@ -148,18 +174,16 @@ Participants in the ACP ecosystem.</p>
             <div class="panel is-slim">
         <h2><span data-zh>未知项清单</span><span data-en>Known unknowns</span></h2>
         <ul>
-          <li>完整 provider 清单与各 provider 的接入方式</li>
-          <li>是否支持本地模型</li>
-          <li>索引策略与大仓库表现</li>
           <li>YOLO 模式的具体开关与风险</li>
-          <li>MCP 接入方式</li>
+          <li>子代理的调度方式与 token 开销</li>
+          <li>大仓库在「无向量化索引（靠 ripgrep / LSP）」路线下的实际表现</li>
         </ul>
       </div>
 
 
       <div class="panel">
         <h2><span data-zh>证据来源</span><span data-en>Evidence sources</span></h2>
-        <p class="t-sm"><span data-zh>判断可回到以下一手源复核。本站核验日</span><span data-en>Every judgement can be rechecked against the primary sources below. Verified on</span> 2026-09-29，<span data-zh>内容更新日</span><span data-en>content updated on</span> 2026-09-29。</p>
+        <p class="t-sm"><span data-zh>判断可回到以下一手源复核。本站核验日</span><span data-en>Every judgement can be rechecked against the primary sources below. Verified on</span> 2026-10-08，<span data-zh>内容更新日</span><span data-en>content updated on</span> 2026-10-08。</p>
         <table class="src">
           <thead><tr><th class="w-20"><span data-zh>类型</span><span data-en>Type</span></th><th class="w-52"><span data-zh>名称</span><span data-en>Name</span></th><th><span data-zh>链接</span><span data-en>Link</span></th></tr></thead>
           <tbody>
@@ -167,6 +191,13 @@ Participants in the ACP ecosystem.</p>
             <tr><td>changelog</td><td>OpenCode · Releases（v1.18.33 @ 2026-09-28）</td><td><a href="https://github.com/sst/opencode/releases" target="_blank" rel="noopener">https://github.com/sst/opencode/releases</a></td></tr>
             <tr><td>changelog</td><td>OpenCode · 官方站 Changelog</td><td><a href="https://opencode.ai/changelog" target="_blank" rel="noopener">https://opencode.ai/changelog</a></td></tr>
             <tr><td>docs</td><td>OpenCode · 官方文档</td><td><a href="https://opencode.ai/docs" target="_blank" rel="noopener">https://opencode.ai/docs</a></td></tr>
+            <tr><td>docs</td><td>OpenCode · 官方文档 · 提供商（75+ provider、目录、自定义 provider、凭据存储）</td><td><a href="https://opencode.ai/docs/providers" target="_blank" rel="noopener">https://opencode.ai/docs/providers</a></td></tr>
+            <tr><td>docs</td><td>OpenCode · 官方文档 · 模型（75+ provider、本地模型、默认模型与变体）</td><td><a href="https://opencode.ai/docs/models" target="_blank" rel="noopener">https://opencode.ai/docs/models</a></td></tr>
+            <tr><td>docs</td><td>OpenCode · 官方文档 · 权限（allow/ask/deny、细粒度规则、external_directory、默认值）</td><td><a href="https://opencode.ai/docs/permissions" target="_blank" rel="noopener">https://opencode.ai/docs/permissions</a></td></tr>
+            <tr><td>docs</td><td>OpenCode · 官方文档 · 工具（内置工具清单、子代理、MCP、自定义工具）</td><td><a href="https://opencode.ai/docs/tools" target="_blank" rel="noopener">https://opencode.ai/docs/tools</a></td></tr>
+            <tr><td>docs</td><td>OpenCode · 官方文档 · MCP 服务器（本地/远程、OAuth、管理）</td><td><a href="https://opencode.ai/docs/mcp-servers" target="_blank" rel="noopener">https://opencode.ai/docs/mcp-servers</a></td></tr>
+            <tr><td>docs</td><td>OpenCode · 官方文档 · 配置（compaction、watcher、permission、server）</td><td><a href="https://opencode.ai/docs/config" target="_blank" rel="noopener">https://opencode.ai/docs/config</a></td></tr>
+            <tr><td>docs</td><td>OpenCode · 官方文档 · 服务器（opencode serve、会话 API、fork/summarize）</td><td><a href="https://opencode.ai/docs/server" target="_blank" rel="noopener">https://opencode.ai/docs/server</a></td></tr>
           </tbody>
         </table>
       </div>
@@ -186,6 +217,7 @@ Participants in the ACP ecosystem.</p>
         <ul class="rel-list">
           <li><span class="rel-t"><a href="./aider-cli.html">Aider</a></span><span class="rel-n">同类工具但已放缓维护</span></li>
           <li><span class="rel-t"><a href="./codex-cli.html">Codex CLI</a></span><span class="rel-n">同类工具，架构侧重点不同</span></li>
+          <li><span class="rel-t"><a href="/tools/filesystem.html"><span data-zh>Filesystem MCP Server</span><span data-en>Filesystem MCP Server</span></a></span><span class="rel-n"><span data-zh>另一层 · 给 agent 装的工具</span><span data-en>Other layer · MCP tools</span></span></li>
         </ul>
       </div>
 
