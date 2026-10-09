@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GitHub MCP Server — Tools | 投机取巧</title>
+  <meta name="description" content="GitHub MCP Server（GitHub）：GitHub 官方自己的 MCP server（仓库自述 &quot;GitHub&#39;s official MCP Server&quot;）， 以本地 Docker + 远程托管两形态把 GitHub 平台能力暴露给任意 MCP 客户端。" />
+  <link rel="canonical" href="https://agent.specul.com/tools/github-mcp.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="GitHub MCP Server" />
+  <meta property="og:url" content="https://agent.specul.com/tools/github-mcp.html" />
+  <meta property="og:title" content="GitHub MCP Server — Tools | 投机取巧" />
+  <meta property="og:description" content="GitHub MCP Server（GitHub）：GitHub 官方自己的 MCP server（仓库自述 &quot;GitHub&#39;s official MCP Server&quot;）， 以本地 Docker + 远程托管两形态把 GitHub 平台能力暴露给任意 MCP 客户端。" />
+  <meta name="theme-color" content="#05080f" />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%238b7cf8'/%3E%3Cstop offset='1' stop-color='%2322d3c5'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='48' height='48' rx='12' fill='%2305080f'/%3E%3Cpath d='M14 32 L24 12 L34 32' fill='none' stroke='url(%23g)' stroke-width='2.4' stroke-linejoin='round'/%3E%3Ccircle cx='24' cy='27' r='2.4' fill='%2322d3c5'/%3E%3C/svg%3E" />
+  <link rel="stylesheet" href="../brand.css" />
+  <link rel="stylesheet" href="../site.css" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"GitHub MCP Server","applicationCategory":"DeveloperApplication","url":"https://github.com/github/github-mcp-server","sameAs":"https://github.com/github/github-mcp-server","description":"GitHub 官方自己的 MCP server（仓库自述 \"GitHub's official MCP Server\"）， 以本地 Docker + 远程托管两形态把 GitHub 平台能力暴露给任意 MCP 客户端。","dateModified":"2026-10-08"}</script>
+</head>
+<body class="brand-ambient">
+  <a class="t-skip" href="#main"><span data-zh>跳到主要内容</span><span data-en>Skip to main content</span></a>
+  <header class="site-header">
+    <div class="container site-bar">
+      <a class="brand" href="https://specul.com/" title="投机取巧">
+        <span class="brand-dot" aria-hidden="true"></span>
+        <span class="brand-text">
+          <span class="brand-name" id="markName" data-zh-name="投机取巧" data-en-name="Speculative Speculation">投机取巧</span>
+        </span>
+      </a>
+      <nav class="nav-links" aria-label="站点导航">
+        <a href="https://specul.com/"><span data-zh>首页</span><span data-en>Home</span></a>
+        <a href="https://learn.specul.com/"><span data-zh>学 AI</span><span data-en>Learn</span></a>
+        <a href="https://agent.specul.com/" aria-current="page"><span data-zh>Agent</span><span data-en>Agent</span></a>
+        <a href="https://models.specul.com/"><span data-zh>本地模型</span><span data-en>Models</span></a>
+        <a href="https://vg.specul.com/"><span data-zh>AI 做游戏</span><span data-en>Vibe Gaming</span></a>
+        <a href="https://nav.specul.com/"><span data-zh>导航</span><span data-en>Directory</span></a>
+        <span class="nav-tools">
+          <button class="icon-btn" id="themeBtn" type="button" aria-label="切换明暗主题" title="切换明暗主题">☾</button>
+          <button class="icon-btn" id="langBtn" type="button" aria-label="Switch language" title="Switch language">EN</button>
+        </span>
+      </nav>
+      <!-- B6（2026-10-09）：与共享 shell 同步加的移动端导航入口。
+           ⚠ 本文件是 agent 站**自己的** shell 副本（它多一层分区切换），
+             所以每次改共享 shell 的骨架，这里也要跟一次 —— 这是双份实现固有的代价。
+             样式与行为都在共享 brand.css / brand.js 里，这里只出标记。 -->
+      <button class="nav-burger" type="button" aria-label="打开菜单" aria-expanded="false" aria-controls="navDrawer">
+        <i></i><i></i><i></i>
+      </button>
+    </div>
+  </header>
+  <div class="nav-scrim"></div>
+  <aside class="nav-drawer" id="navDrawer" aria-hidden="true" aria-label="站点导航">
+    <div class="nav-drawer-h">
+      <span class="brand-name"><span data-zh>投机取巧</span><span data-en>Speculative Speculation</span></span>
+      <button class="nav-dclose" type="button" aria-label="关闭">×</button>
+    </div>
+    <nav class="nav-drawer-list">
+      <a href="https://specul.com/"><span><span data-zh>首页</span><span data-en>Home</span></span><span class="ar" aria-hidden="true">→</span></a>
+      <a href="https://learn.specul.com/"><span><span data-zh>学 AI</span><span data-en>Learn</span></span><span class="ar" aria-hidden="true">→</span></a>
+      <a href="https://agent.specul.com/" aria-current="page"><span><span data-zh>Agent</span><span data-en>Agent</span></span><span class="ar" aria-hidden="true">→</span></a>
+      <a href="https://models.specul.com/"><span><span data-zh>本地模型</span><span data-en>Models</span></span><span class="ar" aria-hidden="true">→</span></a>
+      <a href="https://vg.specul.com/"><span><span data-zh>AI 做游戏</span><span data-en>Vibe Gaming</span></span><span class="ar" aria-hidden="true">→</span></a>
+      <a href="https://nav.specul.com/"><span><span data-zh>导航</span><span data-en>Directory</span></span><span class="ar" aria-hidden="true">→</span></a>
+    </nav>
+    <div class="nav-drawer-foot">
+      <p><span data-zh>6 个站，各管一件事</span><span data-en>Six sites, one job each</span></p>
+      <nav><a href="https://specul.com/legal.html"><span data-zh>法律条款</span><span data-en>Legal terms</span></a></nav>
+    </div>
+  </aside>
+  <main id="main">
+    <div class="container detail">
+      <nav class="crumbs" aria-label="面包屑">
+        <a href="https://agent.specul.com/">Agent 图谱</a>
+        <a href="/">Agents</a>
+        <a href="/harness/">Harness</a>
+        <span aria-current="page">Tools</span>
+      </nav>
+      <a class="back" href="./">← Tools</a>
+
+      <div class="detail-head">
+        <div class="mark" style="--card-accent:#181717" aria-hidden="true">GH</div>
+        <div>
+          <h1><span data-zh>GitHub MCP Server</span><span data-en>GitHub MCP Server</span></h1>
+          <div class="vendor is-caps">GitHub</div>
+        </div>
+      </div>
+
+      <div class="badges">
+        <span class="tag on">版本控制</span>
+        <span class="tag on">API</span>
+        <span class="tag on">读写</span>
+        <span class="tag on">远程</span>
+        <span class="tag on">本地</span>
+        <span class="tag on">多平台</span>
+        <span class="badge accent">partial</span>
+        <span class="badge">lifecycle: active</span>
+        <span class="badge"><span data-zh>核验</span><span data-en>Checked</span> 2026-10-08</span>
+      </div>
+
+            <p class="panel-lead"><span data-zh><strong>GitHub 官方自己的 MCP server</strong>（仓库自述 &quot;GitHub&#39;s official MCP Server&quot;），
+以<strong>本地 Docker + 远程托管两形态</strong>把 GitHub 平台能力暴露给任意 MCP 客户端。</span><span data-en>GitHub&#39;s official MCP server (repository description: &quot;GitHub&#39;s official MCP Server&quot;). It connects any MCP client to GitHub&#39;s platform: reading repositories and code files, managing issues and PRs, monitoring Actions, inspecting code-scanning / Dependabot findings, and reading notifications.
+
+<strong>Two forms.</strong> The <strong>remote hosted</strong> server (<code>https://api.githubcopilot.com/mcp/</code>, Streamable HTTP) is &quot;hosted by GitHub and provides the easiest method for getting up and running... no local setup or runtime required.&quot; The <strong>local</strong> server runs as an stdio process via Docker (<code>ghcr.io/github/github-mcp-server</code>) or a Go binary; GitHub Enterprise Server is only supported locally.
+
+<strong>Toolsets are the headline mechanism</strong>: enable only what you need to help the LLM pick tools and shrink context. Default toolsets are <code>context, repos, issues, pull_requests, users</code>; 20+ groups exist in total, and the remote server adds extras (Copilot Spaces, Support Docs Search, <code>create_pull_request_with_copilot</code>).
+
+<strong>Two caution notes.</strong> read-only mode is a &quot;strict security filter&quot; that takes precedence over everything else (write tools are skipped even if explicitly requested). Lockdown mode is explicitly &quot;a best-effort content filter... <strong>not</strong> an authorization boundary.&quot;
+
+Auth is OAuth (with scope challenges on the remote server) or a PAT (classic PATs get startup scope filtering; fine-grained PATs are not filtered). MIT licensed. Repository metadata (checked 2026-10-08): 33,446★, Go, latest release v2.0.2.</span></p>
+
+            <div class="panel is-slim">
+        <h2><span data-zh>适合与不适合</span><span data-en>When to use it, when not to</span></h2>
+<span data-zh>        <p>让 MCP 客户端用自然语言操作 GitHub：读代码与仓库结构、管 issue / PR、盯 Actions、
+查 code scanning 与 dependabot 告警、读通知。<strong>不想自己运维就选远程托管形态</strong>；
+<strong>GHES / 要自托管 HTTP / 要离线可控就选本地形态</strong>。</p>
+        <p class="warn-p"><strong>不适合</strong>需要本地文件系统操作（那是 filesystem / git server 的职责），
+也需要跨会话记忆或后台续跑的场景。</p></span><span data-en>        <p>Anyone who wants their MCP client (VS Code, Claude Desktop, Cursor, Windsurf, Codex, Gemini CLI, etc.) to work with GitHub in natural language — reading code and repo structure, managing issues and PRs, watching Actions, triaging code-scanning / Dependabot alerts.
+Users who do not want to run anything locally — pick the <strong>remote hosted</strong> form.
+GitHub Enterprise Server users, or anyone needing self-hosted HTTP / offline-controllable setups — pick the <strong>local</strong> form.
+Security-conscious setups that want read-only mode, toolset trimming and lockdown filtering.</p></span>
+      </div>
+
+
+      <div class="block-head">
+        <h2 class="t-h2"><span data-zh>固定坐标系</span><span data-en>Fixed coordinate system</span></h2>
+        <p class="t-section-lead">11 <span data-zh>个维度</span><span data-en>dimensions</span>, <span data-zh>与同赛道其他对象逐项可比</span><span data-en>each comparable item by item against others in the same track</span>.</p>
+      </div>
+      <dl class="axes">
+        <div class="axis">
+          <dt><span data-zh>模型与开放条件</span><span data-en>Model & openness</span></dt>
+          <dd>本身不调用模型，是被客户端调用的接口实现。它把 GitHub 平台能力（仓库、issue、PR、Actions、 code scanning 等）以 MCP 工具形式暴露给任意 MCP 客户端； 工具 schema 在协议版本 <code>2026-07-28</code> 及以后返回带类型化 <code>structuredContent</code> 的输出，老客户端退回纯文本。 官方在 README 明说工具描述可用 <code>github-mcp-server-config.json</code> 或 <code>GITHUB_MCP_*</code> 环境变量覆写， 便于本地化；这与「接什么模型」无关，模型选择在客户端侧。</dd>
+        </div>
+        <div class="axis">
+          <dt><span data-zh>运行位置</span><span data-en>Where it runs</span></dt>
+          <dd><strong>两种运行形态。</strong> 远程托管形态由 GitHub 运营（<code>https://api.githubcopilot.com/mcp/</code>）， 官方称「the easiest method for getting up and running」「no local setup or runtime required」； 本地形态是本地进程，官方给 Docker（<code>ghcr.io/github/github-mcp-server</code>）、<code>go build</code> 二进制、 以及自带 HTTP 模式（<code>github-mcp-server http</code>，默认端口 8082）。 <strong>注意 GitHub Enterprise Server 不支持远程托管</strong>（官方明写），只能用本地形态；ghe.com 走远程但有独立端点。</dd>
+        </div>
+        <div class="axis">
+          <dt><span data-zh>本地文件</span><span data-en>Local files</span></dt>
+          <dd><strong>不访问本机文件系统</strong>——它操作的是 GitHub 平台（远程仓库、issue、PR 等）， 与本地 git 仓库无直接关系（本地 git 操作见本站 git 条目）。 唯一贴近「文件」的能力是<strong>操作远端仓库内容</strong>：<code>get_file_contents</code> 读文件/目录、 <code>create_or_update_file</code> 与 <code>push_files</code> 写文件、<code>delete_file</code> 删文件，作用域是 GitHub 上的 repo/branch。 容器形态下也无需挂载本地仓库。</dd>
+        </div>
+        <div class="axis">
+          <dt><span data-zh>关机后的任务</span><span data-en>Tasks after shutdown</span></dt>
+          <dd><strong>远程托管形态与客户端进程生命周期无关</strong>（服务在 GitHub 侧，关机后仍在线）； <strong>本地形态随客户端生死</strong>（stdio 子进程退出即停止）。自托管 HTTP 模式则是你运营的常驻服务， 可用 <code>github-mcp-server http</code> 配合反向代理部署。 <strong>不提供「后台任务续跑」语义</strong>——它的模式是有状态 HTTP / stdio 会话，没有官方断点续跑机制； 但有持续可用性的是远程托管形态。可用性依赖 GitHub 侧服务状态。</dd>
+        </div>
+        <div class="axis">
+          <dt><span data-zh>工具与扩展</span><span data-en>Tools & extensions</span></dt>
+          <dd><strong>工具集（toolsets）是本条目的核心机制。</strong> 官方支持用 <code>--toolsets</code> / <code>GITHUB_TOOLSETS</code> （远程用 <code>X-MCP-Toolsets</code> 头或 <code>/x/{toolset}</code> URL）裁剪可用能力， 还能用 <code>--tools</code> / <code>GITHUB_TOOLS</code> 精确到单个工具、用 <code>--exclude-tools</code> 排除工具。 <strong>默认工具集</strong>是 context / repos / issues / pull_requests / users；另有 actions、code_security、 dependabot、discussions、gists、git、governance、labels、notifications、orgs、projects、 secret_protection、security_advisories、stargazers、code_quality、copilot 等，共 20+ 组； 远程形态另有 Copilot Spaces、GitHub Support Docs Search 等专属工具集。 远程工具集随「每个 toolset 一个 URL」暴露，官方称便于按场景组合。</dd>
+        </div>
+        <div class="axis">
+          <dt><span data-zh>上下文与记忆</span><span data-en>Context & memory</span></dt>
+          <dd><strong>无跨会话记忆</strong>。每一次会话独立，状态体现在 GitHub 平台本身（仓库、issue、PR 的持久状态）， 而不在 server 内。<strong>但有一条官方特有的上下文控制</strong>：Insiders 模式下 <code>list_*</code> 工具可返回 CSV 以压缩列表类响应（<code>csv_output</code> 特性标志），目的是「reduce response context for agents」； 这属于响应格式优化，不是记忆机制。README 未提供任何内建记忆 / 检索层。</dd>
+        </div>
+        <div class="axis">
+          <dt><span data-zh>权限与限制</span><span data-en>Permissions & limits</span></dt>
+          <dd><strong>权限由 GitHub token 决定，且官方给了三层收紧手段。</strong> ① <strong>read-only 模式</strong>（<code>--read-only</code> / <code>GITHUB_READ_ONLY</code> / <code>X-MCP-Readonly</code>）：官方称它是 「strict security filter」，优先级最高——即使显式请求写工具也会被禁用。 ② <strong>lockdown 模式</strong>（<code>--lockdown-mode</code> / <code>X-MCP-Lockdown</code>）：仅过滤公开仓库中无 push 权限用户产出的内容， 官方<strong>明确它只是 best-effort 内容过滤器、不是授权边界</strong>，不能限制凭据本身能读写什么。 ③ <strong>scope filtering</strong>：经典 PAT 启动时按 token scope 隐藏无权限工具；OAuth 走按需 scope challenge。 <strong>能做写与删除</strong>（create/update/delete file、push_files、merge_pull_request、create_repository、 delete_repository 等），高危工具需按需授权（如 <code>delete_repo</code>）。</dd>
+        </div>
+        <div class="axis">
+          <dt><span data-zh>适合什么任务</span><span data-en>Best for</span></dt>
+          <dd>让任意 MCP 客户端（VS Code / Claude Desktop / Cursor / Windsurf / Codex / Gemini CLI 等） 用自然语言操作 GitHub：读代码与仓库结构、管 issue 与 PR、监控 Actions、查 code scanning / dependabot 安全告警、读通知。<strong>远程托管形态适合「不想自己运维」的用户</strong>； <strong>本地 Docker 形态适合 GitHub Enterprise Server、需要自托管 HTTP 或要离线可控的用户</strong>。 不适合需要本地文件系统操作（那是 filesystem / git server 的活）或需要跨会话记忆的场景。</dd>
+        </div>
+        <div class="axis">
+          <dt><span data-zh>传输方式</span><span data-en>Transport</span></dt>
+          <dd><strong>双形态。</strong> 本地形态走 <strong>stdio</strong>（Docker <code>ghcr.io/github/github-mcp-server</code> 或 <code>github-mcp-server stdio</code> 二进制）； 远程托管形态走 <strong>Streamable HTTP</strong>，端点为 <code>https://api.githubcopilot.com/mcp/</code> （官方 README 与 remote-server.md 核验 2026-10-08）。 另可自托管 HTTP 模式（<code>github-mcp-server http</code>，支持 OAuth 元数据端点与 scope challenge）。 远程形态还支持 URL 路径修饰（<code>/readonly</code>、<code>/insiders</code>、<code>/x/{toolset}</code>）与二者组合。 多形态权限边界不同，须分别配置。</dd>
+        </div>
+        <div class="axis">
+          <dt><span data-zh>认证机制</span><span data-en>Authentication</span></dt>
+          <dd><strong>本地 stdio</strong>：可走浏览器 OAuth（github.com 上官方镜像自带 app 凭据，token 仅存内存）， 或 <strong>PAT</strong>（<code>GITHUB_PERSONAL_ACCESS_TOKEN</code>，<strong>优先于 OAuth</strong>）；另有 GitHub App 认证用于非交互式 stdio。 <strong>远程托管</strong>：OAuth（用 GitHub 凭据，缺 scope 时按需 scope challenge）或 PAT（<code>Authorization: Bearer</code>）。 <strong>细粒度 PAT（github_pat_）不做 scope 过滤</strong>——所有工具都显示，权限由 API 侧强制； 经典 PAT（ghp_）才在启动时按 scope 隐藏工具。GitHub Enterprise Server / ghe.com 需自带 OAuth App 或 GitHub App。</dd>
+        </div>
+        <div class="axis">
+          <dt><span data-zh>权限范围</span><span data-en>Permission scope</span></dt>
+          <dd><strong>作用域 = GitHub token 的权限范围，能读也能写和删。</strong> 可收紧：read-only 模式强制只读（优先级最高）；toolsets 裁剪可减少暴露面；lockdown 模式过滤不可信内容 （但官方强调它不是授权边界）。<strong>写 / 删除能力齐全</strong>：<code>create_or_update_file</code>、<code>push_files</code>、<code>delete_file</code>、 <code>create_repository</code>、<code>delete_repository</code>（需 <code>delete_repo</code>）、<code>merge_pull_request</code>、 <code>create_pull_request</code>、<code>label_write</code>、<code>projects_write</code>、<code>create_repository_ruleset</code> 等。 无独立审批机制（<code>delete_repository</code> 走多轮确认，属交互式 elicitation 而非审批层）。</dd>
+        </div>
+      </dl>
+
+            <div class="panel warn">
+        <h2 class="warn"><span data-zh>头号误解</span><span data-en>Top misconception</span></h2>
+        <ul>
+
+          <li><span data-zh>误以为它是已归档的旧 MCP 组织参考 server——那是 servers-archived 里的 github server，本 server 是 GitHub 官方活跃产品线</span><span data-en>Confusing it with the archived MCP-org reference server — that one lives in servers-archived; this is GitHub&#39;s own actively maintained product.</span></li>
+          <li><span data-zh>把 lockdown 模式当安全边界——官方明文它只是 best-effort 内容过滤，不改变凭据能读写什么</span><span data-en>Treating lockdown mode as a security boundary — the official docs say it is a best-effort content filter that does not change what the credential can read or write.</span></li>
+          <li><span data-zh>以为 read-only 只是默认值——它是强制过滤：即使显式 --tools 请求写工具也会被禁用</span><span data-en>Thinking read-only is just a default — it is an enforced filter: write tools are disabled even when explicitly requested via --tools.</span></li>
+        </ul>
+      </div>
+
+
+            <div class="panel is-slim">
+        <h2><span data-zh>价格</span><span data-en>Pricing</span></h2>
+        <table class="src">
+          <tbody>
+            <tr><th class="w-28"><span data-zh>月度入口</span><span data-en>Monthly entry</span></th><td><span data-zh>无商业费用（MIT）</span><span data-en>无商业费用（MIT）</span></td></tr>
+            <tr><th class="w-28"><span data-zh>年付</span><span data-en>Annual</span></th><td><span data-zh>无商业费用（MIT）</span><span data-en>无商业费用（MIT）</span></td></tr>
+            <tr><th class="w-28"><span data-zh>额度说明</span><span data-en>Quota note</span></th><td><span data-zh>GitHub 官方仓库，MIT 许可（经 GitHub license API 核验 2026-10-08），无授权费。 本地形态（Docker 镜像 ghcr.io/github/github-mcp-server）与远程托管形态（api.githubcopilot.com/mcp/） 均不单独收费；实际成本来自使用的 GitHub 账号本身（私有仓库 / Copilot / Actions 等按其各自计费）， 以及你自行部署 HTTP 模式的机器成本。</span><span data-en>GitHub 官方仓库，MIT 许可（经 GitHub license API 核验 2026-10-08），无授权费。 本地形态（Docker 镜像 ghcr.io/github/github-mcp-server）与远程托管形态（api.githubcopilot.com/mcp/） 均不单独收费；实际成本来自使用的 GitHub 账号本身（私有仓库 / Copilot / Actions 等按其各自计费）， 以及你自行部署 HTTP 模式的机器成本。</span></td></tr>
+          </tbody>
+        </table>
+        <p class="fine mt-3"><span data-zh>不同币种不做折算。优惠、地区、税费与登录后报价可能变化，购买前请到官方页面确认。</span><span data-en>No currency conversion. Discounts, regions, tax and post-login pricing can change — confirm on the official page before buying.</span></p>
+      </div>
+
+
+            <div class="panel is-slim">
+        <h2><span data-zh>未知项清单</span><span data-en>Known unknowns</span></h2>
+        <ul>
+          <li>「动态工具发现」能力（<code>--dynamic-toolsets</code> 一类）：<strong>官方当前 README 与 docs 未说明</strong>（已查 README、server-configuration.md、remote-server.md、insiders-features.md、feature-flags.md、streamable-http.md、scope-filtering.md 七页）；现有运行时可调机制只有 Feature Flags（<code>--features</code> / <code>X-MCP-Features</code>）与 Insiders 模式</li>
+          <li>工具级人工审批机制（官方未说明；官方只有 read-only / lockdown / OAuth 挑战三类收紧手段）</li>
+          <li>Hosted 形态的 SLA / 限流细则（README 与 remote-server.md 未给数字）</li>
+          <li>lockdown 在各工具上的完整过滤矩阵（官方只列了 issue_read / pull_request_read 下几支）</li>
+          <li>自托管 HTTP 模式在反向代理下的配额与运维细节（官方给配置项，未给容量数字）</li>
+        </ul>
+      </div>
+
+
+      <div class="panel">
+        <h2><span data-zh>证据来源</span><span data-en>Evidence sources</span></h2>
+        <p class="t-sm"><span data-zh>判断可回到以下一手源复核。本站核验日</span><span data-en>Every judgement can be rechecked against the primary sources below. Verified on</span> 2026-10-08，<span data-zh>内容更新日</span><span data-en>content updated on</span> 2026-10-08。</p>
+        <table class="src">
+          <thead><tr><th class="w-20"><span data-zh>类型</span><span data-en>Type</span></th><th class="w-52"><span data-zh>名称</span><span data-en>Name</span></th><th><span data-zh>链接</span><span data-en>Link</span></th></tr></thead>
+          <tbody>
+            <tr><td>repo</td><td>github/github-mcp-server · 仓库（33,446★，MIT，核验 2026-10-08）</td><td><a href="https://github.com/github/github-mcp-server" target="_blank" rel="noopener">https://github.com/github/github-mcp-server</a></td></tr>
+            <tr><td>docs</td><td>主 README（远程/本地两形态、toolsets 全表、read-only / lockdown、i18n 覆写、认证）</td><td><a href="https://github.com/github/github-mcp-server/blob/main/README.md" target="_blank" rel="noopener">https://github.com/github/github-mcp-server/blob/main/README.md</a></td></tr>
+            <tr><td>docs</td><td>Remote Server 文档（远程端点 api.githubcopilot.com/mcp/、URL 路径修饰、X-MCP-* 头）</td><td><a href="https://github.com/github/github-mcp-server/blob/main/docs/remote-server.md" target="_blank" rel="noopener">https://github.com/github/github-mcp-server/blob/main/docs/remote-server.md</a></td></tr>
+            <tr><td>docs</td><td>Server Configuration 指南（toolsets / tools / exclude / read-only / lockdown / insiders / scope filtering 的配置矩阵）</td><td><a href="https://github.com/github/github-mcp-server/blob/main/docs/server-configuration.md" target="_blank" rel="noopener">https://github.com/github/github-mcp-server/blob/main/docs/server-configuration.md</a></td></tr>
+            <tr><td>docs</td><td>PAT Scope Filtering（经典 PAT 按 scope 隐藏工具、OAuth scope challenge、细粒度 PAT 不过滤）</td><td><a href="https://github.com/github/github-mcp-server/blob/main/docs/scope-filtering.md" target="_blank" rel="noopener">https://github.com/github/github-mcp-server/blob/main/docs/scope-filtering.md</a></td></tr>
+            <tr><td>docs</td><td>Streamable HTTP Server（自托管 HTTP 模式、OAuth 元数据端点、scope challenge）</td><td><a href="https://github.com/github/github-mcp-server/blob/main/docs/streamable-http.md" target="_blank" rel="noopener">https://github.com/github/github-mcp-server/blob/main/docs/streamable-http.md</a></td></tr>
+            <tr><td>docs</td><td>Insiders Features（CSV 输出压缩列表响应、实验特性标志）</td><td><a href="https://github.com/github/github-mcp-server/blob/main/docs/insiders-features.md" target="_blank" rel="noopener">https://github.com/github/github-mcp-server/blob/main/docs/insiders-features.md</a></td></tr>
+            <tr><td>changelog</td><td>Releases（最新 v2.0.2 @ 2026-10-08）</td><td><a href="https://github.com/github/github-mcp-server/releases" target="_blank" rel="noopener">https://github.com/github/github-mcp-server/releases</a></td></tr>
+          </tbody>
+        </table>
+      </div>
+
+            <div class="panel is-slim">
+        <h2><span data-zh>实测记录</span><span data-en>Measured runs</span></h2>
+        <p>本站尚未完成实测。测试协议见 <a href="https://github.com/speculcom/ai-agent-guide/blob/main/tracks/agents/tasks/_protocol.md" target="_blank" rel="noopener">tasks/_protocol.md</a>。
+
+<strong>实测建议</strong>：这个 server 的实测重点是「收得住吗」——
+
+| # | 测什么 | 为什么值得测 |
+|:--:|---|---|
+| 1 | 只开 <code>repos</code> 工具集 + read-only，写工具是否真被禁 | 官方称 read-only 优先级最高，需验证 |
+| 2 | lockdown 下，无权用户 issue 内容是否真被过滤 | 官方已声明它不是安全边界，验证实际强度 |
+| 3 | 经典 PAT vs 细粒度 PAT 的工具可见性差异 | 官方说细粒度 PAT 不做 scope 过滤，易被误判为「权限一致」 |
+| 4 | 远程托管与本地 Docker 的工具集差异（Copilot 专属工具） | 两形态工具面不同，选型前要确认 |
+| 5 | <code>delete_repository</code> 多轮确认在 HTTP 模式下的前置条件 | 需配置 <code>GITHUB_MCP_SERVER_MRTR_STATE_KEY</code>，否则不暴露 |</p>
+      </div>
+
+
+            <div class="panel is-slim">
+        <h2><span data-zh>相关条目</span><span data-en>Related entries</span></h2>
+        <ul class="rel-list">
+          <li><span class="rel-t"><a href="./git.html">Git MCP Server</a></span><span class="rel-n"><strong>最该对照的一条</strong>：git server 只做<strong>本地</strong>仓库操作、不含 push/PR，并明确提到原 github 参考 server 已归档；本条目正是那个「远程 GitHub 操作」的官方替代。</span></li>
+          <li><span class="rel-t"><a href="./filesystem.html">Filesystem MCP Server</a></span><span class="rel-n">作用域/权限设计对照：filesystem 是本地目录白名单，github-mcp 是远端 GitHub token 作用域。</span></li>
+          <li><span class="rel-t"><a href="./context7.html">Context7</a></span><span class="rel-n">同赛道对照：Context7 是纯远程托管、无本地权限风险；github-mcp 是「本地 + 远程」双形态且具完整写/删能力。</span></li>
+          <li><span class="rel-t"><a href="/copilot.html"><span data-zh>GitHub Copilot</span><span data-en>GitHub Copilot</span></a></span><span class="rel-n"><span data-zh>另一层 · 成品 Agent</span><span data-en>Other layer · Finished agents</span></span></li>
+        </ul>
+      </div>
+
+
+      <p class="fine mt-6">
+        <span data-zh>本页由</span><span data-en>This page is generated from the</span> <a href="https://github.com/speculcom/ai-agent-guide" target="_blank" rel="noopener" class="link-brand">ai-agent-guide</a> <span data-zh>数据层生成（CC BY 4.0）。</span><span data-en>data layer (CC BY 4.0).</span>
+        方法论与坐标系定义见仓库内 <code>METHODOLOGY.md</code>。
+      </p>
+    </div>
+  </main>
+  <footer class="site-footer">
+    <div class="container foot-row">
+      <div class="foot-brand">
+        <span class="brand-dot" aria-hidden="true"></span>
+        <span class="foot-copy">© 2026 投机取巧 · <span data-zh>Specul</span><span data-en>Specul</span></span>
+      </div>
+      <nav class="foot-links" aria-label="页脚导航">
+          <a href="https://specul.com/"><span data-zh>首页</span><span data-en>Home</span></a>
+          <a href="https://learn.specul.com/"><span data-zh>学 AI</span><span data-en>Learn</span></a>
+          <a href="https://agent.specul.com/"><span data-zh>Agent</span><span data-en>Agent</span></a>
+          <a href="https://models.specul.com/"><span data-zh>本地模型</span><span data-en>Models</span></a>
+          <a href="https://vg.specul.com/"><span data-zh>AI 做游戏</span><span data-en>Vibe Gaming</span></a>
+          <a href="https://nav.specul.com/"><span data-zh>导航</span><span data-en>Directory</span></a>
+          <a href="https://github.com/speculcom/ai-agent-guide" target="_blank" rel="noopener">GitHub</a>
+      </nav>
+      <nav class="foot-legal-links" aria-label="法律">
+        <a href="https://specul.com/legal.html"><span data-zh>法律条款</span><span data-en>Legal terms</span></a>
+        <a href="https://specul.com/legal.html#s6"><span data-zh>免责声明</span><span data-en>Disclaimer</span></a>
+        <a href="https://specul.com/legal.html#s8"><span data-zh>隐私与本地存储</span><span data-en>Privacy</span></a>
+      </nav>
+    </div>
+  </footer>
+  <script src="../brand.js"></script>
+  <script>
+    (function () {
+      var root = document.documentElement;
+      function sync() { root.setAttribute('data-lang', root.lang === 'en' ? 'en' : 'zh'); }
+      new MutationObserver(sync).observe(root, { attributes: true, attributeFilter: ['lang'] });
+      sync();
+    })();
+  </script>
+</body>
+</html>
