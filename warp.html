@@ -4,18 +4,18 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Warp — Agents | 投机取巧</title>
-  <meta name="description" content="Warp（Warp）：开源客户端的终端 agent 环境——官方自称「Agentic Development Environment」， 把现代终端、编码 agent、Warp Drive 协作与云 agent / Factories 合成一个产品。" />
+  <meta name="description" content="Warp（Warp）：开源的终端 agent 环境。 官方自称： 「Agentic Development Environment」 它把现代终端、编码 agent、Warp Drive 协作与云 agent / Factories 合成一个产品。" />
   <link rel="canonical" href="https://agent.specul.com/warp.html" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Warp" />
   <meta property="og:url" content="https://agent.specul.com/warp.html" />
   <meta property="og:title" content="Warp — Agents | 投机取巧" />
-  <meta property="og:description" content="Warp（Warp）：开源客户端的终端 agent 环境——官方自称「Agentic Development Environment」， 把现代终端、编码 agent、Warp Drive 协作与云 agent / Factories 合成一个产品。" />
-  <meta name="theme-color" content="#05080f" />
+  <meta property="og:description" content="Warp（Warp）：开源的终端 agent 环境。 官方自称： 「Agentic Development Environment」 它把现代终端、编码 agent、Warp Drive 协作与云 agent / Factories 合成一个产品。" />
+  <meta name="theme-color" content="#16121f" />
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%238b7cf8'/%3E%3Cstop offset='1' stop-color='%2322d3c5'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='48' height='48' rx='12' fill='%2305080f'/%3E%3Cpath d='M14 32 L24 12 L34 32' fill='none' stroke='url(%23g)' stroke-width='2.4' stroke-linejoin='round'/%3E%3Ccircle cx='24' cy='27' r='2.4' fill='%2322d3c5'/%3E%3C/svg%3E" />
   <link rel="stylesheet" href="brand.css" />
   <link rel="stylesheet" href="site.css" />
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Warp","applicationCategory":"DeveloperApplication","url":"https://app.warp.dev/get_warp","sameAs":"https://www.warp.dev","description":"开源客户端的终端 agent 环境——官方自称「Agentic Development Environment」， 把现代终端、编码 agent、Warp Drive 协作与云 agent / Factories 合成一个产品。","dateModified":"2026-10-08","offers":{"@type":"Offer","price":"20","priceCurrency":"USD"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Warp","applicationCategory":"DeveloperApplication","url":"https://app.warp.dev/get_warp","sameAs":"https://www.warp.dev","description":"开源的终端 agent 环境。 官方自称： 「Agentic Development Environment」 它把现代终端、编码 agent、Warp Drive 协作与云 agent / Factories 合成一个产品。","dateModified":"2026-10-08","offers":{"@type":"Offer","price":"20","priceCurrency":"USD"}}</script>
 </head>
 <body class="brand-ambient">
   <a class="t-skip" href="#main"><span data-zh>跳到主要内容</span><span data-en>Skip to main content</span></a>
@@ -97,57 +97,138 @@
         <span class="badge"><span data-zh>核验</span><span data-en>Checked</span> 2026-10-08</span>
       </div>
 
-            <p class="panel-lead"><span data-zh>开源客户端的<strong>终端 agent 环境</strong>——官方自称「Agentic Development Environment」，
-把现代终端、编码 agent、Warp Drive 协作与云 agent / Factories 合成一个产品。</span><span data-en>Warp calls itself, verbatim, an open-source <strong>Agentic Development Environment</strong> that &quot;brings together terminal work, coding agents, and cloud automation&quot;. The same <strong>Warp Agent</strong> is reachable three ways — &quot;In the Warp app&quot;, &quot;In any terminal, with the Warp Agent CLI&quot;, &quot;In the cloud, as a cloud agent&quot; — with account, rules, skills and model access shared across all three. The CLI is &quot;a standalone terminal program&quot; and &quot;a native terminal multiplexer&quot; with its own PTY, so it runs in any terminal emulator, <strong>including over SSH</strong>. Every proposed action is checked against an execution profile whose values are <code>agent_decides</code> / <code>always_ask</code> / <code>always_allow</code>; file edits still prompt every time by default, so &quot;you always review a diff before it&#39;s applied&quot;.</span></p>
+            <div class="panel-lead"><span data-zh><p><strong>开源的终端 agent 环境。</strong></p>
+            <p>官方自称：</p>
+            <blockquote>「Agentic Development Environment」</blockquote>
+            <p>它把现代终端、编码 agent、Warp Drive 协作与云 agent / Factories 合成一个产品。</p></span><span data-en><p>Warp is an open-source <strong>Agentic Development Environment</strong> — the vendor&#39;s own wording, verbatim. The same <strong>Warp Agent</strong> is reachable three ways: &quot;In the Warp app&quot;, &quot;In any terminal, with the Warp Agent CLI&quot;, and &quot;In the cloud, as a cloud agent&quot;. Account, rules, skills and model access are shared across all three. The CLI is &quot;a standalone terminal program that runs the Warp Agent&quot; and &quot;a native terminal multiplexer&quot; with its own PTY, so it runs in any terminal emulator, <strong>including over SSH</strong>. Every proposed action is checked against an execution profile whose values are <code>agent_decides</code> / <code>always_ask</code> / <code>always_allow</code>; file edits are <code>agent_decides</code> by default but still prompt every time, so &quot;you always review a diff before it&#39;s applied&quot;.</p></span></div>
 
             <div class="panel is-slim">
         <h2><span data-zh>适合与不适合</span><span data-en>When to use it, when not to</span></h2>
-<span data-zh>        <p>在终端里同时做命令执行与编码 agent 工作、并希望团队协作与云自动化的用户。
-把终端工作流标准化为 Workflows / Notebooks，或把 issue triage、
-PR review 等后台活交给云 agent，是它的重点场景。</p>
-        <p class="warn-p"><strong>不适合</strong>完全不碰终端 agent、只要一个经典终端的用户——
-Free 档可以当现代终端用，但云 agent、Warp Drive 协作与代码库索引都受限。</p></span><span data-en>        <p>Developers who run both shell commands and coding agents in the terminal and want team collaboration plus cloud automation.
-Particularly good for: teams standardizing terminal workflows as Warp Drive Workflows / Notebooks; teams delegating background work such as issue triage or PR review to cloud agents; enterprises that need SSO, data governance or self-hosted cloud agents.</p>
-        <p class="warn-p"><strong>Not a fit for</strong> people who avoid terminal agents entirely and just want a classic terminal — the Free tier works as a modern terminal, but cloud agents, Warp Drive collaboration and codebase indexing are all capped.</p></span>
+<span data-zh>        <div><p>在终端里同时做命令执行与编码 agent 工作、并希望团队协作与云自动化的用户。</p></div>
+        <div><p>把终端工作流标准化为 Workflows / Notebooks，或把 issue triage、 PR review 等后台活交给云 agent，是它的重点场景。</p></div>
+        <div class="warn-p"><p><strong>不适合</strong>完全不碰终端 agent、只要一个经典终端的用户。</p></div>
+        <div><p>Free 档可以当现代终端用。 但云 agent、Warp Drive 协作与代码库索引都受限。</p></div></span><span data-en>        <div><p>Developers who run both shell commands and coding agent work in the terminal and want team collaboration plus cloud automation. Particularly good for: teams standardizing terminal workflows as Warp Drive Workflows / Notebooks; teams delegating background work such as issue triage or PR review to cloud agents; enterprises that need SSO, data governance or self-hosted cloud agents.</p></div>
+        <div class="warn-p"><p><strong>Not a fit for</strong> people who avoid terminal agents entirely and just want a classic terminal — the Free tier works as a modern terminal, but cloud agents, Warp Drive collaboration and codebase indexing are all capped.</p></div></span>
       </div>
 
 
       <div class="block-head">
         <h2 class="t-h2"><span data-zh>固定坐标系</span><span data-en>Fixed coordinate system</span></h2>
-        <p class="t-section-lead">8 <span data-zh>个维度</span><span data-en>dimensions</span>, <span data-zh>与同赛道其他对象逐项可比</span><span data-en>each comparable item by item against others in the same track</span>.</p>
+        <p class="t-section-lead">8 <span data-zh>个维度</span><span data-en>dimensions</span>, <span data-zh>与同分区其他对象逐项可比</span><span data-en>each comparable item by item against others in the same section</span>.</p>
       </div>
       <dl class="axes">
         <div class="axis">
           <dt><span data-zh>模型与开放条件</span><span data-en>Model & openness</span></dt>
-          <dd><strong>多模型 + BYOK，官方明确「pick a model per conversation」。</strong> 官方 CLI 页写「Pick a model per conversation, bring your own provider API keys, and track credit usage」；定价页 Build 档描述模型来源为 「frontier and open-source models from OpenAI, Anthropic, z.ai, and more」。 <strong>BYOK 有档位边界</strong>：官方定价表把「Bring your own API key」与 「Custom inference endpoint」标注为「Individuals and orgs up to 10 people」， 即个人与 10 人以内组织可用；Enterprise 档另有 <strong>BYOLLM</strong> （官方原文「Route inference through your own cloud (BYOLLM)」）。 <strong>换模型</strong>：CLI 侧可逐会话选模型，执行 profile 里也能设 <code>base_model</code> 覆盖。 <strong>官方未在定价页列全模型清单</strong>（已查 pricing 与 agents/cli 两页）。</dd>
+          <dd><p><strong>能做：多模型 + BYOK，官方明确「pick a model per conversation」。</strong></p>
+            <p><strong>官方原文</strong>：&quot;Pick a model per conversation, bring your own provider API keys, and track credit usage&quot;</p>
+            <p>定价页 Build 档的模型来源是：</p>
+            <p><strong>官方原文</strong>：&quot;frontier and open-source models from OpenAI, Anthropic, z.ai, and more&quot;</p>
+            <p><strong>BYOK 有档位边界。</strong></p>
+            <p>官方定价表把<strong>「Bring your own API key」</strong>与<strong>「Custom inference endpoint」</strong> 标注为：</p>
+            <p><strong>官方原文</strong>：&quot;Individuals and orgs up to 10 people&quot;</p>
+            <p>也就是说，个人与 10 人以内组织可用。</p>
+            <p>Enterprise 档另有 <strong>BYOLLM</strong>：</p>
+            <p><strong>官方原文</strong>：&quot;Route inference through your own cloud (BYOLLM)&quot;</p>
+            <p>（意思是：推理走你自己的云。）</p>
+            <p><strong>换模型</strong>：CLI 侧可逐会话选模型。 执行 profile 里也能设 <code>base_model</code> 覆盖。</p>
+            <p><strong>未核验：官方未在定价页列全模型清单</strong></p>
+            <p>（已查 pricing 与 agents/cli 两页。）</p></dd>
         </div>
         <div class="axis">
           <dt><span data-zh>运行位置</span><span data-en>Where it runs</span></dt>
-          <dd><strong>CLI 优先，但同一 agent 有三种运行面。</strong> 官方文档原文「Warp is an open-source Agentic Development Environment」， 三种入口共用同一 <strong>Warp Agent</strong>：「In the Warp app」「In any terminal, with the Warp Agent CLI」「In the cloud, as a cloud agent」。 <strong>CLI 是独立终端程序</strong>——官方原文「a standalone terminal program that runs the Warp Agent」，本身是「a native terminal multiplexer」（自带 PTY）， 可在任意终端模拟器中运行，<strong>包括通过 SSH</strong>；启动命令是 <code>warp</code> （云侧另有 <code>oz</code> 命令）。<strong>账号、规则、技能与模型访问跨三种入口一致</strong>， 且官方注明 CLI 不要求安装 Warp 桌面 app。 本条目记录 CLI 形态；桌面 app 与云 agent 的差异以官方页面为准。</dd>
+          <dd><p><strong>能做：同一 agent 有三种运行面，CLI 优先。</strong></p>
+            <p>官方文档原文：</p>
+            <p><strong>官方原文</strong>：&quot;Warp is an open-source Agentic Development Environment&quot;</p>
+            <p>三种入口共用同一 <strong>Warp Agent</strong>：</p>
+            <p><strong>官方原文</strong>：&quot;In the Warp app&quot;</p>
+            <p><strong>官方原文</strong>：&quot;In any terminal, with the Warp Agent CLI&quot;</p>
+            <p><strong>官方原文</strong>：&quot;In the cloud, as a cloud agent&quot;</p>
+            <p><strong>CLI 是独立终端程序。</strong></p>
+            <p><strong>官方原文</strong>：&quot;a standalone terminal program that runs the Warp Agent&quot;</p>
+            <p>它本身是：</p>
+            <p><strong>官方原文</strong>：&quot;a native terminal multiplexer&quot;</p>
+            <p>自带 PTY，所以可在任意终端模拟器中运行，<strong>包括通过 SSH</strong>。</p>
+            <p>启动命令是 <code>warp</code>（云侧另有 <code>oz</code> 命令）。</p>
+            <p><strong>账号、规则、技能与模型访问跨三种入口一致。</strong> 官方注明 CLI 不要求安装 Warp 桌面 app。</p>
+            <p>本条目记录 CLI 形态。 桌面 app 与云 agent 的差异以官方页面为准。</p></dd>
         </div>
         <div class="axis">
           <dt><span data-zh>本地文件</span><span data-en>Local files</span></dt>
-          <dd><strong>在本地 checkout 内工作，官方强调可评审的 diff 与索引边界。</strong> 官方 CLI 页的「Project context」写明 agent 会自动读取项目规则 （如 <code>AGENTS.md</code>）、skills 与 MCP 配置。文件改动以 diff 呈现， 默认 <code>apply_code_diffs</code> 为 <code>agent_decides</code>，<strong>但编辑文件仍每次提示</strong>—— 官方原文「you always review a diff before it&#39;s applied」。 <strong>目录授权</strong>：执行 profile 有 <code>directory_allowlist</code>，控制 「Directories the agent may read without approval」。 <strong>代码库索引按档给上限</strong>（定价页）：Free 3 个代码库 / 每库 3,000 文件， Build 与 Max 40 个 / 每库 100,000 文件，Business 80 个，Enterprise 定制。 <strong>索引算法与首次建索引耗时官方未说明</strong>（已查 pricing 与 agents/cli 两页）。</dd>
+          <dd><p><strong>能做：在本地 checkout 内工作，改动以 diff 呈现。</strong></p>
+            <p>官方 CLI 页的「Project context」写明：agent 会自动读取项目规则 （如 <code>AGENTS.md</code>）、skills 与 MCP 配置。</p>
+            <p>文件改动以 diff 呈现。 默认 <code>apply_code_diffs</code> 为 <code>agent_decides</code>。</p>
+            <p><strong>但编辑文件仍每次提示。</strong></p>
+            <p><strong>官方原文</strong>：&quot;you always review a diff before it&#39;s applied&quot;</p>
+            <p><strong>目录授权</strong>：执行 profile 有 <code>directory_allowlist</code>，控制</p>
+            <p><strong>官方原文</strong>：&quot;Directories the agent may read without approval&quot;</p>
+            <p><strong>代码库索引按档给上限</strong>（定价页）：</p>
+            <ul><li>Free 3 个代码库 / 每库 3,000 文件</li><li>Build 与 Max 40 个 / 每库 100,000 文件</li><li>Business 80 个</li><li>Enterprise 定制</li></ul>
+            <p><strong>未核验：索引算法与首次建索引耗时（官方未说明）</strong></p>
+            <p>（已查 pricing 与 agents/cli 两页。）</p></dd>
         </div>
         <div class="axis">
           <dt><span data-zh>关机后的任务</span><span data-en>Tasks after shutdown</span></dt>
-          <dd><strong>云端后台形态官方明确，属「真后台」。</strong> 终端 agent 绑定会话；但官方文档把 <strong>Automation Platform</strong> 与 <strong>cloud agents</strong> 单列——「Run background agent work in the cloud」， 可由 triggers、schedules、integrations 与 API 触发， 官方点名用途含 issue triage、pull request review、周期性维护。 <strong>Warp Factories</strong> 更进一步：一组挂在仓库上的云 agent， 从 Slack / GitHub / Linear / Jira 取活，走 triage → spec → implement → review， 产出通常是 PR。CLI 侧还有 <strong>cloud handoff</strong>——可把会话交给云 agent， 或把云 run 拉回终端继续。<strong>云 agent 的并发与算力按档给</strong>（定价页）： Free 有限、Build 20 并发 / 2 vCPU 4 GiB、Max 20 / 4 vCPU 8 GiB、 Business 80 / 8 vCPU 16 GiB、Enterprise 定制。</dd>
+          <dd><p><strong>能做：云端后台形态官方明确，属「真后台」。</strong></p>
+            <p>终端 agent 绑定会话。 但官方文档把 <strong>Automation Platform</strong> 与 <strong>cloud agents</strong> 单列：</p>
+            <p><strong>官方原文</strong>：&quot;Run background agent work in the cloud&quot;</p>
+            <p>它可由 triggers、schedules、integrations 与 API 触发。 官方点名用途含 issue triage、pull request review、周期性维护。</p>
+            <p><strong>Warp Factories</strong> 更进一步：一组挂在仓库上的云 agent。 它从 Slack / GitHub / Linear / Jira 取活，走 triage → spec → implement → review， 产出通常是 PR。</p>
+            <p>CLI 侧还有 <strong>cloud handoff</strong>。 它可把会话交给云 agent，也可把云 run 拉回终端继续。</p>
+            <p><strong>云 agent 的并发与算力按档给</strong>（定价页）：</p>
+            <ul><li>Free 有限</li><li>Build 20 并发 / 2 vCPU 4 GiB</li><li>Max 20 / 4 vCPU 8 GiB</li><li>Business 80 / 8 vCPU 16 GiB</li><li>Enterprise 定制</li></ul></dd>
         </div>
         <div class="axis">
           <dt><span data-zh>工具与扩展</span><span data-en>Tools & extensions</span></dt>
-          <dd><strong>终端内 agent + MCP 支持完整（本地与云端两套）。</strong> 内置能力围绕终端：自然语言提示、<strong>agent 会话转录</strong>（流式响应、Markdown、 文件 diff、工具调用、计划与任务列表）、在同一输入里跑 shell 命令、 云 handoff 与多 agent 协调。Warp Drive 提供 Workflows / Notebooks / Prompts / 环境变量等可复用对象。 <strong>MCP（本地 agent）</strong>：官方原文支持「Streamable HTTP and SSE」， 以及 CLI（Command）本地 server；配置分项目级 <code>.warp/.mcp.json</code> 与 全局 <code>~/.warp/.mcp.json</code>，<strong>还能读取第三方 agent 的 MCP 配置</strong> （Claude Code、Codex 等），有内置技能 <code>/agent-add-mcp</code>； 认证支持环境变量、OAuth 一键安装与自定义 Header；安全上 「Project-scoped servers never auto-spawn」。 <strong>MCP（云 agent）</strong>：支持 <code>command</code>/<code>args</code>（stdio）、<code>url</code> （Streamable HTTP / SSE）与 <code>warp_id</code>（引用已授权的托管 server）， OAuth 走 managed MCP installation。</dd>
+          <dd><p><strong>能做：终端内 agent + MCP 支持完整（本地与云端两套）。</strong></p>
+            <p>内置能力围绕终端：</p>
+            <ul><li>自然语言提示</li><li><strong>agent 会话转录</strong>（流式响应、Markdown、文件 diff、工具调用、计划与任务列表）</li><li>在同一输入里跑 shell 命令</li><li>云 handoff 与多 agent 协调</li></ul>
+            <p>Warp Drive 提供 Workflows / Notebooks / Prompts / 环境变量等可复用对象。</p>
+            <p><strong>MCP（本地 agent）</strong>：官方原文支持</p>
+            <p><strong>官方原文</strong>：&quot;Streamable HTTP and SSE&quot;</p>
+            <p>以及 CLI（Command）本地 server。</p>
+            <p>配置分项目级 <code>.warp/.mcp.json</code> 与全局 <code>~/.warp/.mcp.json</code>。 <strong>还能读取第三方 agent 的 MCP 配置</strong>（Claude Code、Codex 等）。 另有内置技能 <code>/agent-add-mcp</code>。 认证支持环境变量、OAuth 一键安装与自定义 Header。 安全上：</p>
+            <p><strong>官方原文</strong>：&quot;Project-scoped servers never auto-spawn&quot;</p>
+            <p><strong>MCP（云 agent）</strong>：支持三种引用方式。</p>
+            <ul><li><code>command</code>/<code>args</code>（stdio）</li><li><code>url</code>（Streamable HTTP / SSE）</li><li><code>warp_id</code>（引用已授权的托管 server）</li></ul>
+            <p>OAuth 走 managed MCP installation。</p></dd>
         </div>
         <div class="axis">
           <dt><span data-zh>上下文与记忆</span><span data-en>Context & memory</span></dt>
-          <dd><strong>会话持久化到账号，可退出续接与切换。</strong> 官方 CLI 页原文「Conversations save to your Warp account, so you can exit and resume later or switch between them」；交互侧 <code>/status</code> 可看当前会话 名与 ID。<strong>项目上下文自动注入</strong>：agent 自动读取项目规则（如 <code>AGENTS.md</code>）、 skills 与 MCP server。Warp Drive 里保存的 prompt 登录后可用， <strong>但官方明确 CLI 内仅 prompt 类对象可用</strong>——「other Warp Drive object types aren&#39;t available in the CLI」。<strong>跨 agent 记忆</strong>列为 Enterprise 的 「Cross-harness agent memory (Research Preview)」。 <strong>上下文压缩策略与跨项目记忆边界官方未说明</strong> （已查 agents/cli 与 warp-drive 两页）。</dd>
+          <dd><p><strong>能做：会话持久化到账号，可退出续接与切换。</strong></p>
+            <p>官方 CLI 页原文：</p>
+            <p><strong>官方原文</strong>：&quot;Conversations save to your Warp account, so you can exit and resume later or switch between them&quot;</p>
+            <p>交互侧 <code>/status</code> 可看当前会话名与 ID。</p>
+            <p><strong>项目上下文自动注入</strong>：agent 自动读取项目规则（如 <code>AGENTS.md</code>）、 skills 与 MCP server。</p>
+            <p>Warp Drive 里保存的 prompt 登录后可用。</p>
+            <p><strong>但官方明确 CLI 内仅 prompt 类对象可用。</strong></p>
+            <p><strong>官方原文</strong>：&quot;other Warp Drive object types aren&#39;t available in the CLI&quot;</p>
+            <p><strong>跨 agent 记忆</strong>列为 Enterprise 的：</p>
+            <p><strong>官方原文</strong>：&quot;Cross-harness agent memory (Research Preview)&quot;</p>
+            <p><strong>未核验：上下文压缩策略与跨项目记忆边界（官方未说明）</strong></p>
+            <p>（已查 agents/cli 与 warp-drive 两页。）</p></dd>
         </div>
         <div class="axis">
           <dt><span data-zh>权限与限制</span><span data-en>Permissions & limits</span></dt>
-          <dd><strong>执行 profile + 三档值 + auto-approve 的终端内审批模型。</strong> 官方原文「Every action the agent proposes ... is checked against your active execution profile」。权限值三档：<strong><code>agent_decides</code></strong>（自信则自走、 不确定才问）、<strong><code>always_ask</code></strong>、<strong><code>always_allow</code></strong>。默认下 shell 命令、 文件编辑、文件读取、MCP 工具调用均为 <code>agent_decides</code>； <strong>文件编辑的 <code>agent_decides</code> 仍每次提示</strong>，保证「always review a diff before it&#39;s applied」。另有 <code>command_allowlist</code> / <code>command_denylist</code> （denylist 即使 <code>always_allow</code> 也要批准）、<code>directory_allowlist</code>、 <code>write_to_pty</code>、<code>run_agents</code>、<code>ask_user_question</code>。 <strong>Auto-approve</strong>（<code>/auto-approve</code> 或 <code>Ctrl+Shift+I</code>）给全自主， 作用域限单会话、新会话默认关闭；默认<strong>会绕过 command denylist</strong>（可关掉）， 但<strong>团队管理员在 Admin Panel 设的 denylist 永不被绕过</strong>。 执行 profile 仅存本地、<strong>不同步到云端</strong>。</dd>
+          <dd><p><strong>能做：执行 profile + 三档值 + auto-approve 的终端内审批模型。</strong></p>
+            <p>官方原文：</p>
+            <p><strong>官方原文</strong>：&quot;Every action the agent proposes ... is checked against your active execution profile&quot;</p>
+            <p>权限值三档：</p>
+            <ul><li><strong><code>agent_decides</code></strong> —— 自信则自走，不确定才问</li><li><strong><code>always_ask</code></strong> —— 每次都问</li><li><strong><code>always_allow</code></strong> —— 不问</li></ul>
+            <p>默认下 shell 命令、文件编辑、文件读取、MCP 工具调用 均为 <code>agent_decides</code>。 <strong>文件编辑的 <code>agent_decides</code> 仍每次提示</strong>，以保证：</p>
+            <p><strong>官方原文</strong>：&quot;always review a diff before it&#39;s applied&quot;</p>
+            <p>另有这几项：</p>
+            <ul><li><code>command_allowlist</code> / <code>command_denylist</code>（denylist 即使 <code>always_allow</code> 也要批准）</li><li><code>directory_allowlist</code></li><li><code>write_to_pty</code></li><li><code>run_agents</code></li><li><code>ask_user_question</code></li></ul>
+            <p><strong>Auto-approve</strong>（<code>/auto-approve</code> 或 <code>Ctrl+Shift+I</code>）给全自主。 作用域限单会话，新会话默认关闭。 默认会绕过 command denylist（可关掉）。 但团队管理员在 Admin Panel 设的 denylist 永不被绕过。</p>
+            <p>执行 profile 仅存本地，不同步到云端。</p></dd>
         </div>
         <div class="axis">
           <dt><span data-zh>适合什么任务</span><span data-en>Best for</span></dt>
-          <dd>在终端里同时做命令执行与编码 agent 工作、并希望团队协作与云自动化的用户。 <strong>特别适合</strong>：想把终端工作流标准化为 Workflows / Notebooks 的团队、 想把 issue triage / PR review 等后台活交给云 agent 的团队、 需要 SSO / 数据治理 / 自托管云 agent 的企业。 <strong>不适合</strong>：完全不碰终端 agent、只要一个经典终端的用户—— Free 档虽可当现代终端用，但云 agent、Warp Drive 协作与代码库索引都有额度上限。</dd>
+          <dd><p><strong>适合：在终端里同时做命令执行与编码 agent 工作、并希望团队协作与云自动化的用户。</strong></p>
+            <p><strong>特别适合</strong>：</p>
+            <ul><li>想把终端工作流标准化为 Workflows / Notebooks 的团队</li><li>想把 issue triage / PR review 等后台活交给云 agent 的团队</li><li>需要 SSO / 数据治理 / 自托管云 agent 的企业</li></ul>
+            <p><strong>不适合</strong>：</p>
+            <ul><li>完全不碰终端 agent、只要一个经典终端的用户</li></ul>
+            <p>Free 档虽可当现代终端用。 但云 agent、Warp Drive 协作与代码库索引都有额度上限。</p></dd>
         </div>
       </dl>
 
@@ -166,10 +247,18 @@ Particularly good for: teams standardizing terminal workflows as Warp Drive Work
         <h2><span data-zh>价格</span><span data-en>Pricing</span></h2>
         <table class="src">
           <tbody>
-            <tr><th class="w-28"><span data-zh>月度入口</span><span data-en>Monthly entry</span></th><td><span data-zh>Free $0 / Build $20 / Max $200 每月（Business $50/席·月；Enterprise 定制）</span><span data-en>Free $0 / Build $20 / Max $200 每月（Business $50/席·月；Enterprise 定制）</span></td></tr>
+            <tr><th class="w-28"><span data-zh>月度入口</span><span data-en>Monthly entry</span></th><td><span data-zh><p>Free $0 / Build $20 / Max $200 每月（Business $50/席·月；Enterprise 定制）</p></span><span data-en><p>Free $0 / Build $20 / Max $200 每月（Business $50/席·月；Enterprise 定制）</p></span></td></tr>
             <tr><th class="w-28"><span data-zh>月度数值</span><span data-en>Monthly price</span></th><td>20</td></tr>
-            <tr><th class="w-28"><span data-zh>年付</span><span data-en>Annual</span></th><td><span data-zh>年付 9 折（官方切换后 Build $18、Max $180、Business $45/席·月），无统一折算说明</span><span data-en>年付 9 折（官方切换后 Build $18、Max $180、Business $45/席·月），无统一折算说明</span></td></tr>
-            <tr><th class="w-28"><span data-zh>额度说明</span><span data-en>Quota note</span></th><td><span data-zh>**2026-10-08 按 warp.dev/pricing 逐档核实（美元口径）**： Free $0（现代终端 + Warp Agent CLI 访问 + 自带推理，但云 agent 与 Warp Drive 访问受限）； Build 起 $20/月（含 1,500 credits = $20 的 API 价额度，并用最高代码库索引上限）； Max 起 $200/月（18,000 credits，约 12× Build）； Business $50/席·月（最多 25 席，含 SAML SSO 与团队用量指标）； Enterprise 定制（不限席位、自托管云 agent、BYOLLM、自定义索引、企业数据治理）。 **额度是 credit 制**：含额用尽后按 API 价「pay as you go」加购， 官方页面同时给出 Annual 切换价（Build $18、Max $180、Business $45）。 **另有一套 Warp Factories（Early Access）定价**：pay-as-you-go 档按 API 价加 20%， Build / Max 档用套餐内含 credits 抵扣。</span><span data-en>**2026-10-08 按 warp.dev/pricing 逐档核实（美元口径）**： Free $0（现代终端 + Warp Agent CLI 访问 + 自带推理，但云 agent 与 Warp Drive 访问受限）； Build 起 $20/月（含 1,500 credits = $20 的 API 价额度，并用最高代码库索引上限）； Max 起 $200/月（18,000 credits，约 12× Build）； Business $50/席·月（最多 25 席，含 SAML SSO 与团队用量指标）； Enterprise 定制（不限席位、自托管云 agent、BYOLLM、自定义索引、企业数据治理）。 **额度是 credit 制**：含额用尽后按 API 价「pay as you go」加购， 官方页面同时给出 Annual 切换价（Build $18、Max $180、Business $45）。 **另有一套 Warp Factories（Early Access）定价**：pay-as-you-go 档按 API 价加 20%， Build / Max 档用套餐内含 credits 抵扣。</span></td></tr>
+            <tr><th class="w-28"><span data-zh>年付</span><span data-en>Annual</span></th><td><span data-zh><p>年付 9 折（官方切换后 Build $18、Max $180、Business $45/席·月），无统一折算说明</p></span><span data-en><p>年付 9 折（官方切换后 Build $18、Max $180、Business $45/席·月），无统一折算说明</p></span></td></tr>
+            <tr><th class="w-28"><span data-zh>额度说明</span><span data-en>Quota note</span></th><td><span data-zh><p><strong>2026-10-08 按 warp.dev/pricing 逐档核实（美元口径）。</strong> 五档是这么分的：</p>
+            <ul><li>Free $0（现代终端 + Warp Agent CLI 访问 + 自带推理，但云 agent 与 Warp Drive 访问受限）</li><li>Build 起 $20/月（含 1,500 credits = $20 的 API 价额度，并用最高代码库索引上限）</li><li>Max 起 $200/月（18,000 credits，约 12× Build）</li><li>Business $50/席·月（最多 25 席，含 SAML SSO 与团队用量指标）</li><li>Enterprise 定制（不限席位、自托管云 agent、BYOLLM、自定义索引、企业数据治理）</li></ul>
+            <p>（上面各档括号里的内容是官方页面的档位描述。）</p>
+            <p><strong>额度是 credit 制。</strong> 含额用尽后按 API 价「pay as you go」加购。 官方页面同时给出 Annual 切换价：Build $18、Max $180、Business $45。</p>
+            <p><strong>另有一套 Warp Factories（Early Access）定价。</strong> pay-as-you-go 档按 API 价加 20%。 Build / Max 档用套餐内含 credits 抵扣。</p></span><span data-en><p><strong>2026-10-08 按 warp.dev/pricing 逐档核实（美元口径）。</strong> 五档是这么分的：</p>
+            <ul><li>Free $0（现代终端 + Warp Agent CLI 访问 + 自带推理，但云 agent 与 Warp Drive 访问受限）</li><li>Build 起 $20/月（含 1,500 credits = $20 的 API 价额度，并用最高代码库索引上限）</li><li>Max 起 $200/月（18,000 credits，约 12× Build）</li><li>Business $50/席·月（最多 25 席，含 SAML SSO 与团队用量指标）</li><li>Enterprise 定制（不限席位、自托管云 agent、BYOLLM、自定义索引、企业数据治理）</li></ul>
+            <p>（上面各档括号里的内容是官方页面的档位描述。）</p>
+            <p><strong>额度是 credit 制。</strong> 含额用尽后按 API 价「pay as you go」加购。 官方页面同时给出 Annual 切换价：Build $18、Max $180、Business $45。</p>
+            <p><strong>另有一套 Warp Factories（Early Access）定价。</strong> pay-as-you-go 档按 API 价加 20%。 Build / Max 档用套餐内含 credits 抵扣。</p></span></td></tr>
           </tbody>
         </table>
         <p class="fine mt-3"><span data-zh>不同币种不做折算。优惠、地区、税费与登录后报价可能变化，购买前请到官方页面确认。</span><span data-en>No currency conversion. Discounts, regions, tax and post-login pricing can change — confirm on the official page before buying.</span></p>
@@ -208,12 +297,52 @@ Particularly good for: teams standardizing terminal workflows as Warp Drive Work
 
             <div class="panel is-slim">
         <h2><span data-zh>实测记录</span><span data-en>Measured runs</span></h2>
-        <p>本站尚未完成实测。测试协议见 <a href="https://github.com/speculcom/ai-agent-guide/blob/main/tracks/agents/tasks/_protocol.md" target="_blank" rel="noopener">tasks/_protocol.md</a>。
-
-<strong>实测建议</strong>：重点测<strong>auto-approve 与命令 denylist 的实际交互</strong>——
-默认绕过 denylist 这一条在真实 CI / 自动化里最容易出预期外的行为。</p>
+        <p>本站尚未完成实测。测试协议见 <a href="https://github.com/speculcom/ai-agent-guide/blob/main/tracks/agents/tasks/_protocol.md" target="_blank" rel="noopener">tasks/_protocol.md</a>。</p>
+            <p><strong>实测建议</strong>：重点测<strong>auto-approve 与命令 denylist 的实际交互</strong>。</p>
+            <p>默认绕过 denylist 这一条，在真实 CI / 自动化里最容易出预期外的行为。</p>
       </div>
 
+
+            <div class="panel is-slim">
+        <h2>变更记录说明</h2>
+        <p>本对象有独立 changelog，且是本站少见的<strong>高频发布</strong>。</p>
+            <div class="tbl-wrap"><table><thead><tr><th>面</th><th>节奏</th><th>入口</th></tr></thead><tbody><tr><td>产品更新</td><td>通常每周四</td><td><code>docs.warp.dev/changelog</code>（另有 2021–2026 分年页）</td></tr></tbody></table></div>
+            <p><strong>没有单一版本号。</strong></p>
+            <p>Warp 按「周」而非按 semver 发布。 所以引用变更时要写日期，而不是版本号。</p>
+            <p>这与 Codex <code>rust-v*</code>、Crush <code>nightly</code> 的坑类似。</p>
+      </div>
+      <div class="panel is-slim">
+        <h2>三种入口，一个 agent</h2>
+        <p>官方明确把同一个 <strong>Warp Agent</strong> 摆在三个运行面上：</p>
+            <p>``<code> In the Warp app · In any terminal (Warp Agent CLI) · In the cloud (cloud agent) </code>``</p>
+            <p><strong>这意味着额度、账号、规则与技能是同一套。</strong></p>
+            <p>CLI 侧还额外强调它是<strong>「a native terminal multiplexer」</strong>——自带 PTY。 所以它能和 agent 共用同一个终端跑交互式命令，<strong>并且能在 SSH 里用</strong>。</p>
+            <p>这一点把「终端 agent」和「GUI 终端模拟器」区分开了。</p>
+      </div>
+      <div class="panel is-slim">
+        <h2>Warp Drive 是它的协作底座</h2>
+        <p>Warp Drive 把 Workflows（参数化命令）、Notebooks（可交互 runbook）、 Prompts 与环境变量做成<strong>实时同步的团队对象</strong>。</p>
+            <p>这是它区别于纯 CLI agent 的组织面。</p>
+            <p><strong>但注意 CLI 里只支持 prompt 类对象。</strong></p>
+            <p>其他 Drive 对象类型（Workflow / Notebook）在 CLI 中不可用。 官方页面已明确这一点。</p>
+            <p>团队共享与 Session Sharing 是 Business 起的功能。</p>
+      </div>
+      <div class="panel is-slim">
+        <h2>权限设计：三档值 + auto-approve</h2>
+        <p>它把每一步操作按类型独立设权限：</p>
+            <div class="tbl-wrap"><table><thead><tr><th>值</th><th>含义</th></tr></thead><tbody><tr><td><code>agent_decides</code></td><td>自信则自走，不确定才问</td></tr><tr><td><code>always_ask</code></td><td>每次都问</td></tr><tr><td><code>always_allow</code></td><td>不问</td></tr></tbody></table></div>
+            <p><strong>最值得记录的是默认组合。</strong> 文件编辑默认虽是 <code>agent_decides</code>。 但官方说它<strong>仍会每次提示</strong>，以保证 review diff。</p>
+            <p>而 auto-approve 默认<strong>会绕过命令 denylist</strong>。 想保留 denylist 得手动关掉。</p>
+            <p>但<strong>团队在 Admin Panel 里设的 denylist 永远不被绕过</strong>。</p>
+            <p>「个人能绕过、管理员不能绕过」这个不对称要记清。</p>
+      </div>
+      <div class="panel is-slim">
+        <h2>核验说明</h2>
+        <p><code>confidence: partial</code> 的原因有两条。</p>
+            <ul><li>✅ 已核验：五档定价与 credit 制、三种入口与开源客户端、 本地 / 云端两套 MCP 支持、执行 profile 三档值与 auto-approve 行为、 Warp Drive 对象类型、代码库索引与云 agent 的档位上限</li></ul>
+            <ul><li>❌ 官方未说明：上下文压缩策略与跨项目记忆边界、索引算法与首次建索引耗时、 Warp Factories 的普遍可用时间与最终计费（见「未知项清单」）</li></ul>
+            <p><strong>引用本条目时请只使用已核验部分。</strong></p>
+      </div>
 
             <div class="panel is-slim">
         <h2><span data-zh>相关条目</span><span data-en>Related entries</span></h2>
