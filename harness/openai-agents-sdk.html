@@ -4,18 +4,18 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>OpenAI Agents SDK — Harness | 投机取巧</title>
-  <meta name="description" content="OpenAI Agents SDK（OpenAI）：「primitives-only 的多agent harness」 —— 官方自述 lightweight yet powerful： 只给agent loop 的原语，不替你决定 filesystem / 规划 / 记忆怎么做。" />
+  <meta name="description" content="OpenAI Agents SDK（OpenAI）：OpenAI Agents SDK 是「primitives-only 的多agent harness」。 官方自述 lightweight yet powerful：filesystem / 规划 / 记忆都不替你决定。" />
   <link rel="canonical" href="https://agent.specul.com/harness/openai-agents-sdk.html" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="OpenAI Agents SDK" />
   <meta property="og:url" content="https://agent.specul.com/harness/openai-agents-sdk.html" />
   <meta property="og:title" content="OpenAI Agents SDK — Harness | 投机取巧" />
-  <meta property="og:description" content="OpenAI Agents SDK（OpenAI）：「primitives-only 的多agent harness」 —— 官方自述 lightweight yet powerful： 只给agent loop 的原语，不替你决定 filesystem / 规划 / 记忆怎么做。" />
-  <meta name="theme-color" content="#05080f" />
+  <meta property="og:description" content="OpenAI Agents SDK（OpenAI）：OpenAI Agents SDK 是「primitives-only 的多agent harness」。 官方自述 lightweight yet powerful：filesystem / 规划 / 记忆都不替你决定。" />
+  <meta name="theme-color" content="#16121f" />
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%238b7cf8'/%3E%3Cstop offset='1' stop-color='%2322d3c5'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='48' height='48' rx='12' fill='%2305080f'/%3E%3Cpath d='M14 32 L24 12 L34 32' fill='none' stroke='url(%23g)' stroke-width='2.4' stroke-linejoin='round'/%3E%3Ccircle cx='24' cy='27' r='2.4' fill='%2322d3c5'/%3E%3C/svg%3E" />
   <link rel="stylesheet" href="../brand.css" />
   <link rel="stylesheet" href="../site.css" />
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"OpenAI Agents SDK","applicationCategory":"DeveloperApplication","url":"https://openai.github.io/openai-agents-python/","sameAs":"https://openai.github.io/openai-agents-python/","description":"「primitives-only 的多agent harness」 —— 官方自述 lightweight yet powerful： 只给agent loop 的原语，不替你决定 filesystem / 规划 / 记忆怎么做。","dateModified":"2026-09-30"}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"OpenAI Agents SDK","applicationCategory":"DeveloperApplication","url":"https://openai.github.io/openai-agents-python/","sameAs":"https://openai.github.io/openai-agents-python/","description":"OpenAI Agents SDK 是「primitives-only 的多agent harness」。 官方自述 lightweight yet powerful：filesystem / 规划 / 记忆都不替你决定。","dateModified":"2026-09-30"}</script>
 </head>
 <body class="brand-ambient">
   <a class="t-skip" href="#main"><span data-zh>跳到主要内容</span><span data-en>Skip to main content</span></a>
@@ -100,53 +100,110 @@
         <span class="badge"><span data-zh>核验</span><span data-en>Checked</span> 2026-09-30</span>
       </div>
 
-            <p class="panel-lead"><span data-zh><strong>「primitives-only 的多agent harness」</strong> —— 官方自述 lightweight yet powerful：
-只给agent loop 的原语，不替你决定 filesystem / 规划 / 记忆怎么做。</span><span data-en><strong>&quot;A primitives-only multi-agent harness&quot;</strong> — the official description is &quot;lightweight yet powerful&quot;: it hands you the agent-loop primitives and does not decide for you how the filesystem, planning or memory work.</span></p>
+            <div class="panel-lead"><span data-zh><p><strong>OpenAI Agents SDK 是「primitives-only 的多agent harness」。</strong></p>
+            <p>官方自述 lightweight yet powerful：filesystem / 规划 / 记忆都不替你决定。</p></span><span data-en><p><strong>&quot;A primitives-only multi-agent harness&quot;</strong> — the official description is &quot;lightweight yet powerful&quot;: it hands you the agent-loop primitives and does not decide for you how the filesystem, planning or memory work.</p></span></div>
 
             <div class="panel is-slim">
         <h2><span data-zh>适合与不适合</span><span data-en>When to use it, when not to</span></h2>
-<span data-zh>        <p><strong>适合</strong>：要薄 harness + 要内建 guardrails/human-in-the-loop + 要 MCP 一等支持 + Python 栈。
-<strong>不适合</strong>：要开箱即用的长任务工作区（用 Deep Agents 或走 SandboxAgent 路线）；TypeScript 生态（用 openai-agents-js）。</p></span><span data-en>        <p><strong>Fits</strong>: you want a thin harness with built-in guardrails / human-in-the-loop, first-class MCP support, and a Python stack.
-<strong>Not a fit</strong>: a ready-made long-task workspace (use Deep Agents or the SandboxAgent route); a TypeScript ecosystem (use openai-agents-js).</p></span>
+<span data-zh>        <div><p><strong>适合</strong>：</p></div>
+        <div><ul><li>要薄 harness，要内建 guardrails 与 human-in-the-loop。</li><li>要 MCP 一等支持，团队是 Python 栈。</li></ul></div>
+        <div class="warn-p"><p><strong>不适合</strong>：</p></div>
+        <div><ul><li>要开箱即用的长任务工作区（用 Deep Agents 或走 SandboxAgent 路线）。</li><li>TypeScript 生态（用 openai-agents-js）。</li></ul></div></span><span data-en>        <div><p><strong>Fits</strong>: you want a thin harness with built-in guardrails / human-in-the-loop, first-class MCP support, and a Python stack. <strong>Not a fit</strong>: a ready-made long-task workspace (use Deep Agents or the SandboxAgent route); a TypeScript ecosystem (use openai-agents-js).</p></div></span>
       </div>
 
 
       <div class="block-head">
         <h2 class="t-h2"><span data-zh>固定坐标系</span><span data-en>Fixed coordinate system</span></h2>
-        <p class="t-section-lead">8 <span data-zh>个维度</span><span data-en>dimensions</span>, <span data-zh>与同赛道其他对象逐项可比</span><span data-en>each comparable item by item against others in the same track</span>.</p>
+        <p class="t-section-lead">8 <span data-zh>个维度</span><span data-en>dimensions</span>, <span data-zh>与同分区其他对象逐项可比</span><span data-en>each comparable item by item against others in the same section</span>.</p>
       </div>
       <dl class="axes">
         <div class="axis">
           <dt><span data-zh>模型与开放条件</span><span data-en>Model & openness</span></dt>
-          <dd><strong>官方自述 provider-agnostic</strong>，README 首段原文： 「It is provider-agnostic, supporting the OpenAI Responses and Chat Completions APIs, as well as <strong>100+ other LLMs</strong>.」 实现路径有两层证据：核心依赖是 <code>openai&gt;=3.0.0</code>；可选依赖里有 <code>litellm</code>（<code>openai-agents[litellm]</code>）与 <code>any-llm</code>（<code>openai-agents[any-llm]</code>，要求 Python ≥3.11）。 <strong>官方 <code>models</code> 页给出完整接入面（已核验）</strong>：官方专列&quot;Non-OpenAI models&quot; 与&quot;Third-party adapters&quot;两节 —— <strong>内置 provider 接入点</strong>可指向 OpenAI 兼容端点 （示例 <code>MultiProvider(openai_base_url=&quot;https://openrouter.ai/api/v1&quot;)</code>）， 另有 <strong>Any-LLM / LiteLLM 两个 beta 适配器</strong>；LiteLLM 页原文： &quot;allows you to use <strong>100+ models</strong> via a single interface ... use <strong>any AI model</strong> in the Agents SDK&quot;，示例直接给 <code>anthropic/claude-3-5-sonnet</code>。 <strong>换 provider 的改动量 = 换 <code>model</code></strong>（字符串名 / <code>LitellmModel(...)</code> / provider 前缀）， 但官方<strong>没有&quot;零改动&quot;的量化承诺</strong>，各家能力对齐度需实测。</dd>
+          <dd><p><strong>官方自述 provider-agnostic。</strong> 官方的接入口径是一句话： 支持 OpenAI 两套 API，也支持 100+ 其他 LLM。</p>
+            <p><strong>官方原文</strong>：&quot;It is provider-agnostic, supporting the OpenAI Responses and Chat Completions APIs, as well as <strong>100+ other LLMs</strong>.&quot;</p>
+            <p>实现路径有两层证据：</p>
+            <ul><li>核心依赖是 <code>openai&gt;=3.0.0</code>。</li><li>可选依赖有两个 extra，都是非 OpenAI 路径。</li></ul>
+            <p>两个 extra 分别是 <code>litellm</code>（<code>openai-agents[litellm]</code>） 与 <code>any-llm</code>（<code>openai-agents[any-llm]</code>，要求 Python ≥3.11）。</p>
+            <p><strong>官方 <code>models</code> 页给出完整接入面（已核验）。</strong> 官方专列 &quot;Non-OpenAI models&quot; 与 &quot;Third-party adapters&quot; 两节。</p>
+            <p>两节里的接入点：</p>
+            <ul><li><strong>内置 provider 接入点</strong>可指向 OpenAI 兼容端点。</li><li>另有 <strong>Any-LLM / LiteLLM 两个 beta 适配器</strong>。</li></ul>
+            <p>内置接入点的官方示例：</p>
+            <blockquote><code>MultiProvider(openai_base_url=&quot;https://openrouter.ai/api/v1&quot;)</code></blockquote>
+            <p>适配器的官方示例：</p>
+            <blockquote><code>anthropic/claude-3-5-sonnet</code></blockquote>
+            <p>LiteLLM 页上的口径是：一个接口接 100+ 模型，也可以用任何 AI 模型。</p>
+            <p><strong>官方原文</strong>：&quot;allows you to use <strong>100+ models</strong> via a single interface ... use <strong>any AI model</strong> in the Agents SDK&quot;</p>
+            <p><strong>换 provider 的改动量 = 换 <code>model</code></strong>（字符串名 / <code>LitellmModel(...)</code> / provider 前缀）。</p>
+            <p>⚠ 但官方<strong>没有「零改动」的量化承诺</strong>，各家能力对齐度需实测。</p></dd>
         </div>
         <div class="axis">
           <dt><span data-zh>运行位置</span><span data-en>Where it runs</span></dt>
-          <dd><strong>你自己运营进程</strong> —— 它是库不是服务。README 的四种运行方式全部是本地代码调用 （<code>Runner.run_sync</code> / <code>RealtimeRunner.run</code> / <code>VoicePipeline.run</code> / sandbox client）。 唯一例外是 <strong>SandboxAgent 的 hosted sandbox client</strong> —— 官方提到可以用托管沙箱， 但那依赖 OpenAI 侧的容器服务，不是「整个 agent 托管」。</dd>
+          <dd><p><strong>你自己运营进程 —— 它是库，不是服务。</strong></p>
+            <p>README 的四种运行方式全部是本地代码调用：</p>
+            <ul><li><code>Runner.run_sync</code></li><li><code>RealtimeRunner.run</code></li><li><code>VoicePipeline.run</code></li><li>sandbox client</li></ul>
+            <p>唯一例外是 <strong>SandboxAgent 的 hosted sandbox client</strong> —— 官方提到可以用托管沙箱。</p>
+            <p>⚠ 但那依赖 OpenAI 侧的容器服务，不是「整个 agent 托管」。</p></dd>
         </div>
         <div class="axis">
           <dt><span data-zh>本地文件</span><span data-en>Local files</span></dt>
-          <dd><strong>本地文件能力明确存在但不在默认 agent 里</strong>。官方为「需要检查文件、跑命令、打补丁、 或在长任务间保留工作区状态」的场景单独提供了 <strong><code>SandboxAgent</code></strong>： README 原文说 SandboxAgent 是 preconfigured to work with a container to perform work over long time horizons，且 default_manifest 里可以声明 <code>GitRepo(repo=..., ref=...)</code>。 <strong>沙箱客户端分平台</strong>：<code>UnixLocalSandboxClient</code>（macOS / Linux）； Windows 须用 <code>DockerSandboxClient</code>（需 <code>openai-agents[docker]</code> extra）或 hosted sandbox client。 <strong>这条是本站选型时的实用信息：Windows 用户不能直接用本地 Unix 沙箱路径。</strong></dd>
+          <dd><p><strong>本地文件能力明确存在，但不在默认 agent 里。</strong></p>
+            <p>官方为「需要检查文件、跑命令、打补丁，或在长任务间保留工作区状态」 的场景单独提供了 <strong><code>SandboxAgent</code></strong>。</p>
+            <p><strong>官方原文</strong>：SandboxAgent 是 preconfigured to work with a container to perform work over long time horizons</p>
+            <p>它的 <code>default_manifest</code> 里可以声明 <code>GitRepo(repo=..., ref=...)</code>。</p>
+            <p><strong>沙箱客户端分平台</strong>：</p>
+            <ul><li><code>UnixLocalSandboxClient</code> —— macOS / Linux。</li><li>Windows 须用 <code>DockerSandboxClient</code>（需 <code>openai-agents[docker]</code> extra）。</li><li>Windows 也可用 hosted sandbox client。</li></ul>
+            <p>⚠ <strong>这条是本站选型时的实用信息：Windows 用户不能直接用本地 Unix 沙箱路径。</strong></p></dd>
         </div>
         <div class="axis">
           <dt><span data-zh>关机后的任务</span><span data-en>Tasks after shutdown</span></dt>
-          <dd><strong>自托管 = 关了就停。</strong> README 没有托管执行选项（Realtime 是长连接但进程仍在自己手里）。 <strong>断点续跑有官方支撑</strong>：Sessions 章节写明「Automatic conversation history management across agent runs」，配合 SQLite（SQLAlchemy 依赖）与 Redis（<code>openai-agents[redis]</code>）后端。 SandboxAgent 的 default_manifest 也面向「preserve workspace state across longer tasks」。</dd>
+          <dd><p><strong>自托管 = 关了就停。</strong> README 没有托管执行选项 （Realtime 是长连接，但进程仍在自己手里）。</p>
+            <p><strong>断点续跑有官方支撑。</strong> Sessions 章节写明 <strong>官方原文</strong>：&quot;Automatic conversation history management across agent runs&quot;。</p>
+            <p>可选后端有 SQLite（SQLAlchemy 依赖）与 Redis（<code>openai-agents[redis]</code>）。</p>
+            <p>SandboxAgent 的 default_manifest 也面向 <strong>官方原文</strong>：&quot;preserve workspace state across longer tasks&quot;。</p></dd>
         </div>
         <div class="axis">
           <dt><span data-zh>工具与扩展</span><span data-en>Tools & extensions</span></dt>
-          <dd><strong>工具面是官方列出的四类</strong>：functions、MCP、hosted tools，以及 <strong>agents as tools</strong> （把别的 agent 当工具调，与 handoffs 并列为核心委派机制）。 <strong>MCP 是核心依赖而非可选</strong>：<code>mcp<strong>=1.19.0,</strong>3</code> 在 <code>dependencies</code> 里（不是 optional-dependencies）—— 这说明 MCP 接入是SDK 的一等能力。 <strong>Guardrails 可配置</strong>：官方列「Configurable safety checks for input and output validation」， 分 input 与 output 两个方向。</dd>
+          <dd><p><strong>工具面是官方列出的四类</strong>：functions、MCP、hosted tools， 以及 <strong>agents as tools</strong>（把别的 agent 当工具调）。</p>
+            <p>后两类与 handoffs 并列，都是核心委派机制。</p>
+            <p><strong>MCP 是核心依赖，不是可选。</strong> 这一点看 <code>tools</code> 的依赖声明：</p>
+            <ul><li><code>mcp&gt;=1.19.0,&lt;3</code> 写在 <code>dependencies</code> 里。</li><li>它不在 optional-dependencies 里，是一等能力。</li></ul>
+            <p><strong>Guardrails 可配置。</strong> 官方列「Configurable safety checks for input and output validation」，分 input 与 output 两个方向。</p></dd>
         </div>
         <div class="axis">
           <dt><span data-zh>上下文与记忆</span><span data-en>Context & memory</span></dt>
-          <dd><strong>官方原文只有 Sessions</strong>：Automatic conversation history management across agent runs。 可选后端有 Redis（<code>openai-agents[redis]</code>）与 SQLAlchemy（SQLAlchemy + asyncpg 依赖）。 <strong>注意与本站主张的分野</strong>：Sessions 管的是<strong>会话历史</strong>， 本站的「状态 ≠ 上下文」主张里，<strong>把大工具输出落盘</strong>这类手段在本 SDK 属用户自建 （SandboxAgent 的沙箱工作区可以承担这个角色，但官方没有把它宣传成 context 管理层）。</dd>
+          <dd><p><strong>官方原文只有 Sessions。</strong></p>
+            <p><strong>官方原文</strong>：&quot;Automatic conversation history management across agent runs&quot;</p>
+            <p>可选后端有 Redis（<code>openai-agents[redis]</code>） 与 SQLAlchemy（SQLAlchemy + asyncpg 依赖）。</p>
+            <p><strong>注意与本站主张的分野。</strong></p>
+            <p>Sessions 管的是<strong>会话历史</strong>。</p>
+            <p>本站的「状态 ≠ 上下文」主张里，<strong>把大工具输出落盘</strong>这类手段在本 SDK 属用户自建。</p>
+            <p>SandboxAgent 的沙箱工作区可以承担这个角色，但官方没有把它宣传成 context 管理层。</p></dd>
         </div>
         <div class="axis">
           <dt><span data-zh>权限与限制</span><span data-en>Permissions & limits</span></dt>
-          <dd><strong>内建 Guardrails（输入 + 输出双向校验）+ Human in the loop（工具级审批）</strong> —— 这是本站目前见到的<strong>权限面最完整</strong>的内建方案： 「Configurable safety checks for input and output validation」与 「Built-in mechanisms for involving humans across agent runs」。 <strong>机制细节已核验</strong>（官方 <code>guardrails</code> 与 <code>human_in_the_loop</code> 专章）： ① 三类 guardrail —— <strong>input</strong>（只在链条第一个 agent 跑）、<strong>output</strong> （只在产出最终输出的 agent 跑）、<strong>tool</strong>（包 <code>FunctionTool</code>，执行前后各校验一次， 可 skip/replace/raise tripwire）；命中即抛 tripwire 异常并<strong>立即中止</strong>， input 侧可选 <code>run_in_parallel=False</code> 在 agent 启动前拦截。 ② <strong>工具级审批</strong>：<code>needs_approval=True|callable</code> 可用在 <code>function_tool</code>、 <code>ShellTool</code>、<code>ApplyPatchTool</code>、<code>Agent.as_tool</code>，MCP server 用 <code>require_approval</code>； 审批以 run-wide <code>interruptions</code> 暂停，<code>RunState</code> 可序列化/恢复， 参数无法安全解析时 <strong>fail closed</strong>，<code>always_approve</code> 可固化决策。 <strong>边界要说清</strong>：官方<strong>没有</strong>内建文件/网络沙箱 —— guardrails 是<strong>用户可编程的 校验钩子</strong>；真正的沙箱边界交宿主机或 SandboxAgent 容器，不在 guardrail 层 （已查 guardrails、human_in_the_loop、Sandbox agents 三页）。 与 Deep Agents 的「trust the LLM，边界责任交给你」形成鲜明对照。</dd>
+          <dd><p><strong>内建 Guardrails（输入 + 输出双向校验）+ Human in the loop（工具级审批）。</strong></p>
+            <p>这是本站目前见到的<strong>权限面最完整</strong>的内建方案。两句官方原文：</p>
+            <p><strong>官方原文</strong>：&quot;Configurable safety checks for input and output validation&quot;</p>
+            <p><strong>官方原文</strong>：&quot;Built-in mechanisms for involving humans across agent runs&quot;</p>
+            <p><strong>机制细节已核验</strong>（官方 <code>guardrails</code> 与 <code>human_in_the_loop</code> 专章）。 guardrails 共三类：</p>
+            <ul><li><strong>input</strong> —— 只在链条第一个 agent 跑。</li><li><strong>output</strong> —— 只在产出最终输出的 agent 跑。</li><li><strong>tool</strong> —— 包 <code>FunctionTool</code>，执行前后各校验一次，可 skip/replace/raise tripwire。</li></ul>
+            <p>第三条的 tripwire 命中即抛异常并<strong>立即中止</strong>。</p>
+            <p>input 侧可选 <code>run_in_parallel=False</code>，在 agent 启动前拦截。</p>
+            <p><strong>工具级审批</strong>：<code>needs_approval=True|callable</code> 可用在 <code>function_tool</code>、<code>ShellTool</code>、<code>ApplyPatchTool</code>、<code>Agent.as_tool</code>。</p>
+            <p>MCP server 用 <code>require_approval</code>。</p>
+            <p>审批以 run-wide <code>interruptions</code> 暂停，<code>RunState</code> 可序列化/恢复。 参数无法安全解析时 <strong>fail closed</strong>，<code>always_approve</code> 可固化决策。</p>
+            <p>⚠ <strong>边界要说清</strong>：官方<strong>没有</strong>内建文件/网络沙箱。</p>
+            <p>guardrails 是<strong>用户可编程的校验钩子</strong>；真正的沙箱边界交宿主机或 SandboxAgent 容器，不在 guardrail 层。</p>
+            <p>（已查 guardrails、human_in_the_loop、Sandbox agents 三页。）</p>
+            <p>与 Deep Agents 的<strong>「trust the LLM，边界责任交给你」</strong>形成鲜明对照。</p></dd>
         </div>
         <div class="axis">
           <dt><span data-zh>适合什么任务</span><span data-en>Best for</span></dt>
-          <dd><strong>适合</strong>：想要「薄 harness」—— 只要 agent loop 原语，filesystem / 规划 / 记忆都想自己挑； 需要 guardrails 与 human-in-the-loop 是内建的；需要 MCP 一等支持；团队是 Python 栈。 <strong>不适合</strong>：想要开箱即用的长任务工作区（用 Deep Agents 或该 SDK 的 SandboxAgent 路线）； 追求 TypeScript 生态（该用 openai-agents-js）。</dd>
+          <dd><p><strong>适合</strong>：</p>
+            <ul><li>想要「薄 harness」，agent loop 原语之外的自己挑。</li><li>需要 guardrails 与 human-in-the-loop 是内建的。</li><li>需要 MCP 一等支持，团队是 Python 栈。</li></ul>
+            <p><strong>不适合</strong>：</p>
+            <ul><li>想要开箱即用的长任务工作区。</li><li>追求 TypeScript 生态（该用 openai-agents-js）。</li></ul>
+            <p>不适合的两条各有替代路线。长任务工作区用 Deep Agents， 或走该 SDK 的 SandboxAgent 路线。</p></dd>
         </div>
       </dl>
 
@@ -166,8 +223,12 @@
         <h2><span data-zh>价格</span><span data-en>Pricing</span></h2>
         <table class="src">
           <tbody>
-            <tr><th class="w-28"><span data-zh>月度入口</span><span data-en>Monthly entry</span></th><td><span data-zh>库本身免费（MIT）</span><span data-en>库本身免费（MIT）</span></td></tr>
-            <tr><th class="w-28"><span data-zh>额度说明</span><span data-en>Quota note</span></th><td><span data-zh>**框架免费 ≠ 运行免费。** 库是 MIT 开源的，但： （1）默认需要 `OPENAI_API_KEY`，模型推理费用自理； （2）官方示例全部以 OpenAI 模型为主； （3）Traces 默认上报到 OpenAI 的后端（可用 `trace` 相关开关禁用）。</span><span data-en>**框架免费 ≠ 运行免费。** 库是 MIT 开源的，但： （1）默认需要 `OPENAI_API_KEY`，模型推理费用自理； （2）官方示例全部以 OpenAI 模型为主； （3）Traces 默认上报到 OpenAI 的后端（可用 `trace` 相关开关禁用）。</span></td></tr>
+            <tr><th class="w-28"><span data-zh>月度入口</span><span data-en>Monthly entry</span></th><td><span data-zh><p>库本身免费（MIT）</p></span><span data-en><p>库本身免费（MIT）</p></span></td></tr>
+            <tr><th class="w-28"><span data-zh>额度说明</span><span data-en>Quota note</span></th><td><span data-zh><p><strong>框架免费，不等于运行免费。</strong></p>
+            <p>库本身是 MIT 开源。但有三件事要自己掏钱：</p>
+            <ul><li>默认需要 <code>OPENAI_API_KEY</code>，模型推理费用自理。</li><li>官方示例全部以 OpenAI 模型为主。</li><li>Traces 默认上报到 OpenAI 的后端。可用 <code>trace</code> 相关开关禁用。</li></ul></span><span data-en><p><strong>框架免费，不等于运行免费。</strong></p>
+            <p>库本身是 MIT 开源。但有三件事要自己掏钱：</p>
+            <ul><li>默认需要 <code>OPENAI_API_KEY</code>，模型推理费用自理。</li><li>官方示例全部以 OpenAI 模型为主。</li><li>Traces 默认上报到 OpenAI 的后端。可用 <code>trace</code> 相关开关禁用。</li></ul></span></td></tr>
           </tbody>
         </table>
         <p class="fine mt-3"><span data-zh>不同币种不做折算。优惠、地区、税费与登录后报价可能变化，购买前请到官方页面确认。</span><span data-en>No currency conversion. Discounts, regions, tax and post-login pricing can change — confirm on the official page before buying.</span></p>
@@ -208,19 +269,79 @@
 
             <div class="panel is-slim">
         <h2><span data-zh>实测记录</span><span data-en>Measured runs</span></h2>
-        <p>本站尚未完成实测。测试协议见 <a href="https://github.com/speculcom/ai-agent-guide/blob/main/tracks/agents/tasks/_protocol.md" target="_blank" rel="noopener">tasks/_protocol.md</a>。
-
-<strong>实测建议</strong>（按 harness 赛道五维度定制到这个 SDK 的重点）：
-
-| # | 测什么 | 为什么值得测 |
-|:--:|---|---|
-| 1 | 最小 hello agent 要几个文件、多少行 | 官方称 lightweight，要验证「薄」到什么程度 |
-| 2 | Guardrails 能不能拦住「读文件」类越权 | 官方定位是 input/output 校验，与文件访问权限不是一回事 |
-| 3 | SandboxAgent 在 <strong>Windows</strong> 上的最小可用路径 | 官方示例是 Unix，Windows 要另走 Docker |
-| 4 | 换成 litellm / any-llm 接本地模型要改多少 | 官方说 provider-agnostic，验证真实改动量 |
-| 5 | Sessions 断掉进程后恢复状态是否完整 | 这是本站最关心的「可靠长期运行」 |</p>
+        <p>本站尚未完成实测。测试协议见 <a href="https://github.com/speculcom/ai-agent-guide/blob/main/tracks/agents/tasks/_protocol.md" target="_blank" rel="noopener">tasks/_protocol.md</a>。</p>
+            <p><strong>实测建议</strong>（按 harness 分区五维度定制到这个 SDK 的重点）：</p>
+            <div class="tbl-wrap"><table><thead><tr><th>#</th><th>测什么</th><th>为什么值得测</th></tr></thead><tbody><tr><td>1</td><td>最小 hello agent 要几个文件、多少行</td><td>官方称 lightweight，要验证「薄」到什么程度</td></tr><tr><td>2</td><td>Guardrails 能不能拦住「读文件」类越权</td><td>官方定位是 input/output 校验，与文件访问权限不是一回事</td></tr><tr><td>3</td><td>SandboxAgent 在 <strong>Windows</strong> 上的最小可用路径</td><td>官方示例是 Unix，Windows 要另走 Docker</td></tr><tr><td>4</td><td>换成 litellm / any-llm 接本地模型要改多少</td><td>官方说 provider-agnostic，验证真实改动量</td></tr><tr><td>5</td><td>Sessions 断掉进程后恢复状态是否完整</td><td>这是本站最关心的「可靠长期运行」</td></tr></tbody></table></div>
       </div>
 
+
+            <div class="panel is-slim">
+        <h2>provider-agnostic 是官方写在首段的</h2>
+        <p>官方首段把这条写在最前面：</p>
+            <blockquote>The OpenAI Agents SDK is a lightweight yet powerful framework for building multi-agent workflows.</blockquote>
+            <blockquote>It is <strong>provider-agnostic</strong>, supporting the OpenAI Responses and Chat Completions APIs, as well as <strong>100+ other LLMs</strong>.</blockquote>
+            <p><strong>这是本站的第一决策点。</strong> 代码层面的证据也一致：</p>
+            <ul><li>核心依赖 <code>openai&gt;=3.0.0</code>。</li><li>另有 <code>litellm</code> 与 <code>any-llm</code> 两个可选 extra，作为非 OpenAI 路径。</li></ul>
+            <p>⚠ 但要说清边界：<strong>「100+」是官方声明，本站未实测具体各家 provider 的能力对齐度。</strong></p>
+            <p>工具调用、structured output、多模态在各家差异很大。</p>
+      </div>
+      <div class="panel is-slim">
+        <h2>与 Deep Agents 的对照：本站最该给用户看的一张表</h2>
+        <p>两个都在 Python agent harness 档，风格完全相反：</p>
+            <div class="tbl-wrap"><table><thead><tr><th>维度</th><th><strong>OpenAI Agents SDK</strong></th><th><strong>Deep Agents</strong></th></tr></thead><tbody><tr><td>风格</td><td>primitives-only，薄</td><td>batteries-included，厚</td></tr><tr><td>filesystem</td><td>不预置（要自己接，或用 SandboxAgent）</td><td><strong>核心卖点</strong>，可插拔后端</td></tr><tr><td>子代理</td><td>agents as tools / handoffs（需自己建）</td><td><strong>预置</strong> sub-agents</td></tr><tr><td>上下文管理</td><td>只有 Sessions（会话历史）</td><td>summarize + <strong>落盘</strong> + 跨会话记忆</td></tr><tr><td>权限</td><td><strong>内建 guardrails + human-in-the-loop</strong></td><td>官方明说「trust the LLM」，边界归你</td></tr><tr><td>运行形态</td><td>你自己跑（本地/容器/Redis）</td><td>你自己跑</td></tr></tbody></table></div>
+            <p><strong>选型口诀</strong>：想要「安全内建」选前者，想要「功能内建」选后者。</p>
+      </div>
+      <div class="panel is-slim">
+        <h2>SandboxAgent：本地文件能力的官方答案，但有个 Windows 坑</h2>
+        <p>普通 <code>Agent</code> 不带本地工作区。官方为此单独提供 <strong><code>SandboxAgent</code></strong>：</p>
+            <blockquote>Use a <code>SandboxAgent</code> when the agent needs to inspect files, run commands, apply patches, or <strong>preserve workspace state across longer tasks</strong>.</blockquote>
+            <p>它的 <code>default_manifest</code> 可以声明要检出的仓库：</p>
+            <p>``<code>python agent = SandboxAgent( name=&quot;Workspace Assistant&quot;, default_manifest=Manifest( entries={&quot;repo&quot;: GitRepo(repo=&quot;openai/openai-agents-python&quot;, ref=&quot;main&quot;)} ), ) </code>``</p>
+            <p>⚠ <strong>平台差异是选型时必须知道的</strong>：</p>
+            <div class="tbl-wrap"><table><thead><tr><th>客户端</th><th>支持平台</th><th>说明</th></tr></thead><tbody><tr><td><code>UnixLocalSandboxClient</code></td><td>macOS / Linux</td><td>README 示例用的就是它</td></tr><tr><td><code>DockerSandboxClient</code></td><td>Windows 等</td><td>需 <code>openai-agents[docker]</code> extra</td></tr><tr><td>hosted sandbox client</td><td>依赖 OpenAI 侧服务</td><td>官方提到可用</td></tr></tbody></table></div>
+            <p><strong>Windows 用户不能直接走本地 Unix 沙箱路径。</strong></p>
+      </div>
+      <div class="panel is-slim">
+        <h2>权限面：目前本站见到的最完整内建方案</h2>
+        <div class="tbl-wrap"><table><thead><tr><th>官方提供</th><th>章节</th></tr></thead><tbody><tr><td><strong>Guardrails</strong>（input + output 双向校验）</td><td>「Configurable safety checks for input and output validation」</td></tr><tr><td><strong>Human in the loop</strong>（跨多次运行引入人工）</td><td>「Built-in mechanisms for involving humans across agent runs」</td></tr></tbody></table></div>
+            <p><strong>对比 Deep Agents 的官方声明</strong>（原文）：</p>
+            <blockquote>Deep Agents follows a &quot;trust the LLM&quot; model... Enforce boundaries at the tool/sandbox level, not by expecting the model to self-police.</blockquote>
+            <p><strong>这两句话就是本站「权限归属」这个问题的两种答案</strong>，也是一个真实的选择依据。</p>
+            <blockquote><strong>你要内建的输入输出校验，还是你要自己划沙箱边界？</strong></blockquote>
+            <p><strong>机制已核验（见 axes.permissions）</strong>：</p>
+            <ul><li>guardrails 分 input / output / tool 三类，命中抛 tripwire 中止。</li><li>工具级审批 <code>needs_approval</code> 覆盖 function_tool / ShellTool / ApplyPatchTool / MCP。</li></ul>
+            <p>⚠ <strong>边界：官方无内建文件/网络沙箱。</strong></p>
+            <p>guardrail 是用户可编程校验钩子。真正的沙箱边界交宿主机或 SandboxAgent 容器。</p>
+      </div>
+      <div class="panel is-slim">
+        <h2>「状态 ≠ 上下文」在这两个 SDK 里的不同答案</h2>
+        <div class="tbl-wrap"><table><thead><tr><th></th><th>OpenAI Agents SDK</th><th>Deep Agents</th></tr></thead><tbody><tr><td>会话历史</td><td>Sessions（Redis / SQLAlchemy 后端）</td><td>persistent memory（pluggable state and store）</td></tr><tr><td>长上下文</td><td><strong>无官方 context management 层</strong></td><td>summarize long threads</td></tr><tr><td>大输出落盘</td><td><strong>无官方宣称</strong>（SandboxAgent 的工作区可承担）</td><td><strong>offload tool outputs to disk</strong></td></tr></tbody></table></div>
+            <p>本站主张「持久化 ≠ 压缩」时，<strong>Deep Agents 是有官方落盘手段的那一方</strong>。</p>
+            <p>⚠ 但要注意：SandboxAgent 的工作区保留（preserve workspace state） 实际上也是一种持久化。</p>
+            <p>只是官方没把它归类成 context management。</p>
+            <p><strong>这是本站的判断，不是官方表述，已标注为推断。</strong></p>
+      </div>
+      <div class="panel is-slim">
+        <h2>MCP 是一等能力，不是可选插件</h2>
+        <p><code>pyproject.toml</code> 里 <code>mcp&gt;=1.19.0,&lt;3</code> 在 <strong><code>dependencies</code></strong>，而非 <code>optional-dependencies</code>。</p>
+            <p>官方 README 把 MCP 与 functions、hosted tools 并列为工具类型。</p>
+            <p><strong>在这套 SDK 里接 MCP server 不需要额外装东西。</strong></p>
+      </div>
+      <div class="panel is-slim">
+        <h2>附：JS/TS 版是独立仓，本站不单独收录</h2>
+        <p>README 里明确指向 <code>openai/openai-agents-js</code>（核验 2026-09-30：MIT，3,882★，活跃）。</p>
+            <blockquote>⚠ <strong>本站不把它作为独立对象收录</strong>：同一产品的第二语言实现， 与本站「一个对象 = 一套决策依据」的粒度不符（同 Deep Agents Code 的处理法）。 记录在此是因为选型时需要知道「Python 版之外还有 JS/TS 版」。</blockquote>
+      </div>
+      <div class="panel is-slim">
+        <h2>核验说明</h2>
+        <p><code>confidence: partial</code> 的依据（2026-10-03 由 verified 降级）：</p>
+            <blockquote><strong>为什么降级</strong>：下方 ❌ 项的主语是<strong>本站的取证缺口</strong>，不是「官方未提供」。 按 v3 铁律「未知就说未知」，这些条目存在时标 verified 属于虚高，故降为 partial。 主要缺口：100+ provider 的实际能力对齐度（A6.2 已补：guardrail 三类机制与工具级审批已核验）。</blockquote>
+            <p>✅ 已核验清单：</p>
+            <ul><li>仓库存在与星数（29,792）、许可（MIT，经 license API）。</li><li>最近推送（2026-10-01，仍活跃）。</li><li>最新版本 <strong>0.22.3</strong>（releases @ 2026-09-17）。</li><li><code>pyproject.toml</code> 全文关键项（<code>requires-python &gt;=3.10</code>、<code>mcp&gt;=1.19.0,&lt;3</code> 是核心依赖、 litellm/any-llm/sqlalchemy 均为可选 extra）。</li></ul>
+            <ul><li>README 全文十项核心概念、四种运行方式代码示例。</li><li>SandboxAgent 段落与平台差异、JS 版仓元数据。</li></ul>
+            <p>❌ 未核验清单：</p>
+            <ul><li>100+ provider 的实际能力对齐度。</li><li>hosted sandbox client 的定价与可用性。</li><li>Sessions 的具体后端语义。</li><li>Realtime/Voice 路径的成本。</li></ul>
+      </div>
 
             <div class="panel is-slim">
         <h2><span data-zh>相关条目</span><span data-en>Related entries</span></h2>
