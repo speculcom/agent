@@ -11,7 +11,7 @@
   <meta property="og:url" content="https://agent.specul.com/tools/context7.html" />
   <meta property="og:title" content="Context7 — Tools | 投机取巧" />
   <meta property="og:description" content="Context7（Upstash）：工具分区里唯一的远程托管条目 —— 为 Agent 提供版本感知的库文档，MIT 开源但核心服务在 Upstash 侧。" />
-  <meta name="theme-color" content="#05080f" />
+  <meta name="theme-color" content="#16121f" />
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%238b7cf8'/%3E%3Cstop offset='1' stop-color='%2322d3c5'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='48' height='48' rx='12' fill='%2305080f'/%3E%3Cpath d='M14 32 L24 12 L34 32' fill='none' stroke='url(%23g)' stroke-width='2.4' stroke-linejoin='round'/%3E%3Ccircle cx='24' cy='27' r='2.4' fill='%2322d3c5'/%3E%3C/svg%3E" />
   <link rel="stylesheet" href="../brand.css" />
   <link rel="stylesheet" href="../site.css" />
@@ -94,66 +94,75 @@
         <span class="badge"><span data-zh>核验</span><span data-en>Checked</span> 2026-10-01</span>
       </div>
 
-            <p class="panel-lead"><span data-zh><strong>工具分区里唯一的远程托管条目</strong> —— 为 Agent 提供版本感知的库文档，MIT 开源但核心服务在 Upstash 侧。</span><span data-en><strong>The only remotely hosted entry in the MCP track</strong> — version-aware library documentation for agents; MIT-licensed, but the core service lives on Upstash&#39;s side.</span></p>
+            <div class="panel-lead"><span data-zh><p><strong>工具分区里唯一的远程托管条目</strong> —— 为 Agent 提供版本感知的库文档，MIT 开源但核心服务在 Upstash 侧。</p></span><span data-en><p><strong>The only remotely hosted entry in the MCP track</strong> — version-aware library documentation for agents; MIT-licensed, but the core service lives on Upstash&#39;s side.</p></span></div>
 
             <div class="panel is-slim">
         <h2><span data-zh>适合与不适合</span><span data-en>When to use it, when not to</span></h2>
-<span data-zh>        <p>需要查当前版本库文档的场景：库升级后的 API 变更、
-新版本引入的配置项、模型不确定的第三方库用法。</p>
-        <p class="warn-p"><strong>不适合</strong>涉密场景**——查询内容会发送到 Upstash 服务器，需先评估数据出境。
-也不适合查内部代码或私有库。</p></span><span data-en>        <p>Scenarios needing current-version library documentation: API changes after an upgrade, configuration options introduced in a new version, usage of third-party libraries the model is unsure about.</p>
-        <p class="warn-p"><strong>Not a fit for</strong> confidential material — <strong>queries are sent to Upstash servers, so assess data leaving your machine first.</strong></p></span>
+<span data-zh>        <div><p>需要查当前版本库文档的场景：库升级后的 API 变更、 新版本引入的配置项、模型不确定的第三方库用法。</p></div>
+        <div class="warn-p"><p><strong>不适合涉密场景</strong>——查询内容会发送到 Upstash 服务器，需先评估数据出境。 也不适合查内部代码或私有库。</p></div></span><span data-en>        <div><p>Scenarios needing current-version library documentation: API changes after an upgrade, configuration options introduced in a new version, usage of third-party libraries the model is unsure about.</p></div>
+        <div class="warn-p"><p><strong>Not a fit for</strong> confidential material — <strong>queries are sent to Upstash servers, so assess data leaving your machine first.</strong></p></div></span>
       </div>
 
 
       <div class="block-head">
         <h2 class="t-h2"><span data-zh>固定坐标系</span><span data-en>Fixed coordinate system</span></h2>
-        <p class="t-section-lead">11 <span data-zh>个维度</span><span data-en>dimensions</span>, <span data-zh>与同赛道其他对象逐项可比</span><span data-en>each comparable item by item against others in the same track</span>.</p>
+        <p class="t-section-lead">11 <span data-zh>个维度</span><span data-en>dimensions</span>, <span data-zh>与同分区其他对象逐项可比</span><span data-en>each comparable item by item against others in the same section</span>.</p>
       </div>
       <dl class="axes">
         <div class="axis">
           <dt><span data-zh>模型与开放条件</span><span data-en>Model & openness</span></dt>
-          <dd>本身不调用模型，是被客户端调用的接口实现。 为 Agent 提供<strong>版本感知的库与 API 文档</strong>， 解决模型训练数据滞后导致的使用错误。</dd>
+          <dd><p>本身不调用模型，是被客户端调用的接口实现。 为 Agent 提供<strong>版本感知的库与 API 文档</strong>， 解决模型训练数据滞后导致的使用错误。</p></dd>
         </div>
         <div class="axis">
           <dt><span data-zh>运行位置</span><span data-en>Where it runs</span></dt>
-          <dd><strong>远程托管 HTTP 服务</strong>（<code>https://mcp.context7.com/mcp</code>）， 由 Upstash 运营。<strong>这是本赛道唯一默认走远程的条目</strong>， 其余 reference server 均为本地 stdio 进程。</dd>
+          <dd><p><strong>远程托管 HTTP 服务</strong>（<code>https://mcp.context7.com/mcp</code>），</p>
+            <p>由 Upstash 运营。<strong>这是本分区唯一默认走远程的条目</strong>， 其余 reference server 均为本地 stdio 进程。</p></dd>
         </div>
         <div class="axis">
           <dt><span data-zh>本地文件</span><span data-en>Local files</span></dt>
-          <dd><strong>无任何本地文件访问能力</strong>。纯文档检索服务。</dd>
+          <dd><p><strong>无任何本地文件访问能力</strong>。纯文档检索服务。</p></dd>
         </div>
         <div class="axis">
           <dt><span data-zh>关机后的任务</span><span data-en>Tasks after shutdown</span></dt>
-          <dd><strong>作为远程托管服务始终可用</strong>，与客户端进程生命周期无关—— 这是本赛道唯一不受本机开关影响的条目。 但<strong>服务可用性取决于 Upstash 侧的服务状态</strong>， 本仓库的 releases 不能保证服务端可用性，两者需分开判断。</dd>
+          <dd><p><strong>作为远程托管服务始终可用</strong>，与客户端进程生命周期无关—— 这是本分区唯一不受本机开关影响的条目。</p>
+            <p>但<strong>服务可用性取决于 Upstash 侧的服务状态</strong>， 本仓库的 releases 不能保证服务端可用性，两者需分开判断。</p></dd>
         </div>
         <div class="axis">
           <dt><span data-zh>工具与扩展</span><span data-en>Tools & extensions</span></dt>
-          <dd>提供 MCP 工具用于检索库文档。 README 强调正确用法：使用 Library Id、<strong>指定版本</strong>（Specify a Version）、 以及通过 rule 声明「需要库文档时总是使用 Context7」。 输出为结构化文档内容。</dd>
+          <dd><p>提供 MCP 工具用于检索库文档。</p>
+            <p>README 强调正确用法：使用 Library Id、<strong>指定版本</strong>（Specify a Version）、 以及通过 rule 声明「需要库文档时总是使用 Context7」。 输出为结构化文档内容。</p></dd>
         </div>
         <div class="axis">
           <dt><span data-zh>上下文与记忆</span><span data-en>Context & memory</span></dt>
-          <dd>无跨会话记忆，但<strong>文档检索本身是&quot;外部记忆&quot;</strong>—— 弥补模型训练数据滞后，这是它的核心定位。</dd>
+          <dd><p>无跨会话记忆，但<strong>文档检索本身是&quot;外部记忆&quot;</strong>—— 弥补模型训练数据滞后，这是它的核心定位。</p></dd>
         </div>
         <div class="axis">
           <dt><span data-zh>权限与限制</span><span data-en>Permissions & limits</span></dt>
-          <dd><strong>权限风险与本地 server 完全不同</strong>： 不碰本地文件，但要<strong>把查询内容发送到 Upstash 服务器</strong>。 传入 Library Id 与具体问题即产生网络请求。 认证用 API Key（<code>Authorization: Bearer YOUR_API_KEY</code>）。 无独立审批机制。</dd>
+          <dd><p><strong>权限风险与本地 server 完全不同</strong>： 不碰本地文件，但要<strong>把查询内容发送到 Upstash 服务器</strong>。</p>
+            <p>传入 Library Id 与具体问题即产生网络请求。 认证用 API Key（<code>Authorization: Bearer YOUR_API_KEY</code>）。 无独立审批机制。</p></dd>
         </div>
         <div class="axis">
           <dt><span data-zh>适合什么任务</span><span data-en>Best for</span></dt>
-          <dd>需要查当前版本库文档的场景：库升级后的 API 变更、 新版本引入的配置项、模型不确定的第三方库用法。 不适合查内部代码或私有库。</dd>
+          <dd><p>需要查当前版本库文档的场景：库升级后的 API 变更、 新版本引入的配置项、模型不确定的第三方库用法。 不适合查内部代码或私有库。</p></dd>
         </div>
         <div class="axis">
           <dt><span data-zh>传输方式</span><span data-en>Transport</span></dt>
-          <dd><strong>远程 Streamable HTTP</strong>，服务端点为 <code>https://mcp.context7.com/mcp</code>。 <strong>本赛道唯一以远程服务为默认形态的条目</strong>—— 其余官方 reference server 均为本地 stdio 进程。</dd>
+          <dd><p><strong>远程 Streamable HTTP</strong>，服务端点为 <code>https://mcp.context7.com/mcp</code>。</p>
+            <p><strong>本分区唯一以远程服务为默认形态的条目</strong>—— 其余官方 reference server 均为本地 stdio 进程。</p></dd>
         </div>
         <div class="axis">
           <dt><span data-zh>认证机制</span><span data-en>Authentication</span></dt>
-          <dd><strong>需 API Key</strong>，通过 <code>Authorization: Bearer YOUR_API_KEY</code> 头传递。 README 说明可经 OAuth 流程由安装器自动生成 key。 <strong>额度档位本轮已核验（2026-10-01，官方 plans 页）</strong>： Free <strong>1,000 次/月</strong>（Search API + Context API 合计）、 Pro <strong>2,000 次/席位/月</strong>、超出 <strong>$5 / 1,000 次</strong>不阻塞。 另Free 档本身就用 OAuth 2.0（官方对比表把 OAuth 2.0 列为 Free 的能力）。 ⚠ <strong>Free 超出额度后的确切行为官方页面未给答案正文</strong>，只列了问题标题。</dd>
+          <dd><p><strong>需 API Key</strong>，通过 <code>Authorization: Bearer YOUR_API_KEY</code> 头传递。 README 说明可经 OAuth 流程由安装器自动生成 key。</p>
+            <p><strong>额度档位本轮已核验（2026-10-01，官方 plans 页）</strong>： Free <strong>1,000 次/月</strong>（Search API + Context API 合计）、</p>
+            <p>Pro <strong>2,000 次/席位/月</strong>、超出 <strong>$5 / 1,000 次</strong>不阻塞。</p>
+            <p>另Free 档本身就用 OAuth 2.0（官方对比表把 OAuth 2.0 列为 Free 的能力）。 ⚠ <strong>Free 超出额度后的确切行为官方页面未给答案正文</strong>，只列了问题标题。</p></dd>
         </div>
         <div class="axis">
           <dt><span data-zh>权限范围</span><span data-en>Permission scope</span></dt>
-          <dd><strong>无本地权限风险，但有数据出境风险</strong>： 查询内容会发送到 Upstash 服务器。 传入的库名与问题文本属于对外传输内容， 涉密场景需评估。 <strong>本轮补一条官方对隐私的明确承诺</strong>（官方 FAQ 标题即 &quot;How do you keep the privacy of my queries?&quot;）： 查询只发<strong>文档问题与库名/ID</strong>， 不发完整 prompt、源代码与对话历史； 且官方要求agent 不要在查询里带凭据、个人数据或专有代码。 服务端自身的文档索引范围由 Upstash 掌握，客户端不可见。</dd>
+          <dd><p><strong>无本地权限风险，但有数据出境风险</strong>： 查询内容会发送到 Upstash 服务器。 传入的库名与问题文本属于对外传输内容， 涉密场景需评估。</p>
+            <p><strong>本轮补一条官方对隐私的明确承诺</strong>（官方 FAQ 标题即 &quot;How do you keep the privacy of my queries?&quot;）：</p>
+            <p>查询只发<strong>文档问题与库名/ID</strong>， 不发完整 prompt、源代码与对话历史； 且官方要求agent 不要在查询里带凭据、个人数据或专有代码。</p>
+            <p>服务端自身的文档索引范围由 Upstash 掌握，客户端不可见。</p></dd>
         </div>
       </dl>
 
@@ -172,10 +181,30 @@
         <h2><span data-zh>价格</span><span data-en>Pricing</span></h2>
         <table class="src">
           <tbody>
-            <tr><th class="w-28"><span data-zh>月度入口</span><span data-en>Monthly entry</span></th><td><span data-zh>Free $0（1,000 次/月）；Pro $10 每席位/月（2,000 次/席位）；Enterprise 定制</span><span data-en>Free $0（1,000 次/月）；Pro $10 每席位/月（2,000 次/席位）；Enterprise 定制</span></td></tr>
+            <tr><th class="w-28"><span data-zh>月度入口</span><span data-en>Monthly entry</span></th><td><span data-zh><p>Free $0（1,000 次/月）；Pro $10 每席位/月（2,000 次/席位）；Enterprise 定制</p></span><span data-en><p>Free $0（1,000 次/月）；Pro $10 每席位/月（2,000 次/席位）；Enterprise 定制</p></span></td></tr>
             <tr><th class="w-28"><span data-zh>月度数值</span><span data-en>Monthly price</span></th><td>0</td></tr>
-            <tr><th class="w-28"><span data-zh>年付</span><span data-en>Annual</span></th><td><span data-zh>官方未列年付档（页面只有月付 per seat）</span><span data-en>官方未列年付档（页面只有月付 per seat）</span></td></tr>
-            <tr><th class="w-28"><span data-zh>额度说明</span><span data-en>Quota note</span></th><td><span data-zh>**开源部分为 MIT，但索引/解析/服务端是Upstash 的私有托管服务** —— 官方 README 自己划了界：这个仓只托管 MCP server 的源码， API 后端、解析引擎与爬取引擎均为私有。 **定价（2026-10-01 核验官方 context7.com/docs/plans-pricing.md，该页是 plans 页的 307 目标）**： | 档 | 价格 | 含额度 | 超出计费 | |---|---|---|---| | **Free** | **$0** | **1,000 次/月**（Search API + Context API） | 阻塞 | | **Pro** | **$10 每席位/月** | **2,000 次/席位** | **Unlimited（$5 / 1,000 次）** | | **Enterprise** | **Custom** | Custom | Custom | **另有一项独立计费项（易被漏看）**： **Private Repo Parsing = $5 / 1M tokens** —— 私有库文档解析按token 单独计费， 与 API 调用额度是**两个独立的钱包**。 **Free 档的三项能力**（官方对比表）：Public Repos、Access Control、OAuth 2.0。 **Pro 解锁**：Private Repos、Team Collaboration、**Unlimited API Calls**。 **Enterprise 解锁**：SOC-2、SSO（SAML / OIDC）、**Self-Hosted（On-Premise）**， 且支持把额度与私有解析都按Custom 定制。 **⚠ 一条必须提醒的口径冲突**：多个第三方站（aicoolies / decodo 等，2026-09 前后） 称Pro 是「5,000 次/席位」，**与官方页面的 2,000 不一致**。 本档案按官方页面写**2,000**，第三方数字视为旧制或臆测。 ⚠ Free 档超出 1,000 次后的**具体行为**（完全阻塞 / 降速 / 每日 bonus） 官方页面只列了问题标题、未给答案正文，本档案不做推测。</span><span data-en>**开源部分为 MIT，但索引/解析/服务端是Upstash 的私有托管服务** —— 官方 README 自己划了界：这个仓只托管 MCP server 的源码， API 后端、解析引擎与爬取引擎均为私有。 **定价（2026-10-01 核验官方 context7.com/docs/plans-pricing.md，该页是 plans 页的 307 目标）**： | 档 | 价格 | 含额度 | 超出计费 | |---|---|---|---| | **Free** | **$0** | **1,000 次/月**（Search API + Context API） | 阻塞 | | **Pro** | **$10 每席位/月** | **2,000 次/席位** | **Unlimited（$5 / 1,000 次）** | | **Enterprise** | **Custom** | Custom | Custom | **另有一项独立计费项（易被漏看）**： **Private Repo Parsing = $5 / 1M tokens** —— 私有库文档解析按token 单独计费， 与 API 调用额度是**两个独立的钱包**。 **Free 档的三项能力**（官方对比表）：Public Repos、Access Control、OAuth 2.0。 **Pro 解锁**：Private Repos、Team Collaboration、**Unlimited API Calls**。 **Enterprise 解锁**：SOC-2、SSO（SAML / OIDC）、**Self-Hosted（On-Premise）**， 且支持把额度与私有解析都按Custom 定制。 **⚠ 一条必须提醒的口径冲突**：多个第三方站（aicoolies / decodo 等，2026-09 前后） 称Pro 是「5,000 次/席位」，**与官方页面的 2,000 不一致**。 本档案按官方页面写**2,000**，第三方数字视为旧制或臆测。 ⚠ Free 档超出 1,000 次后的**具体行为**（完全阻塞 / 降速 / 每日 bonus） 官方页面只列了问题标题、未给答案正文，本档案不做推测。</span></td></tr>
+            <tr><th class="w-28"><span data-zh>年付</span><span data-en>Annual</span></th><td><span data-zh><p>官方未列年付档（页面只有月付 per seat）</p></span><span data-en><p>官方未列年付档（页面只有月付 per seat）</p></span></td></tr>
+            <tr><th class="w-28"><span data-zh>额度说明</span><span data-en>Quota note</span></th><td><span data-zh><p><strong>开源部分为 MIT，但索引/解析/服务端是Upstash 的私有托管服务</strong> —— 官方 README 自己划了界：这个仓只托管 MCP server 的源码， API 后端、解析引擎与爬取引擎均为私有。</p>
+            <p><strong>定价（2026-10-01 核验官方 context7.com/docs/plans-pricing.md，该页是 plans 页的 307 目标）</strong>：</p>
+            <div class="tbl-wrap"><table><thead><tr><th>档</th><th>价格</th><th>含额度</th><th>超出计费</th></tr></thead><tbody><tr><td><strong>Free</strong></td><td><strong>$0</strong></td><td><strong>1,000 次/月</strong>（Search API + Context API）</td><td>阻塞</td></tr></tbody></table></div>
+            <div class="tbl-wrap"><table><thead><tr><th><strong>Pro</strong></th><th><strong>$10 每席位/月</strong></th><th><strong>2,000 次/席位</strong></th><th><strong>Unlimited（$5 / 1,000 次）</strong></th></tr></thead><tbody></tbody></table></div>
+            <div class="tbl-wrap"><table><thead><tr><th><strong>Enterprise</strong></th><th><strong>Custom</strong></th><th>Custom</th><th>Custom</th></tr></thead><tbody></tbody></table></div>
+            <p><strong>另有一项独立计费项（易被漏看）</strong>： <strong>Private Repo Parsing = $5 / 1M tokens</strong> —— 私有库文档解析按token 单独计费， 与 API 调用额度是<strong>两个独立的钱包</strong>。</p>
+            <p><strong>Free 档的三项能力</strong>（官方对比表）：Public Repos、Access Control、OAuth 2.0。</p>
+            <p><strong>Pro 解锁</strong>：Private Repos、Team Collaboration、<strong>Unlimited API Calls</strong>。</p>
+            <p><strong>Enterprise 解锁</strong>：SOC-2、SSO（SAML / OIDC）、<strong>Self-Hosted（On-Premise）</strong>， 且支持把额度与私有解析都按Custom 定制。</p>
+            <p><strong>⚠ 一条必须提醒的口径冲突</strong>：多个第三方站（aicoolies / decodo 等，2026-09 前后） 称Pro 是「5,000 次/席位」，<strong>与官方页面的 2,000 不一致</strong>。</p>
+            <p>本档案按官方页面写<strong>2,000</strong>，第三方数字视为旧制或臆测。 ⚠ Free 档超出 1,000 次后的<strong>具体行为</strong>（完全阻塞 / 降速 / 每日 bonus） 官方页面只列了问题标题、未给答案正文，本档案不做推测。</p></span><span data-en><p><strong>开源部分为 MIT，但索引/解析/服务端是Upstash 的私有托管服务</strong> —— 官方 README 自己划了界：这个仓只托管 MCP server 的源码， API 后端、解析引擎与爬取引擎均为私有。</p>
+            <p><strong>定价（2026-10-01 核验官方 context7.com/docs/plans-pricing.md，该页是 plans 页的 307 目标）</strong>：</p>
+            <div class="tbl-wrap"><table><thead><tr><th>档</th><th>价格</th><th>含额度</th><th>超出计费</th></tr></thead><tbody><tr><td><strong>Free</strong></td><td><strong>$0</strong></td><td><strong>1,000 次/月</strong>（Search API + Context API）</td><td>阻塞</td></tr></tbody></table></div>
+            <div class="tbl-wrap"><table><thead><tr><th><strong>Pro</strong></th><th><strong>$10 每席位/月</strong></th><th><strong>2,000 次/席位</strong></th><th><strong>Unlimited（$5 / 1,000 次）</strong></th></tr></thead><tbody></tbody></table></div>
+            <div class="tbl-wrap"><table><thead><tr><th><strong>Enterprise</strong></th><th><strong>Custom</strong></th><th>Custom</th><th>Custom</th></tr></thead><tbody></tbody></table></div>
+            <p><strong>另有一项独立计费项（易被漏看）</strong>： <strong>Private Repo Parsing = $5 / 1M tokens</strong> —— 私有库文档解析按token 单独计费， 与 API 调用额度是<strong>两个独立的钱包</strong>。</p>
+            <p><strong>Free 档的三项能力</strong>（官方对比表）：Public Repos、Access Control、OAuth 2.0。</p>
+            <p><strong>Pro 解锁</strong>：Private Repos、Team Collaboration、<strong>Unlimited API Calls</strong>。</p>
+            <p><strong>Enterprise 解锁</strong>：SOC-2、SSO（SAML / OIDC）、<strong>Self-Hosted（On-Premise）</strong>， 且支持把额度与私有解析都按Custom 定制。</p>
+            <p><strong>⚠ 一条必须提醒的口径冲突</strong>：多个第三方站（aicoolies / decodo 等，2026-09 前后） 称Pro 是「5,000 次/席位」，<strong>与官方页面的 2,000 不一致</strong>。</p>
+            <p>本档案按官方页面写<strong>2,000</strong>，第三方数字视为旧制或臆测。 ⚠ Free 档超出 1,000 次后的<strong>具体行为</strong>（完全阻塞 / 降速 / 每日 bonus） 官方页面只列了问题标题、未给答案正文，本档案不做推测。</p></span></td></tr>
           </tbody>
         </table>
         <p class="fine mt-3"><span data-zh>不同币种不做折算。优惠、地区、税费与登录后报价可能变化，购买前请到官方页面确认。</span><span data-en>No currency conversion. Discounts, regions, tax and post-login pricing can change — confirm on the official page before buying.</span></p>
@@ -200,8 +229,8 @@
         <table class="src">
           <thead><tr><th class="w-20"><span data-zh>类型</span><span data-en>Type</span></th><th class="w-52"><span data-zh>名称</span><span data-en>Name</span></th><th><span data-zh>链接</span><span data-en>Link</span></th></tr></thead>
           <tbody>
-            <tr><td>docs</td><td>Upstash · Context7 README（API Key 与远程端点说明、**「本仓只托管 MCP server 源码，API 后端/解析/爬虫为私有」的自述**）</td><td><a href="https://github.com/upstash/context7" target="_blank" rel="noopener">https://github.com/upstash/context7</a></td></tr>
-            <tr><td>pricing</td><td>官方 Pricing &amp; Plans（核验 2026-10-01：Free $0/1,000 次每月、Pro $10 每席位每月/2,000 次每席位/超出 $5 每 1,000 次、Private Repo Parsing $5 每 1M tokens、Enterprise Custom 含 SOC-2/SSO/Self-Hosted；**与第三方「Pro 5,000 次」冲突，按官方 2,000**）</td><td><a href="https://context7.com/docs/plans-pricing.md" target="_blank" rel="noopener">https://context7.com/docs/plans-pricing.md</a></td></tr>
+            <tr><td>docs</td><td>Upstash · Context7 README（API Key 与远程端点说明、<strong>「本仓只托管 MCP server 源码，API 后端/解析/爬虫为私有」的自述</strong>）</td><td><a href="https://github.com/upstash/context7" target="_blank" rel="noopener">https://github.com/upstash/context7</a></td></tr>
+            <tr><td>pricing</td><td>官方 Pricing &amp; Plans（核验 2026-10-01：Free $0/1,000 次每月、Pro $10 每席位每月/2,000 次每席位/超出 $5 每 1,000 次、Private Repo Parsing $5 每 1M tokens、Enterprise Custom 含 SOC-2/SSO/Self-Hosted；<strong>与第三方「Pro 5,000 次」冲突，按官方 2,000</strong>）</td><td><a href="https://context7.com/docs/plans-pricing.md" target="_blank" rel="noopener">https://context7.com/docs/plans-pricing.md</a></td></tr>
             <tr><td>changelog</td><td>Upstash · Context7 Releases（ctx7@0.5.12）</td><td><a href="https://github.com/upstash/context7/releases" target="_blank" rel="noopener">https://github.com/upstash/context7/releases</a></td></tr>
             <tr><td>changelog</td><td>Upstash · Context7 Commits</td><td><a href="https://github.com/upstash/context7/commits/main" target="_blank" rel="noopener">https://github.com/upstash/context7/commits/main</a></td></tr>
             <tr><td>docs</td><td>Model Context Protocol · 规范</td><td><a href="https://modelcontextprotocol.io/specification" target="_blank" rel="noopener">https://modelcontextprotocol.io/specification</a></td></tr>
@@ -211,13 +240,51 @@
 
             <div class="panel is-slim">
         <h2><span data-zh>实测记录</span><span data-en>Measured runs</span></h2>
-        <p>本站尚未完成实测。测试协议见 <a href="https://github.com/speculcom/ai-agent-guide/blob/main/tracks/agents/tasks/_protocol.md" target="_blank" rel="noopener">tasks/_protocol.md</a>。
-
-<strong>实测建议</strong>：这个 server 的实测重点与其他条目不同——
-要测的是<strong>文档准确度</strong>（给定库与版本，返回的文档是否匹配当前 API），
-而非能否调用成功。</p>
+        <p>本站尚未完成实测。测试协议见 <a href="https://github.com/speculcom/ai-agent-guide/blob/main/tracks/agents/tasks/_protocol.md" target="_blank" rel="noopener">tasks/_protocol.md</a>。</p>
+            <p><strong>实测建议</strong>：这个 server 的实测重点与其他条目不同—— 要测的是<strong>文档准确度</strong>（给定库与版本，返回的文档是否匹配当前 API）， 而非能否调用成功。</p>
       </div>
 
+
+            <div class="panel is-slim">
+        <h2>为什么它和其他条目不一样</h2>
+        <div class="tbl-wrap"><table><thead><tr><th>维度</th><th>其余 reference server</th><th>Context7</th></tr></thead><tbody><tr><td>运行形态</td><td>本地进程（stdio）</td><td><strong>远程 HTTP 服务</strong></td></tr><tr><td>数据流向</td><td>本机内</td><td><strong>查询发到 Upstash</strong></td></tr><tr><td>认证</td><td>无（靠进程权限）</td><td><strong>需 API Key</strong></td></tr><tr><td>额度</td><td>无</td><td><strong>有</strong>（官方提&quot;更高额度&quot;）</td></tr><tr><td>开源许可</td><td>参考实现，无商业形态</td><td>MIT 代码 + 托管服务</td></tr></tbody></table></div>
+            <p><strong>这带来的是完全不同的一类风险</strong>： 其他 server 的风险是「能碰你的什么」， Context7 的风险是「你的查询会发到哪里去」。</p>
+      </div>
+      <div class="panel is-slim">
+        <h2>变更记录说明</h2>
+        <p>本对象有独立 releases：</p>
+            <div class="tbl-wrap"><table><thead><tr><th>版本</th><th>日期</th></tr></thead><tbody><tr><td><code>ctx7@0.5.12</code></td><td>2026-09-22</td></tr><tr><td><code>@upstash/context7-sdk@0.5.0</code></td><td>2026-09-22</td></tr><tr><td><code>@upstash/context7-tools-ai-sdk@1.0.2</code></td><td>2026-09-22</td></tr></tbody></table></div>
+            <p><strong>一个仓库发多个包</strong>，版本号不同步，引用时要注意包名。</p>
+      </div>
+      <div class="panel is-slim">
+        <h2>正确用法（README 强调的三点）</h2>
+        <p>这是最有操作价值的信息：</p>
+            <div class="tbl-wrap"><table><thead><tr><th>要点</th><th>说明</th></tr></thead><tbody><tr><td><strong>Use Library Id</strong></td><td>用库 ID 而非模糊名字查询</td></tr><tr><td><strong>Specify a Version</strong></td><td><strong>指定版本</strong> —— 不指定会拿到不匹配的文档</td></tr><tr><td><strong>Add a Rule</strong></td><td>声明规则：需要库文档时总是使用 Context7</td></tr></tbody></table></div>
+            <p><strong>「Specify a Version」这一条尤其重要</strong>—— 模型训练数据滞后是这类工具要解决的核心问题， 如果不指定版本，很可能拿到的是新版本文档，行为却按老版本写。</p>
+      </div>
+      <div class="panel is-slim">
+        <h2>认证方式与额度：三档，两处容易看错</h2>
+        <p>``<code> 手动配置：使用服务端点 https://mcp.context7.com/mcp 并通过 Authorization: Bearer YOUR_API_KEY 头传递 key </code>``</p>
+            <p>安装器支持 OAuth 流程自动生成 key。Free 档本身即支持 <strong>OAuth 2.0</strong>。</p>
+            <p><strong>官方原话</strong>：API Key Recommended —— 获取免费 key 以获得更高额度。</p>
+            <h3 class="sub-h">额度档位（2026-10-01 核验官方 plans 页）</h3>
+            <div class="tbl-wrap"><table><thead><tr><th>档</th><th>价格</th><th>含额度</th><th>超出后</th></tr></thead><tbody><tr><td><strong>Free</strong></td><td><strong>$0</strong></td><td><strong>1,000 次/月</strong></td><td>阻塞（具体行为官方未明示）</td></tr><tr><td><strong>Pro</strong></td><td><strong>$10 / 席位 / 月</strong></td><td><strong>2,000 次 / 席位</strong></td><td><strong>不阻塞，$5 / 1,000 次</strong></td></tr><tr><td><strong>Enterprise</strong></td><td><strong>Custom</strong></td><td>Custom</td><td>Custom</td></tr></tbody></table></div>
+            <p><strong>两处最容易看错的地方</strong>：</p>
+            <p><strong>① Pro 的「Unlimited API Calls」不是「不限量免费」，是「不阻塞」。</strong> 官方对比表把 Pro 的 Additional API Calls 一栏写成 &quot;<strong>Unlimited ($5 / 1,000)</strong>&quot; —— 前半句是不阻塞，后半句才是真实单价。</p>
+            <p><strong>② Private Repo Parsing 是完全独立的计费项：$5 / 1M tokens。</strong> 它与 API 调用额度是<strong>两个钱包</strong>，Pro 的 $10 并不包含它。 要把私有库文档接进来，这笔钱要单独算。</p>
+            <h3 class="sub-h">第三方数字与官方不一致（已按官方为准）</h3>
+            <p>多个第三方站（2026-09 前后）称 Pro 是「<strong>5,000 次/席位</strong>」—— <strong>官方页面是 2,000</strong>。本档案采官方，第三方数字视为旧制或臆测。</p>
+            <h3 class="sub-h">开源的边界要划清</h3>
+            <p>官方 README 自己说明：<strong>这个仓只托管 MCP server 的源码， API 后端、解析引擎、爬取引擎都是私有的。</strong> 所以「MIT」指的是那部分客户端代码，不是整个服务。</p>
+      </div>
+      <div class="panel is-slim">
+        <h2>风险评估</h2>
+        <div class="tbl-wrap"><table><thead><tr><th>风险类型</th><th>评价</th></tr></thead><tbody><tr><td>本地文件泄露</td><td><strong>无</strong> — 不碰本地文件</td></tr><tr><td>内网探测</td><td><strong>无</strong> — 不访问任意 URL</td></tr><tr><td><strong>数据出境</strong></td><td><strong>有，但范围窄</strong> — 只发<strong>文档问题 + 库名/ID</strong>；不发完整 prompt、源代码、对话历史（官方声明，见下方说明）</td></tr><tr><td>凭据风险</td><td>低 — 只用一个 API Key，无文件权限；官方还要求 agent 不要在查询里带凭据</td></tr><tr><td>服务可用性</td><td>依赖 Upstash 服务，本仓库无 releases 可保证服务状态</td></tr><tr><td><strong>预算失控</strong></td><td><strong>有</strong> — Free 超 1,000 次/月后行为不明；Pro 超出按 $5/1,000 次不阻塞；私有库解析另按 $5/1M tokens 计</td></tr></tbody></table></div>
+            <p><strong>涉密场景要评估的部分</strong>：如果你查的库名、报错信息、代码片段本身敏感， 这些会离开本机。</p>
+            <p><strong>但本轮补到一条官方对隐私的明确承诺</strong>（官方 FAQ 设了专题 &quot;How do you keep the privacy of my queries?&quot;）：</p>
+            <p>查询只发送<strong>文档问题与库名/ID</strong>， <strong>不发送完整 prompt、源代码与对话历史</strong>； 官方并要求 agent 不要在查询里携带凭据、个人数据或专有代码。</p>
+            <p>⚠ 这条声明是<strong>官方自述</strong>，本站未实测验证 —— 即没有抓包确认发出去的内容真如所述。</p>
+      </div>
 
             <div class="panel is-slim">
         <h2><span data-zh>相关条目</span><span data-en>Related entries</span></h2>
