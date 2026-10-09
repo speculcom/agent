@@ -4,18 +4,18 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>smolagents — Harness | 投机取巧</title>
-  <meta name="description" content="smolagents（Hugging Face）：Hugging Face 出的薄 agent 库，官方自述 &quot;barebones library for agents that think in code&quot; （仓库 description 原文）。与同类最大的不同是 code-as-acti…" />
+  <meta name="description" content="smolagents（Hugging Face）：smolagents 是一个薄 agent 库 —— 它让 agent「用代码思考」。 官方自述是 &quot;barebones library for agents that think in code&quot;（仓库 description 原文）。 它最…" />
   <link rel="canonical" href="https://agent.specul.com/harness/smolagents.html" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="smolagents" />
   <meta property="og:url" content="https://agent.specul.com/harness/smolagents.html" />
   <meta property="og:title" content="smolagents — Harness | 投机取巧" />
-  <meta property="og:description" content="smolagents（Hugging Face）：Hugging Face 出的薄 agent 库，官方自述 &quot;barebones library for agents that think in code&quot; （仓库 description 原文）。与同类最大的不同是 code-as-acti…" />
-  <meta name="theme-color" content="#05080f" />
+  <meta property="og:description" content="smolagents（Hugging Face）：smolagents 是一个薄 agent 库 —— 它让 agent「用代码思考」。 官方自述是 &quot;barebones library for agents that think in code&quot;（仓库 description 原文）。 它最…" />
+  <meta name="theme-color" content="#16121f" />
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%238b7cf8'/%3E%3Cstop offset='1' stop-color='%2322d3c5'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='48' height='48' rx='12' fill='%2305080f'/%3E%3Cpath d='M14 32 L24 12 L34 32' fill='none' stroke='url(%23g)' stroke-width='2.4' stroke-linejoin='round'/%3E%3Ccircle cx='24' cy='27' r='2.4' fill='%2322d3c5'/%3E%3C/svg%3E" />
   <link rel="stylesheet" href="../brand.css" />
   <link rel="stylesheet" href="../site.css" />
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"smolagents","applicationCategory":"DeveloperApplication","url":"https://huggingface.co/docs/smolagents","sameAs":"https://huggingface.co/docs/smolagents","description":"Hugging Face 出的薄 agent 库，官方自述 \"barebones library for agents that think in code\" （仓库 description 原文）。与同类最大的不同是 code-as-action： 默认的 CodeAgent 让 LLM 把动作写成并执行 Python 代码，而不是输出 JSON 工具调用。","dateModified":"2026-10-08"}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"smolagents","applicationCategory":"DeveloperApplication","url":"https://huggingface.co/docs/smolagents","sameAs":"https://huggingface.co/docs/smolagents","description":"smolagents 是一个薄 agent 库 —— 它让 agent「用代码思考」。 官方自述是 \"barebones library for agents that think in code\"（仓库 description 原文）。 它最核心的设计是 code-as-action：默认的 CodeAgent 让 LLM 把动作写成并执行 Python 代码， 而不是输出 JSON 工具调用。","dateModified":"2026-10-08"}</script>
 </head>
 <body class="brand-ambient">
   <a class="t-skip" href="#main"><span data-zh>跳到主要内容</span><span data-en>Skip to main content</span></a>
@@ -101,67 +101,100 @@
         <span class="badge"><span data-zh>核验</span><span data-en>Checked</span> 2026-10-08</span>
       </div>
 
-            <p class="panel-lead"><span data-zh>Hugging Face 出的<strong>薄 agent 库</strong>，官方自述 <strong>&quot;barebones library for agents that think in code&quot;</strong>
-（仓库 description 原文）。与同类最大的不同是 <strong>code-as-action</strong>：
-默认的 <code>CodeAgent</code> 让 LLM 把动作写成并执行 Python 代码，而不是输出 JSON 工具调用。</span><span data-en>A thin agent library from Hugging Face. The repository description is literal: &quot;smolagents: a <strong>barebones library for agents that think in code</strong>.&quot;
-
-<strong>The core difference is code-as-action.</strong> The default <code>CodeAgent</code> &quot;works mostly like classical ReAct agents - the exception being that the LLM engine writes its actions as Python code snippets&quot; (README). The official claim is that this &quot;uses <strong>30% fewer steps</strong>&quot; and &quot;reaches higher performance on difficult benchmarks&quot; than JSON tool calling. A conventional <code>ToolCallingAgent</code> (structured JSON) is also provided &quot;for scenarios where that paradigm is preferred.&quot;
-
-<strong>Model-agnostic by design</strong>: <code>InferenceClientModel</code> (HF Inference Providers — Cerebras, Cohere, Together, Replicate, SambaNova and more), <code>LiteLLMModel</code> (&quot;100+ different models&quot;, incl. OpenAI / Anthropic), <code>OpenAIModel</code> (OpenAI-compatible endpoints), <code>AzureOpenAIModel</code>, <code>AmazonBedrockModel</code>, and local <code>TransformersModel</code> / <code>MLXModel</code> / Ollama. Swapping providers means swapping a Model class.
-
-<strong>On safety the docs are blunt</strong>: the built-in <code>LocalPythonExecutor</code> &quot;is <strong>not</strong> a security sandbox. It applies some restrictions but can be bypassed and must not be used as a security boundary.&quot; Real isolation requires a remote sandbox — Blaxel, E2B, Modal or Docker.
-
-Repository metadata (checked 2026-10-08): 29,693★, Apache-2.0, latest release 1.26.0 (2026-05-29), Python 3.10+.</span></p>
+            <div class="panel-lead"><span data-zh><p><strong>smolagents 是一个薄 agent 库 —— 它让 agent「用代码思考」。</strong></p>
+            <p>官方自述是 <strong>&quot;barebones library for agents that think in code&quot;</strong>（仓库 description 原文）。</p>
+            <p>它最核心的设计是 <strong>code-as-action</strong>：默认的 <code>CodeAgent</code> 让 LLM 把动作写成并执行 Python 代码， 而不是输出 JSON 工具调用。</p></span><span data-en><p>A thin agent library from Hugging Face — the repository description is literal: &quot;<strong>barebones library for agents that think in code</strong>&quot;.</p>
+            <p><strong>The core difference is code-as-action.</strong> The default <code>CodeAgent</code> lets the LLM write its actions as Python code and execute them, instead of emitting JSON tool calls. The official claim is that this &quot;uses <strong>30% fewer steps</strong>&quot; and reaches higher scores on difficult benchmarks (README cites arXiv 2402.01030 / 2411.01747). A <code>ToolCallingAgent</code> that emits JSON is also provided, officially positioned for scenarios that favour reliability and structured validation — either one works.</p>
+            <p><strong>Model-agnostic by design.</strong> Several Model classes, one per route: <code>InferenceClientModel</code> on the Hub&#39;s Inference Providers, plus <code>LiteLLMModel</code> (&quot;100+ different models&quot;), <code>OpenAIModel</code>, <code>AzureOpenAIModel</code>, <code>AmazonBedrockModel</code>, and locally <code>TransformersModel</code> / <code>MLXModel</code> / <code>Ollama</code>. Swapping provider means swapping a Model class.</p>
+            <p><strong>On safety the docs are blunt.</strong> The default <code>LocalPythonExecutor</code> is not a security sandbox — README states it &quot;is <strong>not</strong> a security sandbox. It applies some restrictions but can be bypassed and must not be used as a security boundary.&quot; Real isolation requires a remote sandbox: Blaxel, E2B, Modal or Docker.</p></span></div>
 
             <div class="panel is-slim">
         <h2><span data-zh>适合与不适合</span><span data-en>When to use it, when not to</span></h2>
-<span data-zh>        <p><strong>适合</strong>：认同 code-as-action 并愿意给 LLM 生成的代码上沙箱；要 model-agnostic 与本地模型
-（transformers / Ollama / mlx-lm）；要薄、可 hack、约千行的库；要 MCP / LangChain / Hub Space 工具生态。</p>
-        <p class="warn-p"><strong>不适合</strong>：需要厂商托管的常驻后台或断点续跑（纯库，进程关了就停、memory 不落盘）；
-既不愿承担任意代码执行风险又不想上远程沙箱；想要开箱即用的文件系统 / 记忆 / 子代理编排。</p></span><span data-en>        <p>Teams that buy into <strong>code-as-action</strong> and are willing to sandbox LLM-generated code — official research says code actions need ~30% fewer steps than JSON tool calls.
-Anyone who needs <strong>model-agnostic</strong> support and local models (<code>transformers</code>, Ollama, mlx-lm) alongside hosted providers.
-Developers who want a thin, hackable library (agent logic fits in ~1,000 lines) rather than a batteries-included framework.
-Projects that want MCP, LangChain tools and HF Hub Spaces as tool sources, plus multi-agent delegation via <code>managed_agents=</code>.
-Python stacks.</p></span>
+<span data-zh>        <div><p><strong>适合</strong>：认同 code-as-action 并愿意给 LLM 生成的代码上沙箱。 要 model-agnostic 与本地模型（transformers / Ollama / mlx-lm）。 要薄、可 hack、约千行的库。 要 MCP / LangChain / Hub Space 工具生态。</p></div>
+        <div class="warn-p"><p><strong>不适合</strong>：需要厂商托管的常驻后台或断点续跑（纯库，进程关了就停、memory 不落盘）。 既不愿承担任意代码执行风险又不想上远程沙箱。 想要开箱即用的文件系统 / 记忆 / 子代理编排。</p></div></span><span data-en>        <div><p><strong>Fits</strong>: teams that buy into <strong>code-as-action</strong> (officially ~30% fewer steps than JSON tool calls) and are willing to sandbox LLM-generated code; anyone who needs <strong>model-agnostic</strong> support and local models (transformers / Ollama / mlx-lm); developers who want a thin, hackable library — Python stack; projects that want MCP / LangChain / HF Hub Space as tool sources.</p></div>
+        <div class="warn-p"><p><strong>Not a fit</strong>: needing a vendor-hosted always-on background or resumable runs — it is a pure library and memory is not persisted to disk; unwilling to take on arbitrary-code-execution risk but also unwilling to run a remote sandbox; wanting batteries-included filesystem / memory / sub-agent orchestration.</p></div></span>
       </div>
 
 
       <div class="block-head">
         <h2 class="t-h2"><span data-zh>固定坐标系</span><span data-en>Fixed coordinate system</span></h2>
-        <p class="t-section-lead">8 <span data-zh>个维度</span><span data-en>dimensions</span>, <span data-zh>与同赛道其他对象逐项可比</span><span data-en>each comparable item by item against others in the same track</span>.</p>
+        <p class="t-section-lead">8 <span data-zh>个维度</span><span data-en>dimensions</span>, <span data-zh>与同分区其他对象逐项可比</span><span data-en>each comparable item by item against others in the same section</span>.</p>
       </div>
       <dl class="axes">
         <div class="axis">
           <dt><span data-zh>模型与开放条件</span><span data-en>Model & openness</span></dt>
-          <dd><strong>官方自述 model-agnostic：&quot;supports any LLM&quot;</strong>（README 原文）。实现是多套 Model 类各管一端： HF 侧 <code>InferenceClientModel</code> 走 Hub 的 Inference Providers（官方点名 Cerebras、Cohere、Fal、Fireworks、 HF-Inference、Hyperbolic、Nebius、Novita、Replicate、SambaNova、Together 等）； 其余走 <code>LiteLLMModel</code>（官方称 &quot;100+ different models&quot;）、<code>OpenAIModel</code>（OpenAI 及兼容端点，示例给 Together / OpenRouter）、<code>AzureOpenAIModel</code>、<code>AmazonBedrockModel</code>；本地侧有 <code>TransformersModel</code>、<code>MLXModel</code>、<code>Ollama</code>。 <strong>换 provider 的改动量 = 换一个 Model 类（或加 <code>provider=</code> 参数）</strong>，代码结构不变。 <strong>换 provider 后 tool calling / 结构化输出的可靠性对齐，官方未说明</strong>（已查 guided_tour 与 models 参考页）。</dd>
+          <dd><p><strong>官方自述 model-agnostic：&quot;supports any LLM&quot;</strong>（README 原文）。</p>
+            <p>实现是多套 Model 类，各管一端：</p>
+            <ul><li>HF 侧 <code>InferenceClientModel</code> 走 Hub 的 Inference Providers。官方点名这些： Cerebras、Cohere、Fal、Fireworks、HF-Inference、Hyperbolic、Nebius、 Novita、Replicate、SambaNova、Together</li></ul>
+            <ul><li>其余走 <code>LiteLLMModel</code>（官方称 &quot;100+ different models&quot;）、<code>OpenAIModel</code>（OpenAI 及兼容端点， 示例给 Together / OpenRouter）、<code>AzureOpenAIModel</code>、<code>AmazonBedrockModel</code></li></ul>
+            <ul><li>本地侧有 <code>TransformersModel</code>、<code>MLXModel</code>、<code>Ollama</code></li></ul>
+            <p><strong>换 provider 的改动量 = 换一个 Model 类（或加 <code>provider=</code> 参数）</strong>，代码结构不变。</p>
+            <p><strong>未知：换 provider 后 tool calling / 结构化输出的可靠性对齐，官方未说明。</strong> （已查 guided_tour 与 models 参考页。）</p></dd>
         </div>
         <div class="axis">
           <dt><span data-zh>运行位置</span><span data-en>Where it runs</span></dt>
-          <dd><strong>纯 Python 库：agent loop 由你自己在本地进程里跑，官方无托管执行服务。</strong> 定位原话是 &quot;run powerful agents in a few lines of code&quot;（README）。 安装 <code>pip install smolagents</code>（Python ≥3.10），自带两个 CLI：<code>smolagent</code>（通用多步 CodeAgent，可交互式向导） 与 <code>webagent</code>（基于 helium 的网页浏览 agent）。分层多 agent 用 <code>managed_agents=</code> 表达委派。 <strong>可以把整包 agent 用 <code>agent.push_to_hub()</code> 作为 Gradio Space 分享到 HF Hub</strong> （README 原文 &quot;share your agent to the Hub, as a Space repository&quot;）， 但那是<strong>分享/加载形态</strong>，不是厂商托管的常驻运行时——进程仍在你自己手里。</dd>
+          <dd><p><strong>纯 Python 库：agent loop 由你自己在本地进程里跑，官方无托管执行服务。</strong></p>
+            <p>官方定位原话（README）：</p>
+            <p><strong>官方原文</strong>：&quot;run powerful agents in a few lines of code&quot;</p>
+            <p>安装 <code>pip install smolagents</code>（Python ≥3.10）。 自带两个 CLI：<code>smolagent</code>（通用多步 CodeAgent，可交互式向导）与 <code>webagent</code>（基于 helium 的网页浏览 agent）。</p>
+            <p>分层多 agent 用 <code>managed_agents=</code> 表达委派。</p>
+            <p>它也可以把整包 agent 用 <code>agent.push_to_hub()</code> 作为 Gradio Space 分享到 HF Hub （README 原文 &quot;share your agent to the Hub, as a Space repository&quot;）。</p>
+            <p>但那只是<strong>分享 / 加载形态</strong>，<strong>不是厂商托管的常驻运行时</strong> —— 进程仍在你自己手里。</p></dd>
         </div>
         <div class="axis">
           <dt><span data-zh>本地文件</span><span data-en>Local files</span></dt>
-          <dd><strong>框架本身不预置文件系统工具。</strong> 官方 default toolbox（<code>smolagents[toolkit]</code>）只有三项： DuckDuckGo/WebSearch、Python 代码解释器、Whisper 转写——<strong>没有专门的文件读写工具</strong>。 CodeAgent 要读写文件靠的是<strong>它自己生成的 Python 代码</strong>（如 <code>open()</code>）或你提供的自定义工具， 所以<strong>文件边界不是框架给的，而是执行环境给的</strong>：本地跑则受 <code>LocalPythonExecutor</code> 的 import 白名单约束， 远程沙箱跑则限在沙箱容器内（见 secure_code_execution 页两种沙箱模式）。 <strong>CodeAgent 默认允许的文件访问范围，官方未说明</strong>（已查 secure_code_execution 与 guided_tour 两页，无文件权限章节）。</dd>
+          <dd><p><strong>框架本身不预置文件系统工具。</strong></p>
+            <p>官方 default toolbox（<code>smolagents[toolkit]</code>）只有三项：DuckDuckGo/WebSearch、 Python 代码解释器、Whisper 转写 —— <strong>没有专门的文件读写工具</strong>。</p>
+            <p>CodeAgent 要读写文件，靠的是<strong>它自己生成的 Python 代码</strong>（如 <code>open()</code>）或你提供的自定义工具。</p>
+            <p>所以<strong>文件边界不是框架给的，而是执行环境给的</strong>：本地跑则受 <code>LocalPythonExecutor</code> 的 import 白名单约束；远程沙箱跑则限在沙箱容器内（见 secure_code_execution 页两种沙箱模式）。</p>
+            <p><strong>未知：CodeAgent 默认允许的文件访问范围，官方未说明。</strong> （已查 secure_code_execution 与 guided_tour 两页，无文件权限章节。）</p></dd>
         </div>
         <div class="axis">
           <dt><span data-zh>关机后的任务</span><span data-en>Tasks after shutdown</span></dt>
-          <dd><strong>自托管 = 进程关了就停，无托管后台选项。</strong> README 的运行方式全是本地代码调用 （Python API / CLI / 沙箱），没有云端常驻或定时执行形态。 <strong>唯一与「长任务 / 断点」相关的官方机制是单步执行</strong>：<code>agent.step(memory_step)</code> 可一次只走一步， memory 存在进程内的 <code>agent.memory</code>（tutorials/memory 页举的用例正是 &quot;tool calls that take days&quot;）， 但<strong>官方未提供把这些 memory 落盘并在新进程恢复的内建方案</strong> （已查 tutorials/memory 与 guided_tour 两页）——断点续跑要自己序列化 steps。</dd>
+          <dd><p><strong>自托管 = 进程关了就停，无托管后台选项。</strong></p>
+            <p>README 的运行方式全是本地代码调用（Python API / CLI / 沙箱），没有云端常驻或定时执行形态。</p>
+            <p><strong>唯一与「长任务 / 断点」相关的官方机制是单步执行</strong>：<code>agent.step(memory_step)</code> 可一次只走一步。 memory 存在进程内的 <code>agent.memory</code>。tutorials/memory 页举的用例正是：</p>
+            <p><strong>官方原文</strong>：&quot;tool calls that take days&quot;</p>
+            <p><strong>未知：官方未提供把这些 memory 落盘并在新进程恢复的内建方案</strong>（已查 tutorials/memory 与 guided_tour 两页）。</p>
+            <p>所以断点续跑要自己序列化 steps。</p></dd>
         </div>
         <div class="axis">
           <dt><span data-zh>工具与扩展</span><span data-en>Tools & extensions</span></dt>
-          <dd><strong>工具面很宽，且 MCP 是一等接入。</strong> README 自述 &quot;Tool-agnostic&quot;，四个来源： ① 自定义工具——<code>@tool</code> 装饰器或继承 <code>Tool</code> 类；② <strong>MCP</strong>——<code>ToolCollection.from_mcp(...)</code> 可读任意 MCP server（装 <code>smolagents[mcp]</code>）；③ LangChain 工具——<code>Tool.from_langchain</code>； ④ <strong>把 HF Hub Space 当工具</strong>——<code>Tool.from_space</code>。 default toolbox（<code>smolagents[toolkit]</code>）= DuckDuckGo/WebSearch、Python 代码解释器、Whisper 转写。 多 agent 则用 <code>managed_agents=</code> 把子 agent 当作可调用单元。此外有 <code>final_answer_checks</code> 自定义终止校验。</dd>
+          <dd><p><strong>工具面很宽，而且 MCP 是一等接入。</strong> README 自述 &quot;Tool-agnostic&quot;，工具共四个来源：</p>
+            <ul><li>① 自定义工具 —— <code>@tool</code> 装饰器或继承 <code>Tool</code> 类</li><li>② <strong>MCP</strong> —— <code>ToolCollection.from_mcp(...)</code> 可读任意 MCP server（装 <code>smolagents[mcp]</code>）</li><li>③ LangChain 工具 —— <code>Tool.from_langchain</code></li><li>④ <strong>把 HF Hub Space 当工具</strong> —— <code>Tool.from_space</code></li></ul>
+            <p>default toolbox（<code>smolagents[toolkit]</code>）= DuckDuckGo/WebSearch、Python 代码解释器、Whisper 转写。</p>
+            <p>多 agent 则用 <code>managed_agents=</code> 把子 agent 当作可调用单元。 此外有 <code>final_answer_checks</code> 自定义终止校验。</p></dd>
         </div>
         <div class="axis">
           <dt><span data-zh>上下文与记忆</span><span data-en>Context & memory</span></dt>
-          <dd><strong>上下文 = 步历史（AgentMemory），无跨会话持久化。</strong> 官方 tutorials/memory 页： agent &quot;has a memory of past steps&quot;，步类型分 <code>TaskStep</code> / <code>ActionStep</code> / <code>PlanningStep</code> / <code>FinalAnswerStep</code>。 可操作手段官方给了三样：<code>agent.replay()</code> 回放、直接读写 <code>agent.memory.steps</code> （示例甚至在两个 agent 间搬 steps）、以及 <code>step_callbacks</code>（官方示例：删掉旧截图以省 token）； 另有 <code>planning_interval=N</code> 每 N 步插一次规划步。 <strong>官方把这一轴定位成「检查 / 改写记忆」，不是压缩</strong>；把大工具输出落盘这类深上下文管理， 官方未说明（已查 tutorials/memory 与 guided_tour 两页）。</dd>
+          <dd><p><strong>上下文 = 步历史（AgentMemory），没有跨会话持久化。</strong></p>
+            <p>官方 tutorials/memory 页的说法是：</p>
+            <p>agent &quot;has a memory of past steps&quot;</p>
+            <p>步类型分 <code>TaskStep</code> / <code>ActionStep</code> / <code>PlanningStep</code> / <code>FinalAnswerStep</code>。</p>
+            <p>可操作手段官方给了三样：</p>
+            <ul><li><code>agent.replay()</code> 回放</li><li>直接读写 <code>agent.memory.steps</code>（示例甚至在两个 agent 间搬 steps）</li><li><code>step_callbacks</code>（官方示例：删掉旧截图以省 token）</li></ul>
+            <p>另有 <code>planning_interval=N</code> 每 N 步插一次规划步。</p>
+            <p><strong>官方把这一轴定位成「检查 / 改写记忆」，不是压缩。</strong></p>
+            <p><strong>未知：把大工具输出落盘这类深上下文管理，官方未说明。</strong> （已查 tutorials/memory 与 guided_tour 两页。）</p></dd>
         </div>
         <div class="axis">
           <dt><span data-zh>权限与限制</span><span data-en>Permissions & limits</span></dt>
-          <dd><strong>官方对执行安全说得非常直白：默认的 <code>LocalPythonExecutor</code> 不是安全沙箱。</strong> README 原文 &quot;is <strong>not</strong> a security sandbox. It applies some restrictions but can be bypassed and must not be used as a security boundary.&quot;。本地解释器给的机制：AST 逐步执行、 <strong>import 默认禁止</strong>（用 <code>additional_authorized_imports</code> 开白名单）、<strong>子模块默认禁止</strong> （<code>numpy.*</code> 才放行全部子包）、循环迭代次数上限、未定义操作直接报错。 <strong>要真正隔离必须用远程沙箱</strong>：<code>executor_type=&quot;blaxel&quot; / &quot;e2b&quot; / &quot;modal&quot; / &quot;docker&quot;</code>， 官方区分两种模式（只沙箱化代码片段 vs 整包 agent 进沙箱，后者多 agent 才可用）。 官方另有 Human-in-the-Loop 示例（examples/plan_customization），但<strong>不是内建审批机制</strong>；网络访问控制官方未说明。</dd>
+          <dd><p><strong>官方对执行安全说得非常直白：默认的 <code>LocalPythonExecutor</code> 不是安全沙箱。</strong></p>
+            <p>README 原文：</p>
+            <p>&quot;The built-in <code>LocalPythonExecutor</code> is <strong>not</strong> a security sandbox. It applies some restrictions but can be bypassed and must not be used as a security boundary.&quot;</p>
+            <p>本地解释器给的机制：</p>
+            <ul><li>AST 逐步执行</li><li><strong>import 默认禁止</strong>（用 <code>additional_authorized_imports</code> 开白名单）</li><li><strong>子模块默认禁止</strong>（<code>numpy.*</code> 才放行全部子包）</li><li>循环迭代次数上限</li><li>未定义操作直接报错</li></ul>
+            <p><strong>要真正隔离必须用远程沙箱</strong>：<code>executor_type=&quot;blaxel&quot; / &quot;e2b&quot; / &quot;modal&quot; / &quot;docker&quot;</code>。</p>
+            <p>官方区分两种模式：只沙箱化代码片段，或整包 agent 进沙箱（后者多 agent 才可用）。</p>
+            <p>官方另有 Human-in-the-Loop 示例（examples/plan_customization），但<strong>不是内建审批机制</strong>。</p>
+            <p><strong>未知：网络访问控制，官方未说明。</strong></p></dd>
         </div>
         <div class="axis">
           <dt><span data-zh>适合什么任务</span><span data-en>Best for</span></dt>
-          <dd><strong>适合</strong>：认同 code-as-action（官方称比 JSON 工具调用少 30% 步数）并愿意给 LLM 生成代码上沙箱； 要 model-agnostic、能接本地模型（transformers / Ollama / mlx-lm）；要薄而可 hack 的库； Python 栈；要 MCP / LangChain / Hub Space 工具生态。 <strong>不适合</strong>：需要厂商托管的常驻后台或断点续跑（纯库，memory 不落盘）； 既不想承担任意代码执行风险、又不想上远程沙箱；要 batteries-included 的预置文件系统 / 记忆 / 子代理编排。</dd>
+          <dd><p><strong>适合这四类场景。</strong></p>
+            <ul><li>认同 code-as-action（官方称比 JSON 工具调用少 30% 步数），并愿意给 LLM 生成代码上沙箱</li><li>要 model-agnostic、能接本地模型（transformers / Ollama / mlx-lm）</li><li>要薄而可 hack 的库；Python 栈</li><li>要 MCP / LangChain / Hub Space 工具生态</li></ul>
+            <p><strong>不适合这三类场景。</strong></p>
+            <ul><li>需要厂商托管的常驻后台或断点续跑（纯库，memory 不落盘）</li><li>既不想承担任意代码执行风险、又不想上远程沙箱</li><li>要 batteries-included 的预置文件系统 / 记忆 / 子代理编排</li></ul></dd>
         </div>
       </dl>
 
@@ -180,9 +213,19 @@ Python stacks.</p></span>
         <h2><span data-zh>价格</span><span data-en>Pricing</span></h2>
         <table class="src">
           <tbody>
-            <tr><th class="w-28"><span data-zh>月度入口</span><span data-en>Monthly entry</span></th><td><span data-zh>库本身免费（Apache-2.0）</span><span data-en>库本身免费（Apache-2.0）</span></td></tr>
-            <tr><th class="w-28"><span data-zh>年付</span><span data-en>Annual</span></th><td><span data-zh>无付费档位（纯开源库）</span><span data-en>无付费档位（纯开源库）</span></td></tr>
-            <tr><th class="w-28"><span data-zh>额度说明</span><span data-en>Quota note</span></th><td><span data-zh>**框架免费 ≠ 运行免费，且官方无独立定价页。** 库本身按 Apache-2.0 开源、无授权费（仓库 LICENSE 核验 2026-10-08）。 运行成本来自两处：其一是**模型推理**——HF Inference Providers 免费账户自带 included credits 与速率限制， 升 PRO 才提高额度（见 installation 与 guided_tour 页）；其二是**远程沙箱**—— E2B / Modal / Blaxel 各自按自家服务计费（见 secure_code_execution 页）。 本地模型（transformers / Ollama / mlx-lm）则推理成本落在本机。</span><span data-en>**框架免费 ≠ 运行免费，且官方无独立定价页。** 库本身按 Apache-2.0 开源、无授权费（仓库 LICENSE 核验 2026-10-08）。 运行成本来自两处：其一是**模型推理**——HF Inference Providers 免费账户自带 included credits 与速率限制， 升 PRO 才提高额度（见 installation 与 guided_tour 页）；其二是**远程沙箱**—— E2B / Modal / Blaxel 各自按自家服务计费（见 secure_code_execution 页）。 本地模型（transformers / Ollama / mlx-lm）则推理成本落在本机。</span></td></tr>
+            <tr><th class="w-28"><span data-zh>月度入口</span><span data-en>Monthly entry</span></th><td><span data-zh><p>库本身免费（Apache-2.0）</p></span><span data-en><p>库本身免费（Apache-2.0）</p></span></td></tr>
+            <tr><th class="w-28"><span data-zh>年付</span><span data-en>Annual</span></th><td><span data-zh><p>无付费档位（纯开源库）</p></span><span data-en><p>无付费档位（纯开源库）</p></span></td></tr>
+            <tr><th class="w-28"><span data-zh>额度说明</span><span data-en>Quota note</span></th><td><span data-zh><p><strong>框架免费，但运行不免费。而且官方没有独立定价页。</strong></p>
+            <p>库本身按 Apache-2.0 开源，没有授权费（仓库 LICENSE 核验 2026-10-08）。</p>
+            <p><strong>运行成本来自两处。</strong></p>
+            <p>一处是<strong>模型推理</strong>：HF Inference Providers 的免费账户自带 included credits 与速率限制， 升 PRO 才提高额度（见 installation 与 guided_tour 页）。</p>
+            <p>另一处是<strong>远程沙箱</strong>：E2B / Modal / Blaxel 各自按自家服务计费（见 secure_code_execution 页）。</p>
+            <p>本地模型（transformers / Ollama / mlx-lm）则推理成本落在本机。</p></span><span data-en><p><strong>框架免费，但运行不免费。而且官方没有独立定价页。</strong></p>
+            <p>库本身按 Apache-2.0 开源，没有授权费（仓库 LICENSE 核验 2026-10-08）。</p>
+            <p><strong>运行成本来自两处。</strong></p>
+            <p>一处是<strong>模型推理</strong>：HF Inference Providers 的免费账户自带 included credits 与速率限制， 升 PRO 才提高额度（见 installation 与 guided_tour 页）。</p>
+            <p>另一处是<strong>远程沙箱</strong>：E2B / Modal / Blaxel 各自按自家服务计费（见 secure_code_execution 页）。</p>
+            <p>本地模型（transformers / Ollama / mlx-lm）则推理成本落在本机。</p></span></td></tr>
           </tbody>
         </table>
         <p class="fine mt-3"><span data-zh>不同币种不做折算。优惠、地区、税费与登录后报价可能变化，购买前请到官方页面确认。</span><span data-en>No currency conversion. Discounts, regions, tax and post-login pricing can change — confirm on the official page before buying.</span></p>
@@ -224,19 +267,50 @@ Python stacks.</p></span>
 
             <div class="panel is-slim">
         <h2><span data-zh>实测记录</span><span data-en>Measured runs</span></h2>
-        <p>本站尚未完成实测。测试协议见 <a href="https://github.com/speculcom/ai-agent-guide/blob/main/tracks/agents/tasks/_protocol.md" target="_blank" rel="noopener">tasks/_protocol.md</a>。
-
-<strong>实测建议</strong>（按编程底座 + code-as-action 维度定制）：
-
-| # | 测什么 | 为什么值得测 |
-|:--:|---|---|
-| 1 | 最小 hello CodeAgent 要几个文件、多少行 | 验证官方「barebones / ~1000 行」的薄到什么程度 |
-| 2 | <code>LocalPythonExecutor</code> 能拦住几类经典逃逸 | 官方说它不是安全边界，实测边界在哪 |
-| 3 | <code>executor_type=&quot;docker&quot;</code> 跑通多 agent 的成本 | 官方说明代码片段模式不支持多 agent |
-| 4 | 换成 LiteLLM 接本地 Ollama 要改多少行 | 验证 model-agnostic 的真实改动量 |
-| 5 | 单步 <code>agent.step()</code> 跨进程恢复 memory 的可行性 | 官方无内建落盘，验证自建断点的代价 |</p>
+        <p>本站尚未完成实测。测试协议见 <a href="https://github.com/speculcom/ai-agent-guide/blob/main/tracks/agents/tasks/_protocol.md" target="_blank" rel="noopener">tasks/_protocol.md</a>。</p>
+            <p><strong>实测建议</strong>（按编程底座 + code-as-action 维度定制）：</p>
+            <div class="tbl-wrap"><table><thead><tr><th>#</th><th>测什么</th><th>为什么值得测</th></tr></thead><tbody><tr><td>1</td><td>最小 hello CodeAgent 要几个文件、多少行</td><td>验证官方「barebones / ~1000 行」的薄到什么程度</td></tr><tr><td>2</td><td><code>LocalPythonExecutor</code> 能拦住几类经典逃逸</td><td>官方说它不是安全边界，实测边界在哪</td></tr><tr><td>3</td><td><code>executor_type=&quot;docker&quot;</code> 跑通多 agent 的成本</td><td>官方说明代码片段模式不支持多 agent</td></tr><tr><td>4</td><td>换成 LiteLLM 接本地 Ollama 要改多少行</td><td>验证 model-agnostic 的真实改动量</td></tr><tr><td>5</td><td>单步 <code>agent.step()</code> 跨进程恢复 memory 的可行性</td><td>官方无内建落盘，验证自建断点的代价</td></tr></tbody></table></div>
       </div>
 
+
+            <div class="panel is-slim">
+        <h2>与 OpenAI Agents SDK 的分野：动作怎么表示</h2>
+        <p>两者都属「原语型」，但表达动作的载体不同：</p>
+            <div class="tbl-wrap"><table><thead><tr><th>维度</th><th><strong>smolagents</strong></th><th><strong>OpenAI Agents SDK</strong></th></tr></thead><tbody><tr><td>动作载体</td><td><strong>Python 代码片段</strong>（CodeAgent）或 JSON（ToolCallingAgent）</td><td>函数调用（function tools / handoffs）</td></tr><tr><td>官方效率说法</td><td>&quot;uses <strong>30% fewer steps</strong>&quot;（引 arXiv 2402.01030）</td><td>未给同类量化</td></tr><tr><td>执行风险</td><td>LLM 代码要在<strong>沙箱</strong>里跑</td><td>工具调用，非任意代码</td></tr><tr><td>换 provider</td><td>换 Model 类</td><td>换 <code>model</code> 字符串 / 适配器</td></tr></tbody></table></div>
+            <p><strong>一句话</strong>：想要「动作即代码」并能给代码上沙箱，选 smolagents；想要工具调用 + 内建 guardrails/human-in-the-loop，选 OpenAI Agents SDK。</p>
+      </div>
+      <div class="panel is-slim">
+        <h2>CodeAgent vs ToolCallingAgent（官方对比）</h2>
+        <p>官方 guided_tour 把两者讲得很清楚：</p>
+            <div class="tbl-wrap"><table><thead><tr><th></th><th><strong>CodeAgent</strong>（默认）</th><th><strong>ToolCallingAgent</strong></th></tr></thead><tbody><tr><td>动作格式</td><td>Python 代码片段</td><td>结构化 JSON</td></tr><tr><td>强项</td><td>高表达力、可组合/循环/转换、涌现推理</td><td>可靠、参数经校验、与外部 API 好映射</td></tr><tr><td>弱项</td><td>需处理语法/异常、需安全执行环境</td><td>表达力低、动作必须预先定义、无代码合成</td></tr><tr><td>适合</td><td>需要推理 / 链式 / 动态组合的问题解决者</td><td>原子工具、调度器 / 控制器类任务</td></tr></tbody></table></div>
+      </div>
+      <div class="panel is-slim">
+        <h2>沙箱：安全边界官方说得很清楚</h2>
+        <p>README 直接写明默认解释器的定位：</p>
+            <blockquote>The built-in <code>LocalPythonExecutor</code> is <strong>not a security sandbox</strong>. It applies some restrictions but can be bypassed and must not be used as a security boundary.</blockquote>
+            <p>本地解释器给的机制是：</p>
+            <ul><li>AST 逐步执行</li><li>import 默认禁止（<code>additional_authorized_imports</code> 白名单）</li><li>子模块默认禁止（<code>numpy.*</code> 才放行全部子包）</li><li>循环迭代上限</li><li>未定义操作报错</li></ul>
+            <p>要真正隔离，官方给两类沙箱：</p>
+            <ul><li><strong>托管云沙箱</strong>：Blaxel、E2B、Modal（<code>pip install &#39;smolagents[blaxel|e2b|modal]&#39;</code>）</li><li><strong>自托管容器</strong>：Docker（<code>executor_type=&quot;docker&quot;</code>）</li></ul>
+            <p><strong>两种模式要分清</strong>：只把代码片段送进沙箱（简单，但多 agent 不可用）； 或把整个 agent（含模型、工具）搬进沙箱（隔离更强，但要传凭据、要手动搭）。</p>
+      </div>
+      <div class="panel is-slim">
+        <h2>与 HF Hub 的关系：分享，不是托管</h2>
+        <p>README 里 agents 和 tools 都是 Hub 对象：</p>
+            <ul><li><code>agent.push_to_hub(&quot;user/agent&quot;)</code> 把 agent 发成 <strong>Gradio Space</strong></li><li><code>agent.from_hub(...)</code> 加载社区 agent；工具同理</li></ul>
+            <p>多 agent 则用 <code>managed_agents=</code>（官方另有 <code>ManagedAgent</code> 包装类）做分层委派。</p>
+            <blockquote>⚠ <strong>这不是「厂商托管运行」</strong>：Space 是分享/加载形态，agent loop 仍跑在你自己那边， 也没有「关机后继续跑」的语义。选型时别把它当托管服务。</blockquote>
+      </div>
+      <div class="panel is-slim">
+        <h2>核验说明</h2>
+        <p><code>confidence: partial</code> 的依据（2026-10-08）：</p>
+            <p>本条目八维已全部给出结论。但仍有<strong>官方确实没写</strong>、只能落「官方未说明」的项：</p>
+            <ul><li>换 provider 后 tool calling / 结构化输出的可靠性对齐</li><li>CodeAgent 默认的文件访问范围</li><li>深上下文管理（大工具输出落盘）</li><li>内建网络访问控制</li></ul>
+            <p>这些不是「没查到」，是官方文档本身没提供，故不足以升到 verified。</p>
+            <p><strong>本轮核到的官方页</strong>：</p>
+            <ul><li>README（含 barebones 定位、code-as-action、四类工具、沙箱、ManagedAgent）</li><li>docs index</li><li>installation（extras 全清单）</li><li>guided_tour（两类 agent 对比与 provider 清单）</li><li>tutorials/secure_code_execution（解释器限制与沙箱模式）</li><li>tutorials/memory（AgentMemory 与单步执行）</li><li>examples/multiagents</li><li>conceptual_guides/intro_agents</li></ul>
+            <p>仓库元数据经 GitHub API 核验（29,693★、Apache-2.0、最近推送 2026-09-30、最新版 1.26.0）。</p>
+      </div>
 
             <div class="panel is-slim">
         <h2><span data-zh>相关条目</span><span data-en>Related entries</span></h2>
