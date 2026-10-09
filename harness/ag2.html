@@ -4,18 +4,18 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>AG2 — Harness | 投机取巧</title>
-  <meta name="description" content="AG2（ag2ai）：「AutoGen 停更后由社区接棒的续作」 —— 仓库描述直接写着 &quot;AG2 (formerly AutoGen)&quot;， README 也自述由 &quot;a dynamic group of volunteers from several organizati…" />
+  <meta name="description" content="AG2（ag2ai）：AG2 是 AutoGen 停更后由社区接棒的续作。 仓库描述直接写着 &quot;AG2 (formerly AutoGen)&quot;。 README 也自述维护方： &quot;a dynamic group of volunteers from several organi…" />
   <link rel="canonical" href="https://agent.specul.com/harness/ag2.html" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="AG2" />
   <meta property="og:url" content="https://agent.specul.com/harness/ag2.html" />
   <meta property="og:title" content="AG2 — Harness | 投机取巧" />
-  <meta property="og:description" content="AG2（ag2ai）：「AutoGen 停更后由社区接棒的续作」 —— 仓库描述直接写着 &quot;AG2 (formerly AutoGen)&quot;， README 也自述由 &quot;a dynamic group of volunteers from several organizati…" />
-  <meta name="theme-color" content="#05080f" />
+  <meta property="og:description" content="AG2（ag2ai）：AG2 是 AutoGen 停更后由社区接棒的续作。 仓库描述直接写着 &quot;AG2 (formerly AutoGen)&quot;。 README 也自述维护方： &quot;a dynamic group of volunteers from several organi…" />
+  <meta name="theme-color" content="#16121f" />
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%238b7cf8'/%3E%3Cstop offset='1' stop-color='%2322d3c5'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='48' height='48' rx='12' fill='%2305080f'/%3E%3Cpath d='M14 32 L24 12 L34 32' fill='none' stroke='url(%23g)' stroke-width='2.4' stroke-linejoin='round'/%3E%3Ccircle cx='24' cy='27' r='2.4' fill='%2322d3c5'/%3E%3C/svg%3E" />
   <link rel="stylesheet" href="../brand.css" />
   <link rel="stylesheet" href="../site.css" />
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"AG2","applicationCategory":"DeveloperApplication","url":"https://ag2.ai","sameAs":"https://ag2.ai","description":"「AutoGen 停更后由社区接棒的续作」 —— 仓库描述直接写着 \"AG2 (formerly AutoGen)\"， README 也自述由 \"a dynamic group of volunteers from several organizations\" 维护。 理解它必须先分清两条线： | | AG2（本条目） | Microsoft Agent Framework | |---|---|---| | 维护方 | 社区（ag2ai） | 微软官方 | | 与 AutoGen 关系 | 社区延续 / fork 后的独立演进 | 官方把 AutoGen + Semantic Kernel ","dateModified":"2026-10-08","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"AG2","applicationCategory":"DeveloperApplication","url":"https://ag2.ai","sameAs":"https://ag2.ai","description":"AG2 是 AutoGen 停更后由社区接棒的续作。 仓库描述直接写着 \"AG2 (formerly AutoGen)\"。 README 也自述维护方： \"a dynamic group of volunteers from several organizations\" 理解它必须先分清两条线： | | AG2（本条目） | Microsoft Agent Framework | |---|---|---| | 维护方 | 社区（ag2ai） | 微软官方 | | 与 AutoGen 关系 | 社区延续 / fork 后的独立演进 | 官方把 AutoGen + Semantic Kernel","dateModified":"2026-10-08","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}</script>
 </head>
 <body class="brand-ambient">
   <a class="t-skip" href="#main"><span data-zh>跳到主要内容</span><span data-en>Skip to main content</span></a>
@@ -111,72 +111,150 @@
         <span class="badge"><span data-zh>核验</span><span data-en>Checked</span> 2026-10-08</span>
       </div>
 
-            <p class="panel-lead"><span data-zh><strong>「AutoGen 停更后由社区接棒的续作」</strong> —— 仓库描述直接写着 &quot;AG2 (formerly AutoGen)&quot;，
-README 也自述由 &quot;a dynamic group of volunteers from several organizations&quot; 维护。
-
-<strong>理解它必须先分清两条线</strong>：
-
-| | AG2（本条目） | Microsoft Agent Framework |
-|---|---|---|
-| 维护方 | 社区（ag2ai） | 微软官方 |
-| 与 AutoGen 关系 | 社区延续 / fork 后的独立演进 | 官方把 AutoGen + Semantic Kernel 合并继任 |
-| 顶层 import | <code>import ag2</code> | <code>agent_framework</code> / <code>Microsoft.Agents.AI</code> |
-
-这也是本项目的 harness 赛道当初把 <strong>AutoGen 原仓库列为「明确不收对象」</strong>的原因
-（原仓 <code>pushed_at</code> 停在 2026-04-15、社区转向 AG2）—— 收 AG2 而非 AutoGen，
-正是「跟着仍在更新的那支血脉走」。</span><span data-en>AG2 is an open-source Python framework for building AI agents and coordinating multiple agents to solve tasks, offering &quot;agents capable of interacting with each other,&quot; broad LLM support, tooling, autonomous and human-in-the-loop workflows, and multi-agent conversation patterns. It is the community continuation of AutoGen: as of <strong>v1.0</strong> the protocol-driven framework became the top-level package (<code>import ag2</code>), while the classic framework (<code>ConversableAgent</code>, <code>GroupChat</code>, <code>import autogen</code>) moved to its own repository, <code>ag2ai/ag2-classic</code>. Officially, &quot;AG2 v1.0 (<code>pip install ag2</code>) is <strong>not</strong> a drop-in upgrade from Classic. The agent model, orchestration, and imports all changed.&quot; v1.0 orchestrates agents through the <strong>Network</strong> — a <code>Hub</code> that owns the registry, write-ahead log, and audit trail, with agents talking over typed <strong>channels</strong> (<code>conversation</code> / <code>consulting</code> / <code>discussion</code> / <code>workflow</code>) — and exposes an opt-in <strong>harness</strong> of composable primitives (<code>assembly=</code>, <code>knowledge=</code>, <code>tasks=</code>). It is licensed Apache-2.0 and runs entirely in your own process (no managed hosting).</span></p>
+            <div class="panel-lead"><span data-zh><p><strong>AG2 是 AutoGen 停更后由社区接棒的续作。</strong> 仓库描述直接写着 &quot;AG2 (formerly AutoGen)&quot;。</p>
+            <p>README 也自述维护方：</p>
+            <blockquote>&quot;a dynamic group of volunteers from several organizations&quot;</blockquote>
+            <p><strong>理解它必须先分清两条线</strong>：</p>
+            <div class="tbl-wrap"><table><thead><tr><th></th><th>AG2（本条目）</th><th>Microsoft Agent Framework</th></tr></thead><tbody><tr><td>维护方</td><td>社区（ag2ai）</td><td>微软官方</td></tr><tr><td>与 AutoGen 关系</td><td>社区延续 / fork 后的独立演进</td><td>官方把 AutoGen + Semantic Kernel 合并继任</td></tr><tr><td>顶层 import</td><td><code>import ag2</code></td><td><code>agent_framework</code> / <code>Microsoft.Agents.AI</code></td></tr></tbody></table></div>
+            <p>这也是本项目的 harness 分区当初的取舍依据。</p>
+            <p>它把 AutoGen 原仓库列为「明确不收对象」。</p>
+            <p>原仓 <code>pushed_at</code> 停在 2026-04-15，社区已转向 AG2。</p>
+            <p>收 AG2 而非 AutoGen，正是「跟着仍在更新的那支血脉走」。</p></span><span data-en><p>AG2 is an open-source Python framework for building AI agents and coordinating multiple agents to solve tasks, with &quot;agents capable of interacting with each other,&quot; broad LLM support, tooling, autonomous and human-in-the-loop workflows, and multi-agent conversation patterns. It is the community continuation of AutoGen: as of <strong>v1.0</strong> the protocol-driven framework became the top-level package (<code>import ag2</code>), while the classic framework (<code>ConversableAgent</code>, <code>GroupChat</code>, <code>import autogen</code>) moved to its own repository, <code>ag2ai/ag2-classic</code>. Officially, &quot;AG2 v1.0 (<code>pip install ag2</code>) is <strong>not</strong> a drop-in upgrade from Classic. The agent model, orchestration, and imports all changed.&quot; v1.0 orchestrates agents through the <strong>Network</strong> — a <code>Hub</code> that owns the registry, write-ahead log, and audit trail, with agents talking over typed <strong>channels</strong> — and exposes an opt-in <strong>harness</strong> of composable primitives (<code>assembly=</code>, <code>knowledge=</code>, <code>tasks=</code>). It is licensed Apache-2.0 and runs entirely in your own process (no managed hosting), so the only cost is model calls, billed by whichever provider you install.</p></span></div>
 
             <div class="panel is-slim">
         <h2><span data-zh>适合与不适合</span><span data-en>When to use it, when not to</span></h2>
-<span data-zh>        <p><strong>适合</strong>：用 Python 编排多 agent 会话 / 协议化网络；需要可审计的 durable messaging 与跨进程部署；
-要在本地模型上跑（Ollama / vLLM / LM Studio）；要 HITL 与受限 shell；需要 MCP 与 AG-UI；
-偏好 opt-in、可组合的 harness 原语。
-<strong>不适合</strong>：期待 <code>pip install ag2</code> 仍是老 AutoGen；需要厂商托管后台；
-需要开箱即用的容器级沙箱；非 Python 技术栈。</p></span><span data-en>        <p>Orchestrating <strong>multi-agent conversations / a protocol-driven network</strong> in Python (Hub + channels, with consulting, discussion, and workflow adapters)
-Needing auditable durable messaging (write-ahead log, audit trail) and cross-process deployment (WsLink)
-Running on local models (Ollama / vLLM / LM Studio)
-Needing HITL and a restricted shell tool; MCP and AG-UI integration
-Preferring opt-in, composable harness primitives</p>
-        <p class="warn-p"><strong>Not a fit for</strong> expecting <code>pip install ag2</code> to still be the classic AutoGen API (since v1.0 those classes live in <code>ag2-classic</code>); needing a <strong>vendor-managed backend</strong> (it is a pure library — you run the process); needing out-of-the-box <strong>container-level sandboxing</strong> (officially you get a restricted-shell allowlist, not a container); or non-Python stacks (there is no official non-Python port).</p></span>
+<span data-zh>        <div><p><strong>适合</strong>：</p></div>
+        <div><ul><li>用 Python 编排多 agent 会话 / 协议化网络</li><li>需要可审计的 durable messaging 与跨进程部署</li><li>要在本地模型上跑（Ollama / vLLM / LM Studio）</li><li>要 HITL 与受限 shell</li><li>需要 MCP 与 AG-UI</li><li>偏好 opt-in、可组合的 harness 原语</li></ul></div>
+        <div class="warn-p"><p><strong>不适合</strong>：</p></div>
+        <div><ul><li>期待 <code>pip install ag2</code> 仍是老 AutoGen</li><li>需要厂商托管后台</li><li>需要开箱即用的容器级沙箱</li><li>非 Python 技术栈</li></ul></div></span><span data-en>        <div><p>Orchestrating <strong>multi-agent conversations / a protocol-driven network</strong> in Python (Hub + channels, with consulting, discussion, and workflow adapters) Needing auditable durable messaging (write-ahead log, audit trail) and cross-process deployment (WsLink) Running on local models (Ollama / vLLM / LM Studio) Needing HITL and a restricted shell tool; MCP and AG-UI integration Preferring opt-in, composable harness primitives</p></div>
+        <div class="warn-p"><p><strong>Not a fit for</strong> expecting <code>pip install ag2</code> to still be the classic AutoGen API (since v1.0 those classes live in <code>ag2-classic</code>); needing a <strong>vendor-managed backend</strong> (it is a pure library — you run the process); needing out-of-the-box <strong>container-level sandboxing</strong> (officially you get a restricted-shell allowlist, not a container); or non-Python stacks (there is no official non-Python port).</p></div></span>
       </div>
 
 
       <div class="block-head">
         <h2 class="t-h2"><span data-zh>固定坐标系</span><span data-en>Fixed coordinate system</span></h2>
-        <p class="t-section-lead">8 <span data-zh>个维度</span><span data-en>dimensions</span>, <span data-zh>与同赛道其他对象逐项可比</span><span data-en>each comparable item by item against others in the same track</span>.</p>
+        <p class="t-section-lead">8 <span data-zh>个维度</span><span data-en>dimensions</span>, <span data-zh>与同分区其他对象逐项可比</span><span data-en>each comparable item by item against others in the same section</span>.</p>
       </div>
       <dl class="axes">
         <div class="axis">
           <dt><span data-zh>模型与开放条件</span><span data-en>Model & openness</span></dt>
-          <dd><strong>provider 清单官方给了显式、类型安全的配置类，覆盖云端与本地两条路。</strong> 官方 <code>beta/model_configuration</code> 页原文：&quot;The AG2 framework provides an explicit, predictable, and <strong>type-safe</strong> way to configure Large Language Models&quot;； 每家 provider 一个 Config 类 + 一个 extra：<code>OpenAIConfig</code> / <code>OpenAIResponsesConfig</code>（<code>ag2[openai]</code>）、 <code>AnthropicConfig</code>（<code>ag2[anthropic]</code>）、<code>GeminiConfig</code> / <code>VertexAIConfig</code>（<code>ag2[gemini]</code>）、 <code>BedrockConfig</code>（<code>ag2[bedrock]</code>）、<code>OllamaConfig</code>（<code>ag2[ollama]</code>）、<code>DashScopeConfig</code>（<code>ag2[dashscope]</code>）、 <code>XAIConfig</code>（<code>ag2[xai]</code>）、<code>ZAIConfig</code>（<code>ag2[zai]</code>）。 <strong>本地/自托管明确支持</strong>：官方专列 &quot;Self-Hosted and OpenAI-Compatible Models（vLLM, LM Studio, etc.）&quot;， 走 <code>OpenAIConfig</code> 的 base_url。README 亦列出 <code>ag2[ollama]</code>。 <strong>Bedrock 于 v1.1.1 改为原生异步客户端</strong> aiobotocore（官方 release 明示为 breaking）。 <strong>换 provider 后 tool calling / structured output 的可靠性对比，官方未说明</strong> （已查 beta/model_configuration 与 Grok 兼容页）。</dd>
+          <dd><p><strong>provider 清单是显式的、类型安全的配置类，覆盖云端与本地两条路。</strong></p>
+            <p>官方 <code>beta/model_configuration</code> 页原文：</p>
+            <p>&quot;The AG2 framework provides an explicit, predictable, and <strong>type-safe</strong> way to configure Large Language Models&quot;</p>
+            <p>每家 provider 一个 Config 类 + 一个 extra：</p>
+            <ul><li><code>OpenAIConfig</code> / <code>OpenAIResponsesConfig</code>（<code>ag2[openai]</code>）</li><li><code>AnthropicConfig</code>（<code>ag2[anthropic]</code>）</li><li><code>GeminiConfig</code> / <code>VertexAIConfig</code>（<code>ag2[gemini]</code>）</li><li><code>BedrockConfig</code>（<code>ag2[bedrock]</code>）</li><li><code>OllamaConfig</code>（<code>ag2[ollama]</code>）</li><li><code>DashScopeConfig</code>（<code>ag2[dashscope]</code>）</li><li><code>XAIConfig</code>（<code>ag2[xai]</code>）</li><li><code>ZAIConfig</code>（<code>ag2[zai]</code>）</li></ul>
+            <p><strong>本地 / 自托管明确支持。</strong></p>
+            <p>官方专列一节 &quot;Self-Hosted and OpenAI-Compatible Models（vLLM, LM Studio, etc.）&quot;， 走 <code>OpenAIConfig</code> 的 base_url。README 亦列出 <code>ag2[ollama]</code>。</p>
+            <p><strong>Bedrock 于 v1.1.1 改为原生异步客户端</strong> aiobotocore。官方 release 明示为 breaking。</p>
+            <p><strong>未知</strong> —— 换 provider 后 tool calling / structured output 的可靠性对比，官方未说明 （已查 <code>beta/model_configuration</code> 与 Grok 兼容页）。</p></dd>
         </div>
         <div class="axis">
           <dt><span data-zh>运行位置</span><span data-en>Where it runs</span></dt>
-          <dd><strong>纯 Python 库，异步贯穿，不提供托管服务。</strong> README 原文：&quot;AG2 requires <strong>Python version &gt;= 3.10</strong>&quot;、&quot;AG2 is <strong>async throughout</strong>. <code>Agent.ask(...)</code> starts a turn and returns an <code>AgentReply</code>&quot;；安装 <code>pip install ag2[openai]</code>。 <strong>多 agent 的调度形态官方给了两种链路</strong>（<code>network/overview</code> 页）： 默认 <strong><code>LocalLink</code></strong> —— &quot;same-process duplex queues&quot;，同进程内 hub + agents； 换成 <strong><code>WsLink</code></strong> 即可让 &quot;the hub and each agent as separate OS processes connected over WebSocket&quot;， <code>HubClient</code> API 不变、无需改业务代码。 <strong>它不运营 agent loop</strong>：库里的一切跑在你自己的进程/主机上，官方无 any 托管 offer。</dd>
+          <dd><p><strong>纯 Python 库，异步贯穿，不提供托管服务。</strong></p>
+            <p>README 原文：</p>
+            <p>&quot;AG2 requires <strong>Python version &gt;= 3.10</strong>&quot;</p>
+            <p>&quot;AG2 is <strong>async throughout</strong>. <code>Agent.ask(...)</code> starts a turn and returns an <code>AgentReply</code>&quot;</p>
+            <p>安装是 <code>pip install ag2[openai]</code>。</p>
+            <p><strong>多 agent 的调度形态官方给了两种链路</strong>（<code>network/overview</code> 页）：</p>
+            <ul><li>默认 <strong><code>LocalLink</code></strong> —— 官方描述：</li></ul>
+            <p>&quot;same-process duplex queues&quot;</p>
+            <p>即同进程内 hub + agents。</p>
+            <ul><li>换成 <strong><code>WsLink</code></strong> —— 官方描述：</li></ul>
+            <p>&quot;the hub and each agent as separate OS processes connected over WebSocket&quot;</p>
+            <p>即 hub 与每个 agent 分处不同操作系统进程。</p>
+            <p>换链路时 <code>HubClient</code> API 不变、无需改业务代码。</p>
+            <p><strong>它不运营 agent loop。</strong></p>
+            <p>库里的一切跑在你自己的进程 / 主机上，官方无 any 托管 offer。</p></dd>
         </div>
         <div class="axis">
           <dt><span data-zh>本地文件</span><span data-en>Local files</span></dt>
-          <dd><strong>框架不内置通用文件工具，文件能力来自 KnowledgeStore 与沙箱 shell 工具，且后者的边界写得比多数同类清楚。</strong> <strong>① 磁盘知识库</strong>：官方 harness 示例用 <code>DiskKnowledgeStore(Path(&quot;./knowledge_demo&quot;))</code>， 官方注释 &quot;Disk-backed, so anything the agent remembers <strong>survives the process exiting</strong>&quot; —— 即知识落盘位置由你指定的目录决定。 <strong>② 受限 shell（已核到，且是本对象最值得记的一处）</strong>：官方 release v1.1.1 原文 —— 受限模式 &quot;runs commands <strong>without a shell</strong>&quot;：<code>SandboxShellTool</code> / <code>ShellAdapter</code> 传 <code>allowed=[...]</code> 或 <code>readonly=True</code> 时会把命令切分成 argv 后<strong>只检查 argv 再原样执行</strong>， &quot;Nothing can expand after the check&quot;，管道/重定向/通配符/变量在受限模式下被拒。 <code>readonly=True</code> 只放行不可写文件、不启动其它程序的命令；<code>blocked=[...]</code> 官方明说 &quot;remains <strong>best-effort</strong>. It is <strong>not</strong> a security boundary.&quot; <strong>框架级的默认文件访问边界与容器级隔离，官方未说明</strong> （已查 network/overview、agent_harness 与 release 页）。</dd>
+          <dd><p><strong>框架不内置通用文件工具。文件能力来自 KnowledgeStore 与沙箱 shell 工具。</strong></p>
+            <p>后者的边界写得比多数同类清楚，这是本对象最值得记的一处。</p>
+            <p><strong>① 磁盘知识库。</strong></p>
+            <p>官方 harness 示例用 <code>DiskKnowledgeStore(Path(&quot;./knowledge_demo&quot;))</code>，官方注释：</p>
+            <p>&quot;Disk-backed, so anything the agent remembers <strong>survives the process exiting</strong>&quot;</p>
+            <p>即知识落盘位置由你指定的目录决定。</p>
+            <p><strong>② 受限 shell</strong>（已核到，见官方 release v1.1.1）。</p>
+            <p>受限模式 &quot;runs commands <strong>without a shell</strong>&quot;。</p>
+            <p><code>SandboxShellTool</code> / <code>ShellAdapter</code> 传 <code>allowed=[...]</code> 或 <code>readonly=True</code> 时， 会把命令切分成 argv。然后<strong>只检查 argv 再原样执行</strong>：</p>
+            <p><strong>官方原文</strong>：&quot;Nothing can expand after the check&quot;</p>
+            <p>管道 / 重定向 / 通配符 / 变量在受限模式下被拒。</p>
+            <ul><li><code>readonly=True</code> 只放行不可写文件、不启动其它程序的命令</li><li><code>blocked=[...]</code> 官方明说：</li></ul>
+            <p>&quot;remains <strong>best-effort</strong>. It is <strong>not</strong> a security boundary.&quot;</p>
+            <p><strong>未知</strong> —— 框架级的默认文件访问边界与容器级隔离，官方未说明 （已查 <code>network/overview</code>、<code>agent_harness</code> 与 release 页）。</p></dd>
         </div>
         <div class="axis">
           <dt><span data-zh>关机后的任务</span><span data-en>Tasks after shutdown</span></dt>
-          <dd><strong>「关机后还能跑」在本站是纯库形态 —— 没有托管后台，但 durable messaging 机制官方给了明确实现。</strong> <code>network/overview</code> 页原文列出的 Network 能力包含 &quot;<strong>Durable messaging</strong> with replayable channel transcripts (<strong>write-ahead log</strong>)&quot; 与 &quot;<strong>Distributed / cross-process deployment</strong>: replace <code>LocalLink</code> with <strong><code>WsLink</code></strong>&quot;； hub 持有权威状态（registry、audit log、channel table、write-ahead logs）， 客户端是 &quot;thin frontends&quot;。官方另有 <strong>Distributed Deployment</strong> 专页涵盖 WsLink、 serve_ws、auth、<strong>at-least-once delivery</strong>、reconnect 与 <strong>task durability</strong>。 <strong>长期记忆可跨进程存活</strong>（DiskKnowledgeStore 落盘，见 local_files 轴）。 <strong>但没有任何厂商托管 offer</strong> —— 进程必须跑在你自己的服务器上；要真后台得自己上容器/K8s。 <strong>官方未说明托管选项与断点续跑在崩溃场景下的具体语义</strong>（已查 network/overview 页）。</dd>
+          <dd><p><strong>「关机后还能跑」在本站是纯库形态 —— 没有托管后台。</strong></p>
+            <p>但 durable messaging 机制官方给了明确实现。<code>network/overview</code> 页列出的 Network 能力包含：</p>
+            <p>&quot;<strong>Durable messaging</strong> with replayable channel transcripts (<strong>write-ahead log</strong>)&quot;</p>
+            <p>&quot;<strong>Distributed / cross-process deployment</strong>: replace <code>LocalLink</code> with <strong><code>WsLink</code></strong>&quot;</p>
+            <p>hub 持有权威状态：registry、audit log、channel table、write-ahead logs。客户端是：</p>
+            <p>&quot;thin frontends&quot;</p>
+            <p>官方另有 <strong>Distributed Deployment</strong> 专页。</p>
+            <p>它涵盖 WsLink、serve_ws、auth、<strong>at-least-once delivery</strong>、reconnect 与 <strong>task durability</strong>。</p>
+            <p><strong>长期记忆可跨进程存活。</strong> DiskKnowledgeStore 落盘，见 local_files 轴。</p>
+            <p><strong>但没有任何厂商托管 offer。</strong></p>
+            <p>进程必须跑在你自己的服务器上；要真后台得自己上容器 / K8s。</p>
+            <p><strong>未知</strong> —— 托管选项与断点续跑在崩溃场景下的具体语义，官方未说明 （已查 <code>network/overview</code> 页）。</p></dd>
         </div>
         <div class="axis">
           <dt><span data-zh>工具与扩展</span><span data-en>Tools & extensions</span></dt>
-          <dd><strong>工具、MCP、AG-UI 三项都能在官方源核到；A2A 仅见仓库 topics。</strong> <strong>① 原生工具</strong>：普通 Python 函数加 <code>@tool</code> 装饰器即成为工具，官方原文 &quot;AG2 runs the <strong>full tool-calling loop</strong>: the model decides when to call it, AG2 executes it, and the result is fed back&quot;；agent 还可 <code>Agent.as_tool()</code> 被别的 agent 当工具用。 <strong>② MCP</strong>：官方 release 记录持续维护 <code>MCPToolkit</code> 与 <code>MCPServerTool</code> （v1.1.1 &quot;send exactly one <code>Authorization</code> header on every provider&quot;；v1.1.2 &quot;fix(mcp): derive model output schemas from serialization&quot;）。 <strong>③ AG-UI</strong>：v1.1.2 &quot;feat(ag-ui)!: <strong>serve AG-UI 1.0</strong>&quot;；v1.1.1 支持 &quot;<strong>Human input over AG-UI</strong>&quot;（工具内 <code>context.input()</code> 的问题经 AG-UI 客户端以 interrupt 抛出）。 <strong>④ Skills</strong>：官方 release 有 &quot;check local skill ownership before validating arguments&quot;、 &quot;execute nested scripts from declared paths&quot; 等 skill 相关修复。 <strong>A2A 目前只能在官方仓库 topics 里看到（含 <code>a2a</code>），本轮未取到 v1.0 的 A2A 专页正文</strong>， 故不展开。子任务委派另有 <code>run_subtask</code> / <code>run_subtasks</code> 自动注入工具（见 context 轴）。</dd>
+          <dd><p><strong>工具、MCP、AG-UI 三项都能在官方源核到；A2A 仅见仓库 topics。</strong></p>
+            <p><strong>① 原生工具。</strong></p>
+            <p>普通 Python 函数加 <code>@tool</code> 装饰器即成为工具。官方原文：</p>
+            <p>&quot;AG2 runs the <strong>full tool-calling loop</strong>: the model decides when to call it, AG2 executes it, and the result is fed back&quot;</p>
+            <p>agent 还可 <code>Agent.as_tool()</code> 被别的 agent 当工具用。</p>
+            <p><strong>② MCP。</strong></p>
+            <p>官方 release 记录持续维护 <code>MCPToolkit</code> 与 <code>MCPServerTool</code>：</p>
+            <ul><li>v1.1.1 &quot;send exactly one <code>Authorization</code> header on every provider&quot;</li><li>v1.1.2 &quot;fix(mcp): derive model output schemas from serialization&quot;</li></ul>
+            <p><strong>③ AG-UI。</strong></p>
+            <ul><li>v1.1.2 &quot;feat(ag-ui)!: <strong>serve AG-UI 1.0</strong>&quot;</li><li>v1.1.1 支持 &quot;<strong>Human input over AG-UI</strong>&quot;（工具内 <code>context.input()</code> 的问题经 AG-UI 客户端以 interrupt 抛出）</li></ul>
+            <p><strong>④ Skills。</strong></p>
+            <p>官方 release 有 skill 相关修复：</p>
+            <ul><li>&quot;check local skill ownership before validating arguments&quot;</li><li>&quot;execute nested scripts from declared paths&quot;</li></ul>
+            <p><strong>A2A 目前只能在官方仓库 topics 里看到（含 <code>a2a</code>）。</strong></p>
+            <p>本轮未取到 v1.0 的 A2A 专页正文，故不展开。</p>
+            <p>子任务委派另有 <code>run_subtask</code> / <code>run_subtasks</code> 自动注入工具（见 context 轴）。</p></dd>
         </div>
         <div class="axis">
           <dt><span data-zh>上下文与记忆</span><span data-en>Context & memory</span></dt>
-          <dd><strong>这是 AG2 最贴合本站「状态 ≠ 上下文」主张的设计：它把 harness 显式拆成组装、知识、子任务三组 opt-in 原语。</strong> 官方 <code>agent_harness</code> 页原文：&quot;A bare <code>Agent</code> is just a model loop. The <strong>harness</strong> is the set of <strong>opt-in primitives</strong> you compose onto it&quot;，三个关键参数： <strong><code>assembly=</code>（上下文策略）</strong>：官方示例含 <code>WorkingMemoryPolicy</code>（把 <code>memory/working.md</code> 注入 system prompt）、<code>SlidingWindowPolicy(max_events=50)</code>（限制历史占用）、<code>AlertPolicy</code>； <strong><code>knowledge=</code></strong>：<code>KnowledgeConfig(store=..., compact=..., compact_trigger=..., aggregate=...)</code>， 配 <code>SummarizeCompact</code> / <code>TailWindowCompact</code> 做<strong>上下文压缩</strong>（README 示例 &quot;18 -&gt; 3 events&quot;）， <code>write_event_log</code> 会把流历史落到 <code>/log/{stream_id}.jsonl</code>； <strong><code>tasks=</code>（默认关闭）</strong>：开启后自动注入子任务工具，子 Agent 默认继承父工具， 且<strong>子任务自身 <code>tasks=False</code>，&quot;recursive delegation is structurally impossible&quot;</strong>。 <strong>分野很清楚</strong>：<code>compact=</code> 管窗口压缩，<code>KnowledgeStore</code> 管跨进程持久记忆 —— 两者官方分开描述。</dd>
+          <dd><p><strong>这是 AG2 最贴合本站「状态 ≠ 上下文」主张的设计。</strong></p>
+            <p>它把 harness 显式拆成三组 opt-in 原语。</p>
+            <p>官方 <code>agent_harness</code> 页原文：</p>
+            <p>&quot;A bare <code>Agent</code> is just a model loop. The <strong>harness</strong> is the set of <strong>opt-in primitives</strong> you compose onto it&quot;</p>
+            <p>三个关键参数：</p>
+            <ul><li><strong><code>assembly=</code>（上下文策略）</strong> —— 官方示例含 <code>WorkingMemoryPolicy</code>（把 <code>memory/working.md</code> 注入 system prompt）、<code>SlidingWindowPolicy(max_events=50)</code>（限制历史占用）、<code>AlertPolicy</code></li></ul>
+            <ul><li><strong><code>knowledge=</code></strong> —— <code>KnowledgeConfig(store=..., compact=..., compact_trigger=..., aggregate=...)</code>， 配 <code>SummarizeCompact</code> / <code>TailWindowCompact</code> 做<strong>上下文压缩</strong>（README 示例 &quot;18 -&gt; 3 events&quot;）； <code>write_event_log</code> 会把流历史落到 <code>/log/{stream_id}.jsonl</code></li></ul>
+            <ul><li><strong><code>tasks=</code>（默认关闭）</strong> —— 开启后自动注入子任务工具；子 Agent 默认继承父工具， 且<strong>子任务自身 <code>tasks=False</code></strong>，官方原文：</li></ul>
+            <p><strong>官方原文</strong>：&quot;recursive delegation is structurally impossible&quot;</p>
+            <p><strong>分野很清楚</strong>：<code>compact=</code> 管窗口压缩。</p>
+            <p><code>KnowledgeStore</code> 管跨进程持久记忆 —— 两者官方分开描述。</p></dd>
         </div>
         <div class="axis">
           <dt><span data-zh>权限与限制</span><span data-en>Permissions & limits</span></dt>
-          <dd><strong>官方机制分两层：HITL 人审 + 受限 shell 工具，且都不等于容器沙箱。</strong> <strong>① HITL</strong>：README 原文，在工具里调 <code>context.input(...)</code> 暂停本次 run 向人提问， 由 <code>hitl_hook</code> 决定答案来源（CLI / web UI / 队列）。 <strong>② 工具审批</strong>：release v1.1.1 明说 &quot;<strong>Approval grants are keyed by tool implementation</strong>&quot;， 且同名工具每轮只暴露一个（MCP 发现的工具排在代码声明的工具之下，不能覆盖本地工具）。 <strong>③ 受限 shell</strong>：<code>SandboxShellTool</code> 的 <code>allowed</code> / <code>readonly</code> / <code>blocked</code> 见 local_files 轴， 官方自己声明 <code>blocked=[...]</code> <strong>不是安全边界</strong>；v1.1.2 还修了一个 shell 命令过滤绕过漏洞（<strong>GHSA-42mf-vpmr-gw5r</strong>）。 <strong>④ 数据接口安全提示</strong>：官方文档警告 Redis 的 <code>Serializer.PICKLE</code> 会给 「任何能写该 Redis stream 的人」代码执行能力，建议只用完全可信的 Redis，JSON 为默认。 <strong>框架级的进程/容器沙箱默认值，官方未说明</strong>（已查 agent_harness 与 release 页）。</dd>
+          <dd><p><strong>官方机制分两层：HITL 人审 + 受限 shell 工具。两层都不等于容器沙箱。</strong></p>
+            <p><strong>① HITL。</strong></p>
+            <p>README 原文如下：</p>
+            <ul><li>在工具里调 <code>context.input(...)</code> 暂停本次 run 向人提问</li><li>由 <code>hitl_hook</code> 决定答案来源（CLI / web UI / 队列）</li></ul>
+            <p><strong>② 工具审批。</strong></p>
+            <p>release v1.1.1 明说：</p>
+            <p>&quot;<strong>Approval grants are keyed by tool implementation</strong>&quot;</p>
+            <p>且同名工具每轮只暴露一个。</p>
+            <p>MCP 发现的工具排在代码声明的工具之下，不能覆盖本地工具。</p>
+            <p><strong>③ 受限 shell。</strong></p>
+            <p><code>SandboxShellTool</code> 的 <code>allowed</code> / <code>readonly</code> / <code>blocked</code> 见 local_files 轴。 官方自己声明 <code>blocked=[...]</code> <strong>不是安全边界</strong>。</p>
+            <p>v1.1.2 还修了一个 shell 命令过滤绕过漏洞（<strong>GHSA-42mf-vpmr-gw5r</strong>）。</p>
+            <p><strong>④ 数据接口安全提示。</strong></p>
+            <p>官方文档警告 Redis 的 <code>Serializer.PICKLE</code> 会把代码执行能力交给任何能写该 stream 的人。 建议只用完全可信的 Redis，JSON 为默认。</p>
+            <p><strong>未知</strong> —— 框架级的进程 / 容器沙箱默认值，官方未说明 （已查 <code>agent_harness</code> 与 release 页）。</p></dd>
         </div>
         <div class="axis">
           <dt><span data-zh>适合什么任务</span><span data-en>Best for</span></dt>
-          <dd><strong>适合</strong>：要用 Python 编排<strong>多 agent 会话 / 协议化网络</strong>（Hub + channel，含咨询、讨论、工作流适配器）； 需要可审计的 durable messaging（write-ahead log、audit trail）与跨进程部署（WsLink）； 要在本地模型上跑（Ollama / vLLM / LM Studio）； 要 HITL 与受限 shell 工具；需要 MCP 与 AG-UI 对接；偏好 opt-in、可组合的 harness 原语。 <strong>不适合</strong>：期待 <code>pip install ag2</code> 仍是老 AutoGen API（v1.0 起经典类已移入 <code>ag2-classic</code>）； 需要厂商托管后台（纯库，进程自负）； 需要开箱即用的容器级沙箱隔离（官方给的是受限 shell 白名单，非容器）；非 Python 技术栈（无官方非 Python 端口）。</dd>
+          <dd><p><strong>适合。</strong></p>
+            <ul><li>要用 Python 编排<strong>多 agent 会话 / 协议化网络</strong>（Hub + channel，含咨询、讨论、工作流适配器）</li><li>需要可审计的 durable messaging（write-ahead log、audit trail）与跨进程部署（WsLink）</li><li>要在本地模型上跑（Ollama / vLLM / LM Studio）</li><li>要 HITL 与受限 shell 工具</li><li>需要 MCP 与 AG-UI 对接</li><li>偏好 opt-in、可组合的 harness 原语</li></ul>
+            <p><strong>不适合。</strong></p>
+            <ul><li>期待 <code>pip install ag2</code> 仍是老 AutoGen API（v1.0 起经典类已移入 <code>ag2-classic</code>）</li><li>需要厂商托管后台（纯库，进程自负）</li><li>需要开箱即用的容器级沙箱隔离（官方给的是受限 shell 白名单，非容器）</li><li>非 Python 技术栈（无官方非 Python 端口）</li></ul></dd>
         </div>
       </dl>
 
@@ -196,10 +274,22 @@ Preferring opt-in, composable harness primitives</p>
         <h2><span data-zh>价格</span><span data-en>Pricing</span></h2>
         <table class="src">
           <tbody>
-            <tr><th class="w-28"><span data-zh>月度入口</span><span data-en>Monthly entry</span></th><td><span data-zh>框架免费（Apache-2.0，自托管不限次数）；模型调用费用自理</span><span data-en>框架免费（Apache-2.0，自托管不限次数）；模型调用费用自理</span></td></tr>
+            <tr><th class="w-28"><span data-zh>月度入口</span><span data-en>Monthly entry</span></th><td><span data-zh><p>框架免费（Apache-2.0，自托管不限次数）；模型调用费用自理</p></span><span data-en><p>框架免费（Apache-2.0，自托管不限次数）；模型调用费用自理</p></span></td></tr>
             <tr><th class="w-28"><span data-zh>月度数值</span><span data-en>Monthly price</span></th><td>0</td></tr>
-            <tr><th class="w-28"><span data-zh>年付</span><span data-en>Annual</span></th><td><span data-zh>未核验年付报价</span><span data-en>未核验年付报价</span></td></tr>
-            <tr><th class="w-28"><span data-zh>额度说明</span><span data-en>Quota note</span></th><td><span data-zh>**纯开源库，无官方商业档位。** 核验依据：README License 段（"licensed under the Apache License, Version 2.0"）、仓库 license API 返回 Apache-2.0（核验 2026-10-08）、 PyPI 安装路径 `pip install ag2[...]`。 **唯一成本是模型调用** —— 官方 README 按 provider 拆 extra 安装 （`ag2[openai]` / `ag2[anthropic]` / `ag2[gemini]` / `ag2[ollama]` 等）， 默认最小依赖，装哪个 provider 付哪个 provider 的钱。 **⚠ 官方未给出任何付费档位、SLA 或托管报价**（已查 README 与 docs.ag2.ai 站点）， 因为它是社区维护的库、没有商业控制面；这与 CrewAI（另有 AMP 商业线）不同。 **本对象是 AutoGen 原仓库的社区延续**，派生修改部分在 README 中声明同样以 Apache-2.0 授权。</span><span data-en>**纯开源库，无官方商业档位。** 核验依据：README License 段（"licensed under the Apache License, Version 2.0"）、仓库 license API 返回 Apache-2.0（核验 2026-10-08）、 PyPI 安装路径 `pip install ag2[...]`。 **唯一成本是模型调用** —— 官方 README 按 provider 拆 extra 安装 （`ag2[openai]` / `ag2[anthropic]` / `ag2[gemini]` / `ag2[ollama]` 等）， 默认最小依赖，装哪个 provider 付哪个 provider 的钱。 **⚠ 官方未给出任何付费档位、SLA 或托管报价**（已查 README 与 docs.ag2.ai 站点）， 因为它是社区维护的库、没有商业控制面；这与 CrewAI（另有 AMP 商业线）不同。 **本对象是 AutoGen 原仓库的社区延续**，派生修改部分在 README 中声明同样以 Apache-2.0 授权。</span></td></tr>
+            <tr><th class="w-28"><span data-zh>年付</span><span data-en>Annual</span></th><td><span data-zh><p>未核验年付报价</p></span><span data-en><p>未核验年付报价</p></span></td></tr>
+            <tr><th class="w-28"><span data-zh>额度说明</span><span data-en>Quota note</span></th><td><span data-zh><p><strong>纯开源库，无官方商业档位。</strong></p>
+            <p><strong>唯一成本是模型调用。</strong></p>
+            <p>核验依据：README License 段（&quot;licensed under the Apache License, Version 2.0&quot;）、仓库 license API 返回 Apache-2.0（核验 2026-10-08）、 PyPI 安装路径 <code>pip install ag2[...]</code>。</p>
+            <p>按 provider 拆 extra 安装：<code>ag2[openai]</code> / <code>ag2[anthropic]</code> / <code>ag2[gemini]</code> / <code>ag2[ollama]</code> 等。 默认最小依赖 —— 装哪个 provider，付哪个 provider 的钱。</p>
+            <p><strong>⚠ 官方未给出任何付费档位、SLA 或托管报价</strong>（已查 README 与 docs.ag2.ai 站点）。</p>
+            <p>原因是它是社区维护的库、没有商业控制面。这一点与 CrewAI 不同 —— CrewAI 另有 AMP 商业线。</p>
+            <p><strong>本对象是 AutoGen 原仓库的社区延续。</strong> 派生修改部分在 README 中声明同样以 Apache-2.0 授权。</p></span><span data-en><p><strong>纯开源库，无官方商业档位。</strong></p>
+            <p><strong>唯一成本是模型调用。</strong></p>
+            <p>核验依据：README License 段（&quot;licensed under the Apache License, Version 2.0&quot;）、仓库 license API 返回 Apache-2.0（核验 2026-10-08）、 PyPI 安装路径 <code>pip install ag2[...]</code>。</p>
+            <p>按 provider 拆 extra 安装：<code>ag2[openai]</code> / <code>ag2[anthropic]</code> / <code>ag2[gemini]</code> / <code>ag2[ollama]</code> 等。 默认最小依赖 —— 装哪个 provider，付哪个 provider 的钱。</p>
+            <p><strong>⚠ 官方未给出任何付费档位、SLA 或托管报价</strong>（已查 README 与 docs.ag2.ai 站点）。</p>
+            <p>原因是它是社区维护的库、没有商业控制面。这一点与 CrewAI 不同 —— CrewAI 另有 AMP 商业线。</p>
+            <p><strong>本对象是 AutoGen 原仓库的社区延续。</strong> 派生修改部分在 README 中声明同样以 Apache-2.0 授权。</p></span></td></tr>
           </tbody>
         </table>
         <p class="fine mt-3"><span data-zh>不同币种不做折算。优惠、地区、税费与登录后报价可能变化，购买前请到官方页面确认。</span><span data-en>No currency conversion. Discounts, regions, tax and post-login pricing can change — confirm on the official page before buying.</span></p>
@@ -209,12 +299,14 @@ Preferring opt-in, composable harness primitives</p>
             <div class="panel is-slim">
         <h2><span data-zh>未知项清单</span><span data-en>Known unknowns</span></h2>
         <ul>
-          <li>框架级默认文件访问边界与容器级隔离（官方未说明，已查 network/overview 与 agent_harness 两页）</li>
-          <li>托管选项与崩溃场景下的断点续跑语义（官方未说明，已查 network/overview 页）</li>
-          <li>换 provider 后 tool calling / structured output 的可靠性对比（官方未说明，已查 beta/model_configuration 与 Grok 兼容页）</li>
+          <li>框架级默认文件访问边界与容器级隔离（官方未说明）</li>
+          <li>托管选项与崩溃场景下的断点续跑语义（官方未说明）</li>
+          <li>换 provider 后 tool calling / structured output 的可靠性对比（官方未说明）</li>
           <li>A2A 在 AG2 v1.0 的实现细节（官方仓库 topics 含 a2a，本轮未取到专页正文）</li>
           <li>受限 shell 的完整命令白名单语义边界（官方给的是 allowed/readonly/blocked 三档，细节需实测）</li>
-          <li>Classic 线与 v1.0 的长期并行维护策略（官方仅称 Classic &quot;remains maintained&quot;）</li>
+          <li>Classic 线与 v1.0 的长期并行维护策略（官方仅称 Classic &quot;remains maintained&quot;） <strong>各条的核验出处：</strong></li>
+          <li>文件访问边界与容器隔离、托管选项：已查 <code>network/overview</code> 与 <code>agent_harness</code> 两页</li>
+          <li>换 provider 后可靠性：已查 <code>beta/model_configuration</code> 与 Grok 兼容页</li>
         </ul>
       </div>
 
@@ -240,27 +332,75 @@ Preferring opt-in, composable harness primitives</p>
 
             <div class="panel is-slim">
         <h2><span data-zh>实测记录</span><span data-en>Measured runs</span></h2>
-        <p>本站尚未完成实测。测试协议见 <a href="https://github.com/speculcom/ai-agent-guide/blob/main/tracks/agents/tasks/_protocol.md" target="_blank" rel="noopener">tasks/_protocol.md</a>。
-
-<strong>实测建议</strong>（按编排框架 + 多 agent 会话维度定制）：
-
-| # | 测什么 | 为什么值得测 |
-|:--:|---|---|
-| 1 | 用 <code>WorkflowAdapter</code> 复刻一段经典 GroupChat 代码的改动量 | 验证官方「最接近 GroupChat」的说法 |
-| 2 | 从 <code>LocalLink</code> 切到 <code>WsLink</code> 跨进程部署，业务代码是否真不用改 | 官方承诺 HubClient API 不变 |
-| 3 | 受限 shell（<code>allowed</code>/<code>readonly</code>）在真实命令集下的可用性 | 安全变强往往牺牲可用性，需量边界 |
-| 4 | 接 Ollama 跑一个多 agent 网络，观察 token 与延迟开销 | 本地模型 + 多 agent 的真实成本 |
-| 5 | DiskKnowledgeStore + 压缩两次运行，验证跨进程记忆是否真生效 | README 示例宣称重启仍记得 |
-| 6 | v1.1.x 连续两版的破坏性变更面 | 迭代快，选型需量化升级风险 |</p>
+        <p>本站尚未完成实测。测试协议见 <a href="https://github.com/speculcom/ai-agent-guide/blob/main/tracks/agents/tasks/_protocol.md" target="_blank" rel="noopener">tasks/_protocol.md</a>。</p>
+            <p><strong>实测建议</strong>（按编排框架 + 多 agent 会话维度定制）：</p>
+            <div class="tbl-wrap"><table><thead><tr><th>#</th><th>测什么</th><th>为什么值得测</th></tr></thead><tbody><tr><td>1</td><td>用 <code>WorkflowAdapter</code> 复刻一段经典 GroupChat 代码的改动量</td><td>验证官方「最接近 GroupChat」的说法</td></tr><tr><td>2</td><td>从 <code>LocalLink</code> 切到 <code>WsLink</code> 跨进程部署，业务代码是否真不用改</td><td>官方承诺 HubClient API 不变</td></tr><tr><td>3</td><td>受限 shell（<code>allowed</code>/<code>readonly</code>）在真实命令集下的可用性</td><td>安全变强往往牺牲可用性，需量边界</td></tr><tr><td>4</td><td>接 Ollama 跑一个多 agent 网络，观察 token 与延迟开销</td><td>本地模型 + 多 agent 的真实成本</td></tr><tr><td>5</td><td>DiskKnowledgeStore + 压缩两次运行，验证跨进程记忆是否真生效</td><td>README 示例宣称重启仍记得</td></tr><tr><td>6</td><td>v1.1.x 连续两版的破坏性变更面</td><td>迭代快，选型需量化升级风险</td></tr></tbody></table></div>
       </div>
 
 
             <div class="panel is-slim">
+        <h2>一个必须讲清的版本断层：AG2 v1.0 把 Classic 拆出去了</h2>
+        <p>README 顶部用醒目提示说明：</p>
+            <blockquote><strong>Looking for <code>ConversableAgent</code>, <code>GroupChat</code>, or <code>import autogen</code>? That&#39;s now AG2 Classic.</strong></blockquote>
+            <p>自 v1.0 起，经典框架整体搬到独立仓 <code>ag2ai/ag2-classic</code>。</p>
+            <ul><li>经典线：<code>pip install ag2-classic</code>、<code>import autogen</code>、文档 <code>classic.docs.ag2.ai</code></li><li>新顶层包：<code>pip install ag2</code> 改为协议驱动的新框架</li></ul>
+            <p><strong>经典线仍在维护、现有代码不停止工作。</strong></p>
+            <p><strong>新顶层包不再附带 <code>autogen</code> 这个 import 名与经典 agent 类。</strong></p>
+            <p>官方对升级路径的措辞很直接：</p>
+            <blockquote>AG2 v1.0 (<code>pip install ag2</code>) is <strong>not</strong> a drop-in upgrade from Classic. The agent model, orchestration, and imports all changed.</blockquote>
+            <p><strong>所以「AG2 是不是 AutoGen 新版」这个问题，答案是：同一血脉。</strong></p>
+            <p><strong>但 v1.0 不是平移升级。</strong></p>
+      </div>
+      <div class="panel is-slim">
+        <h2>多 agent 编排：Network（Hub + channel）</h2>
+        <p>v1.0 用 <strong>Network</strong> 取代经典的 <code>GroupChat</code> / swarm / nested chat：</p>
+            <blockquote>a <code>Hub</code> that owns the registry, the <strong>write-ahead log</strong>, and the <strong>audit trail</strong>, with agents talking over typed <strong>channels</strong>.</blockquote>
+            <p>官方原文明确：</p>
+            <blockquote>&quot;<strong>This replaces the classic <code>GroupChat</code> / swarm / nested-chat patterns.</strong>&quot;</blockquote>
+            <p>四种内置 channel 适配器：</p>
+            <div class="tbl-wrap"><table><thead><tr><th>适配器</th><th>参与者</th><th>发言顺序</th><th>终止</th></tr></thead><tbody><tr><td><code>conversation</code></td><td>恰好 2</td><td>自由（任意时刻任一方）</td><td>显式 close 或 TTL</td></tr><tr><td><code>consulting</code></td><td>恰好 2</td><td>严格一问一答</td><td>答复后自动关闭</td></tr><tr><td><code>discussion</code></td><td>2+</td><td>轮转（round_robin）</td><td>显式 close 或 TTL</td></tr><tr><td><code>workflow</code></td><td>2+</td><td>声明式 <code>TransitionGraph</code></td><td>图终止</td></tr></tbody></table></div>
+            <p>其中 <code>workflow</code> 官方称<strong>「最接近经典 GroupChat 的对应物」</strong>。</p>
+            <p>部署上默认 <code>LocalLink</code>（同进程）。换 <code>WsLink</code> 即跨进程 / 跨主机，业务代码不变。</p>
+      </div>
+      <div class="panel is-slim">
+        <h2>harness：三组 opt-in 原语，正好落在「状态 ≠ 上下文」上</h2>
+        <p>官方 <code>agent_harness</code> 页原文：</p>
+            <blockquote>A bare <code>Agent</code> is just a model loop. The <strong>harness</strong> is the set of <strong>opt-in primitives</strong> you compose onto it.</blockquote>
+            <div class="tbl-wrap"><table><thead><tr><th>参数</th><th>作用</th><th>对应本站维度</th></tr></thead><tbody><tr><td><code>assembly=</code></td><td>上下文策略：<code>WorkingMemoryPolicy</code> / <code>SlidingWindowPolicy</code> / <code>AlertPolicy</code></td><td><strong>上下文</strong></td></tr><tr><td><code>knowledge=</code></td><td><code>KnowledgeStore</code> + <code>SummarizeCompact</code> / <code>TailWindowCompact</code> 压缩 + 聚合</td><td><strong>长期记忆 + 上下文压缩</strong></td></tr><tr><td><code>tasks=</code></td><td>子任务委派（默认关闭），子 Agent <code>tasks=False</code>，无法递归</td><td><strong>子代理</strong></td></tr></tbody></table></div>
+            <p><strong>这条分野很干净</strong>：压缩（<code>compact=</code>）管的是窗口占用。</p>
+            <p>知识库（<code>KnowledgeStore</code>）管的是跨进程持久记忆。</p>
+      </div>
+      <div class="panel is-slim">
+        <h2>权限：HITL + 受限 shell，但不是容器沙箱</h2>
+        <ul><li><strong>HITL</strong>：工具里 <code>context.input(...)</code> 暂停 run 向人提问，<code>hitl_hook</code> 决定答案来源。</li><li><strong>工具审批</strong>：官方 v1.1.1 明说审批按「工具实现」为键，同名工具每轮只暴露一个。</li><li><strong>受限 shell</strong>：<code>SandboxShellTool</code> 的 <code>allowed=[...]</code> / <code>readonly=True</code> 会把命令切成 argv 后<strong>只检查 argv 再原样执行</strong>。</li></ul>
+            <p>官方原话：</p>
+            <blockquote>&quot;Nothing can expand after the check&quot;</blockquote>
+            <p>官方同时声明 <code>blocked=[...]</code> ：</p>
+            <blockquote>&quot;best-effort. It is <strong>not</strong> a security boundary.&quot;</blockquote>
+            <ul><li>v1.1.2 修了一个 shell 命令过滤绕过漏洞（<strong>GHSA-42mf-vpmr-gw5r</strong>）， 说明这类工具的安全面需要盯 release。</li></ul>
+            <p><strong>注意：这不是容器隔离</strong> —— 官方给的是白名单与只读模式。</p>
+            <p><strong>另一条数据接口提示。</strong></p>
+            <p>用 <code>Serializer.PICKLE</code> 时，任何能写该 Redis stream 的人都会有代码执行能力。</p>
+            <p>官方建议只用完全可信的 Redis，JSON 为默认。</p>
+      </div>
+      <div class="panel is-slim">
+        <h2>核验说明</h2>
+        <p><code>confidence: partial</code> 的依据：</p>
+            <p><strong>为什么不是 verified</strong>：本轮已核到 v1.0 与 Classic 的拆分、Network 的 Hub/channel 抽象、 harness 三组原语、provider 清单（含本地模型）。</p>
+            <p>受限 shell 与工具审批机制也已核到。发布节奏（v1.1.1 / v1.1.2）同样在本轮核到。</p>
+            <p>但仍有多处<strong>官方确实没给</strong>的项：</p>
+            <ul><li>框架级默认文件访问边界与容器级隔离</li><li>托管选项与崩溃续跑语义</li><li>换 provider 后 tool calling / structured output 的可靠性</li><li>A2A 在 v1.0 的实现细节（仅见仓库 topics）</li></ul>
+            <p>加上版本迭代快（数日内连发两版），故不足以升到 verified。</p>
+            <p><strong>本轮核到的官方页</strong>：仓库与 README、<code>network/overview</code>、<code>agent_harness</code>、 <code>beta/model_configuration</code>、Grok 兼容页、经典线 LLM Configuration 页、releases 页、 <code>ag2ai/ag2-classic</code> 仓。</p>
+            <p><strong>已核验元数据</strong>：仓库存在、★4,983、许可 Apache-2.0（经 license API）、 最近推送 2026-10-08（仍活跃）、最新版 <strong>v1.1.2</strong>（releases @ 2026-10-03）。</p>
+      </div>
+
+            <div class="panel is-slim">
         <h2><span data-zh>相关条目</span><span data-en>Related entries</span></h2>
         <ul class="rel-list">
-          <li><span class="rel-t"><a href="./microsoft-agent-framework.html">Microsoft Agent Framework</a></span><span class="rel-n"><strong>同源分野</strong>：AG2 是 AutoGen 的社区延续，MAF 是微软官方把 AutoGen 与 Semantic Kernel 合并的继任线；本站 harness 赛道「明确不收对象」里记的 AutoGen 停更，正是促成这两条支线被分别收录的原因。</span></li>
-          <li><span class="rel-t"><a href="./crewai.html">CrewAI</a></span><span class="rel-n"><strong>抽象层次对照</strong>：CrewAI 用 Crew（角色/目标/任务）/ Flow 的业务比喻，AG2 v1.0 用 Network（Hub + 类型化 channel）的协议化抽象；一个偏团队角色，一个偏消息协议与治理。</span></li>
-          <li><span class="rel-t"><a href="./google-adk.html">Google ADK</a></span><span class="rel-n"><strong>编排与 HITL 对照</strong>：ADK 是图执行引擎 + 工具级确认，AG2 是 Hub/channel 网络 + <code>context.input()</code> 人审；两者都提供状态持久化，但落盘粒度与语义不同。</span></li>
+          <li><span class="rel-t"><a href="./microsoft-agent-framework.html">Microsoft Agent Framework</a></span><span class="rel-n"><strong>同源分野</strong>：AG2 是 AutoGen 的社区延续，MAF 是微软官方把 AutoGen 与 Semantic Kernel 合并的继任线。</span></li>
+          <li><span class="rel-t"><a href="./crewai.html">CrewAI</a></span><span class="rel-n"><strong>抽象层次对照</strong>：CrewAI 用 Crew（角色/目标/任务）/ Flow 的业务比喻。</span></li>
+          <li><span class="rel-t"><a href="./google-adk.html">Google ADK</a></span><span class="rel-n"><strong>编排与 HITL 对照</strong>：ADK 是图执行引擎 + 工具级确认。</span></li>
           <li><span class="rel-t"><a href="/tools/filesystem.html"><span data-zh>Filesystem MCP Server</span><span data-en>Filesystem MCP Server</span></a></span><span class="rel-n"><span data-zh>另一层 · 给 agent 装的工具</span><span data-en>Other layer · MCP tools</span></span></li>
         </ul>
       </div>
