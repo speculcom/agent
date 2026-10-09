@@ -11,7 +11,7 @@
   <meta property="og:url" content="https://agent.specul.com/tools/memory.html" />
   <meta property="og:title" content="Knowledge Graph Memory Server — Tools | 投机取巧" />
   <meta property="og:description" content="Knowledge Graph Memory Server（Model Context Protocol）：用本地知识图谱实现跨会话持久记忆的 reference server，记忆落盘、跨会话共享、无访问控制。" />
-  <meta name="theme-color" content="#05080f" />
+  <meta name="theme-color" content="#16121f" />
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%238b7cf8'/%3E%3Cstop offset='1' stop-color='%2322d3c5'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='48' height='48' rx='12' fill='%2305080f'/%3E%3Cpath d='M14 32 L24 12 L34 32' fill='none' stroke='url(%23g)' stroke-width='2.4' stroke-linejoin='round'/%3E%3Ccircle cx='24' cy='27' r='2.4' fill='%2322d3c5'/%3E%3C/svg%3E" />
   <link rel="stylesheet" href="../brand.css" />
   <link rel="stylesheet" href="../site.css" />
@@ -94,66 +94,81 @@
         <span class="badge"><span data-zh>核验</span><span data-en>Checked</span> 2026-10-08</span>
       </div>
 
-            <p class="panel-lead"><span data-zh>用本地知识图谱实现跨会话持久记忆的 reference server，<strong>记忆落盘、跨会话共享、无访问控制</strong>。</span><span data-en>A reference server implementing cross-session persistent memory with a local knowledge graph — <strong>memory is written to disk, shared across sessions, with no access control</strong>.</span></p>
+            <div class="panel-lead"><span data-zh><p>用本地知识图谱实现跨会话持久记忆的 reference server，<strong>记忆落盘、跨会话共享、无访问控制</strong>。</p></span><span data-en><p>A reference server implementing cross-session persistent memory with a local knowledge graph — <strong>memory is written to disk, shared across sessions, with no access control</strong>.</p></span></div>
 
             <div class="panel is-slim">
         <h2><span data-zh>适合与不适合</span><span data-en>When to use it, when not to</span></h2>
-<span data-zh>        <p>让 Agent 跨会话记住用户偏好、项目背景等长期信息。</p>
-        <p class="warn-p"><strong>不适合</strong>存放需要审计或追溯的场景（图谱会原地修改），
-也不适合存放高敏感信息**——记忆文件无加密、无独立访问控制，
-任何能读该文件的进程都能拿到全部记忆。</p></span><span data-en>        <p>Scenarios needing cross-session memory that survives restarts and is queryable as a graph.</p>
-        <p class="warn-p"><strong>Not a fit for</strong> anything with access-control requirements — <strong>memory is written to disk with no access control.</strong></p></span>
+<span data-zh>        <div><p>让 Agent 跨会话记住用户偏好、项目背景等长期信息。</p></div>
+        <div class="warn-p"><p><strong>不适合存放需要审计或追溯的场景</strong>（图谱会原地修改）， <strong>也不适合存放高敏感信息</strong>——记忆文件无加密、无独立访问控制， 任何能读该文件的进程都能拿到全部记忆。</p></div></span><span data-en>        <div><p>Scenarios needing cross-session memory that survives restarts and is queryable as a graph.</p></div>
+        <div class="warn-p"><p><strong>Not a fit for</strong> anything with access-control requirements — <strong>memory is written to disk with no access control.</strong></p></div></span>
       </div>
 
 
       <div class="block-head">
         <h2 class="t-h2"><span data-zh>固定坐标系</span><span data-en>Fixed coordinate system</span></h2>
-        <p class="t-section-lead">11 <span data-zh>个维度</span><span data-en>dimensions</span>, <span data-zh>与同赛道其他对象逐项可比</span><span data-en>each comparable item by item against others in the same track</span>.</p>
+        <p class="t-section-lead">11 <span data-zh>个维度</span><span data-en>dimensions</span>, <span data-zh>与同分区其他对象逐项可比</span><span data-en>each comparable item by item against others in the same section</span>.</p>
       </div>
       <dl class="axes">
         <div class="axis">
           <dt><span data-zh>模型与开放条件</span><span data-en>Model & openness</span></dt>
-          <dd>本身不调用模型，是被客户端调用的接口实现。 设计与 Claude 的持久记忆场景绑定（README 明言「lets Claude remember information about the user across chats」）。</dd>
+          <dd><p>本身不调用模型，是被客户端调用的接口实现。</p>
+            <p>设计与 Claude 的持久记忆场景绑定（README 明言<strong>「lets Claude remember information about the user across chats」</strong>）。</p></dd>
         </div>
         <div class="axis">
           <dt><span data-zh>运行位置</span><span data-en>Where it runs</span></dt>
-          <dd>本地 Node.js 进程，通过 stdio 通信。 数据持久化在本地 JSONL 文件，生命周期独立于客户端进程。</dd>
+          <dd><p>本地 Node.js 进程，通过 stdio 通信。</p>
+            <p>数据持久化在本地 JSONL 文件，生命周期独立于客户端进程。</p></dd>
         </div>
         <div class="axis">
           <dt><span data-zh>本地文件</span><span data-en>Local files</span></dt>
-          <dd><strong>只访问自己的记忆文件</strong>（默认在 memory 目录下），不提供任意文件读写工具。 存储位置可通过参数指定，实际可访问范围取决于该路径的权限。</dd>
+          <dd><p><strong>只访问自己的记忆文件</strong>（默认在 memory 目录下），不提供任意文件读写工具。</p>
+            <p>存储位置可通过参数指定，实际可访问范围取决于该路径的权限。</p></dd>
         </div>
         <div class="axis">
           <dt><span data-zh>关机后的任务</span><span data-en>Tasks after shutdown</span></dt>
-          <dd>server 进程随客户端生死， 但<strong>记忆数据持久存在磁盘上，重启后仍在</strong>。 2026-09-03 修复了图变更序列化以避免并发写竞争。</dd>
+          <dd><p>server 进程随客户端生死，</p>
+            <p>但<strong>记忆数据持久存在磁盘上，重启后仍在</strong>。</p>
+            <p>2026-09-03 修复了图变更序列化以避免并发写竞争。</p></dd>
         </div>
         <div class="axis">
           <dt><span data-zh>工具与扩展</span><span data-en>Tools & extensions</span></dt>
-          <dd>提供 9 个工具：create_entities、create_relations、add_observations、 delete_entities、delete_observations、delete_relations、 read_graph、search_nodes、open_nodes。 另暴露一个 resource：<code>memory://knowledge-graph</code>。 <strong>含 3 个删除工具</strong>（delete_entities / delete_observations / delete_relations）， 输出为结构化 JSON，可直接消费。</dd>
+          <dd><p>提供 9 个工具：</p>
+            <ul><li>create_entities、create_relations、add_observations、delete_entities、delete_observations、delete_relations、read_graph、search_nodes、open_nodes。</li></ul>
+            <p>另暴露一个 resource：<code>memory://knowledge-graph</code>。</p>
+            <p><strong>含 3 个删除工具</strong>（delete_entities / delete_observations / delete_relations）， 输出为结构化 JSON，可直接消费。</p></dd>
         </div>
         <div class="axis">
           <dt><span data-zh>上下文与记忆</span><span data-en>Context & memory</span></dt>
-          <dd><strong>这是本 server 的核心能力</strong>：跨会话持久记忆。 用知识图谱结构存储实体、关系与观察， 支持检索（search_nodes）与按名读取（open_nodes）。</dd>
+          <dd><p><strong>这是本 server 的核心能力</strong>：跨会话持久记忆。</p>
+            <p>用知识图谱结构存储实体、关系与观察， 支持检索（search_nodes）与按名读取（open_nodes）。</p></dd>
         </div>
         <div class="axis">
           <dt><span data-zh>权限与限制</span><span data-en>Permissions & limits</span></dt>
-          <dd><strong>无独立审批机制</strong>。 记忆图谱是全局共享状态，<strong>任何写入都会影响后续所有会话</strong>。 提供 3 个删除工具，可删除实体、观察与关系。 2026-09-03 增加了 search_nodes 查询长度限制与去重修复。</dd>
+          <dd><p><strong>无独立审批机制</strong>。</p>
+            <p>记忆图谱是全局共享状态，<strong>任何写入都会影响后续所有会话</strong>。</p>
+            <p>提供 3 个删除工具，可删除实体、观察与关系。</p>
+            <p>2026-09-03 增加了 search_nodes 查询长度限制与去重修复。</p></dd>
         </div>
         <div class="axis">
           <dt><span data-zh>适合什么任务</span><span data-en>Best for</span></dt>
-          <dd>让 Agent 跨会话记住用户偏好、项目背景等长期信息。 不适合存放需要审计或追溯的场景（图谱会原地修改）。</dd>
+          <dd><p>让 Agent 跨会话记住用户偏好、项目背景等长期信息。</p>
+            <p>不适合存放需要审计或追溯的场景（图谱会原地修改）。</p></dd>
         </div>
         <div class="axis">
           <dt><span data-zh>传输方式</span><span data-en>Transport</span></dt>
-          <dd>仅 stdio。本地 Node.js 进程，通过标准输入输出通信（npx 启动）。 官方 README（2026-10-08 全文核验）没有远程传输的官方启动方式。</dd>
+          <dd><p>仅 stdio。本地 Node.js 进程，通过标准输入输出通信（npx 启动）。</p>
+            <p>官方 README（2026-10-08 全文核验）没有远程传输的官方启动方式。</p></dd>
         </div>
         <div class="axis">
           <dt><span data-zh>认证机制</span><span data-en>Authentication</span></dt>
-          <dd>无独立认证层。stdio 形态继承客户端用户权限。 记忆文件本身无加密，<strong>任何能读该文件的进程都能获取全部记忆内容</strong>。</dd>
+          <dd><p>无独立认证层。stdio 形态继承客户端用户权限。</p>
+            <p>记忆文件本身无加密，<strong>任何能读该文件的进程都能获取全部记忆内容</strong>。</p></dd>
         </div>
         <div class="axis">
           <dt><span data-zh>权限范围</span><span data-en>Permission scope</span></dt>
-          <dd><strong>作用域最窄的一类</strong>：只读写自己的记忆文件，不提供任意文件访问工具。 权限风险不在文件范围，而在<strong>内容敏感度</strong>—— 记忆里可能有用户偏好、项目信息等隐私， 且文件无加密、无独立访问控制。</dd>
+          <dd><p><strong>作用域最窄的一类</strong>：只读写自己的记忆文件，不提供任意文件访问工具。</p>
+            <p>权限风险不在文件范围，而在<strong>内容敏感度</strong>——</p>
+            <p>记忆里可能有用户偏好、项目信息等隐私， 且文件无加密、无独立访问控制。</p></dd>
         </div>
       </dl>
 
@@ -161,9 +176,9 @@
         <h2 class="warn"><span data-zh>头号误解</span><span data-en>Top misconception</span></h2>
         <ul>
 
-          <li><span data-zh>以为记忆只存在于当前会话，实际是磁盘持久化的全局状态</span><span data-en>Assuming memory lives only in the current session — it is disk-persisted global state</span></li>
-          <li><span data-zh>以为删除操作需要审批，实际没有，误删会影响后续所有会话</span><span data-en>Assuming deletes need approval — they do not, and a mistaken delete affects every later session</span></li>
-          <li><span data-zh>以为它是简单的 key-value 存储，实际是知识图谱结构</span><span data-en>Assuming it is a simple key-value store — it is a knowledge-graph structure</span></li>
+          <li><span data-zh>以为记忆只存在于当前会话，实际是磁盘持久化的全局状态</span><span data-en>Assuming memories live only in the current session — they are disk-persisted global state</span></li>
+          <li><span data-zh>以为删除操作需要审批，实际没有，误删会影响后续所有会话</span><span data-en>Assuming deletion needs approval — it does not, and an accidental delete affects every later session</span></li>
+          <li><span data-zh>以为它是简单的 key-value 存储，实际是知识图谱结构</span><span data-en>Assuming it is a plain key-value store — it is a knowledge-graph structure</span></li>
         </ul>
       </div>
 
@@ -172,9 +187,9 @@
         <h2><span data-zh>价格</span><span data-en>Pricing</span></h2>
         <table class="src">
           <tbody>
-            <tr><th class="w-28"><span data-zh>月度入口</span><span data-en>Monthly entry</span></th><td><span data-zh>无商业费用</span><span data-en>无商业费用</span></td></tr>
-            <tr><th class="w-28"><span data-zh>年付</span><span data-en>Annual</span></th><td><span data-zh>无商业费用</span><span data-en>无商业费用</span></td></tr>
-            <tr><th class="w-28"><span data-zh>额度说明</span><span data-en>Quota note</span></th><td><span data-zh>随 MCP servers 仓库分发，npm 包为 @modelcontextprotocol/server-memory。 实际成本来自本地 JSONL 存储占用的磁盘，不来自本 server。</span><span data-en>随 MCP servers 仓库分发，npm 包为 @modelcontextprotocol/server-memory。 实际成本来自本地 JSONL 存储占用的磁盘，不来自本 server。</span></td></tr>
+            <tr><th class="w-28"><span data-zh>月度入口</span><span data-en>Monthly entry</span></th><td><span data-zh><p>无商业费用</p></span><span data-en><p>无商业费用</p></span></td></tr>
+            <tr><th class="w-28"><span data-zh>年付</span><span data-en>Annual</span></th><td><span data-zh><p>无商业费用</p></span><span data-en><p>无商业费用</p></span></td></tr>
+            <tr><th class="w-28"><span data-zh>额度说明</span><span data-en>Quota note</span></th><td><span data-zh><p>随 MCP servers 仓库分发，npm 包为 @modelcontextprotocol/server-memory。 实际成本来自本地 JSONL 存储占用的磁盘，不来自本 server。</p></span><span data-en><p>随 MCP servers 仓库分发，npm 包为 @modelcontextprotocol/server-memory。 实际成本来自本地 JSONL 存储占用的磁盘，不来自本 server。</p></span></td></tr>
           </tbody>
         </table>
         <p class="fine mt-3"><span data-zh>不同币种不做折算。优惠、地区、税费与登录后报价可能变化，购买前请到官方页面确认。</span><span data-en>No currency conversion. Discounts, regions, tax and post-login pricing can change — confirm on the official page before buying.</span></p>
@@ -211,6 +226,36 @@
         <p>本站尚未完成实测。测试协议见 <a href="https://github.com/speculcom/ai-agent-guide/blob/main/tracks/agents/tasks/_protocol.md" target="_blank" rel="noopener">tasks/_protocol.md</a>。</p>
       </div>
 
+
+            <div class="panel is-slim">
+        <h2>变更记录说明</h2>
+        <p><strong>本对象无独立 changelog 页</strong>，变更记录在目录 commit 历史中：</p>
+            <div class="tbl-wrap"><table><thead><tr><th>日期</th><th>内容</th></tr></thead><tbody><tr><td>2026-09-03</td><td>序列化图变更，避免并发写竞争</td></tr><tr><td>2026-09-03</td><td>单批次内跳过重复实体与关系</td></tr><tr><td>2026-09-03</td><td>限制 <code>search_nodes</code> 查询长度</td></tr></tbody></table></div>
+            <p><strong>三条修复集中在同一天（09-03）</strong>，说明这一版对稳定性做了集中处理。特别是「并发写竞争」——说明多会话同时读写记忆曾有数据损坏风险。</p>
+            <p><strong>如果你在多会话环境用它，这三条值得读原文。</strong></p>
+      </div>
+      <div class="panel is-slim">
+        <h2>数据结构</h2>
+        <div class="tbl-wrap"><table><thead><tr><th>概念</th><th>说明</th><th>示例</th></tr></thead><tbody><tr><td><strong>Entity</strong></td><td>图谱节点，有唯一名称、类型、观察列表</td><td><code>{name: &quot;X&quot;, entityType: &quot;person&quot;, observations: [...]}</code></td></tr><tr><td><strong>Relation</strong></td><td>实体间的有向连接</td><td><code>{from: &quot;A&quot;, to: &quot;B&quot;, relationType: &quot;works_at&quot;}</code></td></tr><tr><td><strong>Observation</strong></td><td>挂在实体上的原子事实</td><td>建议一条观察只存一个事实</td></tr></tbody></table></div>
+            <p><strong>关系用主动语态存储</strong>（<code>works_at</code> 而非 <code>works at</code>），这是文档里的明确约定。</p>
+      </div>
+      <div class="panel is-slim">
+        <h2>工具清单与读写属性</h2>
+        <div class="tbl-wrap"><table><thead><tr><th>工具</th><th>属性</th><th>说明</th></tr></thead><tbody><tr><td><code>read_graph</code></td><td>读</td><td>读取整张图</td></tr><tr><td><code>search_nodes</code></td><td>读</td><td>按条件检索节点</td></tr><tr><td><code>open_nodes</code></td><td>读</td><td>按名读取特定节点</td></tr><tr><td><code>create_entities</code></td><td><strong>写</strong></td><td>新建实体</td></tr><tr><td><code>create_relations</code></td><td><strong>写</strong></td><td>新建关系</td></tr><tr><td><code>add_observations</code></td><td><strong>写</strong></td><td>给实体追加观察</td></tr><tr><td><code>delete_entities</code></td><td><strong>删除</strong></td><td>删除实体及其关联</td></tr><tr><td><code>delete_observations</code></td><td><strong>删除</strong></td><td>删除观察</td></tr><tr><td><code>delete_relations</code></td><td><strong>删除</strong></td><td>删除关系</td></tr></tbody></table></div>
+            <p><strong>6 读 3 写 3 删除</strong>。删除能力给了三个工具，是本条目里最厚的一组。</p>
+      </div>
+      <div class="panel is-slim">
+        <h2>权限风险的特点</h2>
+        <p>和其他 MCP server 不同，memory 的风险<strong>不在文件范围，在内容</strong>：</p>
+            <div class="tbl-wrap"><table><thead><tr><th>维度</th><th>评价</th></tr></thead><tbody><tr><td>文件访问范围</td><td><strong>最窄</strong> — 只碰自己的记忆文件</td></tr><tr><td>写入影响</td><td><strong>全局</strong> — 影响后续所有会话</td></tr><tr><td>内容敏感度</td><td><strong>高</strong> — 可能存有用户偏好、项目信息</td></tr><tr><td>访问控制</td><td><strong>无</strong> — 文件无加密，无独立鉴权</td></tr></tbody></table></div>
+            <p><strong>任何能读到那个 JSONL 文件的进程，都能拿到全部记忆。</strong></p>
+            <p>如果你用它存敏感信息，这一点必须考虑。</p>
+      </div>
+      <div class="panel is-slim">
+        <h2>与 filesystem 的对比</h2>
+        <div class="tbl-wrap"><table><thead><tr><th>维度</th><th>filesystem</th><th>memory</th></tr></thead><tbody><tr><td>访问范围</td><td>目录白名单（可很宽）</td><td><strong>仅自己的记忆文件（很窄）</strong></td></tr><tr><td>删除能力</td><td>不提供</td><td><strong>提供 3 个删除工具</strong></td></tr><tr><td>持久化</td><td>无状态</td><td><strong>图谱持久化到磁盘</strong></td></tr><tr><td>跨会话</td><td>不支持</td><td><strong>核心能力</strong></td></tr></tbody></table></div>
+            <p><strong>取舍很清楚</strong>：memory 用「能力受限但内容敏感」换取「跨会话能力」。</p>
+      </div>
 
             <div class="panel is-slim">
         <h2><span data-zh>相关条目</span><span data-en>Related entries</span></h2>
