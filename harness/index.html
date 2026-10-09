@@ -11,7 +11,7 @@
   <meta property="og:url" content="https://agent.specul.com/harness/" />
   <meta property="og:title" content="自己搭的底座 — 运行时、编排框架、SDK | 投机取巧" />
   <meta property="og:description" content="Agent 运行时 / 编排框架 / SDK 的责任边界、状态持久化能力与权限模型。收录标准：提供 Agent 运行时或编排层、有官方文档可回溯、近 30 天有实质更新。" />
-  <meta name="theme-color" content="#05080f" />
+  <meta name="theme-color" content="#16121f" />
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%238b7cf8'/%3E%3Cstop offset='1' stop-color='%2322d3c5'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='48' height='48' rx='12' fill='%2305080f'/%3E%3Cpath d='M14 32 L24 12 L34 32' fill='none' stroke='url(%23g)' stroke-width='2.4' stroke-linejoin='round'/%3E%3Ccircle cx='24' cy='27' r='2.4' fill='%2322d3c5'/%3E%3C/svg%3E" />
   <link rel="stylesheet" href="../brand.css" />
   <link rel="stylesheet" href="../site.css" />
@@ -134,7 +134,8 @@
             <input type="search" class="aq" autocomplete="off" placeholder="Cursor · Claude · Aider"></label>
           <label class="af-f"><span class="af-h"><span data-zh>抽象层</span><span data-en>Layer</span></span>
             <select class="asel-form" data-attr="family"><option value="">全部 / All</option><option value="coding-base">编程底座 / Coding base</option><option value="orchestration">编排框架 / Orchestration</option><option value="general-harness">通用 Harness / General harness</option></select></label>
-          <span class="af-note"><span data-zh>完整度：全部 15 份均 100%（无差异，故不提供排序）</span><span data-en>Completeness: all 15 entries are at 100% (no variation, so no sort)</span></span>
+          <label class="af-f"><span class="af-h"><span data-zh>排序</span><span data-en>Sort</span></span>
+            <select class="asel-sort"><option value="">默认 / Default</option><option value="done-desc">完整度 高 → 低 / Completeness high–low</option><option value="done-asc">完整度 低 → 高 / Completeness low–high</option></select></label>
           <span class="acount" aria-live="polite"></span>
         </div>
         <div class="fam-block" data-family="coding-base">
@@ -144,7 +145,15 @@
             <p><span data-zh>给你 agent loop 或现成 CLI 的编程接口。这层的差别不在功能多少，而在<strong>它替你做多少决定</strong> —— 一个只给原语，一个把整套 CLI 连权限模型一起打包给你。</span><span data-en>A programming interface giving you an agent loop or an existing CLI. The difference here is not how much it does but <strong>how many decisions it makes for you</strong> — one hands you primitives, the other packages the whole CLI along with its permission model.</span></p>
           </div>
           <div class="grid">
-        <article class="card" style="--card-accent:#D97757" data-track="harness" data-family="coding-base" data-conf="partial" data-done="8" data-total="8" data-name="Claude Agent SDK" data-blob="claude agent sdk anthropic **「claude code 的编程接口」** —— 不是自建 agent 框架，是把一个成熟的 coding cli 变成 python 可驱动的对象。">
+        <article class="card" style="--card-accent:#D97757" data-track="harness" data-family="coding-base" data-conf="partial" data-done="8" data-total="8" data-name="Claude Agent SDK" data-blob="claude agent sdk anthropic **它是什么**：claude code 的编程接口（python 版）。
+
+它把一个成熟的 coding cli 变成 python 能驱动的对象。
+
+它不是一个自建 agent 的框架。
+
+**这也是本站十个对象里唯一不能换模型的编程底座** —— 后面所有取舍都由这条决定。
+
+&gt; 官方 readme 首行：&quot;python sdk for claude agent.&quot;">
           <div class="card-top">
             <div class="mark" aria-hidden="true">CA</div>
             <div class="card-id">
@@ -152,7 +161,7 @@
               <div class="vendor">Anthropic</div>
             </div>
           </div>
-          <p class="tagline"><span data-zh>「Claude Code 的编程接口」 —— 不是自建 agent 框架，是把一个成熟的 coding CLI 变成 Pyt</span><span data-en>"The programming interface to Claude Code" — not a framework f</span></p>   // line 已是双节点，勿走 esc -->
+          <p class="tagline"><span data-zh>它是什么：Claude Code 的编程接口（Python 版）。 它把一个成熟的 coding CLI 变成 Python</span><span data-en>The Python programming interface to Claude Code — a polished c</span></p>   // line 已是双节点，勿走 esc -->
           <div class="card-foot">
             <span class="t-state is-warn"><span data-zh>部分核验</span><span data-en>Partly verified</span></span>
             <a class="more" href="./claude-agent-sdk.html" aria-label="Claude Agent SDK 详情"><span data-zh>详情 →</span><span data-en>Details →</span></a>
@@ -175,8 +184,9 @@
             <a class="more" href="./codex-sdk.html" aria-label="Codex SDK 详情"><span data-zh>详情 →</span><span data-en>Details →</span></a>
           </div>
         </article>
-        <article class="card" style="--card-accent:#10A37F" data-track="harness" data-family="coding-base" data-conf="partial" data-done="8" data-total="8" data-name="OpenAI Agents SDK" data-blob="openai agents sdk openai **「primitives-only 的多agent harness」** —— 官方自述 lightweight yet powerful：
-只给agent loop 的原语，不替你决定 filesystem / 规划 / 记忆怎么做。">
+        <article class="card" style="--card-accent:#10A37F" data-track="harness" data-family="coding-base" data-conf="partial" data-done="8" data-total="8" data-name="OpenAI Agents SDK" data-blob="openai agents sdk openai **openai agents sdk 是「primitives-only 的多agent harness」。**
+
+官方自述 lightweight yet powerful：filesystem / 规划 / 记忆都不替你决定。">
           <div class="card-top">
             <div class="mark" aria-hidden="true">OA</div>
             <div class="card-id">
@@ -184,21 +194,24 @@
               <div class="vendor">OpenAI</div>
             </div>
           </div>
-          <p class="tagline"><span data-zh>「primitives-only 的多agent harness」 —— 官方自述 lightweight yet powe</span><span data-en>"A primitives-only multi-agent harness" — the official descrip</span></p>   // line 已是双节点，勿走 esc -->
+          <p class="tagline"><span data-zh>OpenAI Agents SDK 是「primitives-only 的多agent harness」。 官方自述 lig</span><span data-en>"A primitives-only multi-agent harness" — the official descrip</span></p>   // line 已是双节点，勿走 esc -->
           <div class="card-foot">
             <span class="t-state is-warn"><span data-zh>部分核验</span><span data-en>Partly verified</span></span>
             <a class="more" href="./openai-agents-sdk.html" aria-label="OpenAI Agents SDK 详情"><span data-zh>详情 →</span><span data-en>Details →</span></a>
           </div>
         </article>
-        <article class="card" style="--card-accent:#3b82f6" data-track="harness" data-family="coding-base" data-conf="partial" data-done="8" data-total="8" data-name="Pydantic AI" data-blob="pydantic ai pydantic **「python 里类型安全的 agent loop」** —— 官方自述把两个关键词并在一起：
+        <article class="card" style="--card-accent:#3b82f6" data-track="harness" data-family="coding-base" data-conf="partial" data-done="5" data-total="8" data-name="Pydantic AI" data-blob="pydantic ai pydantic **pydantic ai 是 pydantic 出的 python agent 库。**
+
+主打类型安全。官方自述把两个关键词并在一起 ——
 
 &gt; **pydantic ai** is the python ai sdk: a **typed**, extensible **agent loop**
 &gt; with every model a string swap away.
 
-「typed」是它的世界观（pydantic 原生贯穿数据层到 agent 输出），
-「agent loop」是它的形态（**给原语，不给你一个成品**）。
-它与 [openai agents sdk](./openai-agents-sdk.md) 同属这一档，
-但把「类型安全」和「durable execution」两点做到明显更深。">
+「typed」是它的世界观：pydantic 原生贯穿数据层到 agent 输出。
+「agent loop」是它的形态：**给原语，不给你一个成品**。
+
+它与 [openai agents sdk](./openai-agents-sdk.md) 同属这一档。
+但它把「类型安全」和「durable execution」两点做到明显更深。">
           <div class="card-top">
             <div class="mark" aria-hidden="true">PA</div>
             <div class="card-id">
@@ -206,15 +219,18 @@
               <div class="vendor">Pydantic</div>
             </div>
           </div>
-          <p class="tagline"><span data-zh>「Python 里类型安全的 agent loop」 —— 官方自述把两个关键词并在一起： > Pydantic AI is</span><span data-en>Pydantic AI is the type-safe Python agent loop — official READ</span></p>   // line 已是双节点，勿走 esc -->
+          <p class="tagline"><span data-zh>Pydantic AI 是 Pydantic 出的 Python agent 库。 主打类型安全。官方自述把两个关键词并在一</span><span data-en>Pydantic AI is the type-safe Python agent loop — official READ</span></p>   // line 已是双节点，勿走 esc -->
           <div class="card-foot">
             <span class="t-state is-warn"><span data-zh>部分核验</span><span data-en>Partly verified</span></span>
             <a class="more" href="./pydantic-ai.html" aria-label="Pydantic AI 详情"><span data-zh>详情 →</span><span data-en>Details →</span></a>
           </div>
         </article>
-        <article class="card" style="--card-accent:#FFD21E" data-track="harness" data-family="coding-base" data-conf="partial" data-done="8" data-total="8" data-name="smolagents" data-blob="smolagents hugging face hugging face 出的**薄 agent 库**，官方自述 **&quot;barebones library for agents that think in code&quot;**
-（仓库 description 原文）。与同类最大的不同是 **code-as-action**：
-默认的 `codeagent` 让 llm 把动作写成并执行 python 代码，而不是输出 json 工具调用。">
+        <article class="card" style="--card-accent:#FFD21E" data-track="harness" data-family="coding-base" data-conf="partial" data-done="3" data-total="8" data-name="smolagents" data-blob="smolagents hugging face **smolagents 是一个薄 agent 库 —— 它让 agent「用代码思考」。**
+
+官方自述是 **&quot;barebones library for agents that think in code&quot;**（仓库 description 原文）。
+
+它最核心的设计是 **code-as-action**：默认的 `codeagent` 让 llm 把动作写成并执行 python 代码，
+而不是输出 json 工具调用。">
           <div class="card-top">
             <div class="mark" aria-hidden="true">SM</div>
             <div class="card-id">
@@ -222,7 +238,7 @@
               <div class="vendor">Hugging Face</div>
             </div>
           </div>
-          <p class="tagline"><span data-zh>Hugging Face 出的薄 agent 库，官方自述 "barebones library for agents th</span><span data-en>Hugging Face's barebones library for agents that think in code</span></p>   // line 已是双节点，勿走 esc -->
+          <p class="tagline"><span data-zh>smolagents 是一个薄 agent 库 —— 它让 agent「用代码思考」。 官方自述是 "barebones l</span><span data-en>A thin agent library from Hugging Face — it lets agents think </span></p>   // line 已是双节点，勿走 esc -->
           <div class="card-foot">
             <span class="t-state is-warn"><span data-zh>部分核验</span><span data-en>Partly verified</span></span>
             <a class="more" href="./smolagents.html" aria-label="smolagents 详情"><span data-zh>详情 →</span><span data-en>Details →</span></a>
@@ -237,8 +253,11 @@
             <p><span data-zh>把多步骤、多 Agent、要中断恢复的流程显式建成图。给的是控制力，代价是接线与状态管理都归你。</span><span data-en>Makes multi-step, multi-agent flows with resumable state explicit graphs. It gives you control; the cost is that wiring and state management are yours.</span></p>
           </div>
           <div class="grid">
-        <article class="card" style="--card-accent:#3b82f6" data-track="harness" data-family="orchestration" data-conf="partial" data-done="8" data-total="8" data-name="AG2" data-blob="ag2 ag2ai **「autogen 停更后由社区接棒的续作」** —— 仓库描述直接写着 &quot;ag2 (formerly autogen)&quot;，
-readme 也自述由 &quot;a dynamic group of volunteers from several organizations&quot; 维护。
+        <article class="card" style="--card-accent:#3b82f6" data-track="harness" data-family="orchestration" data-conf="partial" data-done="4" data-total="8" data-name="AG2" data-blob="ag2 ag2ai **ag2 是 autogen 停更后由社区接棒的续作。** 仓库描述直接写着 &quot;ag2 (formerly autogen)&quot;。
+
+readme 也自述维护方：
+
+&gt; &quot;a dynamic group of volunteers from several organizations&quot;
 
 **理解它必须先分清两条线**：
 
@@ -248,9 +267,13 @@ readme 也自述由 &quot;a dynamic group of volunteers from several organizatio
 | 与 autogen 关系 | 社区延续 / fork 后的独立演进 | 官方把 autogen + semantic kernel 合并继任 |
 | 顶层 import | `import ag2` | `agent_framework` / `microsoft.agents.ai` |
 
-这也是本项目的 harness 赛道当初把 **autogen 原仓库列为「明确不收对象」**的原因
-（原仓 `pushed_at` 停在 2026-04-15、社区转向 ag2）—— 收 ag2 而非 autogen，
-正是「跟着仍在更新的那支血脉走」。">
+这也是本项目的 harness 分区当初的取舍依据。
+
+它把 autogen 原仓库列为「明确不收对象」。
+
+原仓 `pushed_at` 停在 2026-04-15，社区已转向 ag2。
+
+收 ag2 而非 autogen，正是「跟着仍在更新的那支血脉走」。">
           <div class="card-top">
             <div class="mark" aria-hidden="true">AG</div>
             <div class="card-id">
@@ -258,18 +281,19 @@ readme 也自述由 &quot;a dynamic group of volunteers from several organizatio
               <div class="vendor">ag2ai</div>
             </div>
           </div>
-          <p class="tagline"><span data-zh>「AutoGen 停更后由社区接棒的续作」 —— 仓库描述直接写着 "AG2 (formerly AutoGen)"， RE</span><span data-en>The community continuation of AutoGen after the original repo </span></p>   // line 已是双节点，勿走 esc -->
+          <p class="tagline"><span data-zh>AG2 是 AutoGen 停更后由社区接棒的续作。 仓库描述直接写着 "AG2 (formerly AutoGen)"。 </span><span data-en>The community continuation of AutoGen after the original repo </span></p>   // line 已是双节点，勿走 esc -->
           <div class="card-foot">
             <span class="t-state is-warn"><span data-zh>部分核验</span><span data-en>Partly verified</span></span>
             <a class="more" href="./ag2.html" aria-label="AG2 详情"><span data-zh>详情 →</span><span data-en>Details →</span></a>
           </div>
         </article>
-        <article class="card" style="--card-accent:#EB6658" data-track="harness" data-family="orchestration" data-conf="partial" data-done="8" data-total="8" data-name="CrewAI" data-blob="crewai crewai inc **「用角色分工和业务流程来组织多 agent 协作」** —— 官方自述：
+        <article class="card" style="--card-accent:#EB6658" data-track="harness" data-family="orchestration" data-conf="partial" data-done="5" data-total="8" data-name="CrewAI" data-blob="crewai crewai inc **crewai 是一个用「角色分工」和「业务流程」两套比喻来编排多 agent 的 python 框架。**
+官方自述是 &quot;framework for orchestrating **role-playing**, autonomous ai agents.&quot;
 
-&gt; framework for orchestrating **role-playing**, autonomous ai agents.
+**「role-playing」这个词容易让人低估它。** 同一份 readme 里也写着 production-grade，
+并明确承诺：
 
-**「role-playing」这个词容易让人低估它**—— 同一份 readme 里也写着
-production-grade，并明确承诺 &quot;move from experiment to production **without changing frameworks**&quot;。">
+&gt; &quot;move from experiment to production **without changing frameworks**.&quot;">
           <div class="card-top">
             <div class="mark" aria-hidden="true">CA</div>
             <div class="card-id">
@@ -277,13 +301,18 @@ production-grade，并明确承诺 &quot;move from experiment to production **wi
               <div class="vendor">CrewAI Inc</div>
             </div>
           </div>
-          <p class="tagline"><span data-zh>「用角色分工和业务流程来组织多 agent 协作」 —— 官方自述： > Framework for orchestrati</span><span data-en>"Organises multi-agent collaboration through role division and</span></p>   // line 已是双节点，勿走 esc -->
+          <p class="tagline"><span data-zh>CrewAI 是一个用「角色分工」和「业务流程」两套比喻来编排多 agent 的 Python 框架。 官方自述是 "Fra</span><span data-en>"Organises multi-agent collaboration through role division and</span></p>   // line 已是双节点，勿走 esc -->
           <div class="card-foot">
             <span class="t-state is-warn"><span data-zh>部分核验</span><span data-en>Partly verified</span></span>
             <a class="more" href="./crewai.html" aria-label="CrewAI 详情"><span data-zh>详情 →</span><span data-en>Details →</span></a>
           </div>
         </article>
-        <article class="card" style="--card-accent:#4285F4" data-track="harness" data-family="orchestration" data-conf="partial" data-done="8" data-total="8" data-name="Google ADK（Agent Development Kit）" data-blob="google adk（agent development kit） google **「code-first 的 agent 编排框架，核心资产是一个图执行引擎」** —— 官方 readme 第一项特性就说明了它的身份：
+        <article class="card" style="--card-accent:#4285F4" data-track="harness" data-family="orchestration" data-conf="partial" data-done="8" data-total="8" data-name="Google ADK（Agent Development Kit）" data-blob="google adk（agent development kit） google **一句话说清它是什么**：
+
+google adk 是「**code-first** 的 agent 编排框架，核心资产是一个图执行引擎」。
+它的作用是把多个 agent 组织成一条流程，不替你跑单个 agent。
+
+**官方 readme 的第一项特性就说明了它的身份：**
 
 &gt; **workflow runtime**: a graph-based execution engine for composing **deterministic
 &gt; execution flows** for agentic apps, with support for routing, fan-out/fan-in,
@@ -296,17 +325,20 @@ production-grade，并明确承诺 &quot;move from experiment to production **wi
               <div class="vendor">Google</div>
             </div>
           </div>
-          <p class="tagline"><span data-zh>「code-first 的 agent 编排框架，核心资产是一个图执行引擎」 —— 官方 README 第一项特性就说明了它</span><span data-en>"A code-first agent orchestration framework whose core asset i</span></p>   // line 已是双节点，勿走 esc -->
+          <p class="tagline"><span data-zh>一句话说清它是什么： Google ADK 是「code-first 的 agent 编排框架，核心资产是一个图执行引擎」。</span><span data-en>In one line: Google ADK is a code-first agent orchestration fr</span></p>   // line 已是双节点，勿走 esc -->
           <div class="card-foot">
             <span class="t-state is-warn"><span data-zh>部分核验</span><span data-en>Partly verified</span></span>
             <a class="more" href="./google-adk.html" aria-label="Google ADK（Agent Development Kit） 详情"><span data-zh>详情 →</span><span data-en>Details →</span></a>
           </div>
         </article>
-        <article class="card" style="--card-accent:#1C3C3C" data-track="harness" data-family="orchestration" data-conf="partial" data-done="8" data-total="8" data-name="LangGraph" data-blob="langgraph langchain inc **「低层编排框架」** —— 官方自述用词很克制，注意那个 low-level：
+        <article class="card" style="--card-accent:#1C3C3C" data-track="harness" data-family="orchestration" data-conf="partial" data-done="6" data-total="8" data-name="LangGraph" data-blob="langgraph langchain inc **langgraph 是一个低层编排框架，专门用来构建有状态的 agent。**
+
+官方自述很克制，注意那个 low-level：
 
 &gt; low-level orchestration framework for building **stateful** agents.
 
-它自认不是开箱即用的高层封装，而是给「长时间运行、有状态」这件事打地基的底层设施。">
+它自认不是开箱即用的高层封装。
+它打的是「长时间运行、有状态」这件事的地基。">
           <div class="card-top">
             <div class="mark" aria-hidden="true">LG</div>
             <div class="card-id">
@@ -314,15 +346,17 @@ production-grade，并明确承诺 &quot;move from experiment to production **wi
               <div class="vendor">LangChain Inc</div>
             </div>
           </div>
-          <p class="tagline"><span data-zh>「低层编排框架」 —— 官方自述用词很克制，注意那个 low-level： > Low-level orchestratio</span><span data-en>"A low-level orchestration framework" — the official descripti</span></p>   // line 已是双节点，勿走 esc -->
+          <p class="tagline"><span data-zh>LangGraph 是一个低层编排框架，专门用来构建有状态的 agent。 官方自述很克制，注意那个 low-level： </span><span data-en>LangGraph is a low-level orchestration framework for building </span></p>   // line 已是双节点，勿走 esc -->
           <div class="card-foot">
             <span class="t-state is-warn"><span data-zh>部分核验</span><span data-en>Partly verified</span></span>
             <a class="more" href="./langgraph.html" aria-label="LangGraph 详情"><span data-zh>详情 →</span><span data-en>Details →</span></a>
           </div>
         </article>
-        <article class="card" style="--card-accent:#7C3AED" data-track="harness" data-family="orchestration" data-conf="partial" data-done="8" data-total="8" data-name="LlamaIndex Framework" data-blob="llamaindex framework llamaindex（run-llama） **⚠ 但先得说清一件事：官方已明确把公司重心从「编排框架」移走了。**
+        <article class="card" style="--card-accent:#7C3AED" data-track="harness" data-family="orchestration" data-conf="partial" data-done="7" data-total="8" data-name="LlamaIndex Framework" data-blob="llamaindex framework llamaindex（run-llama） **一句话说清**：llamaindex 是一个 python 库。它把外部数据接进来做检索问答。
 
-readme 首屏 note 段落原文（核验 2026-10-01）：
+**⚠ 但有件事必须先说。**
+
+官方已明确把公司重心从「编排框架」移走：
 
 &gt; the **current focus** of llamaindex is to build the best ai-powered engine for
 &gt; **document parsing and extraction**. **llamaparse** is our **enterprise platform** for
@@ -334,23 +368,32 @@ readme 首屏 note 段落原文（核验 2026-10-01）：
 &gt; while we still have the oss framework available as an open toolkit that you&#39;re welcome
 &gt; to use, **our primary focus has shifted towards llamaparse**...
 
-**这句话的选型含义很直接**：
-公司的资源向文档解析倾斜是真的，**但编排能力没有离开 oss** ——
-readme 只是把 workflows 写在商业平台那一节（链接指向 `cloud/llamaagents`），
-官方框架文档则明示 `llama-index-core` 仍含稳定版 workflows（2026-10-08 核验）。
+**这句话的选型含义很直接。**
+公司的资源向文档解析倾斜是真的，**但编排能力没有离开 oss**：
 
-**oss 框架现在实质提供的是**：数据接入 + 索引/图结构 + 检索查询接口 + 300+ 集成 + workflows 编排。
-readme 自己的 proposed solution 四条说得很准：
+- readme 把 workflows 写在商业平台那一节（链接指向 `cloud/llamaagents`）
+- 官方框架文档则明示 `llama-index-core` 仍含稳定版 workflows（2026-10-08 核验）
+
+**它现在实质提供什么，readme 自己列得最准**：
 
 &gt; - **data connectors** to ingest your existing data sources and data formats (apis, pdfs, docs, sql, etc.)
 &gt; - ways to **structure your data** (indices, graphs)
 &gt; - an **advanced retrieval/query interface** over your data
 &gt; - easy **integrations with your outer application framework**
 
-**本站的收录判断**：它符合 v3 铁律的收录标准（推送 2026-09-29，仍活跃），
-但这条档案的**真正价值是如实记录这个转折** ——
-让读者知道 52,377★ 背后的公司正在往文档解析 / agentic ocr 走，
-而那是 llamaparse 与 parsebench 的战场，不是这个开源框架的。">
+**把这些合起来，oss 框架现在实质提供五样东西**：
+
+- 数据接入
+- 索引 / 图结构
+- 检索查询接口
+- 300+ 集成
+- workflows 编排
+
+**这条档案的价值在别处。**
+
+- **收录判断**：符合 v3 铁律「近 30 天有实质更新」（推送 2026-09-29，仍活跃）
+- **真正价值**：如实记录这个转折 —— 52,377★ 背后的公司正往文档解析 / agentic ocr 走
+- 那是 llamaparse 与 parsebench 的战场，不是这个开源框架的">
           <div class="card-top">
             <div class="mark" aria-hidden="true">LI</div>
             <div class="card-id">
@@ -358,20 +401,22 @@ readme 自己的 proposed solution 四条说得很准：
               <div class="vendor">LlamaIndex（run-llama）</div>
             </div>
           </div>
-          <p class="tagline"><span data-zh>⚠ 但先得说清一件事：官方已明确把公司重心从「编排框架」移走了。 README 首屏 NOTE 段落原文（核验 2026-1</span><span data-en>⚠ But one thing has to be stated first: the project has explic</span></p>   // line 已是双节点，勿走 esc -->
+          <p class="tagline"><span data-zh>一句话说清：LlamaIndex 是一个 Python 库。它把外部数据接进来做检索问答。 ⚠ 但有件事必须先说。 官方已明</span><span data-en>"A Python library that pulls external data in for retrieval an</span></p>   // line 已是双节点，勿走 esc -->
           <div class="card-foot">
             <span class="t-state is-warn"><span data-zh>部分核验</span><span data-en>Partly verified</span></span>
             <a class="more" href="./llamaindex.html" aria-label="LlamaIndex Framework 详情"><span data-zh>详情 →</span><span data-en>Details →</span></a>
           </div>
         </article>
-        <article class="card" style="--card-accent:#3b82f6" data-track="harness" data-family="orchestration" data-conf="partial" data-done="8" data-total="8" data-name="Mastra" data-blob="mastra mastra ai **「typescript 生态的全栈式 agent 框架」** —— 官方自述很直白：
+        <article class="card" style="--card-accent:#3b82f6" data-track="harness" data-family="orchestration" data-conf="partial" data-done="8" data-total="8" data-name="Mastra" data-blob="mastra mastra ai **mastra 是「typescript 生态的全栈式 agent 框架」。**
+
+装一个包，agents、图工作流、memory、rag、evals、mcp、内置 server 与 studio 就都在里面。
+
+官方自述很直白：
 
 &gt; mastra is a framework for building ai-powered applications and agents with a **modern typescript stack**.
 &gt; it includes **everything you need** to go from early prototypes to production-ready applications.
 
-关键词是 **everything**：agents、workflows（图工作流引擎）、memory、rag、evals、
-mcp 客户端与服务端、内置 server、studio 与 observability —— 都在一个包里。
-**它与 [langgraph](./langgraph.md) 的差别正好是本站反复强调的那条分野**：
+关键词是 **everything**。**它与 [langgraph](./langgraph.md) 的差别，正好是本站反复强调的那条分野：**
 langgraph 自认 low-level、不预置工具与文件系统；mastra 走 batteries included 的厚路线。">
           <div class="card-top">
             <div class="mark" aria-hidden="true">MA</div>
@@ -380,20 +425,27 @@ langgraph 自认 low-level、不预置工具与文件系统；mastra 走 batteri
               <div class="vendor">Mastra AI</div>
             </div>
           </div>
-          <p class="tagline"><span data-zh>「TypeScript 生态的全栈式 agent 框架」 —— 官方自述很直白： > Mastra is a framewo</span><span data-en>Mastra is a TypeScript-first, batteries-included agent framewo</span></p>   // line 已是双节点，勿走 esc -->
+          <p class="tagline"><span data-zh>Mastra 是「TypeScript 生态的全栈式 agent 框架」。 装一个包，Agents、图工作流、Memory、</span><span data-en>Mastra is the batteries-included agent framework for TypeScrip</span></p>   // line 已是双节点，勿走 esc -->
           <div class="card-foot">
             <span class="t-state is-warn"><span data-zh>部分核验</span><span data-en>Partly verified</span></span>
             <a class="more" href="./mastra.html" aria-label="Mastra 详情"><span data-zh>详情 →</span><span data-en>Details →</span></a>
           </div>
         </article>
-        <article class="card" style="--card-accent:#0078D4" data-track="harness" data-family="orchestration" data-conf="partial" data-done="8" data-total="8" data-name="Microsoft Agent Framework" data-blob="microsoft agent framework microsoft **「semantic kernel 与 autogen 合并后的微软官方 agent 底座」** —— 官方公告把这层血缘关系写得最清楚：
+        <article class="card" style="--card-accent:#0078D4" data-track="harness" data-family="orchestration" data-conf="partial" data-done="3" data-total="8" data-name="Microsoft Agent Framework" data-blob="microsoft agent framework microsoft **它是什么**：「semantic kernel 与 autogen 合并后的微软官方 agent 底座」。
+
+全名 **microsoft agent framework**（本站下称 maf）。
+
+官方公告页把这层血缘关系写得最清楚：
 
 &gt; microsoft agent framework **doesn&#39;t replace** semantic kernel and autogen — it **builds on them.**
 
-官方 overview 页同样直白：它 &quot;brings together and extends ideas from **semantic kernel and autogen** projects...
-built by the same teams, it is the **unified foundation** for building ai agents going forward.&quot;
+官方 overview 页同样直白（原文）：
 
-**理解它只需要记住一件事：它不是「又一个新框架」，而是微软把两条产品线收编成一条。**">
+&gt; &quot;it brings together and extends ideas from **semantic kernel and autogen** projects... built by the same teams, it is the **unified foundation** for building ai agents going forward.&quot;
+
+**理解它只需要记住一件事。**
+
+**它不是「又一个新框架」，而是微软把两条产品线收编成了一条。**">
           <div class="card-top">
             <div class="mark" aria-hidden="true">MA</div>
             <div class="card-id">
@@ -401,7 +453,7 @@ built by the same teams, it is the **unified foundation** for building ai agents
               <div class="vendor">Microsoft</div>
             </div>
           </div>
-          <p class="tagline"><span data-zh>「Semantic Kernel 与 AutoGen 合并后的微软官方 agent 底座」 —— 官方公告把这层血缘关系写得</span><span data-en>The official Microsoft agent foundation that merges Semantic K</span></p>   // line 已是双节点，勿走 esc -->
+          <p class="tagline"><span data-zh>它是什么：「Semantic Kernel 与 AutoGen 合并后的微软官方 agent 底座」。 全名 Microso</span><span data-en>The Microsoft-official agent foundation that merged Semantic K</span></p>   // line 已是双节点，勿走 esc -->
           <div class="card-foot">
             <span class="t-state is-warn"><span data-zh>部分核验</span><span data-en>Partly verified</span></span>
             <a class="more" href="./microsoft-agent-framework.html" aria-label="Microsoft Agent Framework 详情"><span data-zh>详情 →</span><span data-en>Details →</span></a>
@@ -416,8 +468,18 @@ built by the same teams, it is the **unified foundation** for building ai agents
             <p><span data-zh>预置了规划、文件系统、记忆等一整套，面向通用长任务。开箱程度最高，可改性最低。</span><span data-en>Presets planning, filesystem, memory and the rest, aimed at general long-running tasks. Most ready out of the box, least modifiable.</span></p>
           </div>
           <div class="grid">
-        <article class="card" style="--card-accent:#10A37F" data-track="harness" data-family="general-harness" data-conf="partial" data-done="8" data-total="8" data-name="Deep Agents" data-blob="deep agents langchain **「batteries-included agent harness」** —— 官方自述：开箱即跑、面向长任务多步流程、
-不改代码就能替换任何一层的 opinionated agent harness。">
+        <article class="card" style="--card-accent:#10A37F" data-track="harness" data-family="general-harness" data-conf="partial" data-done="8" data-total="8" data-name="Deep Agents" data-blob="deep agents langchain **deep agents 是 langchain 出的通用 agent harness。**
+
+它把 filesystem、子代理、上下文管理、skills 都预置好了。
+
+开箱即跑。
+
+官方自述：
+
+&gt; **官方原文**：
+&gt; &quot;batteries-included agent harness&quot;
+
+它的设计目标是长任务、多步流程。凡是预置的那一层，**都不改代码就能替换**。">
           <div class="card-top">
             <div class="mark" aria-hidden="true">DA</div>
             <div class="card-id">
@@ -425,13 +487,17 @@ built by the same teams, it is the **unified foundation** for building ai agents
               <div class="vendor">LangChain</div>
             </div>
           </div>
-          <p class="tagline"><span data-zh>「batteries-included agent harness」 —— 官方自述：开箱即跑、面向长任务多步流程、 不改代</span><span data-en>"A batteries-included agent harness" — described officially as</span></p>   // line 已是双节点，勿走 esc -->
+          <p class="tagline"><span data-zh>Deep Agents 是 LangChain 出的通用 agent harness。 它把 filesystem、子代理、</span><span data-en>Deep Agents is a general-purpose agent harness from LangChain.</span></p>   // line 已是双节点，勿走 esc -->
           <div class="card-foot">
             <span class="t-state is-warn"><span data-zh>部分核验</span><span data-en>Partly verified</span></span>
             <a class="more" href="./deepagents.html" aria-label="Deep Agents 详情"><span data-zh>详情 →</span><span data-en>Details →</span></a>
           </div>
         </article>
-        <article class="card" style="--card-accent:#FFD700" data-track="harness" data-family="general-harness" data-conf="partial" data-done="8" data-total="8" data-name="Hermes Agent" data-blob="hermes agent nous research **「唯一带学习闭环的常驻个人助手」** —— 官方 readme 这么写：
+        <article class="card" style="--card-accent:#FFD700" data-track="harness" data-family="general-harness" data-conf="partial" data-done="5" data-total="8" data-name="Hermes Agent" data-blob="hermes agent nous research **hermes agent 是一个常驻的跨平台个人助手，会从经验里自己攒技能。**
+
+它不绑在你的笔记本上。
+
+&gt; 官方 readme 说：
 
 &gt; **the self-improving ai agent** built by nous research.
 &gt; it&#39;s the only agent with a **built-in learning loop** — it creates skills from experience,
@@ -440,8 +506,9 @@ built by the same teams, it is the **unified foundation** for building ai agents
 &gt; run it on a $5 vps, a gpu cluster, or serverless infrastructure that costs nearly nothing when idle.
 &gt; **it&#39;s not tied to your laptop** — talk to it from telegram while it works on a cloud vm.
 
-⚠ **本站对「the only agent」这句话的态度**：这是**官方自我宣传语**，
-本站**未做跨产品对比测试来验证 &quot;only&quot; 是否成立**。记录为官方声明，不是本站结论。">
+⚠ **「the only agent」这句话，本站的态度是：** 这是**官方自我宣传语**。
+本站**未做跨产品对比测试来验证 &quot;only&quot; 是否成立**。
+记录为官方声明，不是本站结论。">
           <div class="card-top">
             <div class="mark" aria-hidden="true">HA</div>
             <div class="card-id">
@@ -449,16 +516,18 @@ built by the same teams, it is the **unified foundation** for building ai agents
               <div class="vendor">Nous Research</div>
             </div>
           </div>
-          <p class="tagline"><span data-zh>「唯一带学习闭环的常驻个人助手」 —— 官方 README 这么写： > The self-improving AI age</span><span data-en>"The only resident personal assistant with a learning loop" — </span></p>   // line 已是双节点，勿走 esc -->
+          <p class="tagline"><span data-zh>Hermes Agent 是一个常驻的跨平台个人助手，会从经验里自己攒技能。 它不绑在你的笔记本上。 官方 README 说</span><span data-en>"The only resident personal assistant with a learning loop" — </span></p>   // line 已是双节点，勿走 esc -->
           <div class="card-foot">
             <span class="t-state is-warn"><span data-zh>部分核验</span><span data-en>Partly verified</span></span>
             <a class="more" href="./hermes-agent.html" aria-label="Hermes Agent 详情"><span data-zh>详情 →</span><span data-en>Details →</span></a>
           </div>
         </article>
-        <article class="card" style="--card-accent:#F97316" data-track="harness" data-family="general-harness" data-conf="partial" data-done="8" data-total="8" data-name="OpenHands Agent Canvas" data-blob="openhands agent canvas openhands（all-hands-ai） **「自托管的 agent 控制中心」** —— 官方 readme 现在给它起的名字是 **agent canvas**，
-定位原文：
+        <article class="card" style="--card-accent:#F97316" data-track="harness" data-family="general-harness" data-conf="partial" data-done="8" data-total="8" data-name="OpenHands Agent Canvas" data-blob="openhands agent canvas openhands（all-hands-ai） **它是个自托管的 agent 控制中心** —— 官方 readme 现在管它叫 **agent canvas**。
 
-&gt; the self-hosted developer control center for coding agents and automations.
+它带的是一整套栈：web gui、terminal ui、cli、rest api 都在里面。
+它管的 agent 不止自家那一个，codex、claude code、gemini 都能挂上去跑。
+
+&gt; 官方定位原文：the self-hosted developer control center for coding agents and automations.
 &gt; run openhands, claude code, codex, gemini, or **any acp-compatible agent**
 &gt; across local, remote, and cloud backends.">
           <div class="card-top">
@@ -468,7 +537,7 @@ built by the same teams, it is the **unified foundation** for building ai agents
               <div class="vendor">OpenHands（All-Hands-AI）</div>
             </div>
           </div>
-          <p class="tagline"><span data-zh>「自托管的 agent 控制中心」 —— 官方 README 现在给它起的名字是 Agent Canvas， 定位原文： ></span><span data-en>"A self-hosted control centre for agents" — the official READM</span></p>   // line 已是双节点，勿走 esc -->
+          <p class="tagline"><span data-zh>它是个自托管的 agent 控制中心 —— 官方 README 现在管它叫 Agent Canvas。 它带的是一整套栈：W</span><span data-en>It is a self-hosted control centre for agents — the official R</span></p>   // line 已是双节点，勿走 esc -->
           <div class="card-foot">
             <span class="t-state is-warn"><span data-zh>部分核验</span><span data-en>Partly verified</span></span>
             <a class="more" href="./openhands.html" aria-label="OpenHands Agent Canvas 详情"><span data-zh>详情 →</span><span data-en>Details →</span></a>
@@ -568,7 +637,7 @@ built by the same teams, it is the **unified foundation** for building ai agents
                 <td><a href="./ag2.html"><span class="td-mark" style="--card-accent:#3b82f6">AG</span><span data-zh>AG2</span><span data-en>AG2</span></a></td>
                 <td class="td-vendor">harness</td>
                 <td class="td-vendor">ag2ai</td>
-                <td class="td-fit"><span data-zh>适合：要用 Python 编排多 agent 会话 / 协议化网络（Hub + channel，含咨询、讨论、工作流适配器）； 需要可审计的</span><span data-en>Orchestrating multi-agent conversations / a protocol-driven network in</span></td>
+                <td class="td-fit"><span data-zh>适合。 要用 Python 编排多 agent 会话 / 协议化网络（Hub + channel，含咨询、讨论、工作流适配器） 需要可审计的</span><span data-en>Orchestrating multi-agent conversations / a protocol-driven network in</span></td>
                 <td class="td-date">2026-10-08</td>
                 <td><span class="td-conf partial">partial</span></td>
               </tr>
@@ -576,7 +645,7 @@ built by the same teams, it is the **unified foundation** for building ai agents
                 <td><a href="./claude-agent-sdk.html"><span class="td-mark" style="--card-accent:#D97757">CA</span><span data-zh>Claude Agent SDK</span><span data-en>Claude Agent SDK</span></a></td>
                 <td class="td-vendor">harness</td>
                 <td class="td-vendor">Anthropic</td>
-                <td class="td-fit"><span data-zh>适合：想要一个已经被打磨过的 coding agent（工具集、权限链、hooks、session fork 都在） 并且团队用 Pytho</span><span data-en>Fits: you want a coding agent that has already been polished (tool set</span></td>
+                <td class="td-fit"><span data-zh>一句话：它是一个已经被打磨过的 coding agent。 换模型和自定义 loop 形状，它做不到。 适合： 想要一个已经被打磨过的 co</span><span data-en>One line: it is a coding agent that has already been polished. Swappin</span></td>
                 <td class="td-date">2026-09-30</td>
                 <td><span class="td-conf partial">partial</span></td>
               </tr>
@@ -584,7 +653,7 @@ built by the same teams, it is the **unified foundation** for building ai agents
                 <td><a href="./codex-sdk.html"><span class="td-mark" style="--card-accent:#10A37F">CX</span><span data-zh>Codex SDK</span><span data-en>Codex SDK</span></a></td>
                 <td class="td-vendor">harness</td>
                 <td class="td-vendor">OpenAI</td>
-                <td class="td-fit"><span data-zh>适合：要把 Codex 塞进自己的 Node 应用 / Electron 应用 / CI； 需要非交互执行；需要精确的文件级权限规则；Typ</span><span data-en>Fits: embedding Codex into a Node / Electron app or CI; needing non-in</span></td>
+                <td class="td-fit"><span data-zh>适合四类情况： 要把 Codex 塞进自己的 Node 应用 / Electron 应用 / CI 需要非交互执行 需要精确到文件级的权限规</span><span data-en>A good fit in four cases: You want to put Codex inside your own Node a</span></td>
                 <td class="td-date">2026-10-01</td>
                 <td><span class="td-conf partial">partial</span></td>
               </tr>
@@ -592,7 +661,7 @@ built by the same teams, it is the **unified foundation** for building ai agents
                 <td><a href="./crewai.html"><span class="td-mark" style="--card-accent:#EB6658">CA</span><span data-zh>CrewAI</span><span data-en>CrewAI</span></a></td>
                 <td class="td-vendor">harness</td>
                 <td class="td-vendor">CrewAI Inc</td>
-                <td class="td-fit"><span data-zh>适合：任务能被表述成「一支有角色分工的团队」（Crews）； 需要业务逻辑留在普通 Python 里并显式控制执行路径（Flows）； 想在</span><span data-en>Fits: tasks that can be expressed as "a team with defined roles"; busi</span></td>
+                <td class="td-fit"><span data-zh>适合三类场景。 任务能被表述成「一支有角色分工的团队」（Crews） 需要业务逻辑留在普通 Python 里、并显式控制执行路径（Flows</span><span data-en>Fits: tasks that can be expressed as "a team with defined roles" (Crew</span></td>
                 <td class="td-date">2026-10-08</td>
                 <td><span class="td-conf partial">partial</span></td>
               </tr>
@@ -600,7 +669,7 @@ built by the same teams, it is the **unified foundation** for building ai agents
                 <td><a href="./deepagents.html"><span class="td-mark" style="--card-accent:#10A37F">DA</span><span data-zh>Deep Agents</span><span data-en>Deep Agents</span></a></td>
                 <td class="td-vendor">harness</td>
                 <td class="td-vendor">LangChain</td>
-                <td class="td-fit"><span data-zh>适合：要一个开箱即用、默认调优好、面向长任务多步流程的通用 Agent； 不想自己拼 filesystem / 记忆 / 子代理；已经在 L</span><span data-en>Fits: you want a general agent that works out of the box, is tuned by </span></td>
+                <td class="td-fit"><span data-zh>适合三类场景。 要一个开箱即用、默认调优好、面向长任务多步流程的通用 Agent。 不想自己拼 filesystem / 记忆 / 子代理。</span><span data-en>Fits: you want a general agent that works out of the box, is tuned by </span></td>
                 <td class="td-date">2026-09-30</td>
                 <td><span class="td-conf partial">partial</span></td>
               </tr>
@@ -608,7 +677,7 @@ built by the same teams, it is the **unified foundation** for building ai agents
                 <td><a href="./google-adk.html"><span class="td-mark" style="--card-accent:#4285F4">GA</span><span data-zh>Google ADK（Agent Development Kit）</span><span data-en>Google ADK（Agent Development Kit）</span></a></td>
                 <td class="td-vendor">harness</td>
                 <td class="td-vendor">Google</td>
-                <td class="td-fit"><span data-zh>适合：需要把多个 agent 组织成有分支、有循环、有人工介入的确定性流程； 要用代码优先（code-first）定义 agent 与工具，</span><span data-en>Fits: organising multiple agents into deterministic flows with branche</span></td>
+                <td class="td-fit"><span data-zh>适合这些情况。 要把多个 agent 组织成有分支、有循环、有人工介入的确定性流程 要用代码优先（code-first）定义 agent 与</span><span data-en>Fits: organising multiple agents into deterministic flows with branche</span></td>
                 <td class="td-date">2026-10-01</td>
                 <td><span class="td-conf partial">partial</span></td>
               </tr>
@@ -616,7 +685,7 @@ built by the same teams, it is the **unified foundation** for building ai agents
                 <td><a href="./hermes-agent.html"><span class="td-mark" style="--card-accent:#FFD700">HA</span><span data-zh>Hermes Agent</span><span data-en>Hermes Agent</span></a></td>
                 <td class="td-vendor">harness</td>
                 <td class="td-vendor">Nous Research</td>
-                <td class="td-fit"><span data-zh>适合：想要一个常驻的跨平台个人助手（Telegram/Discord/Slack/WhatsApp/Signal/Email）； 把它放在云</span><span data-en>Fits: a resident cross-platform personal assistant; running on a cloud</span></td>
+                <td class="td-fit"><span data-zh>适合这六类场景。 想要一个常驻的跨平台个人助手 （六个平台：Telegram / Discord / Slack / WhatsApp / </span><span data-en>A fit for these six cases. A resident cross-platform personal assistan</span></td>
                 <td class="td-date">2026-10-01</td>
                 <td><span class="td-conf partial">partial</span></td>
               </tr>
@@ -624,7 +693,7 @@ built by the same teams, it is the **unified foundation** for building ai agents
                 <td><a href="./langgraph.html"><span class="td-mark" style="--card-accent:#1C3C3C">LG</span><span data-zh>LangGraph</span><span data-en>LangGraph</span></a></td>
                 <td class="td-vendor">harness</td>
                 <td class="td-vendor">LangChain Inc</td>
-                <td class="td-fit"><span data-zh>适合：agent 流程要跑很久且必须能从中断处精确恢复； 需要人工在流程中间介入并修改状态；要把「工作记忆」与「跨会话长期记忆」分开管理； </span><span data-en>Fits: agent flows that run long and must resume precisely from an inte</span></td>
+                <td class="td-fit"><span data-zh>适合四类场景。 agent 流程要跑很久，且必须能从中断处精确恢复 需要人工在流程中间介入并修改状态 要把「工作记忆」与「跨会话长期记忆」分</span><span data-en>Fits: agent flows that run long and must resume precisely from an inte</span></td>
                 <td class="td-date">2026-10-01</td>
                 <td><span class="td-conf partial">partial</span></td>
               </tr>
@@ -632,7 +701,7 @@ built by the same teams, it is the **unified foundation** for building ai agents
                 <td><a href="./llamaindex.html"><span class="td-mark" style="--card-accent:#7C3AED">LI</span><span data-zh>LlamaIndex Framework</span><span data-en>LlamaIndex Framework</span></a></td>
                 <td class="td-vendor">harness</td>
                 <td class="td-vendor">LlamaIndex（run-llama）</td>
-                <td class="td-fit"><span data-zh>适合：核心任务是把外部数据源（API / PDF / 文档 / SQL）接进来做检索与问答， 需要 300+ 现成集成里的某一个；团队 Py</span><span data-en>Fits: the core task is bringing external data sources in for retrieval</span></td>
+                <td class="td-fit"><span data-zh>适合：把外部数据接进来做检索问答。 核心任务是把外部数据源（API / PDF / 文档 / SQL）接进来做检索与问答 需要 300+ 现</span><span data-en>Fits: bringing external data sources in for retrieval and question ans</span></td>
                 <td class="td-date">2026-10-01</td>
                 <td><span class="td-conf partial">partial</span></td>
               </tr>
@@ -640,7 +709,7 @@ built by the same teams, it is the **unified foundation** for building ai agents
                 <td><a href="./mastra.html"><span class="td-mark" style="--card-accent:#3b82f6">MA</span><span data-zh>Mastra</span><span data-en>Mastra</span></a></td>
                 <td class="td-vendor">harness</td>
                 <td class="td-vendor">Mastra AI</td>
-                <td class="td-fit"><span data-zh>适合：TypeScript / Node 团队要一套「开箱即用」的 agent 框架 —— Agents + 图 Workflows + M</span><span data-en>TypeScript / Node teams that want an out-of-the-box agent framework: A</span></td>
+                <td class="td-fit"><span data-zh>适合： TypeScript / Node 团队要一套「开箱即用」的 agent 框架 —— Agents + 图 Workflows + </span><span data-en>Fits: TypeScript / Node teams that want an out-of-the-box agent framew</span></td>
                 <td class="td-date">2026-10-08</td>
                 <td><span class="td-conf partial">partial</span></td>
               </tr>
@@ -648,7 +717,7 @@ built by the same teams, it is the **unified foundation** for building ai agents
                 <td><a href="./microsoft-agent-framework.html"><span class="td-mark" style="--card-accent:#0078D4">MA</span><span data-zh>Microsoft Agent Framework</span><span data-en>Microsoft Agent Framework</span></a></td>
                 <td class="td-vendor">harness</td>
                 <td class="td-vendor">Microsoft</td>
-                <td class="td-fit"><span data-zh>适合：要把多 agent 组织成有分支、有人工介入、可 checkpoint 恢复的确定性图工作流； 需要 .NET 与 Python 一致</span><span data-en>Organizing multiple agents into deterministic graph workflows with bra</span></td>
+                <td class="td-fit"><span data-zh>它是「图工作流」式的编排框架，适合五类场景。 要把多 agent 组织成有分支、有人工介入、可 checkpoint 恢复的确定性图工作流 </span><span data-en>It is a graph-workflow orchestration framework — a fit for five cases.</span></td>
                 <td class="td-date">2026-10-08</td>
                 <td><span class="td-conf partial">partial</span></td>
               </tr>
@@ -656,7 +725,7 @@ built by the same teams, it is the **unified foundation** for building ai agents
                 <td><a href="./openai-agents-sdk.html"><span class="td-mark" style="--card-accent:#10A37F">OA</span><span data-zh>OpenAI Agents SDK</span><span data-en>OpenAI Agents SDK</span></a></td>
                 <td class="td-vendor">harness</td>
                 <td class="td-vendor">OpenAI</td>
-                <td class="td-fit"><span data-zh>适合：想要「薄 harness」—— 只要 agent loop 原语，filesystem / 规划 / 记忆都想自己挑； 需要 guar</span><span data-en>Fits: you want a thin harness with built-in guardrails / human-in-the-</span></td>
+                <td class="td-fit"><span data-zh>适合： 想要「薄 harness」，agent loop 原语之外的自己挑。 需要 guardrails 与 human-in-the-lo</span><span data-en>Fits: you want a thin harness with built-in guardrails / human-in-the-</span></td>
                 <td class="td-date">2026-09-30</td>
                 <td><span class="td-conf partial">partial</span></td>
               </tr>
@@ -664,7 +733,7 @@ built by the same teams, it is the **unified foundation** for building ai agents
                 <td><a href="./openhands.html"><span class="td-mark" style="--card-accent:#F97316">OH</span><span data-zh>OpenHands Agent Canvas</span><span data-en>OpenHands Agent Canvas</span></a></td>
                 <td class="td-vendor">harness</td>
                 <td class="td-vendor">OpenHands（All-Hands-AI）</td>
-                <td class="td-fit"><span data-zh>适合：要把agent 放到自己服务器上 7×24 跑；需要定时或 webhook 触发（Slack / GitHub / Linear / </span><span data-en>Fits: the agent needs to run 7×24 on your own server; scheduled or web</span></td>
+                <td class="td-fit"><span data-zh>能做的事： 把 agent 放到自己服务器上 7×24 跑 定时或 webhook 触发（Slack / GitHub / Linear /</span><span data-en>What it is good for: Running agents 7×24 on your own server Scheduled </span></td>
                 <td class="td-date">2026-10-01</td>
                 <td><span class="td-conf partial">partial</span></td>
               </tr>
@@ -672,7 +741,7 @@ built by the same teams, it is the **unified foundation** for building ai agents
                 <td><a href="./pydantic-ai.html"><span class="td-mark" style="--card-accent:#3b82f6">PA</span><span data-zh>Pydantic AI</span><span data-en>Pydantic AI</span></a></td>
                 <td class="td-vendor">harness</td>
                 <td class="td-vendor">Pydantic</td>
-                <td class="td-fit"><span data-zh>适合：Python 团队要做「类型安全的结构化输出 + 依赖注入」的 agent； 需要把 agent run 变成 durable（跨重启</span><span data-en>Python teams that want typed structured output plus dependency injecti</span></td>
+                <td class="td-fit"><span data-zh>适合：需要类型安全的 Python 团队，以及要把 agent run 变成 durable 的人。 Python 团队要做「类型安全的结构</span><span data-en>A fit when: you are a Python team that wants type-safe structured outp</span></td>
                 <td class="td-date">2026-10-08</td>
                 <td><span class="td-conf partial">partial</span></td>
               </tr>
@@ -680,7 +749,7 @@ built by the same teams, it is the **unified foundation** for building ai agents
                 <td><a href="./smolagents.html"><span class="td-mark" style="--card-accent:#FFD21E">SM</span><span data-zh>smolagents</span><span data-en>smolagents</span></a></td>
                 <td class="td-vendor">harness</td>
                 <td class="td-vendor">Hugging Face</td>
-                <td class="td-fit"><span data-zh>适合：认同 code-as-action（官方称比 JSON 工具调用少 30% 步数）并愿意给 LLM 生成代码上沙箱； 要 model-</span><span data-en>Teams that buy into code-as-action and are willing to sandbox LLM-gene</span></td>
+                <td class="td-fit"><span data-zh>适合这四类场景。 认同 code-as-action（官方称比 JSON 工具调用少 30% 步数），并愿意给 LLM 生成代码上沙箱 要 </span><span data-en>Fits: teams that buy into code-as-action (officially ~30% fewer steps </span></td>
                 <td class="td-date">2026-10-08</td>
                 <td><span class="td-conf partial">partial</span></td>
               </tr>
@@ -724,11 +793,11 @@ built by the same teams, it is the **unified foundation** for building ai agents
             <thead><tr><th><span data-zh>形态</span><span data-en>Form</span></th><th><span data-zh>已补齐</span><span data-en>Filled</span></th><th><span data-zh>说明</span><span data-en>Meaning</span></th></tr></thead>
             <tbody>
               <tr><td class="nw">harness</td>
-                <td class="nw"><strong>120/120</strong></td>
+                <td class="nw"><strong>94/120</strong></td>
                 <td class="td-vendor"><span data-zh>编排框架的版本演进快、接口变化多，逐条核验成本最高 —— 也是全站最低的一档</span><span data-en>Orchestration frameworks move fast and change APIs often, so these are the most expensive to verify — and the lowest fill rate on the site</span></td></tr>
             </tbody>
           </table>
-          <p><strong class="em"><span data-zh>全站合计 446/446 维度已补齐</span><span data-en>Site-wide 446/446 dimensions filled</span>（100%）</strong></p>
+          <p><strong class="em"><span data-zh>全站合计 415/446 维度已补齐</span><span data-en>Site-wide 415/446 dimensions filled</span>（93%）</strong></p>
           <p class="t-sm">
             <span data-zh>剩余未补齐项分三类：<strong>官方未公开</strong>（索引算法、沙箱实现细节本就不对外说明）、<strong>需实测才能确定</strong>（大仓库表现、CI 无 TTY 行为）、<strong>客观渠道不可达</strong>。</span><span data-en>The remaining gaps fall into three kinds: <strong>not disclosed by the vendor</strong> (indexing algorithms, sandbox internals are simply not documented), <strong>requires measurement</strong> (behaviour on very large repositories, CI without a TTY), and <strong>unreachable through objective channels</strong>.</span>
           </p>
