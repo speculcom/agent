@@ -10,7 +10,7 @@
 
 ## 这个分区提供什么
 
-- **9 个对象**，按固定 11 个维度记录（8 个通用维度 + 3 个 MCP 特有维度）
+- **10 个对象**，按固定 11 个维度记录（8 个通用维度 + 3 个 MCP 特有维度）
 - 每个维度都能回溯到官方一手源，附来源类型与核验日期
 - **不给总分排名**——缺少跨工具的统一实测，排名会误导
 - **「未知」是合法答案**——查不到就写未知并说明原因，不用推测填充
@@ -20,14 +20,15 @@
 | 对象 | 形态 | 厂商 | 可信度 | 核验日 |
 |---|---|---|---|---|
 | [Context7](./context7.html) | MCP | Upstash | partial | 2026-10-01 |
-| [Everything MCP Server](./everything.html) | MCP | Model Context Protocol | partial | 2026-09-29 |
-| [Fetch MCP Server](./fetch.html) | MCP | Model Context Protocol | verified | 2026-09-29 |
-| [Filesystem MCP Server](./filesystem.html) | MCP | Model Context Protocol | verified | 2026-09-29 |
-| [Git MCP Server](./git.html) | MCP | Model Context Protocol | verified | 2026-09-29 |
-| [Knowledge Graph Memory Server](./memory.html) | MCP | Model Context Protocol | verified | 2026-09-29 |
-| [Playwright MCP Server](./playwright.html) | MCP | Microsoft | verified | 2026-09-29 |
-| [Sequential Thinking MCP Server](./sequential-thinking.html) | MCP | Model Context Protocol | verified | 2026-09-29 |
-| [Time MCP Server](./time.html) | MCP | Model Context Protocol | verified | 2026-09-29 |
+| [Everything MCP Server](./everything.html) | MCP | Model Context Protocol | verified | 2026-10-08 |
+| [Fetch MCP Server](./fetch.html) | MCP | Model Context Protocol | verified | 2026-10-08 |
+| [Filesystem MCP Server](./filesystem.html) | MCP | Model Context Protocol | verified | 2026-10-08 |
+| [Git MCP Server](./git.html) | MCP | Model Context Protocol | verified | 2026-10-08 |
+| [GitHub MCP Server](./github-mcp.html) | MCP | GitHub | partial | 2026-10-08 |
+| [Knowledge Graph Memory Server](./memory.html) | MCP | Model Context Protocol | verified | 2026-10-08 |
+| [Playwright MCP Server](./playwright.html) | MCP | Microsoft | verified | 2026-10-08 |
+| [Sequential Thinking MCP Server](./sequential-thinking.html) | MCP | Model Context Protocol | verified | 2026-10-08 |
+| [Time MCP Server](./time.html) | MCP | Model Context Protocol | verified | 2026-10-08 |
 
 ## 可信度标记
 
@@ -37,7 +38,7 @@
 | `partial` | some dimensions unknown, or official docs unreachable, or checked over 90 days ago |
 | `stale` | 官方已发布重大变化，本站尚未核验 |
 
-当前 9 个对象中，**7 个为 verified**。
+当前 10 个对象中，**8 个为 verified**。
 
 ## 数据来源
 
@@ -50,9 +51,9 @@
 
 | 分区 | 主题 | 对象数 |
 |---|---|---|
-| [Agents](/) | <span data-zh>装在编辑器、终端，或厂商云里</span><span data-en>Installed in an editor, a terminal, or a vendor cloud</span> | 17 |
-| [Harness](/harness/) | <span data-zh>运行时、编排框架、SDK</span><span data-en>Runtimes, orchestration frameworks, SDKs</span> | 10 |
-| [Tools](/tools/) | <span data-zh>缺什么，装什么 —— 给 agent 装的 MCP 工具</span><span data-en>Fill the gap — MCP tools an agent can install</span> | 9 |
+| [Agents](/) | <span data-zh>装在编辑器、终端，或厂商云里</span><span data-en>Installed in an editor, a terminal, or a vendor cloud</span> | 27 |
+| [Harness](/harness/) | <span data-zh>运行时、编排框架、SDK</span><span data-en>Runtimes, orchestration frameworks, SDKs</span> | 15 |
+| [Tools](/tools/) | <span data-zh>缺什么，装什么 —— 给 agent 装的 MCP 工具</span><span data-en>Fill the gap — MCP tools an agent can install</span> | 10 |
 
 ---
 
