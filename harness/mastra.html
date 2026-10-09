@@ -4,18 +4,18 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Mastra — Harness | 投机取巧</title>
-  <meta name="description" content="Mastra（Mastra AI）：「TypeScript 生态的全栈式 agent 框架」 —— 官方自述很直白： &gt; Mastra is a framework for building AI-powered applications and agents with a modern TypeScrip…" />
+  <meta name="description" content="Mastra（Mastra AI）：Mastra 是「TypeScript 生态的全栈式 agent 框架」。 装一个包，Agents、图工作流、Memory、RAG、Evals、MCP、内置 server 与 Studio 就都在里面。 官方自述很直白： Mastra is a framework for bu…" />
   <link rel="canonical" href="https://agent.specul.com/harness/mastra.html" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Mastra" />
   <meta property="og:url" content="https://agent.specul.com/harness/mastra.html" />
   <meta property="og:title" content="Mastra — Harness | 投机取巧" />
-  <meta property="og:description" content="Mastra（Mastra AI）：「TypeScript 生态的全栈式 agent 框架」 —— 官方自述很直白： &gt; Mastra is a framework for building AI-powered applications and agents with a modern TypeScrip…" />
-  <meta name="theme-color" content="#05080f" />
+  <meta property="og:description" content="Mastra（Mastra AI）：Mastra 是「TypeScript 生态的全栈式 agent 框架」。 装一个包，Agents、图工作流、Memory、RAG、Evals、MCP、内置 server 与 Studio 就都在里面。 官方自述很直白： Mastra is a framework for bu…" />
+  <meta name="theme-color" content="#16121f" />
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%238b7cf8'/%3E%3Cstop offset='1' stop-color='%2322d3c5'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='48' height='48' rx='12' fill='%2305080f'/%3E%3Cpath d='M14 32 L24 12 L34 32' fill='none' stroke='url(%23g)' stroke-width='2.4' stroke-linejoin='round'/%3E%3Ccircle cx='24' cy='27' r='2.4' fill='%2322d3c5'/%3E%3C/svg%3E" />
   <link rel="stylesheet" href="../brand.css" />
   <link rel="stylesheet" href="../site.css" />
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Mastra","applicationCategory":"DeveloperApplication","url":"https://mastra.ai","sameAs":"https://mastra.ai","description":"「TypeScript 生态的全栈式 agent 框架」 —— 官方自述很直白： > Mastra is a framework for building AI-powered applications and agents with a modern TypeScript stack. > It includes everything you need to go from early prototypes to production-ready applications. 关键词是 everything：Agents、Workflows（图工作流引擎）、Memory、RAG、Evals、 ","dateModified":"2026-10-08"}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Mastra","applicationCategory":"DeveloperApplication","url":"https://mastra.ai","sameAs":"https://mastra.ai","description":"Mastra 是「TypeScript 生态的全栈式 agent 框架」。 装一个包，Agents、图工作流、Memory、RAG、Evals、MCP、内置 server 与 Studio 就都在里面。 官方自述很直白： Mastra is a framework for building AI-powered applications and agents with a modern TypeScript stack. It includes everything you need to go from early prototypes to production-ready applica","dateModified":"2026-10-08"}</script>
 </head>
 <body class="brand-ambient">
   <a class="t-skip" href="#main"><span data-zh>跳到主要内容</span><span data-en>Skip to main content</span></a>
@@ -109,70 +109,131 @@
         <span class="badge"><span data-zh>核验</span><span data-en>Checked</span> 2026-10-08</span>
       </div>
 
-            <p class="panel-lead"><span data-zh><strong>「TypeScript 生态的全栈式 agent 框架」</strong> —— 官方自述很直白：
-
-&gt; Mastra is a framework for building AI-powered applications and agents with a <strong>modern TypeScript stack</strong>.
-&gt; It includes <strong>everything you need</strong> to go from early prototypes to production-ready applications.
-
-关键词是 <strong>everything</strong>：Agents、Workflows（图工作流引擎）、Memory、RAG、Evals、
-MCP 客户端与服务端、内置 server、Studio 与 observability —— 都在一个包里。
-<strong>它与 <a href="./langgraph.html">LangGraph</a> 的差别正好是本站反复强调的那条分野</strong>：
-LangGraph 自认 low-level、不预置工具与文件系统；Mastra 走 batteries included 的厚路线。</span><span data-en>A framework for building AI-powered applications and agents on a modern TypeScript stack. Official highlights: <strong>model routing</strong> (&quot;Connect to 40+ providers through one standard interface&quot;, while the <code>/models</code> directory page states &quot;7815 models from 213 providers through a single API&quot;), <strong>agents</strong>, a <strong>graph-based workflow engine</strong> using an explicit control-flow syntax (<code>.then()</code>, <code>.branch()</code>, <code>.parallel()</code>), <strong>human-in-the-loop</strong> via suspend/resume, <strong>memory</strong>, <strong>RAG</strong>, <strong>MCP servers</strong>, plus built-in <strong>evals</strong> and observability.
-
-<strong>State across restarts is first-class</strong>: &quot;Suspension saves the current execution state as a snapshot ... stored in your configured storage provider and persist across deployments and application restarts.&quot; <strong>Local models are officially supported</strong> through an OpenAI-compatible endpoint, with LMStudio recommended (<code>id: &quot;lmstudio/...&quot;</code>, <code>url: &quot;http://localhost:1234/v1&quot;</code>).
-
-<strong>Licensing is dual</strong> (checked 2026-10-08): the core framework is <strong>Apache-2.0</strong>, while code under any <code>ee/</code> directory is <strong>source-available under the Mastra Enterprise License</strong> (the repo license API returns NOASSERTION). A separate commercial <strong>Mastra platform</strong> (Observability / Studio / Server) is priced Starter $0, Teams $250/month, Enterprise custom — Studio, hosted observability, and deployment are platform products, not part of the open-source framework. Latest <code>@mastra/core</code> is 1.75.0 (2026-10-07); requires Node.js &gt;= 22.13.0.</span></p>
+            <div class="panel-lead"><span data-zh><p><strong>Mastra 是「TypeScript 生态的全栈式 agent 框架」。</strong></p>
+            <p>装一个包，Agents、图工作流、Memory、RAG、Evals、MCP、内置 server 与 Studio 就都在里面。</p>
+            <p>官方自述很直白：</p>
+            <blockquote>Mastra is a framework for building AI-powered applications and agents with a <strong>modern TypeScript stack</strong>. It includes <strong>everything you need</strong> to go from early prototypes to production-ready applications.</blockquote>
+            <p>关键词是 <strong>everything</strong>。<strong>它与 <a href="./langgraph.html">LangGraph</a> 的差别，正好是本站反复强调的那条分野：</strong> LangGraph 自认 low-level、不预置工具与文件系统；Mastra 走 batteries included 的厚路线。</p></span><span data-en><p>Mastra is <strong>a TypeScript framework for building AI agents and applications</strong> - official README: &quot;Mastra is a framework for building AI-powered applications and agents with a <strong>modern TypeScript stack</strong>. It includes <strong>everything you need</strong> to go from early prototypes to production-ready applications.&quot;</p>
+            <p>One package covers Agents, graph Workflows, Memory, RAG, Evals/Scorers, MCP client and server, a built-in Hono server, Studio and observability.</p>
+            <p><strong>Model routing is where it goes furthest</strong>: <code>provider/model</code> strings, plus model fallbacks, per-task mix-and-match and <code>requestContext</code>.</p>
+            <p><strong>State is separate from context</strong>: workflow snapshots persist across deployments and restarts, while memory covers message history, Observational Memory, working memory and semantic recall.</p>
+            <p><strong>The licence splits in two</strong> - the core framework is Apache-2.0, but code under any <code>ee/</code> directory is source-available under the Mastra Enterprise License (the repo licence API returns NOASSERTION). Studio, Observability and hosted deployment are Mastra platform products, billed on Starter $0 / Teams $250 / Enterprise tiers.</p></span></div>
 
             <div class="panel is-slim">
         <h2><span data-zh>适合与不适合</span><span data-en>When to use it, when not to</span></h2>
-<span data-zh>        <p><strong>适合</strong>：TypeScript / Node 团队要一套开箱即用的 agent 框架（Agents + 图 Workflows + Memory +
-RAG + Evals + MCP + server + Studio）；需要 suspend/resume 与 durable run；
-要接大量 provider 与本地模型；要把 agent/workflow 用 MCP 暴露出去；要嵌进 Next.js / React。
-<strong>不适合</strong>：Python 栈（看 LangGraph / Pydantic AI）；想要 lowest-level、自己掌控图引擎与工具面；
-坚持不用任何商业组件（平台与 <code>ee/</code> 是单独授权）；需要框架自带进程级沙箱与网络策略。</p></span><span data-en>        <p><strong>TypeScript / Node teams</strong> that want an out-of-the-box agent framework: Agents + graph Workflows + Memory + RAG + Evals + MCP + a built-in server + Studio all in one package.
-Work that needs material <strong>suspend/resume and durable runs</strong> (snapshots stored in your own storage, resumable across restarts).
-Connecting to a very large number of model providers, including local models (official LMStudio recommendation).
-Exposing your agents/workflows over MCP, or consuming MCP servers; embedding agents into Next.js / React apps.</p>
-        <p class="warn-p"><strong>Not a fit for</strong> Python stacks (see LangGraph / Pydantic AI); people who want a low-level framework where they control the graph engine and tool surface themselves (Mastra is higher-level, heavier, more opinionated); anyone who insists on zero commercial components (the platform&#39;s Studio/observability/hosted deployment are separately billed, and <code>ee/</code> needs an enterprise license); and anyone who needs a process-level sandbox and network policy built into the open-source core.</p></span>
+<span data-zh>        <div><p><strong>适合 TypeScript / Node 团队。</strong> 理由：</p></div>
+        <div><ul><li>要一套开箱即用的 agent 框架（Agents + 图 Workflows + Memory + RAG + Evals + MCP + server + Studio）</li><li>需要 suspend/resume 与 durable run</li><li>要接大量 provider 与本地模型</li><li>要把 agent/workflow 用 MCP 暴露出去</li><li>要嵌进 Next.js / React</li></ul></div>
+        <div class="warn-p"><p><strong>不适合四类情况：</strong></p></div>
+        <div><ul><li>Python 栈（看 LangGraph / Pydantic AI）</li><li>想要 lowest-level、自己掌控图引擎与工具面</li><li>坚持不用任何商业组件（平台与 <code>ee/</code> 是单独授权）</li><li>需要框架自带进程级沙箱与网络策略</li></ul></div></span><span data-en>        <div><p><strong>Fits</strong>:</p></div>
+        <div><ul><li><strong>TypeScript / Node teams</strong> that want an out-of-the-box agent framework - Agents, graph Workflows, Memory, RAG, Evals, MCP, a built-in server and Studio all in one package</li><li><strong>Durable runs with suspend/resume</strong> - snapshots live in your own storage and survive restarts</li><li><strong>Wiring up many model providers and local models</strong> (LMStudio is officially recommended)</li><li><strong>Exposing agents and workflows over MCP</strong>, or acting as an MCP client</li><li><strong>Embedding an agent into a Next.js / React app</strong></li></ul></div>
+        <div class="warn-p"><p><strong>Not a fit for</strong>:</p></div>
+        <div><ul><li><strong>A Python stack</strong> (see <a href="./langgraph.html">LangGraph</a> / <a href="./pydantic-ai.html">Pydantic AI</a>)</li><li><strong>Wanting a low-level engine you control</strong> - Mastra sits higher, ships a bigger package and more conventions</li><li><strong>Refusing any commercial component</strong> - platform Studio, observability and hosted deployment are separately billed, and <code>ee/</code> needs an enterprise licence</li><li><strong>Needing a framework-provided process sandbox or network policy</strong> - that part is not in the OSS core</li></ul></div></span>
       </div>
 
 
       <div class="block-head">
         <h2 class="t-h2"><span data-zh>固定坐标系</span><span data-en>Fixed coordinate system</span></h2>
-        <p class="t-section-lead">8 <span data-zh>个维度</span><span data-en>dimensions</span>, <span data-zh>与同赛道其他对象逐项可比</span><span data-en>each comparable item by item against others in the same track</span>.</p>
+        <p class="t-section-lead">8 <span data-zh>个维度</span><span data-en>dimensions</span>, <span data-zh>与同分区其他对象逐项可比</span><span data-en>each comparable item by item against others in the same section</span>.</p>
       </div>
       <dl class="axes">
         <div class="axis">
           <dt><span data-zh>模型与开放条件</span><span data-en>Model & openness</span></dt>
-          <dd><strong>这是它为第一决策点给出的答案：model routing，且规格写得最狠。</strong> 官方 /models 目录页原文：&quot;giving you access to <strong>7815 models from 213 providers</strong> through a single API.&quot;。用法是 <code>provider/model</code> 字符串（官方示例 <code>openai/gpt-5.6-sol</code>、 <code>anthropic/claude-sonnet-4-6</code>、<code>openrouter/anthropic/claude-haiku-4.5</code>）， &quot;Mastra reads the relevant environment variable (e.g. <code>ANTHROPIC_API_KEY</code>) and routes requests to the provider.&quot;，缺 key 会给出明确的运行时错误指出缺哪个变量。 <strong>官方支持 model fallbacks</strong>：&quot;If a provider experiences an outage, Mastra can automatically switch to another provider at the application level&quot;，也可按任务 mix-and-match 不同模型， 还能用 <code>requestContext</code> 动态选模型。 <strong>本地模型是官方明确支持的</strong>，/models 页有 &quot;Use local models with Mastra&quot; 专节： &quot;Mastra also supports local models like <code>gpt-oss</code>, <code>Qwen3</code>, <code>DeepSeek</code> ... that you run on your own hardware&quot;，前提是本地要提供 <strong>OpenAI 兼容</strong> API server，官方<strong>推荐 LMStudio</strong>， 示例 <code>id: &quot;lmstudio/qwen/qwen3-30b-a3b-2507&quot;</code>、<code>url: &quot;http://localhost:1234/v1&quot;</code>。 ⚠ <strong>一处官方自身数字打架</strong>：README 亮点段写的是 &quot;Connect to <strong>40+ providers</strong>&quot;， 而 /models 目录页写 &quot;213 providers / 7815 models&quot; —— 本站以目录页为准，README 的 40+ 视为旧口径。 <strong>换 provider 后各家 tool calling / structured output 的对齐度，官方未说明</strong>（已查 /models 页）。</dd>
+          <dd><p><strong>它的答案是 model routing，规格写得最狠。</strong> 官方 /models 目录页原文：</p>
+            <p>&quot;giving you access to <strong>7815 models from 213 providers</strong> through a single API.&quot;</p>
+            <p>用法是 <code>provider/model</code> 字符串。官方示例： <code>openai/gpt-5.6-sol</code>、<code>anthropic/claude-sonnet-4-6</code>、<code>openrouter/anthropic/claude-haiku-4.5</code>。</p>
+            <p>缺 key 时，运行时错误会明确指出缺哪个变量。</p>
+            <p><strong>官方原文</strong>：&quot;Mastra reads the relevant environment variable (e.g. <code>ANTHROPIC_API_KEY</code>) and routes requests to the provider.&quot;</p>
+            <p><strong>官方支持 model fallbacks。</strong></p>
+            <p>也可按任务 mix-and-match 不同模型，还能用 <code>requestContext</code> 动态选模型。</p>
+            <p><strong>官方原文</strong>：&quot;If a provider experiences an outage, Mastra can automatically switch to another provider at the application level&quot;</p>
+            <p><strong>本地模型是官方明确支持的。</strong> /models 页有专节：</p>
+            <p><strong>官方原文</strong>：&quot;Use local models with Mastra&quot;</p>
+            <p><strong>官方原文</strong>：&quot;Mastra also supports local models like <code>gpt-oss</code>, <code>Qwen3</code>, <code>DeepSeek</code> ... that you run on your own hardware&quot;</p>
+            <p>前提是本地要提供 <strong>OpenAI 兼容</strong> API server。官方<strong>推荐 LMStudio</strong>。</p>
+            <p><strong>本地示例</strong>：</p>
+            <ul><li><code>id: &quot;lmstudio/qwen/qwen3-30b-a3b-2507&quot;</code></li><li><code>url: &quot;http://localhost:1234/v1&quot;</code></li></ul>
+            <p>⚠ <strong>一处官方自身数字打架</strong>：README 亮点段写的是 &quot;Connect to <strong>40+ providers</strong>&quot;， 而 /models 目录页写 &quot;213 providers / 7815 models&quot;。</p>
+            <p><strong>旧口径</strong>：本站以目录页为准，README 的 40+ 视为旧口径。</p>
+            <p><strong>换 provider 后各家 tool calling / structured output 的对齐度，官方未说明</strong>（已查 /models 页）。</p></dd>
         </div>
         <div class="axis">
           <dt><span data-zh>运行位置</span><span data-en>Where it runs</span></dt>
-          <dd><strong>纯库起步，但官方把「独立 server」和「托管平台」两条路都铺好了。</strong> 形态是 npm 包（<code>@mastra/core</code>，官方 <code>.npmrc</code> 要求 Node.js <code>&gt;=22.13.0</code>）， 官方 deployment 页原文：&quot;Mastra applications can be deployed to any Node.js-compatible environment.&quot;，运行时支持 Node.js v22.13.0+、Bun、Deno、Cloudflare。 它<strong>内置一个基于 Hono 的 server</strong>，可用 <code>mastra build</code> 打出后部署到任意 VM / 容器 / PaaS， 或作为 standalone server 独立运行；也能嵌进 Next.js / React / Node 应用。 本地开发用 <code>mastra dev</code>，Studio 起在 <code>http://localhost:4111</code>。 <strong>谁运营 agent loop</strong>：默认是你自己（自托管）；要托管可选 Mastra 平台 Server （官方称 &quot;A production deployment target that runs your Mastra application as an API server&quot;）。 <strong>多 agent 并发调度</strong>：走 workflows（内置执行引擎）或部署到 Inngest 等 workflow runner， 生产可用独立 worker 进程跑编排与 cron（官方 Workers 页）。 即「代码在哪」= 你的进程；「要不要托管」= 可选平台。</dd>
+          <dd><p><strong>纯库起步，但官方把「独立 server」和「托管平台」两条路都铺好了。</strong></p>
+            <p>形态是 npm 包（<code>@mastra/core</code>，官方 <code>.npmrc</code> 要求 Node.js <code>&gt;=22.13.0</code>）。</p>
+            <p><strong>官方原文</strong>：&quot;Mastra applications can be deployed to any Node.js-compatible environment.&quot;</p>
+            <p>运行时支持 Node.js v22.13.0+、Bun、Deno、Cloudflare。</p>
+            <p>它<strong>内置一个基于 Hono 的 server</strong>。可用 <code>mastra build</code> 打出后部署到任意 VM / 容器 / PaaS， 或作为 standalone server 独立运行；也能嵌进 Next.js / React / Node 应用。</p>
+            <p><strong>本地开发</strong>：用 <code>mastra dev</code>，Studio 起在 <code>http://localhost:4111</code>。</p>
+            <p><strong>谁运营 agent loop</strong>：默认是你自己（自托管）。要托管可选 Mastra 平台 Server —— <strong>官方原文</strong>：&quot;A production deployment target that runs your Mastra application as an API server&quot;。</p>
+            <p><strong>多 agent 并发调度</strong>：走 workflows（内置执行引擎），或部署到 Inngest 等 workflow runner。 生产可用独立 worker 进程跑编排与 cron（官方 Workers 页）。</p>
+            <p>即「代码在哪」= 你的进程；「要不要托管」= 可选平台。</p></dd>
         </div>
         <div class="axis">
           <dt><span data-zh>本地文件</span><span data-en>Local files</span></dt>
-          <dd><strong>核心框架不内置文件系统，文件能力要显式加装。</strong> Mastra 的定位是 AI 应用/agent 框架，官方文档<strong>没有把文件读写当成默认 agent 能力</strong>； README 与 agents 页讲的工具面是 <code>createTool()</code> 自定义工具与 MCP。 <strong>官方给的三条文件路径</strong>（已查 harness 页与 platform 页）： ① 自己用 <code>createTool()</code> 提供文件工具； ② 走 Harness 的 <strong><code>createCodingAgent()</code></strong> —— 官方 harness 表原文 &quot;Give an agent files, a shell, and the defaults a coding agent needs → <code>createCodingAgent()</code>&quot;， 它 &quot;Build a standard agent with a <strong>workspace</strong>, task tracking, and retries already configured&quot;； ③ 用 Mastra 平台的 <strong>Workspace</strong> —— 官方称每个 environment 会得到一个 managed Workspace， &quot;gives agents <strong>a filesystem and sandbox</strong> with no manual configuration&quot;。 <strong>核心框架自身的文件访问默认边界（是否限制在项目目录、越界是否拦截），官方未说明</strong> （已查 agents 页、harness 页、deployment 页）。宿主权限模型落在平台 Workspace 那侧，不在 OSS 核心。</dd>
+          <dd><p><strong>核心框架不内置文件系统，文件能力要显式加装。</strong></p>
+            <p>Mastra 的定位是 AI 应用/agent 框架，官方文档<strong>没有把文件读写当成默认 agent 能力</strong>。</p>
+            <p><strong>工具面</strong>：README 与 agents 页讲的工具面是 <code>createTool()</code> 自定义工具与 MCP。</p>
+            <p><strong>官方给的三条文件路径</strong>（已查 harness 页与 platform 页）：</p>
+            <p>① 自己用 <code>createTool()</code> 提供文件工具。</p>
+            <p>② 走 Harness 的 <strong><code>createCodingAgent()</code></strong>（官方 harness 表）。<strong>官方原文</strong>：&quot;Give an agent files, a shell, and the defaults a coding agent needs → <code>createCodingAgent()</code>&quot;</p>
+            <p>它 &quot;Build a standard agent with a <strong>workspace</strong>, task tracking, and retries already configured&quot;。</p>
+            <p>③ 用 Mastra 平台的 <strong>Workspace</strong>（官方称每个 environment 会得到一个 managed Workspace）：</p>
+            <p>&quot;gives agents <strong>a filesystem and sandbox</strong> with no manual configuration&quot;</p>
+            <p><strong>核心框架自身的文件访问默认边界（是否限制在项目目录、越界是否拦截），官方未说明。</strong></p>
+            <p><strong>核验</strong>：已查 agents 页、harness 页、deployment 页。宿主权限模型落在平台 Workspace 那侧，不在 OSS 核心。</p></dd>
         </div>
         <div class="axis">
           <dt><span data-zh>关机后的任务</span><span data-en>Tasks after shutdown</span></dt>
-          <dd><strong>这是它非常强的一维：durable agents + 可跨重启的 snapshot 是可查证的核心机制。</strong> 官方 suspend-and-resume 页原文：&quot;Suspension saves the current execution state as a <strong>snapshot</strong>. Later, resume from a specific step ID to restore the exact captured state. Snapshots are stored in your configured storage provider and <strong>persist across deployments and application restarts</strong>.&quot; 机制细节：<code>suspend()</code> 在某个 step 内暂停并把状态标为 <code>suspended</code>（workflow 级 <code>.sleep()/.sleepUntil()</code> 则标 <code>waiting</code>）；<code>resume({ step, resumeData })</code> 从暂停处继续，只给 <code>runId</code> 时需先 <code>createRun({ runId })</code>； <code>suspendData</code> 可在恢复时取回当初传给 <code>suspend()</code> 的数据；<code>workflow.getWorkflowRunById()</code> + <code>createWorkflowStateReader()</code> 可从存储中恢复悬挂的 run。 <strong>Harness 层还有</strong>：Durable Agents（&quot;Persist run state and let clients reconnect to its stream&quot;）、 Background Tasks（&quot;Run slow tools, workflows, or subagents without blocking&quot;）、 Schedules（cron 定时起 run）。 <strong>托管后台</strong>：Mastra 平台 Server 提供 24/7 常驻（官方定价页 Persistent Server <strong>$100/项目</strong>）； OSS 自托管则是「你自己把进程跑起来」，关了就停。</dd>
+          <dd><p><strong>这是它非常强的一维：durable agents + 可跨重启的 snapshot 都是可查证的核心机制。</strong> 官方 suspend-and-resume 页原文：</p>
+            <p>&quot;Suspension saves the current execution state as a <strong>snapshot</strong>. Later, resume from a specific step ID to restore the exact captured state. Snapshots are stored in your configured storage provider and <strong>persist across deployments and application restarts</strong>.&quot;</p>
+            <p>机制细节：</p>
+            <ul><li><code>suspend()</code> 在某个 step 内暂停，并把状态标为 <code>suspended</code></li><li>workflow 级 <code>.sleep()/.sleepUntil()</code> 标 <code>waiting</code></li><li><code>resume({ step, resumeData })</code> 从暂停处继续；只给 <code>runId</code> 时需先 <code>createRun({ runId })</code></li><li><code>suspendData</code> 可在恢复时取回当初传给 <code>suspend()</code> 的数据</li><li><code>workflow.getWorkflowRunById()</code> + <code>createWorkflowStateReader()</code> 可从存储中恢复悬挂的 run</li></ul>
+            <p><strong>Harness 层还有</strong>：</p>
+            <ul><li>Durable Agents：&quot;Persist run state and let clients reconnect to its stream&quot;</li><li>Background Tasks：&quot;Run slow tools, workflows, or subagents without blocking&quot;</li><li>Schedules：cron 定时起 run</li></ul>
+            <p><strong>托管后台</strong>：Mastra 平台 Server 提供 24/7 常驻（官方定价页 Persistent Server <strong>$100/项目</strong>）。 OSS 自托管则是「你自己把进程跑起来」，关了就停。</p></dd>
         </div>
         <div class="axis">
           <dt><span data-zh>工具与扩展</span><span data-en>Tools & extensions</span></dt>
-          <dd><strong>工具面是「自定义工具 + MCP 一等支持 + 可作 MCP server」三件套，官方文档给得很全。</strong> 自定义工具必须用 <code>createTool()</code>（官方 agents 页明确警告 plain object 工具 &quot;silently fail to execute&quot;， 需 <code>id</code> / <code>description</code> / <code>inputSchema</code> / <code>execute()</code>）。 <strong>MCP 是独立包 <code>@mastra/mcp</code></strong>，官方给两个类：<strong><code>MCPClient</code></strong>（连一个或多个 MCP server） 与 <strong><code>MCPServer</code></strong>（把 Mastra 的 agents / tools / workflows / prompts / resources 暴露成 MCP server）。 传输方式官方示例覆盖 <strong>stdio（<code>command: npx ...</code>）与远程 HTTP(S)（<code>url: new URL(...)</code>）</strong>， 并给了 Klavis AI、mcp.run、Composio、Smithery、Ampersand 等<strong>注册表接入</strong>示例。 还区分 <strong>静态工具（<code>getTools()</code>，配置固定）与动态工具（<code>getToolsets()</code>，按用户/请求带凭据）</strong>， 对多租户 SaaS 很有用。 另有 <strong>A2A</strong>（<code>@mastra/core</code> 暴露 <code>./a2a</code> 子路径）与 <strong>skills</strong>（<code>./skills</code>）子模块。 子代理/多 agent 委派官方称 supervisor + subagents（见 memory 页的 delegation 说明）。</dd>
+          <dd><p><strong>工具面是三件套：自定义工具 + MCP 一等支持 + 可作 MCP server。官方文档给得很全。</strong></p>
+            <p>自定义工具必须用 <code>createTool()</code>。</p>
+            <p>官方 agents 页明确警告：plain object 工具会 <strong>静默失败</strong>。</p>
+            <p><strong>官方原文</strong>：&quot;silently fail to execute&quot; —— 需 <code>id</code> / <code>description</code> / <code>inputSchema</code> / <code>execute()</code>。</p>
+            <p><strong>MCP 是独立包 <code>@mastra/mcp</code></strong>，官方给两个类：</p>
+            <ul><li><strong><code>MCPClient</code></strong>：连一个或多个 MCP server</li><li><strong><code>MCPServer</code></strong>：把 Mastra 的 agents / tools / workflows / prompts / resources 暴露成 MCP server</li></ul>
+            <p>传输方式官方示例覆盖 <strong>stdio（<code>command: npx ...</code>）与远程 HTTP(S)（<code>url: new URL(...)</code>）</strong>。 并给了 Klavis AI、mcp.run、Composio、Smithery、Ampersand 等<strong>注册表接入</strong>示例。</p>
+            <p>还区分两类工具：<strong>静态工具（<code>getTools()</code>，配置固定）</strong> 与 <strong>动态工具（<code>getToolsets()</code>，按用户/请求带凭据）</strong>，对多租户 SaaS 很有用。</p>
+            <p>另有 <strong>A2A</strong>（<code>@mastra/core</code> 暴露 <code>./a2a</code> 子路径）与 <strong>skills</strong>（<code>./skills</code>）子模块。 子代理/多 agent 委派官方称 supervisor + subagents（见 memory 页的 delegation 说明）。</p></dd>
         </div>
         <div class="axis">
           <dt><span data-zh>上下文与记忆</span><span data-en>Context & memory</span></dt>
-          <dd><strong>它把「记忆」拆成多层，且有「状态 ≠ 上下文」的两套机制。</strong> 官方 memory 页：默认存 <strong>message history</strong>，可另开三样 —— <strong>Observational Memory（推荐）</strong>：&quot;Uses background agents to maintain a dense observation log that <strong>replaces raw message history as it grows</strong>. This keeps the context window small while preserving long-term memory.&quot;；<strong>Working memory</strong>：存结构化的用户数据（名字、偏好、目标）； <strong>Semantic recall</strong>：按语义而非关键词召回历史消息。 超限时用 <strong>memory processors</strong> filter / trim / prioritize。作用域用 <code>resource</code>（用户/实体） + <code>thread</code>（会话）两个 ID 划分，多 agent 间可共享或隔离（<code>scope: &#39;resource&#39; | &#39;thread&#39;</code>）。 <strong>状态那一套</strong>是 workflow 的 snapshot（suspend/resume，见 background 轴）—— 与 memory 分离。 <strong>RAG 是独立系统</strong>（<code>@mastra/rag</code>）：MDocument 切块（recursive / sliding window）、 embedding，再落向量库（官方点名 <strong>pgvector、Pinecone、Qdrant、MongoDB</strong>）。 即：snapshot 存流程状态，memory 存对话与用户长期信息，RAG 存外部知识，三者用途不同。</dd>
+          <dd><p><strong>它把「记忆」拆成多层，且有「状态 ≠ 上下文」的两套机制。</strong></p>
+            <p>官方 memory 页：默认存 <strong>message history</strong>，可另开三样：</p>
+            <ul><li><strong>Observational Memory（推荐）</strong>：&quot;Uses background agents to maintain a dense observation log that <strong>replaces raw message history as it grows</strong>. This keeps the context window small while preserving long-term memory.&quot;</li></ul>
+            <ul><li><strong>Working memory</strong>：存结构化的用户数据（名字、偏好、目标）</li><li><strong>Semantic recall</strong>：按语义而非关键词召回历史消息</li></ul>
+            <p>超限时用 <strong>memory processors</strong> filter / trim / prioritize。 作用域用 <code>resource</code>（用户/实体）+ <code>thread</code>（会话）两个 ID 划分，多 agent 间可共享或隔离 （<code>scope: &#39;resource&#39; | &#39;thread&#39;</code>）。</p>
+            <p><strong>状态那一套</strong>是 workflow 的 snapshot（suspend/resume，见 background 轴）—— 与 memory 分离。</p>
+            <p><strong>RAG 是独立系统</strong>（<code>@mastra/rag</code>）：MDocument 切块（recursive / sliding window）、embedding， 再落向量库（官方点名 <strong>pgvector、Pinecone、Qdrant、MongoDB</strong>）。</p>
+            <p>即：snapshot 存流程状态，memory 存对话与用户长期信息，RAG 存外部知识，三者用途不同。</p></dd>
         </div>
         <div class="axis">
           <dt><span data-zh>权限与限制</span><span data-en>Permissions & limits</span></dt>
-          <dd><strong>认证是「可选、多 provider」，HITL 是 complete 的暂停/恢复，沙箱只落在平台侧。</strong> 官方 auth 页原文：&quot;<strong>Authentication is optional.</strong> If no auth is configured, all routes and Studio are <strong>publicly accessible</strong>.&quot; 配置后可同时锁住 <strong>Studio UI</strong>（登录 + RBAC）与 <strong>API 路由</strong>；自定义路由可用 <code>requiresAuth: false</code> 单开。内置 Simple Auth / JWT， 第三方支持 Auth0、Better Auth、Clerk、Firebase、Google、Okta、Supabase、WorkOS。 以及 Composite / 自定义 provider。 <strong>人工介入</strong>：用 workflow 的 suspend/resume 做审批（见 background 轴）， 官方另有 human-in-the-loop 页与 AgentController（会话内审批、排队跟进、停止 run）。 <strong>沙箱</strong>：OSS 核心是否提供进程/容器级沙箱，<strong>官方未说明</strong>；沙箱能力落在平台 <strong>Workspace</strong> 与 <code>createCodingAgent()</code>。 <strong>企业级权限</strong>（RBAC、SSO、IAM、network policy）属 <code>ee/</code> 企业许可（官方定价页 Self-Hosted Enterprise 卖点）。<strong>核心框架的网络访问控制机制，官方未说明</strong>（已查 auth 页与定价页）。</dd>
+          <dd><p><strong>认证是「可选、多 provider」，HITL 是完整的暂停/恢复，沙箱只落在平台侧。</strong> 官方 auth 页原文：</p>
+            <p>&quot;<strong>Authentication is optional.</strong> If no auth is configured, all routes and Studio are <strong>publicly accessible</strong>.&quot;</p>
+            <p>配置后可同时锁住 <strong>Studio UI</strong>（登录 + RBAC）与 <strong>API 路由</strong>；自定义路由可用 <code>requiresAuth: false</code> 单开。</p>
+            <ul><li><strong>内置</strong>：Simple Auth / JWT</li><li><strong>第三方</strong>：Auth0、Better Auth、Clerk、Firebase、Google、Okta、Supabase、WorkOS</li><li><strong>其他</strong>：Composite / 自定义 provider</li></ul>
+            <p><strong>已查</strong>：auth 页与定价页。</p>
+            <p><strong>人工介入</strong>：用 workflow 的 suspend/resume 做审批（见 background 轴）。 官方另有 human-in-the-loop 页与 AgentController（会话内审批、排队跟进、停止 run）。</p>
+            <p><strong>沙箱</strong>：OSS 核心是否提供进程/容器级沙箱，<strong>官方未说明</strong>。 沙箱能力落在平台 <strong>Workspace</strong> 与 <code>createCodingAgent()</code>。</p>
+            <p><strong>企业级权限</strong>（RBAC、SSO、IAM、network policy）属 <code>ee/</code> 企业许可 （官方定价页 Self-Hosted Enterprise 卖点）。</p>
+            <p><strong>核心框架的网络访问控制机制，官方未说明</strong>（已查 auth 页与定价页）。</p></dd>
         </div>
         <div class="axis">
           <dt><span data-zh>适合什么任务</span><span data-en>Best for</span></dt>
-          <dd><strong>适合</strong>：<strong>TypeScript / Node 团队</strong>要一套「开箱即用」的 agent 框架 —— Agents + 图 Workflows + Memory + RAG + Evals + MCP + 内置 server + Studio 全在一个包里； 需要材料化的 <strong>suspend/resume 与 durable run</strong>（snapshot 存在你自己的存储、跨重启可恢复）； 要接大量模型 provider 与本地模型（官方推荐 LMStudio）； 需要把 agent/workflow 用 MCP 暴露出去或当 MCP 客户端；想把 agent 嵌进 Next.js / React 应用。 <strong>不适合</strong>：<strong>Python 栈</strong>（该看 <a href="./langgraph.html">LangGraph</a> / <a href="./pydantic-ai.html">Pydantic AI</a>）； 想要 low-level、自己掌控图引擎与工具面（Mastra 抽象更高、包更大、约定更多）； 坚持完全不用任何商业组件（平台 Studio/观测/托管部署是单独的付费产品，<code>ee/</code> 目录需企业许可）； 需要框架自带进程级沙箱与网络策略（那部分不在 OSS 核心）。</dd>
+          <dd><p><strong>适合</strong>：</p>
+            <ul><li><strong>TypeScript / Node 团队</strong>要一套「开箱即用」的 agent 框架 —— Agents + 图 Workflows + Memory + RAG + Evals + MCP + 内置 server + Studio 全在一个包里</li></ul>
+            <ul><li>需要材料化的 <strong>suspend/resume 与 durable run</strong>（snapshot 存在你自己的存储、跨重启可恢复）</li><li>要接大量模型 provider 与本地模型（官方推荐 LMStudio）</li><li>需要把 agent/workflow 用 MCP 暴露出去，或当 MCP 客户端</li><li>想把 agent 嵌进 Next.js / React 应用</li></ul>
+            <p><strong>不适合</strong>：</p>
+            <ul><li><strong>Python 栈</strong>（该看 <a href="./langgraph.html">LangGraph</a> / <a href="./pydantic-ai.html">Pydantic AI</a>）</li><li>想要 low-level、自己掌控图引擎与工具面（Mastra 抽象更高、包更大、约定更多）</li><li>坚持完全不用任何商业组件（平台 Studio/观测/托管部署是单独的付费产品，<code>ee/</code> 目录需企业许可）</li><li>需要框架自带进程级沙箱与网络策略（那部分不在 OSS 核心）</li></ul></dd>
         </div>
       </dl>
 
@@ -180,10 +241,10 @@ Exposing your agents/workflows over MCP, or consuming MCP servers; embedding age
         <h2 class="warn"><span data-zh>头号误解</span><span data-en>Top misconception</span></h2>
         <ul>
 
-          <li><span data-zh>以为 Mastra 全是 Apache-2.0 免费 —— <code>ee/</code> 目录是 source-available，生产用需企业许可，仓库 license API 返回 NOASSERTION</span><span data-en>Assuming Mastra is entirely Apache-2.0 and free — code under <code>ee/</code> is source-available and needs an enterprise license for production; the repo license API returns NOASSERTION.</span></li>
-          <li><span data-zh>把 Mastra Studio / 观测 / 托管部署当成框架自带 —— 那些是 Mastra 平台产品，有 Starter $0 / Teams $250 / Enterprise 计费</span><span data-en>Treating Mastra Studio / observability / hosted deployment as part of the framework — those are Mastra platform products billed on Starter $0 / Teams $250 / Enterprise tiers.</span></li>
-          <li><span data-zh>把 README 的「40+ providers」当作上限 —— 官方 /models 目录页写的是 213 providers / 7815 models</span><span data-en>Taking the README&#39;s &quot;40+ providers&quot; as the ceiling — the official <code>/models</code> directory page states 213 providers / 7815 models.</span></li>
-          <li><span data-zh>以为本地模型要改代码 —— 官方支持 OpenAI 兼容端点，推荐 LMStudio，属配置项（<code>id</code> + <code>url</code>）</span><span data-en>Assuming local models need code changes — the official path is an OpenAI-compatible endpoint with LMStudio recommended, configured via <code>id</code> + <code>url</code>.</span></li>
+          <li><span data-zh>以为 Mastra 全是 Apache-2.0 免费 —— <code>ee/</code> 目录是 source-available，生产用需企业许可，仓库 license API 返回 NOASSERTION</span><span data-en>Assuming Mastra is entirely Apache-2.0 and free - the <code>ee/</code> directory is source-available and needs an enterprise licence for production; the repo licence API returns NOASSERTION</span></li>
+          <li><span data-zh>把 Mastra Studio / 观测 / 托管部署当成框架自带 —— 那些是 Mastra 平台产品，有 Starter $0 / Teams $250 / Enterprise 计费</span><span data-en>Treating Mastra Studio / observability / hosted deployment as part of the framework - those are Mastra platform products, billed on Starter $0 / Teams $250 / Enterprise tiers</span></li>
+          <li><span data-zh>把 README 的「40+ providers」当作上限 —— 官方 /models 目录页写的是 213 providers / 7815 models</span><span data-en>Taking the README&#39;s &quot;40+ providers&quot; as the ceiling - the official <code>/models</code> directory page states 213 providers / 7815 models</span></li>
+          <li><span data-zh>以为本地模型要改代码 —— 官方支持 OpenAI 兼容端点，推荐 LMStudio，属配置项（<code>id</code> + <code>url</code>）</span><span data-en>Assuming local models need code changes - the official path is an OpenAI-compatible endpoint with LMStudio recommended, configured via <code>id</code> + <code>url</code></span></li>
         </ul>
       </div>
 
@@ -192,9 +253,9 @@ Exposing your agents/workflows over MCP, or consuming MCP servers; embedding age
         <h2><span data-zh>价格</span><span data-en>Pricing</span></h2>
         <table class="src">
           <tbody>
-            <tr><th class="w-28"><span data-zh>月度入口</span><span data-en>Monthly entry</span></th><td><span data-zh>框架 Apache-2.0 自托管免费；Mastra 平台 Starter $0 / Teams $250 月付（核验 2026-10-08）</span><span data-en>框架 Apache-2.0 自托管免费；Mastra 平台 Starter $0 / Teams $250 月付（核验 2026-10-08）</span></td></tr>
-            <tr><th class="w-28"><span data-zh>年付</span><span data-en>Annual</span></th><td><span data-zh>未核验年付报价</span><span data-en>未核验年付报价</span></td></tr>
-            <tr><th class="w-28"><span data-zh>额度说明</span><span data-en>Quota note</span></th><td><span data-zh>**框架免费与商业平台是两条线，要分清。** 核验依据：仓库 README 的 Licensing 段（双许可）、官方定价页 mastra.ai/pricing（核验 2026-10-08）。 **开源侧**：README 原文 "The core framework and the vast majority of this codebase is open source under **Apache-2.0**"；但 "Code in any directory named `ee/` ... is source-available under the **Mastra Enterprise License**"，这些功能生产环境需企业许可。 **商业侧（Mastra 平台）**：官方定价页列三档 —— **Starter $0/月**（10 万 observability events、 24 CPU 小时、15 天数据保留、用户/部署/项目不限）、**Teams $250/月**（100 万 events、250 CPU 小时、 6 个月保留、多团队 + SSO + SOC 2 文档）、**Enterprise 定制**（RBAC、审计日志、SLA、专属支持）。 另单列 **Persistent Server（24/7 常驻）$100/项目**、Gateway 令牌 **Market Rate + 5.5%**。 **自托管一侧**：官方定价页 Self-Hosted 标签下 **Free（Apache 2.0）** 与 **Enterprise（Licensed self-hosted features，定制）** 两档，Enterprise 卖点是 RBAC/SSO/IAM、数据不出 VPC、统一年费。 **官方未说明** `ee/` 目录之外还有哪些功能属企业许可范围（已查仓库 README 许可段与定价页）。</span><span data-en>**框架免费与商业平台是两条线，要分清。** 核验依据：仓库 README 的 Licensing 段（双许可）、官方定价页 mastra.ai/pricing（核验 2026-10-08）。 **开源侧**：README 原文 "The core framework and the vast majority of this codebase is open source under **Apache-2.0**"；但 "Code in any directory named `ee/` ... is source-available under the **Mastra Enterprise License**"，这些功能生产环境需企业许可。 **商业侧（Mastra 平台）**：官方定价页列三档 —— **Starter $0/月**（10 万 observability events、 24 CPU 小时、15 天数据保留、用户/部署/项目不限）、**Teams $250/月**（100 万 events、250 CPU 小时、 6 个月保留、多团队 + SSO + SOC 2 文档）、**Enterprise 定制**（RBAC、审计日志、SLA、专属支持）。 另单列 **Persistent Server（24/7 常驻）$100/项目**、Gateway 令牌 **Market Rate + 5.5%**。 **自托管一侧**：官方定价页 Self-Hosted 标签下 **Free（Apache 2.0）** 与 **Enterprise（Licensed self-hosted features，定制）** 两档，Enterprise 卖点是 RBAC/SSO/IAM、数据不出 VPC、统一年费。 **官方未说明** `ee/` 目录之外还有哪些功能属企业许可范围（已查仓库 README 许可段与定价页）。</span></td></tr>
+            <tr><th class="w-28"><span data-zh>月度入口</span><span data-en>Monthly entry</span></th><td><span data-zh><p>框架 Apache-2.0 自托管免费；Mastra 平台 Starter $0 / Teams $250 月付（核验 2026-10-08）</p></span><span data-en><p>框架 Apache-2.0 自托管免费；Mastra 平台 Starter $0 / Teams $250 月付（核验 2026-10-08）</p></span></td></tr>
+            <tr><th class="w-28"><span data-zh>年付</span><span data-en>Annual</span></th><td><span data-zh><p>未核验年付报价</p></span><span data-en><p>未核验年付报价</p></span></td></tr>
+            <tr><th class="w-28"><span data-zh>额度说明</span><span data-en>Quota note</span></th><td><span data-zh><p><strong>框架免费与商业平台是两条线，要分清。</strong> 核验依据：仓库 README 的 Licensing 段（双许可）、官方定价页 mastra.ai/pricing（核验 2026-10-08）。 <strong>开源侧</strong>：README 原文 &quot;The core framework and the vast majority of this codebase is open source under <strong>Apache-2.0</strong>&quot;；但 &quot;Code in any directory named <code>ee/</code> ... is source-available under the <strong>Mastra Enterprise License</strong>&quot;，这些功能生产环境需企业许可。 <strong>商业侧（Mastra 平台）</strong>：官方定价页列三档 —— <strong>Starter $0/月</strong>（10 万 observability events、 24 CPU 小时、15 天数据保留、用户/部署/项目不限）、<strong>Teams $250/月</strong>（100 万 events、250 CPU 小时、 6 个月保留、多团队 + SSO + SOC 2 文档）、<strong>Enterprise 定制</strong>（RBAC、审计日志、SLA、专属支持）。 另单列 <strong>Persistent Server（24/7 常驻）$100/项目</strong>、Gateway 令牌 <strong>Market Rate + 5.5%</strong>。 <strong>自托管一侧</strong>：官方定价页 Self-Hosted 标签下 <strong>Free（Apache 2.0）</strong> 与 <strong>Enterprise（Licensed self-hosted features，定制）</strong> 两档，Enterprise 卖点是 RBAC/SSO/IAM、数据不出 VPC、统一年费。 <strong>官方未说明</strong> <code>ee/</code> 目录之外还有哪些功能属企业许可范围（已查仓库 README 许可段与定价页）。</p></span><span data-en><p><strong>框架免费与商业平台是两条线，要分清。</strong> 核验依据：仓库 README 的 Licensing 段（双许可）、官方定价页 mastra.ai/pricing（核验 2026-10-08）。 <strong>开源侧</strong>：README 原文 &quot;The core framework and the vast majority of this codebase is open source under <strong>Apache-2.0</strong>&quot;；但 &quot;Code in any directory named <code>ee/</code> ... is source-available under the <strong>Mastra Enterprise License</strong>&quot;，这些功能生产环境需企业许可。 <strong>商业侧（Mastra 平台）</strong>：官方定价页列三档 —— <strong>Starter $0/月</strong>（10 万 observability events、 24 CPU 小时、15 天数据保留、用户/部署/项目不限）、<strong>Teams $250/月</strong>（100 万 events、250 CPU 小时、 6 个月保留、多团队 + SSO + SOC 2 文档）、<strong>Enterprise 定制</strong>（RBAC、审计日志、SLA、专属支持）。 另单列 <strong>Persistent Server（24/7 常驻）$100/项目</strong>、Gateway 令牌 <strong>Market Rate + 5.5%</strong>。 <strong>自托管一侧</strong>：官方定价页 Self-Hosted 标签下 <strong>Free（Apache 2.0）</strong> 与 <strong>Enterprise（Licensed self-hosted features，定制）</strong> 两档，Enterprise 卖点是 RBAC/SSO/IAM、数据不出 VPC、统一年费。 <strong>官方未说明</strong> <code>ee/</code> 目录之外还有哪些功能属企业许可范围（已查仓库 README 许可段与定价页）。</p></span></td></tr>
           </tbody>
         </table>
         <p class="fine mt-3"><span data-zh>不同币种不做折算。优惠、地区、税费与登录后报价可能变化，购买前请到官方页面确认。</span><span data-en>No currency conversion. Discounts, regions, tax and post-login pricing can change — confirm on the official page before buying.</span></p>
@@ -242,20 +303,71 @@ Exposing your agents/workflows over MCP, or consuming MCP servers; embedding age
 
             <div class="panel is-slim">
         <h2><span data-zh>实测记录</span><span data-en>Measured runs</span></h2>
-        <p>本站尚未完成实测。测试协议见 <a href="https://github.com/speculcom/ai-agent-guide/blob/main/tracks/agents/tasks/_protocol.md" target="_blank" rel="noopener">tasks/_protocol.md</a>。
-
-<strong>实测建议</strong>（按编排框架 + TS 生态维度定制）：
-
-| # | 测什么 | 为什么值得测 |
-|:--:|---|---|
-| 1 | 一个最小 agent + workflow 要几个文件、多少行 | 量化「everything you need」的真实上手成本 |
-| 2 | workflow 跑到一半 kill 进程，靠 snapshot 能否真从暂停 step 恢复 | 官方承诺 persist across restarts，须验证 |
-| 3 | 用 LMStudio 接本地模型跑通一个 workflow | 官方点名推荐，验证真实可行性 |
-| 4 | 同一任务分别用 agent 与 workflow 实现，代码量差多少 | 验证「明确流程用 workflow」的官方建议 |
-| 5 | Observational Memory 压缩后的信息损失与额外 LLM 成本 | 官方推荐默认开，代价未实测 |
-| 6 | OSS 自托管走 <code>mastra build</code> 部署到自有容器的最小路径 | 验证「纯库也能上生产」的程度 |</p>
+        <p>本站尚未完成实测。测试协议见 <a href="https://github.com/speculcom/ai-agent-guide/blob/main/tracks/agents/tasks/_protocol.md" target="_blank" rel="noopener">tasks/_protocol.md</a>。</p>
+            <p><strong>实测建议</strong>（按编排框架 + TS 生态维度定制）：</p>
+            <div class="tbl-wrap"><table><thead><tr><th>#</th><th>测什么</th><th>为什么值得测</th></tr></thead><tbody><tr><td>1</td><td>一个最小 agent + workflow 要几个文件、多少行</td><td>量化「everything you need」的真实上手成本</td></tr><tr><td>2</td><td>workflow 跑到一半 kill 进程，靠 snapshot 能否真从暂停 step 恢复</td><td>官方承诺 persist across restarts，须验证</td></tr><tr><td>3</td><td>用 LMStudio 接本地模型跑通一个 workflow</td><td>官方点名推荐，验证真实可行性</td></tr><tr><td>4</td><td>同一任务分别用 agent 与 workflow 实现，代码量差多少</td><td>验证「明确流程用 workflow」的官方建议</td></tr><tr><td>5</td><td>Observational Memory 压缩后的信息损失与额外 LLM 成本</td><td>官方推荐默认开，代价未实测</td></tr><tr><td>6</td><td>OSS 自托管走 <code>mastra build</code> 部署到自有容器的最小路径</td><td>验证「纯库也能上生产」的程度</td></tr></tbody></table></div>
       </div>
 
+
+            <div class="panel is-slim">
+        <h2>TypeScript 生态里的「batteries included」一极</h2>
+        <p>本站 harness 分区里，Python 侧已经有一批对象：LangGraph / CrewAI / OpenAI Agents SDK / Pydantic AI。</p>
+            <p><strong>Mastra 就是把同一件事翻译到 TypeScript 世界的那一个</strong>，而且抽象层次更高：</p>
+            <div class="tbl-wrap"><table><thead><tr><th></th><th>LangGraph</th><th><strong>Mastra</strong></th></tr></thead><tbody><tr><td>语言</td><td>Python（另有 langgraphjs）</td><td><strong>TypeScript（主业）</strong></td></tr><tr><td>自述</td><td>low-level 编排框架</td><td>&quot;<strong>everything you need</strong>&quot;，out-of-the-box</td></tr><tr><td>图工作流</td><td>显式 graph / superstep</td><td><code>createWorkflow()</code> + <code>.then()/.branch()/.parallel()</code></td></tr><tr><td>预置能力</td><td>不管工具/文件系统</td><td><strong>Memory / RAG / Evals / MCP / server / Studio 全预置</strong></td></tr><tr><td>商业线</td><td>LangSmith Deployment</td><td><strong>Mastra 平台</strong>（Observability / Studio / Server，YC W25）</td></tr></tbody></table></div>
+            <p><strong>一句口诀</strong>：想自己画流程、要最低层 → LangGraph；想少接线、要开箱就全 → Mastra。</p>
+      </div>
+      <div class="panel is-slim">
+        <h2>模型路由：为第一决策点给出的最完整答案</h2>
+        <p><strong>它的第一决策点答案是 model routing，而且规格写得最完整：一个 <code>provider/model</code> 字符串就能换 provider。</strong> 官方 /models 目录页原文：</p>
+            <blockquote>giving you access to <strong>7815 models from 213 providers</strong> through a single API.</blockquote>
+            <p>用法就是 <code>provider/model</code> 字符串。Mastra 自己读对应环境变量并路由。官方还给三种选法：</p>
+            <ul><li><strong>model fallbacks</strong>：provider 挂了自动切</li><li>按任务 mix-and-match 不同模型</li><li>用 <code>requestContext</code> 动态选模型</li></ul>
+            <p><strong>本地模型是官方明确支持的。</strong> /models 页有专节 &quot;Use local models with Mastra&quot;：</p>
+            <blockquote>Mastra also supports local models like <code>gpt-oss</code>, <code>Qwen3</code>, <code>DeepSeek</code> ... that you run on your own hardware</blockquote>
+            <p>本地服务需提供 <strong>OpenAI 兼容</strong> API。官方<strong>推荐 LMStudio</strong>。</p>
+            <p><strong>本地示例</strong>：</p>
+            <ul><li><code>id: &quot;lmstudio/qwen/qwen3-30b-a3b-2507&quot;</code></li><li><code>url: &quot;http://localhost:1234/v1&quot;</code></li></ul>
+            <blockquote>⚠ <strong>一处要替读者校准的官方数字</strong>：仓库 README 亮点段写 &quot;Connect to <strong>40+ providers</strong>&quot;， 而 /models 目录页写 <strong>213 providers / 7815 models</strong> —— 两者差得远。本站以目录页为准， README 的 40+ 视为旧口径。</blockquote>
+            <p><strong>未知</strong>：换 provider 后各家 tool calling / structured output 的对齐度，官方未说明。</p>
+      </div>
+      <div class="panel is-slim">
+        <h2>状态 ≠ 上下文：它两套机制都给了</h2>
+        <p><strong>Mastra 把「流程状态」和「对话记忆」分得很清，这是它最值得记的一处设计。</strong></p>
+            <ul><li><strong>流程状态</strong> = workflow 的 <strong>snapshot</strong>，粒度到 step。官方 suspend-and-resume 页原文：</li></ul>
+            <blockquote>Suspension saves the current execution state as a <strong>snapshot</strong> ... stored in your configured storage provider and <strong>persist across deployments and application restarts</strong>.</blockquote>
+            <p>这就是本站要找的「可跨进程恢复的状态持久化」。</p>
+            <ul><li><strong>对话/长期记忆</strong> = memory 的多层：</li><li>message history（默认）</li><li><strong>Observational Memory</strong>：后台 agent 把旧消息压成 observation，官方推荐</li><li><strong>working memory</strong>：结构化用户数据</li><li><strong>semantic recall</strong>：语义召回</li></ul>
+            <p>超限时用 <strong>memory processors</strong> 裁剪。</p>
+            <ul><li><strong>外部知识</strong> = RAG（<code>@mastra/rag</code> + 向量库）。</li></ul>
+            <p><strong>三者用途不同、存储也可分开配置</strong> —— 这正是本站主张的「状态 ≠ 上下文」的落地形态。</p>
+      </div>
+      <div class="panel is-slim">
+        <h2>工具与 MCP：既能当客户端，也能当 server</h2>
+        <p><strong>工具面是三件套：自定义工具、MCP 客户端、MCP server。</strong> 官方给两个类（独立包 <code>@mastra/mcp</code>）：</p>
+            <ul><li><strong><code>MCPClient</code></strong>：连一个或多个 MCP server —— stdio（<code>command: npx ...</code>）或远程 HTTP（<code>url</code>）。</li><li><strong><code>MCPServer</code></strong>：把你自己的 agents / tools / workflows / prompts / resources 暴露成 MCP server。</li></ul>
+            <p>还区分两类工具：</p>
+            <ul><li><strong>静态工具 <code>getTools()</code></strong>：配置固定</li><li><strong>动态工具 <code>getToolsets()</code></strong>：按用户/请求带凭据</li></ul>
+            <p>官方给了 Klavis AI、mcp.run、Composio、Smithery、Ampersand 等注册表接入示例。</p>
+            <p>自定义工具必须走 <code>createTool()</code> —— 官方 agents 页明确警告 plain object 工具会 <strong>静默失败</strong>。</p>
+      </div>
+      <div class="panel is-slim">
+        <h2>许可与商业线：必须分开读</h2>
+        <p><strong>结论先说：核心框架 Apache-2.0，<code>ee/</code> 目录 source-available，生产用需企业许可。</strong></p>
+            <p>仓库 README 的 Licensing 段说得很清楚，是<strong>双许可</strong>：</p>
+            <blockquote><strong>Apache License 2.0</strong>: The core framework and the vast majority of this codebase is open source under Apache-2.0. <strong>Mastra Enterprise License</strong>: Code in any directory named <code>ee/</code> ... is source-available ... require a valid enterprise license for production use.</blockquote>
+            <p>GitHub 的 license API 对整仓返回 <strong>NOASSERTION</strong>，与这段双许可声明一致 —— 不是「无许可」，是「非标准双许可」。</p>
+            <p>另一条线是 <strong>Mastra 平台</strong>（YC W25）。官方定价页（核验 2026-10-08）分两处：</p>
+            <ul><li><strong>平台三档</strong>：<strong>Starter $0/月</strong>、<strong>Teams $250/月</strong>、<strong>Enterprise 定制</strong></li><li><strong>自托管两档</strong>：Free 与 Enterprise</li></ul>
+            <p><strong>Studio、Observability、托管 Server 与 24/7 常驻（$100/项目）都是平台产品，不是框架自带。</strong></p>
+      </div>
+      <div class="panel is-slim">
+        <h2>核验说明</h2>
+        <p><code>confidence: partial</code> 的依据：</p>
+            <p><strong>为什么仍是 partial</strong>：八维已全部从官方页核到结论，但仍有若干处<strong>官方确实没写</strong>、 只能记「官方未说明」的项。<strong>共四处</strong>：</p>
+            <ul><li>换 provider 后各家 tool calling / structured output 的对齐度</li><li>核心框架自身的文件访问默认边界</li><li>OSS 核心的网络访问控制机制</li><li><code>ee/</code> 与开源的功能分界</li></ul>
+            <p>这些不是「没查到」，是官方文档本身没给，故不足以升到 verified。</p>
+            <blockquote>本轮核到的官方页：仓库 README（定位、亮点、Licensing 双许可段）、 <code>/models</code>（provider 与本地模型）、<code>/models/providers</code>、<code>docs/workflows/overview</code>、 <code>docs/workflows/suspend-and-resume</code>、<code>docs/memory/overview</code>、<code>docs/rag/overview</code>、 <code>docs/evals/overview</code>、<code>docs/tools-mcp/mcp-overview</code>、<code>docs/deployment/overview</code>、 <code>docs/mastra-platform/overview</code>、<code>docs/harness/overview</code>、<code>docs/auth/overview</code>、 <code>docs/agents/overview</code>、官方定价页 <code>mastra.ai/pricing</code>、 releases（<code>@mastra/core@1.75.0</code> @ 2026-10-07）、npm registry（<code>@mastra/core</code> engines Node <code>&gt;=22.13.0</code>）。 <strong>核验方法</strong>：WebFetch 打开各官方页与 GitHub API（仓库元数据、releases）。</blockquote>
+      </div>
 
             <div class="panel is-slim">
         <h2><span data-zh>相关条目</span><span data-en>Related entries</span></h2>
