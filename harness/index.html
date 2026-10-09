@@ -4,18 +4,18 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>自己搭的底座 — 运行时、编排框架、SDK | 投机取巧</title>
-  <meta name="description" content="&lt;span data-zh&gt;Agent 运行时 / 编排框架 / SDK 的责任边界、状态持久化能力与权限模型。收录标准：提供 Agent 运行时或编排层、有官方文档可回溯、近 30 天有实质更新。&lt;/span&gt;&lt;span data-en&gt;The responsibility boundaries of agent runtimes, orchestration frameworks and SDKs, plus state persistence and permission models. Admission criteria: provides an agent runtime or orchestration layer, has official documentation that can be traced back, and has substantive updates within the last 30 days.&lt;/span&gt;" />
+  <meta name="description" content="Agent 运行时 / 编排框架 / SDK 的责任边界、状态持久化能力与权限模型。收录标准：提供 Agent 运行时或编排层、有官方文档可回溯、近 30 天有实质更新。" />
   <link rel="canonical" href="https://agent.specul.com/harness/" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="自己搭的底座" />
   <meta property="og:url" content="https://agent.specul.com/harness/" />
   <meta property="og:title" content="自己搭的底座 — 运行时、编排框架、SDK | 投机取巧" />
-  <meta property="og:description" content="&lt;span data-zh&gt;Agent 运行时 / 编排框架 / SDK 的责任边界、状态持久化能力与权限模型。收录标准：提供 Agent 运行时或编排层、有官方文档可回溯、近 30 天有实质更新。&lt;/span&gt;&lt;span data-en&gt;The responsibility boundaries of agent runtimes, orchestration frameworks and SDKs, plus state persistence and permission models. Admission criteria: provides an agent runtime or orchestration layer, has official documentation that can be traced back, and has substantive updates within the last 30 days.&lt;/span&gt;" />
+  <meta property="og:description" content="Agent 运行时 / 编排框架 / SDK 的责任边界、状态持久化能力与权限模型。收录标准：提供 Agent 运行时或编排层、有官方文档可回溯、近 30 天有实质更新。" />
   <meta name="theme-color" content="#05080f" />
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%238b7cf8'/%3E%3Cstop offset='1' stop-color='%2322d3c5'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='48' height='48' rx='12' fill='%2305080f'/%3E%3Cpath d='M14 32 L24 12 L34 32' fill='none' stroke='url(%23g)' stroke-width='2.4' stroke-linejoin='round'/%3E%3Ccircle cx='24' cy='27' r='2.4' fill='%2322d3c5'/%3E%3C/svg%3E" />
   <link rel="stylesheet" href="../brand.css" />
   <link rel="stylesheet" href="../site.css" />
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"CollectionPage","name":"自己搭的底座","description":"<span data-zh>Agent 运行时 / 编排框架 / SDK 的责任边界、状态持久化能力与权限模型。收录标准：提供 Agent 运行时或编排层、有官方文档可回溯、近 30 天有实质更新。</span><span data-en>The responsibility boundaries of agent runtimes, orchestration frameworks and SDKs, plus state persistence and permission models. Admission criteria: provides an agent runtime or orchestration layer, has official documentation that can be traced back, and has substantive updates within the last 30 days.</span>","url":"https://agent.specul.com/harness/","isPartOf":{"@type":"WebSite","name":"Specul","url":"https://specul.com/"},"about":[{"@type":"SoftwareApplication","name":"Claude Agent SDK","applicationCategory":"DeveloperApplication","url":"https://platform.claude.com/docs/en/agent-sdk/python"},{"@type":"SoftwareApplication","name":"Codex SDK","applicationCategory":"DeveloperApplication","url":"https://developers.openai.com/codex/"},{"@type":"SoftwareApplication","name":"CrewAI","applicationCategory":"DeveloperApplication","url":"https://crewai.com"},{"@type":"SoftwareApplication","name":"Deep Agents","applicationCategory":"DeveloperApplication","url":"https://github.com/langchain-ai/deepagents"},{"@type":"SoftwareApplication","name":"Google ADK（Agent Development Kit）","applicationCategory":"DeveloperApplication","url":"https://google.github.io/adk-docs/"},{"@type":"SoftwareApplication","name":"Hermes Agent","applicationCategory":"DeveloperApplication","url":"https://hermes-agent.nousresearch.com/"},{"@type":"SoftwareApplication","name":"LangGraph","applicationCategory":"DeveloperApplication","url":"https://docs.langchain.com/oss/python/langgraph/"},{"@type":"SoftwareApplication","name":"LlamaIndex Framework","applicationCategory":"DeveloperApplication","url":"https://developers.llamaindex.ai/"},{"@type":"SoftwareApplication","name":"OpenAI Agents SDK","applicationCategory":"DeveloperApplication","url":"https://openai.github.io/openai-agents-python/"},{"@type":"SoftwareApplication","name":"OpenHands Agent Canvas","applicationCategory":"DeveloperApplication","url":"https://openhands.dev"}]}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"CollectionPage","name":"自己搭的底座","description":"<span data-zh>Agent 运行时 / 编排框架 / SDK 的责任边界、状态持久化能力与权限模型。收录标准：提供 Agent 运行时或编排层、有官方文档可回溯、近 30 天有实质更新。</span><span data-en>The responsibility boundaries of agent runtimes, orchestration frameworks and SDKs, plus state persistence and permission models. Admission criteria: provides an agent runtime or orchestration layer, has official documentation that can be traced back, and has substantive updates within the last 30 days.</span>","url":"https://agent.specul.com/harness/","isPartOf":{"@type":"WebSite","name":"Specul","url":"https://specul.com/"},"about":[{"@type":"SoftwareApplication","name":"AG2","applicationCategory":"DeveloperApplication","url":"https://ag2.ai"},{"@type":"SoftwareApplication","name":"Claude Agent SDK","applicationCategory":"DeveloperApplication","url":"https://platform.claude.com/docs/en/agent-sdk/python"},{"@type":"SoftwareApplication","name":"Codex SDK","applicationCategory":"DeveloperApplication","url":"https://developers.openai.com/codex/"},{"@type":"SoftwareApplication","name":"CrewAI","applicationCategory":"DeveloperApplication","url":"https://crewai.com"},{"@type":"SoftwareApplication","name":"Deep Agents","applicationCategory":"DeveloperApplication","url":"https://github.com/langchain-ai/deepagents"},{"@type":"SoftwareApplication","name":"Google ADK（Agent Development Kit）","applicationCategory":"DeveloperApplication","url":"https://google.github.io/adk-docs/"},{"@type":"SoftwareApplication","name":"Hermes Agent","applicationCategory":"DeveloperApplication","url":"https://hermes-agent.nousresearch.com/"},{"@type":"SoftwareApplication","name":"LangGraph","applicationCategory":"DeveloperApplication","url":"https://docs.langchain.com/oss/python/langgraph/"},{"@type":"SoftwareApplication","name":"LlamaIndex Framework","applicationCategory":"DeveloperApplication","url":"https://developers.llamaindex.ai/"},{"@type":"SoftwareApplication","name":"Mastra","applicationCategory":"DeveloperApplication","url":"https://mastra.ai"},{"@type":"SoftwareApplication","name":"Microsoft Agent Framework","applicationCategory":"DeveloperApplication","url":"https://learn.microsoft.com/en-us/agent-framework/"},{"@type":"SoftwareApplication","name":"OpenAI Agents SDK","applicationCategory":"DeveloperApplication","url":"https://openai.github.io/openai-agents-python/"},{"@type":"SoftwareApplication","name":"OpenHands Agent Canvas","applicationCategory":"DeveloperApplication","url":"https://openhands.dev"},{"@type":"SoftwareApplication","name":"Pydantic AI","applicationCategory":"DeveloperApplication","url":"https://ai.pydantic.dev"},{"@type":"SoftwareApplication","name":"smolagents","applicationCategory":"DeveloperApplication","url":"https://huggingface.co/docs/smolagents"}]}</script>
 </head>
 <body class="brand-ambient">
   <a class="t-skip" href="#main"><span data-zh>跳到主要内容</span><span data-en>Skip to main content</span></a>
@@ -39,8 +39,34 @@
           <button class="icon-btn" id="langBtn" type="button" aria-label="Switch language" title="Switch language">EN</button>
         </span>
       </nav>
+      <!-- B6（2026-10-09）：与共享 shell 同步加的移动端导航入口。
+           ⚠ 本文件是 agent 站**自己的** shell 副本（它多一层分区切换），
+             所以每次改共享 shell 的骨架，这里也要跟一次 —— 这是双份实现固有的代价。
+             样式与行为都在共享 brand.css / brand.js 里，这里只出标记。 -->
+      <button class="nav-burger" type="button" aria-label="打开菜单" aria-expanded="false" aria-controls="navDrawer">
+        <i></i><i></i><i></i>
+      </button>
     </div>
   </header>
+  <div class="nav-scrim"></div>
+  <aside class="nav-drawer" id="navDrawer" aria-hidden="true" aria-label="站点导航">
+    <div class="nav-drawer-h">
+      <span class="brand-name"><span data-zh>投机取巧</span><span data-en>Speculative Speculation</span></span>
+      <button class="nav-dclose" type="button" aria-label="关闭">×</button>
+    </div>
+    <nav class="nav-drawer-list">
+      <a href="https://specul.com/"><span><span data-zh>首页</span><span data-en>Home</span></span><span class="ar" aria-hidden="true">→</span></a>
+      <a href="https://learn.specul.com/"><span><span data-zh>学 AI</span><span data-en>Learn</span></span><span class="ar" aria-hidden="true">→</span></a>
+      <a href="https://agent.specul.com/" aria-current="page"><span><span data-zh>Agent</span><span data-en>Agent</span></span><span class="ar" aria-hidden="true">→</span></a>
+      <a href="https://models.specul.com/"><span><span data-zh>本地模型</span><span data-en>Models</span></span><span class="ar" aria-hidden="true">→</span></a>
+      <a href="https://vg.specul.com/"><span><span data-zh>AI 做游戏</span><span data-en>Vibe Gaming</span></span><span class="ar" aria-hidden="true">→</span></a>
+      <a href="https://nav.specul.com/"><span><span data-zh>导航</span><span data-en>Directory</span></span><span class="ar" aria-hidden="true">→</span></a>
+    </nav>
+    <div class="nav-drawer-foot">
+      <p><span data-zh>6 个站，各管一件事</span><span data-en>Six sites, one job each</span></p>
+      <nav><a href="https://specul.com/legal.html"><span data-zh>法律条款</span><span data-en>Legal terms</span></a></nav>
+    </div>
+  </aside>
   <main id="main">
     <section class="hero">
       <div class="container">
@@ -48,19 +74,19 @@
         <h1 class="t-hero"><span data-zh>自己搭的底座</span><span data-en>Runtimes &amp; SDKs</span></h1>
         <p class="lede"><span data-zh>Agent 运行时 / 编排框架 / SDK 的责任边界、状态持久化能力与权限模型。收录标准：提供 Agent 运行时或编排层、有官方文档可回溯、近 30 天有实质更新。</span><span data-en>The responsibility boundaries of agent runtimes, orchestration frameworks and SDKs, plus state persistence and permission models. Admission criteria: provides an agent runtime or orchestration layer, has official documentation that can be traced back, and has substantive updates within the last 30 days.</span></p>
         <div class="hero-meta">
-          <span><b>10</b> <span data-zh>个对象</span><span data-en>objects</span></span>
+          <span><b>15</b> <span data-zh>个对象</span><span data-en>objects</span></span>
           <span><b>8</b> <span data-zh>个固定维度</span><span data-en>fixed dimensions</span></span>
           <span><b>0</b> <span data-zh>个已完整核验</span><span data-en>fully verified</span></span>
-          <span><span data-zh>最后核验</span><span data-en>Last checked</span> <b>2026-10-01</b></span>
+          <span><span data-zh>最后核验</span><span data-en>Last checked</span> <b>2026-10-08</b></span>
         </div>
       </div>
     </section>
 
     <nav class="part-bar" aria-label="站内分区">
       <div class="container">
-        <a href="/" style="--pa:#8b7cf8"><b>Agents</b><span><span data-zh>装在编辑器、终端，或厂商云里</span><span data-en>Installed in an editor, a terminal, or a vendor cloud</span></span></a>
-        <a href="/harness/" aria-current="page" style="--pa:#3b82f6"><b>Harness</b><span><span data-zh>运行时、编排框架、SDK</span><span data-en>Runtimes, orchestration frameworks, SDKs</span></span></a>
-        <a href="/tools/" style="--pa:#22d3c5"><b>Tools</b><span><span data-zh>缺什么，装什么 —— 给 agent 装的 MCP 工具</span><span data-en>Fill the gap — MCP tools an agent can install</span></span></a>
+        <a href="/" style="--pa:var(--pa-agents)"><b>Agents</b><span><span data-zh>装在编辑器、终端，或厂商云里</span><span data-en>Installed in an editor, a terminal, or a vendor cloud</span></span></a>
+        <a href="/harness/" aria-current="page" style="--pa:var(--pa-harness)"><b>Harness</b><span><span data-zh>运行时、编排框架、SDK</span><span data-en>Runtimes, orchestration frameworks, SDKs</span></span></a>
+        <a href="/tools/" style="--pa:var(--pa-tools)"><b>Tools</b><span><span data-zh>缺什么，装什么 —— 给 agent 装的 MCP 工具</span><span data-en>Fill the gap — MCP tools an agent can install</span></span></a>
       </div>
     </nav>
 
@@ -103,14 +129,22 @@
       <div class="container">
         <h2><span data-zh>按抽象层分组</span><span data-en>By abstraction layer</span></h2>
         <p class="section-desc"><span data-zh>同一层里也能差很远 —— 两个「编程底座」一个是纯原语、一个是全托管包装 CLI，所以先按抽象层分，再看具体对象。</span><span data-en>Even within a layer the gap is wide — of two "coding bases", one is pure primitives and one is a fully managed CLI wrapper. So group by abstraction first, then look at the object.</span></p>
+                <div class="afilter" role="search">
+          <label class="af-f"><span class="af-h"><span data-zh>筛选档案</span><span data-en>Filter entries</span></span>
+            <input type="search" class="aq" autocomplete="off" placeholder="Cursor · Claude · Aider"></label>
+          <label class="af-f"><span class="af-h"><span data-zh>抽象层</span><span data-en>Layer</span></span>
+            <select class="asel-form" data-attr="family"><option value="">全部 / All</option><option value="coding-base">编程底座 / Coding base</option><option value="orchestration">编排框架 / Orchestration</option><option value="general-harness">通用 Harness / General harness</option></select></label>
+          <span class="af-note"><span data-zh>完整度：全部 15 份均 100%（无差异，故不提供排序）</span><span data-en>Completeness: all 15 entries are at 100% (no variation, so no sort)</span></span>
+          <span class="acount" aria-live="polite"></span>
+        </div>
         <div class="fam-block" data-family="coding-base">
           <div class="fam-head">
-            <h3><span data-zh>编程底座</span><span data-en>Coding base</span> <span class="fam-n">3</span></h3>
+            <h3><span data-zh>编程底座</span><span data-en>Coding base</span> <span class="fam-n">5</span></h3>
             <span class="fam-badge"><span data-zh>编程底座</span><span data-en>Coding base</span></span>
             <p><span data-zh>给你 agent loop 或现成 CLI 的编程接口。这层的差别不在功能多少，而在<strong>它替你做多少决定</strong> —— 一个只给原语，一个把整套 CLI 连权限模型一起打包给你。</span><span data-en>A programming interface giving you an agent loop or an existing CLI. The difference here is not how much it does but <strong>how many decisions it makes for you</strong> — one hands you primitives, the other packages the whole CLI along with its permission model.</span></p>
           </div>
           <div class="grid">
-        <article class="card" style="--card-accent:#D97757">
+        <article class="card" style="--card-accent:#D97757" data-track="harness" data-family="coding-base" data-conf="partial" data-done="8" data-total="8" data-name="Claude Agent SDK" data-blob="claude agent sdk anthropic **「claude code 的编程接口」** —— 不是自建 agent 框架，是把一个成熟的 coding cli 变成 python 可驱动的对象。">
           <div class="card-top">
             <div class="mark" aria-hidden="true">CA</div>
             <div class="card-id">
@@ -124,7 +158,10 @@
             <a class="more" href="./claude-agent-sdk.html" aria-label="Claude Agent SDK 详情"><span data-zh>详情 →</span><span data-en>Details →</span></a>
           </div>
         </article>
-        <article class="card" style="--card-accent:#10A37F">
+        <article class="card" style="--card-accent:#10A37F" data-track="harness" data-family="coding-base" data-conf="partial" data-done="8" data-total="8" data-name="Codex SDK" data-blob="codex sdk openai **「把 codex cli 变成 node 进程里可驱动的对象」** —— 官方 readme 首句就是
+「embed the codex agent in your workflows and apps」，第二句划清了形态：
+&gt; the typescript sdk **wraps** the `codex` cli from `@openai/codex`.
+&gt; it **spawns the cli** and exchanges jsonl events over stdin/stdout.">
           <div class="card-top">
             <div class="mark" aria-hidden="true">CX</div>
             <div class="card-id">
@@ -138,7 +175,8 @@
             <a class="more" href="./codex-sdk.html" aria-label="Codex SDK 详情"><span data-zh>详情 →</span><span data-en>Details →</span></a>
           </div>
         </article>
-        <article class="card" style="--card-accent:#10A37F">
+        <article class="card" style="--card-accent:#10A37F" data-track="harness" data-family="coding-base" data-conf="partial" data-done="8" data-total="8" data-name="OpenAI Agents SDK" data-blob="openai agents sdk openai **「primitives-only 的多agent harness」** —— 官方自述 lightweight yet powerful：
+只给agent loop 的原语，不替你决定 filesystem / 规划 / 记忆怎么做。">
           <div class="card-top">
             <div class="mark" aria-hidden="true">OA</div>
             <div class="card-id">
@@ -152,16 +190,86 @@
             <a class="more" href="./openai-agents-sdk.html" aria-label="OpenAI Agents SDK 详情"><span data-zh>详情 →</span><span data-en>Details →</span></a>
           </div>
         </article>
+        <article class="card" style="--card-accent:#3b82f6" data-track="harness" data-family="coding-base" data-conf="partial" data-done="8" data-total="8" data-name="Pydantic AI" data-blob="pydantic ai pydantic **「python 里类型安全的 agent loop」** —— 官方自述把两个关键词并在一起：
+
+&gt; **pydantic ai** is the python ai sdk: a **typed**, extensible **agent loop**
+&gt; with every model a string swap away.
+
+「typed」是它的世界观（pydantic 原生贯穿数据层到 agent 输出），
+「agent loop」是它的形态（**给原语，不给你一个成品**）。
+它与 [openai agents sdk](./openai-agents-sdk.md) 同属这一档，
+但把「类型安全」和「durable execution」两点做到明显更深。">
+          <div class="card-top">
+            <div class="mark" aria-hidden="true">PA</div>
+            <div class="card-id">
+              <h3><a href="./pydantic-ai.html"><span data-zh>Pydantic AI</span><span data-en>Pydantic AI</span></a></h3>
+              <div class="vendor">Pydantic</div>
+            </div>
+          </div>
+          <p class="tagline"><span data-zh>「Python 里类型安全的 agent loop」 —— 官方自述把两个关键词并在一起： > Pydantic AI is</span><span data-en>Pydantic AI is the type-safe Python agent loop — official READ</span></p>   // line 已是双节点，勿走 esc -->
+          <div class="card-foot">
+            <span class="t-state is-warn"><span data-zh>部分核验</span><span data-en>Partly verified</span></span>
+            <a class="more" href="./pydantic-ai.html" aria-label="Pydantic AI 详情"><span data-zh>详情 →</span><span data-en>Details →</span></a>
+          </div>
+        </article>
+        <article class="card" style="--card-accent:#FFD21E" data-track="harness" data-family="coding-base" data-conf="partial" data-done="8" data-total="8" data-name="smolagents" data-blob="smolagents hugging face hugging face 出的**薄 agent 库**，官方自述 **&quot;barebones library for agents that think in code&quot;**
+（仓库 description 原文）。与同类最大的不同是 **code-as-action**：
+默认的 `codeagent` 让 llm 把动作写成并执行 python 代码，而不是输出 json 工具调用。">
+          <div class="card-top">
+            <div class="mark" aria-hidden="true">SM</div>
+            <div class="card-id">
+              <h3><a href="./smolagents.html"><span data-zh>smolagents</span><span data-en>smolagents</span></a></h3>
+              <div class="vendor">Hugging Face</div>
+            </div>
+          </div>
+          <p class="tagline"><span data-zh>Hugging Face 出的薄 agent 库，官方自述 "barebones library for agents th</span><span data-en>Hugging Face's barebones library for agents that think in code</span></p>   // line 已是双节点，勿走 esc -->
+          <div class="card-foot">
+            <span class="t-state is-warn"><span data-zh>部分核验</span><span data-en>Partly verified</span></span>
+            <a class="more" href="./smolagents.html" aria-label="smolagents 详情"><span data-zh>详情 →</span><span data-en>Details →</span></a>
+          </div>
+        </article>
           </div>
         </div>
         <div class="fam-block" data-family="orchestration">
           <div class="fam-head">
-            <h3><span data-zh>编排框架</span><span data-en>Orchestration</span> <span class="fam-n">4</span></h3>
+            <h3><span data-zh>编排框架</span><span data-en>Orchestration</span> <span class="fam-n">7</span></h3>
             <span class="fam-badge"><span data-zh>编排框架</span><span data-en>Orchestration</span></span>
             <p><span data-zh>把多步骤、多 Agent、要中断恢复的流程显式建成图。给的是控制力，代价是接线与状态管理都归你。</span><span data-en>Makes multi-step, multi-agent flows with resumable state explicit graphs. It gives you control; the cost is that wiring and state management are yours.</span></p>
           </div>
           <div class="grid">
-        <article class="card" style="--card-accent:#EB6658">
+        <article class="card" style="--card-accent:#3b82f6" data-track="harness" data-family="orchestration" data-conf="partial" data-done="8" data-total="8" data-name="AG2" data-blob="ag2 ag2ai **「autogen 停更后由社区接棒的续作」** —— 仓库描述直接写着 &quot;ag2 (formerly autogen)&quot;，
+readme 也自述由 &quot;a dynamic group of volunteers from several organizations&quot; 维护。
+
+**理解它必须先分清两条线**：
+
+| | ag2（本条目） | microsoft agent framework |
+|---|---|---|
+| 维护方 | 社区（ag2ai） | 微软官方 |
+| 与 autogen 关系 | 社区延续 / fork 后的独立演进 | 官方把 autogen + semantic kernel 合并继任 |
+| 顶层 import | `import ag2` | `agent_framework` / `microsoft.agents.ai` |
+
+这也是本项目的 harness 赛道当初把 **autogen 原仓库列为「明确不收对象」**的原因
+（原仓 `pushed_at` 停在 2026-04-15、社区转向 ag2）—— 收 ag2 而非 autogen，
+正是「跟着仍在更新的那支血脉走」。">
+          <div class="card-top">
+            <div class="mark" aria-hidden="true">AG</div>
+            <div class="card-id">
+              <h3><a href="./ag2.html"><span data-zh>AG2</span><span data-en>AG2</span></a></h3>
+              <div class="vendor">ag2ai</div>
+            </div>
+          </div>
+          <p class="tagline"><span data-zh>「AutoGen 停更后由社区接棒的续作」 —— 仓库描述直接写着 "AG2 (formerly AutoGen)"， RE</span><span data-en>The community continuation of AutoGen after the original repo </span></p>   // line 已是双节点，勿走 esc -->
+          <div class="card-foot">
+            <span class="t-state is-warn"><span data-zh>部分核验</span><span data-en>Partly verified</span></span>
+            <a class="more" href="./ag2.html" aria-label="AG2 详情"><span data-zh>详情 →</span><span data-en>Details →</span></a>
+          </div>
+        </article>
+        <article class="card" style="--card-accent:#EB6658" data-track="harness" data-family="orchestration" data-conf="partial" data-done="8" data-total="8" data-name="CrewAI" data-blob="crewai crewai inc **「用角色分工和业务流程来组织多 agent 协作」** —— 官方自述：
+
+&gt; framework for orchestrating **role-playing**, autonomous ai agents.
+
+**「role-playing」这个词容易让人低估它**—— 同一份 readme 里也写着
+production-grade，并明确承诺 &quot;move from experiment to production **without changing frameworks**&quot;。">
           <div class="card-top">
             <div class="mark" aria-hidden="true">CA</div>
             <div class="card-id">
@@ -175,7 +283,12 @@
             <a class="more" href="./crewai.html" aria-label="CrewAI 详情"><span data-zh>详情 →</span><span data-en>Details →</span></a>
           </div>
         </article>
-        <article class="card" style="--card-accent:#4285F4">
+        <article class="card" style="--card-accent:#4285F4" data-track="harness" data-family="orchestration" data-conf="partial" data-done="8" data-total="8" data-name="Google ADK（Agent Development Kit）" data-blob="google adk（agent development kit） google **「code-first 的 agent 编排框架，核心资产是一个图执行引擎」** —— 官方 readme 第一项特性就说明了它的身份：
+
+&gt; **workflow runtime**: a graph-based execution engine for composing **deterministic
+&gt; execution flows** for agentic apps, with support for routing, fan-out/fan-in,
+&gt; **loops**, **retry**, **state management**, **dynamic nodes**, **human-in-the-loop**,
+&gt; and **nested workflows**.">
           <div class="card-top">
             <div class="mark" aria-hidden="true">GA</div>
             <div class="card-id">
@@ -189,7 +302,11 @@
             <a class="more" href="./google-adk.html" aria-label="Google ADK（Agent Development Kit） 详情"><span data-zh>详情 →</span><span data-en>Details →</span></a>
           </div>
         </article>
-        <article class="card" style="--card-accent:#1C3C3C">
+        <article class="card" style="--card-accent:#1C3C3C" data-track="harness" data-family="orchestration" data-conf="partial" data-done="8" data-total="8" data-name="LangGraph" data-blob="langgraph langchain inc **「低层编排框架」** —— 官方自述用词很克制，注意那个 low-level：
+
+&gt; low-level orchestration framework for building **stateful** agents.
+
+它自认不是开箱即用的高层封装，而是给「长时间运行、有状态」这件事打地基的底层设施。">
           <div class="card-top">
             <div class="mark" aria-hidden="true">LG</div>
             <div class="card-id">
@@ -203,7 +320,37 @@
             <a class="more" href="./langgraph.html" aria-label="LangGraph 详情"><span data-zh>详情 →</span><span data-en>Details →</span></a>
           </div>
         </article>
-        <article class="card" style="--card-accent:#7C3AED">
+        <article class="card" style="--card-accent:#7C3AED" data-track="harness" data-family="orchestration" data-conf="partial" data-done="8" data-total="8" data-name="LlamaIndex Framework" data-blob="llamaindex framework llamaindex（run-llama） **⚠ 但先得说清一件事：官方已明确把公司重心从「编排框架」移走了。**
+
+readme 首屏 note 段落原文（核验 2026-10-01）：
+
+&gt; the **current focus** of llamaindex is to build the best ai-powered engine for
+&gt; **document parsing and extraction**. **llamaparse** is our **enterprise platform** for
+&gt; agentic ocr, parsing, extraction, indexing and more.
+&gt;
+&gt; ...the company itself has undergone an **evolution** since when this oss framework
+&gt; first launched 3 years ago in 2023.
+&gt;
+&gt; while we still have the oss framework available as an open toolkit that you&#39;re welcome
+&gt; to use, **our primary focus has shifted towards llamaparse**...
+
+**这句话的选型含义很直接**：
+公司的资源向文档解析倾斜是真的，**但编排能力没有离开 oss** ——
+readme 只是把 workflows 写在商业平台那一节（链接指向 `cloud/llamaagents`），
+官方框架文档则明示 `llama-index-core` 仍含稳定版 workflows（2026-10-08 核验）。
+
+**oss 框架现在实质提供的是**：数据接入 + 索引/图结构 + 检索查询接口 + 300+ 集成 + workflows 编排。
+readme 自己的 proposed solution 四条说得很准：
+
+&gt; - **data connectors** to ingest your existing data sources and data formats (apis, pdfs, docs, sql, etc.)
+&gt; - ways to **structure your data** (indices, graphs)
+&gt; - an **advanced retrieval/query interface** over your data
+&gt; - easy **integrations with your outer application framework**
+
+**本站的收录判断**：它符合 v3 铁律的收录标准（推送 2026-09-29，仍活跃），
+但这条档案的**真正价值是如实记录这个转折** ——
+让读者知道 52,377★ 背后的公司正在往文档解析 / agentic ocr 走，
+而那是 llamaparse 与 parsebench 的战场，不是这个开源框架的。">
           <div class="card-top">
             <div class="mark" aria-hidden="true">LI</div>
             <div class="card-id">
@@ -217,6 +364,49 @@
             <a class="more" href="./llamaindex.html" aria-label="LlamaIndex Framework 详情"><span data-zh>详情 →</span><span data-en>Details →</span></a>
           </div>
         </article>
+        <article class="card" style="--card-accent:#3b82f6" data-track="harness" data-family="orchestration" data-conf="partial" data-done="8" data-total="8" data-name="Mastra" data-blob="mastra mastra ai **「typescript 生态的全栈式 agent 框架」** —— 官方自述很直白：
+
+&gt; mastra is a framework for building ai-powered applications and agents with a **modern typescript stack**.
+&gt; it includes **everything you need** to go from early prototypes to production-ready applications.
+
+关键词是 **everything**：agents、workflows（图工作流引擎）、memory、rag、evals、
+mcp 客户端与服务端、内置 server、studio 与 observability —— 都在一个包里。
+**它与 [langgraph](./langgraph.md) 的差别正好是本站反复强调的那条分野**：
+langgraph 自认 low-level、不预置工具与文件系统；mastra 走 batteries included 的厚路线。">
+          <div class="card-top">
+            <div class="mark" aria-hidden="true">MA</div>
+            <div class="card-id">
+              <h3><a href="./mastra.html"><span data-zh>Mastra</span><span data-en>Mastra</span></a></h3>
+              <div class="vendor">Mastra AI</div>
+            </div>
+          </div>
+          <p class="tagline"><span data-zh>「TypeScript 生态的全栈式 agent 框架」 —— 官方自述很直白： > Mastra is a framewo</span><span data-en>Mastra is a TypeScript-first, batteries-included agent framewo</span></p>   // line 已是双节点，勿走 esc -->
+          <div class="card-foot">
+            <span class="t-state is-warn"><span data-zh>部分核验</span><span data-en>Partly verified</span></span>
+            <a class="more" href="./mastra.html" aria-label="Mastra 详情"><span data-zh>详情 →</span><span data-en>Details →</span></a>
+          </div>
+        </article>
+        <article class="card" style="--card-accent:#0078D4" data-track="harness" data-family="orchestration" data-conf="partial" data-done="8" data-total="8" data-name="Microsoft Agent Framework" data-blob="microsoft agent framework microsoft **「semantic kernel 与 autogen 合并后的微软官方 agent 底座」** —— 官方公告把这层血缘关系写得最清楚：
+
+&gt; microsoft agent framework **doesn&#39;t replace** semantic kernel and autogen — it **builds on them.**
+
+官方 overview 页同样直白：它 &quot;brings together and extends ideas from **semantic kernel and autogen** projects...
+built by the same teams, it is the **unified foundation** for building ai agents going forward.&quot;
+
+**理解它只需要记住一件事：它不是「又一个新框架」，而是微软把两条产品线收编成一条。**">
+          <div class="card-top">
+            <div class="mark" aria-hidden="true">MA</div>
+            <div class="card-id">
+              <h3><a href="./microsoft-agent-framework.html"><span data-zh>Microsoft Agent Framework</span><span data-en>Microsoft Agent Framework</span></a></h3>
+              <div class="vendor">Microsoft</div>
+            </div>
+          </div>
+          <p class="tagline"><span data-zh>「Semantic Kernel 与 AutoGen 合并后的微软官方 agent 底座」 —— 官方公告把这层血缘关系写得</span><span data-en>The official Microsoft agent foundation that merges Semantic K</span></p>   // line 已是双节点，勿走 esc -->
+          <div class="card-foot">
+            <span class="t-state is-warn"><span data-zh>部分核验</span><span data-en>Partly verified</span></span>
+            <a class="more" href="./microsoft-agent-framework.html" aria-label="Microsoft Agent Framework 详情"><span data-zh>详情 →</span><span data-en>Details →</span></a>
+          </div>
+        </article>
           </div>
         </div>
         <div class="fam-block" data-family="general-harness">
@@ -226,7 +416,8 @@
             <p><span data-zh>预置了规划、文件系统、记忆等一整套，面向通用长任务。开箱程度最高，可改性最低。</span><span data-en>Presets planning, filesystem, memory and the rest, aimed at general long-running tasks. Most ready out of the box, least modifiable.</span></p>
           </div>
           <div class="grid">
-        <article class="card" style="--card-accent:#10A37F">
+        <article class="card" style="--card-accent:#10A37F" data-track="harness" data-family="general-harness" data-conf="partial" data-done="8" data-total="8" data-name="Deep Agents" data-blob="deep agents langchain **「batteries-included agent harness」** —— 官方自述：开箱即跑、面向长任务多步流程、
+不改代码就能替换任何一层的 opinionated agent harness。">
           <div class="card-top">
             <div class="mark" aria-hidden="true">DA</div>
             <div class="card-id">
@@ -240,7 +431,17 @@
             <a class="more" href="./deepagents.html" aria-label="Deep Agents 详情"><span data-zh>详情 →</span><span data-en>Details →</span></a>
           </div>
         </article>
-        <article class="card" style="--card-accent:#FFD700">
+        <article class="card" style="--card-accent:#FFD700" data-track="harness" data-family="general-harness" data-conf="partial" data-done="8" data-total="8" data-name="Hermes Agent" data-blob="hermes agent nous research **「唯一带学习闭环的常驻个人助手」** —— 官方 readme 这么写：
+
+&gt; **the self-improving ai agent** built by nous research.
+&gt; it&#39;s the only agent with a **built-in learning loop** — it creates skills from experience,
+&gt; improves them during use, **nudges itself to persist knowledge**, searches its own past
+&gt; conversations, and builds a deepening model of who you are across sessions.
+&gt; run it on a $5 vps, a gpu cluster, or serverless infrastructure that costs nearly nothing when idle.
+&gt; **it&#39;s not tied to your laptop** — talk to it from telegram while it works on a cloud vm.
+
+⚠ **本站对「the only agent」这句话的态度**：这是**官方自我宣传语**，
+本站**未做跨产品对比测试来验证 &quot;only&quot; 是否成立**。记录为官方声明，不是本站结论。">
           <div class="card-top">
             <div class="mark" aria-hidden="true">HA</div>
             <div class="card-id">
@@ -254,7 +455,12 @@
             <a class="more" href="./hermes-agent.html" aria-label="Hermes Agent 详情"><span data-zh>详情 →</span><span data-en>Details →</span></a>
           </div>
         </article>
-        <article class="card" style="--card-accent:#F97316">
+        <article class="card" style="--card-accent:#F97316" data-track="harness" data-family="general-harness" data-conf="partial" data-done="8" data-total="8" data-name="OpenHands Agent Canvas" data-blob="openhands agent canvas openhands（all-hands-ai） **「自托管的 agent 控制中心」** —— 官方 readme 现在给它起的名字是 **agent canvas**，
+定位原文：
+
+&gt; the self-hosted developer control center for coding agents and automations.
+&gt; run openhands, claude code, codex, gemini, or **any acp-compatible agent**
+&gt; across local, remote, and cloud backends.">
           <div class="card-top">
             <div class="mark" aria-hidden="true">OH</div>
             <div class="card-id">
@@ -359,6 +565,14 @@
             </thead>
             <tbody>
               <tr>
+                <td><a href="./ag2.html"><span class="td-mark" style="--card-accent:#3b82f6">AG</span><span data-zh>AG2</span><span data-en>AG2</span></a></td>
+                <td class="td-vendor">harness</td>
+                <td class="td-vendor">ag2ai</td>
+                <td class="td-fit"><span data-zh>适合：要用 Python 编排多 agent 会话 / 协议化网络（Hub + channel，含咨询、讨论、工作流适配器）； 需要可审计的</span><span data-en>Orchestrating multi-agent conversations / a protocol-driven network in</span></td>
+                <td class="td-date">2026-10-08</td>
+                <td><span class="td-conf partial">partial</span></td>
+              </tr>
+              <tr>
                 <td><a href="./claude-agent-sdk.html"><span class="td-mark" style="--card-accent:#D97757">CA</span><span data-zh>Claude Agent SDK</span><span data-en>Claude Agent SDK</span></a></td>
                 <td class="td-vendor">harness</td>
                 <td class="td-vendor">Anthropic</td>
@@ -379,7 +593,7 @@
                 <td class="td-vendor">harness</td>
                 <td class="td-vendor">CrewAI Inc</td>
                 <td class="td-fit"><span data-zh>适合：任务能被表述成「一支有角色分工的团队」（Crews）； 需要业务逻辑留在普通 Python 里并显式控制执行路径（Flows）； 想在</span><span data-en>Fits: tasks that can be expressed as "a team with defined roles"; busi</span></td>
-                <td class="td-date">2026-10-01</td>
+                <td class="td-date">2026-10-08</td>
                 <td><span class="td-conf partial">partial</span></td>
               </tr>
               <tr>
@@ -418,8 +632,24 @@
                 <td><a href="./llamaindex.html"><span class="td-mark" style="--card-accent:#7C3AED">LI</span><span data-zh>LlamaIndex Framework</span><span data-en>LlamaIndex Framework</span></a></td>
                 <td class="td-vendor">harness</td>
                 <td class="td-vendor">LlamaIndex（run-llama）</td>
-                <td class="td-fit"><span data-zh>适合：核心任务是把外部数据源（API / PDF / 文档 / SQL）接进来做检索与问答， 且需要 300+ 现成集成里的某一个；团队 P</span><span data-en>Fits: the core task is bringing external data sources in for retrieval</span></td>
+                <td class="td-fit"><span data-zh>适合：核心任务是把外部数据源（API / PDF / 文档 / SQL）接进来做检索与问答， 需要 300+ 现成集成里的某一个；团队 Py</span><span data-en>Fits: the core task is bringing external data sources in for retrieval</span></td>
                 <td class="td-date">2026-10-01</td>
+                <td><span class="td-conf partial">partial</span></td>
+              </tr>
+              <tr>
+                <td><a href="./mastra.html"><span class="td-mark" style="--card-accent:#3b82f6">MA</span><span data-zh>Mastra</span><span data-en>Mastra</span></a></td>
+                <td class="td-vendor">harness</td>
+                <td class="td-vendor">Mastra AI</td>
+                <td class="td-fit"><span data-zh>适合：TypeScript / Node 团队要一套「开箱即用」的 agent 框架 —— Agents + 图 Workflows + M</span><span data-en>TypeScript / Node teams that want an out-of-the-box agent framework: A</span></td>
+                <td class="td-date">2026-10-08</td>
+                <td><span class="td-conf partial">partial</span></td>
+              </tr>
+              <tr>
+                <td><a href="./microsoft-agent-framework.html"><span class="td-mark" style="--card-accent:#0078D4">MA</span><span data-zh>Microsoft Agent Framework</span><span data-en>Microsoft Agent Framework</span></a></td>
+                <td class="td-vendor">harness</td>
+                <td class="td-vendor">Microsoft</td>
+                <td class="td-fit"><span data-zh>适合：要把多 agent 组织成有分支、有人工介入、可 checkpoint 恢复的确定性图工作流； 需要 .NET 与 Python 一致</span><span data-en>Organizing multiple agents into deterministic graph workflows with bra</span></td>
+                <td class="td-date">2026-10-08</td>
                 <td><span class="td-conf partial">partial</span></td>
               </tr>
               <tr>
@@ -436,6 +666,22 @@
                 <td class="td-vendor">OpenHands（All-Hands-AI）</td>
                 <td class="td-fit"><span data-zh>适合：要把agent 放到自己服务器上 7×24 跑；需要定时或 webhook 触发（Slack / GitHub / Linear / </span><span data-en>Fits: the agent needs to run 7×24 on your own server; scheduled or web</span></td>
                 <td class="td-date">2026-10-01</td>
+                <td><span class="td-conf partial">partial</span></td>
+              </tr>
+              <tr>
+                <td><a href="./pydantic-ai.html"><span class="td-mark" style="--card-accent:#3b82f6">PA</span><span data-zh>Pydantic AI</span><span data-en>Pydantic AI</span></a></td>
+                <td class="td-vendor">harness</td>
+                <td class="td-vendor">Pydantic</td>
+                <td class="td-fit"><span data-zh>适合：Python 团队要做「类型安全的结构化输出 + 依赖注入」的 agent； 需要把 agent run 变成 durable（跨重启</span><span data-en>Python teams that want typed structured output plus dependency injecti</span></td>
+                <td class="td-date">2026-10-08</td>
+                <td><span class="td-conf partial">partial</span></td>
+              </tr>
+              <tr>
+                <td><a href="./smolagents.html"><span class="td-mark" style="--card-accent:#FFD21E">SM</span><span data-zh>smolagents</span><span data-en>smolagents</span></a></td>
+                <td class="td-vendor">harness</td>
+                <td class="td-vendor">Hugging Face</td>
+                <td class="td-fit"><span data-zh>适合：认同 code-as-action（官方称比 JSON 工具调用少 30% 步数）并愿意给 LLM 生成代码上沙箱； 要 model-</span><span data-en>Teams that buy into code-as-action and are willing to sandbox LLM-gene</span></td>
+                <td class="td-date">2026-10-08</td>
                 <td><span class="td-conf partial">partial</span></td>
               </tr>
             </tbody>
@@ -474,7 +720,15 @@
             数据层用 <code>node scripts/audit-gaps.mjs</code> 可随时复核这个数字。
             以下是最近一次核验的快照（核验日 2026-09-29）：
           </p>
-          <p><strong class="em"><span data-zh>全站合计 120/211 维度已补齐</span><span data-en>Site-wide 120/211 dimensions filled</span>（57%）</strong></p>
+          <table class="src is-flush mb-3">
+            <thead><tr><th><span data-zh>形态</span><span data-en>Form</span></th><th><span data-zh>已补齐</span><span data-en>Filled</span></th><th><span data-zh>说明</span><span data-en>Meaning</span></th></tr></thead>
+            <tbody>
+              <tr><td class="nw">harness</td>
+                <td class="nw"><strong>120/120</strong></td>
+                <td class="td-vendor"><span data-zh>编排框架的版本演进快、接口变化多，逐条核验成本最高 —— 也是全站最低的一档</span><span data-en>Orchestration frameworks move fast and change APIs often, so these are the most expensive to verify — and the lowest fill rate on the site</span></td></tr>
+            </tbody>
+          </table>
+          <p><strong class="em"><span data-zh>全站合计 446/446 维度已补齐</span><span data-en>Site-wide 446/446 dimensions filled</span>（100%）</strong></p>
           <p class="t-sm">
             <span data-zh>剩余未补齐项分三类：<strong>官方未公开</strong>（索引算法、沙箱实现细节本就不对外说明）、<strong>需实测才能确定</strong>（大仓库表现、CI 无 TTY 行为）、<strong>客观渠道不可达</strong>。</span><span data-en>The remaining gaps fall into three kinds: <strong>not disclosed by the vendor</strong> (indexing algorithms, sandbox internals are simply not documented), <strong>requires measurement</strong> (behaviour on very large repositories, CI without a TTY), and <strong>unreachable through objective channels</strong>.</span>
           </p>
@@ -496,6 +750,123 @@
         </div>
       </div>
     </section>
+    <!-- B2：索引页筛选与排序（脚本读独立文件 agent-filter.js，作用域 .afilter） -->
+    <script>/* Agent 图谱 · 客户端筛选与排序（B2，2026-10-09）
+ *
+ * 为什么单独一个文件：agent 的 build.mjs 用模板字符串生成页面，
+ * 脚本里任何反引号或 ${} 都会提前截断/插值（本会话已踩三次）。独立文件从根上避开。
+ *
+ * 作用域：`.afilter`（三个分区页各一份）
+ *   搜索   —— data-blob（名称 + 厂商 + 定位句）
+ *   分组   —— data-form（agents 页=形态 track / harness 页=抽象层 family / tools 页无此项）
+ *   核验   —— data-conf（verified / partial / stale）
+ *   排序   —— data-done & data-total（**按产品**的维度补齐数），在各自 .grid 内重排
+ *
+ * ⚠ 排序只在**同一个 .grid 内**进行：页面按形态/抽象层分了组，
+ *   跨组重排会把分组打散（而分组本身是本站的一条判断，不能因为排序就没了）。
+ *
+ * URL 可还原：?q=&form=&conf=&sort= 写进地址栏。
+ */
+(function () {
+  'use strict';
+
+  var box = document.querySelector('.afilter');
+  if (!box) return;
+
+  var q = box.querySelector('.aq');
+  var selForm = box.querySelector('.asel-form');
+  var selConf = box.querySelector('.asel-conf');
+  var selSort = box.querySelector('.asel-sort');
+  var count = box.querySelector('.acount');
+  var allCards = Array.prototype.slice.call(document.querySelectorAll('.grid > .card'));
+  if (!allCards.length) return;
+
+  function param(n) {
+    try { return new URLSearchParams(location.search).get(n) || ''; } catch (e) { return ''; }
+  }
+  function writeUrl() {
+    try {
+      var u = new URL(location.href);
+      var vals = { q: q ? q.value.trim() : '', form: selForm ? selForm.value : '', conf: selConf ? selConf.value : '', sort: selSort ? selSort.value : '' };
+      Object.keys(vals).forEach(function (k) { if (vals[k]) u.searchParams.set(k, vals[k]); else u.searchParams.delete(k); });
+      history.replaceState(null, '', u.toString());
+    } catch (e) { /* file:// 等场景静默降级：功能可用，地址栏不同步 */ }
+  }
+
+  function ratio(c) {
+    var d = Number(c.getAttribute('data-done') || 0);
+    var t = Number(c.getAttribute('data-total') || 0);
+    return t ? d / t : 0;
+  }
+
+  function apply() {
+    var term = q ? q.value.trim().toLowerCase() : '';
+    var form = selForm ? selForm.value : '';
+    /* 分组轴因分区而异（agents=形态 track / harness=抽象层 family），
+     * 由 select 的 data-attr 指明比哪个属性 —— 卡片上两个属性都有。 */
+    var formAttr = selForm ? (selForm.getAttribute('data-attr') || 'track') : 'track';
+    var conf = selConf ? selConf.value : '';
+    var shown = 0;
+    allCards.forEach(function (c) {
+      var okQ = !term || (c.getAttribute('data-blob') || '').indexOf(term) !== -1;
+      var okForm = !form || c.getAttribute('data-' + formAttr) === form;
+      var okConf = !conf || c.getAttribute('data-conf') === conf;
+      var on = okQ && okForm && okConf;
+      c.hidden = !on;
+      if (on) shown++;
+    });
+    // 空分组（全部卡片被筛掉）连标题一起藏起来，否则会留下一个孤零零的组标题
+    Array.prototype.slice.call(document.querySelectorAll('.fam-block')).forEach(function (b) {
+      var vis = Array.prototype.slice.call(b.querySelectorAll('.card')).some(function (c) { return !c.hidden; });
+      b.hidden = !vis;
+    });
+    if (count) {
+      count.textContent = shown + ' / ' + allCards.length;
+      count.setAttribute('data-zh', shown + ' / ' + allCards.length + ' 份档案');
+      count.setAttribute('data-en', shown + ' / ' + allCards.length + ' entries');
+    }
+  }
+
+  function sort() {
+    var mode = selSort ? selSort.value : '';
+    if (!mode) return;
+    Array.prototype.slice.call(document.querySelectorAll('.grid')).forEach(function (g) {
+      var cards = Array.prototype.slice.call(g.children).filter(function (c) { return c.classList.contains('card'); });
+      if (cards.length < 2) return;
+      cards.sort(function (a, b) {
+        var d = ratio(b) - ratio(a);
+        if (mode.indexOf('asc') !== -1) d = -d;
+        // 同分时按原名排序，保证**结果确定**（否则每次打开顺序可能不同）
+        return d || (a.getAttribute('data-name') || '').localeCompare(b.getAttribute('data-name') || '', 'zh');
+      });
+      cards.forEach(function (c) { g.appendChild(c); });
+    });
+  }
+
+  // 首次：用 URL 参数还原
+  if (q) q.value = param('q');
+  [[selForm, 'form'], [selConf, 'conf'], [selSort, 'sort']].forEach(function (pair) {
+    var el = pair[0]; var v = param(pair[1]);
+    if (!el || !v) return;
+    /* `<select>` 遇到选项里没有的值会**静默忽略** —— 那就成了「指名筛选却被无视」。
+     * 把未知值补成一个选项：筛出来 0 条，计数会如实显示「0 / N」。 */
+    var found = Array.prototype.some.call(el.options, function (o) { return o.value === v; });
+    if (!found) {
+      var extra = document.createElement('option');
+      extra.value = v; extra.textContent = v;
+      el.appendChild(extra);
+    }
+    el.value = v;
+  });
+
+  if (q) q.addEventListener('input', function () { apply(); writeUrl(); });
+  [selForm, selConf].forEach(function (s) { if (s) s.addEventListener('change', function () { apply(); writeUrl(); }); });
+  if (selSort) selSort.addEventListener('change', function () { sort(); writeUrl(); });
+
+  sort();
+  apply();
+})();
+</script>
   </main>
   <footer class="site-footer">
     <div class="container foot-row">
