@@ -4,18 +4,18 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Cline — Agents | 投机取巧</title>
-  <meta name="description" content="Cline（Cline Bot）：本赛道唯一三形态全覆盖的对象——CLI、Desktop App、VS Code 扩展共享同一开源核心，且模型自选。" />
+  <meta name="description" content="Cline（Cline Bot）：本分区唯一三形态全覆盖的对象——CLI、Desktop App、VS Code 扩展共享同一开源核心，且模型自选。" />
   <link rel="canonical" href="https://agent.specul.com/cline.html" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Cline" />
   <meta property="og:url" content="https://agent.specul.com/cline.html" />
   <meta property="og:title" content="Cline — Agents | 投机取巧" />
-  <meta property="og:description" content="Cline（Cline Bot）：本赛道唯一三形态全覆盖的对象——CLI、Desktop App、VS Code 扩展共享同一开源核心，且模型自选。" />
-  <meta name="theme-color" content="#05080f" />
+  <meta property="og:description" content="Cline（Cline Bot）：本分区唯一三形态全覆盖的对象——CLI、Desktop App、VS Code 扩展共享同一开源核心，且模型自选。" />
+  <meta name="theme-color" content="#16121f" />
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%238b7cf8'/%3E%3Cstop offset='1' stop-color='%2322d3c5'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='48' height='48' rx='12' fill='%2305080f'/%3E%3Cpath d='M14 32 L24 12 L34 32' fill='none' stroke='url(%23g)' stroke-width='2.4' stroke-linejoin='round'/%3E%3Ccircle cx='24' cy='27' r='2.4' fill='%2322d3c5'/%3E%3C/svg%3E" />
   <link rel="stylesheet" href="brand.css" />
   <link rel="stylesheet" href="site.css" />
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Cline","applicationCategory":"DeveloperApplication","url":"https://docs.cline.bot","sameAs":"https://github.com/cline/cline","description":"本赛道唯一三形态全覆盖的对象——CLI、Desktop App、VS Code 扩展共享同一开源核心，且模型自选。","dateModified":"2026-10-08"}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Cline","applicationCategory":"DeveloperApplication","url":"https://docs.cline.bot","sameAs":"https://github.com/cline/cline","description":"本分区唯一三形态全覆盖的对象——CLI、Desktop App、VS Code 扩展共享同一开源核心，且模型自选。","dateModified":"2026-10-08"}</script>
 </head>
 <body class="brand-ambient">
   <a class="t-skip" href="#main"><span data-zh>跳到主要内容</span><span data-en>Skip to main content</span></a>
@@ -95,62 +95,88 @@
         <span class="badge"><span data-zh>核验</span><span data-en>Checked</span> 2026-10-08</span>
       </div>
 
-            <p class="panel-lead"><span data-zh><strong>本赛道唯一三形态全覆盖的对象</strong>——CLI、Desktop App、VS Code 扩展共享同一开源核心，且模型自选。</span><span data-en><strong>The only object here covering all three forms</strong> — CLI, desktop app and VS Code extension share one open-source core, and the model is selectable.</span></p>
+            <div class="panel-lead"><span data-zh><p><strong>本分区唯一三形态全覆盖的对象</strong>——CLI、Desktop App、VS Code 扩展共享同一开源核心，且模型自选。</p></span><span data-en><p><strong>The only object here covering all three forms</strong> — CLI, desktop app and VS Code extension share one open-source core, and the model is selectable.</p></span></div>
 
             <div class="panel is-slim">
         <h2><span data-zh>适合与不适合</span><span data-en>When to use it, when not to</span></h2>
-<span data-zh>        <p>需要同一工具覆盖编辑器、终端、桌面三种工作形态的用户。
-需要模型自选（不绑定单一厂商）的人。
-需要 CI/CD 集成（CLI headless）的人。
-需要「改动可审查、可回滚」保证的人——每次编辑以 diff 呈现 + checkpoint 整体撤销。
-需要周期性自动化的人（cron 调度，重启后仍生效）。</p>
-        <p class="warn-p"><strong>不适合</strong>要求「审批默认最严」的场景——
-CLI / headless 默认 <code>--auto-approve true</code> 全程放行，
-要收紧得显式传 <code>--auto-approve false</code>（或用 PreToolUse hook 拦命令）。</p></span><span data-en>        <p>Users who need one tool across editor, terminal and desktop.
-People who need model choice (not locked to one vendor).
-People who need CI/CD integration (CLI headless).
-People who need reviewable, revertible changes — every edit appears as a diff plus a checkpoint to undo wholesale.
-People who need periodic automation (cron scheduling that survives restarts).</p>
-        <p class="warn-p"><strong>Not a fit for</strong> requiring approval to behave identically across all forms — the extension form confirms human-in-the-loop, but behaviour under CLI headless was not verified.</p></span>
+<span data-zh>        <div><p>需要同一工具覆盖编辑器、终端、桌面三种工作形态的用户。 需要模型自选（不绑定单一厂商）的人。 需要 CI/CD 集成（CLI headless）的人。 需要「改动可审查、可回滚」保证的人——每次编辑以 diff 呈现 + checkpoint 整体撤销。 需要周期性自动化的人（cron 调度，重启后仍生效）。</p></div>
+        <div class="warn-p"><p><strong>不适合</strong>要求「审批默认最严」的场景—— CLI / headless 默认 <code>--auto-approve true</code> 全程放行， 要收紧得显式传 <code>--auto-approve false</code>（或用 PreToolUse hook 拦命令）。</p></div></span><span data-en>        <div><p>Users who need one tool across editor, terminal and desktop. People who need model choice (not locked to one vendor). People who need CI/CD integration (CLI headless). People who need reviewable, revertible changes — every edit appears as a diff plus a checkpoint to undo wholesale. People who need periodic automation (cron scheduling that survives restarts).</p></div>
+        <div class="warn-p"><p><strong>Not a fit for</strong> requiring approval to behave identically across all forms — the extension form confirms human-in-the-loop, but behaviour under CLI headless was not verified.</p></div></span>
       </div>
 
 
       <div class="block-head">
         <h2 class="t-h2"><span data-zh>固定坐标系</span><span data-en>Fixed coordinate system</span></h2>
-        <p class="t-section-lead">8 <span data-zh>个维度</span><span data-en>dimensions</span>, <span data-zh>与同赛道其他对象逐项可比</span><span data-en>each comparable item by item against others in the same track</span>.</p>
+        <p class="t-section-lead">8 <span data-zh>个维度</span><span data-en>dimensions</span>, <span data-zh>与同分区其他对象逐项可比</span><span data-en>each comparable item by item against others in the same section</span>.</p>
       </div>
       <dl class="axes">
         <div class="axis">
           <dt><span data-zh>模型与开放条件</span><span data-en>Model & openness</span></dt>
-          <dd><strong>由用户自选 provider，官方给出 30+ 家清单（以 BYOK 为主）。</strong> 官方 Model Selection Guide 的 provider 表列出：Cline（免 API key， 登录即用）、OpenRouter、Anthropic、OpenAI、OpenAI Codex （直接用 ChatGPT 订阅，无需 API key）、Google Gemini、DeepSeek、 Alibaba Qwen、Moonshot、Cerebras、AWS Bedrock、<strong>Ollama（本地模型）</strong>， 并指向「all 30+ supported providers」页（另含 xAI Grok、Mistral、 Groq、Together、Hugging Face、Baseten、SambaNova、Nebius 等）。 接入示例：<code>cline auth --provider anthropic --apikey sk-... --modelid ...</code>； 官方 SDK 侧另支持 OpenAI-compatible 端点 （<code>providerId: &quot;openai-compatible&quot;</code> + <code>baseUrl</code> + <code>apiKey</code>）。 <strong>换 provider 后的 tool calling / structured output 质量，官方未给对比。</strong></dd>
+          <dd><p><strong>provider 由你自选，官方给出 30+ 家清单，以自带 API key（BYOK）为主。</strong></p>
+            <p>官方 Model Selection Guide 的 provider 表列出：</p>
+            <ul><li><strong>Cline</strong> —— 免 API key，登录即用</li><li><strong>OpenRouter</strong> / <strong>Anthropic</strong> / <strong>OpenAI</strong></li><li><strong>OpenAI Codex</strong> —— 直接用 ChatGPT 订阅，无需 API key</li><li><strong>Google Gemini</strong> / <strong>DeepSeek</strong> / <strong>Alibaba Qwen</strong> / <strong>Moonshot</strong> / <strong>Cerebras</strong></li><li><strong>AWS Bedrock</strong></li><li><strong>Ollama</strong> —— 本地模型</li></ul>
+            <p>官方另有「all 30+ supported providers」页，还含 xAI Grok、Mistral、Groq、 Together、Hugging Face、Baseten、SambaNova、Nebius 等。</p>
+            <p>两种接入方式：</p>
+            <ul><li>CLI 命令 —— <code>cline auth --provider anthropic --apikey sk-... --modelid ...</code></li><li>官方 SDK 支持 OpenAI-compatible 端点 —— <code>providerId: &quot;openai-compatible&quot;</code> + <code>baseUrl</code> + <code>apiKey</code></li></ul>
+            <p>⚠ <strong>换 provider 之后的 tool calling 与 structured output 质量，官方没给对比。</strong></p></dd>
         </div>
         <div class="axis">
           <dt><span data-zh>运行位置</span><span data-en>Where it runs</span></dt>
-          <dd><strong>本赛道唯一三形态全覆盖的对象</strong>： 一是 CLI（<code>npm i -g cline</code>，支持交互式与完全 headless 两种模式， headless 用于 CI/CD 与脚本，可用 <code>--workspace /path/to/repo</code> 指定目录）； 二是 Desktop App（macOS 与 Windows 原生应用， 可在任意文件夹运行 agent session、支持定时任务）； 三是 VS Code 扩展（另有 JetBrains 插件，README 提到 <code>.clinerules</code> 会被 CLI / VS Code 扩展 / JetBrains 插件三方共同读取）。 三套形态共享同一开源核心。</dd>
+          <dd><p><strong>这是本站里唯一「三种形态全覆盖」的对象。</strong></p>
+            <div class="tbl-wrap"><table><thead><tr><th>形态</th><th>怎么用</th></tr></thead><tbody><tr><td><strong>CLI</strong></td><td><code>npm i -g cline</code>；支持交互式与完全 headless 两种模式，headless 用于 CI/CD 与脚本；可用 <code>--workspace /path/to/repo</code> 指定目录</td></tr><tr><td><strong>Desktop App</strong></td><td>macOS 与 Windows 原生应用；可在任意文件夹运行 agent session；支持定时任务</td></tr><tr><td><strong>VS Code 扩展</strong></td><td>另有 JetBrains 插件</td></tr></tbody></table></div>
+            <p><code>.clinerules</code> 会被 <strong>CLI / VS Code 扩展 / JetBrains 插件三方共同读取</strong>。 三套形态共享同一开源核心。</p></dd>
         </div>
         <div class="axis">
           <dt><span data-zh>本地文件</span><span data-en>Local files</span></dt>
-          <dd><strong>跨项目协调改动 + 检查点可回滚</strong>（README「Edits Code Across Your Project」原文）： 读取项目结构、理解文件间关系，在代码库里做协调改动； <strong>在改动过程中监控 linter 与编译器错误</strong>， 主动修复缺失 import、类型不匹配、语法错误，用户看不到就会出问题的那些。 在 VS Code 与 JetBrains 中<strong>每次编辑都以 diff 形式呈现</strong>，可审查、修改或回滚； 所有改动都有 checkpoint 记录，可整体撤销。 官方 Checkpoints 页说明它用 <strong>shadow Git repository</strong> 跟踪改动， 与主 Git 工作流互不干扰，每次工具调用后建一个检查点。 读取范围分两档：默认「Read project files」（工作区内）， 「Read all files」（工作区外）需先打开基础开关才生效； 项目级忽略用 <code>.clineignore</code> 控制（官方给出用 hook 强制的做法）。 <strong>没有「全量语义索引」这一环节</strong>——内置 <code>search</code> 工具是 &quot;Ripgrep-powered codebase search&quot;，官方给大仓库的建议是 &quot;Use search instead of reading many files&quot; 并拆成更小任务 （已查 Tools 页与 Context Window Guide）。</dd>
+          <dd><p><strong>两个特点：跨项目协调改动，以及可回滚的检查点。</strong></p>
+            <p>README 的<strong>「Edits Code Across Your Project」</strong>说的是：读取项目结构、理解文件间关系， 然后在代码库里做协调改动。</p>
+            <p><strong>改动过程中它会盯着 linter 与编译器的报错</strong>，主动修掉缺失的 import、 类型不匹配、语法错误 —— 那些「用户看不到就会出问题」的东西。</p>
+            <ul><li>在 VS Code 与 JetBrains 里，<strong>每次编辑都以 diff 形式呈现</strong>，可审查、可修改、可回滚</li><li>所有改动都有 checkpoint 记录，可以整体撤销</li><li>官方 Checkpoints 页说明它用 <strong>shadow Git repository</strong> 跟踪改动， <strong>与你的主 Git 工作流互不干扰</strong>，每次工具调用后建一个检查点</li></ul>
+            <p><strong>读取范围分两档</strong>：默认「Read project files」（工作区内）； 「Read all files」（工作区外）需要先打开基础开关才生效。 项目级忽略用 <code>.clineignore</code> 控制（官方还给了用 hook 强制的做法）。</p>
+            <p>⚠ <strong>它没有「全量语义索引」这个环节。</strong> 内置 <code>search</code> 工具是 「Ripgrep-powered codebase search」；官方对大仓库的建议是 「用搜索代替大量读文件」，并把任务拆小。 （已查 Tools 页与 Context Window Guide。）</p>
+            <p><strong>官方对大仓库的建议</strong>：Use search instead of reading many files</p></dd>
         </div>
         <div class="axis">
           <dt><span data-zh>关机后的任务</span><span data-en>Tasks after shutdown</span></dt>
-          <dd><strong>长进程与定时任务都支持</strong>（README 原文）： 命令在终端直接执行并实时观察输出——装包、跑构建、跑测试、部署、管数据库； 对 dev server 这类长进程，<strong>Cline 在后台继续工作并对新输出做出反应</strong>， 编译错误、测试失败、服务崩溃都在发生时捕捉。 Desktop App 形态另有<strong>定时任务（schedule routines）</strong>： 可用 cron 调度做周期性自动化（如每日 PR 摘要、每周依赖检查、代码库健康报告）， <strong>且 schedule 在重启后仍保留、独立于任何终端会话运行</strong>。 CLI 的 headless 模式面向 CI/CD。</dd>
+          <dd><p><strong>长进程与定时任务都支持。</strong></p>
+            <p>命令在终端直接执行，输出实时可见 —— 装包、跑构建、跑测试、部署、管数据库。 对 dev server 这类长进程，<strong>Cline 会在后台继续工作并对新输出做出反应</strong>： 编译错误、测试失败、服务崩溃都在发生时被捕捉。</p>
+            <p><strong>Desktop App 形态另有定时任务（schedule routines）</strong>：</p>
+            <ul><li>可用 cron 调度做周期性自动化</li><li>例子：每日 PR 摘要、每周依赖检查、代码库健康报告</li><li><strong>schedule 在重启后仍保留，且独立于任何终端会话运行</strong></li></ul>
+            <p>CLI 的 headless 模式则面向 CI/CD。</p></dd>
         </div>
         <div class="axis">
           <dt><span data-zh>工具与扩展</span><span data-en>Tools & extensions</span></dt>
-          <dd><strong>内置工具清单已核到</strong>（官方 Tools 参考，ClineCore 运行时）： <code>bash</code>（执行命令）、<code>editor</code>（查看/编辑文件）、<code>read_files</code>（批量读）、 <code>apply_patch</code>（打 unified diff）、<code>search</code>（ripgrep 代码搜索）、 <code>fetch_web</code>（HTTP + HTML 转 markdown）、<code>ask_question</code>（问用户）。 <strong>MCP 是核心扩展面</strong>：官方有 <strong>MCP Marketplace</strong>，称 &quot;one-click installation experience for hundreds of MCP servers&quot;， 配置文件为 <code>.cline/mcp.json</code>，工具经 <code>use_mcp_tool</code> 调用、 资源经 <code>access_mcp_resource</code> 访问；传输支持 <strong>stdio 与 HTTP</strong>， 并可用 <code>.clinerules</code> 里的「MCP Rules」按触发词分组调度。 扩展机制另有 <strong>Hooks</strong>（PreToolUse / PostToolUse）、Skills、Workflows 与 plugins（可注册自定义工具，当前限 SDK / CLI / Kanban）。</dd>
+          <dd><p><strong>内置工具清单已核到</strong>（官方 Tools 参考，ClineCore 运行时）：</p>
+            <ul><li><code>bash</code> —— 执行命令</li><li><code>editor</code> —— 查看/编辑文件</li><li><code>read_files</code> —— 批量读</li><li><code>apply_patch</code> —— 打 unified diff</li><li><code>search</code> —— ripgrep 代码搜索</li><li><code>fetch_web</code> —— HTTP + HTML 转 markdown</li><li><code>ask_question</code> —— 问用户</li></ul>
+            <p><strong>MCP 是它的核心扩展面。</strong> 官方有 <strong>MCP Marketplace</strong>， 配置文件是 <code>.cline/mcp.json</code>：</p>
+            <ul><li>工具经 <code>use_mcp_tool</code> 调用，资源经 <code>access_mcp_resource</code> 访问</li><li>传输支持 <strong>stdio 与 HTTP</strong></li><li>可在 <code>.clinerules</code> 里用「MCP Rules」按触发词分组调度</li></ul>
+            <p>其它扩展机制：<strong>Hooks</strong>（PreToolUse / PostToolUse）· Skills · Workflows · plugins（可注册自定义工具，当前限 SDK / CLI / Kanban）。</p>
+            <p><strong>官方对 MCP Marketplace 的说法</strong>：one-click installation experience for hundreds of MCP servers</p></dd>
         </div>
         <div class="axis">
           <dt><span data-zh>上下文与记忆</span><span data-en>Context & memory</span></dt>
-          <dd><strong>项目级规则文件 <code>.clinerules</code></strong>（README 原文）： 用于定义项目专属规则——编码标准、架构约定、部署流程、测试要求； <strong>规则会被 CLI、VS Code 扩展与 JetBrains 插件自动读取</strong>。 另可用 skills 让模型按需加载特定规则。 Desktop 形态提到「run agent sessions in any folder」，存在跨文件夹会话管理。 <strong>上下文机制已核到</strong>：接近上限时 <strong>Auto Compact 自动摘要</strong>，官方原文 &quot;Creates a comprehensive summary... Replaces the conversation history with the summary&quot;；窗口大小<strong>由所选模型决定</strong>（官方列的 Claude Sonnet 4.5 为 1M、GPT-5 为 400K、Gemini 2.5 Pro 为 1M+）。 <strong>跨会话记忆靠 Memory Bank</strong>：一套结构化 markdown 文件 （<code>projectbrief.md</code> / <code>productContext.md</code> / <code>activeContext.md</code> / <code>progress.md</code> 等），放进仓库、以 <code>.clinerules</code> 指令驱动读写； 官方另有 Focus Chain（todo 注入）与 <code>/newtask</code>、<code>/smol</code> 做上下文交接。</dd>
+          <dd><p><strong>项目级规则文件是 <code>.clinerules</code>。</strong></p>
+            <p>它用来定义项目专属规则：编码标准、架构约定、部署流程、测试要求。 <strong>规则会被 CLI、VS Code 扩展与 JetBrains 插件自动读取。</strong> 另可用 skills 让模型按需加载特定规则。</p>
+            <p>Desktop 形态提到<strong>「run agent sessions in any folder」</strong>，也就是有跨文件夹的会话管理。</p>
+            <p><strong>上下文机制已核到</strong>：接近上限时 <strong>Auto Compact 自动摘要</strong>。 窗口大小<strong>由所选模型决定</strong> —— 官方列的 Claude Sonnet 4.5 为 1M、 GPT-5 为 400K、Gemini 2.5 Pro 为 1M+。</p>
+            <p><strong>跨会话记忆靠 Memory Bank</strong>：一套结构化 markdown 文件 （<code>projectbrief.md</code> / <code>productContext.md</code> / <code>activeContext.md</code> / <code>progress.md</code> 等）， 放进仓库、以 <code>.clinerules</code> 指令驱动读写。</p>
+            <p>官方另有 Focus Chain（todo 注入）与 <code>/newtask</code>、<code>/smol</code> 做上下文交接。</p>
+            <p><strong>官方对 Auto Compact 的原文</strong>：Creates a comprehensive summary... Replaces the conversation history with the summary</p></dd>
         </div>
         <div class="axis">
           <dt><span data-zh>权限与限制</span><span data-en>Permissions & limits</span></dt>
-          <dd><strong>两级审批设计，本赛道最细</strong>（README 原文）： 一是 <strong>Plan / Act 双模式</strong>——Plan 模式下 Cline 探索代码库、提出澄清问题、 列出策略；对齐后切到 Act 模式执行计划。 二是 <strong>「每次文件编辑与终端命令都需要批准」</strong>， 也可切换 auto-approve 让它自主运行。 VS Code 扩展形态另有明确表述：&quot;use tools with human-in-the-loop approval&quot;。 <strong>CLI / headless 的审批行为已核到</strong>（官方 CLI Overview 与 CLI Reference）： CLI 提示语写 &quot;Default to start in act mode with auto-approve enabled&quot;， <code>--auto-approve &lt;boolean&gt;</code> <strong>默认 true</strong>——即默认放行工具； <code>--auto-approve false</code> 时每个工具调用前需批准，<code>--yolo</code> 跳过全部审批； ACP（编辑器集成）模式默认相反，为 false。 另：CLI 无 shell 命令允许/拒绝清单，官方建议用 PreToolUse hook 拦截。</dd>
+          <dd><p><strong>两级审批设计，是本站里最细的一套。</strong></p>
+            <p><strong>第一级是 Plan / Act 双模式。</strong> Plan 模式下 Cline 探索代码库、提出澄清问题、 列出策略；对齐之后切到 Act 模式执行计划。</p>
+            <p><strong>第二级是「每次文件编辑与终端命令都需要批准」</strong>，也可以切到 auto-approve 让它自主运行。VS Code 扩展形态的表述是<strong>「human-in-the-loop approval」</strong>。</p>
+            <p>⚠ <strong>但 CLI / headless 的默认行为是相反的，这点必须知道</strong>（已核官方 CLI Overview 与 CLI Reference）：</p>
+            <ul><li><code>--auto-approve &lt;boolean&gt;</code> <strong>默认 true</strong> —— 即默认放行工具</li><li><code>--auto-approve false</code> 时，每个工具调用前都需批准</li><li><code>--yolo</code> 跳过全部审批</li><li><strong>ACP（编辑器集成）模式默认相反</strong>，为 false</li></ul>
+            <p>另：<strong>CLI 没有 shell 命令的允许/拒绝清单</strong> —— 官方建议用 PreToolUse hook 拦截。</p>
+            <p><strong>CLI 提示语原文</strong>：Default to start in act mode with auto-approve enabled <strong>VS Code 扩展表述</strong>：use tools with human-in-the-loop approval</p></dd>
         </div>
         <div class="axis">
           <dt><span data-zh>适合什么任务</span><span data-en>Best for</span></dt>
-          <dd>需要同一工具覆盖编辑器、终端、桌面三种工作形态的用户。 需要模型自选（不绑定单一厂商）的人。 需要 CI/CD 集成（CLI headless）的人。 需要「改动可审查、可回滚」保证的用户——diff 呈现 + checkpoint 整体撤销。</dd>
+          <dd><p><strong>适合四类人：</strong></p>
+            <ul><li>需要同一工具覆盖<strong>编辑器、终端、桌面</strong>三种工作形态</li><li>需要<strong>模型自选</strong>（不想绑定单一厂商）</li><li>需要 <strong>CI/CD 集成</strong>（CLI headless）</li><li>需要「改动可审查、可回滚」的保证 —— diff 呈现 + checkpoint 整体撤销</li></ul></dd>
         </div>
       </dl>
 
@@ -170,9 +196,9 @@ People who need periodic automation (cron scheduling that survives restarts).</p
         <h2><span data-zh>价格</span><span data-en>Pricing</span></h2>
         <table class="src">
           <tbody>
-            <tr><th class="w-28"><span data-zh>月度入口</span><span data-en>Monthly entry</span></th><td><span data-zh>开源免费，模型费用另计</span><span data-en>开源免费，模型费用另计</span></td></tr>
-            <tr><th class="w-28"><span data-zh>年付</span><span data-en>Annual</span></th><td><span data-zh>开源免费，模型费用另计</span><span data-en>开源免费，模型费用另计</span></td></tr>
-            <tr><th class="w-28"><span data-zh>额度说明</span><span data-en>Quota note</span></th><td><span data-zh>Apache-2.0 开源，无授权费。 **模型调用费用由用户自付**—— 多形态（CLI / Desktop / VS Code 扩展）共享同一开源核心。 若使用云端模型，需自备 provider 凭据。</span><span data-en>Apache-2.0 开源，无授权费。 **模型调用费用由用户自付**—— 多形态（CLI / Desktop / VS Code 扩展）共享同一开源核心。 若使用云端模型，需自备 provider 凭据。</span></td></tr>
+            <tr><th class="w-28"><span data-zh>月度入口</span><span data-en>Monthly entry</span></th><td><span data-zh><p>开源免费，模型费用另计</p></span><span data-en><p>开源免费，模型费用另计</p></span></td></tr>
+            <tr><th class="w-28"><span data-zh>年付</span><span data-en>Annual</span></th><td><span data-zh><p>开源免费，模型费用另计</p></span><span data-en><p>开源免费，模型费用另计</p></span></td></tr>
+            <tr><th class="w-28"><span data-zh>额度说明</span><span data-en>Quota note</span></th><td><span data-zh><p>Apache-2.0 开源，无授权费。 <strong>模型调用费用由用户自付</strong>—— 多形态（CLI / Desktop / VS Code 扩展）共享同一开源核心。 若使用云端模型，需自备 provider 凭据。</p></span><span data-en><p>Apache-2.0 开源，无授权费。 <strong>模型调用费用由用户自付</strong>—— 多形态（CLI / Desktop / VS Code 扩展）共享同一开源核心。 若使用云端模型，需自备 provider 凭据。</p></span></td></tr>
           </tbody>
         </table>
         <p class="fine mt-3"><span data-zh>不同币种不做折算。优惠、地区、税费与登录后报价可能变化，购买前请到官方页面确认。</span><span data-en>No currency conversion. Discounts, regions, tax and post-login pricing can change — confirm on the official page before buying.</span></p>
@@ -214,17 +240,51 @@ People who need periodic automation (cron scheduling that survives restarts).</p
 
             <div class="panel is-slim">
         <h2><span data-zh>实测记录</span><span data-en>Measured runs</span></h2>
-        <p>本站尚未完成实测。测试协议见 <a href="https://github.com/speculcom/ai-agent-guide/blob/main/tracks/agents/tasks/_protocol.md" target="_blank" rel="noopener">tasks/_protocol.md</a>。
-
-<strong>实测建议</strong>：这个工具的实测重点应是<strong>跨形态的一致性</strong>——
-同一个任务在三套形态下表现是否一致，审批行为是否一致。</p>
+        <p>本站尚未完成实测。测试协议见 <a href="https://github.com/speculcom/ai-agent-guide/blob/main/tracks/agents/tasks/_protocol.md" target="_blank" rel="noopener">tasks/_protocol.md</a>。</p>
+            <p><strong>实测建议</strong>：这个工具的实测重点应是<strong>跨形态的一致性</strong>—— 同一个任务在三套形态下表现是否一致，审批行为是否一致。</p>
       </div>
 
 
             <div class="panel is-slim">
+        <h2>三种形态（README 明确列出）</h2>
+        <div class="tbl-wrap"><table><thead><tr><th>形态</th><th>关键能力</th></tr></thead><tbody><tr><td><strong>CLI</strong></td><td><code>npm i -g cline</code>；交互式对话或<strong>完全 headless</strong>，用于 CI/CD 与脚本</td></tr><tr><td><strong>Desktop App</strong></td><td>macOS 与 Windows 原生应用；<strong>在任意文件夹运行 agent session</strong>；<strong>定时任务</strong>；管理 models / plugins / <strong>MCP servers</strong></td></tr><tr><td><strong>VS Code 扩展</strong></td><td>创建文件、执行命令、浏览网页、使用工具，<strong>human-in-the-loop approval</strong></td></tr></tbody></table></div>
+            <p><strong>这个三形态覆盖在本分区里是独一份</strong>—— 其他对象要么是 IDE + 扩展（Copilot），要么是编辑器单一形态（Zed），要么是 CLI 为主（Aider）。</p>
+            <p><strong>对用户意味着</strong>：可以在编辑器里用、可以在终端里跑、可以在桌面端定时跑， 同一套核心，同一份配置习惯。</p>
+      </div>
+      <div class="panel is-slim">
+        <h2>变更记录：两条 release 线</h2>
+        <div class="tbl-wrap"><table><thead><tr><th>版本</th><th>日期</th></tr></thead><tbody><tr><td><code>desktop-v0.0.37</code></td><td>2026-09-26</td></tr><tr><td><code>desktop-v0.0.36</code></td><td>2026-09-25</td></tr><tr><td><code>v4.1.21</code></td><td>2026-09-24</td></tr></tbody></table></div>
+            <p><strong>注意版本号是分开的两条线</strong>：</p>
+            <ul><li><code>v4.x</code> 是主版本（扩展与 CLI）</li><li><code>desktop-v0.0.x</code> 是桌面端，<strong>还在 0.0.x</strong></li></ul>
+            <p><strong>这意味着桌面端仍早期</strong>，稳定性预期要与主版本分开。</p>
+      </div>
+      <div class="panel is-slim">
+        <h2>权限设计：明确的人工审批</h2>
+        <p>VS Code 扩展形态的 README 原文：</p>
+            <p>``<code> use tools with human-in-the-loop approval </code>``</p>
+            <p><strong>这是本分区里少见的明确表述</strong>—— 多数工具不会在 README 首屏就说明工具执行需要人工批准。</p>
+            <p><strong>CLI / headless 的审批口径已核到</strong>（官方 CLI Overview 与 CLI Reference）： 提示语写 <strong>&quot;Default to start in act mode with auto-approve enabled&quot;</strong>， <code>--auto-approve &lt;boolean&gt;</code> <strong>默认 true</strong>——headless 运行默认放行工具， <code>--auto-approve false</code> 才改为每次工具调用前需批准，<code>--yolo</code> 跳过全部审批； ACP（编辑器集成）模式默认相反，为 false。 另：CLI 无 shell 命令允许/拒绝清单，官方建议用 PreToolUse hook 拦截。</p>
+            <p><strong>所以「三形态审批一致」并不成立</strong>：扩展形态默认要人工批准， CLI 默认自主放行——跨形态使用时必须按 <code>--auto-approve</code> 显式对齐。</p>
+      </div>
+      <div class="panel is-slim">
+        <h2>值得单独记的两处设计</h2>
+        <h3 class="sub-h">① Plan / Act 双模式</h3>
+            <p>Plan 模式下它只探索代码库、提问、列策略，<strong>不执行</strong>； 对齐后切到 Act 才动手。这是「先想清楚再改」的机制化实现。</p>
+            <h3 class="sub-h">② 监控 linter 与编译器错误</h3>
+            <p>README 原文：</p>
+            <blockquote>It monitors linter and compiler errors as it works, fixing issues like missing imports, type mismatches, and syntax errors before you even see them.</blockquote>
+            <p><strong>它会主动修「类型不匹配」「缺失 import」这类问题</strong> —— 这恰好是本仓库实测任务集里最难判定的部分，值得单独验证。</p>
+      </div>
+      <div class="panel is-slim">
+        <h2>权限定级说明</h2>
+        <p><code>confidence: partial</code>：</p>
+            <ul><li>✅ <strong>已核验（仓库与产品面）</strong>：仓库、许可（Apache-2.0）、star 数（69,514）</li><li>✅ <strong>已核验（能力面）</strong>：三形态能力与各自的运行特征、两条 release 线及日期、Plan/Act 双模式</li><li>✅ <strong>已核验（权限与工具面）</strong>：每次编辑需批准 + auto-approve、diff 呈现与 checkpoint 回滚（shadow Git）、linter/编译器错误监控、<code>.clinerules</code> 项目规则、Desktop 的 cron 定时任务（重启后仍生效）、MCP 管理与 MCP Marketplace、<strong>30+ provider 清单与 BYOK / 本地模型</strong>、<strong>内置工具清单</strong>、<strong>Auto Compact 与 Memory Bank</strong>、<strong>CLI / headless 审批默认值</strong></li><li>❌ 未核验：换 provider 后的 tool calling / structured output 质量对齐、Desktop 0.0.x 的稳定性预期</li></ul>
+      </div>
+
+            <div class="panel is-slim">
         <h2><span data-zh>相关条目</span><span data-en>Related entries</span></h2>
         <ul class="rel-list">
-          <li><span class="rel-t"><a href="./zed.html">Zed</a></span><span class="rel-n">同赛道另一端：以编辑器性能与多 agent 编排为主</span></li>
+          <li><span class="rel-t"><a href="./zed.html">Zed</a></span><span class="rel-n">同分区另一端：以编辑器性能与多 agent 编排为主</span></li>
           <li><span class="rel-t"><a href="./aider.html">Aider</a></span><span class="rel-n">同为开源，Git 集成是其核心设计</span></li>
           <li><span class="rel-t"><a href="/tools/filesystem.html"><span data-zh>Filesystem MCP Server</span><span data-en>Filesystem MCP Server</span></a></span><span class="rel-n"><span data-zh>另一层 · 给 agent 装的工具</span><span data-en>Other layer · MCP tools</span></span></li>
         </ul>
