@@ -4,18 +4,18 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Google ADK（Agent Development Kit） — Harness | 投机取巧</title>
-  <meta name="description" content="Google ADK（Agent Development Kit）（Google）：「code-first 的 agent 编排框架，核心资产是一个图执行引擎」 —— 官方 README 第一项特性就说明了它的身份： &gt; Workflow Runtime: A graph-based execution e…" />
+  <meta name="description" content="Google ADK（Agent Development Kit）（Google）：一句话说清它是什么： Google ADK 是「code-first 的 agent 编排框架，核心资产是一个图执行引擎」。 它的作用是把多个 agent 组织成一条流程，不替你跑单个 agent。 官方 README 的第一项特…" />
   <link rel="canonical" href="https://agent.specul.com/harness/google-adk.html" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Google ADK（Agent Development Kit）" />
   <meta property="og:url" content="https://agent.specul.com/harness/google-adk.html" />
   <meta property="og:title" content="Google ADK（Agent Development Kit） — Harness | 投机取巧" />
-  <meta property="og:description" content="Google ADK（Agent Development Kit）（Google）：「code-first 的 agent 编排框架，核心资产是一个图执行引擎」 —— 官方 README 第一项特性就说明了它的身份： &gt; Workflow Runtime: A graph-based execution e…" />
-  <meta name="theme-color" content="#05080f" />
+  <meta property="og:description" content="Google ADK（Agent Development Kit）（Google）：一句话说清它是什么： Google ADK 是「code-first 的 agent 编排框架，核心资产是一个图执行引擎」。 它的作用是把多个 agent 组织成一条流程，不替你跑单个 agent。 官方 README 的第一项特…" />
+  <meta name="theme-color" content="#16121f" />
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%238b7cf8'/%3E%3Cstop offset='1' stop-color='%2322d3c5'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='48' height='48' rx='12' fill='%2305080f'/%3E%3Cpath d='M14 32 L24 12 L34 32' fill='none' stroke='url(%23g)' stroke-width='2.4' stroke-linejoin='round'/%3E%3Ccircle cx='24' cy='27' r='2.4' fill='%2322d3c5'/%3E%3C/svg%3E" />
   <link rel="stylesheet" href="../brand.css" />
   <link rel="stylesheet" href="../site.css" />
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Google ADK（Agent Development Kit）","applicationCategory":"DeveloperApplication","url":"https://google.github.io/adk-docs/","sameAs":"https://google.github.io/adk-docs/","description":"「code-first 的 agent 编排框架，核心资产是一个图执行引擎」 —— 官方 README 第一项特性就说明了它的身份： > Workflow Runtime: A graph-based execution engine for composing deterministic > execution flows for agentic apps, with support for routing, fan-out/fan-in, > loops, retry, state management, dynamic nodes, human-in-the-loop, > and ne","dateModified":"2026-10-01","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Google ADK（Agent Development Kit）","applicationCategory":"DeveloperApplication","url":"https://google.github.io/adk-docs/","sameAs":"https://google.github.io/adk-docs/","description":"一句话说清它是什么： Google ADK 是「code-first 的 agent 编排框架，核心资产是一个图执行引擎」。 它的作用是把多个 agent 组织成一条流程，不替你跑单个 agent。 官方 README 的第一项特性就说明了它的身份： Workflow Runtime: A graph-based execution engine for composing deterministic execution flows for agentic apps, with support for routing, fan-out/fan-in, loops, retry, state m","dateModified":"2026-10-01","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}</script>
 </head>
 <body class="brand-ambient">
   <a class="t-skip" href="#main"><span data-zh>跳到主要内容</span><span data-en>Skip to main content</span></a>
@@ -104,65 +104,113 @@
         <span class="badge"><span data-zh>核验</span><span data-en>Checked</span> 2026-10-01</span>
       </div>
 
-            <p class="panel-lead"><span data-zh><strong>「code-first 的 agent 编排框架，核心资产是一个图执行引擎」</strong> —— 官方 README 第一项特性就说明了它的身份：
-
-&gt; <strong>Workflow Runtime</strong>: A graph-based execution engine for composing **deterministic
-&gt; execution flows** for agentic apps, with support for routing, fan-out/fan-in,
-&gt; <strong>loops</strong>, <strong>retry</strong>, <strong>state management</strong>, <strong>dynamic nodes</strong>, <strong>human-in-the-loop</strong>,
-&gt; and <strong>nested workflows</strong>.</span><span data-en><strong>&quot;A code-first agent orchestration framework whose core asset is a graph execution engine&quot;</strong> — the first feature listed in the official README states its identity:
-
-&gt; <strong>Workflow Runtime</strong>: A graph-based execution engine for composing **deterministic
-&gt; execution flows** for agentic apps, with support for routing, fan-out/fan-in,
-&gt; <strong>loops</strong>, <strong>retry</strong>, <strong>state management</strong>, <strong>dynamic nodes</strong>, <strong>human-in-the-loop</strong>,
-&gt; and <strong>nested workflows</strong>.</span></p>
+            <div class="panel-lead"><span data-zh><p><strong>一句话说清它是什么</strong>：</p>
+            <p>Google ADK 是「<strong>code-first</strong> 的 agent 编排框架，核心资产是一个图执行引擎」。 它的作用是把多个 agent 组织成一条流程，不替你跑单个 agent。</p>
+            <p><strong>官方 README 的第一项特性就说明了它的身份：</strong></p>
+            <blockquote><strong>Workflow Runtime</strong>: A graph-based execution engine for composing <strong>deterministic execution flows</strong> for agentic apps, with support for routing, fan-out/fan-in, <strong>loops</strong>, <strong>retry</strong>, <strong>state management</strong>, <strong>dynamic nodes</strong>, <strong>human-in-the-loop</strong>, and <strong>nested workflows</strong>.</blockquote></span><span data-en><p><strong>What it is, in one line</strong>: Google ADK is a &quot;code-first agent orchestration framework whose core asset is a graph execution engine&quot;. It organises several agents into one flow; it does not run a single agent for you.</p>
+            <p>The official README states its identity in the first feature it lists:</p>
+            <blockquote><strong>Workflow Runtime</strong>: A graph-based execution engine for composing <strong>deterministic execution flows</strong> for agentic apps, with support for routing, fan-out/fan-in, <strong>loops</strong>, <strong>retry</strong>, <strong>state management</strong>, <strong>dynamic nodes</strong>, <strong>human-in-the-loop</strong>, and <strong>nested workflows</strong>.</blockquote></span></div>
 
             <div class="panel is-slim">
         <h2><span data-zh>适合与不适合</span><span data-en>When to use it, when not to</span></h2>
-<span data-zh>        <p><strong>适合</strong>：要把多个 agent 组织成有分支、有循环、有人工介入的确定性流程；
-要 code-first 定义逻辑便于测试与版本管理；团队在 Google 生态内；
-需要内建 eval 与开发 UI。
-<strong>不适合</strong>：只跑单个 agent、不需要图结构（用 OpenAI Agents SDK 更轻）；
-需要文件级/网络级沙箱边界但不想自己实现（官方未提供沙箱）；长上下文压缩依赖 1.16+ 的 Context Compaction（滑动窗口）。</p></span><span data-en>        <p><strong>Fits</strong>: organising multiple agents into deterministic flows with branches, loops and human intervention; defining logic code-first so it is testable and versionable; a team inside the Google ecosystem; needing built-in eval and a development UI.
-<strong>Not a fit</strong>: running a single agent with no graph structure (OpenAI Agents SDK is lighter); needing file- or network-level sandbox boundaries without implementing them yourself; making long-context compaction a hard requirement (this site&#39;s checks did not verify how it is done).</p></span>
+<span data-zh>        <div><p><strong>适合：</strong></p></div>
+        <div><ul><li>要把多个 agent 组织成有分支、有循环、有人工介入的确定性流程</li><li>要 code-first 定义逻辑，便于测试与版本管理</li><li>团队在 Google 生态内</li><li>需要内建 eval 与开发 UI</li></ul></div>
+        <div class="warn-p"><p><strong>不适合：</strong></p></div>
+        <div><ul><li>只跑单个 agent、不需要图结构 —— 用 OpenAI Agents SDK 更轻</li><li>需要文件级 / 网络级沙箱边界，但不想自己实现 —— 官方未提供沙箱</li><li>长上下文压缩依赖 1.16+ 的 Context Compaction（滑动窗口）</li></ul></div></span><span data-en>        <div><p><strong>Fits</strong>: organising multiple agents into deterministic flows with branches, loops and human intervention; defining agents and tools code-first so they are testable and versionable; a team inside the Google ecosystem (Cloud Run / Vertex / Gemini); needing built-in eval and a development UI; wanting one framework across Python and TypeScript; needing tool-level human confirmation, session persistence and resume. <strong>Not a fit</strong>: running a single agent with no graph structure (OpenAI Agents SDK or Deep Agents are lighter); needing built-in file- or network-sandbox boundaries — <strong>the official docs provide none</strong>, so file access goes through the Artifacts abstraction or a tool you wire up yourself; wanting self-hosted weights out of the box without going through the LiteLLM adaptor layer.</p></div></span>
       </div>
 
 
       <div class="block-head">
         <h2 class="t-h2"><span data-zh>固定坐标系</span><span data-en>Fixed coordinate system</span></h2>
-        <p class="t-section-lead">8 <span data-zh>个维度</span><span data-en>dimensions</span>, <span data-zh>与同赛道其他对象逐项可比</span><span data-en>each comparable item by item against others in the same track</span>.</p>
+        <p class="t-section-lead">8 <span data-zh>个维度</span><span data-en>dimensions</span>, <span data-zh>与同分区其他对象逐项可比</span><span data-en>each comparable item by item against others in the same section</span>.</p>
       </div>
       <dl class="axes">
         <div class="axis">
           <dt><span data-zh>模型与开放条件</span><span data-en>Model & openness</span></dt>
-          <dd><strong>官方口径：optimized for Gemini，但 model-agnostic，且有官方 LiteLLM 适配层（本轮已核验实现路径）。</strong> README 原文：&quot;While optimized for Gemini, ADK is <strong>model-agnostic</strong>, deployment-agnostic, and compatible with other frameworks.&quot; 官方「Models for Agents」页给出三条接入机制： ① 直接字符串 / 注册表（Gemini、Claude、Agent Platform 托管模型）； ② model connectors，即 <code>LiteLlm</code> / <code>ApigeeLlm</code> 包装类——官方原文 LiteLLM &quot;providing a standardized, OpenAI-compatible interface to over 100+ LLMs&quot;；③ 模型路由（运行时动态选型 + 出错自动切换）。 本地/自托管模型有官方专页：Ollama、vLLM、LiteRT-LM。 ⚠ 官方未说明 &quot;optimized for Gemini&quot; 优化了什么，也未给出 非 Gemini 模型下工具调用与 structured output 的可靠性对比 （已查 Models 页与 LiteLLM 页）。</dd>
+          <dd><p><strong>官方口径：为 Gemini 优化，但它同时是 model-agnostic。</strong></p>
+            <p>README <strong>原文</strong>：&quot;While optimized for Gemini, ADK is <strong>model-agnostic</strong>, deployment-agnostic, and compatible with other frameworks.&quot;</p>
+            <p><strong>所以非 Gemini 模型能接。</strong> 官方「Models for Agents」页给出三条接入机制：</p>
+            <ul><li><strong>① 直接字符串 / 注册表</strong> —— Gemini、Claude、Agent Platform 托管模型</li><li><strong>② model connectors</strong> —— <code>LiteLlm</code> / <code>ApigeeLlm</code> 包装类</li><li><strong>③ 模型路由</strong> —— 运行时动态选型 + 出错自动切换</li></ul>
+            <p><strong>官方原文</strong>：&quot;providing a standardized, OpenAI-compatible interface to over 100+ LLMs&quot;</p>
+            <p>本地 / 自托管模型有官方专页：Ollama、vLLM、LiteRT-LM。</p>
+            <p>⚠ <strong>官方未说明</strong>：&quot;optimized for Gemini&quot; 优化了什么。</p>
+            <p>⚠ 也未给出非 Gemini 模型下工具调用与 structured output 的可靠性对比。 <strong>已查</strong> Models 页与 LiteLLM 页。</p></dd>
         </div>
         <div class="axis">
           <dt><span data-zh>运行位置</span><span data-en>Where it runs</span></dt>
-          <dd><strong>四种运行形态，全部由 <code>adk</code> CLI 或容器提供</strong>（README 核验）： <strong>① 交互式 CLI</strong>（<code>adk run &lt;agent-folder<strong></code> 段落）； <strong>② 内建 Web UI</strong>：<code>adk web </strong>agent-folder<strong></code>，官方说明支持 multi-agent directories 或直接指向单个 agent 文件夹； <strong>③ Development UI</strong>：官方原文&quot;A built-in development UI to help you test, evaluate, debug, and showcase your agent(s)&quot; —— <strong>这是内建的开发调试台</strong>； <strong>④ 容器化部署</strong>：<code>adk deploy docker --with_ui </strong>agent-folder&gt;</code>。 ⚠ 这四种都是<strong>你本地或你的云上进程</strong>，ADK 本身不提供托管服务 （托管要靠 Vertex AI Agent Engine 或 Cloud Run，那是 Google 的产品而非本框架的）。</dd>
+          <dd><p><strong>四种运行形态，全部由 <code>adk</code> CLI 或容器提供（README 核验）。</strong></p>
+            <ul><li><strong>① 交互式 CLI</strong> —— <code>adk run &lt;agent-folder&gt;</code></li><li><strong>② 内建 Web UI</strong> —— <code>adk web &lt;agent-folder&gt;</code>。官方说明支持 multi-agent directories 或直接指向单个 agent 文件夹</li></ul>
+            <ul><li><strong>③ Development UI</strong> —— 内建的开发调试台</li><li><strong>④ 容器化部署</strong> —— <code>adk deploy docker --with_ui &lt;agent-folder&gt;</code></li></ul>
+            <p><strong>官方原文</strong>：&quot;A built-in development UI to help you test, evaluate, debug, and showcase your agent(s)&quot;</p>
+            <p>⚠ 这四种都是<strong>你本地或你的云上进程</strong>。ADK 本身不提供托管服务。</p>
+            <p>托管要靠 Vertex AI Agent Engine 或 Cloud Run —— 那是 Google 的产品，不是本框架的。</p></dd>
         </div>
         <div class="axis">
           <dt><span data-zh>本地文件</span><span data-en>Local files</span></dt>
-          <dd><strong>官方对「文件」的答案是抽象层 Artifacts，不是裸文件系统（本轮已核验）。</strong> 官方 Artifacts 页原文：Artifacts &quot;represent a crucial mechanism for managing named, versioned binary data associated either with a specific user interaction session or persistently with a user&quot;. 落盘位置由你选的 ArtifactService 决定——&quot;Their storage and retrieval are managed by a dedicated Artifact Service&quot;：InMemoryArtifactService （重启即丢）或 GcsArtifactService（持久、带版本）。 ADK 是库、不内置 Read/Write/Bash 这类文件工具：磁盘访问要靠自己写 function tool，或接 MCP——官方 MCP 页示例正是 filesystem MCP server。 ⚠ 官方未提供沙箱机制或文件系统权限模型（已查 Artifacts、tools、 deploy 各页）；默认访问边界取决于你自己接的工具。</dd>
+          <dd><p><strong>官方对「文件」的答案是抽象层 Artifacts，不是裸文件系统（本轮已核验）。</strong> 换句话说，它自己不读写磁盘。</p>
+            <p>官方 Artifacts 页 <strong>原文</strong>：</p>
+            <p><strong>官方原文</strong>：Artifacts &quot;represent a crucial mechanism for managing named, versioned binary data associated either with a specific user interaction session or persistently with a user&quot;</p>
+            <p><strong>落盘位置由你选的 ArtifactService 决定。</strong> <strong>官方原文</strong>：&quot;Their storage and retrieval are managed by a dedicated Artifact Service&quot;</p>
+            <p>两个后端：</p>
+            <ul><li><code>InMemoryArtifactService</code> —— 重启即丢</li><li><code>GcsArtifactService</code> —— 持久、带版本</li></ul>
+            <p><strong>ADK 是库，不内置 Read/Write/Bash 这类文件工具。</strong> 磁盘访问要靠自己写 function tool，或接 MCP。 官方 MCP 页示例正是 filesystem MCP server。</p>
+            <p>⚠ <strong>官方未提供</strong>沙箱机制或文件系统权限模型（已查 Artifacts、tools、deploy 各页）。 默认访问边界取决于你自己接的工具。</p></dd>
         </div>
         <div class="axis">
           <dt><span data-zh>关机后的任务</span><span data-en>Tasks after shutdown</span></dt>
-          <dd><strong>官方有两条明确证据：会话/状态持久化 + 中断续跑（Resume）。</strong> <strong>① 持久化</strong>：SessionService 分三档——InMemorySessionService （&quot;All conversation data is lost if the application restarts&quot;）、 DatabaseSessionService（&quot;Data survives application restarts&quot;）、 VertexAiSessionService（托管）；MemoryService 另有 InMemory 与 Vertex AI Memory Bank 两档。 <strong>② 续跑</strong>：ADK Python 1.16+ 可给 App 配 <code>ResumabilityConfig(is_resumable=True)</code>，官方原文 &quot;allows an agent workflow to pick up where it left off&quot;，用 Invocation ID 经 <code>/run_sse</code> 或 <code>runner.run_async</code> 恢复。 <strong>ADK 本身是库、不托管</strong>：真后台要靠部署到 Cloud Run / Vertex AI Agent Engine（你的云资源）。⚠ 官方两条边界：Resume 目前 &quot;not currently supported&quot; 从 Web UI / CLI 触发；工具可能被重复执行 （官方提醒有副作用的工具要自己防重）。</dd>
+          <dd><p><strong>它不托管后台。官方有两条明确证据：会话 / 状态持久化，以及中断续跑（Resume）。</strong></p>
+            <p><strong>① 持久化</strong> —— SessionService 分三档：</p>
+            <ul><li><code>InMemorySessionService</code> —— <strong>官方原文</strong>： &quot;All conversation data is lost if the application restarts&quot;</li></ul>
+            <ul><li><code>DatabaseSessionService</code> —— &quot;Data survives application restarts&quot;</li><li><code>VertexAiSessionService</code> —— 托管</li></ul>
+            <p>MemoryService 另有 InMemory 与 Vertex AI Memory Bank 两档。</p>
+            <p><strong>② 续跑</strong> —— ADK Python 1.16+ 可给 App 配 <code>ResumabilityConfig(is_resumable=True)</code>。</p>
+            <p>官方 <strong>原文</strong>：</p>
+            <p><strong>官方原文</strong>：&quot;allows an agent workflow to pick up where it left off&quot;</p>
+            <p>用 Invocation ID 恢复。 经 <code>/run_sse</code> 或 <code>runner.run_async</code> 都可以。</p>
+            <p><strong>ADK 本身是库、不托管。</strong> 真后台要靠部署到 Cloud Run / Vertex AI Agent Engine —— 那是你的云资源。</p>
+            <p>⚠ 官方两条边界：</p>
+            <ul><li>Resume 目前 &quot;not currently supported&quot; 从 Web UI / CLI 触发</li><li>工具可能被重复执行（官方提醒有副作用的工具要自己防重）</li></ul></dd>
         </div>
         <div class="axis">
           <dt><span data-zh>工具与扩展</span><span data-en>Tools & extensions</span></dt>
-          <dd><strong>工具生态是它最强调的部分，MCP 在官方文档里是一等能力。</strong> README 原文：&quot;Utilize pre-built tools, custom functions, <strong>OpenAPI specs</strong>, <strong>MCP tools</strong> or integrate existing tools&quot;。 官方另有专门的 MCP tools 文档页，给出 <code>McpToolset</code> 类，且<strong>双向</strong>： 既让 ADK 作 MCP 客户端接外部 MCP server（示例含 filesystem / Google Maps MCP server），也能把 ADK 工具包成 MCP server 对外暴露； 传输覆盖 stdio 与 Streamable HTTP。 <strong>工具级人工确认（HITL）</strong>：官方原文 &quot;a tool confirmation flow (HITL) that can guard tool execution with explicit confirmation and custom input&quot;，对应文档 <code>tools/confirmation</code>，机制细节见 permissions 轴。 <strong>这是本站已收录对象里少见的「工具级人工确认」</strong>，与 OpenAI Agents SDK 的 input/output guardrail 是不同层次的东西。</dd>
+          <dd><p><strong>工具生态是它最强调的部分，MCP 在官方文档里是一等能力。</strong></p>
+            <p>README <strong>原文</strong>：</p>
+            <p>&quot;Utilize pre-built tools, custom functions, <strong>OpenAPI specs</strong>, <strong>MCP tools</strong> or integrate existing tools&quot;</p>
+            <p>官方另有专门的 MCP tools 文档页。 它给出 <code>McpToolset</code> 类，且是<strong>双向</strong>的：</p>
+            <ul><li>让 ADK 作 MCP 客户端，接外部 MCP server （示例含 filesystem / Google Maps MCP server）</li></ul>
+            <ul><li>也能把 ADK 工具包成 MCP server 对外暴露</li><li>传输覆盖 stdio 与 Streamable HTTP</li></ul>
+            <p><strong>工具级人工确认（HITL）</strong> <strong>官方原文</strong>：&quot;a tool confirmation flow (HITL) that can guard tool execution with explicit confirmation and custom input&quot;</p>
+            <p>对应文档 <code>tools/confirmation</code>。 机制细节见 permissions 轴。</p>
+            <p><strong>这是本站已收录对象里少见的「工具级人工确认」。</strong> 它与 OpenAI Agents SDK 的 input/output guardrail 是不同层次的东西。</p></dd>
         </div>
         <div class="axis">
           <dt><span data-zh>上下文与记忆</span><span data-en>Context & memory</span></dt>
-          <dd><strong>官方对 session / memory 有清晰区分，且有专门的上下文压缩特性。</strong> 官方 sessions 页原文：<code>Session</code> 是 &quot;single, ongoing interaction&quot;， <code>State</code> 是 &quot;data within the current conversation&quot;， <code>Memory</code> 是 &quot;searchable, cross-session information&quot;；前两者由 <code>SessionService</code> 管，长期知识由 <code>MemoryService</code> 管。 <strong>压缩</strong>：ADK Python 1.16.0+ 提供 Context Compaction，官方原文 &quot;reduce the size of context as an agent is running by summarizing older parts of the agent workflow event history&quot;，用<strong>滑动窗口</strong>： 配 <code>EventsCompactionConfig(compaction_interval, overlap_size)</code>， 到阈值即摘要更早的 event，<code>summarizer</code> 可换模型。 ⚠ 按本站「状态 ≠ 上下文」：<code>state</code> 管流程数据、Compaction 管历史 压缩，是两套机制，官方也分开描述。</dd>
+          <dd><p><strong>官方对 session / memory 有清晰区分，且有专门的上下文压缩特性。</strong></p>
+            <p>官方 sessions 页三句 <strong>官方原文</strong>：<code>Session</code> 是 &quot;single, ongoing interaction&quot;， <code>State</code> 是 &quot;data within the current conversation&quot;， <code>Memory</code> 是 &quot;searchable, cross-session information&quot;</p>
+            <p>前两者由 <code>SessionService</code> 管。 长期知识由 <code>MemoryService</code> 管。</p>
+            <p><strong>压缩</strong>：ADK Python 1.16.0+ 提供 Context Compaction。<strong>官方原文</strong>：&quot;reduce the size of context as an agent is running by summarizing older parts of the agent workflow event history&quot;</p>
+            <p>机制是<strong>滑动窗口</strong>：</p>
+            <ul><li>配 <code>EventsCompactionConfig(compaction_interval, overlap_size)</code></li><li>到阈值即摘要更早的 event</li><li><code>summarizer</code> 可换模型</li></ul>
+            <p>⚠ 按本站「状态 ≠ 上下文」：<code>state</code> 管流程数据。 Compaction 管历史压缩。这是两套机制，官方也分开描述。</p></dd>
         </div>
         <div class="axis">
           <dt><span data-zh>权限与限制</span><span data-en>Permissions & limits</span></dt>
-          <dd><strong>官方明确的机制是「工具级人工确认」Tool Confirmation（HITL）。</strong> 文档 <code>tools/confirmation</code>（v1.14.0 起，标注 <strong>Experimental</strong>）原文： &quot;allows an ADK Tool to pause its execution and interact with a user or other system for confirmation&quot;。 两种用法已核验：① <code>FunctionTool(..., require_confirmation=True)</code> 要一次 yes/no，也可传入返回布尔值的函数（如&quot;金额 &gt; 1000 才问&quot;）； ② 高级确认 <code>tool_context.request_confirmation(hint, payload)</code>， 可暂停工具、收集结构化数据（如审批天数）后再续跑；无 UI 时可用 ADK server 的 <code>/run</code> 或 <code>/run_sse</code> REST 端点远程确认。 <strong>这只是「执行前问一下」，不是边界划定</strong>：官方未提供沙箱或文件系统 权限模型（已查 confirmation、Artifacts、deploy 各页）。 ⚠ 官方已知限制：DatabaseSessionService 与 VertexAiSessionService 不支持该特性。</dd>
+          <dd><p><strong>官方明确的机制是「工具级人工确认」Tool Confirmation（HITL）。</strong></p>
+            <p>文档 <code>tools/confirmation</code>（v1.14.0 起，标注 <strong>Experimental</strong>）<strong>官方原文</strong>：&quot;allows an ADK Tool to pause its execution and interact with a user or other system for confirmation&quot;</p>
+            <p><strong>两种用法已核验。</strong></p>
+            <ul><li><strong>① 简单确认</strong> —— <code>FunctionTool(..., require_confirmation=True)</code> 要一次 yes/no； 也可传入返回布尔值的函数（如&quot;金额 &gt; 1000 才问&quot;）</li></ul>
+            <ul><li><strong>② 高级确认</strong> —— <code>tool_context.request_confirmation(hint, payload)</code>。 可暂停工具、收集结构化数据（如审批天数）后再续跑</li></ul>
+            <p>无 UI 时可以用 ADK server 的 <code>/run</code> 或 <code>/run_sse</code> REST 端点远程确认。</p>
+            <p><strong>这只是「执行前问一下」，不是边界划定。</strong> 官方未提供沙箱或文件系统权限模型。 <strong>已查</strong> confirmation、Artifacts、deploy 各页。</p>
+            <p>⚠ 官方已知限制：DatabaseSessionService 与 VertexAiSessionService 不支持该特性。</p></dd>
         </div>
         <div class="axis">
           <dt><span data-zh>适合什么任务</span><span data-en>Best for</span></dt>
-          <dd><strong>适合</strong>：需要把多个 agent 组织成<strong>有分支、有循环、有人工介入的确定性流程</strong>； 要用代码优先（code-first）定义 agent 与工具，便于测试与版本管理； 团队在 Google 生态内（Cloud Run / Vertex / Gemini）； 需要内建 eval 与开发 UI；希望用同一套框架覆盖 Python 与 TypeScript； 需要工具级人工确认、会话持久化与中断续跑。 <strong>不适合</strong>：只跑单个 agent、不需要图结构（用 OpenAI Agents SDK 或 Deep Agents 更轻）；需要框架内置的文件/网络沙箱边界——官方未提供 （文件访问靠 Artifacts 抽象或自接工具）；想开箱即用接自托管权重 又不愿经 LiteLLM 适配层。</dd>
+          <dd><p><strong>适合这些情况。</strong></p>
+            <ul><li>要把多个 agent 组织成<strong>有分支、有循环、有人工介入的确定性流程</strong></li><li>要用代码优先（code-first）定义 agent 与工具，便于测试与版本管理</li><li>团队在 Google 生态内（Cloud Run / Vertex / Gemini）</li><li>需要内建 eval 与开发 UI</li><li>希望用同一套框架覆盖 Python 与 TypeScript</li><li>需要工具级人工确认、会话持久化与中断续跑</li></ul>
+            <p><strong>不适合这些情况。</strong></p>
+            <ul><li>只跑单个 agent、不需要图结构 —— 用 OpenAI Agents SDK 或 Deep Agents 更轻</li><li>需要框架内置的文件 / 网络沙箱边界 —— <strong>官方未提供</strong>。 文件访问靠 Artifacts 抽象或自接工具</li></ul>
+            <ul><li>想开箱即用接自托管权重，又不愿经 LiteLLM 适配层</li></ul></dd>
         </div>
       </dl>
 
@@ -171,11 +219,11 @@
         <ul>
 
           <li><span data-zh>以为是「Google 版 OpenAI Agents SDK」—— <strong>它是编排框架</strong>，核心资产是 Workflow Runtime 的图执行引擎，不是单 agent 原语</span><span data-en>Assuming it is &quot;Google&#39;s version of the OpenAI Agents SDK&quot; — <strong>it is an orchestration framework</strong> whose core asset is the Workflow Runtime graph engine, not single-agent primitives</span></li>
-          <li><span data-zh>把 <code>state management</code> 读成「有上下文管理」—— 前者是流程状态；后者是独立的 Context Compaction 机制（1.16+）</span><span data-en>Reading <code>state management</code> as &quot;has context management&quot; — the former is process state; the latter was not verified here</span></li>
+          <li><span data-zh>把 <code>state management</code> 读成「有上下文管理」—— 前者是流程状态；后者是独立的 Context Compaction 机制（1.16+）</span><span data-en>Reading <code>state management</code> as &quot;has context management&quot; — the former is process state; the latter is the separate Context Compaction mechanism (1.16+)</span></li>
           <li><span data-zh>把 MCP 当成它的核心依赖 —— README 只把 MCP 列为工具来源之一，与 OpenAI Agents SDK 把 <code>mcp&gt;=1.19.0</code> 放进 <code>dependencies</code> 不是一回事</span><span data-en>Treating MCP as a core dependency — the README lists MCP only as one tool source, which is not the same as OpenAI Agents SDK putting <code>mcp&gt;=1.19.0</code> in <code>dependencies</code></span></li>
           <li><span data-zh>以为 Tool Confirmation 等于沙箱 —— 它是「执行前问一句」，不是边界划定</span><span data-en>Assuming Tool Confirmation equals a sandbox — it is &quot;ask once before running&quot;, not a boundary</span></li>
           <li><span data-zh>以为开源免费等于零成本 —— Cloud Run / Vertex Agent Engine 的云费用自理，且有 <code>GOOGLE_GENAI_USE_ENTERPRISE</code> 开关</span><span data-en>Assuming open source and free means zero cost — Cloud Run / Vertex Agent Engine costs are yours, and there is a <code>GOOGLE_GENAI_USE_ENTERPRISE</code> switch</span></li>
-          <li><span data-zh>以为只有 Python —— 还有独立的 TypeScript 仓（<code>google/adk-js</code>，1,426★），本站按粒度只收录 Python 主体</span><span data-en>Assuming it is Python-only — there is a separate TypeScript repo (<code>google/adk-js</code>, 1,426★); this site indexes the Python body only, at that granularity</span></li>
+          <li><span data-zh>以为只有 Python —— 还有独立的 TypeScript 仓（<code>google/adk-js</code>，1,426★），本站按粒度只收录 Python 主体</span><span data-en>Assuming it is Python-only — there is a separate TypeScript repo (<code>google/adk-js</code>, 1,426★); the Python body is the only thing indexed here</span></li>
           <li><span data-zh>搞混仓库名 —— 样例仓显示为 <code>google/adk-recipes</code>，描述里写的是 adk-samples</span><span data-en>Mixing up repo names — the sample repo shows as <code>google/adk-recipes</code> while the description says adk-samples</span></li>
         </ul>
       </div>
@@ -185,9 +233,35 @@
         <h2><span data-zh>价格</span><span data-en>Pricing</span></h2>
         <table class="src">
           <tbody>
-            <tr><th class="w-28"><span data-zh>月度入口</span><span data-en>Monthly entry</span></th><td><span data-zh>框架免费（Apache-2.0）；设 GOOGLE_GENAI_USE_ENTERPRISE 后走 Google Cloud 企业平台计费</span><span data-en>框架免费（Apache-2.0）；设 GOOGLE_GENAI_USE_ENTERPRISE 后走 Google Cloud 企业平台计费</span></td></tr>
+            <tr><th class="w-28"><span data-zh>月度入口</span><span data-en>Monthly entry</span></th><td><span data-zh><p>框架免费（Apache-2.0）；设 GOOGLE_GENAI_USE_ENTERPRISE 后走 Google Cloud 企业平台计费</p></span><span data-en><p>框架免费（Apache-2.0）；设 GOOGLE_GENAI_USE_ENTERPRISE 后走 Google Cloud 企业平台计费</p></span></td></tr>
             <tr><th class="w-28"><span data-zh>月度数值</span><span data-en>Monthly price</span></th><td>0</td></tr>
-            <tr><th class="w-28"><span data-zh>额度说明</span><span data-en>Quota note</span></th><td><span data-zh>**框架免费，但部署与模型两处都可能产生费用**： （1）官方给的部署目标是 Cloud Run 与 Vertex AI Agent Engine，这两处都按云资源计费； （2）用 Gemini 走 Google 侧计费，用其它模型走各自 provider。 **（3）`GOOGLE_GENAI_USE_ENTERPRISE` 的含义本轮已核验清楚 —— 它不是「解锁企业版功能」的开关，而是「把请求从 Gemini Developer API 切到 Google Cloud 企业平台（Gemini Enterprise Agent Platform / Vertex AI）」的 路由开关，计费口径随之改变。** 官方 codelab 对三个变量的说明原文（核验 2026-10-01）： `GOOGLE_GENAI_USE_ENTERPRISE` = "This tells the ADK that you intend to use Google's **Gemini Enterprise Agent Platform** service for your Generative AI operations." `GOOGLE_CLOUD_PROJECT` = "ADK needs this to correctly associate your agent with your cloud resources and **enable billing**." `GOOGLE_CLOUD_LOCATION` = 地域，如 `global`。 **⚠ 最关键的一条：官方把「enable billing」明确挂在 `GOOGLE_CLOUD_PROJECT` 上。** 设了这三个变量，agent 就落进你的 Google Cloud 项目开始计费； 不设则走 Gemini Developer API 那条路（另有其免费层与配额）。 **且三个变量必须成组出现** —— 官方所有示例都是三个一起设，没有只设其一的写法。 ⚠ 官方示例里这个变量的取值不统一，有`1`（README / codelab .env）、`TRUE`、 `True`（Cloud 文档）三种写法，**按Python 布尔语义大小写皆真，但取值不一致这点本身值得注意**。 ⚠ 具体的 Gemini 单价与 Vertex AI Agent Engine / Cloud Run 的实际费率本站未逐项核验。</span><span data-en>**框架免费，但部署与模型两处都可能产生费用**： （1）官方给的部署目标是 Cloud Run 与 Vertex AI Agent Engine，这两处都按云资源计费； （2）用 Gemini 走 Google 侧计费，用其它模型走各自 provider。 **（3）`GOOGLE_GENAI_USE_ENTERPRISE` 的含义本轮已核验清楚 —— 它不是「解锁企业版功能」的开关，而是「把请求从 Gemini Developer API 切到 Google Cloud 企业平台（Gemini Enterprise Agent Platform / Vertex AI）」的 路由开关，计费口径随之改变。** 官方 codelab 对三个变量的说明原文（核验 2026-10-01）： `GOOGLE_GENAI_USE_ENTERPRISE` = "This tells the ADK that you intend to use Google's **Gemini Enterprise Agent Platform** service for your Generative AI operations." `GOOGLE_CLOUD_PROJECT` = "ADK needs this to correctly associate your agent with your cloud resources and **enable billing**." `GOOGLE_CLOUD_LOCATION` = 地域，如 `global`。 **⚠ 最关键的一条：官方把「enable billing」明确挂在 `GOOGLE_CLOUD_PROJECT` 上。** 设了这三个变量，agent 就落进你的 Google Cloud 项目开始计费； 不设则走 Gemini Developer API 那条路（另有其免费层与配额）。 **且三个变量必须成组出现** —— 官方所有示例都是三个一起设，没有只设其一的写法。 ⚠ 官方示例里这个变量的取值不统一，有`1`（README / codelab .env）、`TRUE`、 `True`（Cloud 文档）三种写法，**按Python 布尔语义大小写皆真，但取值不一致这点本身值得注意**。 ⚠ 具体的 Gemini 单价与 Vertex AI Agent Engine / Cloud Run 的实际费率本站未逐项核验。</span></td></tr>
+            <tr><th class="w-28"><span data-zh>额度说明</span><span data-en>Quota note</span></th><td><span data-zh><p><strong>框架免费不等于零成本。</strong> 可能花钱的地方有两处。</p>
+            <p>（1）官方给的部署目标是 <strong>Cloud Run</strong> 与 <strong>Vertex AI Agent Engine</strong>。 这两处都按云资源计费。</p>
+            <p>（2）用 Gemini 走 Google 侧计费，用其它模型走各自 provider。</p>
+            <p><strong>（3）<code>GOOGLE_GENAI_USE_ENTERPRISE</code> 是个计费路径开关。</strong> 它不是「解锁企业功能」的开关。</p>
+            <p>它把请求从 Gemini Developer API 切到 Google Cloud 企业平台 （Gemini Enterprise Agent Platform / Vertex AI），计费口径随之改变。</p>
+            <p>官方 codelab 对三个变量的说明原文（核验 2026-10-01）：</p>
+            <p><code>GOOGLE_GENAI_USE_ENTERPRISE</code> = &quot;This tells the ADK that you intend to use Google&#39;s <strong>Gemini Enterprise Agent Platform</strong> service for your Generative AI operations.&quot;</p>
+            <p><code>GOOGLE_CLOUD_PROJECT</code> = &quot;ADK needs this to correctly associate your agent with your cloud resources and <strong>enable billing</strong>.&quot;</p>
+            <p><code>GOOGLE_CLOUD_LOCATION</code> = 地域，如 <code>global</code>。</p>
+            <p><strong>⚠ 最关键的一条。</strong> 官方把 &quot;enable billing&quot; 明确挂在 <code>GOOGLE_CLOUD_PROJECT</code> 上。</p>
+            <p>设了这三个变量，agent 就落进你的 Google Cloud 项目开始计费。 不设则走 Gemini Developer API 那条路（另有其免费层与配额）。</p>
+            <p><strong>且三个变量必须成组出现。</strong> 官方所有示例都是三个一起设，没有只设其一的写法。</p>
+            <p>⚠ 官方示例里这个变量的取值不统一，有<code>1</code>（README / codelab .env）、<code>TRUE</code>、 <code>True</code>（Cloud 文档）三种写法。<strong>按Python 布尔语义大小写皆真</strong>，但取值不一致这点本身值得注意。</p>
+            <p>⚠ 具体的 Gemini 单价与 Vertex AI Agent Engine / Cloud Run 的实际费率本站未逐项核验。</p></span><span data-en><p><strong>框架免费不等于零成本。</strong> 可能花钱的地方有两处。</p>
+            <p>（1）官方给的部署目标是 <strong>Cloud Run</strong> 与 <strong>Vertex AI Agent Engine</strong>。 这两处都按云资源计费。</p>
+            <p>（2）用 Gemini 走 Google 侧计费，用其它模型走各自 provider。</p>
+            <p><strong>（3）<code>GOOGLE_GENAI_USE_ENTERPRISE</code> 是个计费路径开关。</strong> 它不是「解锁企业功能」的开关。</p>
+            <p>它把请求从 Gemini Developer API 切到 Google Cloud 企业平台 （Gemini Enterprise Agent Platform / Vertex AI），计费口径随之改变。</p>
+            <p>官方 codelab 对三个变量的说明原文（核验 2026-10-01）：</p>
+            <p><code>GOOGLE_GENAI_USE_ENTERPRISE</code> = &quot;This tells the ADK that you intend to use Google&#39;s <strong>Gemini Enterprise Agent Platform</strong> service for your Generative AI operations.&quot;</p>
+            <p><code>GOOGLE_CLOUD_PROJECT</code> = &quot;ADK needs this to correctly associate your agent with your cloud resources and <strong>enable billing</strong>.&quot;</p>
+            <p><code>GOOGLE_CLOUD_LOCATION</code> = 地域，如 <code>global</code>。</p>
+            <p><strong>⚠ 最关键的一条。</strong> 官方把 &quot;enable billing&quot; 明确挂在 <code>GOOGLE_CLOUD_PROJECT</code> 上。</p>
+            <p>设了这三个变量，agent 就落进你的 Google Cloud 项目开始计费。 不设则走 Gemini Developer API 那条路（另有其免费层与配额）。</p>
+            <p><strong>且三个变量必须成组出现。</strong> 官方所有示例都是三个一起设，没有只设其一的写法。</p>
+            <p>⚠ 官方示例里这个变量的取值不统一，有<code>1</code>（README / codelab .env）、<code>TRUE</code>、 <code>True</code>（Cloud 文档）三种写法。<strong>按Python 布尔语义大小写皆真</strong>，但取值不一致这点本身值得注意。</p>
+            <p>⚠ 具体的 Gemini 单价与 Vertex AI Agent Engine / Cloud Run 的实际费率本站未逐项核验。</p></span></td></tr>
           </tbody>
         </table>
         <p class="fine mt-3"><span data-zh>不同币种不做折算。优惠、地区、税费与登录后报价可能变化，购买前请到官方页面确认。</span><span data-en>No currency conversion. Discounts, regions, tax and post-login pricing can change — confirm on the official page before buying.</span></p>
@@ -204,6 +278,8 @@
           <li>Python 与 TypeScript 版的能力对齐度</li>
           <li>Vertex AI Agent Engine 部署时状态的托管方式</li>
           <li>Gemini 单价与 Vertex AI Agent Engine / Cloud Run 的实际费率 （<code>GOOGLE_GENAI_USE_ENTERPRISE</code> 的<strong>含义</strong>已核验，<strong>费率</strong>未核验）</li>
+          <li>&quot;optimized for Gemini&quot; 具体优化了什么（官方未说明，已查 Models 页与 LiteLLM 页）</li>
+          <li>非 Gemini 模型下工具调用与 structured output 的可靠性对比（官方未给出）</li>
         </ul>
       </div>
 
@@ -235,20 +311,93 @@
 
             <div class="panel is-slim">
         <h2><span data-zh>实测记录</span><span data-en>Measured runs</span></h2>
-        <p>本站尚未完成实测。测试协议见 <a href="https://github.com/speculcom/ai-agent-guide/blob/main/tracks/agents/tasks/_protocol.md" target="_blank" rel="noopener">tasks/_protocol.md</a>。
-
-<strong>实测建议</strong>（按编排框架维度定制）：
-
-| # | 测什么 | 为什么值得测 |
-|:--:|---|---|
-| 1 | 容器部署后的默认文件与网络权限边界 | 补上本站最大的缺口，也是选型前提 |
-| 2 | 跑 <code>adk eval</code> 的最小完整案例 | 它是唯一内建 eval 的对象，值得看真实成本 |
-| 3 | 流程中途 kill 进程后的恢复语义 | 官方有 retry / state management，但恢复粒度未核验 |
-| 4 | Tool Confirmation 在长循环里的人工打断频率 | 官方说可 guard，但要测实际打断次数 |
-| 5 | 换成非 Gemini 模型后工具调用与 structured output 的可靠性 | 官方说 model-agnostic，验证代价 |
-| 6 | Python 版与 TS 版的能力差距 | 两个独立仓，官方没说是否对齐 |</p>
+        <p>本站尚未完成实测。测试协议见 <a href="https://github.com/speculcom/ai-agent-guide/blob/main/tracks/agents/tasks/_protocol.md" target="_blank" rel="noopener">tasks/_protocol.md</a>。</p>
+            <p><strong>实测建议</strong>（按编排框架维度定制）：</p>
+            <div class="tbl-wrap"><table><thead><tr><th>#</th><th>测什么</th><th>为什么值得测</th></tr></thead><tbody><tr><td>1</td><td>容器部署后的默认文件与网络权限边界</td><td>补上本站最大的缺口，也是选型前提</td></tr><tr><td>2</td><td>跑 <code>adk eval</code> 的最小完整案例</td><td>它是唯一内建 eval 的对象，值得看真实成本</td></tr><tr><td>3</td><td>流程中途 kill 进程后的恢复语义</td><td>官方有 retry / state management，但恢复粒度未核验</td></tr><tr><td>4</td><td>Tool Confirmation 在长循环里的人工打断频率</td><td>官方说可 guard，但要测实际打断次数</td></tr><tr><td>5</td><td>换成非 Gemini 模型后工具调用与 structured output 的可靠性</td><td>官方说 model-agnostic，验证代价</td></tr><tr><td>6</td><td>Python 版与 TS 版的能力差距</td><td>两个独立仓，官方没说是否对齐</td></tr></tbody></table></div>
       </div>
 
+
+            <div class="panel is-slim">
+        <h2>为什么把它归到 orchestration，而不是 coding-base</h2>
+        <p>本站前四个编程底座是 OpenAI Agents SDK、Deep Agents、 Claude Agent SDK、Codex SDK。</p>
+            <p>它们回答的都是同一个问题：</p>
+            <blockquote>怎么跑一个 agent？</blockquote>
+            <p>ADK 回答的是另一个问题：</p>
+            <blockquote>怎么把多个 agent 组织成一个有分支、有循环、有人工介入的流程？</blockquote>
+            <p><strong>关键词是 deterministic</strong>：它要解决的不是「agent 能不能干活」。 （deterministic 就是「确定性」。）</p>
+            <p>它要解决的是「多个 <strong>agent</strong> 组成的流程，在多次运行之间是否可重复、可预期」。</p>
+            <p>这也直接落到本站关心的分野上：</p>
+            <div class="tbl-wrap"><table><thead><tr><th>本站关注的面</th><th>ADK 给的</th></tr></thead><tbody><tr><td><strong>状态</strong>（流程控制）</td><td>✅ 图执行引擎：routing / loops / retry / state management / nested workflows</td></tr><tr><td><strong>上下文</strong>（长任务压缩）</td><td>✅ 1.16+ 的 Context Compaction：滑动窗口摘要更早 event（<code>EventsCompactionConfig(compaction_interval, overlap_size)</code>），<code>summarizer</code> 可换模型</td></tr></tbody></table></div>
+            <p>⚠ <strong>不要把 <code>state management</code> 读成「有上下文管理」。</strong> 这正是本站反复强调的那条分野。</p>
+      </div>
+      <div class="panel is-slim">
+        <h2>工具生态：MCP 是其中一员，但量级要注意</h2>
+        <p><strong>README 原文：</strong></p>
+            <blockquote>Utilize pre-built tools, custom functions, <strong>OpenAPI specs</strong>, <strong>MCP tools</strong> or integrate existing tools to give agents diverse capabilities, all for tight integration with the Google ecosystem.</blockquote>
+            <p>⚠ <strong>本站的判断（推断，未核验实现）</strong>：README 把 MCP 与 OpenAPI specs <strong>并列</strong>。</p>
+            <p>这说明它接 MCP 的方式是「把 MCP 当作一种工具来源」。</p>
+            <p>这与 <a href="./openai-agents-sdk.html">OpenAI Agents SDK</a> 不同。</p>
+            <p>那个把 <code>mcp&gt;=1.19.0,&lt;3</code> 直接放在 <code>dependencies</code> 里。 那是框架级依赖。</p>
+            <p><strong>两者不是同一量级的一等公民。</strong></p>
+            <h3 class="sub-h">一项值得单独看的官方能力：Tool Confirmation（HITL）</h3>
+            <blockquote>A tool confirmation flow (HITL) that can <strong>guard tool execution with explicit confirmation and custom input</strong>.</blockquote>
+            <p>文档在 <code>tools/confirmation</code>。</p>
+            <p><strong>这是本站已收录对象里少见的「工具级人工确认」。</strong> input/output guardrail 与它是不同层次的东西：</p>
+            <ul><li>guardrail 是<strong>校验内容</strong>（这个输入 / 输出合不合规）</li><li>tool confirmation 是<strong>拦执行</strong>（这个工具要不要真跑，可以附带自定义输入）</li></ul>
+      </div>
+      <div class="panel is-slim">
+        <h2>部署：四条命令，从本地到 Google 云</h2>
+        <p><strong>README 给的四种运行 / 部署形态全部核验：</strong></p>
+            <p>``<code>bash adk run&lt;agent-folder&gt;              # 交互式 CLI adk web                &lt;agent-folder&gt;       # 内建 Web UI adk deploy docker   --with_ui &lt;agent-folder&gt;         # 容器化 adk deploy cloud_run --with_ui &lt;agent-folder&gt;        # Cloud Run </code>``</p>
+            <p><strong>另有两个本站认为值得注意的点。</strong></p>
+            <p><strong>① 内建开发 UI 与内建 eval。</strong></p>
+            <p><strong>官方原文</strong>：</p>
+            <blockquote>A built-in development UI to help you <strong>test, evaluate, debug, and showcase</strong> your agent(s)</blockquote>
+            <p><strong>另有</strong> <code>adk eval &lt;agent-folder&gt; &lt;evalset.json&gt;</code> 命令与 <code>.evalset.json</code> 配置格式。</p>
+            <p><strong>这是本站已收录对象里唯一把「评估」做成框架内建命令的。</strong> 对「不要实测」的铁律来说，这类能力值得记一笔：它让用户能自己跑评测。</p>
+            <p><strong>② 有个部署级开关要注意，而且它本质上是「计费路径开关」。</strong></p>
+            <p><strong>README 的 Cloud Run 示例里出现了</strong> <code>GOOGLE_GENAI_USE_ENTERPRISE=1</code>。</p>
+            <p><strong>本轮已核验清楚（2026-10-01，Google 官方 codelab 与 Cloud 文档）</strong>： 它<strong>不是「解锁企业功能」的开关</strong>。</p>
+            <p><strong>它是一条路由开关：把请求从 Gemini Developer API 切到 Google Cloud 企业平台 （Gemini Enterprise Agent Platform / Vertex AI），计费口径随之改变。</strong></p>
+            <p>换句话说，改的是请求去向，不是功能权限。</p>
+            <p><strong>官方 codelab 对三个变量的说明原文：</strong></p>
+            <div class="tbl-wrap"><table><thead><tr><th>变量</th><th>官方含义</th></tr></thead><tbody><tr><td><code>GOOGLE_GENAI_USE_ENTERPRISE</code></td><td>&quot;This tells the ADK that you intend to use Google&#39;s <strong>Gemini Enterprise Agent Platform</strong> service for your Generative AI operations.&quot;</td></tr><tr><td><code>GOOGLE_CLOUD_PROJECT</code></td><td>&quot;ADK needs this to correctly associate your agent with your cloud resources and <strong>enable billing</strong>.&quot;</td></tr><tr><td><code>GOOGLE_CLOUD_LOCATION</code></td><td>地域，如 <code>global</code></td></tr></tbody></table></div>
+            <p><strong>最关键的一条。</strong></p>
+            <p>官方把 &quot;enable billing&quot; 明确写在 <code>GOOGLE_CLOUD_PROJECT</code> 上。</p>
+            <p><strong>那三个变量成组设上，agent 就落进你的 Google Cloud 项目并开始计费。</strong> 不设则走 Gemini Developer API 那条路（它有另一套免费层与配额）。</p>
+            <p><strong>另外两点值得记</strong>：</p>
+            <ul><li><strong>三个变量必须成组出现</strong> —— 官方所有示例（README、codelab、Cloud 文档的 Live API 指南）都是三个一起设，没有只设其一的写法</li></ul>
+            <ul><li><strong>取值不统一</strong> —— README 与 codelab 的 <code>.env</code> 写 <code>1</code>， Cloud 文档写 <code>TRUE</code> 或 <code>True</code>。按布尔语义皆真，但官方自己不一致这点值得注意</li></ul>
+            <blockquote>⚠ 仍未核验：Gemini 的具体单价。 以及 Vertex AI Agent Engine 与 Cloud Run 的实际费率。</blockquote>
+      </div>
+      <div class="panel is-slim">
+        <h2>本地文件与沙箱：本站最大的证据缺口</h2>
+        <p><strong>README 讲工具生态时列的是</strong> pre-built tools、custom functions、 OpenAPI specs、MCP tools。</p>
+            <p>那全是「怎么把工具接进来」。</p>
+            <p>它<strong>没有把「读写本地文件」列为一项能力</strong>。</p>
+            <p>它<strong>也没有描述默认的文件访问边界</strong>。</p>
+            <p>对比本站其它对象在这块的做法：</p>
+            <ul><li><strong>OpenHands</strong> 给了明确的 Docker 沙箱形态与 API key 机制， 且在无沙箱安装选项上挂 WARNING</li></ul>
+            <ul><li><strong>Codex SDK</strong> 源码里有三档 <code>SandboxMode</code> 枚举</li><li><strong>ADK 这边本站没有拿到任何沙箱或权限边界的官方表述</strong></li></ul>
+            <p>⚠ <strong>官方未提供</strong>：默认沙箱机制、文件系统权限模型、网络访问控制。 <strong>如果你选它，容器隔离要自己确认。</strong></p>
+      </div>
+      <div class="panel is-slim">
+        <h2>同厂双版本 + 样例仓</h2>
+        <div class="tbl-wrap"><table><thead><tr><th>仓库</th><th>用途</th><th>核验（2026-10-01）</th></tr></thead><tbody><tr><td><code>google/adk-python</code></td><td>Python 主体（本档收录）</td><td>21,688★ · Apache-2.0</td></tr><tr><td><code>google/adk-js</code></td><td>TypeScript 版</td><td>1,426★ · Apache-2.0</td></tr><tr><td><code>google/adk-recipes</code></td><td>样例集（描述里写 adk-samples）</td><td>10,404★</td></tr></tbody></table></div>
+            <p>⚠ 按本站「一个对象 = 一套决策依据」的粒度，<strong>只收录 Python 主体</strong>。</p>
+      </div>
+      <div class="panel is-slim">
+        <h2>核验说明</h2>
+        <p><code>confidence: partial</code> 的依据。</p>
+            <p><strong>为什么不是 verified。</strong> 三维本轮已核到官方机制：</p>
+            <ul><li><code>local_files</code> —— Artifacts 抽象</li><li><code>context</code> —— 1.16+ 的 Context Compaction</li><li><code>permissions</code> —— Tool Confirmation</li></ul>
+            <p>但 <code>permissions</code> 只有「执行前确认」。 官方未提供沙箱或文件系统权限模型。</p>
+            <p>其余缺口集中在<strong>费率与部署语义</strong>：</p>
+            <ul><li>Gemini 单价与 Vertex AI Agent Engine / Cloud Run 的实际费率</li><li>跨进程跨机续跑语义</li><li>分布式状态存储</li></ul>
+            <blockquote><strong>已核验</strong>：仓库存在与星数（21,688）、许可（Apache-2.0，经 license API）、 最近推送（2026-10-01，仍活跃）、最新版 <strong>v2.10.0</strong>（releases @ 2026-09-25）、 README 全文的六项特性列表与四类运行形态、两种 <code>adk deploy</code> 命令与 <code>GOOGLE_GENAI_USE_ENTERPRISE</code> 环境变量、<code>adk eval</code> 命令与 <code>.evalset.json</code> 格式、 <code>google/adk-js</code>（1,426★ · Apache-2.0）与 <code>google/adk-recipes</code>（10,404★）两仓元数据</blockquote>
+            <blockquote><strong>本轮（2026-10-01）补上的</strong>：<code>GOOGLE_GENAI_USE_ENTERPRISE</code> 的确切含义。 它是<strong>计费路径开关</strong>（切到 Gemini Enterprise Agent Platform / Vertex AI）， 不是企业功能开关。官方把 &quot;enable billing&quot; 挂在 <code>GOOGLE_CLOUD_PROJECT</code> 上， 三个变量须成组设置。来源为 Google 官方 codelab 与 Cloud 文档。</blockquote>
+            <blockquote><strong>未核验</strong>：非 Gemini 模型下的工具调用与 structured output 可靠性（对齐度）、 默认沙箱与文件权限模型、网络访问控制、 跨进程/跨机续跑语义、分布式状态存储、 MCP 接入的实现层次（框架级依赖 vs 工具来源）、 Gemini 单价与 Vertex AI Agent Engine / Cloud Run 的实际费率</blockquote>
+      </div>
 
             <div class="panel is-slim">
         <h2><span data-zh>相关条目</span><span data-en>Related entries</span></h2>
