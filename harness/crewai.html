@@ -4,18 +4,18 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>CrewAI — Harness | 投机取巧</title>
-  <meta name="description" content="CrewAI（CrewAI Inc）：「用角色分工和业务流程来组织多 agent 协作」 —— 官方自述： &gt; Framework for orchestrating role-playing, autonomous AI agents. 「role-playing」这个词容易让人低估它—— 同一份" />
+  <meta name="description" content="CrewAI（CrewAI Inc）：「用角色分工和业务流程来组织多 agent 协作」 —— 官方自述： &gt; Framework for orchestrating role-playing, autonomous AI agents. 「role-playing」这个词容易让人低估它—— 同一份 REA…" />
   <link rel="canonical" href="https://agent.specul.com/harness/crewai.html" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="CrewAI" />
   <meta property="og:url" content="https://agent.specul.com/harness/crewai.html" />
   <meta property="og:title" content="CrewAI — Harness | 投机取巧" />
-  <meta property="og:description" content="CrewAI（CrewAI Inc）：「用角色分工和业务流程来组织多 agent 协作」 —— 官方自述： &gt; Framework for orchestrating role-playing, autonomous AI agents. 「role-playing」这个词容易让人低估它—— 同一份" />
+  <meta property="og:description" content="CrewAI（CrewAI Inc）：「用角色分工和业务流程来组织多 agent 协作」 —— 官方自述： &gt; Framework for orchestrating role-playing, autonomous AI agents. 「role-playing」这个词容易让人低估它—— 同一份 REA…" />
   <meta name="theme-color" content="#05080f" />
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%238b7cf8'/%3E%3Cstop offset='1' stop-color='%2322d3c5'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='48' height='48' rx='12' fill='%2305080f'/%3E%3Cpath d='M14 32 L24 12 L34 32' fill='none' stroke='url(%23g)' stroke-width='2.4' stroke-linejoin='round'/%3E%3Ccircle cx='24' cy='27' r='2.4' fill='%2322d3c5'/%3E%3C/svg%3E" />
   <link rel="stylesheet" href="../brand.css" />
   <link rel="stylesheet" href="../site.css" />
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"CrewAI","applicationCategory":"DeveloperApplication","url":"https://crewai.com","sameAs":"https://crewai.com","description":"「用角色分工和业务流程来组织多 agent 协作」 —— 官方自述： > Framework for orchestrating role-playing, autonomous AI agents. 「role-playing」这个词容易让人低估它—— 同一份 README 里也写着 production-grade，并明确承诺 \"Move from experiment to production without changing frameworks\"。","dateModified":"2026-10-01","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"CrewAI","applicationCategory":"DeveloperApplication","url":"https://crewai.com","sameAs":"https://crewai.com","description":"「用角色分工和业务流程来组织多 agent 协作」 —— 官方自述： > Framework for orchestrating role-playing, autonomous AI agents. 「role-playing」这个词容易让人低估它—— 同一份 README 里也写着 production-grade，并明确承诺 \"Move from experiment to production without changing frameworks\"。","dateModified":"2026-10-08","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}</script>
 </head>
 <body class="brand-ambient">
   <a class="t-skip" href="#main"><span data-zh>跳到主要内容</span><span data-en>Skip to main content</span></a>
@@ -39,8 +39,34 @@
           <button class="icon-btn" id="langBtn" type="button" aria-label="Switch language" title="Switch language">EN</button>
         </span>
       </nav>
+      <!-- B6（2026-10-09）：与共享 shell 同步加的移动端导航入口。
+           ⚠ 本文件是 agent 站**自己的** shell 副本（它多一层分区切换），
+             所以每次改共享 shell 的骨架，这里也要跟一次 —— 这是双份实现固有的代价。
+             样式与行为都在共享 brand.css / brand.js 里，这里只出标记。 -->
+      <button class="nav-burger" type="button" aria-label="打开菜单" aria-expanded="false" aria-controls="navDrawer">
+        <i></i><i></i><i></i>
+      </button>
     </div>
   </header>
+  <div class="nav-scrim"></div>
+  <aside class="nav-drawer" id="navDrawer" aria-hidden="true" aria-label="站点导航">
+    <div class="nav-drawer-h">
+      <span class="brand-name"><span data-zh>投机取巧</span><span data-en>Speculative Speculation</span></span>
+      <button class="nav-dclose" type="button" aria-label="关闭">×</button>
+    </div>
+    <nav class="nav-drawer-list">
+      <a href="https://specul.com/"><span><span data-zh>首页</span><span data-en>Home</span></span><span class="ar" aria-hidden="true">→</span></a>
+      <a href="https://learn.specul.com/"><span><span data-zh>学 AI</span><span data-en>Learn</span></span><span class="ar" aria-hidden="true">→</span></a>
+      <a href="https://agent.specul.com/" aria-current="page"><span><span data-zh>Agent</span><span data-en>Agent</span></span><span class="ar" aria-hidden="true">→</span></a>
+      <a href="https://models.specul.com/"><span><span data-zh>本地模型</span><span data-en>Models</span></span><span class="ar" aria-hidden="true">→</span></a>
+      <a href="https://vg.specul.com/"><span><span data-zh>AI 做游戏</span><span data-en>Vibe Gaming</span></span><span class="ar" aria-hidden="true">→</span></a>
+      <a href="https://nav.specul.com/"><span><span data-zh>导航</span><span data-en>Directory</span></span><span class="ar" aria-hidden="true">→</span></a>
+    </nav>
+    <div class="nav-drawer-foot">
+      <p><span data-zh>6 个站，各管一件事</span><span data-en>Six sites, one job each</span></p>
+      <nav><a href="https://specul.com/legal.html"><span data-zh>法律条款</span><span data-en>Legal terms</span></a></nav>
+    </div>
+  </aside>
   <main id="main">
     <div class="container detail">
       <nav class="crumbs" aria-label="面包屑">
@@ -76,14 +102,15 @@
         <span class="tag on">角色分工</span>
         <span class="badge accent">partial</span>
         <span class="badge">lifecycle: active</span>
-        <span class="badge"><span data-zh>核验</span><span data-en>Checked</span> 2026-10-01</span>
+        <span class="badge"><span data-zh>核验</span><span data-en>Checked</span> 2026-10-08</span>
       </div>
 
-            <p class="panel-lead"><span data-zh><strong>&quot;Organises multi-agent collaboration through role division and business process&quot;</strong> — the official description reads:
+            <p class="panel-lead"><span data-zh><strong>「用角色分工和业务流程来组织多 agent 协作」</strong> —— 官方自述：
 
 &gt; Framework for orchestrating <strong>role-playing</strong>, autonomous AI agents.
 
-<strong>The word &quot;role-playing&quot; makes people underrate it</strong> — the same README also says production-grade and promises to &quot;move from experiment to production <strong>without changing frameworks</strong>&quot;.</span><span data-en><strong>&quot;Organises multi-agent collaboration through role division and business process&quot;</strong> — the official description reads:
+<strong>「role-playing」这个词容易让人低估它</strong>—— 同一份 README 里也写着
+production-grade，并明确承诺 &quot;Move from experiment to production <strong>without changing frameworks</strong>&quot;。</span><span data-en><strong>&quot;Organises multi-agent collaboration through role division and business process&quot;</strong> — the official description reads:
 
 &gt; Framework for orchestrating <strong>role-playing</strong>, autonomous AI agents.
 
@@ -93,8 +120,9 @@
         <h2><span data-zh>适合与不适合</span><span data-en>When to use it, when not to</span></h2>
 <span data-zh>        <p><strong>适合</strong>：任务能被表述成「一支有角色分工的团队」；需要业务逻辑留在普通 Python 里
 并显式控制执行路径；想在本地模型上跑；需要 MCP 与 A2A。
-<strong>不适合</strong>：需要官方明确的沙箱或文件/网络权限边界；需要把工作记忆与长期记忆分开管理；
-需要 checkpointing 开箱即用。</p></span><span data-en>        <p><strong>Fits</strong>: tasks that can be expressed as &quot;a team with defined roles&quot;; business logic that stays in ordinary Python with explicit control over the execution path; running on local models; needing MCP and A2A.
+<strong>不适合</strong>：需要进程 / 容器级沙箱或网络访问控制（官方无此机制）；
+需要把工作记忆与长期记忆分开管理（CrewAI 已统一成一个 Memory 类）；
+需要厂商托管的真后台（纯库，要自己部署）。</p></span><span data-en>        <p><strong>Fits</strong>: tasks that can be expressed as &quot;a team with defined roles&quot;; business logic that stays in ordinary Python with explicit control over the execution path; running on local models; needing MCP and A2A.
 <strong>Not a fit</strong>: requiring official sandboxing or file/network permission boundaries; needing working memory and long-term memory managed separately; needing checkpointing out of the box.</p></span>
       </div>
 
@@ -106,35 +134,35 @@
       <dl class="axes">
         <div class="axis">
           <dt><span data-zh>模型与开放条件</span><span data-en>Model & openness</span></dt>
-          <dd><strong>官方给了明确的默认与本地路径，是本站编排框架里对模型接入说得最具体的。</strong> README「Connecting Your Crew to a Model」原文： &quot;CrewAI supports using various LLMs through a variety of connection options. By default your agents will use the <strong>OpenAI API</strong> when querying the model. However, there are several other ways to allow your agents to connect to models. For example, you can configure your agents to use a <strong>local model via the Ollama tool</strong>.&quot; README FAQ 补充：<strong>LM Studio</strong> 也能接（&quot;Tools like Ollama and LM Studio allow seamless integration&quot;）。 <strong>这一条对本站读者特别有价值</strong>：本地量化模型在这三个编排框架里， 只有 CrewAI 在 README 首屏级别点名了具体工具。 ⚠ <strong>未核验</strong>：完整 provider 清单（官方文档 <code>learn/llm-connections</code> 本次未取到正文）、 换 provider 后工具调用与 structured output 的可靠性。</dd>
+          <dd><strong>官方给了明确的默认与本地路径，是本站编排框架里对模型接入说得最具体的。</strong> README「Connecting Your Crew to a Model」原文： &quot;CrewAI supports using various LLMs through a variety of connection options. By default your agents will use the <strong>OpenAI API</strong> when querying the model. However, there are several other ways to allow your agents to connect to models. For example, you can configure your agents to use a <strong>local model via the Ollama tool</strong>.&quot; README FAQ 补充：<strong>LM Studio</strong> 也能接（&quot;Tools like Ollama and LM Studio allow seamless integration&quot;）。 <strong>这一条对本站读者特别有价值</strong>：本地量化模型在这三个编排框架里， 只有 CrewAI 在 README 首屏级别点名了具体工具。 <strong>完整 provider 清单已核到</strong>（官方 <code>learn/llm-connections</code> 页）： 原生 SDK 接入 5 家 —— OpenAI、Anthropic、Google Gemini、Azure、AWS Bedrock； 其余走 <strong>LiteLLM</strong> 兜底（装法 <code>uv add &#39;crewai[litellm]&#39;</code>），官方另点名单列 Ollama、Mistral、Groq、Cohere、Hugging Face、Replicate、Together AI、 Cloudflare Workers AI、DeepInfra、SambaNova、Nebius、NVIDIA NIMs， 并以 &quot;And many more!&quot; 结尾，指向 LiteLLM Providers 文档取全量列表。 <strong>默认模型已核到</strong>：官方页原文 &quot;By default, CrewAI uses the <code>gpt-4o-mini</code> model.&quot; （由 <code>OPENAI_MODEL_NAME</code> 决定，未设即 gpt-4o-mini）。 换法两种：传字符串标识符（<code>llm=&#39;claude-2&#39;</code>）或用 <code>LLM</code> 类配 model/base_url/api_key； 本地片段官方写全： <code>LLM(model=&quot;ollama/llama3.2&quot;, base_url=&quot;http://localhost:11434&quot;)</code>。 <strong>换 provider 后 tool calling / structured output 的可靠性，官方未说明</strong> （已查 <code>learn/llm-connections</code> 与 <code>concepts/llms</code> 两页，无 provider 间可靠性对比）。</dd>
         </div>
         <div class="axis">
           <dt><span data-zh>运行位置</span><span data-en>Where it runs</span></dt>
-          <dd><strong>纯库，官方口径是「从原型到生产不用换框架」。</strong> 安装是 pip 包（README Getting Started 走 pip install + crewai CLI）， 无托管服务。README「When to Use CrewAI」里的一句值得引用作为定位依据： &quot;Move from experiment to production <strong>without changing frameworks</strong>.&quot; <strong>它对状态持久化是「随系统成长再加」的定位</strong>（README 两处原文）： &quot;Add tools, memory, <strong>checkpointing</strong>, and async execution <strong>as your system grows</strong>&quot;、 &quot;Add deterministic steps, human input, structured outputs, and <strong>checkpointing as your system grows</strong>&quot;。 ⚠ <strong>未核验</strong>：checkpointing 的落盘粒度与后端（对比 LangGraph 的 &quot;save graph state at every superstep&quot; 有明确说明，本条 README 未给）。</dd>
+          <dd><strong>纯库，官方口径是「从原型到生产不用换框架」。</strong> 安装是 pip 包（README Getting Started 走 pip install + crewai CLI）， 无托管服务。README「When to Use CrewAI」里的一句值得引用作为定位依据： &quot;Move from experiment to production <strong>without changing frameworks</strong>.&quot; <strong>它对状态持久化是「随系统成长再加」的定位</strong>（README 两处原文）： &quot;Add tools, memory, <strong>checkpointing</strong>, and async execution <strong>as your system grows</strong>&quot;、 &quot;Add deterministic steps, human input, structured outputs, and <strong>checkpointing as your system grows</strong>&quot;。 <strong>checkpointing 的落盘粒度与后端已核到</strong>（官方 <code>concepts/checkpointing</code> 页）： 它是<strong>事件驱动</strong>，默认 <code>on_events=[&quot;task_completed&quot;]</code>， 即<strong>每完成一个 task 落一次盘</strong>；<code>CheckpointConfig</code> 可改频率与上限。 落盘后端官方给了两个：<code>JsonProvider</code>（每次一个文件，默认，写在 <code>./.checkpoints/</code>） 与 <code>SqliteProvider</code>（单个 SQLite 库，开 WAL，适合高频）。 <code>Crew</code>/<code>Flow</code>/<code>Agent</code> 都可传 <code>checkpoint</code>，子级默认继承父级、可传 <code>False</code> 退出。 粒度是「每个完成的 task / method」，这正是本站要找的落盘粒度。</dd>
         </div>
         <div class="axis">
           <dt><span data-zh>本地文件</span><span data-en>Local files</span></dt>
-          <dd><strong>⚠ 不在它职责范围内。</strong> README 里文件系统不是一项能力，没有给默认的文件访问边界或沙箱机制。 ⚠ <strong>未核验</strong>：容器部署时的默认权限（README 未涉及部署形态）、 本地运行时 agent 对文件系统的访问范围。</dd>
+          <dd><strong>框架本身不内置文件系统能力，文件读写靠工具提供 —— 但工具的默认边界清楚。</strong> <strong>文件访问的默认边界已核到</strong>（官方 FileReadTool 页）：运行时传入的路径 <strong>必须落在 <code>base_dir</code> 内，<code>base_dir</code> 默认是当前工作目录</strong>， <code>..</code> 与符号链接都会先解析再校验，&quot;so they cannot be used to escape&quot;； 构造函数里写死的 <code>file_path</code> 属开发者声明，可越过该限制但只放行这一个文件。 放开更大范围须显式 <code>base_dir=&#39;/data&#39;</code>； 逃生阀是进程级环境变量 <code>CREWAI_TOOLS_ALLOW_UNSAFE_PATHS=true</code>（官方称会同时关掉 所有 crewai-tools 的 SSRF 防护，不建议），托管 worker 应用 <code>CREWAI_TOOLS_FORCE_SAFE_PATHS=true</code> 锁死。 另有一组<strong>多模态文件输入</strong>（<code>crewai[file-processing]</code> extra，<code>Files</code> 页，<strong>early access</strong>）， 可传图片 / PDF / 音频 / 视频 / 文本。 <strong>容器部署时的默认权限，官方未说明</strong>（已查 Files 页与 FileReadTool 页）。</dd>
         </div>
         <div class="axis">
           <dt><span data-zh>关机后的任务</span><span data-en>Tasks after shutdown</span></dt>
-          <dd><strong>Flow 的 state management 是官方明文，checkpointing 的定位是「按需添加」。</strong> README 里 Flow 的描述包含 &quot;event-driven workflows with <strong>state, branching, routing</strong>&quot;， FAQ 进一步说 Flow 适合 &quot;detailed execution paths and <strong>secure state management</strong>&quot;。 示例代码（README「Using Crews and Flows Together」段）显示状态是<strong>结构化 Pydantic 模型</strong>： <code>class MarketState(BaseModel)</code>，Flow[MarketState] 里直接读写 <code>self.state.sentiment</code> 等字段， 并按 <code>self.state.confidence</code> 的数值阈值分支。 <strong>这就是本站要找的「状态」</strong> —— 显式、结构化、可分支判断。 ⚠ <strong>但落盘与跨进程恢复本站未核验</strong>：README 说 checkpointing 是 &quot;as your system grows&quot; 才加的进阶项，没说默认有没有。</dd>
+          <dd><strong>Flow 的 state management 是官方明文，checkpointing 的定位是「按需添加」。</strong> README 里 Flow 的描述包含 &quot;event-driven workflows with <strong>state, branching, routing</strong>&quot;， FAQ 进一步说 Flow 适合 &quot;detailed execution paths and <strong>secure state management</strong>&quot;。 示例代码（README「Using Crews and Flows Together」段）显示状态是<strong>结构化 Pydantic 模型</strong>： <code>class MarketState(BaseModel)</code>，Flow[MarketState] 里直接读写 <code>self.state.sentiment</code> 等字段， 并按 <code>self.state.confidence</code> 的数值阈值分支。 <strong>这就是本站要找的「状态」</strong> —— 显式、结构化、可分支判断。 <strong>落盘与跨进程恢复已核到</strong>（官方 <code>concepts/checkpointing</code>、<code>concepts/flows</code> 页）： Flow 另有 <code>@persist</code> 装饰器，官方称 &quot;automatically persists all flow method states&quot;， 默认后端 <code>SQLiteFlowPersistence</code>； <code>kickoff(inputs={&quot;id&quot;: &lt;uuid<strong>})</code> 是<strong>续跑</strong>（同一 <code>flow_uuid</code> 续写历史）， <code>kickoff(restore_from_state_id=</strong>uuid&gt;)</code> 是<strong>分叉</strong>（换新 <code>state.id</code>，原历史不动）。 crew/flow/agent 的 checkpoint 可从 <code>./.checkpoints/</code> 恢复，CLI <code>crewai checkpoint</code> 提供 resume / fork。<strong>但它不托管后台</strong>：库本身不提供厂商托管的执行环境， 要「电脑关了还能跑」得自己把进程跑在自有服务器 / VPC （AMP 商业侧另给 Cron scheduling）。</dd>
         </div>
         <div class="axis">
           <dt><span data-zh>工具与扩展</span><span data-en>Tools & extensions</span></dt>
-          <dd><strong>官方明确列了 MCP 与 A2A 两项，这是它的一个强项。</strong> README Key Features 原文：&quot;Use tools, <strong>memory, knowledge, checkpointing</strong>, async execution, and <strong>MCP/A2A support</strong> for more capable production agents.&quot; 另外 README 里CrewAI 自己托管了一个文档 MCP server（<code>docs.crewai.com/mcp</code>）， 可供 AI 编程助手查询它的 API 细节（README「Build with AI」段提到的 <code>ask-docs</code>）。 ⚠ <strong>未核验</strong>：MCP 是核心依赖还是可选 extra（README 未说明； 对比 OpenAI Agents SDK 把 <code>mcp&gt;=1.19.0</code> 放在 <code>dependencies</code> 里）。 <strong>A2A（Agent-to-Agent）</strong> 是本站首次出现的协议名，其规范与实践本站未研究。</dd>
+          <dd><strong>官方明确列了 MCP 与 A2A 两项，这是它的一个强项。</strong> README Key Features 原文：&quot;Use tools, <strong>memory, knowledge, checkpointing</strong>, async execution, and <strong>MCP/A2A support</strong> for more capable production agents.&quot; 另外 README 里CrewAI 自己托管了一个文档 MCP server（<code>docs.crewai.com/mcp</code>）， 可供 AI 编程助手查询它的 API 细节（README「Build with AI」段提到的 <code>ask-docs</code>）。 <strong>MCP 是核心依赖，不是可选 extra</strong> —— 官方 <code>lib/crewai/pyproject.toml</code> 的 <code>[project] dependencies</code> 里直接写死 <code>mcp~=1.28.1</code>； <strong>A2A 才是可选 extra</strong>（<code>a2a = [&quot;a2a-sdk~=0.3.10&quot;, ...]</code>）。 这与 OpenAI Agents SDK 把 <code>mcp&gt;=1.19.0</code> 放进 <code>dependencies</code> 一致，属核心能力。 接入传输官方给了三种：<strong>stdio / SSE / Streamable HTTP</strong>（各一页）， 另有 DSL 字段 <code>mcps=</code>、多 server 聚合（<code>MCPServerAdapter</code>）与 MCP security 专页。 内置工具是 <code>crewai-tools</code>（官方称 75+ OSS catalog，装 <code>crewai[tools]</code>）。 <strong>A2A（Agent-to-Agent）的规范与生态仍属外部协议</strong>： 本站只记「官方有 <code>a2a</code> extra 与一批 A2A 事件」，协议规范不在本站研究范围。</dd>
         </div>
         <div class="axis">
           <dt><span data-zh>上下文与记忆</span><span data-en>Context & memory</span></dt>
-          <dd><strong>⚠ memory 与 knowledge 出现了，但压缩/摘要策略未核验。</strong> README 出现的与记忆相关的表述有两处，均无机制细节： Key Features 里的 &quot;memory, <strong>knowledge</strong>, checkpointing&quot;、 以及「Build with AI」段展示的 agent 配置项清单 &quot;Configuring agents — role, goal, backstory, tools, LLMs, <strong>memory</strong>, guardrails&quot;。 <strong>官方没有区分「工作记忆」与「长期记忆」</strong>（这一点与 <a href="./langgraph.html">LangGraph</a> 明确区分 working memory / persistent memory across sessions 形成对照）。 ⚠ <strong>未核验</strong>：memory 的作用域（单 agent / 单 crew / 全局）、 存储后端、裁剪或摘要策略、知识（knowledge）与记忆的关系。</dd>
+          <dd><strong>框架给了一套统一 memory 系统与独立的 knowledge，机制已核到。</strong> README 出现的与记忆相关的表述两处（现已找到机制细节）： Key Features 里的 &quot;memory, <strong>knowledge</strong>, checkpointing&quot;、 以及「Build with AI」段展示的 agent 配置项清单 &quot;Configuring agents — role, goal, backstory, tools, LLMs, <strong>memory</strong>, guardrails&quot;。 <strong>机制已核到，且推翻旧判断</strong>（官方 <code>concepts/memory</code> 页）：官方现有 <strong>统一 <code>Memory</code> 类</strong> —— &quot;a single <code>Memory</code> class that replaces separate short-term, long-term, entity, and external memory types with one intelligent API&quot;， 即<strong>旧档案「官方不区分工作记忆 / 长期记忆」的说法已过时</strong>。 <strong>作用域</strong>：分层 scope 树（类文件系统，如 <code>/agent/researcher</code>）， Crew 级默认共享，agent 可用 <code>memory.scope(&quot;/agent/x&quot;)</code> 取私有子树， 另有 <code>slice()</code> 跨分支只读 / 读写视图。 <strong>存储后端</strong>：默认平台目录下的向量库（知识存储官方称 &quot;uses the same storage system as memory&quot;，默认 ChromaDB，路径可由 <code>CREWAI_STORAGE_DIR</code> 改）。<strong>裁剪策略不是简单截断</strong>：检索用 <code>semantic + recency + importance</code> 复合打分，写入走 LLM 抽取原子事实 + consolidation/dedup（相似度过阈值时由 LLM 决定 keep / update / delete）。 <strong>knowledge 与 memory 的关系</strong>：knowledge 是 RAG 事实库 （独立 collection，agent/crew 两级），memory 是跨任务的统一记录库， 两者共用向量存储但用途不同。</dd>
         </div>
         <div class="axis">
           <dt><span data-zh>权限与限制</span><span data-en>Permissions & limits</span></dt>
-          <dd><strong>⚠ 本维度是本站最明显的缺口：只有 guardrails 一项，且机制未核验。</strong> README 出现 guardrails 的唯一位置是 agent 配置项清单 （&quot;role, goal, backstory, tools, LLMs, memory, <strong>guardrails</strong>&quot;）， <strong>没有任何机制说明</strong> —— 是输出校验、是权限边界、还是人工确认，均未说明。 对照本站其它对象：OpenAI Agents SDK 的 guardrails 明确分 input/output 双向校验 + human-in-the-loop；Google ADK 的 Tool Confirmation 明确是「执行前确认」； LangGraph 的 interrupts 明确是「改状态」。<strong>CrewAI 这一项三样都不是。</strong> ⚠ <strong>未核验</strong>：guardrails 的类型与强度、沙箱机制、文件与网络访问控制。</dd>
+          <dd><strong>机制已核到，且与旧判断不同：guardrails 是「任务输出校验」，不是权限边界。</strong> 官方 <code>concepts/tasks</code> 页「Task Guardrails」原文： &quot;validate and transform task outputs before they are passed to the next task&quot;。 两类：<strong>函数式</strong>（传 <code>guardrail=</code> 回调，返回 <code>(bool, result)</code>，确定性校验）与 <strong>LLM 式</strong>（传字符串描述，自动建 <code>LLMGuardrail</code>，用该 task 的 agent 的 LLM 判）。 字段有 <code>guardrail</code> / <code>guardrails</code> / <code>guardrail_max_retries</code>（<strong>默认 3 次</strong>）。 <strong>关键判定</strong>：它只拦<strong>输出</strong>（task 产出）， <strong>不是</strong> OpenAI Agents SDK 那种 input + output 双向校验， <strong>不是</strong> ADK 的 Tool Confirmation 执行前确认， <strong>也不是</strong> LangGraph 的 interrupts 改状态 —— 对照表里 CrewAI 应写作 「校验 task 输出、失败重试」。 <strong>沙箱</strong>：OSS <strong>无进程 / 容器级沙箱</strong>；边界来自工具本身 —— 文件工具默认把路径限制在 <code>base_dir</code>（默认 cwd，见 local_files 轴）， MCP 安全官方明说是「信任」问题、不提供内置防护。 <strong>网络访问控制无官方机制</strong>（已查 tasks 页与 <code>mcp/security</code> 页）； RBAC / SSO / PII redaction 属 AMP 商业侧，开源版没有。</dd>
         </div>
         <div class="axis">
           <dt><span data-zh>适合什么任务</span><span data-en>Best for</span></dt>
-          <dd><strong>适合</strong>：任务能被表述成「一支有角色分工的团队」（Crews）； 需要业务逻辑留在普通 Python 里并显式控制执行路径（Flows）； 想在本地模型上跑（官方点名 Ollama / LM Studio）； 需要 MCP 与 A2A 接入；Python 栈。 <strong>不适合</strong>：需要官方明确的沙箱或文件/网络权限边界（本站未核验其机制）； 需要把「工作记忆」与「跨会话长期记忆」分开管理（LangGraph 有明确表述）； 需要 checkpointing 开箱即用（官方把它定位为「随系统成长再加」的进阶项）。</dd>
+          <dd><strong>适合</strong>：任务能被表述成「一支有角色分工的团队」（Crews）； 需要业务逻辑留在普通 Python 里并显式控制执行路径（Flows）； 想在本地模型上跑（官方点名 Ollama / LM Studio）； 需要 MCP 与 A2A 接入；Python 栈。 <strong>不适合</strong>：需要进程 / 容器级沙箱或网络访问控制（官方无此机制； guardrails 只校验 task 输出、文件工具只限 <code>base_dir</code>）； 需要把「工作记忆」与「跨会话长期记忆」分开管理（CrewAI 已统一成一个 Memory 类， 不再分型，与 LangGraph 的分型路线相反）； 需要厂商托管的真后台（纯库，得自己部署到自有服务器 / VPC）。</dd>
         </div>
       </dl>
 
@@ -144,10 +172,10 @@
 
           <li><span data-zh>以为是「角色扮演玩具」—— 官方定位是 production-grade，README 明写 Move from experiment to production without changing frameworks</span><span data-en>Assuming it is a role-play toy — the official positioning is production-grade, and the README states &quot;Move from experiment to production without changing frameworks&quot;</span></li>
           <li><span data-zh>把 Crew Control Plane 的能力当成开源版自带 —— tracing / 集中管控 / 企业安全 / 24×7 支持 /本地与云部署都是 CrewAI AMP 的卖点</span><span data-en>Taking Crew Control Plane&#39;s capabilities as built into the open version — tracing, centralised control, enterprise security, 24×7 support and local/cloud deployment are CrewAI AMP selling points</span></li>
-          <li><span data-zh>以为 memory 和 knowledge 是两套持久化 —— README 只并列了名词，没有任何机制说明</span><span data-en>Assuming memory and knowledge are two separate persistence layers — the README only lists the terms side by side with no mechanism explained</span></li>
-          <li><span data-zh>把 guardrails 当权限护栏 —— README 只在配置项清单里列了这个名字，机制未说明</span><span data-en>Treating guardrails as a permission boundary — the README lists the name in its configuration list only, with no mechanism described</span></li>
-          <li><span data-zh>以为 checkpointing 默认就有 —— 官方两处都写成 as your system grows，是进阶项</span><span data-en>Assuming checkpointing is there by default — the official docs call it an as-your-system-grows item in both places</span></li>
-          <li><span data-zh>以为开了 Flow 就有状态持久化 —— Flow 给的是 state management，落盘与跨进程恢复未核验</span><span data-en>Assuming turning on Flow gives you state persistence — Flow provides state management; on-disk and cross-process recovery were not verified</span></li>
+          <li><span data-zh>把 guardrails 当权限护栏 —— 官方明文它只校验 task 输出，不管输入、也无沙箱</span><span data-en>Assuming memory and knowledge are two separate persistence layers — the README only lists the terms side by side with no mechanism explained</span></li>
+          <li><span data-zh>以为 memory 和 knowledge 是两套记忆 —— knowledge 是 RAG 事实库，memory 是统一记录库</span><span data-en>Treating guardrails as a permission boundary — the README lists the name in its configuration list only, with no mechanism described</span></li>
+          <li><span data-zh>以为 checkpointing 是「以后再说」—— 官方已给 Json/Sqlite 后端与恢复 CLI，可按需启用</span><span data-en>Assuming checkpointing is there by default — the official docs call it an as-your-system-grows item in both places</span></li>
+          <li><span data-zh>以为有 Flow 就有厂商托管后台 —— Flow 给的是 state management，进程仍跑在你自己机器上</span><span data-en>Assuming turning on Flow gives you state persistence — Flow provides state management; on-disk and cross-process recovery were not verified</span></li>
         </ul>
       </div>
 
@@ -168,30 +196,35 @@
             <div class="panel is-slim">
         <h2><span data-zh>未知项清单</span><span data-en>Known unknowns</span></h2>
         <ul>
-          <li>guardrails 的类型、强度与拦截范围</li>
-          <li>沙箱机制、文件与网络访问控制的默认值</li>
-          <li>memory 的作用域、存储后端、裁剪与摘要策略</li>
-          <li>knowledge 与 memory 的关系</li>
-          <li>checkpointing 的落盘粒度、后端与跨进程恢复语义</li>
-          <li>完整 provider 清单与换provider 的能力对齐度</li>
-          <li>MCP 是核心依赖还是可选 extra</li>
-          <li>A2A（Agent-to-Agent）规范与生态现状</li>
+          <li>换 provider 后 tool calling / structured output 的可靠性（官方未说明）</li>
+          <li>容器部署时的默认权限（官方未说明，已查 Files 页与 FileReadTool 页）</li>
+          <li>OSS 是否有网络访问控制的官方机制（官方未说明）</li>
+          <li>A2A（Agent-to-Agent）规范与生态现状（外部协议，不在本站研究范围）</li>
           <li>AMP Enterprise 的具体报价（官方仅标 Custom）</li>
-          <li>Basic 档50 次/月上限之后，除Enterprise 洽谈外是否有自助加购路径（官方对比表该栏为「—」）</li>
-          <li>MCP/A2A 接入的实际使用门槛</li>
+          <li>Basic 档 50 次/月上限之后，除 Enterprise 洽谈外是否有自助加购路径（官方对比表该栏为「—」）</li>
+          <li>MCP / A2A 接入的实际使用门槛</li>
         </ul>
       </div>
 
 
       <div class="panel">
         <h2><span data-zh>证据来源</span><span data-en>Evidence sources</span></h2>
-        <p class="t-sm"><span data-zh>判断可回到以下一手源复核。本站核验日</span><span data-en>Every judgement can be rechecked against the primary sources below. Verified on</span> 2026-10-01，<span data-zh>内容更新日</span><span data-en>content updated on</span> 2026-10-01。</p>
+        <p class="t-sm"><span data-zh>判断可回到以下一手源复核。本站核验日</span><span data-en>Every judgement can be rechecked against the primary sources below. Verified on</span> 2026-10-08，<span data-zh>内容更新日</span><span data-en>content updated on</span> 2026-10-08。</p>
         <table class="src">
           <thead><tr><th class="w-20"><span data-zh>类型</span><span data-en>Type</span></th><th class="w-52"><span data-zh>名称</span><span data-en>Name</span></th><th><span data-zh>链接</span><span data-en>Link</span></th></tr></thead>
           <tbody>
             <tr><td>repo</td><td>crewAIInc/crewAI · 仓库（59,246★，MIT，核验 2026-10-01）</td><td><a href="https://github.com/crewAIInc/crewAI" target="_blank" rel="noopener">https://github.com/crewAIInc/crewAI</a></td></tr>
             <tr><td>docs</td><td>主 README（Crews/Flows 双抽象、七项 Key Features、Crew Control Plane 商业段、模型接入、FAQ）</td><td><a href="https://github.com/crewAIInc/crewAI/blob/main/README.md" target="_blank" rel="noopener">https://github.com/crewAIInc/crewAI/blob/main/README.md</a></td></tr>
-            <tr><td>docs</td><td>官方文档 · Connect CrewAI to LLMs（README 指向，完整 provider 清单）</td><td><a href="https://docs.crewai.com/en/learn/llm-connections" target="_blank" rel="noopener">https://docs.crewai.com/en/learn/llm-connections</a></td></tr>
+            <tr><td>docs</td><td>官方文档 · Connect CrewAI to LLMs（完整 provider 清单；原生 5 家 + LiteLLM 兜底；默认 gpt-4o-mini）</td><td><a href="https://docs.crewai.com/en/learn/llm-connections" target="_blank" rel="noopener">https://docs.crewai.com/en/learn/llm-connections</a></td></tr>
+            <tr><td>docs</td><td>官方文档 · Checkpointing（事件驱动、默认每 task 完成落盘、Json/Sqlite 后端、resume/fork、CLI）</td><td><a href="https://docs.crewai.com/en/concepts/checkpointing" target="_blank" rel="noopener">https://docs.crewai.com/en/concepts/checkpointing</a></td></tr>
+            <tr><td>docs</td><td>官方文档 · Flows（state management、@persist、SQLiteFlowPersistence、续跑/分叉语义）</td><td><a href="https://docs.crewai.com/en/concepts/flows" target="_blank" rel="noopener">https://docs.crewai.com/en/concepts/flows</a></td></tr>
+            <tr><td>docs</td><td>官方文档 · Memory（统一 Memory 类、scope/slice、复合打分、consolidation）</td><td><a href="https://docs.crewai.com/en/concepts/memory" target="_blank" rel="noopener">https://docs.crewai.com/en/concepts/memory</a></td></tr>
+            <tr><td>docs</td><td>官方文档 · Tasks（Task Guardrails：函数式/LLM 式，只校验任务输出，默认重试 3 次）</td><td><a href="https://docs.crewai.com/en/concepts/tasks" target="_blank" rel="noopener">https://docs.crewai.com/en/concepts/tasks</a></td></tr>
+            <tr><td>docs</td><td>官方文档 · Knowledge（存储与 memory 同系统，默认 ChromaDB，独立 collection）</td><td><a href="https://docs.crewai.com/en/concepts/knowledge" target="_blank" rel="noopener">https://docs.crewai.com/en/concepts/knowledge</a></td></tr>
+            <tr><td>docs</td><td>官方文档 · MCP 安全（信任模型、无内置防护、风险清单）</td><td><a href="https://docs.crewai.com/en/mcp/security" target="_blank" rel="noopener">https://docs.crewai.com/en/mcp/security</a></td></tr>
+            <tr><td>docs</td><td>官方文档 · FileReadTool（base_dir 路径沙箱，默认 cwd，越界逃生阀环境变量）</td><td><a href="https://docs.crewai.com/en/tools/file-document/filereadtool" target="_blank" rel="noopener">https://docs.crewai.com/en/tools/file-document/filereadtool</a></td></tr>
+            <tr><td>docs</td><td>官方文档 · Agent Capabilities（Tools/MCPs/Apps/Skills/Knowledge 五类能力）</td><td><a href="https://docs.crewai.com/en/concepts/agent-capabilities" target="_blank" rel="noopener">https://docs.crewai.com/en/concepts/agent-capabilities</a></td></tr>
+            <tr><td>repo</td><td>lib/crewai/pyproject.toml（核心依赖含 mcp~=1.28.1；a2a 为可选 extra）</td><td><a href="https://github.com/crewAIInc/crewAI/blob/main/lib/crewai/pyproject.toml" target="_blank" rel="noopener">https://github.com/crewAIInc/crewAI/blob/main/lib/crewai/pyproject.toml</a></td></tr>
             <tr><td>docs</td><td>CrewAI AMP（商业控制面，本次未取到页面）</td><td><a href="https://crewai.com" target="_blank" rel="noopener">https://crewai.com</a></td></tr>
             <tr><td>changelog</td><td>Releases（1.15.23 @ 2026-09-28）</td><td><a href="https://github.com/crewAIInc/crewAI/releases" target="_blank" rel="noopener">https://github.com/crewAIInc/crewAI/releases</a></td></tr>
             <tr><td>repo</td><td>crewAI-examples · 官方示例集</td><td><a href="https://github.com/crewAIInc/crewAI-examples" target="_blank" rel="noopener">https://github.com/crewAIInc/crewAI-examples</a></td></tr>
@@ -210,10 +243,10 @@
 |:--:|---|---|
 | 1 | 同一需求用 Crew 实现 vs 用 Flow 实现，代码量与可读性差多少 | 验证双抽象是否真的各有用处 |
 | 2 | 用 Ollama 接本地量化模型跑完一个 Crew | 官方点名支持，值得验证真实可行性 |
-| 3 | <strong>guardrails 到底拦什么</strong>（输出校验？工具调用？文件访问？） | 本站最大的缺口，选型前必须清 |
-| 4 | checkpointing 开箱状态：默认有没有、开箱在哪 | 官方写「随系统成长再加」，要确认默认行为 |
+| 3 | <strong>guardrails 实战强度</strong>：LLM 式误判率、重试 3 次够不够 | 机制已知（输出校验），误判率需实测 |
+| 4 | checkpointing 实测：中断后 resume 是否真跳过已完成 task | 官方文档已述机制，需验证真实表现 |
 | 5 | Crew 之间传递信息的开销（角色扮演的 token 成本） | 角色协作通常吃 token，要量 |
-| 6 | Flow 的 state 在崩溃后能否恢复 | 与 LangGraph 的 superstep 落盘对比 |</p>
+| 6 | Flow 的 state 在崩溃后跨进程恢复的真实成功率 | 与 LangGraph 的 superstep 落盘对比 |</p>
       </div>
 
 
@@ -221,9 +254,10 @@
         <h2><span data-zh>相关条目</span><span data-en>Related entries</span></h2>
         <ul class="rel-list">
           <li><span class="rel-t"><a href="./google-adk.html">Google ADK</a></span><span class="rel-n"><strong>编排家族对照</strong>：同为图/流程编排，ADK 用 Workflow Runtime 的节点与路由，CrewAI 用 Crew（角色协作）+ Flow（事件驱动）两套抽象。CrewAI 另给了 MCP/A2A 支持。</span></li>
-          <li><span class="rel-t"><a href="./langgraph.html">LangGraph</a></span><span class="rel-n"><strong>状态持久化路线的差别最大的一条</strong>：LangGraph 明确给出「每 superstep 落盘 checkpoint」，CrewAI 把 checkpointing 定位成「随系统成长再加」的进阶项，粒度与后端均未核验。</span></li>
+          <li><span class="rel-t"><a href="./langgraph.html">LangGraph</a></span><span class="rel-n"><strong>状态持久化路线对照</strong>：LangGraph 每 superstep 落盘；CrewAI 事件驱动、默认每 task 完成落盘，后端 Json/Sqlite，可 resume/fork。两条路线现在都有官方明确机制。</span></li>
           <li><span class="rel-t"><a href="./deepagents.html">Deep Agents</a></span><span class="rel-n">同属「快速起步」一侧，但抽象不同：Deep Agents 是 batteries-included harness，CrewAI 是 Crew/Flow 双抽象的编排框架。</span></li>
-          <li><span class="rel-t"><a href="./openai-agents-sdk.html">OpenAI Agents SDK</a></span><span class="rel-n">反面对照：那个是单 agent 原语 + 明确的 guardrail 机制；CrewAI 的权限维度目前只有 guardrails 一个未说明机制的名词。</span></li>
+          <li><span class="rel-t"><a href="./openai-agents-sdk.html">OpenAI Agents SDK</a></span><span class="rel-n">反面对照：那个是单 agent 原语 + input/output 双向 guardrail；CrewAI 的 guardrail 只校验 task 输出（且无沙箱）。</span></li>
+          <li><span class="rel-t"><a href="/tools/filesystem.html"><span data-zh>Filesystem MCP Server</span><span data-en>Filesystem MCP Server</span></a></span><span class="rel-n"><span data-zh>另一层 · 给 agent 装的工具</span><span data-en>Other layer · MCP tools</span></span></li>
         </ul>
       </div>
 
