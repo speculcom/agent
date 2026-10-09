@@ -15,7 +15,7 @@
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%238b7cf8'/%3E%3Cstop offset='1' stop-color='%2322d3c5'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='48' height='48' rx='12' fill='%2305080f'/%3E%3Cpath d='M14 32 L24 12 L34 32' fill='none' stroke='url(%23g)' stroke-width='2.4' stroke-linejoin='round'/%3E%3Ccircle cx='24' cy='27' r='2.4' fill='%2322d3c5'/%3E%3C/svg%3E" />
   <link rel="stylesheet" href="brand.css" />
   <link rel="stylesheet" href="site.css" />
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"GitHub Copilot","applicationCategory":"DeveloperApplication","url":"https://github.com/features/copilot","sameAs":"https://github.com/features/copilot","description":"形态最广、生态最依附 GitHub 的一个——从网站到 CLI 到主流编辑器全覆盖，且能把任务委派给 Claude / Codex（Preview）。","dateModified":"2026-09-29","offers":{"@type":"Offer","price":"10","priceCurrency":"USD"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"GitHub Copilot","applicationCategory":"DeveloperApplication","url":"https://github.com/features/copilot","sameAs":"https://github.com/features/copilot","description":"形态最广、生态最依附 GitHub 的一个——从网站到 CLI 到主流编辑器全覆盖，且能把任务委派给 Claude / Codex（Preview）。","dateModified":"2026-10-08","offers":{"@type":"Offer","price":"10","priceCurrency":"USD"}}</script>
 </head>
 <body class="brand-ambient">
   <a class="t-skip" href="#main"><span data-zh>跳到主要内容</span><span data-en>Skip to main content</span></a>
@@ -39,8 +39,34 @@
           <button class="icon-btn" id="langBtn" type="button" aria-label="Switch language" title="Switch language">EN</button>
         </span>
       </nav>
+      <!-- B6（2026-10-09）：与共享 shell 同步加的移动端导航入口。
+           ⚠ 本文件是 agent 站**自己的** shell 副本（它多一层分区切换），
+             所以每次改共享 shell 的骨架，这里也要跟一次 —— 这是双份实现固有的代价。
+             样式与行为都在共享 brand.css / brand.js 里，这里只出标记。 -->
+      <button class="nav-burger" type="button" aria-label="打开菜单" aria-expanded="false" aria-controls="navDrawer">
+        <i></i><i></i><i></i>
+      </button>
     </div>
   </header>
+  <div class="nav-scrim"></div>
+  <aside class="nav-drawer" id="navDrawer" aria-hidden="true" aria-label="站点导航">
+    <div class="nav-drawer-h">
+      <span class="brand-name"><span data-zh>投机取巧</span><span data-en>Speculative Speculation</span></span>
+      <button class="nav-dclose" type="button" aria-label="关闭">×</button>
+    </div>
+    <nav class="nav-drawer-list">
+      <a href="https://specul.com/"><span><span data-zh>首页</span><span data-en>Home</span></span><span class="ar" aria-hidden="true">→</span></a>
+      <a href="https://learn.specul.com/"><span><span data-zh>学 AI</span><span data-en>Learn</span></span><span class="ar" aria-hidden="true">→</span></a>
+      <a href="https://agent.specul.com/" aria-current="page"><span><span data-zh>Agent</span><span data-en>Agent</span></span><span class="ar" aria-hidden="true">→</span></a>
+      <a href="https://models.specul.com/"><span><span data-zh>本地模型</span><span data-en>Models</span></span><span class="ar" aria-hidden="true">→</span></a>
+      <a href="https://vg.specul.com/"><span><span data-zh>AI 做游戏</span><span data-en>Vibe Gaming</span></span><span class="ar" aria-hidden="true">→</span></a>
+      <a href="https://nav.specul.com/"><span><span data-zh>导航</span><span data-en>Directory</span></span><span class="ar" aria-hidden="true">→</span></a>
+    </nav>
+    <div class="nav-drawer-foot">
+      <p><span data-zh>6 个站，各管一件事</span><span data-en>Six sites, one job each</span></p>
+      <nav><a href="https://specul.com/legal.html"><span data-zh>法律条款</span><span data-en>Legal terms</span></a></nav>
+    </div>
+  </aside>
   <main id="main">
     <div class="container detail">
       <nav class="crumbs" aria-label="面包屑">
@@ -67,10 +93,10 @@
         <span class="tag on">协作</span>
         <span class="badge accent">partial</span>
         <span class="badge">lifecycle: active</span>
-        <span class="badge"><span data-zh>核验</span><span data-en>Checked</span> 2026-09-29</span>
+        <span class="badge"><span data-zh>核验</span><span data-en>Checked</span> 2026-10-08</span>
       </div>
 
-            <p class="panel-lead"><span data-zh><strong>The widest form coverage and the most GitHub-bound ecosystem</strong> — website, CLI and mainstream editors, and it can delegate tasks to Claude / Codex (Preview).</span><span data-en><strong>The widest form coverage and the most GitHub-bound ecosystem</strong> — website, CLI and mainstream editors, and it can delegate tasks to Claude / Codex (Preview).</span></p>
+            <p class="panel-lead"><span data-zh><strong>形态最广、生态最依附 GitHub</strong> 的一个——从网站到 CLI 到主流编辑器全覆盖，且能把任务委派给 Claude / Codex（Preview）。</span><span data-en><strong>The widest form coverage and the most GitHub-bound ecosystem</strong> — website, CLI and mainstream editors, and it can delegate tasks to Claude / Codex (Preview).</span></p>
 
             <div class="panel is-slim">
         <h2><span data-zh>适合与不适合</span><span data-en>When to use it, when not to</span></h2>
@@ -94,7 +120,7 @@ Also not a fit if you rely on third-party agent delegation (officially marked Pr
       <dl class="axes">
         <div class="axis">
           <dt><span data-zh>模型与开放条件</span><span data-en>Model & openness</span></dt>
-          <dd>由 GitHub / Microsoft 提供，绑定 GitHub 账号体系。 <strong>「Delegate tasks to third-party coding agents like Claude by Anthropic and OpenAI Codex（Preview）」—— 官方明确标注可把任务委派给第三方 agent（Claude、Codex）， 且标注为 Preview。</strong> <strong>具体模型清单与选择方式本次未核验。</strong></dd>
+          <dd>由 GitHub / Microsoft 统一托管，绑定 GitHub 账号体系； <strong>官方有模型清单页</strong>，覆盖多厂商：OpenAI（GPT-5 / 5.3-Codex / 5.4 / 5.5 / 5.6 / 6.x）、Anthropic（Claude Fable / Opus / Sonnet）、 Google（Gemini Flash）、Microsoft（MAI-Code）、Moonshot（Kimi）、 xAI（Grok）。<strong>模型随套餐与客户端变化</strong>：Pro / Pro+ / Max / Business / Enterprise 各不同，Free 与 Student <strong>仅能经 Auto 模型选择</strong>使用；组织 / 企业可启用或限制具体模型。 聊天框有模型切换器（另有 Auto），部分模型支持 1M token 上下文 与可调 reasoning（VS Code 与 CLI）。 <strong>BYOK 已核验</strong>：VS Code 可从 provider（Anthropic / Gemini / OpenAI 等）或 AI Toolkit 添加模型，可能需 API key 或 PAT； Business / Enterprise 需先启用「Bring Your Own Language Model Key in Select IDEs」策略。 第三方 agent 委派（Claude / Codex）仍标 <strong>Preview</strong>。</dd>
         </div>
         <div class="axis">
           <dt><span data-zh>运行位置</span><span data-en>Where it runs</span></dt>
@@ -102,11 +128,11 @@ Also not a fit if you rely on third-party agent delegation (officially marked Pr
         </div>
         <div class="axis">
           <dt><span data-zh>本地文件</span><span data-en>Local files</span></dt>
-          <dd>通过编辑器扩展或 GitHub 平台访问代码。 <strong>索引策略本次未核验。</strong></dd>
+          <dd>通过编辑器扩展或 GitHub 平台访问代码；<strong>官方有语义代码索引 （semantic code search）</strong>：后台建立，大仓库首次索引最长约 60 秒，此后增量更新通常在新会话开始后数秒内完成； 供 GitHub 网站与 VS Code 的 Copilot Chat、以及 cloud agent 使用。 非 GitHub 仓库（GitLab、本地仓库）在 VS Code 也可语义索引， 但<strong>会把数据上传到 GitHub</strong>，且默认关闭、需管理员启用 「Semantic indexing for non-GitHub repositories」策略。 <strong>Content exclusion</strong> 可让 Copilot 忽略指定文件。 官方明说索引结果 <strong>不用于模型训练</strong>。</dd>
         </div>
         <div class="axis">
           <dt><span data-zh>关机后的任务</span><span data-en>Tasks after shutdown</span></dt>
-          <dd><strong>有明确的 cloud agent 形态</strong>： 「Assign work to Copilot to research, plan, and write code — with or without a pull request」， 即云端智能体可以研究、规划、写代码并（可选）创建 PR。 <strong>客户端关闭后的行为本次未核验。</strong></dd>
+          <dd><strong>有明确的真后台 cloud agent（原 coding agent）</strong>： 官方原文「GitHub Copilot can work independently in the background」，在<strong>由 GitHub Actions 驱动的临时开发环境</strong>里独立 跑任务——即<strong>厂商托管，你的机器关闭后仍继续</strong>。 触发方式：派 GitHub issue、在 PR 评论 <code>@copilot</code>，或从 VS Code 入口；可产出分支 / PR（一次一分支、一任务一 PR）。 Business / Enterprise 默认禁用，需管理员先启用。 <strong>限制</strong>：cloud agent <strong>不遵守 content exclusion</strong>。 用量：消耗 GitHub Actions 分钟 + Copilot premium requests。</dd>
         </div>
         <div class="axis">
           <dt><span data-zh>工具与扩展</span><span data-en>Tools & extensions</span></dt>
@@ -114,11 +140,11 @@ Also not a fit if you rely on third-party agent delegation (officially marked Pr
         </div>
         <div class="axis">
           <dt><span data-zh>上下文与记忆</span><span data-en>Context & memory</span></dt>
-          <dd>有 App modernization for Java and .NET（把工作分配给 Copilot， 由它创建 pull request）。 <strong>上下文窗口与跨会话记忆本次未核验。</strong></dd>
+          <dd><strong>上下文窗口有上限说明</strong>：部分模型支持 <strong>1M token 上下文</strong> （仅 VS Code 与 Copilot CLI 可用），并有可调 reasoning （VS Code、CLI 与 cloud agent）。 <strong>跨会话记忆已核验为官方功能 Copilot Memory（public preview）</strong>： 存仓库级事实与用户级偏好，带引用并在当前分支校验， 未使用的条目 <strong>28 天后自动删除</strong>，可在多个 feature 间共享； 付费套餐可用，组织 / 企业需管理员先启用。 另有 custom instructions 三类（个人 / 仓库 / 组织），优先级 个人 &gt; 仓库 &gt; 组织；仓库级用 <code>.github/copilot-instructions.md</code>， 路径级用 <code>.github/instructions/**/*.instructions.md</code>， 以及 <code>AGENTS.md</code> 等 agent 指令。</dd>
         </div>
         <div class="axis">
           <dt><span data-zh>权限与限制</span><span data-en>Permissions & limits</span></dt>
-          <dd><strong>依赖 GitHub 的权限体系</strong>—— 天然与仓库、PR、组织策略集成。 <strong>具体的审批机制与沙箱设计本次未核验。</strong> Enterprise 相关能力受组织策略控制。</dd>
+          <dd><strong>依赖 GitHub 权限体系</strong>（仓库 / PR / 组织策略）。 官方已核验的边界： ① <strong>Content exclusion</strong>（Business / Enterprise）可让 Copilot 忽略 指定文件；但不覆盖 symlink 与远程文件系统、在 VS Code 的 Edit / Agent 模式不支持，且 <strong>cloud agent 不适用内容排除</strong>。 ② <strong>cloud agent 默认受防火墙限制联网</strong>：官方称按域名 / URL 允许清单放行，可在组织与仓库级配置；但防火墙只作用于 agent 经 Bash 工具启动的进程、不覆盖 MCP，且官方承认可能被绕过。 ③ Business / Enterprise 需管理员先启用 agent、模型切换与 BYOK 策略；仓库可 opt out。索引不用于模型训练。</dd>
         </div>
         <div class="axis">
           <dt><span data-zh>适合什么任务</span><span data-en>Best for</span></dt>
@@ -130,9 +156,10 @@ Also not a fit if you rely on third-party agent delegation (officially marked Pr
         <h2 class="warn"><span data-zh>头号误解</span><span data-en>Top misconception</span></h2>
         <ul>
 
-          <li><span data-zh>把 Flex allotment 当固定额度，官方明确说它会变</span><span data-en>Reading Flex allotment as a fixed quota — the official docs say it changes</span></li>
-          <li><span data-zh>忽略 Preview 状态的第三方 agent 委派（Claude / Codex）</span><span data-en>Overlooking third-party agent delegation in Preview (Claude / Codex)</span></li>
-          <li><span data-zh>以为个人档也有额度池共享，Pooled usage 仅 Business / Enterprise</span><span data-en>Assuming individual plans share a quota pool — pooled usage is Business / Enterprise only</span></li>
+          <li>把 Flex allotment 当固定额度，官方明确说它会变</li>
+          <li>忽略 Preview 状态的第三方 agent 委派（Claude / Codex）</li>
+          <li>以为个人档也有额度池共享，Pooled usage 仅 Business / Enterprise</li>
+          <li>以为 cloud agent 会遵守 content exclusion——官方明说它不遵守</li>
         </ul>
       </div>
 
@@ -154,25 +181,30 @@ Also not a fit if you rely on third-party agent delegation (officially marked Pr
             <div class="panel is-slim">
         <h2><span data-zh>未知项清单</span><span data-en>Known unknowns</span></h2>
         <ul>
-          <li>各档位的完整价格对照（本次未能逐档确认）</li>
-          <li>具体模型清单与选择方式</li>
-          <li>索引策略</li>
-          <li>上下文窗口与跨会话记忆</li>
-          <li>审批机制与沙箱设计</li>
-          <li>第三方 agent 委派的实际可用范围</li>
-          <li>企业策略如何影响可用能力</li>
+          <li>各档位的完整价格对照（价格数字未逐档确认）</li>
+          <li>第三方 agent 委派（Claude / Codex）的实际可用范围（官方标注 Preview）</li>
+          <li>企业策略对可用能力的完整影响面</li>
+          <li>cloud agent 防火墙被绕过的实际边界（官方自称可能被绕过）</li>
         </ul>
       </div>
 
 
       <div class="panel">
         <h2><span data-zh>证据来源</span><span data-en>Evidence sources</span></h2>
-        <p class="t-sm"><span data-zh>判断可回到以下一手源复核。本站核验日</span><span data-en>Every judgement can be rechecked against the primary sources below. Verified on</span> 2026-09-29，<span data-zh>内容更新日</span><span data-en>content updated on</span> 2026-09-29。</p>
+        <p class="t-sm"><span data-zh>判断可回到以下一手源复核。本站核验日</span><span data-en>Every judgement can be rechecked against the primary sources below. Verified on</span> 2026-10-08，<span data-zh>内容更新日</span><span data-en>content updated on</span> 2026-10-08。</p>
         <table class="src">
           <thead><tr><th class="w-20"><span data-zh>类型</span><span data-en>Type</span></th><th class="w-52"><span data-zh>名称</span><span data-en>Name</span></th><th><span data-zh>链接</span><span data-en>Link</span></th></tr></thead>
           <tbody>
             <tr><td>pricing</td><td>GitHub · Copilot 定价与 plans 页（功能逐项对照）</td><td><a href="https://github.com/features/copilot/plans" target="_blank" rel="noopener">https://github.com/features/copilot/plans</a></td></tr>
             <tr><td>docs</td><td>GitHub · Copilot 官方文档</td><td><a href="https://docs.github.com/en/copilot" target="_blank" rel="noopener">https://docs.github.com/en/copilot</a></td></tr>
+            <tr><td>docs</td><td>GitHub · Copilot 支持的 AI 模型（多厂商清单、按套餐与客户端）</td><td><a href="https://docs.github.com/en/copilot/reference/ai-models/supported-models" target="_blank" rel="noopener">https://docs.github.com/en/copilot/reference/ai-models/supported-models</a></td></tr>
+            <tr><td>docs</td><td>GitHub · 切换模型与自带模型（BYOK / AI Toolkit）</td><td><a href="https://docs.github.com/en/copilot/how-tos/use-ai-models/change-the-chat-model" target="_blank" rel="noopener">https://docs.github.com/en/copilot/how-tos/use-ai-models/change-the-chat-model</a></td></tr>
+            <tr><td>docs</td><td>GitHub · Copilot cloud agent（后台运行、GitHub Actions 环境、限额）</td><td><a href="https://docs.github.com/en/copilot/concepts/agents/coding-agent/about-coding-agent" target="_blank" rel="noopener">https://docs.github.com/en/copilot/concepts/agents/coding-agent/about-coding-agent</a></td></tr>
+            <tr><td>docs</td><td>GitHub · 仓库语义索引（semantic code search）</td><td><a href="https://docs.github.com/en/copilot/concepts/context/repository-indexing" target="_blank" rel="noopener">https://docs.github.com/en/copilot/concepts/context/repository-indexing</a></td></tr>
+            <tr><td>docs</td><td>GitHub · Content exclusion（内容排除与限制）</td><td><a href="https://docs.github.com/en/copilot/concepts/context/content-exclusion" target="_blank" rel="noopener">https://docs.github.com/en/copilot/concepts/context/content-exclusion</a></td></tr>
+            <tr><td>docs</td><td>GitHub · Copilot Memory（跨会话记忆，public preview）</td><td><a href="https://docs.github.com/en/copilot/concepts/agents/copilot-memory" target="_blank" rel="noopener">https://docs.github.com/en/copilot/concepts/agents/copilot-memory</a></td></tr>
+            <tr><td>docs</td><td>GitHub · 自定义指令（个人 / 仓库 / 组织与优先级）</td><td><a href="https://docs.github.com/en/copilot/concepts/prompting/response-customization" target="_blank" rel="noopener">https://docs.github.com/en/copilot/concepts/prompting/response-customization</a></td></tr>
+            <tr><td>docs</td><td>GitHub · cloud agent 防火墙（域名 / URL 允许清单与限制）</td><td><a href="https://docs.github.com/en/copilot/how-tos/use-copilot-agents/coding-agent/customize-the-agent-firewall" target="_blank" rel="noopener">https://docs.github.com/en/copilot/how-tos/use-copilot-agents/coding-agent/customize-the-agent-firewall</a></td></tr>
             <tr><td>changelog</td><td>GitHub · Changelog（Copilot 标签）</td><td><a href="https://github.blog/changelog/label/copilot/" target="_blank" rel="noopener">https://github.blog/changelog/label/copilot/</a></td></tr>
           </tbody>
         </table>
@@ -192,6 +224,8 @@ Also not a fit if you rely on third-party agent delegation (officially marked Pr
         <ul class="rel-list">
           <li><span class="rel-t"><a href="./cursor.html">Cursor</a></span><span class="rel-n">同赛道，架构更激进（自托管 + 子智能体编排）</span></li>
           <li><span class="rel-t"><a href="./windsurf.html">Windsurf</a></span><span class="rel-n">同赛道，已改称 Devin Desktop</span></li>
+          <li><span class="rel-t"><a href="/tools/github-mcp.html"><span data-zh>GitHub MCP Server</span><span data-en>GitHub MCP Server</span></a></span><span class="rel-n"><span data-zh>另一层 · 给 agent 装的工具</span><span data-en>Other layer · MCP tools</span></span></li>
+          <li><span class="rel-t"><a href="/tools/filesystem.html"><span data-zh>Filesystem MCP Server</span><span data-en>Filesystem MCP Server</span></a></span><span class="rel-n"><span data-zh>另一层 · 给 agent 装的工具</span><span data-en>Other layer · MCP tools</span></span></li>
         </ul>
       </div>
 
