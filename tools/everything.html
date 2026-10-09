@@ -11,7 +11,7 @@
   <meta property="og:url" content="https://agent.specul.com/tools/everything.html" />
   <meta property="og:title" content="Everything MCP Server — Tools | 投机取巧" />
   <meta property="og:description" content="Everything MCP Server（Model Context Protocol）：不是可用工具——官方明说这是给 MCP 客户端开发者做功能测试的 server，唯一用途是验证客户端协议实现是否正确。" />
-  <meta name="theme-color" content="#05080f" />
+  <meta name="theme-color" content="#16121f" />
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%238b7cf8'/%3E%3Cstop offset='1' stop-color='%2322d3c5'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='48' height='48' rx='12' fill='%2305080f'/%3E%3Cpath d='M14 32 L24 12 L34 32' fill='none' stroke='url(%23g)' stroke-width='2.4' stroke-linejoin='round'/%3E%3Ccircle cx='24' cy='27' r='2.4' fill='%2322d3c5'/%3E%3C/svg%3E" />
   <link rel="stylesheet" href="../brand.css" />
   <link rel="stylesheet" href="../site.css" />
@@ -93,65 +93,76 @@
         <span class="badge"><span data-zh>核验</span><span data-en>Checked</span> 2026-10-08</span>
       </div>
 
-            <p class="panel-lead"><span data-zh><strong>不是可用工具</strong>——官方明说这是给 MCP 客户端开发者做功能测试的 server，唯一用途是验证客户端协议实现是否正确。</span><span data-en><strong>Not a usable tool</strong> — the official page states plainly that this server exists for MCP client developers to run functional tests against; its only purpose is verifying that a client implements the protocol correctly.</span></p>
+            <div class="panel-lead"><span data-zh><p><strong>不是可用工具</strong>——官方明说这是给 MCP 客户端开发者做功能测试的 server，唯一用途是验证客户端协议实现是否正确。</p></span><span data-en><p><strong>Not a usable tool</strong> — the official page states plainly that this server exists for MCP client developers to run functional tests against; its only purpose is verifying that a client implements the protocol correctly.</p></span></div>
 
             <div class="panel is-slim">
         <h2><span data-zh>适合与不适合</span><span data-en>When to use it, when not to</span></h2>
-<span data-zh>        <p><strong>仅适合一件事</strong>：测试你的 MCP 客户端是否正确实现了协议。</p>
-        <p class="warn-p"><strong>不适合任何实际任务场景。</strong>
-官方定位就是测试工具，工具清单长是为覆盖协议特性，不是为实用。</p></span><span data-en>        <p>Scenarios where you are testing an MCP client implementation rather than using a tool.</p>
-        <p class="warn-p"><strong>Not a fit for</strong> real work — the official page states its only purpose is verifying that a client implements the protocol correctly.</p></span>
+<span data-zh>        <div><p><strong>仅适合一件事</strong>：测试你的 MCP 客户端是否正确实现了协议。</p></div>
+        <div class="warn-p"><p><strong>不适合任何实际任务场景。</strong> 官方定位就是测试工具，工具清单长是为覆盖协议特性，不是为实用。</p></div></span><span data-en>        <div><p>Scenarios where you are testing an MCP client implementation rather than using a tool.</p></div>
+        <div class="warn-p"><p><strong>Not a fit for</strong> real work — the official page states its only purpose is verifying that a client implements the protocol correctly.</p></div></span>
       </div>
 
 
       <div class="block-head">
         <h2 class="t-h2"><span data-zh>固定坐标系</span><span data-en>Fixed coordinate system</span></h2>
-        <p class="t-section-lead">11 <span data-zh>个维度</span><span data-en>dimensions</span>, <span data-zh>与同赛道其他对象逐项可比</span><span data-en>each comparable item by item against others in the same track</span>.</p>
+        <p class="t-section-lead">11 <span data-zh>个维度</span><span data-en>dimensions</span>, <span data-zh>与同分区其他对象逐项可比</span><span data-en>each comparable item by item against others in the same section</span>.</p>
       </div>
       <dl class="axes">
         <div class="axis">
           <dt><span data-zh>模型与开放条件</span><span data-en>Model & openness</span></dt>
-          <dd>本身不调用模型。<strong>官方明说本 server 不打算成为有用的 server</strong>， 而是给 MCP 客户端开发者做功能测试用。 实现了 prompts、tools、resources、sampling 等协议特性以展示 MCP 能力。</dd>
+          <dd><p>本身不调用模型。<strong>官方明说本 server 不打算成为有用的 server</strong>， 而是给 MCP 客户端开发者做功能测试用。</p>
+            <p>实现了 prompts、tools、resources、sampling 等协议特性以展示 MCP 能力。</p></dd>
         </div>
         <div class="axis">
           <dt><span data-zh>运行位置</span><span data-en>Where it runs</span></dt>
-          <dd>本地 Node.js 进程，通过 stdio 通信。 2026-09-22 修复了会话断开时的订阅清理问题。</dd>
+          <dd><p>本地 Node.js 进程，通过 stdio 通信。 2026-09-22 修复了会话断开时的订阅清理问题。</p></dd>
         </div>
         <div class="axis">
           <dt><span data-zh>本地文件</span><span data-en>Local files</span></dt>
-          <dd>测试用途，不提供实际文件访问能力。 详细的资源与工具清单见仓库 docs/features.md。</dd>
+          <dd><p>测试用途，不提供实际文件访问能力。 详细的资源与工具清单见仓库 docs/features.md。</p></dd>
         </div>
         <div class="axis">
           <dt><span data-zh>关机后的任务</span><span data-en>Tasks after shutdown</span></dt>
-          <dd>不支持。随客户端进程结束。</dd>
+          <dd><p>不支持。随客户端进程结束。</p></dd>
         </div>
         <div class="axis">
           <dt><span data-zh>工具与扩展</span><span data-en>Tools & extensions</span></dt>
-          <dd>共 19 个工具，<strong>本站已按仓库 docs/features.md 逐条核对</strong>（2026-10-08）： echo、get-annotated-message、get-env、get-resource-links、 get-resource-reference、get-roots-list、gzip-file-as-resource、 get-structured-content、get-sum、get-tiny-image、 trigger-long-running-operation、toggle-simulated-logging、 toggle-subscriber-updates、trigger-elicitation-request、 trigger-url-elicitation、trigger-sampling-request、 simulate-research-query，以及 sampling / elicitation 的两个 async 变体。 另有 4 个 prompt 与一批 resource 模板（同见 features.md）。 输出结构按演示目标设计，<strong>不适合直接消费</strong>。</dd>
+          <dd><p>共 19 个工具，<strong>本站已按仓库 docs/features.md 逐条核对</strong>（2026-10-08）：</p>
+            <ul><li>echo、get-annotated-message、get-env、get-resource-links、</li></ul>
+            <ul><li>get-resource-reference、get-roots-list、gzip-file-as-resource、</li></ul>
+            <ul><li>get-structured-content、get-sum、get-tiny-image、</li></ul>
+            <ul><li>trigger-long-running-operation、toggle-simulated-logging、</li></ul>
+            <ul><li>toggle-subscriber-updates、trigger-elicitation-request、</li></ul>
+            <ul><li>trigger-url-elicitation、trigger-sampling-request、</li></ul>
+            <ul><li>simulate-research-query，以及 sampling / elicitation 的两个 async 变体。</li></ul>
+            <p>另有 4 个 prompt 与一批 resource 模板（同见 features.md）。 输出结构按演示目标设计，<strong>不适合直接消费</strong>。</p></dd>
         </div>
         <div class="axis">
           <dt><span data-zh>上下文与记忆</span><span data-en>Context & memory</span></dt>
-          <dd>无跨会话记忆。测试 server，不提供实用记忆能力。</dd>
+          <dd><p>无跨会话记忆。测试 server，不提供实用记忆能力。</p></dd>
         </div>
         <div class="axis">
           <dt><span data-zh>权限与限制</span><span data-en>Permissions & limits</span></dt>
-          <dd><strong>不适用于生产环境</strong>，权限边界不是设计目标。 官方定位是测试工具，未针对生产环境的权限收敛设计。</dd>
+          <dd><p><strong>不适用于生产环境</strong>，权限边界不是设计目标。 官方定位是测试工具，未针对生产环境的权限收敛设计。</p></dd>
         </div>
         <div class="axis">
           <dt><span data-zh>适合什么任务</span><span data-en>Best for</span></dt>
-          <dd><strong>仅适合一件事：测试你的 MCP 客户端是否正确实现了协议。</strong> 不适合任何实际任务场景。</dd>
+          <dd><p><strong>仅适合一件事：测试你的 MCP 客户端是否正确实现了协议。</strong> 不适合任何实际任务场景。</p></dd>
         </div>
         <div class="axis">
           <dt><span data-zh>传输方式</span><span data-en>Transport</span></dt>
-          <dd>支持 stdio（默认，npx 启动）。 <strong>仓库 README 另文档了两种远程形态</strong>（2026-10-08 核验）： Streamable HTTP（<code>npx @modelcontextprotocol/server-everything streamableHttp</code>） 与 SSE（<code>sse</code> 子命令；官方标注自 2025-03-26 规范起已弃用）。</dd>
+          <dd><p>支持 stdio（默认，npx 启动）。</p>
+            <p><strong>仓库 README 另文档了两种远程形态</strong>（2026-10-08 核验）：</p>
+            <p>Streamable HTTP（<code>npx @modelcontextprotocol/server-everything streamableHttp</code>）</p>
+            <p>与 SSE（<code>sse</code> 子命令；官方标注自 2025-03-26 规范起已弃用）。</p></dd>
         </div>
         <div class="axis">
           <dt><span data-zh>认证机制</span><span data-en>Authentication</span></dt>
-          <dd>无独立认证层。<strong>不适用于生产环境</strong>—— 权限设计不是本 server 的目标。 本条目不记录具体的认证机制， 因为官方定位就是协议测试工具，生产环境的防护由使用者自行实现。</dd>
+          <dd><p>无独立认证层。<strong>不适用于生产环境</strong>—— 权限设计不是本 server 的目标。 本条目不记录具体的认证机制， 因为官方定位就是协议测试工具，生产环境的防护由使用者自行实现。</p></dd>
         </div>
         <div class="axis">
           <dt><span data-zh>权限范围</span><span data-en>Permission scope</span></dt>
-          <dd><strong>不适用于生产环境</strong>。 作为测试工具，其权限范围与实际操作能力均未针对生产场景收敛。 启用前请确认你的环境不会因此暴露风险。</dd>
+          <dd><p><strong>不适用于生产环境</strong>。 作为测试工具，其权限范围与实际操作能力均未针对生产场景收敛。 启用前请确认你的环境不会因此暴露风险。</p></dd>
         </div>
       </dl>
 
@@ -170,9 +181,9 @@
         <h2><span data-zh>价格</span><span data-en>Pricing</span></h2>
         <table class="src">
           <tbody>
-            <tr><th class="w-28"><span data-zh>月度入口</span><span data-en>Monthly entry</span></th><td><span data-zh>无商业费用</span><span data-en>无商业费用</span></td></tr>
-            <tr><th class="w-28"><span data-zh>年付</span><span data-en>Annual</span></th><td><span data-zh>无商业费用</span><span data-en>无商业费用</span></td></tr>
-            <tr><th class="w-28"><span data-zh>额度说明</span><span data-en>Quota note</span></th><td><span data-zh>随 MCP servers 仓库分发，无授权费。 本条目是**测试用途**，不应用于生产。</span><span data-en>随 MCP servers 仓库分发，无授权费。 本条目是**测试用途**，不应用于生产。</span></td></tr>
+            <tr><th class="w-28"><span data-zh>月度入口</span><span data-en>Monthly entry</span></th><td><span data-zh><p>无商业费用</p></span><span data-en><p>无商业费用</p></span></td></tr>
+            <tr><th class="w-28"><span data-zh>年付</span><span data-en>Annual</span></th><td><span data-zh><p>无商业费用</p></span><span data-en><p>无商业费用</p></span></td></tr>
+            <tr><th class="w-28"><span data-zh>额度说明</span><span data-en>Quota note</span></th><td><span data-zh><p>随 MCP servers 仓库分发，无授权费。 本条目是<strong>测试用途</strong>，不应用于生产。</p></span><span data-en><p>随 MCP servers 仓库分发，无授权费。 本条目是<strong>测试用途</strong>，不应用于生产。</p></span></td></tr>
           </tbody>
         </table>
         <p class="fine mt-3"><span data-zh>不同币种不做折算。优惠、地区、税费与登录后报价可能变化，购买前请到官方页面确认。</span><span data-en>No currency conversion. Discounts, regions, tax and post-login pricing can change — confirm on the official page before buying.</span></p>
@@ -205,13 +216,33 @@
 
             <div class="panel is-slim">
         <h2><span data-zh>实测记录</span><span data-en>Measured runs</span></h2>
-        <p>本站尚未完成实测。
-
-<strong>这个 server 的「实测」含义不同</strong>：要测的不是它能不能干活，
-而是你的 MCP 客户端能否正确处理它暴露的全部协议特性。
-测试清单见仓库 <code>docs/features.md</code>。</p>
+        <p>本站尚未完成实测。</p>
+            <p><strong>这个 server 的「实测」含义不同</strong>：要测的不是它能不能干活， 而是你的 MCP 客户端能否正确处理它暴露的全部协议特性。 测试清单见仓库 <code>docs/features.md</code>。</p>
       </div>
 
+
+            <div class="panel is-slim">
+        <h2>官方定位（原文）</h2>
+        <blockquote>This MCP server attempts to exercise all the features of the MCP protocol. <strong>It is not intended to be a useful server</strong>, but rather a test server for builders of MCP clients. It implements prompts, tools, resources, sampling, and more to showcase MCP capabilities.</blockquote>
+            <p><strong>翻译</strong>：本 server 试图覆盖 MCP 协议的所有特性。 <strong>它不打算成为有用的 server</strong>，而是给 MCP 客户端构建者的测试 server。 它实现了 prompts、tools、resources、sampling 等，以展示 MCP 能力。</p>
+      </div>
+      <div class="panel is-slim">
+        <h2>为什么仍然收录</h2>
+        <p>一个对比站如果只收录「好用」的工具，会漏掉一件重要的事： <strong>生态里有哪些东西是为了别的目的存在的。</strong></p>
+            <p>收录它的价值：</p>
+            <div class="tbl-wrap"><table><thead><tr><th>读者</th><th>得到什么</th></tr></thead><tbody><tr><td>MCP 客户端开发者</td><td>一个协议覆盖最全的测试靶子</td></tr><tr><td>MCP server 开发者</td><td>参考实现，看协议特性怎么用</td></tr><tr><td>普通读者</td><td>学会区分「reference server」和「可用 server」</td></tr></tbody></table></div>
+            <p><strong>但它绝不该被当实用工具推荐。</strong></p>
+      </div>
+      <div class="panel is-slim">
+        <h2>变更记录说明</h2>
+        <div class="tbl-wrap"><table><thead><tr><th>日期</th><th>内容</th></tr></thead><tbody><tr><td>2026-09-22</td><td>会话断开时清理订阅</td></tr><tr><td>2026-08-28</td><td>移除 template URI 校验与订阅清理里的死代码</td></tr></tbody></table></div>
+            <p><strong>09-22 那条是实质修复</strong>：订阅没在会话断开时清理会导致资源泄漏。</p>
+      </div>
+      <div class="panel is-slim">
+        <h2>与其他 reference server 的区别</h2>
+        <div class="tbl-wrap"><table><thead><tr><th>server</th><th>定位</th><th>能用于实际任务</th></tr></thead><tbody><tr><td><code>filesystem</code></td><td>参考实现</td><td>✅</td></tr><tr><td><code>git</code></td><td>参考实现</td><td>✅</td></tr><tr><td><code>memory</code></td><td>参考实现</td><td>✅</td></tr><tr><td><code>sequential-thinking</code></td><td>参考实现</td><td>✅</td></tr><tr><td><code>fetch</code></td><td>参考实现</td><td>△ 需评估安全</td></tr><tr><td><code>time</code></td><td>参考实现</td><td>✅</td></tr><tr><td><strong><code>everything</code></strong></td><td><strong>测试工具</strong></td><td>❌</td></tr></tbody></table></div>
+            <p><strong>这一列对比本身就是本站的价值</strong>：光看「都是官方 servers 仓库里的」， 会以为它们性质相同。实际完全不同。</p>
+      </div>
 
             <div class="panel is-slim">
         <h2><span data-zh>相关条目</span><span data-en>Related entries</span></h2>
