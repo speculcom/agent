@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mastra — Harness | 投机取巧</title>
+  <meta name="description" content="Mastra（Mastra AI）：「TypeScript 生态的全栈式 agent 框架」 —— 官方自述很直白： &gt; Mastra is a framework for building AI-powered applications and agents with a modern TypeScrip…" />
+  <link rel="canonical" href="https://agent.specul.com/harness/mastra.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Mastra" />
+  <meta property="og:url" content="https://agent.specul.com/harness/mastra.html" />
+  <meta property="og:title" content="Mastra — Harness | 投机取巧" />
+  <meta property="og:description" content="Mastra（Mastra AI）：「TypeScript 生态的全栈式 agent 框架」 —— 官方自述很直白： &gt; Mastra is a framework for building AI-powered applications and agents with a modern TypeScrip…" />
+  <meta name="theme-color" content="#05080f" />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%238b7cf8'/%3E%3Cstop offset='1' stop-color='%2322d3c5'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='48' height='48' rx='12' fill='%2305080f'/%3E%3Cpath d='M14 32 L24 12 L34 32' fill='none' stroke='url(%23g)' stroke-width='2.4' stroke-linejoin='round'/%3E%3Ccircle cx='24' cy='27' r='2.4' fill='%2322d3c5'/%3E%3C/svg%3E" />
+  <link rel="stylesheet" href="../brand.css" />
+  <link rel="stylesheet" href="../site.css" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Mastra","applicationCategory":"DeveloperApplication","url":"https://mastra.ai","sameAs":"https://mastra.ai","description":"「TypeScript 生态的全栈式 agent 框架」 —— 官方自述很直白： > Mastra is a framework for building AI-powered applications and agents with a modern TypeScript stack. > It includes everything you need to go from early prototypes to production-ready applications. 关键词是 everything：Agents、Workflows（图工作流引擎）、Memory、RAG、Evals、 ","dateModified":"2026-10-08"}</script>
+</head>
+<body class="brand-ambient">
+  <a class="t-skip" href="#main"><span data-zh>跳到主要内容</span><span data-en>Skip to main content</span></a>
+  <header class="site-header">
+    <div class="container site-bar">
+      <a class="brand" href="https://specul.com/" title="投机取巧">
+        <span class="brand-dot" aria-hidden="true"></span>
+        <span class="brand-text">
+          <span class="brand-name" id="markName" data-zh-name="投机取巧" data-en-name="Speculative Speculation">投机取巧</span>
+        </span>
+      </a>
+      <nav class="nav-links" aria-label="站点导航">
+        <a href="https://specul.com/"><span data-zh>首页</span><span data-en>Home</span></a>
+        <a href="https://learn.specul.com/"><span data-zh>学 AI</span><span data-en>Learn</span></a>
+        <a href="https://agent.specul.com/" aria-current="page"><span data-zh>Agent</span><span data-en>Agent</span></a>
+        <a href="https://models.specul.com/"><span data-zh>本地模型</span><span data-en>Models</span></a>
+        <a href="https://vg.specul.com/"><span data-zh>AI 做游戏</span><span data-en>Vibe Gaming</span></a>
+        <a href="https://nav.specul.com/"><span data-zh>导航</span><span data-en>Directory</span></a>
+        <span class="nav-tools">
+          <button class="icon-btn" id="themeBtn" type="button" aria-label="切换明暗主题" title="切换明暗主题">☾</button>
+          <button class="icon-btn" id="langBtn" type="button" aria-label="Switch language" title="Switch language">EN</button>
+        </span>
+      </nav>
+      <!-- B6（2026-10-09）：与共享 shell 同步加的移动端导航入口。
+           ⚠ 本文件是 agent 站**自己的** shell 副本（它多一层分区切换），
+             所以每次改共享 shell 的骨架，这里也要跟一次 —— 这是双份实现固有的代价。
+             样式与行为都在共享 brand.css / brand.js 里，这里只出标记。 -->
+      <button class="nav-burger" type="button" aria-label="打开菜单" aria-expanded="false" aria-controls="navDrawer">
+        <i></i><i></i><i></i>
+      </button>
+    </div>
+  </header>
+  <div class="nav-scrim"></div>
+  <aside class="nav-drawer" id="navDrawer" aria-hidden="true" aria-label="站点导航">
+    <div class="nav-drawer-h">
+      <span class="brand-name"><span data-zh>投机取巧</span><span data-en>Speculative Speculation</span></span>
+      <button class="nav-dclose" type="button" aria-label="关闭">×</button>
+    </div>
+    <nav class="nav-drawer-list">
+      <a href="https://specul.com/"><span><span data-zh>首页</span><span data-en>Home</span></span><span class="ar" aria-hidden="true">→</span></a>
+      <a href="https://learn.specul.com/"><span><span data-zh>学 AI</span><span data-en>Learn</span></span><span class="ar" aria-hidden="true">→</span></a>
+      <a href="https://agent.specul.com/" aria-current="page"><span><span data-zh>Agent</span><span data-en>Agent</span></span><span class="ar" aria-hidden="true">→</span></a>
+      <a href="https://models.specul.com/"><span><span data-zh>本地模型</span><span data-en>Models</span></span><span class="ar" aria-hidden="true">→</span></a>
+      <a href="https://vg.specul.com/"><span><span data-zh>AI 做游戏</span><span data-en>Vibe Gaming</span></span><span class="ar" aria-hidden="true">→</span></a>
+      <a href="https://nav.specul.com/"><span><span data-zh>导航</span><span data-en>Directory</span></span><span class="ar" aria-hidden="true">→</span></a>
+    </nav>
+    <div class="nav-drawer-foot">
+      <p><span data-zh>6 个站，各管一件事</span><span data-en>Six sites, one job each</span></p>
+      <nav><a href="https://specul.com/legal.html"><span data-zh>法律条款</span><span data-en>Legal terms</span></a></nav>
+    </div>
+  </aside>
+  <main id="main">
+    <div class="container detail">
+      <nav class="crumbs" aria-label="面包屑">
+        <a href="https://agent.specul.com/">Agent 图谱</a>
+        <a href="/">Agents</a>
+        <span aria-current="page">Harness</span>
+        <a href="/tools/">Tools</a>
+      </nav>
+      <a class="back" href="./">← Harness</a>
+
+      <div class="detail-head">
+        <div class="mark" style="--card-accent:#3b82f6" aria-hidden="true">MA</div>
+        <div>
+          <h1><span data-zh>Mastra</span><span data-en>Mastra</span></h1>
+          <div class="vendor is-caps">Mastra AI</div>
+        </div>
+      </div>
+
+      <div class="badges">
+        <span class="tag on">TypeScript</span>
+        <span class="tag on">开源</span>
+        <span class="tag on">Apache-2.0</span>
+        <span class="tag on">编排框架</span>
+        <span class="tag on">工作流</span>
+        <span class="tag on">图执行</span>
+        <span class="tag on">事件驱动</span>
+        <span class="tag on">多Agent</span>
+        <span class="tag on">状态管理</span>
+        <span class="tag on">持久化</span>
+        <span class="tag on">自托管</span>
+        <span class="tag on">MCP</span>
+        <span class="tag on">RAG</span>
+        <span class="tag on">检索</span>
+        <span class="tag on">eval</span>
+        <span class="tag on">上下文压缩</span>
+        <span class="tag on">集成生态</span>
+        <span class="tag on">商业平台</span>
+        <span class="badge accent">partial</span>
+        <span class="badge">lifecycle: active</span>
+        <span class="badge"><span data-zh>核验</span><span data-en>Checked</span> 2026-10-08</span>
+      </div>
+
+            <p class="panel-lead"><span data-zh><strong>「TypeScript 生态的全栈式 agent 框架」</strong> —— 官方自述很直白：
+
+&gt; Mastra is a framework for building AI-powered applications and agents with a <strong>modern TypeScript stack</strong>.
+&gt; It includes <strong>everything you need</strong> to go from early prototypes to production-ready applications.
+
+关键词是 <strong>everything</strong>：Agents、Workflows（图工作流引擎）、Memory、RAG、Evals、
+MCP 客户端与服务端、内置 server、Studio 与 observability —— 都在一个包里。
+<strong>它与 <a href="./langgraph.html">LangGraph</a> 的差别正好是本站反复强调的那条分野</strong>：
+LangGraph 自认 low-level、不预置工具与文件系统；Mastra 走 batteries included 的厚路线。</span><span data-en>A framework for building AI-powered applications and agents on a modern TypeScript stack. Official highlights: <strong>model routing</strong> (&quot;Connect to 40+ providers through one standard interface&quot;, while the <code>/models</code> directory page states &quot;7815 models from 213 providers through a single API&quot;), <strong>agents</strong>, a <strong>graph-based workflow engine</strong> using an explicit control-flow syntax (<code>.then()</code>, <code>.branch()</code>, <code>.parallel()</code>), <strong>human-in-the-loop</strong> via suspend/resume, <strong>memory</strong>, <strong>RAG</strong>, <strong>MCP servers</strong>, plus built-in <strong>evals</strong> and observability.
+
+<strong>State across restarts is first-class</strong>: &quot;Suspension saves the current execution state as a snapshot ... stored in your configured storage provider and persist across deployments and application restarts.&quot; <strong>Local models are officially supported</strong> through an OpenAI-compatible endpoint, with LMStudio recommended (<code>id: &quot;lmstudio/...&quot;</code>, <code>url: &quot;http://localhost:1234/v1&quot;</code>).
+
+<strong>Licensing is dual</strong> (checked 2026-10-08): the core framework is <strong>Apache-2.0</strong>, while code under any <code>ee/</code> directory is <strong>source-available under the Mastra Enterprise License</strong> (the repo license API returns NOASSERTION). A separate commercial <strong>Mastra platform</strong> (Observability / Studio / Server) is priced Starter $0, Teams $250/month, Enterprise custom — Studio, hosted observability, and deployment are platform products, not part of the open-source framework. Latest <code>@mastra/core</code> is 1.75.0 (2026-10-07); requires Node.js &gt;= 22.13.0.</span></p>
+
+            <div class="panel is-slim">
+        <h2><span data-zh>适合与不适合</span><span data-en>When to use it, when not to</span></h2>
+<span data-zh>        <p><strong>适合</strong>：TypeScript / Node 团队要一套开箱即用的 agent 框架（Agents + 图 Workflows + Memory +
+RAG + Evals + MCP + server + Studio）；需要 suspend/resume 与 durable run；
+要接大量 provider 与本地模型；要把 agent/workflow 用 MCP 暴露出去；要嵌进 Next.js / React。
+<strong>不适合</strong>：Python 栈（看 LangGraph / Pydantic AI）；想要 lowest-level、自己掌控图引擎与工具面；
+坚持不用任何商业组件（平台与 <code>ee/</code> 是单独授权）；需要框架自带进程级沙箱与网络策略。</p></span><span data-en>        <p><strong>TypeScript / Node teams</strong> that want an out-of-the-box agent framework: Agents + graph Workflows + Memory + RAG + Evals + MCP + a built-in server + Studio all in one package.
+Work that needs material <strong>suspend/resume and durable runs</strong> (snapshots stored in your own storage, resumable across restarts).
+Connecting to a very large number of model providers, including local models (official LMStudio recommendation).
+Exposing your agents/workflows over MCP, or consuming MCP servers; embedding agents into Next.js / React apps.</p>
+        <p class="warn-p"><strong>Not a fit for</strong> Python stacks (see LangGraph / Pydantic AI); people who want a low-level framework where they control the graph engine and tool surface themselves (Mastra is higher-level, heavier, more opinionated); anyone who insists on zero commercial components (the platform&#39;s Studio/observability/hosted deployment are separately billed, and <code>ee/</code> needs an enterprise license); and anyone who needs a process-level sandbox and network policy built into the open-source core.</p></span>
+      </div>
+
+
+      <div class="block-head">
+        <h2 class="t-h2"><span data-zh>固定坐标系</span><span data-en>Fixed coordinate system</span></h2>
+        <p class="t-section-lead">8 <span data-zh>个维度</span><span data-en>dimensions</span>, <span data-zh>与同赛道其他对象逐项可比</span><span data-en>each comparable item by item against others in the same track</span>.</p>
+      </div>
+      <dl class="axes">
+        <div class="axis">
+          <dt><span data-zh>模型与开放条件</span><span data-en>Model & openness</span></dt>
+          <dd><strong>这是它为第一决策点给出的答案：model routing，且规格写得最狠。</strong> 官方 /models 目录页原文：&quot;giving you access to <strong>7815 models from 213 providers</strong> through a single API.&quot;。用法是 <code>provider/model</code> 字符串（官方示例 <code>openai/gpt-5.6-sol</code>、 <code>anthropic/claude-sonnet-4-6</code>、<code>openrouter/anthropic/claude-haiku-4.5</code>）， &quot;Mastra reads the relevant environment variable (e.g. <code>ANTHROPIC_API_KEY</code>) and routes requests to the provider.&quot;，缺 key 会给出明确的运行时错误指出缺哪个变量。 <strong>官方支持 model fallbacks</strong>：&quot;If a provider experiences an outage, Mastra can automatically switch to another provider at the application level&quot;，也可按任务 mix-and-match 不同模型， 还能用 <code>requestContext</code> 动态选模型。 <strong>本地模型是官方明确支持的</strong>，/models 页有 &quot;Use local models with Mastra&quot; 专节： &quot;Mastra also supports local models like <code>gpt-oss</code>, <code>Qwen3</code>, <code>DeepSeek</code> ... that you run on your own hardware&quot;，前提是本地要提供 <strong>OpenAI 兼容</strong> API server，官方<strong>推荐 LMStudio</strong>， 示例 <code>id: &quot;lmstudio/qwen/qwen3-30b-a3b-2507&quot;</code>、<code>url: &quot;http://localhost:1234/v1&quot;</code>。 ⚠ <strong>一处官方自身数字打架</strong>：README 亮点段写的是 &quot;Connect to <strong>40+ providers</strong>&quot;， 而 /models 目录页写 &quot;213 providers / 7815 models&quot; —— 本站以目录页为准，README 的 40+ 视为旧口径。 <strong>换 provider 后各家 tool calling / structured output 的对齐度，官方未说明</strong>（已查 /models 页）。</dd>
+        </div>
+        <div class="axis">
+          <dt><span data-zh>运行位置</span><span data-en>Where it runs</span></dt>
+          <dd><strong>纯库起步，但官方把「独立 server」和「托管平台」两条路都铺好了。</strong> 形态是 npm 包（<code>@mastra/core</code>，官方 <code>.npmrc</code> 要求 Node.js <code>&gt;=22.13.0</code>）， 官方 deployment 页原文：&quot;Mastra applications can be deployed to any Node.js-compatible environment.&quot;，运行时支持 Node.js v22.13.0+、Bun、Deno、Cloudflare。 它<strong>内置一个基于 Hono 的 server</strong>，可用 <code>mastra build</code> 打出后部署到任意 VM / 容器 / PaaS， 或作为 standalone server 独立运行；也能嵌进 Next.js / React / Node 应用。 本地开发用 <code>mastra dev</code>，Studio 起在 <code>http://localhost:4111</code>。 <strong>谁运营 agent loop</strong>：默认是你自己（自托管）；要托管可选 Mastra 平台 Server （官方称 &quot;A production deployment target that runs your Mastra application as an API server&quot;）。 <strong>多 agent 并发调度</strong>：走 workflows（内置执行引擎）或部署到 Inngest 等 workflow runner， 生产可用独立 worker 进程跑编排与 cron（官方 Workers 页）。 即「代码在哪」= 你的进程；「要不要托管」= 可选平台。</dd>
+        </div>
+        <div class="axis">
+          <dt><span data-zh>本地文件</span><span data-en>Local files</span></dt>
+          <dd><strong>核心框架不内置文件系统，文件能力要显式加装。</strong> Mastra 的定位是 AI 应用/agent 框架，官方文档<strong>没有把文件读写当成默认 agent 能力</strong>； README 与 agents 页讲的工具面是 <code>createTool()</code> 自定义工具与 MCP。 <strong>官方给的三条文件路径</strong>（已查 harness 页与 platform 页）： ① 自己用 <code>createTool()</code> 提供文件工具； ② 走 Harness 的 <strong><code>createCodingAgent()</code></strong> —— 官方 harness 表原文 &quot;Give an agent files, a shell, and the defaults a coding agent needs → <code>createCodingAgent()</code>&quot;， 它 &quot;Build a standard agent with a <strong>workspace</strong>, task tracking, and retries already configured&quot;； ③ 用 Mastra 平台的 <strong>Workspace</strong> —— 官方称每个 environment 会得到一个 managed Workspace， &quot;gives agents <strong>a filesystem and sandbox</strong> with no manual configuration&quot;。 <strong>核心框架自身的文件访问默认边界（是否限制在项目目录、越界是否拦截），官方未说明</strong> （已查 agents 页、harness 页、deployment 页）。宿主权限模型落在平台 Workspace 那侧，不在 OSS 核心。</dd>
+        </div>
+        <div class="axis">
+          <dt><span data-zh>关机后的任务</span><span data-en>Tasks after shutdown</span></dt>
+          <dd><strong>这是它非常强的一维：durable agents + 可跨重启的 snapshot 是可查证的核心机制。</strong> 官方 suspend-and-resume 页原文：&quot;Suspension saves the current execution state as a <strong>snapshot</strong>. Later, resume from a specific step ID to restore the exact captured state. Snapshots are stored in your configured storage provider and <strong>persist across deployments and application restarts</strong>.&quot; 机制细节：<code>suspend()</code> 在某个 step 内暂停并把状态标为 <code>suspended</code>（workflow 级 <code>.sleep()/.sleepUntil()</code> 则标 <code>waiting</code>）；<code>resume({ step, resumeData })</code> 从暂停处继续，只给 <code>runId</code> 时需先 <code>createRun({ runId })</code>； <code>suspendData</code> 可在恢复时取回当初传给 <code>suspend()</code> 的数据；<code>workflow.getWorkflowRunById()</code> + <code>createWorkflowStateReader()</code> 可从存储中恢复悬挂的 run。 <strong>Harness 层还有</strong>：Durable Agents（&quot;Persist run state and let clients reconnect to its stream&quot;）、 Background Tasks（&quot;Run slow tools, workflows, or subagents without blocking&quot;）、 Schedules（cron 定时起 run）。 <strong>托管后台</strong>：Mastra 平台 Server 提供 24/7 常驻（官方定价页 Persistent Server <strong>$100/项目</strong>）； OSS 自托管则是「你自己把进程跑起来」，关了就停。</dd>
+        </div>
+        <div class="axis">
+          <dt><span data-zh>工具与扩展</span><span data-en>Tools & extensions</span></dt>
+          <dd><strong>工具面是「自定义工具 + MCP 一等支持 + 可作 MCP server」三件套，官方文档给得很全。</strong> 自定义工具必须用 <code>createTool()</code>（官方 agents 页明确警告 plain object 工具 &quot;silently fail to execute&quot;， 需 <code>id</code> / <code>description</code> / <code>inputSchema</code> / <code>execute()</code>）。 <strong>MCP 是独立包 <code>@mastra/mcp</code></strong>，官方给两个类：<strong><code>MCPClient</code></strong>（连一个或多个 MCP server） 与 <strong><code>MCPServer</code></strong>（把 Mastra 的 agents / tools / workflows / prompts / resources 暴露成 MCP server）。 传输方式官方示例覆盖 <strong>stdio（<code>command: npx ...</code>）与远程 HTTP(S)（<code>url: new URL(...)</code>）</strong>， 并给了 Klavis AI、mcp.run、Composio、Smithery、Ampersand 等<strong>注册表接入</strong>示例。 还区分 <strong>静态工具（<code>getTools()</code>，配置固定）与动态工具（<code>getToolsets()</code>，按用户/请求带凭据）</strong>， 对多租户 SaaS 很有用。 另有 <strong>A2A</strong>（<code>@mastra/core</code> 暴露 <code>./a2a</code> 子路径）与 <strong>skills</strong>（<code>./skills</code>）子模块。 子代理/多 agent 委派官方称 supervisor + subagents（见 memory 页的 delegation 说明）。</dd>
+        </div>
+        <div class="axis">
+          <dt><span data-zh>上下文与记忆</span><span data-en>Context & memory</span></dt>
+          <dd><strong>它把「记忆」拆成多层，且有「状态 ≠ 上下文」的两套机制。</strong> 官方 memory 页：默认存 <strong>message history</strong>，可另开三样 —— <strong>Observational Memory（推荐）</strong>：&quot;Uses background agents to maintain a dense observation log that <strong>replaces raw message history as it grows</strong>. This keeps the context window small while preserving long-term memory.&quot;；<strong>Working memory</strong>：存结构化的用户数据（名字、偏好、目标）； <strong>Semantic recall</strong>：按语义而非关键词召回历史消息。 超限时用 <strong>memory processors</strong> filter / trim / prioritize。作用域用 <code>resource</code>（用户/实体） + <code>thread</code>（会话）两个 ID 划分，多 agent 间可共享或隔离（<code>scope: &#39;resource&#39; | &#39;thread&#39;</code>）。 <strong>状态那一套</strong>是 workflow 的 snapshot（suspend/resume，见 background 轴）—— 与 memory 分离。 <strong>RAG 是独立系统</strong>（<code>@mastra/rag</code>）：MDocument 切块（recursive / sliding window）、 embedding，再落向量库（官方点名 <strong>pgvector、Pinecone、Qdrant、MongoDB</strong>）。 即：snapshot 存流程状态，memory 存对话与用户长期信息，RAG 存外部知识，三者用途不同。</dd>
+        </div>
+        <div class="axis">
+          <dt><span data-zh>权限与限制</span><span data-en>Permissions & limits</span></dt>
+          <dd><strong>认证是「可选、多 provider」，HITL 是 complete 的暂停/恢复，沙箱只落在平台侧。</strong> 官方 auth 页原文：&quot;<strong>Authentication is optional.</strong> If no auth is configured, all routes and Studio are <strong>publicly accessible</strong>.&quot; 配置后可同时锁住 <strong>Studio UI</strong>（登录 + RBAC）与 <strong>API 路由</strong>；自定义路由可用 <code>requiresAuth: false</code> 单开。内置 Simple Auth / JWT， 第三方支持 Auth0、Better Auth、Clerk、Firebase、Google、Okta、Supabase、WorkOS。 以及 Composite / 自定义 provider。 <strong>人工介入</strong>：用 workflow 的 suspend/resume 做审批（见 background 轴）， 官方另有 human-in-the-loop 页与 AgentController（会话内审批、排队跟进、停止 run）。 <strong>沙箱</strong>：OSS 核心是否提供进程/容器级沙箱，<strong>官方未说明</strong>；沙箱能力落在平台 <strong>Workspace</strong> 与 <code>createCodingAgent()</code>。 <strong>企业级权限</strong>（RBAC、SSO、IAM、network policy）属 <code>ee/</code> 企业许可（官方定价页 Self-Hosted Enterprise 卖点）。<strong>核心框架的网络访问控制机制，官方未说明</strong>（已查 auth 页与定价页）。</dd>
+        </div>
+        <div class="axis">
+          <dt><span data-zh>适合什么任务</span><span data-en>Best for</span></dt>
+          <dd><strong>适合</strong>：<strong>TypeScript / Node 团队</strong>要一套「开箱即用」的 agent 框架 —— Agents + 图 Workflows + Memory + RAG + Evals + MCP + 内置 server + Studio 全在一个包里； 需要材料化的 <strong>suspend/resume 与 durable run</strong>（snapshot 存在你自己的存储、跨重启可恢复）； 要接大量模型 provider 与本地模型（官方推荐 LMStudio）； 需要把 agent/workflow 用 MCP 暴露出去或当 MCP 客户端；想把 agent 嵌进 Next.js / React 应用。 <strong>不适合</strong>：<strong>Python 栈</strong>（该看 <a href="./langgraph.html">LangGraph</a> / <a href="./pydantic-ai.html">Pydantic AI</a>）； 想要 low-level、自己掌控图引擎与工具面（Mastra 抽象更高、包更大、约定更多）； 坚持完全不用任何商业组件（平台 Studio/观测/托管部署是单独的付费产品，<code>ee/</code> 目录需企业许可）； 需要框架自带进程级沙箱与网络策略（那部分不在 OSS 核心）。</dd>
+        </div>
+      </dl>
+
+            <div class="panel warn">
+        <h2 class="warn"><span data-zh>头号误解</span><span data-en>Top misconception</span></h2>
+        <ul>
+
+          <li><span data-zh>以为 Mastra 全是 Apache-2.0 免费 —— <code>ee/</code> 目录是 source-available，生产用需企业许可，仓库 license API 返回 NOASSERTION</span><span data-en>Assuming Mastra is entirely Apache-2.0 and free — code under <code>ee/</code> is source-available and needs an enterprise license for production; the repo license API returns NOASSERTION.</span></li>
+          <li><span data-zh>把 Mastra Studio / 观测 / 托管部署当成框架自带 —— 那些是 Mastra 平台产品，有 Starter $0 / Teams $250 / Enterprise 计费</span><span data-en>Treating Mastra Studio / observability / hosted deployment as part of the framework — those are Mastra platform products billed on Starter $0 / Teams $250 / Enterprise tiers.</span></li>
+          <li><span data-zh>把 README 的「40+ providers」当作上限 —— 官方 /models 目录页写的是 213 providers / 7815 models</span><span data-en>Taking the README&#39;s &quot;40+ providers&quot; as the ceiling — the official <code>/models</code> directory page states 213 providers / 7815 models.</span></li>
+          <li><span data-zh>以为本地模型要改代码 —— 官方支持 OpenAI 兼容端点，推荐 LMStudio，属配置项（<code>id</code> + <code>url</code>）</span><span data-en>Assuming local models need code changes — the official path is an OpenAI-compatible endpoint with LMStudio recommended, configured via <code>id</code> + <code>url</code>.</span></li>
+        </ul>
+      </div>
+
+
+            <div class="panel is-slim">
+        <h2><span data-zh>价格</span><span data-en>Pricing</span></h2>
+        <table class="src">
+          <tbody>
+            <tr><th class="w-28"><span data-zh>月度入口</span><span data-en>Monthly entry</span></th><td><span data-zh>框架 Apache-2.0 自托管免费；Mastra 平台 Starter $0 / Teams $250 月付（核验 2026-10-08）</span><span data-en>框架 Apache-2.0 自托管免费；Mastra 平台 Starter $0 / Teams $250 月付（核验 2026-10-08）</span></td></tr>
+            <tr><th class="w-28"><span data-zh>年付</span><span data-en>Annual</span></th><td><span data-zh>未核验年付报价</span><span data-en>未核验年付报价</span></td></tr>
+            <tr><th class="w-28"><span data-zh>额度说明</span><span data-en>Quota note</span></th><td><span data-zh>**框架免费与商业平台是两条线，要分清。** 核验依据：仓库 README 的 Licensing 段（双许可）、官方定价页 mastra.ai/pricing（核验 2026-10-08）。 **开源侧**：README 原文 "The core framework and the vast majority of this codebase is open source under **Apache-2.0**"；但 "Code in any directory named `ee/` ... is source-available under the **Mastra Enterprise License**"，这些功能生产环境需企业许可。 **商业侧（Mastra 平台）**：官方定价页列三档 —— **Starter $0/月**（10 万 observability events、 24 CPU 小时、15 天数据保留、用户/部署/项目不限）、**Teams $250/月**（100 万 events、250 CPU 小时、 6 个月保留、多团队 + SSO + SOC 2 文档）、**Enterprise 定制**（RBAC、审计日志、SLA、专属支持）。 另单列 **Persistent Server（24/7 常驻）$100/项目**、Gateway 令牌 **Market Rate + 5.5%**。 **自托管一侧**：官方定价页 Self-Hosted 标签下 **Free（Apache 2.0）** 与 **Enterprise（Licensed self-hosted features，定制）** 两档，Enterprise 卖点是 RBAC/SSO/IAM、数据不出 VPC、统一年费。 **官方未说明** `ee/` 目录之外还有哪些功能属企业许可范围（已查仓库 README 许可段与定价页）。</span><span data-en>**框架免费与商业平台是两条线，要分清。** 核验依据：仓库 README 的 Licensing 段（双许可）、官方定价页 mastra.ai/pricing（核验 2026-10-08）。 **开源侧**：README 原文 "The core framework and the vast majority of this codebase is open source under **Apache-2.0**"；但 "Code in any directory named `ee/` ... is source-available under the **Mastra Enterprise License**"，这些功能生产环境需企业许可。 **商业侧（Mastra 平台）**：官方定价页列三档 —— **Starter $0/月**（10 万 observability events、 24 CPU 小时、15 天数据保留、用户/部署/项目不限）、**Teams $250/月**（100 万 events、250 CPU 小时、 6 个月保留、多团队 + SSO + SOC 2 文档）、**Enterprise 定制**（RBAC、审计日志、SLA、专属支持）。 另单列 **Persistent Server（24/7 常驻）$100/项目**、Gateway 令牌 **Market Rate + 5.5%**。 **自托管一侧**：官方定价页 Self-Hosted 标签下 **Free（Apache 2.0）** 与 **Enterprise（Licensed self-hosted features，定制）** 两档，Enterprise 卖点是 RBAC/SSO/IAM、数据不出 VPC、统一年费。 **官方未说明** `ee/` 目录之外还有哪些功能属企业许可范围（已查仓库 README 许可段与定价页）。</span></td></tr>
+          </tbody>
+        </table>
+        <p class="fine mt-3"><span data-zh>不同币种不做折算。优惠、地区、税费与登录后报价可能变化，购买前请到官方页面确认。</span><span data-en>No currency conversion. Discounts, regions, tax and post-login pricing can change — confirm on the official page before buying.</span></p>
+      </div>
+
+
+            <div class="panel is-slim">
+        <h2><span data-zh>未知项清单</span><span data-en>Known unknowns</span></h2>
+        <ul>
+          <li>换 provider 后各家 tool calling / structured output 的能力对齐度（官方未说明）</li>
+          <li>核心框架自身的文件访问默认边界（官方未说明，已查 agents 页、harness 页、deployment 页）</li>
+          <li>OSS 核心是否有网络访问控制的官方机制（官方未说明）</li>
+          <li><code>ee/</code> 目录之外还有哪些功能属企业许可范围（官方 README 只给目录示例，未给完整功能清单）</li>
+          <li>跨进程 / 多实例并发 resume 同一 snapshot 的冲突语义（官方未说明）</li>
+          <li>Observational Memory 压缩后的信息损失与成本（本站未实测）</li>
+          <li>Mastra 平台各档的实际吞吐与超量计费在真实负载下的表现（官方仅给单价）</li>
+        </ul>
+      </div>
+
+
+      <div class="panel">
+        <h2><span data-zh>证据来源</span><span data-en>Evidence sources</span></h2>
+        <p class="t-sm"><span data-zh>判断可回到以下一手源复核。本站核验日</span><span data-en>Every judgement can be rechecked against the primary sources below. Verified on</span> 2026-10-08，<span data-zh>内容更新日</span><span data-en>content updated on</span> 2026-10-08。</p>
+        <table class="src">
+          <thead><tr><th class="w-20"><span data-zh>类型</span><span data-en>Type</span></th><th class="w-52"><span data-zh>名称</span><span data-en>Name</span></th><th><span data-zh>链接</span><span data-en>Link</span></th></tr></thead>
+          <tbody>
+            <tr><td>repo</td><td>mastra-ai/mastra · 仓库（28,639★，NOASSERTION 双许可，核验 2026-10-08）</td><td><a href="https://github.com/mastra-ai/mastra" target="_blank" rel="noopener">https://github.com/mastra-ai/mastra</a></td></tr>
+            <tr><td>docs</td><td>仓库 README（TypeScript 定位、model routing 40+、agents/workflows/HITL/memory/RAG/evals/MCP 亮点、Licensing 双许可段）</td><td><a href="https://github.com/mastra-ai/mastra" target="_blank" rel="noopener">https://github.com/mastra-ai/mastra</a></td></tr>
+            <tr><td>docs</td><td>官方文档 · Provider 目录（OpenAI/Anthropic/Google/xAI 等 provider 与模型数）</td><td><a href="https://mastra.ai/models/providers" target="_blank" rel="noopener">https://mastra.ai/models/providers</a></td></tr>
+            <tr><td>docs</td><td>官方文档 · Suspend and resume（snapshot 存 storage、跨重启恢复、resume/suspendData、state reader）</td><td><a href="https://mastra.ai/docs/workflows/suspend-and-resume" target="_blank" rel="noopener">https://mastra.ai/docs/workflows/suspend-and-resume</a></td></tr>
+            <tr><td>docs</td><td>官方文档 · Workflows（createStep/createWorkflow、标准 JSON Schema、内置执行引擎）</td><td><a href="https://mastra.ai/docs/workflows/overview" target="_blank" rel="noopener">https://mastra.ai/docs/workflows/overview</a></td></tr>
+            <tr><td>docs</td><td>官方文档 · Memory（message history、Observational Memory、working memory、semantic recall、processors）</td><td><a href="https://mastra.ai/docs/memory/overview" target="_blank" rel="noopener">https://mastra.ai/docs/memory/overview</a></td></tr>
+            <tr><td>docs</td><td>官方文档 · RAG（MDocument 切块、embedding、pgvector/Pinecone/Qdrant/MongoDB 向量库）</td><td><a href="https://mastra.ai/docs/rag/overview" target="_blank" rel="noopener">https://mastra.ai/docs/rag/overview</a></td></tr>
+            <tr><td>docs</td><td>官方文档 · Evals（Scorers：model-graded / rule-based / statistical，返回 0-1 分数）</td><td><a href="https://mastra.ai/docs/evals/overview" target="_blank" rel="noopener">https://mastra.ai/docs/evals/overview</a></td></tr>
+            <tr><td>docs</td><td>官方文档 · MCP Overview（MCPClient / MCPServer、stdio 与远程 HTTP、注册表接入、静态/动态工具）</td><td><a href="https://mastra.ai/docs/tools-mcp/mcp-overview" target="_blank" rel="noopener">https://mastra.ai/docs/tools-mcp/mcp-overview</a></td></tr>
+            <tr><td>docs</td><td>官方文档 · Deploy（Node/Bun/Deno/Cloudflare、Hono server、Mastra 平台、workflow runners、workers）</td><td><a href="https://mastra.ai/docs/deployment/overview" target="_blank" rel="noopener">https://mastra.ai/docs/deployment/overview</a></td></tr>
+            <tr><td>docs</td><td>官方文档 · Mastra 平台（Observability / Studio / Server、托管 Workspace 带 filesystem 与 sandbox）</td><td><a href="https://mastra.ai/docs/mastra-platform/overview" target="_blank" rel="noopener">https://mastra.ai/docs/mastra-platform/overview</a></td></tr>
+            <tr><td>docs</td><td>官方文档 · Harness（Durable Agents、Background Tasks、Schedules、createCodingAgent）</td><td><a href="https://mastra.ai/docs/harness/overview" target="_blank" rel="noopener">https://mastra.ai/docs/harness/overview</a></td></tr>
+            <tr><td>docs</td><td>官方文档 · Auth（认证可选、默认公开、JWT/SSO/RBAC、Studio 与 API 一起保护）</td><td><a href="https://mastra.ai/docs/auth/overview" target="_blank" rel="noopener">https://mastra.ai/docs/auth/overview</a></td></tr>
+            <tr><td>pricing</td><td>官方定价页（核验 2026-10-08：Platform Starter $0 / Teams $250 / Enterprise；Self-Hosted Free 与 Enterprise；Persistent Server $100/项目；Gateway +5.5%）</td><td><a href="https://mastra.ai/pricing" target="_blank" rel="noopener">https://mastra.ai/pricing</a></td></tr>
+            <tr><td>changelog</td><td>Releases（@mastra/core 1.75.0 @ 2026-10-07）</td><td><a href="https://github.com/mastra-ai/mastra/releases" target="_blank" rel="noopener">https://github.com/mastra-ai/mastra/releases</a></td></tr>
+          </tbody>
+        </table>
+      </div>
+
+            <div class="panel is-slim">
+        <h2><span data-zh>实测记录</span><span data-en>Measured runs</span></h2>
+        <p>本站尚未完成实测。测试协议见 <a href="https://github.com/speculcom/ai-agent-guide/blob/main/tracks/agents/tasks/_protocol.md" target="_blank" rel="noopener">tasks/_protocol.md</a>。
+
+<strong>实测建议</strong>（按编排框架 + TS 生态维度定制）：
+
+| # | 测什么 | 为什么值得测 |
+|:--:|---|---|
+| 1 | 一个最小 agent + workflow 要几个文件、多少行 | 量化「everything you need」的真实上手成本 |
+| 2 | workflow 跑到一半 kill 进程，靠 snapshot 能否真从暂停 step 恢复 | 官方承诺 persist across restarts，须验证 |
+| 3 | 用 LMStudio 接本地模型跑通一个 workflow | 官方点名推荐，验证真实可行性 |
+| 4 | 同一任务分别用 agent 与 workflow 实现，代码量差多少 | 验证「明确流程用 workflow」的官方建议 |
+| 5 | Observational Memory 压缩后的信息损失与额外 LLM 成本 | 官方推荐默认开，代价未实测 |
+| 6 | OSS 自托管走 <code>mastra build</code> 部署到自有容器的最小路径 | 验证「纯库也能上生产」的程度 |</p>
+      </div>
+
+
+            <div class="panel is-slim">
+        <h2><span data-zh>相关条目</span><span data-en>Related entries</span></h2>
+        <ul class="rel-list">
+          <li><span class="rel-t"><a href="./langgraph.html">LangGraph</a></span><span class="rel-n"><strong>TS vs Python 的正面照</strong>：LangGraph 是 low-level 图引擎（不预置工具/文件系统），Mastra 是 TypeScript 的 batteries-included 全栈框架。要底座还是要开箱，这是第一张对照表。</span></li>
+          <li><span class="rel-t"><a href="./pydantic-ai.html">Pydantic AI</a></span><span class="rel-n">另一语言的对位：Pydantic AI 用 Python 的类型安全做结构化输出与 durable execution，Mastra 用 TypeScript 的 model routing 与全栈能力。两边的「第一决策点」答案不同。</span></li>
+          <li><span class="rel-t"><a href="./crewai.html">CrewAI</a></span><span class="rel-n">同为 batteries-included 编排框架：CrewAI 走 Crew/Flow 业务比喻（Python），Mastra 走 agents + graph workflows 工程词汇（TypeScript）。</span></li>
+          <li><span class="rel-t"><a href="./openai-agents-sdk.html">OpenAI Agents SDK</a></span><span class="rel-n">反面对照：那个是 primitives-only 的薄 harness，Mastra 是把 memory/RAG/evals/MCP/server 都预置的厚框架。</span></li>
+          <li><span class="rel-t"><a href="/tools/filesystem.html"><span data-zh>Filesystem MCP Server</span><span data-en>Filesystem MCP Server</span></a></span><span class="rel-n"><span data-zh>另一层 · 给 agent 装的工具</span><span data-en>Other layer · MCP tools</span></span></li>
+        </ul>
+      </div>
+
+
+      <p class="fine mt-6">
+        <span data-zh>本页由</span><span data-en>This page is generated from the</span> <a href="https://github.com/speculcom/ai-agent-guide" target="_blank" rel="noopener" class="link-brand">ai-agent-guide</a> <span data-zh>数据层生成（CC BY 4.0）。</span><span data-en>data layer (CC BY 4.0).</span>
+        方法论与坐标系定义见仓库内 <code>METHODOLOGY.md</code>。
+      </p>
+    </div>
+  </main>
+  <footer class="site-footer">
+    <div class="container foot-row">
+      <div class="foot-brand">
+        <span class="brand-dot" aria-hidden="true"></span>
+        <span class="foot-copy">© 2026 投机取巧 · <span data-zh>Specul</span><span data-en>Specul</span></span>
+      </div>
+      <nav class="foot-links" aria-label="页脚导航">
+          <a href="https://specul.com/"><span data-zh>首页</span><span data-en>Home</span></a>
+          <a href="https://learn.specul.com/"><span data-zh>学 AI</span><span data-en>Learn</span></a>
+          <a href="https://agent.specul.com/"><span data-zh>Agent</span><span data-en>Agent</span></a>
+          <a href="https://models.specul.com/"><span data-zh>本地模型</span><span data-en>Models</span></a>
+          <a href="https://vg.specul.com/"><span data-zh>AI 做游戏</span><span data-en>Vibe Gaming</span></a>
+          <a href="https://nav.specul.com/"><span data-zh>导航</span><span data-en>Directory</span></a>
+          <a href="https://github.com/speculcom/ai-agent-guide" target="_blank" rel="noopener">GitHub</a>
+      </nav>
+      <nav class="foot-legal-links" aria-label="法律">
+        <a href="https://specul.com/legal.html"><span data-zh>法律条款</span><span data-en>Legal terms</span></a>
+        <a href="https://specul.com/legal.html#s6"><span data-zh>免责声明</span><span data-en>Disclaimer</span></a>
+        <a href="https://specul.com/legal.html#s8"><span data-zh>隐私与本地存储</span><span data-en>Privacy</span></a>
+      </nav>
+    </div>
+  </footer>
+  <script src="../brand.js"></script>
+  <script>
+    (function () {
+      var root = document.documentElement;
+      function sync() { root.setAttribute('data-lang', root.lang === 'en' ? 'en' : 'zh'); }
+      new MutationObserver(sync).observe(root, { attributes: true, attributeFilter: ['lang'] });
+      sync();
+    })();
+  </script>
+</body>
+</html>
