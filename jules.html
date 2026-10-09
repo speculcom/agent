@@ -4,18 +4,18 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Jules — Agents | 投机取巧</title>
-  <meta name="description" content="Jules（Google）：本机什么都不装，任务跑在 Google 的云 VM 里、以 PR 的形式异步交付——官方 GA 发布页原文写它「clones your codebase into a secure Google Cloud virtual machine (VM)」并「operates asynchr…" />
+  <meta name="description" content="Jules（Google）：本机什么都不装，任务跑在 Google 的云机器上，做完给你一个 PR。 它和你熟悉的 IDE / CLI 助手最大的差别不是功能多少，而是交互不是实时的： 你提交任务、批准计划，然后走开，回头收 PR。 官方 GA 发布页原文：&quot;clones your codebase i…" />
   <link rel="canonical" href="https://agent.specul.com/jules.html" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Jules" />
   <meta property="og:url" content="https://agent.specul.com/jules.html" />
   <meta property="og:title" content="Jules — Agents | 投机取巧" />
-  <meta property="og:description" content="Jules（Google）：本机什么都不装，任务跑在 Google 的云 VM 里、以 PR 的形式异步交付——官方 GA 发布页原文写它「clones your codebase into a secure Google Cloud virtual machine (VM)」并「operates asynchr…" />
-  <meta name="theme-color" content="#05080f" />
+  <meta property="og:description" content="Jules（Google）：本机什么都不装，任务跑在 Google 的云机器上，做完给你一个 PR。 它和你熟悉的 IDE / CLI 助手最大的差别不是功能多少，而是交互不是实时的： 你提交任务、批准计划，然后走开，回头收 PR。 官方 GA 发布页原文：&quot;clones your codebase i…" />
+  <meta name="theme-color" content="#16121f" />
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%238b7cf8'/%3E%3Cstop offset='1' stop-color='%2322d3c5'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='48' height='48' rx='12' fill='%2305080f'/%3E%3Cpath d='M14 32 L24 12 L34 32' fill='none' stroke='url(%23g)' stroke-width='2.4' stroke-linejoin='round'/%3E%3Ccircle cx='24' cy='27' r='2.4' fill='%2322d3c5'/%3E%3C/svg%3E" />
   <link rel="stylesheet" href="brand.css" />
   <link rel="stylesheet" href="site.css" />
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Jules","applicationCategory":"DeveloperApplication","url":"https://jules.google","sameAs":"https://jules.google","description":"本机什么都不装，任务跑在 Google 的云 VM 里、以 PR 的形式异步交付——官方 GA 发布页原文写它「clones your codebase into a secure Google Cloud virtual machine (VM)」并「operates asynchronously」。与本分区 IDE / CLI 形态的根本差别不是功能多少，而是交互不是实时的：你提交任务、批准计划，然后走开，回头收 PR。","dateModified":"2026-10-08"}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Jules","applicationCategory":"DeveloperApplication","url":"https://jules.google","sameAs":"https://jules.google","description":"本机什么都不装，任务跑在 Google 的云机器上，做完给你一个 PR。 它和你熟悉的 IDE / CLI 助手最大的差别不是功能多少，而是交互不是实时的： 你提交任务、批准计划，然后走开，回头收 PR。 官方 GA 发布页原文：\"clones your codebase into a secure Google Cloud virtual machine (VM)\"，以及 \"operates asynchronously\"。","dateModified":"2026-10-08"}</script>
 </head>
 <body class="brand-ambient">
   <a class="t-skip" href="#main"><span data-zh>跳到主要内容</span><span data-en>Skip to main content</span></a>
@@ -100,52 +100,100 @@
         <span class="badge"><span data-zh>核验</span><span data-en>Checked</span> 2026-10-08</span>
       </div>
 
-            <p class="panel-lead"><span data-zh><strong>本机什么都不装，任务跑在 Google 的云 VM 里、以 PR 的形式异步交付</strong>——官方 GA 发布页原文写它「clones your codebase into a secure Google Cloud virtual machine (VM)」并「operates asynchronously」。与本分区 IDE / CLI 形态的根本差别不是功能多少，而是<strong>交互不是实时的</strong>：你提交任务、批准计划，然后走开，回头收 PR。</span><span data-en>Google&#39;s asynchronous coding agent: point it at a GitHub repo, and it clones the code into a fresh cloud VM, plans the change, and opens a pull request for review. The difference from the IDE/CLI agents on this site is that the interaction is not live — you approve the plan and walk away. The official REST docs make the default explicit: &quot;By default, sessions created through the API will have their plans automatically approved. If you want to create a session that requires explicit plan approval, set the <code>requirePlanApproval</code> field to <code>true</code>&quot;; and &quot;The <code>automationMode</code> field is optional. By default, no PR will be automatically created.&quot; Tiers are bundled, not sold separately: the GA post describes a free &quot;Introductory access to Jules,&quot; &quot;Jules in Google AI Pro: 5x higher limits&quot; and &quot;Jules in Google AI Ultra: 20x higher limits,&quot; noting that &quot;Specific usage limits are listed at jules.google.&quot;</span></p>
+            <div class="panel-lead"><span data-zh><p><strong>本机什么都不装，任务跑在 Google 的云机器上，做完给你一个 PR。</strong></p>
+            <p>它和你熟悉的 IDE / CLI 助手最大的差别不是功能多少，而是<strong>交互不是实时的</strong>： 你提交任务、批准计划，然后走开，回头收 PR。</p>
+            <p><strong>官方 GA 发布页原文</strong>：&quot;clones your codebase into a secure Google Cloud virtual machine (VM)&quot;，以及 &quot;operates asynchronously&quot;。</p></span><span data-en><p>Google&#39;s asynchronous coding agent: point it at a GitHub repo, and it clones the code into a fresh cloud VM, plans the change, and opens a pull request for review. The difference from the IDE/CLI agents on this site is that the interaction is not live — you approve the plan and walk away. The official REST docs make the default explicit: &quot;By default, sessions created through the API will have their plans automatically approved. If you want to create a session that requires explicit plan approval, set the <code>requirePlanApproval</code> field to <code>true</code>&quot;; and &quot;The <code>automationMode</code> field is optional. By default, no PR will be automatically created.&quot; Tiers are bundled, not sold separately: the GA post describes a free &quot;Introductory access to Jules,&quot; &quot;Jules in Google AI Pro: 5x higher limits&quot; and &quot;Jules in Google AI Ultra: 20x higher limits,&quot; noting that &quot;Specific usage limits are listed at jules.google.&quot;</p></span></div>
 
             <div class="panel is-slim">
         <h2><span data-zh>适合与不适合</span><span data-en>When to use it, when not to</span></h2>
-<span data-zh>        <p><strong>适合</strong>自包含、可验证的活：修一个明确 bug、升级依赖、补测试、迁移代码片段、小范围新功能。官方对交付形态的描述是「test verified patches」与「Open PRs with runnable code and test results」——<strong>它的产出是 PR，不是给你一个可交互的会话。</strong></p>
-        <p class="warn-p"><strong>不适合</strong>需要实时 shell、边跑边改的高频交互（那是 CLI / IDE 形态的强项）；也不适合需求模糊、需要大量澄清的架构级任务——官方 FAQ 自己把「vague prompts」列进任务失败的常见原因。</p></span><span data-en>        <p>Self-contained, verifiable work: fixing a named bug, bumping dependencies, adding tests, migrating code snippets, small features — officially delivered as &quot;test verified patches&quot; and &quot;PRs with runnable code and test results,&quot; which is exactly what makes it good for &quot;submit the task and come back to a PR.&quot;</p>
-        <p class="warn-p"><strong>Not a fit for</strong> work that needs a live shell you can steer while it runs (CLI/IDE agents do that better), or vague, architecture-level tasks that need heavy clarification — the official FAQ itself lists &quot;vague prompts&quot; among the common causes of a failed task.</p></span>
+<span data-zh>        <div><p><strong>适合</strong>自包含、可验证的活：修一个明确 bug、升级依赖、补测试、迁移代码片段、小范围新功能。</p></div>
+        <div><p><strong>它的产出是一个 PR，不是给你一个能对话的界面。</strong></p></div>
+        <div><p><strong>官方对交付形态的说法</strong>：&quot;test verified patches&quot; 与 &quot;Open PRs with runnable code and test results&quot;</p></div>
+        <div class="warn-p"><p><strong>不适合</strong>两类活：需要实时 shell、边跑边改的高频交互（那是 CLI / IDE 形态的强项）； 以及需求模糊、需要反复澄清的架构级任务 —— 官方 FAQ 自己就把「vague prompts」 列进了任务失败的常见原因。</p></div></span><span data-en>        <div><p>Self-contained, verifiable work: fixing a named bug, bumping dependencies, adding tests, migrating code snippets, small features — officially delivered as &quot;test verified patches&quot; and &quot;PRs with runnable code and test results,&quot; which is exactly what makes it good for &quot;submit the task and come back to a PR.&quot;</p></div>
+        <div class="warn-p"><p><strong>Not a fit for</strong> work that needs a live shell you can steer while it runs (CLI/IDE agents do that better), or vague, architecture-level tasks that need heavy clarification — the official FAQ itself lists &quot;vague prompts&quot; among the common causes of a failed task.</p></div></span>
       </div>
 
 
       <div class="block-head">
         <h2 class="t-h2"><span data-zh>固定坐标系</span><span data-en>Fixed coordinate system</span></h2>
-        <p class="t-section-lead">8 <span data-zh>个维度</span><span data-en>dimensions</span>, <span data-zh>与同赛道其他对象逐项可比</span><span data-en>each comparable item by item against others in the same track</span>.</p>
+        <p class="t-section-lead">8 <span data-zh>个维度</span><span data-en>dimensions</span>, <span data-zh>与同分区其他对象逐项可比</span><span data-en>each comparable item by item against others in the same section</span>.</p>
       </div>
       <dl class="axes">
         <div class="axis">
           <dt><span data-zh>模型与开放条件</span><span data-en>Model & openness</span></dt>
-          <dd><strong>模型由厂商指定，没有模型选择入口。</strong> 官方 GA 发布页原文 「Jules now uses the advanced thinking capabilities of Gemini 2.5 Pro」—— 这是官方可读页唯一点名到具体模型的表述；Google One 官方套餐页在 Ultra 档写 Jules「access to latest models」，即更高档位可用更新的模型。 <strong>当前默认模型与各档位的模型映射，官方可读页未单列</strong>——官方未说明 （已查 developers.google.com/jules/api 与 Google One AI 套餐页）。 这与本分区 IDE / CLI 形态形成对照：那两类常有 <code>/model</code> 之类的选择面， <strong>厂商云形态把「选模型」这件事整体交给了厂商。</strong></dd>
+          <dd><p><strong>模型由厂商指定，你选不了。</strong></p>
+            <p>官方可读页里唯一点名模型的地方，是 GA 发布页说的「用 Gemini 2.5 Pro 的 进阶推理能力」。Google One 套餐页在 Ultra 档写 Jules「access to latest models」—— 意思是<strong>更高档位能用更新的模型</strong>。</p>
+            <p>哪一档对应哪个模型，官方没写。</p>
+            <p>（已查 developers.google.com/jules/api 与 Google One AI 套餐页。）</p>
+            <p><strong>官方原文</strong>：「Jules now uses the advanced thinking capabilities of Gemini 2.5 Pro」</p>
+            <p>这跟 IDE / CLI 那两类正好相反：它们通常有 <code>/model</code> 之类的选择面， 而<strong>厂商云形态把「选模型」这件事整个收走了</strong>。</p></dd>
         </div>
         <div class="axis">
           <dt><span data-zh>运行位置</span><span data-en>Where it runs</span></dt>
-          <dd><strong>形态的答案就是本产品：任务跑在 Google 云虚拟机上，本机不装任何东西。</strong> 官方 FAQ 原文「Each task runs in a fresh virtual machine where Jules clones your repo, installs dependencies, and makes changes based on your prompt」—— 即<strong>每个任务一台全新的云 VM</strong>，并在其中 clone 仓库、装依赖。 官方 GA 发布页把这条列为卖点「Tasks run inside a cloud VM, enabling concurrent execution」。除网页（jules.google）外，还有两个客户端入口：Jules REST API （<code>jules.googleapis.com/v1alpha</code>）与 Jules Tools CLI；<strong>执行面始终在厂商云， 客户端只负责下达与查看。</strong></dd>
+          <dd><p><strong>任务跑在 Google 的云虚拟机上，本机不装任何东西。</strong></p>
+            <p>每个任务一台<strong>全新的</strong>云 VM：在里面 clone 你的仓库、装依赖、改代码。</p>
+            <p><strong>官方 FAQ 原文</strong>：「Each task runs in a fresh virtual machine where Jules clones your repo, installs dependencies, and makes changes based on your prompt」 <strong>官方 GA 发布页把这条列为卖点</strong>：「Tasks run inside a cloud VM, enabling concurrent execution」</p>
+            <p>除了网页（jules.google），还有两个入口：Jules REST API （<code>jules.googleapis.com/v1alpha</code>）和 Jules Tools CLI。 <strong>但执行永远在厂商云上，客户端只负责下达和查看。</strong></p></dd>
         </div>
         <div class="axis">
           <dt><span data-zh>本地文件</span><span data-en>Local files</span></dt>
-          <dd><strong>默认与本机完全隔离</strong>：Jules 只在云 VM 里克隆仓库工作，不读写你本机的文件。 官方 FAQ 明确该 VM「executed in a secure, cloud-based virtual machine (VM) with internet access」，并要用户「treat the environment with the same security precautions you would for any public or shared compute surface」——<strong>云 VM 有 联网能力，这是能力也是风险面</strong>。官方同时警告不要把密钥、token 之类提交进仓库。 <strong>哪些仓库对 Jules 可见，由 Jules GitHub app 的授权范围决定</strong>（FAQ 指引到 GitHub 的 applications 设置里逐项调整）。</dd>
+          <dd><p><strong>默认跟你本机完全隔离。</strong></p>
+            <p>Jules 只在云 VM 里 clone 仓库干活，不碰你本机的文件。 这个 VM <strong>有联网能力</strong> —— 这既是它的能力，也是它的风险面。</p>
+            <p><strong>官方 FAQ</strong>：该 VM「executed in a secure, cloud-based virtual machine (VM) with internet access」，并要求用户「treat the environment with the same security precautions you would for any public or shared compute surface」 <strong>官方同时提醒</strong>：不要把密钥、token 之类提交进仓库。</p>
+            <p>哪些仓库对 Jules 可见，由 Jules GitHub app 的授权范围决定 （FAQ 指引到 GitHub 的 applications 设置里逐项调整）。</p></dd>
         </div>
         <div class="axis">
           <dt><span data-zh>关机后的任务</span><span data-en>Tasks after shutdown</span></dt>
-          <dd><strong>这是本形态最强的一维，官方全程按「异步」定义它。</strong> 官方原文「Jules operates asynchronously, allowing you to focus on other tasks while it works in the background」；FAQ 进一步写「You can leave the app after submitting a task」，只需打开通知。<strong>任务失败会自动重试</strong> （官方 FAQ「Jules will retry automatically」）。 2025-12-10 官方更新再补两项主动能力：<strong>Suggested Tasks</strong>（在最多五个仓库上主动 扫描代码、提出改进，先支持 <code>#todos</code>）与 <strong>Scheduled Tasks</strong>（按你设定的节奏 自动执行，如依赖检查、每周例行）——官方原文「Scheduled Tasks ... you can now define the cadence and Jules will perform the task at that time」。 <strong>并发任务数随订阅档位变化</strong>（具体数字见 pricing.note）。</dd>
+          <dd><p><strong>这是它最厚的一维，官方全程按「异步」定义它。</strong></p>
+            <p>Jules operates asynchronously, allowing you to focus on other tasks while it works in the background</p>
+            <p>You can leave the app after submitting a task</p>
+            <p>只需打开通知。<strong>任务失败会自动重试。</strong></p>
+            <p>Jules will retry automatically</p>
+            <p>2025-12-10 的官方更新再补两项主动能力：</p>
+            <ul><li><strong>Suggested Tasks</strong> —— 在最多五个仓库上主动扫描代码、提出改进，先支持 <code>#todos</code></li><li><strong>Scheduled Tasks</strong> —— 按你设定的节奏自动执行，如依赖检查、每周例行</li></ul>
+            <p>Scheduled Tasks ... you can now define the cadence and Jules will perform the task at that time</p>
+            <p><strong>并发任务数随订阅档位变化</strong>（具体数字见 pricing.note）。</p></dd>
         </div>
         <div class="axis">
           <dt><span data-zh>工具与扩展</span><span data-en>Tools & extensions</span></dt>
-          <dd><strong>工具面集中在云 VM 内的执行能力 + GitHub 集成。</strong> 官方 FAQ 与 GA 页确认：在 VM 里装依赖、跑测试、按 setup 脚本构建； 支持语言为 JavaScript/TypeScript、Python、Go、Java、Rust（官方称 「language agnostic but works best with」，取决于 VM 里装了什么）。 <strong>不支持长驻进程</strong>——官方 FAQ 原文「Long-running processes like dev servers or watch scripts aren&#39;t currently supported in setup scripts」，<code>npm run dev</code> 之类跑不起来。另有前端验证能力（在 VM 内跑脚本、回传截图，见官方发布页的 web-app 测试说明）。<strong>Jules 是否支持接入 MCP server：官方未说明 （已查 developers.google.com/jules/api 与官方 FAQ 页）。</strong></dd>
+          <dd><p><strong>工具面集中在云 VM 内的执行能力 + GitHub 集成。</strong></p>
+            <p>官方 FAQ 与 GA 页确认：在 VM 里装依赖、跑测试、按 setup 脚本构建。 支持的语言是 JavaScript/TypeScript、Python、Go、Java、Rust。</p>
+            <p>language agnostic but works best with</p>
+            <p>（实际取决于 VM 里装了什么。）</p>
+            <p><strong>不支持长驻进程</strong> —— <code>npm run dev</code> 之类跑不起来。</p>
+            <p>Long-running processes like dev servers or watch scripts aren&#39;t currently supported in setup scripts</p>
+            <p>另有前端验证能力（在 VM 内跑脚本、回传截图，见官方发布页的 web-app 测试说明）。</p>
+            <p><strong>Jules 是否支持接入 MCP server：官方未说明。</strong> （已查 developers.google.com/jules/api 与官方 FAQ 页。）</p></dd>
         </div>
         <div class="axis">
           <dt><span data-zh>上下文与记忆</span><span data-en>Context & memory</span></dt>
-          <dd><strong>以 Session / Activity 为上下文单位。</strong> 官方 REST 文档原文： 「Session — A continuous unit of work within a specific context, similar to a chat session. A session is initiated with a prompt and a source」， 「Activity — A single unit of work within a Session」，且一个 Session 含用户与 agent 双方的多条 activity（生成计划、发消息、更新进度）。 也就是说<strong>面向程序化调用时，上下文是「会话 + 活动」这条可轮询的状态流</strong>， 而不是一次性的对话。跨任务层面，官方提供<strong>环境快照</strong>复用（GA 页写 「reusing previous setups so new tasks run faster」）。 <strong>上下文窗口大小与长期记忆的具体实现，官方可读页未给数字</strong>——官方未说明 （已查 Jules API 页与官方 FAQ 页）。</dd>
+          <dd><p><strong>以 Session / Activity 为上下文单位。</strong></p>
+            <p>Session — A continuous unit of work within a specific context, similar to a chat session. A session is initiated with a prompt and a source</p>
+            <p>Activity — A single unit of work within a Session</p>
+            <p>一个 Session 含用户与 agent 双方的多条 activity（生成计划、发消息、更新进度）。</p>
+            <p>也就是说<strong>面向程序化调用时，上下文是「会话 + 活动」这条可轮询的状态流</strong>， 而不是一次性的对话。跨任务层面，官方提供<strong>环境快照</strong>复用：</p>
+            <p>reusing previous setups so new tasks run faster</p>
+            <p><strong>上下文窗口大小与长期记忆的具体实现，官方可读页未给数字 —— 官方未说明。</strong> （已查 Jules API 页与官方 FAQ 页。）</p></dd>
         </div>
         <div class="axis">
           <dt><span data-zh>权限与限制</span><span data-en>Permissions & limits</span></dt>
-          <dd><strong>审批的核心是「计划审批」，且 API 与网页默认值不同。</strong> 官方 REST 文档原文「By default, sessions created through the API will have their plans automatically approved. If you want to create a session that requires explicit plan approval, set the <code>requirePlanApproval</code> field to <code>true</code>」；网页端则默认「Prompt a task and approve Jules&#39; plan」—— <strong>即程序化入口默认跳过人工审批，需显式打开。</strong> 代码落地方式由创建 session 时的 <code>automationMode</code> 决定： 「The <code>automationMode</code> field is optional. By default, no PR will be automatically created」，设 <code>AUTO_CREATE_PR</code> 才会自动开 PR。 仓库访问走 Jules GitHub app 的授权范围。<strong>隐私口径：官方 FAQ 明确 「Jules does not train on private repository content」。</strong> <strong>额度与计费边界</strong>：免费层与 Pro / Ultra 的具体任务数官方可读页未列（见 pricing.note）， 但<strong>「额度按任务计、不按 token 计」</strong>这一点从官方 API 概念（session 即任务单位）可读出。</dd>
+          <dd><p><strong>审批的核心是「计划审批」，且 API 与网页默认值不同。</strong></p>
+            <p>By default, sessions created through the API will have their plans automatically approved. If you want to create a session that requires explicit plan approval, set the <code>requirePlanApproval</code> field to <code>true</code></p>
+            <p>网页端则默认：</p>
+            <p><strong>官方原文</strong>：&quot;Prompt a task and approve Jules&#39; plan&quot;</p>
+            <p><strong>即程序化入口默认跳过人工审批，需显式打开。</strong></p>
+            <p>代码落地方式由创建 session 时的 <code>automationMode</code> 决定 —— 设 <code>AUTO_CREATE_PR</code> 才会自动开 PR。</p>
+            <p>The <code>automationMode</code> field is optional. By default, no PR will be automatically created</p>
+            <p>仓库访问走 Jules GitHub app 的授权范围。</p>
+            <p><strong>隐私口径：官方 FAQ 明确它不用私有仓库内容训练。</strong></p>
+            <p>Jules does not train on private repository content</p>
+            <p><strong>额度与计费边界</strong>：免费层与 Pro / Ultra 的具体任务数，官方可读页未列 （见 pricing.note）。但<strong>「额度按任务计、不按 token 计」</strong>这一点， 从官方 API 概念（session 即任务单位）可以读出来。</p></dd>
         </div>
         <div class="axis">
           <dt><span data-zh>适合什么任务</span><span data-en>Best for</span></dt>
-          <dd>官方给自己划的活是具体的：把任务描述交进 GitHub 仓库后，它「fix bugs, update dependencies, migrate code, and add new features」，并以「test verified patches」 「Open PRs with runnable code and test results」的方式交付。 因此<strong>适合自包含、可验证的活</strong>：修一个明确的 bug、升依赖版本、补测试、 迁移代码片段、小范围新功能。 <strong>不适合</strong>：需要实时 shell、边跑边改的高频交互（本分区 CLI / IDE 形态更合适）； 需求模糊、需要大量澄清的架构级任务——官方 FAQ 自己把「vague prompts」列为 任务失败的常见原因之一。</dd>
+          <dd><p>官方给自己划的活是具体的：把任务描述交进 GitHub 仓库后，它做这些事：</p>
+            <ul><li><strong>官方原文</strong>：&quot;fix bugs, update dependencies, migrate code, and add new features&quot;</li><li>交付方式 <strong>官方原文</strong>：&quot;test verified patches&quot;、&quot;Open PRs with runnable code and test results&quot;</li></ul>
+            <p>因此<strong>适合自包含、可验证的活</strong>：修一个明确的 bug、升依赖版本、补测试、 迁移代码片段、小范围新功能。 <strong>不适合</strong>：需要实时 shell、边跑边改的高频交互（本分区 CLI / IDE 形态更合适）； 需求模糊、需要大量澄清的架构级任务——官方 FAQ 自己把「vague prompts」列为 任务失败的常见原因之一。</p></dd>
         </div>
       </dl>
 
@@ -164,9 +212,9 @@
         <h2><span data-zh>价格</span><span data-en>Pricing</span></h2>
         <table class="src">
           <tbody>
-            <tr><th class="w-28"><span data-zh>月度入口</span><span data-en>Monthly entry</span></th><td><span data-zh>免费「Introductory access」；更高额度随 Google AI Pro / Ultra 订阅，无独立 Jules 定价</span><span data-en>免费「Introductory access」；更高额度随 Google AI Pro / Ultra 订阅，无独立 Jules 定价</span></td></tr>
-            <tr><th class="w-28"><span data-zh>年付</span><span data-en>Annual</span></th><td><span data-zh>无独立 Jules 年付报价（额度随 Google One 订阅，官方未单列）</span><span data-en>无独立 Jules 年付报价（额度随 Google One 订阅，官方未单列）</span></td></tr>
-            <tr><th class="w-28"><span data-zh>额度说明</span><span data-en>Quota note</span></th><td><span data-zh>**2026-10-08 核验**：官方 GA 发布页（blog.google，2025-08-06）写「Introductory access to Jules」为免费入口、「Jules in Google AI Pro: 5x higher limits」、 「Jules in Google AI Ultra: 20x higher limits」，并注明「Specific usage limits are listed at jules.google」。Google One 官方套餐页（2026-10-08 取）在 Pro 的 「Code faster」下列「Expanded limits in AI Studio, Google Antigravity, and Jules」， Ultra 档列 Jules 的「Expanded task and concurrency limits, and access to latest models」。**但 jules.google 定价页为 JS 渲染，逐档每日任务数与并发数（免费层与 Pro / Ultra 的具体数字）在可读官方页里没有列出——官方未说明（已查 jules.google 定价页、Google One AI 套餐页与 GA 发布页），故不写具体数字。** 另注：官方旧文档站（jules-documentation.web.app）仍写 beta 期「2 concurrent / 5 total tasks per day」，与 GA 后的分档口径不一致，**勿把 beta 数字当现行额度**。</span><span data-en>**2026-10-08 核验**：官方 GA 发布页（blog.google，2025-08-06）写「Introductory access to Jules」为免费入口、「Jules in Google AI Pro: 5x higher limits」、 「Jules in Google AI Ultra: 20x higher limits」，并注明「Specific usage limits are listed at jules.google」。Google One 官方套餐页（2026-10-08 取）在 Pro 的 「Code faster」下列「Expanded limits in AI Studio, Google Antigravity, and Jules」， Ultra 档列 Jules 的「Expanded task and concurrency limits, and access to latest models」。**但 jules.google 定价页为 JS 渲染，逐档每日任务数与并发数（免费层与 Pro / Ultra 的具体数字）在可读官方页里没有列出——官方未说明（已查 jules.google 定价页、Google One AI 套餐页与 GA 发布页），故不写具体数字。** 另注：官方旧文档站（jules-documentation.web.app）仍写 beta 期「2 concurrent / 5 total tasks per day」，与 GA 后的分档口径不一致，**勿把 beta 数字当现行额度**。</span></td></tr>
+            <tr><th class="w-28"><span data-zh>月度入口</span><span data-en>Monthly entry</span></th><td><span data-zh><p>免费「Introductory access」；更高额度随 Google AI Pro / Ultra 订阅，无独立 Jules 定价</p></span><span data-en><p>免费「Introductory access」；更高额度随 Google AI Pro / Ultra 订阅，无独立 Jules 定价</p></span></td></tr>
+            <tr><th class="w-28"><span data-zh>年付</span><span data-en>Annual</span></th><td><span data-zh><p>无独立 Jules 年付报价（额度随 Google One 订阅，官方未单列）</p></span><span data-en><p>无独立 Jules 年付报价（额度随 Google One 订阅，官方未单列）</p></span></td></tr>
+            <tr><th class="w-28"><span data-zh>额度说明</span><span data-en>Quota note</span></th><td><span data-zh><p><strong>2026-10-08 核验</strong>：官方 GA 发布页（blog.google，2025-08-06）写「Introductory access to Jules」为免费入口、「Jules in Google AI Pro: 5x higher limits」、 「Jules in Google AI Ultra: 20x higher limits」，并注明「Specific usage limits are listed at jules.google」。Google One 官方套餐页（2026-10-08 取）在 Pro 的 「Code faster」下列「Expanded limits in AI Studio, Google Antigravity, and Jules」， Ultra 档列 Jules 的「Expanded task and concurrency limits, and access to latest models」。<strong>但 jules.google 定价页为 JS 渲染，逐档每日任务数与并发数（免费层与 Pro / Ultra 的具体数字）在可读官方页里没有列出——官方未说明（已查 jules.google 定价页、Google One AI 套餐页与 GA 发布页），故不写具体数字。</strong> 另注：官方旧文档站（jules-documentation.web.app）仍写 beta 期「2 concurrent / 5 total tasks per day」，与 GA 后的分档口径不一致，<strong>勿把 beta 数字当现行额度</strong>。</p></span><span data-en><p><strong>2026-10-08 核验</strong>：官方 GA 发布页（blog.google，2025-08-06）写「Introductory access to Jules」为免费入口、「Jules in Google AI Pro: 5x higher limits」、 「Jules in Google AI Ultra: 20x higher limits」，并注明「Specific usage limits are listed at jules.google」。Google One 官方套餐页（2026-10-08 取）在 Pro 的 「Code faster」下列「Expanded limits in AI Studio, Google Antigravity, and Jules」， Ultra 档列 Jules 的「Expanded task and concurrency limits, and access to latest models」。<strong>但 jules.google 定价页为 JS 渲染，逐档每日任务数与并发数（免费层与 Pro / Ultra 的具体数字）在可读官方页里没有列出——官方未说明（已查 jules.google 定价页、Google One AI 套餐页与 GA 发布页），故不写具体数字。</strong> 另注：官方旧文档站（jules-documentation.web.app）仍写 beta 期「2 concurrent / 5 total tasks per day」，与 GA 后的分档口径不一致，<strong>勿把 beta 数字当现行额度</strong>。</p></span></td></tr>
           </tbody>
         </table>
         <p class="fine mt-3"><span data-zh>不同币种不做折算。优惠、地区、税费与登录后报价可能变化，购买前请到官方页面确认。</span><span data-en>No currency conversion. Discounts, regions, tax and post-login pricing can change — confirm on the official page before buying.</span></p>
@@ -205,11 +253,30 @@
 
             <div class="panel is-slim">
         <h2><span data-zh>实测记录</span><span data-en>Measured runs</span></h2>
-        <p>本站尚未完成实测。测试协议见 <a href="https://github.com/speculcom/ai-agent-guide/blob/main/tracks/agents/tasks/_protocol.md" target="_blank" rel="noopener">tasks/_protocol.md</a>。
-
-<strong>实测建议</strong>：重点测<strong>计划审批开关的实际行为</strong>（API 默认自动批准 vs 网页端需批准，两处默认值不同），以及<strong>关掉浏览器后任务是否继续并在完成后真的开出 PR</strong>；再补一条「免费层与 Pro 档的实际任务数差异」——这是官方可读页没给、只能实测确认的数字。</p>
+        <p>本站尚未完成实测。测试协议见 <a href="https://github.com/speculcom/ai-agent-guide/blob/main/tracks/agents/tasks/_protocol.md" target="_blank" rel="noopener">tasks/_protocol.md</a>。</p>
+            <p><strong>实测建议</strong>（三条，都指向官方可读页没给的东西）：</p>
+            <ul><li><strong>计划审批开关的真实行为</strong> —— API 默认自动批准，网页端要批准，两处默认值不一样</li><li><strong>关掉浏览器后任务会不会继续</strong>，完成时是否真的开出 PR</li><li><strong>免费层与 Pro 档的实际任务数差多少</strong> —— 这个数官方页没写，只能实测确认</li></ul>
       </div>
 
+
+            <div class="panel is-slim">
+        <h2>异步流程与计划审批（本次核验重点）</h2>
+        <p>官方 REST 文档把流程写得很清楚，其中有一处最容易被误读：</p>
+            <p><strong>官方原文</strong>：By default, sessions created through the API will have their plans <strong>官方原文</strong>：automatically approved. If you want to create a session that requires <strong>官方原文</strong>：explicit plan approval, set the <code>requirePlanApproval</code> field to <code>true</code>.</p>
+            <p><strong>即：API 建的任务默认自动批准计划，要人工把关必须显式打开。</strong> 网页端默认则是「Prompt a task and approve Jules&#39; plan」。</p>
+            <p>PR 的生成同样要显式开关：</p>
+            <p><strong>官方原文</strong>：The <code>automationMode</code> field is optional. By default, no PR will be <strong>官方原文</strong>：automatically created.</p>
+            <p>设成 <code>AUTO_CREATE_PR</code> 才会自动开 PR。</p>
+            <p>进度以 activity 流的形式返回。相关 API 方法和事件名：</p>
+            <p><strong>方法</strong>：<code>sessions/{id}:approvePlan</code>、<code>sessions</code>、<code>sessions/{id}:sendMessage</code> <strong>事件</strong>：<code>planGenerated</code> / <code>progressUpdated</code> / <code>sessionCompleted</code> <strong>产物</strong>：<code>bashOutput</code>、<code>changeSet</code>（gitPatch）</p>
+      </div>
+      <div class="panel is-slim">
+        <h2>核验说明</h2>
+        <p><code>confidence: partial</code> 的依据：本轮核到了官方 GA 发布页、Google One 套餐页、 Jules API 与其 REST 参考、官方 FAQ 页、两份官方博客更新。</p>
+            <p><strong>缺口集中在两类，而且这两类在可读的官方页里确实没有：</strong></p>
+            <ul><li>「数字」：逐档每日任务数与并发数（jules.google 定价页是 JS 渲染的，取不到）</li><li>「模型映射」：当前默认模型、各档位对应哪个模型</li><li>以及：是否支持 MCP</li></ul>
+            <p>这些按本站铁律记为「官方未说明」，并列出所查页面 —— <strong>不猜。</strong></p>
+      </div>
 
             <div class="panel is-slim">
         <h2><span data-zh>相关条目</span><span data-en>Related entries</span></h2>
