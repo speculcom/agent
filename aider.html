@@ -4,18 +4,18 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Aider Watch 模式 — Agents | 投机取巧</title>
-  <meta name="description" content="Aider Watch 模式（Aider-AI）：不是编辑器插件，是一种使用模式——Aider 常驻 watch 你的文件，你在任意编辑器里加 AI 注释，它就响应。" />
+  <meta name="description" content="Aider Watch 模式（Aider-AI）：不是编辑器插件，是一种使用模式。 Aider 常驻 watch 你的文件，你在任意编辑器里加 AI 注释，它就响应。" />
   <link rel="canonical" href="https://agent.specul.com/aider.html" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Aider Watch 模式" />
   <meta property="og:url" content="https://agent.specul.com/aider.html" />
   <meta property="og:title" content="Aider Watch 模式 — Agents | 投机取巧" />
-  <meta property="og:description" content="Aider Watch 模式（Aider-AI）：不是编辑器插件，是一种使用模式——Aider 常驻 watch 你的文件，你在任意编辑器里加 AI 注释，它就响应。" />
-  <meta name="theme-color" content="#05080f" />
+  <meta property="og:description" content="Aider Watch 模式（Aider-AI）：不是编辑器插件，是一种使用模式。 Aider 常驻 watch 你的文件，你在任意编辑器里加 AI 注释，它就响应。" />
+  <meta name="theme-color" content="#16121f" />
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%238b7cf8'/%3E%3Cstop offset='1' stop-color='%2322d3c5'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='48' height='48' rx='12' fill='%2305080f'/%3E%3Cpath d='M14 32 L24 12 L34 32' fill='none' stroke='url(%23g)' stroke-width='2.4' stroke-linejoin='round'/%3E%3Ccircle cx='24' cy='27' r='2.4' fill='%2322d3c5'/%3E%3C/svg%3E" />
   <link rel="stylesheet" href="brand.css" />
   <link rel="stylesheet" href="site.css" />
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Aider Watch 模式","applicationCategory":"DeveloperApplication","url":"https://aider.chat","sameAs":"https://aider.chat/docs/usage/watch.html","description":"不是编辑器插件，是一种使用模式——Aider 常驻 watch 你的文件，你在任意编辑器里加 AI 注释，它就响应。","dateModified":"2026-10-08"}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Aider Watch 模式","applicationCategory":"DeveloperApplication","url":"https://aider.chat","sameAs":"https://aider.chat/docs/usage/watch.html","description":"不是编辑器插件，是一种使用模式。 Aider 常驻 watch 你的文件，你在任意编辑器里加 AI 注释，它就响应。","dateModified":"2026-10-08"}</script>
 </head>
 <body class="brand-ambient">
   <a class="t-skip" href="#main"><span data-zh>跳到主要内容</span><span data-en>Skip to main content</span></a>
@@ -95,58 +95,114 @@
         <span class="badge"><span data-zh>核验</span><span data-en>Checked</span> 2026-10-08</span>
       </div>
 
-            <p class="panel-lead"><span data-zh><strong>不是编辑器插件，是一种使用模式</strong>——Aider 常驻 watch 你的文件，你在任意编辑器里加 AI 注释，它就响应。</span><span data-en><strong>Not an editor plugin but a usage mode</strong> — Aider stays resident and watches your files; add an AI comment in any editor and it responds.</span></p>
+            <div class="panel-lead"><span data-zh><p><strong>不是编辑器插件，是一种使用模式。</strong></p>
+            <p>Aider 常驻 watch 你的文件，你在任意编辑器里加 AI 注释，它就响应。</p></span><span data-en><p><strong>Not an editor plugin but a usage mode</strong> — Aider stays resident and watches your files; add an AI comment in any editor and it responds.</p></span></div>
 
             <div class="panel is-slim">
         <h2><span data-zh>适合与不适合</span><span data-en>When to use it, when not to</span></h2>
-<span data-zh>        <p>习惯在任意编辑器里工作，不愿切换到专门的 Agent 界面的人。
-需要「加注释 → 自动响应」这种轻量交互的人。</p>
-        <p class="warn-p"><strong>不适合</strong>要求严格审批的场景——
-watch 模式默认会对某些操作询问，但仍会自动提交，
-且常驻进程下更容易产生未经确认的改动。
-也不适合需要云端后台运行的场景，它依赖本机进程。</p></span><span data-en>        <p>People who work in whatever editor they like and refuse to move to a dedicated agent interface.
-People who want lightweight interaction: add a comment, get a response.</p>
-        <p class="warn-p"><strong>Not a fit for</strong> scenarios requiring strict approval — the confirmation mechanism in watch mode was not verified this round, and a resident process makes unconfirmed changes more likely.
-Also not a fit for cloud background execution; it depends on a local process.</p></span>
+<span data-zh>        <div><p>适合两类人，与本条目的 <code>fit</code> 维度一致。</p></div>
+        <div><ul><li>习惯在任意编辑器里工作，不愿切换到专门的 Agent 界面的人</li><li>需要「加注释 → 自动响应」这种轻量交互的人</li></ul></div>
+        <div class="warn-p"><p><strong>不适合</strong>要求严格审批的场景。</p></div>
+        <div><p>watch 模式默认会对某些操作询问，但仍会自动提交。</p></div>
+        <div><p>常驻进程下，它更容易产生未经确认的改动。</p></div>
+        <div class="warn-p"><p>也不适合需要云端后台运行的场景，它依赖本机进程。</p></div></span><span data-en>        <div><p>People who work in whatever editor they like and refuse to move to a dedicated agent interface. People who want lightweight interaction: add a comment, get a response.</p></div>
+        <div class="warn-p"><p><strong>Not a fit for</strong> scenarios requiring strict approval — the confirmation mechanism in watch mode was not verified this round, and a resident process makes unconfirmed changes more likely. Also not a fit for cloud background execution; it depends on a local process.</p></div></span>
       </div>
 
 
       <div class="block-head">
         <h2 class="t-h2"><span data-zh>固定坐标系</span><span data-en>Fixed coordinate system</span></h2>
-        <p class="t-section-lead">8 <span data-zh>个维度</span><span data-en>dimensions</span>, <span data-zh>与同赛道其他对象逐项可比</span><span data-en>each comparable item by item against others in the same track</span>.</p>
+        <p class="t-section-lead">8 <span data-zh>个维度</span><span data-en>dimensions</span>, <span data-zh>与同分区其他对象逐项可比</span><span data-en>each comparable item by item against others in the same section</span>.</p>
       </div>
       <dl class="axes">
         <div class="axis">
           <dt><span data-zh>模型与开放条件</span><span data-en>Model & openness</span></dt>
-          <dd>与 CLI 形态相同：支持云端与本地 LLM，可连接几乎任何模型。 <strong>README 当前推荐列表停留在上一代模型 （Claude 3.7 Sonnet / DeepSeek R1 / OpenAI o1 等）， 与该项目 13 个月未发 release 的状态一致，参考时需自行核对。</strong></dd>
+          <dd><p><strong>与 CLI 形态同一套模型入口：支持云端与本地 LLM，可连接几乎任何模型。</strong></p>
+            <p><strong>README 当前推荐列表停留在上一代模型</strong> （Claude 3.7 Sonnet / DeepSeek R1 / OpenAI o1 等）。</p>
+            <p>该 README 的状态与该项目的 release 状态一致。</p>
+            <p><strong>这个项目 13 个月未发 release。</strong></p>
+            <p>所以参考这份列表时要自行核对。</p></dd>
         </div>
         <div class="axis">
           <dt><span data-zh>运行位置</span><span data-en>Where it runs</span></dt>
-          <dd><strong>不是编辑器插件，而是一种使用模式</strong>： Aider 在后台 watch 你的文件， 你在任意 IDE 或文本编辑器里加 AI 注释，它就响应。 官方文档标题即为「Aider in your IDE」， 但实现上跑的是 <strong>Aider 自己的浏览器 UI</strong>。 <strong>这与 Cline / Codex 的「编辑器扩展」是不同的形态。</strong></dd>
+          <dd><p><strong>它不是编辑器插件，而是一种使用模式。</strong></p>
+            <p>Aider 在后台 watch 你的文件。</p>
+            <p>你在任意 IDE 或文本编辑器里加 AI 注释，它就响应。</p>
+            <p>官方文档标题即为「Aider in your IDE」。</p>
+            <p>但实现上跑的是 <strong>Aider 自己的浏览器 UI</strong>。</p>
+            <p><strong>这与 Cline / Codex 的「编辑器扩展」是不同的形态。</strong></p></dd>
         </div>
         <div class="axis">
           <dt><span data-zh>本地文件</span><span data-en>Local files</span></dt>
-          <dd>watch 模式监听 <strong>git 仓库内所有文件</strong>的变化并响应 AI 注释—— 官方 <code>docs/usage/watch.html</code>：<code>--watch-files</code> 会 &quot;watch all files in your repo&quot;。 范围受 <code>.gitignore</code> / <code>.aiderignore</code> 约束 （<code>--aiderignore</code> 指定忽略文件，默认 git 根目录的 <code>.aiderignore</code>； <code>--subtree-only</code> 只考虑当前子树）； 仓库须是 git 仓库——官方 <code>docs/git.html</code>：无 git 时会先问你是否新建。 <strong>核心的 Repo Map 能力与 CLI 形态完全相同</strong>（同一项目的同一机制， 官方文档 <code>docs/repomap.md</code>）：用「一份简洁的整个 git 仓库的地图」 提供上下文，含最重要的类与函数及其类型与调用签名； 每次改动请求都随附该 map。 <strong>它的第二个作用在 watch 模式下尤其有用</strong>—— 帮助写新代码时复用代码库里已有的库、模块与抽象。 支持 100+ 编程语言。 <strong>map 的 token 预算由 <code>--map-tokens</code> 控制、刷新频率由 <code>--map-refresh</code> （auto/always/files/manual）控制；大仓库的实际耗时与 token 开销 官方未给数字，本站未实测。</strong></dd>
+          <dd><p>watch 模式监听 <strong>git 仓库内所有文件</strong>的变化并响应 AI 注释。</p>
+            <p><strong>官方原文</strong>：&quot;watch all files in your repo&quot;</p>
+            <p>（出自官方 <code>docs/usage/watch.html</code> 的 <code>--watch-files</code>。）</p>
+            <p>范围受 <code>.gitignore</code> / <code>.aiderignore</code> 约束。</p>
+            <ul><li><code>--aiderignore</code> 指定忽略文件，默认 git 根目录的 <code>.aiderignore</code></li><li><code>--subtree-only</code> 只考虑当前子树</li></ul>
+            <p>仓库须是 git 仓库。官方 <code>docs/git.html</code> 写：无 git 时会先问你是否新建。</p>
+            <p><strong>核心的 Repo Map 能力与 CLI 形态完全相同</strong>——同一项目的同一机制， 官方文档见 <code>docs/repomap.md</code>。</p>
+            <p>它用「一份简洁的整个 git 仓库的地图」提供上下文。</p>
+            <p>这份地图含最重要的类与函数及其类型与调用签名。</p>
+            <p>每次改动请求都随附该 map。</p>
+            <p><strong>它的第二个作用在 watch 模式下尤其有用</strong>： 帮助写新代码时复用代码库里已有的库、模块与抽象。</p>
+            <p>支持 100+ 编程语言。</p>
+            <p><strong>map 的 token 预算由 <code>--map-tokens</code> 控制。</strong></p>
+            <p><strong>刷新频率由 <code>--map-refresh</code> 控制</strong>，取值为 auto/always/files/manual。</p>
+            <p>大仓库的实际耗时与 token 开销，<strong>官方未给数字，本站未实测</strong>。</p></dd>
         </div>
         <div class="axis">
           <dt><span data-zh>关机后的任务</span><span data-en>Tasks after shutdown</span></dt>
-          <dd><strong>需要 Aider 进程常驻</strong>才能响应注释—— 这与「后台云端任务」不是一回事。 <strong>进程关闭后 watch 即失效</strong>， 也不存在客户端关闭后继续运行的云端形态。</dd>
+          <dd><p><strong>需要 Aider 进程常驻</strong>才能响应注释——这与「后台云端任务」不是一回事。</p>
+            <p><strong>进程关闭后 watch 即失效。</strong></p>
+            <p>也不存在客户端关闭后继续运行的云端形态。</p></dd>
         </div>
         <div class="axis">
           <dt><span data-zh>工具与扩展</span><span data-en>Tools & extensions</span></dt>
-          <dd>文件编辑 + Git 自动提交（与 CLI 形态相同的核心机制）。 <strong>可配置 lint / 测试命令自动运行</strong>（官方 <code>docs/usage/lint-test.html</code>）： <code>--lint-cmd</code> / <code>--auto-lint</code>（默认对编辑过的文件跑 lint）、 <code>--test-cmd</code> / <code>--auto-test</code>；另有 <code>/run</code> 跑 shell 命令、 <code>/web</code> 抓网页转 markdown、<code>/paste</code> 贴图。 watch 模式下可从编辑器直接拖文件到智能体面板， 或把编辑器选区发送到对话；在文件里加 <code># AI</code> 注释即可把该文件加入 chat。 <strong>无内置 MCP 支持</strong>——官方选项表与文档站导航都没有任何 MCP 条目 （已查 <code>config/options.html</code> 与 docs 目录），故不能接 MCP server。</dd>
+          <dd><p>两大核心能力是文件编辑与 Git 自动提交，与 CLI 形态是同一机制。</p>
+            <p><strong>可配置 lint / 测试命令自动运行</strong>。</p>
+            <p>官方文档见 <code>docs/usage/lint-test.html</code>。</p>
+            <ul><li><code>--lint-cmd</code> / <code>--auto-lint</code>：默认对编辑过的文件跑 lint</li><li><code>--test-cmd</code> / <code>--auto-test</code></li><li><code>/run</code>：跑 shell 命令</li><li><code>/web</code>：抓网页转 markdown</li><li><code>/paste</code>：贴图</li></ul>
+            <p>watch 模式下，可从编辑器直接拖文件到智能体面板，或把编辑器选区发送到对话。</p>
+            <p>在文件里加 <code># AI</code> 注释，即可把该文件加入 chat。</p>
+            <p><strong>无内置 MCP 支持</strong>——官方选项表与文档站导航都没有任何 MCP 条目 （已查 <code>config/options.html</code> 与 docs 目录）。</p>
+            <p>所以不能接 MCP server。</p></dd>
         </div>
         <div class="axis">
           <dt><span data-zh>上下文与记忆</span><span data-en>Context & memory</span></dt>
-          <dd>Repo Map 提供全库结构视图，每次请求随附（见 local_files）。 <strong>上下文超限用「摘要压缩」而非简单截断</strong>：官方选项 <code>--max-chat-history-tokens</code> 描述为 &quot;Soft limit on tokens for chat history, after which summarization begins&quot; （超过软上限即开始摘要，摘要由 <code>--weak-model</code> 生成）。 <code>--map-tokens</code> 控 repo map 的 token 预算； 每个模型的上下文窗口与费用由 <code>--model-metadata-file</code> 提供。 会话内可用 <code>/tokens</code> 查看用量、<code>/drop</code>、<code>/clear</code>、<code>/reset</code> 腾空间； <strong>默认不跨启动恢复</strong>（<code>--restore-chat-history</code> 默认 False）， chat 历史默认写 <code>.aider.chat.history.md</code>。</dd>
+          <dd><p>Repo Map 提供全库结构视图，每次请求随附，见 local_files。</p>
+            <p><strong>上下文超限用「摘要压缩」而非简单截断。</strong></p>
+            <p>官方选项 <code>--max-chat-history-tokens</code> 的描述是：</p>
+            <p><strong>官方原文</strong>：&quot;Soft limit on tokens for chat history, after which summarization begins&quot;</p>
+            <p>也就是说，超过软上限即开始摘要；摘要由 <code>--weak-model</code> 生成。</p>
+            <p><code>--map-tokens</code> 控 repo map 的 token 预算。</p>
+            <p>每个模型的上下文窗口与费用，由 <code>--model-metadata-file</code> 提供。</p>
+            <p>会话内可用 <code>/tokens</code> 查看用量。</p>
+            <p>腾空间还有 <code>/drop</code>、<code>/clear</code>、<code>/reset</code>。</p>
+            <p><strong>默认不跨启动恢复</strong>（<code>--restore-chat-history</code> 默认 False）。</p>
+            <p>chat 历史默认写 <code>.aider.chat.history.md</code>。</p></dd>
         </div>
         <div class="axis">
           <dt><span data-zh>权限与限制</span><span data-en>Permissions & limits</span></dt>
-          <dd><strong>默认自动提交</strong>：官方 <code>--auto-commits</code>（默认 True）—— 每次编辑都用合理的 commit message 提交； <code>--dirty-commits</code>（默认 True）会先把已有的未提交改动也提交， 让你的改动与 AI 的改动分开。撤销路径是 <strong>git 本身</strong>（<code>/undo</code>）。 <strong>存在确认环节</strong>：官方提供 <code>--yes-always</code>（别名 <code>--yes</code>）， 描述为 &quot;Always say yes to every confirmation&quot;—— 即默认会对某些操作询问，加此开关才全自动； <code>--dry-run</code> 可不改文件地预演。 提交时默认跳过 pre-commit hook（<code>--git-commit-verify</code> 默认 False， 即用 <code>--no-verify</code>）；<strong>无沙箱机制</strong>（官方选项表无任何沙箱项）。 watch 模式复用同一 coder（官方 watch 页：用 <code>/undo</code> 撤销、 <code>/tokens</code> 管上下文），故上述自动提交与确认机制同样适用。 <strong>常驻进程 + 自动提交 + 需显式开关才不询问，三者叠加风险高。</strong></dd>
+          <dd><p><strong>默认自动提交。</strong></p>
+            <p>官方 <code>--auto-commits</code> 默认 True：每次编辑都用合理的 commit message 提交。</p>
+            <p><code>--dirty-commits</code> 默认 True：会先把已有的未提交改动也提交， 让你的改动与 AI 的改动分开。</p>
+            <p>撤销路径是 <strong>git 本身</strong>（<code>/undo</code>）。</p>
+            <p><strong>存在确认环节。</strong></p>
+            <p>官方提供 <code>--yes-always</code>（别名 <code>--yes</code>）。</p>
+            <p><strong>官方原文</strong>：&quot;Always say yes to every confirmation&quot;</p>
+            <p>含义是：默认会对某些操作询问，加此开关才全自动。</p>
+            <p><code>--dry-run</code> 可不改文件地预演。</p>
+            <p>提交时默认跳过 pre-commit hook（<code>--git-commit-verify</code> 默认 False，即用 <code>--no-verify</code>）。</p>
+            <p><strong>无沙箱机制</strong>（官方选项表无任何沙箱项）。</p>
+            <p>watch 模式复用同一 coder。</p>
+            <p>官方 watch 页写它用 <code>/undo</code> 撤销、用 <code>/tokens</code> 管上下文。</p>
+            <p>所以上述自动提交与确认机制同样适用。</p>
+            <p><strong>常驻进程 + 自动提交 + 需显式开关才不询问，三者叠加风险高。</strong></p></dd>
         </div>
         <div class="axis">
           <dt><span data-zh>适合什么任务</span><span data-en>Best for</span></dt>
-          <dd>习惯在任意编辑器里工作，不愿切换到专门的 Agent 界面的人。 需要「加注释 → 自动响应」这种轻量交互的人。</dd>
+          <dd><p><strong>适合</strong>两类人：</p>
+            <ul><li>习惯在任意编辑器里工作，不愿切换到专门的 Agent 界面的人</li><li>需要「加注释 → 自动响应」这种轻量交互的人</li></ul></dd>
         </div>
       </dl>
 
@@ -165,9 +221,9 @@ Also not a fit for cloud background execution; it depends on a local process.</p
         <h2><span data-zh>价格</span><span data-en>Pricing</span></h2>
         <table class="src">
           <tbody>
-            <tr><th class="w-28"><span data-zh>月度入口</span><span data-en>Monthly entry</span></th><td><span data-zh>开源免费，模型费用另计</span><span data-en>开源免费，模型费用另计</span></td></tr>
-            <tr><th class="w-28"><span data-zh>年付</span><span data-en>Annual</span></th><td><span data-zh>开源免费，模型费用另计</span><span data-en>开源免费，模型费用另计</span></td></tr>
-            <tr><th class="w-28"><span data-zh>额度说明</span><span data-en>Quota note</span></th><td><span data-zh>Apache-2.0 开源。与 [CLI 形态](../../agents/products/aider-cli.md) 同一项目， **无额外授权费用**。模型调用费用由用户自付。</span><span data-en>Apache-2.0 开源。与 [CLI 形态](../../agents/products/aider-cli.md) 同一项目， **无额外授权费用**。模型调用费用由用户自付。</span></td></tr>
+            <tr><th class="w-28"><span data-zh>月度入口</span><span data-en>Monthly entry</span></th><td><span data-zh><p>开源免费，模型费用另计</p></span><span data-en><p>开源免费，模型费用另计</p></span></td></tr>
+            <tr><th class="w-28"><span data-zh>年付</span><span data-en>Annual</span></th><td><span data-zh><p>开源免费，模型费用另计</p></span><span data-en><p>开源免费，模型费用另计</p></span></td></tr>
+            <tr><th class="w-28"><span data-zh>额度说明</span><span data-en>Quota note</span></th><td><span data-zh><p>Apache-2.0 开源。与 <a href="/aider-cli.html">CLI 形态</a> 同一项目， <strong>无额外授权费用</strong>。模型调用费用由用户自付。</p></span><span data-en><p>Apache-2.0 开源。与 <a href="/aider-cli.html">CLI 形态</a> 同一项目， <strong>无额外授权费用</strong>。模型调用费用由用户自付。</p></span></td></tr>
           </tbody>
         </table>
         <p class="fine mt-3"><span data-zh>不同币种不做折算。优惠、地区、税费与登录后报价可能变化，购买前请到官方页面确认。</span><span data-en>No currency conversion. Discounts, regions, tax and post-login pricing can change — confirm on the official page before buying.</span></p>
@@ -202,13 +258,47 @@ Also not a fit for cloud background execution; it depends on a local process.</p
 
             <div class="panel is-slim">
         <h2><span data-zh>实测记录</span><span data-en>Measured runs</span></h2>
-        <p>本站尚未完成实测。测试协议见 <a href="https://github.com/speculcom/ai-agent-guide/blob/main/tracks/agents/tasks/_protocol.md" target="_blank" rel="noopener">tasks/_protocol.md</a>。
-
-<strong>实测建议</strong>：这个工具的实测重点应是
-<strong>「常驻进程 + 自动提交」的风险是否可控</strong>——
-建议在一个测试仓库里跑，观察产生了多少次未经确认的提交。</p>
+        <p>本站尚未完成实测。测试协议见 <a href="https://github.com/speculcom/ai-agent-guide/blob/main/tracks/agents/tasks/_protocol.md" target="_blank" rel="noopener">tasks/_protocol.md</a>。</p>
+            <p><strong>实测建议</strong>：这个工具的实测重点应是 <strong>「常驻进程 + 自动提交」的风险是否可控</strong>。</p>
+            <p>建议在一个测试仓库里跑，观察产生了多少次未经确认的提交。</p>
       </div>
 
+
+            <div class="panel is-slim">
+        <h2>它在 IDE 形态里的位置</h2>
+        <p>IDE 形态到目前为止有四种，本条目是第四种：</p>
+            <div class="tbl-wrap"><table><thead><tr><th>形态</th><th>代表</th><th>实质</th></tr></thead><tbody><tr><td>独立编辑器</td><td>Zed</td><td>自带完整编辑器</td></tr><tr><td>原生桌面应用</td><td>Cline Desktop</td><td>不依附编辑器</td></tr><tr><td>编辑器扩展</td><td>Codex IDE、Copilot、Cline 扩展</td><td>装进已有编辑器</td></tr><tr><td><strong>常驻 watch 模式</strong></td><td><strong>Aider</strong></td><td><strong>在编辑器外运行，监听文件变化</strong></td></tr></tbody></table></div>
+            <p><strong>Aider 的特殊之处</strong>：它不进入编辑器，而是监听你在任意编辑器里的改动。</p>
+            <h3 class="sub-h">官方文档的措辞</h3>
+            <p>官方文档的标题是「Aider in your IDE」。</p>
+            <p>英文原文：</p>
+            <p>``<code> Aider can watch your files and respond to AI comments you add in your favorite IDE or text editor. </code>``</p>
+            <p><strong>注意最后半句</strong>：<code>or text editor</code>。</p>
+            <p>连纯文本编辑器都行，因为它监听的是文件变化，不是编辑器 API。</p>
+            <p><strong>但界面仍是 Aider 自己的浏览器 UI</strong>，不是在编辑器内联显示。</p>
+      </div>
+      <div class="panel is-slim">
+        <h2>与 CLI 形态的关系</h2>
+        <div class="tbl-wrap"><table><thead><tr><th></th><th><a href="/aider-cli.html">CLI</a></th><th>Watch 模式（本条目）</th></tr></thead><tbody><tr><td>交互</td><td>终端对话</td><td>加 AI 注释</td></tr><tr><td>界面</td><td>终端</td><td>Aider 的浏览器 UI</td></tr><tr><td>进程</td><td>随会话结束</td><td><strong>需常驻</strong></td></tr><tr><td>Repo Map</td><td>有</td><td>有（同一能力）</td></tr><tr><td>自动提交</td><td>有</td><td>有（同一机制）</td></tr><tr><td>维护状态</td><td>maintenance</td><td>maintenance（同一项目）</td></tr></tbody></table></div>
+            <p><strong>同一个项目，两种用法</strong>，不是两套实现。</p>
+      </div>
+      <div class="panel is-slim">
+        <h2>关键风险：常驻 + 自动提交</h2>
+        <p>本条目需要特别注意的组合有三个因素。</p>
+            <div class="tbl-wrap"><table><thead><tr><th>因素</th><th>状态</th></tr></thead><tbody><tr><td>进程常驻</td><td>需要一直运行才能响应</td></tr><tr><td>自动提交</td><td>AI 改动直接进 git 历史（<code>--auto-commits</code> 默认 True）</td></tr><tr><td>每次询问</td><td>有确认开关 <code>--yes-always</code>（默认关）</td></tr><tr><td></td><td><strong>默认会对某些操作询问</strong></td></tr></tbody></table></div>
+            <p><strong>三者叠加，风险高于手动启动的 CLI 用法。</strong></p>
+            <p>这三者是：常驻进程、默认自动提交、需显式 <code>--dry-run</code> 或关自动提交才可预演。</p>
+            <p><strong>建议</strong>：第一次用 watch 模式时，在小仓库里试，并先确认 git 状态干净。</p>
+      </div>
+      <div class="panel is-slim">
+        <h2>采集限制</h2>
+        <p>Aider 的文档站在本次采集环境 curl 可达。</p>
+            <p>watch 模式的官方描述已确认。</p>
+            <p><strong>A6.2（2026-10-08）本轮补齐</strong>：</p>
+            <ul><li>watch 模式的文件范围与忽略规则</li><li>自动提交与 <code>--yes-always</code> 确认机制</li><li>lint / 测试命令</li><li>上下文摘要压缩（<code>--max-chat-history-tokens</code>）</li><li><strong>官方文档与选项表均无 MCP 条目</strong>这一结论</li></ul>
+            <p>以上均已从官方源核实并写进 axes。</p>
+            <p><strong>仍待实测</strong>：大仓库 Repo Map 的实际耗时与 token 开销（官方未给数字）。</p>
+      </div>
 
             <div class="panel is-slim">
         <h2><span data-zh>相关条目</span><span data-en>Related entries</span></h2>
