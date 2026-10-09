@@ -11,7 +11,7 @@
   <meta property="og:url" content="https://agent.specul.com/tools/fetch.html" />
   <meta property="og:title" content="Fetch MCP Server — Tools | 投机取巧" />
   <meta property="og:description" content="Fetch MCP Server（Model Context Protocol）：把网页内容转成 Markdown 的 reference server，官方在其 README 里明确标注了安全警告：它能访问本地与内网 IP。" />
-  <meta name="theme-color" content="#05080f" />
+  <meta name="theme-color" content="#16121f" />
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%238b7cf8'/%3E%3Cstop offset='1' stop-color='%2322d3c5'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='48' height='48' rx='12' fill='%2305080f'/%3E%3Cpath d='M14 32 L24 12 L34 32' fill='none' stroke='url(%23g)' stroke-width='2.4' stroke-linejoin='round'/%3E%3Ccircle cx='24' cy='27' r='2.4' fill='%2322d3c5'/%3E%3C/svg%3E" />
   <link rel="stylesheet" href="../brand.css" />
   <link rel="stylesheet" href="../site.css" />
@@ -94,65 +94,66 @@
         <span class="badge"><span data-zh>核验</span><span data-en>Checked</span> 2026-10-08</span>
       </div>
 
-            <p class="panel-lead"><span data-zh>把网页内容转成 Markdown 的 reference server，<strong>官方在其 README 里明确标注了安全警告：它能访问本地与内网 IP</strong>。</span><span data-en>A reference server that converts web pages to Markdown, <strong>with an explicit security warning in its official README: it can reach local and internal IPs</strong>.</span></p>
+            <div class="panel-lead"><span data-zh><p>把网页内容转成 Markdown 的 reference server，<strong>官方在其 README 里明确标注了安全警告：它能访问本地与内网 IP</strong>。</p></span><span data-en><p>A reference server that converts web pages to Markdown, <strong>with an explicit security warning in its official README: it can reach local and internal IPs</strong>.</p></span></div>
 
             <div class="panel is-slim">
         <h2><span data-zh>适合与不适合</span><span data-en>When to use it, when not to</span></h2>
-<span data-zh>        <p>把公开网页内容转成 Markdown 供 Agent 读取。</p>
-        <p class="warn-p"><strong>不适合在能访问内网的环境中使用</strong>（官方明确警告）。
-也不适合需要登录态的页面，或内容由 JS 渲染的单页应用。</p></span><span data-en>        <p>Scenarios needing to pull a web page&#39;s content as Markdown for an agent to read.</p>
-        <p class="warn-p"><strong>Not a fit for</strong> anything where reaching local or internal network addresses matters — <strong>the official README carries an explicit security warning on exactly this point.</strong></p></span>
+<span data-zh>        <div><p>把公开网页内容转成 Markdown 供 Agent 读取。</p></div>
+        <div class="warn-p"><p><strong>不适合在能访问内网的环境中使用</strong>（官方明确警告）。 也不适合需要登录态的页面，或内容由 JS 渲染的单页应用。</p></div></span><span data-en>        <div><p>Scenarios needing to pull a web page&#39;s content as Markdown for an agent to read.</p></div>
+        <div class="warn-p"><p><strong>Not a fit for</strong> anything where reaching local or internal network addresses matters — <strong>the official README carries an explicit security warning on exactly this point.</strong></p></div></span>
       </div>
 
 
       <div class="block-head">
         <h2 class="t-h2"><span data-zh>固定坐标系</span><span data-en>Fixed coordinate system</span></h2>
-        <p class="t-section-lead">11 <span data-zh>个维度</span><span data-en>dimensions</span>, <span data-zh>与同赛道其他对象逐项可比</span><span data-en>each comparable item by item against others in the same track</span>.</p>
+        <p class="t-section-lead">11 <span data-zh>个维度</span><span data-en>dimensions</span>, <span data-zh>与同分区其他对象逐项可比</span><span data-en>each comparable item by item against others in the same section</span>.</p>
       </div>
       <dl class="axes">
         <div class="axis">
           <dt><span data-zh>模型与开放条件</span><span data-en>Model & openness</span></dt>
-          <dd>本身不调用模型，是被客户端调用的接口实现。 核心是把网页 HTML 转换为 Markdown，便于 LLM 消费。</dd>
+          <dd><p>本身不调用模型，是被客户端调用的接口实现。 核心是把网页 HTML 转换为 Markdown，便于 LLM 消费。</p></dd>
         </div>
         <div class="axis">
           <dt><span data-zh>运行位置</span><span data-en>Where it runs</span></dt>
-          <dd>本地 <strong>Python</strong> 进程，通过 stdio 通信。 依赖 Python MCP SDK 1.x（要求 mcp<strong>=1.29.0,</strong>2），SDK 2.0 重命名了该 server 使用的 API。 2026-08-30 修复了容器 bind mount 在 Docker / Podman / SELinux 下的安全与兼容问题。</dd>
+          <dd><p>本地 <strong>Python</strong> 进程，通过 stdio 通信。 依赖 Python MCP SDK 1.x（要求 mcp<strong>=1.29.0,</strong>2），SDK 2.0 重命名了该 server 使用的 API。</p>
+            <p>2026-08-30 修复了容器 bind mount 在 Docker / Podman / SELinux 下的安全与兼容问题。</p></dd>
         </div>
         <div class="axis">
           <dt><span data-zh>本地文件</span><span data-en>Local files</span></dt>
-          <dd><strong>无文件读写工具</strong>。核心能力是网络抓取，不涉及本地文件。</dd>
+          <dd><p><strong>无文件读写工具</strong>。核心能力是网络抓取，不涉及本地文件。</p></dd>
         </div>
         <div class="axis">
           <dt><span data-zh>关机后的任务</span><span data-en>Tasks after shutdown</span></dt>
-          <dd>不支持。单次抓取为同步操作，随客户端进程结束。</dd>
+          <dd><p>不支持。单次抓取为同步操作，随客户端进程结束。</p></dd>
         </div>
         <div class="axis">
           <dt><span data-zh>工具与扩展</span><span data-en>Tools & extensions</span></dt>
-          <dd>提供 fetch 工具获取网页内容并转换为 Markdown。 输出为转换后的文本，<strong>结构化程度取决于目标页面本身</strong>。</dd>
+          <dd><p>提供 fetch 工具获取网页内容并转换为 Markdown。 输出为转换后的文本，<strong>结构化程度取决于目标页面本身</strong>。</p></dd>
         </div>
         <div class="axis">
           <dt><span data-zh>上下文与记忆</span><span data-en>Context & memory</span></dt>
-          <dd>无状态。每次调用独立，不保留历史抓取记录。</dd>
+          <dd><p>无状态。每次调用独立，不保留历史抓取记录。</p></dd>
         </div>
         <div class="axis">
           <dt><span data-zh>权限与限制</span><span data-en>Permissions & limits</span></dt>
-          <dd><strong>官方明确警告安全风险</strong>：README 声明本 server <strong>可访问本地与内网 IP 地址，可能构成安全风险</strong>。 需谨慎使用，确保不会暴露敏感数据。 无独立审批机制，无法限制目标地址范围。</dd>
+          <dd><p><strong>官方明确警告安全风险</strong>：README 声明本 server <strong>可访问本地与内网 IP 地址，可能构成安全风险</strong>。 需谨慎使用，确保不会暴露敏感数据。 无独立审批机制，无法限制目标地址范围。</p></dd>
         </div>
         <div class="axis">
           <dt><span data-zh>适合什么任务</span><span data-en>Best for</span></dt>
-          <dd>把公开网页内容转成 Markdown 供 Agent 读取。 <strong>不适合在能访问内网的环境中使用</strong>， 也不适合需要登录态的页面。</dd>
+          <dd><p>把公开网页内容转成 Markdown 供 Agent 读取。 <strong>不适合在能访问内网的环境中使用</strong>， 也不适合需要登录态的页面。</p></dd>
         </div>
         <div class="axis">
           <dt><span data-zh>传输方式</span><span data-en>Transport</span></dt>
-          <dd>支持 stdio，<strong>并提供容器部署方式（Docker / Podman）</strong>。 2026-08-30 修复了 bind mount 的安全与兼容问题（含 SELinux）。 官方 README（2026-10-08 全文核验）只给本地进程接入： uvx / pip / Docker；没有远程传输的官方启动方式。</dd>
+          <dd><p>支持 stdio，<strong>并提供容器部署方式（Docker / Podman）</strong>。 2026-08-30 修复了 bind mount 的安全与兼容问题（含 SELinux）。</p>
+            <p>官方 README（2026-10-08 全文核验）只给本地进程接入： uvx / pip / Docker；没有远程传输的官方启动方式。</p></dd>
         </div>
         <div class="axis">
           <dt><span data-zh>认证机制</span><span data-en>Authentication</span></dt>
-          <dd>无独立认证层。stdio 形态继承客户端用户权限。 <strong>容器形态的认证配置仓库未说明。</strong></dd>
+          <dd><p>无独立认证层。stdio 形态继承客户端用户权限。 <strong>容器形态的认证配置仓库未说明。</strong></p></dd>
         </div>
         <div class="axis">
           <dt><span data-zh>权限范围</span><span data-en>Permission scope</span></dt>
-          <dd><strong>风险最高的一类</strong>：文件范围无限制（不涉及文件）， 但<strong>网络范围无法收敛</strong>—— 官方警告它可访问本地与内网 IP。 无地址白名单、无审批机制。 在生产或含内网服务的环境中使用前必须评估。</dd>
+          <dd><p><strong>风险最高的一类</strong>：文件范围无限制（不涉及文件）， 但<strong>网络范围无法收敛</strong>—— 官方警告它可访问本地与内网 IP。 无地址白名单、无审批机制。 在生产或含内网服务的环境中使用前必须评估。</p></dd>
         </div>
       </dl>
 
@@ -171,9 +172,9 @@
         <h2><span data-zh>价格</span><span data-en>Pricing</span></h2>
         <table class="src">
           <tbody>
-            <tr><th class="w-28"><span data-zh>月度入口</span><span data-en>Monthly entry</span></th><td><span data-zh>无商业费用</span><span data-en>无商业费用</span></td></tr>
-            <tr><th class="w-28"><span data-zh>年付</span><span data-en>Annual</span></th><td><span data-zh>无商业费用</span><span data-en>无商业费用</span></td></tr>
-            <tr><th class="w-28"><span data-zh>额度说明</span><span data-en>Quota note</span></th><td><span data-zh>随 MCP servers 仓库分发，无授权费。 实际成本来自目标网站的网络请求，不来自本 server。</span><span data-en>随 MCP servers 仓库分发，无授权费。 实际成本来自目标网站的网络请求，不来自本 server。</span></td></tr>
+            <tr><th class="w-28"><span data-zh>月度入口</span><span data-en>Monthly entry</span></th><td><span data-zh><p>无商业费用</p></span><span data-en><p>无商业费用</p></span></td></tr>
+            <tr><th class="w-28"><span data-zh>年付</span><span data-en>Annual</span></th><td><span data-zh><p>无商业费用</p></span><span data-en><p>无商业费用</p></span></td></tr>
+            <tr><th class="w-28"><span data-zh>额度说明</span><span data-en>Quota note</span></th><td><span data-zh><p>随 MCP servers 仓库分发，无授权费。 实际成本来自目标网站的网络请求，不来自本 server。</p></span><span data-en><p>随 MCP servers 仓库分发，无授权费。 实际成本来自目标网站的网络请求，不来自本 server。</p></span></td></tr>
           </tbody>
         </table>
         <p class="fine mt-3"><span data-zh>不同币种不做折算。优惠、地区、税费与登录后报价可能变化，购买前请到官方页面确认。</span><span data-en>No currency conversion. Discounts, regions, tax and post-login pricing can change — confirm on the official page before buying.</span></p>
@@ -207,12 +208,42 @@
 
             <div class="panel is-slim">
         <h2><span data-zh>实测记录</span><span data-en>Measured runs</span></h2>
-        <p>本站尚未完成实测。测试协议见 <a href="https://github.com/speculcom/ai-agent-guide/blob/main/tracks/agents/tasks/_protocol.md" target="_blank" rel="noopener">tasks/_protocol.md</a>。
-
-<strong>实测建议</strong>：这个 server 的实测<strong>不应在含内网敏感服务的环境中进行</strong>。
-建议在隔离容器或测试网络中验证抓取成功率与输出质量。</p>
+        <p>本站尚未完成实测。测试协议见 <a href="https://github.com/speculcom/ai-agent-guide/blob/main/tracks/agents/tasks/_protocol.md" target="_blank" rel="noopener">tasks/_protocol.md</a>。</p>
+            <p><strong>实测建议</strong>：这个 server 的实测<strong>不应在含内网敏感服务的环境中进行</strong>。 建议在隔离容器或测试网络中验证抓取成功率与输出质量。</p>
       </div>
 
+
+            <div class="panel is-slim">
+        <h2>⚠ 官方安全警告（原文）</h2>
+        <blockquote><strong>CAUTION</strong> This server can access local/internal IP addresses and may represent a security risk. Exercise caution when using this MCP server to ensure this does not expose any sensitive data.</blockquote>
+            <p><strong>翻译</strong>：本 server 能访问本地与内网 IP 地址，可能构成安全风险。 使用时务必谨慎，确保不会暴露敏感数据。</p>
+            <p><strong>这是本分区里官方自己标注风险最明确的一个</strong>， 也是本站认为最有价值的一条一手信息——因为这类警告极少见， 大多数同类工具只会写「使用前请注意安全」。</p>
+      </div>
+      <div class="panel is-slim">
+        <h2>为什么这个风险值得单独说</h2>
+        <div class="tbl-wrap"><table><thead><tr><th>场景</th><th>风险</th></tr></thead><tbody><tr><td>内网有数据库管理面板（<code>10.x</code> / <code>192.168.x</code>）</td><td>Agent 可能抓到内网页面</td></tr><tr><td>云环境 metadata 服务（如 <code>169.254.169.254</code>）</td><td>可能拿到实例元数据与凭据</td></tr><tr><td>本机有开发服务器</td><td>可能抓到本机服务的响应</td></tr><tr><td>Agent 被诱导抓取恶意 URL</td><td>可探测内网拓扑</td></tr></tbody></table></div>
+            <p><strong>关键</strong>：没有地址白名单，也没有审批机制。 一旦启用，Agent 就有了探测内网的通道。</p>
+      </div>
+      <div class="panel is-slim">
+        <h2>变更记录说明</h2>
+        <p><strong>本对象无独立 changelog 页</strong>，变更记录在目录 commit 历史中：</p>
+            <div class="tbl-wrap"><table><thead><tr><th>日期</th><th>内容</th></tr></thead><tbody><tr><td>2026-08-30</td><td>修复容器 bind mount 安全与兼容问题（Docker / Podman / SELinux）</td></tr><tr><td>2026-08-18</td><td>文档补充 Python MCP 1.x 版本要求</td></tr><tr><td>2026-08-18</td><td>固定依赖 <code>mcp&gt;=1.29.0,&lt;2</code></td></tr><tr><td>2026-07-29</td><td>uv 依赖批量更新</td></tr></tbody></table></div>
+            <p><strong>两条值得注意</strong>：</p>
+            <ul><li><strong>08-18 的版本固定</strong>：SDK 2.0 重命名了本 server 使用的 API，官方明确锁在 1.x。 如果你的环境装了 SDK 2.x，这个 server 可能起不来。</li></ul>
+            <ul><li><strong>08-30 的容器修复</strong>和 git / time 是同一条 commit（#2205），说明这三个 server 有共同的容器化问题。</li></ul>
+      </div>
+      <div class="panel is-slim">
+        <h2>输出质量评估</h2>
+        <p><strong>输出结构取决于目标页面本身</strong>，不是统一 schema：</p>
+            <div class="tbl-wrap"><table><thead><tr><th>目标页面类型</th><th>输出质量</th></tr></thead><tbody><tr><td>文档站（结构规整）</td><td>好</td></tr><tr><td>博客正文</td><td>中</td></tr><tr><td>单页应用（内容由 JS 渲染）</td><td><strong>差</strong> — 抓不到正文</td></tr><tr><td>需要登录的页面</td><td><strong>失败</strong></td></tr><tr><td>纯图片 / PDF</td><td>不可用</td></tr></tbody></table></div>
+            <p><strong>这不是 server 的缺陷，但它决定了这个工具的适用边界。</strong></p>
+      </div>
+      <div class="panel is-slim">
+        <h2>部署建议</h2>
+        <p>如果确实要用，在以下条件下才考虑：</p>
+            <div class="tbl-wrap"><table><thead><tr><th>条件</th><th>说明</th></tr></thead><tbody><tr><td>隔离网络环境</td><td>不与内网服务同网段</td></tr><tr><td>或容器化并限制出网</td><td>白名单出站，只允许目标域名</td></tr><tr><td>且不接受内网访问需求</td><td>因为它无法被限制</td></tr></tbody></table></div>
+            <p><strong>注意</strong>：容器化本身不解决这个风险—— 容器内依然能访问宿主网络，除非配置网络策略。</p>
+      </div>
 
             <div class="panel is-slim">
         <h2><span data-zh>相关条目</span><span data-en>Related entries</span></h2>
