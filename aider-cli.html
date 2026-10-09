@@ -4,18 +4,18 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Aider — Agents | 投机取巧</title>
-  <meta name="description" content="Aider（Aider-AI）：Git 集成是核心设计而非附加功能的终端 pair programming 工具——AI 改动始终在版本控制里，可 diff 可撤销。" />
+  <meta name="description" content="Aider（Aider-AI）：Aider 是一个终端 pair programming 工具。 它把 Git 集成当核心设计，不是附加功能。 AI 改动始终在版本控制里，可 diff 可撤销。" />
   <link rel="canonical" href="https://agent.specul.com/aider-cli.html" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Aider" />
   <meta property="og:url" content="https://agent.specul.com/aider-cli.html" />
   <meta property="og:title" content="Aider — Agents | 投机取巧" />
-  <meta property="og:description" content="Aider（Aider-AI）：Git 集成是核心设计而非附加功能的终端 pair programming 工具——AI 改动始终在版本控制里，可 diff 可撤销。" />
-  <meta name="theme-color" content="#05080f" />
+  <meta property="og:description" content="Aider（Aider-AI）：Aider 是一个终端 pair programming 工具。 它把 Git 集成当核心设计，不是附加功能。 AI 改动始终在版本控制里，可 diff 可撤销。" />
+  <meta name="theme-color" content="#16121f" />
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%238b7cf8'/%3E%3Cstop offset='1' stop-color='%2322d3c5'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='48' height='48' rx='12' fill='%2305080f'/%3E%3Cpath d='M14 32 L24 12 L34 32' fill='none' stroke='url(%23g)' stroke-width='2.4' stroke-linejoin='round'/%3E%3Ccircle cx='24' cy='27' r='2.4' fill='%2322d3c5'/%3E%3C/svg%3E" />
   <link rel="stylesheet" href="brand.css" />
   <link rel="stylesheet" href="site.css" />
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Aider","applicationCategory":"DeveloperApplication","url":"https://github.com/Aider-AI/aider","sameAs":"https://github.com/Aider-AI/aider","description":"Git 集成是核心设计而非附加功能的终端 pair programming 工具——AI 改动始终在版本控制里，可 diff 可撤销。","dateModified":"2026-10-08"}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Aider","applicationCategory":"DeveloperApplication","url":"https://github.com/Aider-AI/aider","sameAs":"https://github.com/Aider-AI/aider","description":"Aider 是一个终端 pair programming 工具。 它把 Git 集成当核心设计，不是附加功能。 AI 改动始终在版本控制里，可 diff 可撤销。","dateModified":"2026-10-08"}</script>
 </head>
 <body class="brand-ambient">
   <a class="t-skip" href="#main"><span data-zh>跳到主要内容</span><span data-en>Skip to main content</span></a>
@@ -95,55 +95,116 @@
         <span class="badge"><span data-zh>核验</span><span data-en>Checked</span> 2026-10-08</span>
       </div>
 
-            <p class="panel-lead"><span data-zh>Git 集成是<strong>核心设计而非附加功能</strong>的终端 pair programming 工具——AI 改动始终在版本控制里，可 diff 可撤销。</span><span data-en>A terminal pair-programming tool where <strong>Git integration is core design, not an add-on</strong> — AI changes always live in version control, diffable and revertible.</span></p>
+            <div class="panel-lead"><span data-zh><p><strong>Aider 是一个终端 pair programming 工具。</strong></p>
+            <p>它把 Git 集成当核心设计，不是附加功能。</p>
+            <p>AI 改动始终在版本控制里，可 diff 可撤销。</p></span><span data-en><p>A terminal pair-programming tool where <strong>Git integration is core design, not an add-on</strong> — AI changes always live in version control, diffable and revertible.</p></span></div>
 
             <div class="panel is-slim">
         <h2><span data-zh>适合与不适合</span><span data-en>When to use it, when not to</span></h2>
-<span data-zh>        <p>需要 AI 改动始终留在 git 版本控制里、可 diff 可撤销的场景。
-需要连接本地模型或多家云端模型的用户。</p>
-        <p class="warn-p"><strong>不适合</strong>需要新模型支持或依赖上游修复的场景——
-最新 release 停在 2025-08，维护状态为 maintenance。</p></span><span data-en>        <p>Scenarios where AI changes must stay in git version control, diffable and revertible.
-Users who need to connect local models or several cloud providers.</p>
-        <p class="warn-p"><strong>Not a fit for</strong> scenarios needing a new model release or relying on upstream fixes — the latest release stopped at 2025-08 and maintenance status is maintenance.</p></span>
+<span data-zh>        <div><p><strong>适合的场景</strong>：</p></div>
+        <div><ul><li>需要 AI 改动始终留在 git 版本控制里、可 diff 可撤销的场景</li><li>需要连接本地模型或多家云端模型的用户</li></ul></div>
+        <div class="warn-p"><p><strong>不适合</strong>这些场景：</p></div>
+        <div><ul><li>需要新模型支持</li><li>依赖上游修复</li></ul></div>
+        <div><p>它们的风险来自维护状态：最新 release 停在 2025-08，为 <code>maintenance</code>。</p></div></span><span data-en>        <div><p>Scenarios where AI changes must stay in git version control, diffable and revertible. Users who need to connect local models or several cloud providers.</p></div>
+        <div class="warn-p"><p><strong>Not a fit for</strong> scenarios needing a new model release or relying on upstream fixes — the latest release stopped at 2025-08 and maintenance status is maintenance.</p></div></span>
       </div>
 
 
       <div class="block-head">
         <h2 class="t-h2"><span data-zh>固定坐标系</span><span data-en>Fixed coordinate system</span></h2>
-        <p class="t-section-lead">8 <span data-zh>个维度</span><span data-en>dimensions</span>, <span data-zh>与同赛道其他对象逐项可比</span><span data-en>each comparable item by item against others in the same track</span>.</p>
+        <p class="t-section-lead">8 <span data-zh>个维度</span><span data-en>dimensions</span>, <span data-zh>与同分区其他对象逐项可比</span><span data-en>each comparable item by item against others in the same section</span>.</p>
       </div>
       <dl class="axes">
         <div class="axis">
           <dt><span data-zh>模型与开放条件</span><span data-en>Model & openness</span></dt>
-          <dd><strong>支持云端与本地 LLM，可连接几乎任何模型</strong>， 明确包含本地模型选项。 README 当前推荐的模型是 Claude 3.7 Sonnet、DeepSeek R1 &amp; Chat V3、 OpenAI o1 / o3-mini / GPT-4o。 <strong>注意：这份推荐列表停留在上一代模型， 与该项目 13 个月未发 release 的状态一致，参考时需自行核对当前可用模型。</strong></dd>
+          <dd><p><strong>支持云端与本地 LLM，可连接几乎任何模型，明确包含本地模型选项。</strong></p>
+            <p><strong>官方原文</strong>：&quot;README 当前推荐的模型是 Claude 3.7 Sonnet、DeepSeek R1 &amp; Chat V3、OpenAI o1 / o3-mini / GPT-4o&quot;</p>
+            <p><strong>注意：这份推荐列表停留在上一代模型。</strong></p>
+            <p>这与该项目 13 个月未发 release 的状态一致。</p>
+            <p>参考时需自行核对当前可用模型。</p></dd>
         </div>
         <div class="axis">
           <dt><span data-zh>运行位置</span><span data-en>Where it runs</span></dt>
-          <dd>本地 <strong>Python</strong> 进程，在终端内运行（PyPI 包 aider-chat，官方徽章显示 680 万次安装）。 生命周期绑定终端会话，退出即结束。 另有 watch 常驻形态（见 <a href="/aider.html">IDE 形态条目</a>）。</dd>
+          <dd><p><strong>本地 Python 进程，在终端内运行，生命周期绑定终端会话。</strong></p>
+            <p>退出终端即结束。</p>
+            <p>它是 PyPI 包 <code>aider-chat</code>。</p>
+            <p>官方徽章显示 680 万次安装。</p>
+            <p>另有 watch 常驻形态（见 <a href="/aider.html">IDE 形态条目</a>）。</p></dd>
         </div>
         <div class="axis">
           <dt><span data-zh>本地文件</span><span data-en>Local files</span></dt>
-          <dd><strong>Repo Map 是本工具的核心机制</strong>（官方文档 <code>docs/repomap.md</code> 原文）： Aider 使用「一份简洁的整个 git 仓库的地图」， 包含<strong>最重要的类与函数及其类型与调用签名</strong>。 <strong>每次用户提出改动请求时，repo map 都随请求一起发给模型</strong>， map 包含仓库文件列表 + 每个文件的关键符号。 <strong>两个作用</strong>（文档明确列出）： 一是帮助它理解正在编辑的代码及其与代码库其他部分的关系； 二是帮助它写新代码时<strong>复用代码库里已有的库、模块与抽象</strong>。 支持 100+ 编程语言。 <strong>文件访问范围</strong>：能编辑的是你 <code>/add</code> 进 chat 的文件， 但 repo map 扫描整个 git 仓库；范围受 <code>.gitignore</code> / <code>.aiderignore</code> 约束（<code>--aiderignore</code> 指定忽略文件，默认 git 根目录 <code>.aiderignore</code>； <code>--subtree-only</code> 只考虑当前子树）。 仓库须是 git 仓库——官方 <code>docs/git.html</code>：无 git 时会先问你是否新建。 <strong>map 的 token 预算由 <code>--map-tokens</code> 控制、刷新频率由 <code>--map-refresh</code> （auto/always/files/manual）控制；大仓库的实际耗时与 token 开销 官方未给数字，本站未实测。</strong></dd>
+          <dd><p><strong>Repo Map 是本工具的核心机制。</strong></p>
+            <p>它是一份简洁的整个 git 仓库的地图。</p>
+            <p><strong>官方原文</strong>：&quot;Aider makes a map of your entire codebase, which helps it work well in larger projects.&quot;</p>
+            <p>map 里包含<strong>最重要的类与函数及其类型与调用签名</strong>。</p>
+            <p><strong>每次用户提出改动请求时，repo map 都随请求一起发给模型。</strong></p>
+            <p>map 包含仓库文件列表 + 每个文件的关键符号。</p>
+            <p>文档明确列出<strong>两个作用</strong>：</p>
+            <ul><li>一是帮助它理解正在编辑的代码及其与代码库其他部分的关系</li><li>二是帮助它写新代码时<strong>复用代码库里已有的库、模块与抽象</strong></li></ul>
+            <p>支持 100+ 编程语言。</p>
+            <p><strong>文件访问范围</strong>：能编辑的是你 <code>/add</code> 进 chat 的文件。</p>
+            <p>repo map 则扫描整个 git 仓库。</p>
+            <p>扫描范围受 <code>.gitignore</code> / <code>.aiderignore</code> 约束：<code>--aiderignore</code> 指定忽略文件，默认 git 根目录 <code>.aiderignore</code>；<code>--subtree-only</code> 只考虑当前子树。</p>
+            <p>仓库须是 git 仓库。</p>
+            <p><strong>官方原文</strong>：&quot;无 git 时会先问你是否新建。&quot;</p>
+            <p><strong>map 的 token 预算由 <code>--map-tokens</code> 控制、刷新频率由 <code>--map-refresh</code>（auto/always/files/manual）控制。</strong></p>
+            <p><strong>大仓库的实际耗时与 token 开销官方未给数字，本站未实测。</strong></p></dd>
         </div>
         <div class="axis">
           <dt><span data-zh>关机后的任务</span><span data-en>Tasks after shutdown</span></dt>
-          <dd>不支持终端形态的后台长任务。 另有 watch 模式（见 <a href="/aider.html">IDE 形态条目</a>）： 常驻监听文件变化并响应编辑器里的 AI 注释， <strong>但那是本地进程常驻，不是云端后台</strong>。</dd>
+          <dd><p><strong>不支持终端形态的后台长任务。</strong></p>
+            <p>另有 watch 模式（见 <a href="/aider.html">IDE 形态条目</a>）：常驻监听文件变化并响应编辑器里的 AI 注释。</p>
+            <p><strong>但那是本地进程常驻，不是云端后台。</strong></p></dd>
         </div>
         <div class="axis">
           <dt><span data-zh>工具与扩展</span><span data-en>Tools & extensions</span></dt>
-          <dd>文件编辑 + <strong>Git 操作</strong>。<strong>README 强调 Git 集成本身就是核心功能</strong>： 自动用合理的 commit message 提交， 可用熟悉的 git 工具 diff、管理与撤销 AI 改动。 官方文档另有 <code>docs/languages.md</code>（语言支持）与 <code>docs/git.md</code>。 <strong>可配置 lint / 测试命令自动运行</strong>（<code>docs/usage/lint-test.html</code>）： <code>--lint-cmd</code> / <code>--auto-lint</code>（默认对编辑过的文件跑 lint）、 <code>--test-cmd</code> / <code>--auto-test</code>；<code>/run</code> 跑 shell 命令并可选加输出进 chat、 <code>/web</code> 抓网页转 markdown、<code>/paste</code> 贴图。 <strong>无内置 MCP 支持</strong>——官方选项表与文档站导航都没有任何 MCP 条目 （已查 <code>config/options.html</code> 与 docs 目录），故不能接 MCP server。</dd>
+          <dd><p><strong>文件编辑 + Git 操作。</strong></p>
+            <p><strong>README 强调 Git 集成本身就是核心功能。</strong></p>
+            <p>它会自动用合理的 commit message 提交。</p>
+            <p>你也可以用熟悉的 git 工具 diff、管理与撤销 AI 改动。</p>
+            <p>官方文档另有 <code>docs/languages.md</code>（语言支持）与 <code>docs/git.md</code>。</p>
+            <p><strong>可配置 lint / 测试命令自动运行</strong>：</p>
+            <ul><li><code>--lint-cmd</code> / <code>--auto-lint</code>（默认对编辑过的文件跑 lint）</li><li><code>--test-cmd</code> / <code>--auto-test</code></li><li><code>/run</code> 跑 shell 命令并可选加输出进 chat</li><li><code>/web</code> 抓网页转 markdown</li><li><code>/paste</code> 贴图</li></ul>
+            <p>文档出处是 <code>docs/usage/lint-test.html</code>。</p>
+            <p><strong>无内置 MCP 支持</strong>：官方选项表与文档站导航都没有任何 MCP 条目（已查 <code>config/options.html</code> 与 docs 目录）。</p>
+            <p>故不能接 MCP server。</p></dd>
         </div>
         <div class="axis">
           <dt><span data-zh>上下文与记忆</span><span data-en>Context & memory</span></dt>
-          <dd><strong>Repo Map 提供全库结构视图</strong>，每次请求随附（见 local_files）。 <strong>上下文超限用「摘要压缩」而非简单截断</strong>：官方选项 <code>--max-chat-history-tokens</code> 描述为 &quot;Soft limit on tokens for chat history, after which summarization begins&quot; （超过软上限即开始摘要，摘要由 <code>--weak-model</code> 生成）； 每个模型的上下文窗口与费用由 <code>--model-metadata-file</code> 提供。 会话内可用 <code>/tokens</code> 查看用量、<code>/drop</code>、<code>/clear</code>、<code>/reset</code> 腾空间； <strong>默认不跨启动恢复</strong>（<code>--restore-chat-history</code> 默认 False）， chat 历史默认写 <code>.aider.chat.history.md</code>。</dd>
+          <dd><p><strong>Repo Map 提供全库结构视图，每次请求随附</strong>（见 local_files）。</p>
+            <p><strong>上下文超限用「摘要压缩」而非简单截断。</strong></p>
+            <p><strong>官方原文</strong>：&quot;Soft limit on tokens for chat history, after which summarization begins&quot;</p>
+            <p>这句是官方选项 <code>--max-chat-history-tokens</code> 的描述。</p>
+            <p>即超过软上限即开始摘要，摘要由 <code>--weak-model</code> 生成。</p>
+            <p>每个模型的上下文窗口与费用由 <code>--model-metadata-file</code> 提供。</p>
+            <p>会话内可用 <code>/tokens</code> 查看用量、<code>/drop</code>、<code>/clear</code>、<code>/reset</code> 腾空间。</p>
+            <p><strong>默认不跨启动恢复</strong>（<code>--restore-chat-history</code> 默认 False）。</p>
+            <p>chat 历史默认写 <code>.aider.chat.history.md</code>。</p></dd>
         </div>
         <div class="axis">
           <dt><span data-zh>权限与限制</span><span data-en>Permissions & limits</span></dt>
-          <dd><strong>默认自动提交</strong>（<code>--auto-commits</code> 默认 True）， 这是它的一体化设计而非附加功能； <code>--dirty-commits</code>（默认 True）会先把已有的未提交改动也提交。 撤销路径是 <strong>git 本身</strong>（不是工具提供的回滚功能）—— README 明确说「用熟悉的 git 工具 diff、管理与撤销 AI 的改动」， 会话内用 <code>/undo</code>。 <strong>存在确认环节</strong>：官方提供 <code>--yes-always</code>（别名 <code>--yes</code>）， 描述为 &quot;Always say yes to every confirmation&quot;—— 即默认会对某些操作询问，加此开关才全自动； <code>--dry-run</code> 可不改文件地预演。 <strong>无沙箱机制</strong>——官方选项表没有任何沙箱项； 除你配置的 lint / 测试命令（<code>--auto-lint</code> / <code>--auto-test</code>）外， 它不会自主执行任意 shell 命令（<code>--suggest-shell-commands</code> 只是建议）。</dd>
+          <dd><p><strong>默认自动提交</strong>（<code>--auto-commits</code> 默认 True）。</p>
+            <p>这是它的一体化设计而非附加功能。</p>
+            <p><code>--dirty-commits</code>（默认 True）会先把已有的未提交改动也提交。</p>
+            <p>撤销路径是 <strong>git 本身</strong>，不是工具提供的回滚功能。</p>
+            <p><strong>官方原文</strong>：&quot;Use familiar git tools to easily diff, manage and undo AI changes.&quot;</p>
+            <p>会话内用 <code>/undo</code>。</p>
+            <p><strong>存在确认环节</strong>：官方提供 <code>--yes-always</code>（别名 <code>--yes</code>）。</p>
+            <p><strong>官方原文</strong>：&quot;Always say yes to every confirmation&quot;</p>
+            <p>即默认会对某些操作询问，加此开关才全自动。</p>
+            <p><code>--dry-run</code> 可不改文件地预演。</p>
+            <p><strong>无沙箱机制</strong>：官方选项表没有任何沙箱项。</p>
+            <p>除你配置的 lint / 测试命令（<code>--auto-lint</code> / <code>--auto-test</code>）外，它不会自主执行任意 shell 命令（<code>--suggest-shell-commands</code> 只是建议）。</p></dd>
         </div>
         <div class="axis">
           <dt><span data-zh>适合什么任务</span><span data-en>Best for</span></dt>
-          <dd>希望 AI 改动始终留在 git 版本控制里、可 diff 可撤销的场景。 需要连接本地模型或多家云端模型的用户。 需要「写新代码时复用已有抽象」的人（Repo Map 的第二个作用）。 <strong>不适合需要活跃维护与新模型支持的场景</strong>（见下方维护状态）。</dd>
+          <dd><p><strong>适合三类场景。</strong></p>
+            <p><strong>留在 git 里的改动</strong>：希望 AI 改动始终留在 git 版本控制里。</p>
+            <p>这样的改动可 diff、可撤销。</p>
+            <p><strong>多模型接入</strong>：需要连接本地模型或多家云端模型的用户。</p>
+            <p><strong>复用已有抽象</strong>：需要「写新代码时复用已有抽象」的人。</p>
+            <p>这也是 Repo Map 的第二个作用。</p>
+            <p><strong>不适合需要活跃维护与新模型支持的场景</strong>（见下方维护状态）。</p></dd>
         </div>
       </dl>
 
@@ -162,9 +223,17 @@ Users who need to connect local models or several cloud providers.</p>
         <h2><span data-zh>价格</span><span data-en>Pricing</span></h2>
         <table class="src">
           <tbody>
-            <tr><th class="w-28"><span data-zh>月度入口</span><span data-en>Monthly entry</span></th><td><span data-zh>开源免费，模型费用另计</span><span data-en>开源免费，模型费用另计</span></td></tr>
-            <tr><th class="w-28"><span data-zh>年付</span><span data-en>Annual</span></th><td><span data-zh>开源免费，模型费用另计</span><span data-en>开源免费，模型费用另计</span></td></tr>
-            <tr><th class="w-28"><span data-zh>额度说明</span><span data-en>Quota note</span></th><td><span data-zh>Apache-2.0 开源，PyPI 包为 aider-chat（官方徽章显示 680 万次安装）。 **模型调用费用完全由用户自付**—— 支持云端与本地 LLM，包括 OpenRouter 等平台与本地模型。</span><span data-en>Apache-2.0 开源，PyPI 包为 aider-chat（官方徽章显示 680 万次安装）。 **模型调用费用完全由用户自付**—— 支持云端与本地 LLM，包括 OpenRouter 等平台与本地模型。</span></td></tr>
+            <tr><th class="w-28"><span data-zh>月度入口</span><span data-en>Monthly entry</span></th><td><span data-zh><p>开源免费，模型费用另计</p></span><span data-en><p>开源免费，模型费用另计</p></span></td></tr>
+            <tr><th class="w-28"><span data-zh>年付</span><span data-en>Annual</span></th><td><span data-zh><p>开源免费，模型费用另计</p></span><span data-en><p>开源免费，模型费用另计</p></span></td></tr>
+            <tr><th class="w-28"><span data-zh>额度说明</span><span data-en>Quota note</span></th><td><span data-zh><p><strong>Aider 是 Apache-2.0 开源软件，模型调用费用完全由用户自付。</strong></p>
+            <p>安装渠道是 PyPI 包 <code>aider-chat</code>。</p>
+            <p>官方徽章显示 680 万次安装。</p>
+            <p>模型可以走云端，也可以走本地。</p>
+            <p>支持的链路包括 OpenRouter 等平台与本地模型。</p></span><span data-en><p><strong>Aider 是 Apache-2.0 开源软件，模型调用费用完全由用户自付。</strong></p>
+            <p>安装渠道是 PyPI 包 <code>aider-chat</code>。</p>
+            <p>官方徽章显示 680 万次安装。</p>
+            <p>模型可以走云端，也可以走本地。</p>
+            <p>支持的链路包括 OpenRouter 等平台与本地模型。</p></span></td></tr>
           </tbody>
         </table>
         <p class="fine mt-3"><span data-zh>不同币种不做折算。优惠、地区、税费与登录后报价可能变化，购买前请到官方页面确认。</span><span data-en>No currency conversion. Discounts, regions, tax and post-login pricing can change — confirm on the official page before buying.</span></p>
@@ -200,13 +269,57 @@ Users who need to connect local models or several cloud providers.</p>
 
             <div class="panel is-slim">
         <h2><span data-zh>实测记录</span><span data-en>Measured runs</span></h2>
-        <p>本站尚未完成实测。测试协议见 <a href="https://github.com/speculcom/ai-agent-guide/blob/main/tracks/agents/tasks/_protocol.md" target="_blank" rel="noopener">tasks/_protocol.md</a>。
-
-<strong>实测建议</strong>：这个工具的实测重点应放在
-<strong>「自动提交 + 撤销」这条链路是否顺畅</strong>——
-因为这是它与其他工具最大的工作流差异。</p>
+        <p>本站尚未完成实测。测试协议见 <a href="https://github.com/speculcom/ai-agent-guide/blob/main/tracks/agents/tasks/_protocol.md" target="_blank" rel="noopener">tasks/_protocol.md</a>。</p>
+            <p><strong>实测建议</strong>：重点放在<strong>「自动提交 + 撤销」这条链路是否顺畅</strong>。</p>
+            <p>因为这是它与其他工具最大的工作流差异。</p>
       </div>
 
+
+            <div class="panel is-slim">
+        <h2>⚠ 维护状态（本条目最重要的信息）</h2>
+        <p><strong>结论：这个项目已进入维护状态，不该按活跃项目看待。</strong></p>
+            <p>依据如下。</p>
+            <div class="tbl-wrap"><table><thead><tr><th>指标</th><th>值</th><th>距采集日</th></tr></thead><tbody><tr><td>最新 release</td><td><code>v0.86.0</code></td><td><strong>2025-08-09（13 个月前）</strong></td></tr><tr><td>上一个 release</td><td><code>v0.85.0</code></td><td>2025-06-27</td></tr><tr><td>最后 commit</td><td>扩充 ANTHROPIC_MODELS 名单</td><td>2026-05-22</td></tr><tr><td>star 数</td><td>49,249</td><td>—</td></tr><tr><td>PyPI 安装量</td><td>680 万</td><td>—</td></tr></tbody></table></div>
+            <p><strong>判断：lifecycle = <code>maintenance</code></strong></p>
+            <p>理由：</p>
+            <ul><li>release 已 13 个月未更新</li><li>最后几次 commit 都是<strong>维护性改动</strong>（扩充模型名单），不是功能开发</li><li>README 的模型推荐仍停留在上一代（Claude 3.7 Sonnet 时代）</li></ul>
+            <p><strong>这不是&quot;坏了&quot;，但意味着</strong>：</p>
+            <ul><li>新模型支持可能滞后</li><li>新语言 / 新框架适配可能滞后</li><li>遇到 bug 不一定能靠上游修复</li></ul>
+            <p><strong>引用本条目做选型时必须考虑这一点。</strong></p>
+      </div>
+      <div class="panel is-slim">
+        <h2>核心能力（README 官方描述）</h2>
+        <div class="tbl-wrap"><table><thead><tr><th>能力</th><th>官方原文要点</th></tr></thead><tbody><tr><td><strong>云端与本地 LLM</strong></td><td>可连接几乎任何 LLM，包括本地模型</td></tr><tr><td><strong>Repo Map</strong></td><td>为整个代码库生成结构图，帮助它在较大项目中工作</td></tr><tr><td><strong>100+ 语言</strong></td><td>python / javascript / rust / ruby / go / cpp / php / html / css 等</td></tr><tr><td><strong>Git 集成</strong></td><td>自动用合理 commit message 提交，可用 git 工具 diff、管理与撤销</td></tr><tr><td><strong>IDE 内使用</strong></td><td>在 IDE 里加注释提问，aider 去做</td></tr></tbody></table></div>
+      </div>
+      <div class="panel is-slim">
+        <h2>Repo Map 是它的差异化能力</h2>
+        <p><strong>官方原文</strong>：&quot;Aider makes a map of your entire codebase, which helps it work well in larger projects.&quot;</p>
+            <p>这与其他工具的&quot;按需检索文件&quot;是不同思路：<strong>先建全库结构图，再据此工作</strong>。</p>
+            <p><strong>注意</strong>：A6.2 已核到 —— <strong>token 预算由 <code>--map-tokens</code> 控制</strong>（设为 0 即关闭），刷新频率由 <code>--map-refresh</code>（auto/always/files/manual）控制。</p>
+            <p><strong>如何选文件进 map 的具体排序算法</strong>官方 <code>docs/repomap.md</code> 有说明。</p>
+            <p>本站未逐行核验，大仓库实际开销官方也未给数字。</p>
+      </div>
+      <div class="panel is-slim">
+        <h2>Git 集成是设计的一部分，不是副作用</h2>
+        <p><strong>官方原文</strong>：&quot;Aider automatically commits changes with sensible commit messages. Use familiar git tools to easily diff, manage and undo AI changes.&quot;</p>
+            <p><strong>这一点值得单独强调</strong>：很多工具需要用户自己管理 git。</p>
+            <p>Aider 把「自动提交 + 用 git 撤销」当作核心工作流。</p>
+            <p><strong>这带来一个必须知道的前提</strong>：AI 的改动会<strong>直接进入提交历史</strong>。</p>
+            <p>如果你不熟悉 git 的撤销流程（<code>git reset</code> / <code>git revert</code>），建议先在小仓库试用。</p>
+      </div>
+      <div class="panel is-slim">
+        <h2>官方自我评价的一个有趣指标</h2>
+        <p><strong>官方原文</strong>：&quot;Percentage of the new code in Aider&#39;s last release written by Aider itself&quot;</p>
+            <p><strong>官方徽章原文</strong>：&quot;🔄 Singularity — 88%&quot;</p>
+            <p>即「上个版本的新代码里 88% 由 <strong>Aider</strong> 自己写」。</p>
+            <p>这是官方自述的自举程度，可作为参考但不必过度解读。</p>
+      </div>
+      <div class="panel is-slim">
+        <h2>权限定级说明</h2>
+        <p><code>confidence: partial</code> 的原因：</p>
+            <ul><li>✅ 已核验：仓库、许可（Apache-2.0）、最新版本与日期、维护状态、star、PyPI 安装量、README 全部能力描述</li><li>✅ A6.2 本轮新核：文件范围与忽略规则、自动提交/确认机制（<code>--auto-commits</code>/<code>--yes-always</code>）、lint/测试命令、上下文摘要压缩（<code>--max-chat-history-tokens</code>）、<strong>官方无 MCP 支持</strong></li><li>⚠️ 官方未给数字：大仓库 Repo Map 的实际耗时与 token 开销</li></ul>
+            <p><strong>维护状态的不确定性来自&quot;未来会不会更新&quot;</strong>——这本身就是选型风险。</p>
+      </div>
 
             <div class="panel is-slim">
         <h2><span data-zh>相关条目</span><span data-en>Related entries</span></h2>
