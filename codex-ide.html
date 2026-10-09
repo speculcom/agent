@@ -15,7 +15,7 @@
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%238b7cf8'/%3E%3Cstop offset='1' stop-color='%2322d3c5'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='48' height='48' rx='12' fill='%2305080f'/%3E%3Cpath d='M14 32 L24 12 L34 32' fill='none' stroke='url(%23g)' stroke-width='2.4' stroke-linejoin='round'/%3E%3Ccircle cx='24' cy='27' r='2.4' fill='%2322d3c5'/%3E%3C/svg%3E" />
   <link rel="stylesheet" href="brand.css" />
   <link rel="stylesheet" href="site.css" />
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Codex IDE 扩展","applicationCategory":"DeveloperApplication","url":"https://developers.openai.com/codex/ide","sameAs":"https://developers.openai.com/codex/ide","description":"不是独立 IDE，是装进 VS Code / Cursor / Windsurf 的扩展——通过 app server 与 CLI 共享同一套会话机制。","dateModified":"2026-09-29"}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Codex IDE 扩展","applicationCategory":"DeveloperApplication","url":"https://developers.openai.com/codex/ide","sameAs":"https://developers.openai.com/codex/ide","description":"不是独立 IDE，是装进 VS Code / Cursor / Windsurf 的扩展——通过 app server 与 CLI 共享同一套会话机制。","dateModified":"2026-10-08"}</script>
 </head>
 <body class="brand-ambient">
   <a class="t-skip" href="#main"><span data-zh>跳到主要内容</span><span data-en>Skip to main content</span></a>
@@ -39,8 +39,34 @@
           <button class="icon-btn" id="langBtn" type="button" aria-label="Switch language" title="Switch language">EN</button>
         </span>
       </nav>
+      <!-- B6（2026-10-09）：与共享 shell 同步加的移动端导航入口。
+           ⚠ 本文件是 agent 站**自己的** shell 副本（它多一层分区切换），
+             所以每次改共享 shell 的骨架，这里也要跟一次 —— 这是双份实现固有的代价。
+             样式与行为都在共享 brand.css / brand.js 里，这里只出标记。 -->
+      <button class="nav-burger" type="button" aria-label="打开菜单" aria-expanded="false" aria-controls="navDrawer">
+        <i></i><i></i><i></i>
+      </button>
     </div>
   </header>
+  <div class="nav-scrim"></div>
+  <aside class="nav-drawer" id="navDrawer" aria-hidden="true" aria-label="站点导航">
+    <div class="nav-drawer-h">
+      <span class="brand-name"><span data-zh>投机取巧</span><span data-en>Speculative Speculation</span></span>
+      <button class="nav-dclose" type="button" aria-label="关闭">×</button>
+    </div>
+    <nav class="nav-drawer-list">
+      <a href="https://specul.com/"><span><span data-zh>首页</span><span data-en>Home</span></span><span class="ar" aria-hidden="true">→</span></a>
+      <a href="https://learn.specul.com/"><span><span data-zh>学 AI</span><span data-en>Learn</span></span><span class="ar" aria-hidden="true">→</span></a>
+      <a href="https://agent.specul.com/" aria-current="page"><span><span data-zh>Agent</span><span data-en>Agent</span></span><span class="ar" aria-hidden="true">→</span></a>
+      <a href="https://models.specul.com/"><span><span data-zh>本地模型</span><span data-en>Models</span></span><span class="ar" aria-hidden="true">→</span></a>
+      <a href="https://vg.specul.com/"><span><span data-zh>AI 做游戏</span><span data-en>Vibe Gaming</span></span><span class="ar" aria-hidden="true">→</span></a>
+      <a href="https://nav.specul.com/"><span><span data-zh>导航</span><span data-en>Directory</span></span><span class="ar" aria-hidden="true">→</span></a>
+    </nav>
+    <div class="nav-drawer-foot">
+      <p><span data-zh>6 个站，各管一件事</span><span data-en>Six sites, one job each</span></p>
+      <nav><a href="https://specul.com/legal.html"><span data-zh>法律条款</span><span data-en>Legal terms</span></a></nav>
+    </div>
+  </aside>
   <main id="main">
     <div class="container detail">
       <nav class="crumbs" aria-label="面包屑">
@@ -65,10 +91,10 @@
         <span class="tag on">本地</span>
         <span class="badge accent">partial</span>
         <span class="badge">lifecycle: active</span>
-        <span class="badge"><span data-zh>核验</span><span data-en>Checked</span> 2026-09-29</span>
+        <span class="badge"><span data-zh>核验</span><span data-en>Checked</span> 2026-10-08</span>
       </div>
 
-            <p class="panel-lead"><span data-zh><strong>Not a standalone IDE but an extension for VS Code / Cursor / Windsurf</strong> — sharing the same session mechanism with the CLI through the app server.</span><span data-en><strong>Not a standalone IDE but an extension for VS Code / Cursor / Windsurf</strong> — sharing the same session mechanism with the CLI through the app server.</span></p>
+            <p class="panel-lead"><span data-zh><strong>不是独立 IDE，是装进 VS Code / Cursor / Windsurf 的扩展</strong>——通过 app server 与 CLI 共享同一套会话机制。</span><span data-en><strong>Not a standalone IDE but an extension for VS Code / Cursor / Windsurf</strong> — sharing the same session mechanism with the CLI through the app server.</span></p>
 
             <div class="panel is-slim">
         <h2><span data-zh>适合与不适合</span><span data-en>When to use it, when not to</span></h2>
@@ -77,8 +103,8 @@
 需要 IDE 与 CLI 共享会话的人（app server 架构）。</p>
         <p class="warn-p"><strong>不适合</strong>需要独立编辑器的人——
 本形态必须依附已有编辑器，无法单独使用。
-也不适合要求「权限行为在 IDE 与 CLI 严格一致」的场景，
-本次未核验两者是否一致。</p></span><span data-en>        <p>People already in VS Code / Cursor / Windsurf who want Codex in the same environment without switching tools.
+另需注意：本地任务依赖编辑器进程常驻，
+要「关机后继续跑」须改用云委派（Codex Cloud）。</p></span><span data-en>        <p>People already in VS Code / Cursor / Windsurf who want Codex in the same environment without switching tools.
 People who need IDE and CLI to share sessions (the app server architecture).</p>
         <p class="warn-p"><strong>Not a fit for</strong> people who need a standalone editor — this form must attach to an existing editor and cannot be used alone.
 Also not a fit where permission behaviour must be strictly identical between IDE and CLI; this round did not verify consistency.</p></span>
@@ -92,7 +118,7 @@ Also not a fit where permission behaviour must be strictly identical between IDE
       <dl class="axes">
         <div class="axis">
           <dt><span data-zh>模型与开放条件</span><span data-en>Model & openness</span></dt>
-          <dd>与 CLI 形态相同：OpenAI 自家模型。 <strong>具体模型清单与 IDE 形态下的映射本次未核验。</strong></dd>
+          <dd>与 CLI 形态同一套 agent 与配置（官方 IDE 页原文： &quot;It uses the same agent as the Codex CLI and shares the same configuration&quot;）。官方定价页列出可用模型：GPT-5.5、GPT-5.4、 GPT-5.4 mini，Pro 另有 GPT-5.3-Codex-Spark（research preview）。 聊天输入框下有 <strong>模型切换器</strong>，并可调 reasoning effort （low / medium / high）。<strong>默认模型在共享 config.toml 里设</strong> （<code>model = &quot;...&quot;</code>），IDE 与 CLI 共用，故自定义 provider 走同一套 <code>model_providers</code> 配置（见 CLI / SDK 档案）。 <strong>BYOK 可用</strong>：官方支持用 API key 登录；JetBrains 集成还可走 JetBrains AI 订阅；API key 路径下模型可用范围跟随该 key 的 API 模型。</dd>
         </div>
         <div class="axis">
           <dt><span data-zh>运行位置</span><span data-en>Where it runs</span></dt>
@@ -100,23 +126,23 @@ Also not a fit where permission behaviour must be strictly identical between IDE
         </div>
         <div class="axis">
           <dt><span data-zh>本地文件</span><span data-en>Local files</span></dt>
-          <dd>通过宿主编辑器访问工作区文件。 <strong>索引与上下文构建策略本次未核验</strong>—— 需查 developers.openai.com/codex/ide，该站在本环境 curl 返回 403。</dd>
+          <dd>通过宿主编辑器访问工作区文件；上下文来自打开的文件、选区与 <code>@file</code> 引用，另有 <strong>Auto Context</strong>（自动带入最近文件与 IDE 上下文， 见 <code>/auto-context</code>）。官方口径：工作区 = 当前目录加临时目录 （如 <code>/tmp</code>），写入默认限工作区。Windows 上可原生运行（走 Windows 沙箱）或改用 WSL2（设置项 <code>chatgpt.runCodexInWindowsSubsystemForLinux</code>）。 官方 IDE 文档<strong>未描述独立语义索引</strong>——本地文件检索由同一 agent 的工具完成（已查官方 features 与 settings 两页）。</dd>
         </div>
         <div class="axis">
           <dt><span data-zh>关机后的任务</span><span data-en>Tasks after shutdown</span></dt>
-          <dd>依赖宿主编辑器进程，编辑器关闭即停止。 <strong>是否有云端任务形态本次未核验。</strong></dd>
+          <dd><strong>有云端形态，官方称可从 IDE 委派任务到 Codex Cloud。</strong> IDE 页原文：&quot;delegate tasks to Codex Cloud&quot;；功能页原文 &quot;Offload longer jobs to a cloud environment&quot;，可用 <code>/cloud</code> 与 <code>/local</code> 切换。云任务在 <strong>OpenAI 托管的容器</strong>里后台运行 （含并行），因此<strong>本地编辑器关闭后云任务仍继续</strong>； <strong>本地任务依赖宿主编辑器进程，关闭即停止</strong>。 云任务与本地消息共享套餐用量（官方定价页称共用 5 小时窗口）。</dd>
         </div>
         <div class="axis">
           <dt><span data-zh>工具与扩展</span><span data-en>Tools & extensions</span></dt>
-          <dd><strong>具体工具集本次未核验。</strong> 可参考 <a href="/codex-cli.html">CLI 形态</a> 的架构信息： app server 架构意味着 IDE 扩展与 CLI 共享同一后端。</dd>
+          <dd><strong>内置第一方工具与命令已核验</strong>：网页搜索（官方称默认启用， 走 OpenAI 维护的搜索缓存，可配 <code>web_search = &quot;live&quot; | &quot;disabled&quot;</code>）、 图像生成（<code>$imagegen</code>，模型 <code>gpt-image-2</code>，计入用量且更快耗尽额度）、 代码审查（<code>/review</code>）、编辑器上下文（<code>@file</code>、选区、拖拽图片）， 以及命令面板命令（<code>chatgpt.newChat</code> / <code>addToThread</code> / <code>addFileToThread</code> / <code>implementTodo</code>）与 TODO CodeLens。 <strong>MCP 官方明确支持 IDE 扩展</strong>：原文 &quot;Codex supports MCP servers in both the CLI and the IDE extension&quot;， 支持 STDIO 与 Streamable HTTP，CLI 与 IDE 共享 <code>config.toml</code> 里的 <code>[mcp_servers.&lt;name&gt;]</code>（含 <code>enabled_tools</code> 与逐 server、逐 tool 的 <code>approval_mode</code>）。</dd>
         </div>
         <div class="axis">
           <dt><span data-zh>上下文与记忆</span><span data-en>Context & memory</span></dt>
-          <dd><strong>app server 架构是本工具的关键设计</strong>—— 线程可启动、续接与恢复， IDE 扩展与 CLI 通过 app server 共享同一套会话机制。 <strong>具体上下文窗口与压缩策略本次未核验。</strong></dd>
+          <dd><strong>app server 架构仍是关键设计</strong>——线程可启动、续接与恢复， IDE 与 CLI 共享同一套会话机制与同一份配置。 官方另补三点：从本地会话发起云任务会记住会话上下文 （云任务转回本地续聊也保留上下文）；<code>/status</code> 显示 thread ID、 上下文用量与速率限额；<code>/goal</code> 可设持久目标。 上下文窗口的具体数值与自动压缩策略，官方未在 IDE 文档单列 （压缩在 CLI / SDK 侧经 <code>compact_prompt</code> 等配置项， 已查官方 features 与 slash-commands 两页）。</dd>
         </div>
         <div class="axis">
           <dt><span data-zh>权限与限制</span><span data-en>Permissions & limits</span></dt>
-          <dd><strong>审批与沙箱的具体形态本次未核验。</strong> CLI 形态已确认「沙箱与审批边界跟随运行环境」， 但 IDE 扩展形态是否一致，<strong>不能假设，需单独核验</strong>。</dd>
+          <dd><strong>IDE 与 CLI 共用同一套沙箱与审批——官方 settings 页明说 &quot;The Codex IDE extension uses the Codex CLI&quot;，审批与沙箱在共享 <code>~/.codex/config.toml</code> 里配置。</strong> UI 侧有三档审批模式： <code>Chat</code> / <code>Agent</code> / <code>Agent (Full Access)</code>；默认 <code>Agent</code>： 在工作目录内自动读写并执行命令，<strong>工作目录外或联网仍需审批</strong>； 只有 <code>Full Access</code> 才免审批联网。官方安全页口径（含 IDE extension）：默认 <strong>无网络 + 写入限当前工作区</strong>， <code>.git</code> / <code>.agents</code> / <code>.codex</code> 递归只读；审批与沙箱键同 CLI （<code>approval_policy</code> / <code>sandbox_mode</code> / <code>[sandbox_workspace_write] network_access</code> 与 <code>network_proxy</code> 域名清单）；Windows 原生沙箱默认 <code>elevated</code>。</dd>
         </div>
         <div class="axis">
           <dt><span data-zh>适合什么任务</span><span data-en>Best for</span></dt>
@@ -130,7 +156,7 @@ Also not a fit where permission behaviour must be strictly identical between IDE
 
           <li><span data-zh>把它当成独立 IDE，其实质是装进已有编辑器的扩展</span><span data-en>Treating it as a standalone IDE — it is an extension inside an existing editor</span></li>
           <li><span data-zh>以为 IDE 扩展与 CLI 是两套独立系统，app server 架构让它们共享会话</span><span data-en>Assuming the IDE extension and the CLI are separate systems — the app server architecture lets them share sessions</span></li>
-          <li><span data-zh>套用 CLI 的权限行为到 IDE 扩展，本次未核验两者是否一致</span><span data-en>Carrying CLI permission behaviour over to the IDE extension; this round did not verify that they match</span></li>
+          <li><span data-zh>以为 IDE 扩展的权限体系与 CLI 不同——两者共用 config.toml，沙箱与审批一致</span><span data-en>Carrying CLI permission behaviour over to the IDE extension; this round did not verify that they match</span></li>
         </ul>
       </div>
 
@@ -140,8 +166,8 @@ Also not a fit where permission behaviour must be strictly identical between IDE
         <table class="src">
           <tbody>
             <tr><th class="w-28"><span data-zh>月度入口</span><span data-en>Monthly entry</span></th><td><span data-zh>随 ChatGPT 套餐，档位见定价页</span><span data-en>随 ChatGPT 套餐，档位见定价页</span></td></tr>
-            <tr><th class="w-28"><span data-zh>年付</span><span data-en>Annual</span></th><td><span data-zh>未核验年付报价</span><span data-en>未核验年付报价</span></td></tr>
-            <tr><th class="w-28"><span data-zh>额度说明</span><span data-en>Quota note</span></th><td><span data-zh>与 [CLI 形态](../cli/products/codex-cli.md) 共享同一授权： 随 ChatGPT 订阅。 **API 计费与订阅不是同一额度。** 官方 IDE 文档站在本次采集环境对 curl 返回 403， 定价与额度细节本次未核验，记为未知。</span><span data-en>与 [CLI 形态](../cli/products/codex-cli.md) 共享同一授权： 随 ChatGPT 订阅。 **API 计费与订阅不是同一额度。** 官方 IDE 文档站在本次采集环境对 curl 返回 403， 定价与额度细节本次未核验，记为未知。</span></td></tr>
+            <tr><th class="w-28"><span data-zh>年付</span><span data-en>Annual</span></th><td><span data-zh>未收录年付报价</span><span data-en>未收录年付报价</span></td></tr>
+            <tr><th class="w-28"><span data-zh>额度说明</span><span data-en>Quota note</span></th><td><span data-zh>与 [CLI 形态](./codex-cli.md) 共享同一授权： 随 ChatGPT 订阅。 **API 计费与订阅不是同一额度。** 官方 IDE 文档站对 curl 返回 403（2026-10-08：改用 WebFetch 取到定价页， 模型档位已核）；额度细则未逐档录入，以官方定价页为准。</span><span data-en>与 [CLI 形态](./codex-cli.md) 共享同一授权： 随 ChatGPT 订阅。 **API 计费与订阅不是同一额度。** 官方 IDE 文档站对 curl 返回 403（2026-10-08：改用 WebFetch 取到定价页， 模型档位已核）；额度细则未逐档录入，以官方定价页为准。</span></td></tr>
           </tbody>
         </table>
         <p class="fine mt-3"><span data-zh>不同币种不做折算。优惠、地区、税费与登录后报价可能变化，购买前请到官方页面确认。</span><span data-en>No currency conversion. Discounts, regions, tax and post-login pricing can change — confirm on the official page before buying.</span></p>
@@ -151,24 +177,32 @@ Also not a fit where permission behaviour must be strictly identical between IDE
             <div class="panel is-slim">
         <h2><span data-zh>未知项清单</span><span data-en>Known unknowns</span></h2>
         <ul>
-          <li>IDE 形态的完整工具集</li>
-          <li>索引与上下文构建策略（部分由宿主编辑器决定）</li>
-          <li>审批与沙箱在 IDE 形态下的具体行为</li>
-          <li>上下文窗口与压缩策略</li>
-          <li>是否支持自带 provider</li>
+          <li>沙箱在 Windows / macOS / Linux 的逐平台实现差异</li>
+          <li>上下文窗口的具体数值与自动压缩触发阈值</li>
+          <li>app server 的并发写与跨机迁移语义</li>
+          <li>换用非 OpenAI provider 后工具调用的质量对齐度</li>
         </ul>
       </div>
 
 
       <div class="panel">
         <h2><span data-zh>证据来源</span><span data-en>Evidence sources</span></h2>
-        <p class="t-sm"><span data-zh>判断可回到以下一手源复核。本站核验日</span><span data-en>Every judgement can be rechecked against the primary sources below. Verified on</span> 2026-09-29，<span data-zh>内容更新日</span><span data-en>content updated on</span> 2026-09-29。</p>
+        <p class="t-sm"><span data-zh>判断可回到以下一手源复核。本站核验日</span><span data-en>Every judgement can be rechecked against the primary sources below. Verified on</span> 2026-10-08，<span data-zh>内容更新日</span><span data-en>content updated on</span> 2026-10-08。</p>
         <table class="src">
           <thead><tr><th class="w-20"><span data-zh>类型</span><span data-en>Type</span></th><th class="w-52"><span data-zh>名称</span><span data-en>Name</span></th><th><span data-zh>链接</span><span data-en>Link</span></th></tr></thead>
           <tbody>
-            <tr><td>docs</td><td>OpenAI · Codex IDE 文档</td><td><a href="https://developers.openai.com/codex/ide" target="_blank" rel="noopener">https://developers.openai.com/codex/ide</a></td></tr>
+            <tr><td>docs</td><td>OpenAI · Codex IDE 文档（扩展形态、云委派总览）</td><td><a href="https://developers.openai.com/codex/ide" target="_blank" rel="noopener">https://developers.openai.com/codex/ide</a></td></tr>
+            <tr><td>docs</td><td>OpenAI · Codex IDE Features（模型切换、审批模式、云委派、web search、图像生成）</td><td><a href="https://developers.openai.com/codex/ide/features" target="_blank" rel="noopener">https://developers.openai.com/codex/ide/features</a></td></tr>
+            <tr><td>docs</td><td>OpenAI · Codex IDE Settings（共享 config.toml、Windows/WSL 设置）</td><td><a href="https://developers.openai.com/codex/ide/settings" target="_blank" rel="noopener">https://developers.openai.com/codex/ide/settings</a></td></tr>
+            <tr><td>docs</td><td>OpenAI · Codex IDE Slash commands（/cloud /local /status /goal）</td><td><a href="https://developers.openai.com/codex/ide/slash-commands" target="_blank" rel="noopener">https://developers.openai.com/codex/ide/slash-commands</a></td></tr>
+            <tr><td>docs</td><td>OpenAI · Codex Cloud（云任务后台运行、@codex、PR）</td><td><a href="https://developers.openai.com/codex/cloud" target="_blank" rel="noopener">https://developers.openai.com/codex/cloud</a></td></tr>
+            <tr><td>docs</td><td>OpenAI · Codex Cloud environments（托管容器、setup/agent 两阶段）</td><td><a href="https://developers.openai.com/codex/cloud/environments" target="_blank" rel="noopener">https://developers.openai.com/codex/cloud/environments</a></td></tr>
+            <tr><td>docs</td><td>OpenAI · Codex Agent approvals &amp; security（沙箱默认、审批策略、受保护路径）</td><td><a href="https://developers.openai.com/codex/agent-approvals-security" target="_blank" rel="noopener">https://developers.openai.com/codex/agent-approvals-security</a></td></tr>
+            <tr><td>docs</td><td>OpenAI · Codex MCP（CLI 与 IDE extension 支持 STDIO/Streamable HTTP）</td><td><a href="https://developers.openai.com/codex/mcp" target="_blank" rel="noopener">https://developers.openai.com/codex/mcp</a></td></tr>
+            <tr><td>docs</td><td>OpenAI · Codex Config basics（默认模型、approval_policy、sandbox_mode）</td><td><a href="https://developers.openai.com/codex/config-basic" target="_blank" rel="noopener">https://developers.openai.com/codex/config-basic</a></td></tr>
+            <tr><td>pricing</td><td>OpenAI · Codex Pricing（可用模型与套餐）</td><td><a href="https://developers.openai.com/codex/pricing" target="_blank" rel="noopener">https://developers.openai.com/codex/pricing</a></td></tr>
             <tr><td>repo</td><td>OpenAI · Codex 仓库 README（含 IDE 安装说明）</td><td><a href="https://github.com/openai/codex" target="_blank" rel="noopener">https://github.com/openai/codex</a></td></tr>
-            <tr><td>changelog</td><td>OpenAI · Codex CLI Releases（rust-v0.158.0 @ 2026-09-28）</td><td><a href="https://github.com/openai/codex/releases" target="_blank" rel="noopener">https://github.com/openai/codex/releases</a></td></tr>
+            <tr><td>changelog</td><td>OpenAI · Codex CLI Releases</td><td><a href="https://github.com/openai/codex/releases" target="_blank" rel="noopener">https://github.com/openai/codex/releases</a></td></tr>
           </tbody>
         </table>
       </div>
@@ -189,6 +223,7 @@ Also not a fit where permission behaviour must be strictly identical between IDE
           <li><span class="rel-t"><a href="./claude-code.html">Claude Code</a></span><span class="rel-n">同为「扩展 + CLI」双形态架构</span></li>
           <li><span class="rel-t"><a href="./zed.html">Zed</a></span><span class="rel-n">同赛道的另一端：独立编辑器</span></li>
           <li><span class="rel-t"><a href="./cline.html">Cline</a></span><span class="rel-n">三形态全覆盖的另一实现</span></li>
+          <li><span class="rel-t"><a href="/harness/codex-sdk.html"><span data-zh>Codex SDK</span><span data-en>Codex SDK</span></a></span><span class="rel-n"><span data-zh>另一层 · 自己搭的底座</span><span data-en>Other layer · Runtimes & SDKs</span></span></li>
         </ul>
       </div>
 
