@@ -15,7 +15,7 @@
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%238b7cf8'/%3E%3Cstop offset='1' stop-color='%2322d3c5'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='48' height='48' rx='12' fill='%2305080f'/%3E%3Cpath d='M14 32 L24 12 L34 32' fill='none' stroke='url(%23g)' stroke-width='2.4' stroke-linejoin='round'/%3E%3Ccircle cx='24' cy='27' r='2.4' fill='%2322d3c5'/%3E%3C/svg%3E" />
   <link rel="stylesheet" href="brand.css" />
   <link rel="stylesheet" href="site.css" />
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Zed","applicationCategory":"DeveloperApplication","url":"https://zed.dev","sameAs":"https://zed.dev","description":"不是「又一个 AI 编码工具」，而是三种 agent path 的编排层 —— 能在同一个编辑器里用 Zed 原生 Agent，也能挂 Claude / Codex / OpenCode / Copilot / Cursor。","dateModified":"2026-09-29","offers":{"@type":"Offer","price":"10","priceCurrency":"USD"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Zed","applicationCategory":"DeveloperApplication","url":"https://zed.dev","sameAs":"https://zed.dev","description":"不是「又一个 AI 编码工具」，而是三种 agent path 的编排层 —— 能在同一个编辑器里用 Zed 原生 Agent，也能挂 Claude / Codex / OpenCode / Copilot / Cursor。","dateModified":"2026-10-08","offers":{"@type":"Offer","price":"10","priceCurrency":"USD"}}</script>
 </head>
 <body class="brand-ambient">
   <a class="t-skip" href="#main"><span data-zh>跳到主要内容</span><span data-en>Skip to main content</span></a>
@@ -39,8 +39,34 @@
           <button class="icon-btn" id="langBtn" type="button" aria-label="Switch language" title="Switch language">EN</button>
         </span>
       </nav>
+      <!-- B6（2026-10-09）：与共享 shell 同步加的移动端导航入口。
+           ⚠ 本文件是 agent 站**自己的** shell 副本（它多一层分区切换），
+             所以每次改共享 shell 的骨架，这里也要跟一次 —— 这是双份实现固有的代价。
+             样式与行为都在共享 brand.css / brand.js 里，这里只出标记。 -->
+      <button class="nav-burger" type="button" aria-label="打开菜单" aria-expanded="false" aria-controls="navDrawer">
+        <i></i><i></i><i></i>
+      </button>
     </div>
   </header>
+  <div class="nav-scrim"></div>
+  <aside class="nav-drawer" id="navDrawer" aria-hidden="true" aria-label="站点导航">
+    <div class="nav-drawer-h">
+      <span class="brand-name"><span data-zh>投机取巧</span><span data-en>Speculative Speculation</span></span>
+      <button class="nav-dclose" type="button" aria-label="关闭">×</button>
+    </div>
+    <nav class="nav-drawer-list">
+      <a href="https://specul.com/"><span><span data-zh>首页</span><span data-en>Home</span></span><span class="ar" aria-hidden="true">→</span></a>
+      <a href="https://learn.specul.com/"><span><span data-zh>学 AI</span><span data-en>Learn</span></span><span class="ar" aria-hidden="true">→</span></a>
+      <a href="https://agent.specul.com/" aria-current="page"><span><span data-zh>Agent</span><span data-en>Agent</span></span><span class="ar" aria-hidden="true">→</span></a>
+      <a href="https://models.specul.com/"><span><span data-zh>本地模型</span><span data-en>Models</span></span><span class="ar" aria-hidden="true">→</span></a>
+      <a href="https://vg.specul.com/"><span><span data-zh>AI 做游戏</span><span data-en>Vibe Gaming</span></span><span class="ar" aria-hidden="true">→</span></a>
+      <a href="https://nav.specul.com/"><span><span data-zh>导航</span><span data-en>Directory</span></span><span class="ar" aria-hidden="true">→</span></a>
+    </nav>
+    <div class="nav-drawer-foot">
+      <p><span data-zh>6 个站，各管一件事</span><span data-en>Six sites, one job each</span></p>
+      <nav><a href="https://specul.com/legal.html"><span data-zh>法律条款</span><span data-en>Legal terms</span></a></nav>
+    </div>
+  </aside>
   <main id="main">
     <div class="container detail">
       <nav class="crumbs" aria-label="面包屑">
@@ -66,10 +92,10 @@
         <span class="tag on">协作</span>
         <span class="badge accent">partial</span>
         <span class="badge">lifecycle: active</span>
-        <span class="badge"><span data-zh>核验</span><span data-en>Checked</span> 2026-09-29</span>
+        <span class="badge"><span data-zh>核验</span><span data-en>Checked</span> 2026-10-08</span>
       </div>
 
-            <p class="panel-lead"><span data-zh><strong>Not &quot;yet another AI coding tool&quot; but an orchestration layer for three agent paths</strong> — use Zed&#39;s native agent in the same editor, or attach Claude / Codex / OpenCode / Copilot / Cursor.</span><span data-en><strong>Not &quot;yet another AI coding tool&quot; but an orchestration layer for three agent paths</strong> — use Zed&#39;s native agent in the same editor, or attach Claude / Codex / OpenCode / Copilot / Cursor.</span></p>
+            <p class="panel-lead"><span data-zh><strong>不是「又一个 AI 编码工具」，而是三种 agent path 的编排层</strong> —— 能在同一个编辑器里用 Zed 原生 Agent，也能挂 Claude / Codex / OpenCode / Copilot / Cursor。</span><span data-en><strong>Not &quot;yet another AI coding tool&quot; but an orchestration layer for three agent paths</strong> — use Zed&#39;s native agent in the same editor, or attach Claude / Codex / OpenCode / Copilot / Cursor.</span></p>
 
             <div class="panel is-slim">
         <h2><span data-zh>适合与不适合</span><span data-en>When to use it, when not to</span></h2>
@@ -99,11 +125,11 @@ Also not a fit if you need hands-on measurements of large-repository behaviour �
         </div>
         <div class="axis">
           <dt><span data-zh>本地文件</span><span data-en>Local files</span></dt>
-          <dd>直接读写工作区，<strong>基于 Tree-sitter 做语法解析</strong>（其核心优势之一）， 为符号级编辑提供基础。 文档站有 <code>edit-prediction.md</code>（编辑预测），且<strong>编辑预测有独立的 provider 配置</strong> （与 LLM provider 分开设置）。 <strong>索引算法与大仓库表现本次未核验，记为未知。</strong></dd>
+          <dd>直接读写工作区，<strong>支持多根目录（multi-root）</strong>，也可经 SSH / WSL 打开远端文件夹（remote development）。文件树扫描可用 <code>file_scan_exclusions</code> 与 <code>project_panel.hide_gitignore</code> 控制； 符号能力来自 <strong>Tree-sitter 解析与语言服务器（LSP）</strong>（编辑预测另有独立 provider）。 Agent 内置检索是 grep（正则）、find_path（glob）、list_directory、 read_file；<strong>官方未见代码库向量化语义索引的描述</strong> （已查 Tools 与 Project Panel 页）。<strong>大仓库官方有明说</strong>： 一次打开 &gt;100,000 文件的超大目录表现不佳，建议只开具体项目或子目录 （remote development 页）。</dd>
         </div>
         <div class="axis">
           <dt><span data-zh>关机后的任务</span><span data-en>Tasks after shutdown</span></dt>
-          <dd><strong>官方明确区分三类 agent path</strong>，其中 External Agents 与 Terminal Threads 依赖外部进程（ACP agent 进程 / 原生 CLI）， 因此<strong>其在线条件取决于那个外部工具，而非 Zed 本身</strong>。 Zed 不提供云端后台执行。<strong>具体行为本次未核验，记为未知。</strong></dd>
+          <dd>本地桌面应用，agent 线程在本地（或你自建的远端 SSH / WSL 主机） 进程内运行，<strong>绑定客户端在线</strong>：官方称线程运行时 Zed 会请求系统 不要休眠以保住长回合（<code>agent.prevent_idle_sleep</code>）。 remote development 把语言服务器、任务与终端放到<strong>你自己的远端服务器</strong>， 官方并注明 <strong>v0.157 起不再经 Zed 服务器中转</strong>。 <strong>官方未见「关机后续跑 / 厂商托管后台任务」类能力</strong> （已查 Agent Panel 与 Remote Development 页）。</dd>
         </div>
         <div class="axis">
           <dt><span data-zh>工具与扩展</span><span data-en>Tools & extensions</span></dt>
@@ -111,11 +137,11 @@ Also not a fit if you need hands-on measurements of large-repository behaviour �
         </div>
         <div class="axis">
           <dt><span data-zh>上下文与记忆</span><span data-en>Context & memory</span></dt>
-          <dd><strong>Zed Agent 的上下文由 instructions + skills + MCP 组合而成</strong> （见 agents.md 的 Zed Agent 行）。 支持并行 agent（<code>parallel-agents.md</code>），线程类型分三类。 <strong>上下文窗口大小与压缩策略本次未核验，记为未知。</strong></dd>
+          <dd><strong>Zed Agent 的上下文由 instructions + skills + MCP 组合而成</strong> （见 agents.md 的 Zed Agent 行）。<strong>压缩策略已核到</strong>：官方称 线程接近阈值时自动 compact（<code>agent.auto_compact</code> 默认 90% 触发）， 把较早消息摘要后替换进模型上下文，线程显示 &quot;Context Compacted&quot; 可展开； 也可 <code>/compact</code> 手动压缩，阈值可配（百分比 / 正 token / 负剩余 token）。 模型窗口太小（&lt;80000 tokens）时自动压缩失效，官方提示用 New From Summary 新开线程。@-mention 可加文件、目录、符号、历史线程、 skills、diagnostics、分支 diff 与 URL。支持并行多线程（各自上下文窗口） 与 Checkpoints 逐消息回滚。</dd>
         </div>
         <div class="axis">
           <dt><span data-zh>权限与限制</span><span data-en>Permissions & limits</span></dt>
-          <dd><strong>权限边界跟随所选的 agent path</strong>—— Zed Agent 用 Zed 配置的 provider 与原生工具； External Agents 用 ACP agent 进程<strong>自己的 auth/config</strong>； Terminal Threads 用<strong>原生 CLI 的 auth/config</strong>。 也就是说选了外部 agent，权限就由那个工具决定。 <strong>沙箱与审批的具体形态本次未核验，记为未知。</strong></dd>
+          <dd><strong>工具权限设置已核到</strong>（官方 <code>tool-permissions</code> 页，v0.224.0+ 由 <code>agent.tool_permissions.default</code> 控制）。三档 <code>&quot;allow&quot;</code> / <code>&quot;deny&quot;</code> / <code>&quot;confirm&quot;</code>（default 默认 confirm），可按工具配正则模式 <code>always_allow</code> / <code>always_deny</code> / <code>always_confirm</code>；优先级 always_deny <strong> always_confirm &gt; always_allow &gt; 工具 default &gt; 全局 default。 另有硬编码安全规则（<code>rm -rf /</code>、<code>rm -rf ~</code> 等）<strong>不可覆盖</strong>。 受管控工具含 terminal、edit_file、write_file、delete_path、move_path、 copy_path、create_directory、fetch、search_web、skill 与 MCP （<code>mcp:</strong>server<strong>:</strong>tool&gt;</code>）。<strong>另有 OS 级沙箱</strong>（<code>sandboxing</code> 页）： 仅 Zed Agent，覆盖 <code>terminal</code> 与 <code>fetch</code>，默认限制项目外写入与出网。 <strong>权限边界跟随 agent path</strong>（agents.md）——Zed Agent 用 Zed 配置的 provider 与原生工具；External Agents 用 ACP agent 进程自己的 auth/config； Terminal Threads 用原生 CLI 的 auth/config。 隐私：官方称 Zed 不存 prompt 与代码上下文，遥测可关。</dd>
         </div>
         <div class="axis">
           <dt><span data-zh>适合什么任务</span><span data-en>Best for</span></dt>
@@ -151,18 +177,14 @@ Also not a fit if you need hands-on measurements of large-repository behaviour �
             <div class="panel is-slim">
         <h2><span data-zh>未知项清单</span><span data-en>Known unknowns</span></h2>
         <ul>
-          <li>索引算法与大仓库表现</li>
-          <li>上下文窗口与压缩策略</li>
-          <li>沙箱与审批的具体形态</li>
-          <li>编辑器定价与模型额度的关系</li>
-          <li>客户端关闭后各 agent path 的行为</li>
+          <li>三类 agent path 在「客户端关闭后」的实际行为 （Zed Agent 已知绑定客户端在线；External / Terminal 取决于所挂 agent）</li>
         </ul>
       </div>
 
 
       <div class="panel">
         <h2><span data-zh>证据来源</span><span data-en>Evidence sources</span></h2>
-        <p class="t-sm"><span data-zh>判断可回到以下一手源复核。本站核验日</span><span data-en>Every judgement can be rechecked against the primary sources below. Verified on</span> 2026-09-29，<span data-zh>内容更新日</span><span data-en>content updated on</span> 2026-09-29。</p>
+        <p class="t-sm"><span data-zh>判断可回到以下一手源复核。本站核验日</span><span data-en>Every judgement can be rechecked against the primary sources below. Verified on</span> 2026-10-08，<span data-zh>内容更新日</span><span data-en>content updated on</span> 2026-10-08。</p>
         <table class="src">
           <thead><tr><th class="w-20"><span data-zh>类型</span><span data-en>Type</span></th><th class="w-52"><span data-zh>名称</span><span data-en>Name</span></th><th><span data-zh>链接</span><span data-en>Link</span></th></tr></thead>
           <tbody>
@@ -172,6 +194,11 @@ Also not a fit if you need hands-on measurements of large-repository behaviour �
             <tr><td>changelog</td><td>Zed · Releases（v1.21.0 @ 2026-09-23）</td><td><a href="https://github.com/zed-industries/zed/releases" target="_blank" rel="noopener">https://github.com/zed-industries/zed/releases</a></td></tr>
             <tr><td>repo</td><td>Zed · 仓库</td><td><a href="https://github.com/zed-industries/zed" target="_blank" rel="noopener">https://github.com/zed-industries/zed</a></td></tr>
             <tr><td>docs</td><td>Zed · 文档站</td><td><a href="https://zed.dev/docs" target="_blank" rel="noopener">https://zed.dev/docs</a></td></tr>
+            <tr><td>docs</td><td>Zed · Agent Panel（线程、checkpoints、自动压缩、@-mention、token 用量）</td><td><a href="https://zed.dev/docs/ai/agent-panel" target="_blank" rel="noopener">https://zed.dev/docs/ai/agent-panel</a></td></tr>
+            <tr><td>docs</td><td>Zed · Tool Permissions（allow/deny/confirm、正则模式、内置安全规则）</td><td><a href="https://zed.dev/docs/ai/tool-permissions" target="_blank" rel="noopener">https://zed.dev/docs/ai/tool-permissions</a></td></tr>
+            <tr><td>docs</td><td>Zed · Agent Sandboxing（仅 Zed Agent、terminal/fetch、默认项目外写入与出网受限）</td><td><a href="https://zed.dev/docs/ai/sandboxing" target="_blank" rel="noopener">https://zed.dev/docs/ai/sandboxing</a></td></tr>
+            <tr><td>docs</td><td>Zed · Tools（内置 read/search/edit/terminal 工具清单）</td><td><a href="https://zed.dev/docs/ai/tools" target="_blank" rel="noopener">https://zed.dev/docs/ai/tools</a></td></tr>
+            <tr><td>docs</td><td>Zed · Remote Development（远端 SSH server、v0.157 起不经 Zed 中转、大目录限制）</td><td><a href="https://zed.dev/docs/remote-development" target="_blank" rel="noopener">https://zed.dev/docs/remote-development</a></td></tr>
           </tbody>
         </table>
       </div>
@@ -192,6 +219,7 @@ Also not a fit if you need hands-on measurements of large-repository behaviour �
           <li><span class="rel-t"><a href="./cline.html">Cline</a></span><span class="rel-n">同为三形态覆盖，但形态是 Zed Agent / 外部 / 终端而非编辑器扩展</span></li>
           <li><span class="rel-t"><a href="./claude-code.html">Claude Code</a></span><span class="rel-n">可作为 Zed 的 External Agent 运行</span></li>
           <li><span class="rel-t"><a href="./aider.html">Aider</a></span><span class="rel-n">同属「编辑器外挂 watch 模式」思路</span></li>
+          <li><span class="rel-t"><a href="/tools/filesystem.html"><span data-zh>Filesystem MCP Server</span><span data-en>Filesystem MCP Server</span></a></span><span class="rel-n"><span data-zh>另一层 · 给 agent 装的工具</span><span data-en>Other layer · MCP tools</span></span></li>
         </ul>
       </div>
 
