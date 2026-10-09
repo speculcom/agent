@@ -39,8 +39,34 @@
           <button class="icon-btn" id="langBtn" type="button" aria-label="Switch language" title="Switch language">EN</button>
         </span>
       </nav>
+      <!-- B6（2026-10-09）：与共享 shell 同步加的移动端导航入口。
+           ⚠ 本文件是 agent 站**自己的** shell 副本（它多一层分区切换），
+             所以每次改共享 shell 的骨架，这里也要跟一次 —— 这是双份实现固有的代价。
+             样式与行为都在共享 brand.css / brand.js 里，这里只出标记。 -->
+      <button class="nav-burger" type="button" aria-label="打开菜单" aria-expanded="false" aria-controls="navDrawer">
+        <i></i><i></i><i></i>
+      </button>
     </div>
   </header>
+  <div class="nav-scrim"></div>
+  <aside class="nav-drawer" id="navDrawer" aria-hidden="true" aria-label="站点导航">
+    <div class="nav-drawer-h">
+      <span class="brand-name"><span data-zh>投机取巧</span><span data-en>Speculative Speculation</span></span>
+      <button class="nav-dclose" type="button" aria-label="关闭">×</button>
+    </div>
+    <nav class="nav-drawer-list">
+      <a href="https://specul.com/"><span><span data-zh>首页</span><span data-en>Home</span></span><span class="ar" aria-hidden="true">→</span></a>
+      <a href="https://learn.specul.com/"><span><span data-zh>学 AI</span><span data-en>Learn</span></span><span class="ar" aria-hidden="true">→</span></a>
+      <a href="https://agent.specul.com/" aria-current="page"><span><span data-zh>Agent</span><span data-en>Agent</span></span><span class="ar" aria-hidden="true">→</span></a>
+      <a href="https://models.specul.com/"><span><span data-zh>本地模型</span><span data-en>Models</span></span><span class="ar" aria-hidden="true">→</span></a>
+      <a href="https://vg.specul.com/"><span><span data-zh>AI 做游戏</span><span data-en>Vibe Gaming</span></span><span class="ar" aria-hidden="true">→</span></a>
+      <a href="https://nav.specul.com/"><span><span data-zh>导航</span><span data-en>Directory</span></span><span class="ar" aria-hidden="true">→</span></a>
+    </nav>
+    <div class="nav-drawer-foot">
+      <p><span data-zh>6 个站，各管一件事</span><span data-en>Six sites, one job each</span></p>
+      <nav><a href="https://specul.com/legal.html"><span data-zh>法律条款</span><span data-en>Legal terms</span></a></nav>
+    </div>
+  </aside>
   <main id="main">
     <div class="container detail">
       <nav class="crumbs" aria-label="面包屑">
@@ -74,7 +100,8 @@
         <span class="badge"><span data-zh>核验</span><span data-en>Checked</span> 2026-09-30</span>
       </div>
 
-            <p class="panel-lead"><span data-zh><strong>&quot;A primitives-only multi-agent harness&quot;</strong> — the official description is &quot;lightweight yet powerful&quot;: it hands you the agent-loop primitives and does not decide for you how the filesystem, planning or memory work.</span><span data-en><strong>&quot;A primitives-only multi-agent harness&quot;</strong> — the official description is &quot;lightweight yet powerful&quot;: it hands you the agent-loop primitives and does not decide for you how the filesystem, planning or memory work.</span></p>
+            <p class="panel-lead"><span data-zh><strong>「primitives-only 的多agent harness」</strong> —— 官方自述 lightweight yet powerful：
+只给agent loop 的原语，不替你决定 filesystem / 规划 / 记忆怎么做。</span><span data-en><strong>&quot;A primitives-only multi-agent harness&quot;</strong> — the official description is &quot;lightweight yet powerful&quot;: it hands you the agent-loop primitives and does not decide for you how the filesystem, planning or memory work.</span></p>
 
             <div class="panel is-slim">
         <h2><span data-zh>适合与不适合</span><span data-en>When to use it, when not to</span></h2>
@@ -91,7 +118,7 @@
       <dl class="axes">
         <div class="axis">
           <dt><span data-zh>模型与开放条件</span><span data-en>Model & openness</span></dt>
-          <dd><strong>官方自述 provider-agnostic</strong>，README 首段原文： 「It is provider-agnostic, supporting the OpenAI Responses and Chat Completions APIs, as well as <strong>100+ other LLMs</strong>.」 实现路径有两层证据：核心依赖是 <code>openai&gt;=3.0.0</code>；可选依赖里有 <code>litellm</code>（<code>openai-agents[litellm]</code>）与 <code>any-llm</code>（<code>openai-agents[any-llm]</code>，要求 Python ≥3.11）。 <strong>换 provider 的实际改动量本站未核验</strong>（文档说 provider-agnostic，但没给「零改动」的量化承诺）。</dd>
+          <dd><strong>官方自述 provider-agnostic</strong>，README 首段原文： 「It is provider-agnostic, supporting the OpenAI Responses and Chat Completions APIs, as well as <strong>100+ other LLMs</strong>.」 实现路径有两层证据：核心依赖是 <code>openai&gt;=3.0.0</code>；可选依赖里有 <code>litellm</code>（<code>openai-agents[litellm]</code>）与 <code>any-llm</code>（<code>openai-agents[any-llm]</code>，要求 Python ≥3.11）。 <strong>官方 <code>models</code> 页给出完整接入面（已核验）</strong>：官方专列&quot;Non-OpenAI models&quot; 与&quot;Third-party adapters&quot;两节 —— <strong>内置 provider 接入点</strong>可指向 OpenAI 兼容端点 （示例 <code>MultiProvider(openai_base_url=&quot;https://openrouter.ai/api/v1&quot;)</code>）， 另有 <strong>Any-LLM / LiteLLM 两个 beta 适配器</strong>；LiteLLM 页原文： &quot;allows you to use <strong>100+ models</strong> via a single interface ... use <strong>any AI model</strong> in the Agents SDK&quot;，示例直接给 <code>anthropic/claude-3-5-sonnet</code>。 <strong>换 provider 的改动量 = 换 <code>model</code></strong>（字符串名 / <code>LitellmModel(...)</code> / provider 前缀）， 但官方<strong>没有&quot;零改动&quot;的量化承诺</strong>，各家能力对齐度需实测。</dd>
         </div>
         <div class="axis">
           <dt><span data-zh>运行位置</span><span data-en>Where it runs</span></dt>
@@ -115,7 +142,7 @@
         </div>
         <div class="axis">
           <dt><span data-zh>权限与限制</span><span data-en>Permissions & limits</span></dt>
-          <dd><strong>内建 Guardrails（输入 + 输出双向校验）+ Human in the loop（跨多次运行引入人工）</strong> —— 这是本站目前见到的<strong>权限面最完整</strong>的内建方案： 「Configurable safety checks for input and output validation」与 「Built-in mechanisms for involving humans across agent runs」。 与 Deep Agents 的「trust the LLM，边界责任交给你」形成鲜明对照。 <strong>具体边界强度本次未核验</strong>（guardrail 能否拦住文件/网络访问类型的越权，文档未在README 展开）。</dd>
+          <dd><strong>内建 Guardrails（输入 + 输出双向校验）+ Human in the loop（工具级审批）</strong> —— 这是本站目前见到的<strong>权限面最完整</strong>的内建方案： 「Configurable safety checks for input and output validation」与 「Built-in mechanisms for involving humans across agent runs」。 <strong>机制细节已核验</strong>（官方 <code>guardrails</code> 与 <code>human_in_the_loop</code> 专章）： ① 三类 guardrail —— <strong>input</strong>（只在链条第一个 agent 跑）、<strong>output</strong> （只在产出最终输出的 agent 跑）、<strong>tool</strong>（包 <code>FunctionTool</code>，执行前后各校验一次， 可 skip/replace/raise tripwire）；命中即抛 tripwire 异常并<strong>立即中止</strong>， input 侧可选 <code>run_in_parallel=False</code> 在 agent 启动前拦截。 ② <strong>工具级审批</strong>：<code>needs_approval=True|callable</code> 可用在 <code>function_tool</code>、 <code>ShellTool</code>、<code>ApplyPatchTool</code>、<code>Agent.as_tool</code>，MCP server 用 <code>require_approval</code>； 审批以 run-wide <code>interruptions</code> 暂停，<code>RunState</code> 可序列化/恢复， 参数无法安全解析时 <strong>fail closed</strong>，<code>always_approve</code> 可固化决策。 <strong>边界要说清</strong>：官方<strong>没有</strong>内建文件/网络沙箱 —— guardrails 是<strong>用户可编程的 校验钩子</strong>；真正的沙箱边界交宿主机或 SandboxAgent 容器，不在 guardrail 层 （已查 guardrails、human_in_the_loop、Sandbox agents 三页）。 与 Deep Agents 的「trust the LLM，边界责任交给你」形成鲜明对照。</dd>
         </div>
         <div class="axis">
           <dt><span data-zh>适合什么任务</span><span data-en>Best for</span></dt>
@@ -151,7 +178,6 @@
         <h2><span data-zh>未知项清单</span><span data-en>Known unknowns</span></h2>
         <ul>
           <li>100+ provider 各自的能力对齐度矩阵</li>
-          <li>guardrail 与沙箱边界的职责划分边界</li>
           <li>hosted sandbox client 的定价、可用区域、配额</li>
           <li>Sessions 后端在多进程/多机下的并发写语义</li>
           <li>litellm / any-llm extra 的实际依赖体积与升级冲突</li>
@@ -167,6 +193,8 @@
           <tbody>
             <tr><td>repo</td><td>OpenAI Agents SDK · 仓库（Python）</td><td><a href="https://github.com/openai/openai-agents-python" target="_blank" rel="noopener">https://github.com/openai/openai-agents-python</a></td></tr>
             <tr><td>docs</td><td>官方文档首页</td><td><a href="https://openai.github.io/openai-agents-python/" target="_blank" rel="noopener">https://openai.github.io/openai-agents-python/</a></td></tr>
+            <tr><td>docs</td><td>Models（provider-agnostic、Non-OpenAI models、Any-LLM / LiteLLM 适配器）</td><td><a href="https://openai.github.io/openai-agents-python/models/" target="_blank" rel="noopener">https://openai.github.io/openai-agents-python/models/</a></td></tr>
+            <tr><td>docs</td><td>Using any model via LiteLLM（&quot;use any AI model&quot;、100+ models）</td><td><a href="https://openai.github.io/openai-agents-python/models/litellm/" target="_blank" rel="noopener">https://openai.github.io/openai-agents-python/models/litellm/</a></td></tr>
             <tr><td>docs</td><td>Sandbox agents（官方专章）</td><td><a href="https://openai.github.io/openai-agents-python/sandbox_agents" target="_blank" rel="noopener">https://openai.github.io/openai-agents-python/sandbox_agents</a></td></tr>
             <tr><td>docs</td><td>Guardrails（官方专章）</td><td><a href="https://openai.github.io/openai-agents-python/guardrails/" target="_blank" rel="noopener">https://openai.github.io/openai-agents-python/guardrails/</a></td></tr>
             <tr><td>docs</td><td>Human in the loop（官方专章）</td><td><a href="https://openai.github.io/openai-agents-python/human_in_the_loop/" target="_blank" rel="noopener">https://openai.github.io/openai-agents-python/human_in_the_loop/</a></td></tr>
@@ -200,6 +228,7 @@
           <li><span class="rel-t"><a href="./deepagents.html">Deep Agents</a></span><span class="rel-n"><strong>本站最值得对照的一对</strong>：Deep Agents 是 batteries-included（含 filesystem + 子代理 + 上下文管理），本 SDK 是 primitives-only。同一决策树的两个分支。</span></li>
           <li><span class="rel-t"><a href="./claude-agent-sdk.html">Claude Agent SDK</a></span><span class="rel-n">同为「编程底座」档，且同样出自模型厂商。OpenAI 侧走 primitives-only + guardrails 内建，Anthropic 侧的主场是 Claude Code。</span></li>
           <li><span class="rel-t"><a href="./langgraph.html">LangGraph</a></span><span class="rel-n">LangGraph 是 graph runtime，OpenAI Agents SDK 是 agent harness —— 可组合（把图当工具/子代理），但层级不同。</span></li>
+          <li><span class="rel-t"><a href="/codex-cli.html"><span data-zh>Codex CLI</span><span data-en>Codex CLI</span></a></span><span class="rel-n"><span data-zh>另一层 · 成品 Agent</span><span data-en>Other layer · Finished agents</span></span></li>
         </ul>
       </div>
 
