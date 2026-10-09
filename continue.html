@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Continue — Agents | 投机取巧</title>
+  <meta name="description" content="Continue（Continue）：开源、模型完全自配的 IDE 扩展；但官方状态已变： Continue 被 Cursor 收购，上游仓库转入 read-only，官网只剩收购公告—— 代码仍可自由使用，后续不会再有更新。" />
+  <link rel="canonical" href="https://agent.specul.com/continue.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Continue" />
+  <meta property="og:url" content="https://agent.specul.com/continue.html" />
+  <meta property="og:title" content="Continue — Agents | 投机取巧" />
+  <meta property="og:description" content="Continue（Continue）：开源、模型完全自配的 IDE 扩展；但官方状态已变： Continue 被 Cursor 收购，上游仓库转入 read-only，官网只剩收购公告—— 代码仍可自由使用，后续不会再有更新。" />
+  <meta name="theme-color" content="#05080f" />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%238b7cf8'/%3E%3Cstop offset='1' stop-color='%2322d3c5'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='48' height='48' rx='12' fill='%2305080f'/%3E%3Cpath d='M14 32 L24 12 L34 32' fill='none' stroke='url(%23g)' stroke-width='2.4' stroke-linejoin='round'/%3E%3Ccircle cx='24' cy='27' r='2.4' fill='%2322d3c5'/%3E%3C/svg%3E" />
+  <link rel="stylesheet" href="brand.css" />
+  <link rel="stylesheet" href="site.css" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Continue","applicationCategory":"DeveloperApplication","url":"https://continue.dev","sameAs":"https://continue.dev","description":"开源、模型完全自配的 IDE 扩展；但官方状态已变： Continue 被 Cursor 收购，上游仓库转入 read-only，官网只剩收购公告—— 代码仍可自由使用，后续不会再有更新。","dateModified":"2026-10-08","offers":{"@type":"Offer","price":"20","priceCurrency":"USD"}}</script>
+</head>
+<body class="brand-ambient">
+  <a class="t-skip" href="#main"><span data-zh>跳到主要内容</span><span data-en>Skip to main content</span></a>
+  <header class="site-header">
+    <div class="container site-bar">
+      <a class="brand" href="https://specul.com/" title="投机取巧">
+        <span class="brand-dot" aria-hidden="true"></span>
+        <span class="brand-text">
+          <span class="brand-name" id="markName" data-zh-name="投机取巧" data-en-name="Speculative Speculation">投机取巧</span>
+        </span>
+      </a>
+      <nav class="nav-links" aria-label="站点导航">
+        <a href="https://specul.com/"><span data-zh>首页</span><span data-en>Home</span></a>
+        <a href="https://learn.specul.com/"><span data-zh>学 AI</span><span data-en>Learn</span></a>
+        <a href="https://agent.specul.com/" aria-current="page"><span data-zh>Agent</span><span data-en>Agent</span></a>
+        <a href="https://models.specul.com/"><span data-zh>本地模型</span><span data-en>Models</span></a>
+        <a href="https://vg.specul.com/"><span data-zh>AI 做游戏</span><span data-en>Vibe Gaming</span></a>
+        <a href="https://nav.specul.com/"><span data-zh>导航</span><span data-en>Directory</span></a>
+        <span class="nav-tools">
+          <button class="icon-btn" id="themeBtn" type="button" aria-label="切换明暗主题" title="切换明暗主题">☾</button>
+          <button class="icon-btn" id="langBtn" type="button" aria-label="Switch language" title="Switch language">EN</button>
+        </span>
+      </nav>
+      <!-- B6（2026-10-09）：与共享 shell 同步加的移动端导航入口。
+           ⚠ 本文件是 agent 站**自己的** shell 副本（它多一层分区切换），
+             所以每次改共享 shell 的骨架，这里也要跟一次 —— 这是双份实现固有的代价。
+             样式与行为都在共享 brand.css / brand.js 里，这里只出标记。 -->
+      <button class="nav-burger" type="button" aria-label="打开菜单" aria-expanded="false" aria-controls="navDrawer">
+        <i></i><i></i><i></i>
+      </button>
+    </div>
+  </header>
+  <div class="nav-scrim"></div>
+  <aside class="nav-drawer" id="navDrawer" aria-hidden="true" aria-label="站点导航">
+    <div class="nav-drawer-h">
+      <span class="brand-name"><span data-zh>投机取巧</span><span data-en>Speculative Speculation</span></span>
+      <button class="nav-dclose" type="button" aria-label="关闭">×</button>
+    </div>
+    <nav class="nav-drawer-list">
+      <a href="https://specul.com/"><span><span data-zh>首页</span><span data-en>Home</span></span><span class="ar" aria-hidden="true">→</span></a>
+      <a href="https://learn.specul.com/"><span><span data-zh>学 AI</span><span data-en>Learn</span></span><span class="ar" aria-hidden="true">→</span></a>
+      <a href="https://agent.specul.com/" aria-current="page"><span><span data-zh>Agent</span><span data-en>Agent</span></span><span class="ar" aria-hidden="true">→</span></a>
+      <a href="https://models.specul.com/"><span><span data-zh>本地模型</span><span data-en>Models</span></span><span class="ar" aria-hidden="true">→</span></a>
+      <a href="https://vg.specul.com/"><span><span data-zh>AI 做游戏</span><span data-en>Vibe Gaming</span></span><span class="ar" aria-hidden="true">→</span></a>
+      <a href="https://nav.specul.com/"><span><span data-zh>导航</span><span data-en>Directory</span></span><span class="ar" aria-hidden="true">→</span></a>
+    </nav>
+    <div class="nav-drawer-foot">
+      <p><span data-zh>6 个站，各管一件事</span><span data-en>Six sites, one job each</span></p>
+      <nav><a href="https://specul.com/legal.html"><span data-zh>法律条款</span><span data-en>Legal terms</span></a></nav>
+    </div>
+  </aside>
+  <main id="main">
+    <div class="container detail">
+      <nav class="crumbs" aria-label="面包屑">
+        <a href="https://agent.specul.com/">Agent 图谱</a>
+        <span aria-current="page">Agents</span>
+        <a href="/harness/">Harness</a>
+        <a href="/tools/">Tools</a>
+      </nav>
+      <a class="back" href="./">← Agents</a>
+
+      <div class="detail-head">
+        <div class="mark" style="--card-accent:#8b7cf8" aria-hidden="true">Co</div>
+        <div>
+          <h1><span data-zh>Continue</span><span data-en>Continue</span></h1>
+          <div class="vendor is-caps">Continue</div>
+        </div>
+      </div>
+
+      <div class="badges">
+        <span class="tag on">编程</span>
+        <span class="tag on">开源</span>
+        <span class="tag on">多模型</span>
+        <span class="tag on">VSCode</span>
+        <span class="badge accent">partial</span>
+        <span class="badge">lifecycle: archived</span>
+        <span class="badge"><span data-zh>核验</span><span data-en>Checked</span> 2026-10-08</span>
+      </div>
+
+            <p class="panel-lead"><span data-zh><strong>开源、模型完全自配的 IDE 扩展</strong>；但官方状态已变：
+Continue 被 Cursor 收购，上游仓库转入 read-only，官网只剩收购公告——
+<strong>代码仍可自由使用，后续不会再有更新</strong>。</span><span data-en><strong>An open-source, fully model-configurable IDE extension</strong> — VS Code extension, JetBrains plugin and a <code>cn</code> CLI over one agent core, with models configured freely in <code>config.yaml</code>. The official model-provider list spans Anthropic, Azure AI Foundry, Amazon Bedrock, DeepSeek, Gemini, Mistral, <strong>Ollama (local models)</strong>, OpenAI, Vertex AI, xAI and &quot;More (30 items)&quot;.
+
+<strong>But the official status has changed.</strong> The homepage now reads &quot;Continue has been acquired by Cursor... our open-source codebase remains freely available as a foundation for others&quot;, and the repository README states: &quot;The <code>continuedev/continue</code> repository is no longer actively maintained and is read-only for all users.&quot; The last releases are the final 2.0.0 line for the VS Code extension, CLI and JetBrains plugin (Apache-2.0 © 2023-2026 Continue Dev, Inc.). The commercial line&#39;s pricing page (hub.continue.dev/pricing) now serves <strong>Continuous AI</strong>: Starter $3 / million tokens pay-as-you-go, Team $20 / seat / month (including $10 in credits per seat), Company custom.</span></p>
+
+            <div class="panel is-slim">
+        <h2><span data-zh>适合与不适合</span><span data-en>When to use it, when not to</span></h2>
+<span data-zh>        <p>需要模型自由（多 provider，含 Ollama 本地模型）而不想被单一厂商锁定的人。
+已在 VS Code / JetBrains 里工作、希望用开源可审计扩展的人。
+需要把同一 agent 用到终端与 CI（<code>cn -p</code>）的人。</p>
+        <p class="warn-p"><strong>不适合</strong>需要持续维护与长期演进的场景——
+上游仓库已 read-only，公司被 Cursor 收购，后续只会以「代码仍可自由使用」的形态存在。
+也不适合依赖官方支持与持续修复的人。</p></span><span data-en>        <p>People who need model freedom (many providers, including local models via Ollama) and do not want to be locked to one vendor.
+People already working in VS Code / JetBrains who want an open-source, auditable extension.
+People who want the same agent in the terminal and in CI (<code>cn -p</code>).</p>
+        <p class="warn-p"><strong>Not a fit for</strong> scenarios needing ongoing maintenance and long-term evolution — the upstream repository is read-only and the company was acquired by Cursor, so it persists only in a &quot;code is still freely usable&quot; form.
+Also not a fit for anyone relying on official support and continued fixes.</p></span>
+      </div>
+
+
+      <div class="block-head">
+        <h2 class="t-h2"><span data-zh>固定坐标系</span><span data-en>Fixed coordinate system</span></h2>
+        <p class="t-section-lead">8 <span data-zh>个维度</span><span data-en>dimensions</span>, <span data-zh>与同赛道其他对象逐项可比</span><span data-en>each comparable item by item against others in the same track</span>.</p>
+      </div>
+      <dl class="axes">
+        <div class="axis">
+          <dt><span data-zh>模型与开放条件</span><span data-en>Model & openness</span></dt>
+          <dd><strong>模型完全自配，这是它最核心的定位。</strong> 官方 model providers 页列出 Anthropic、Azure AI Foundry、Amazon Bedrock、DeepSeek、Gemini、Mistral、 <strong>Ollama（本地模型）</strong>、OpenAI、Vertex AI、xAI，并指向「More（30 items）」。 配置写在 <code>config.yaml</code> 的 <code>models</code>，字段为 <code>provider</code> + <code>model</code> + <code>apiBase</code>， 可设 <code>roles</code>（chat / autocomplete / embed / rerank / edit / apply / summarize） 与 <code>capabilities</code>（<code>tool_use</code> 为 Agent 模式必需，另有 <code>image_input</code>）。 与 <code>./cursor.md</code> 对照：Cursor 只能用其目录内模型，Continue 可指任意 provider。 <strong>各家 provider 换用后 tool calling 质量的官方对比，官方页面未给出。</strong></dd>
+        </div>
+        <div class="axis">
+          <dt><span data-zh>运行位置</span><span data-en>Where it runs</span></dt>
+          <dd><strong>IDE 扩展形态</strong>——官方文档首句 &quot;Open source AI code assistant for VS Code and JetBrains&quot;。官方列出的形态为 <strong>VS Code 扩展</strong>与 <strong>JetBrains 插件</strong>， 另有 <strong>CLI（<code>cn</code>）</strong>。仓库 README 原文建议 &quot;We recommend using the Continue CLI instead of the JetBrains plugin&quot;。 三条形态共享同一 agent 核心（官方 CLI 页写 &quot;the same agent that powers the Continue IDE extensions&quot;）。CLI 需 Node.js 20+ 或自带运行时。 <strong>本条目只写扩展形态</strong>，终端形态的能力见 tools 与 background 两轴。</dd>
+        </div>
+        <div class="axis">
+          <dt><span data-zh>本地文件</span><span data-en>Local files</span></dt>
+          <dd>在 IDE 工作区内读写，改动以 diff 形式呈现。<strong>上下文靠显式引用而非隐式全量索引</strong>： 官方 Chat 上下文页列出 <code>@Files</code>、<code>@Terminal</code>、<code>@Git Diff</code> 等 context providers， 以及高亮代码（VS Code <code>cmd/ctrl+L</code>、JetBrains <code>cmd/ctrl+J</code>）与当前活动文件。 MCP 配置目录为 <code>.continue/mcpServers/</code>，规则见 <code>.continue/rules</code>。 <strong>代码库语义索引的实现方式官方未说明</strong> （已查 docs.continue.dev 首页与 Chat 上下文选择两页）。</dd>
+        </div>
+        <div class="axis">
+          <dt><span data-zh>关机后的任务</span><span data-en>Tasks after shutdown</span></dt>
+          <dd><strong>扩展形态无「关机续跑」能力</strong>——它是编辑器 / IDE 插件，随 IDE 进程存活， IDE 关掉即结束，官方文档也未描述云端执行面（已查 docs.continue.dev 首页、 Agent quick-start、CLI quickstart 三页）。<strong>唯一异步形态是 CLI 的 headless</strong>： <code>cn -p &quot;...&quot;</code> 单次跑完输出到 stdout，官方原文 &quot;Use this in scripts, CI/CD, and git hooks&quot;。</dd>
+        </div>
+        <div class="axis">
+          <dt><span data-zh>工具与扩展</span><span data-en>Tools & extensions</span></dt>
+          <dd><strong>三档模式 + MCP 是工具面的核心。</strong> 官方 Agent 页写模式切换下有三个选项： Chat（无工具）、Plan（只读工具）、Agent（全部工具），<code>Cmd/Ctrl + .</code> 循环切换。 <strong>MCP 官方支持</strong>（官方 MCP 深潜页）：在 config 的 <code>mcpServers</code> 配置， 可放 <code>.continue/mcpServers/</code> 目录，传输支持 <code>stdio</code>、<code>sse</code>、<code>streamable-http</code> 三种， <strong>可直接复用 Claude / Cursor / Cline 的 JSON MCP 配置</strong>， 且官方强调 &quot;MCP can only be used in the <strong>agent</strong> mode&quot;。 CLI 侧另有 <code>--mcp &lt;slug<strong></code>、<code>--agent </strong>slug&gt;</code>、<code>--rule</code>。 扩展机制还有 context providers、rules 与自定义 prompt。</dd>
+        </div>
+        <div class="axis">
+          <dt><span data-zh>上下文与记忆</span><span data-en>Context & memory</span></dt>
+          <dd><strong>上下文是显式选择式而非自动索引式</strong>（见 local_files）。会话层面： CLI 支持 <code>--resume</code> 重放，官方 CLI headless 页写 <code>cn -p --resume</code> 会 &quot;replays the previous session&#39;s history&quot;。<strong>跨会话长期记忆</strong>由 rules、 context providers 与可共享的 assistant 配置承载；<code>config.yaml</code> 有 <code>data</code> 字段。 <strong>上下文窗口大小跟随所选模型</strong>，官方在已查页面未给出统一数字 （已查 Agent quick-start 与 config.yaml 参考两页）。</dd>
+        </div>
+        <div class="axis">
+          <dt><span data-zh>权限与限制</span><span data-en>Permissions & limits</span></dt>
+          <dd><strong>默认逐工具询问，可策略化放开。</strong> 官方 Agent quick-start 原文 &quot;By default, Agent mode will ask permission when it wants to use a tool&quot;， 可点 <code>Continue</code> 放行或 <code>Cancel</code> 拒绝；用 <strong>tool policies</strong> 对特定工具 设为自动或排除。CLI 侧口径不同：官方 headless 页写 &quot;tools that would normally prompt for approval (<code>ask</code> permission) are automatically excluded&quot;，要写文件必须显式 <code>--allow Write --allow Edit</code> （或 <code>--allow &quot;*&quot;</code>），另有 <code>--readonly</code>（Plan）、<code>--auto</code>、<code>--exclude</code>。 <strong>telemetry</strong>：仓库 README 写最终 2.0.0 版「removing anonymous telemetry」。 <strong>数据是否用于训练，官方已查页面未说明。</strong></dd>
+        </div>
+        <div class="axis">
+          <dt><span data-zh>适合什么任务</span><span data-en>Best for</span></dt>
+          <dd>需要模型自由（多 provider，含 Ollama 本地模型）而不想被单一厂商锁定的人。 已在 VS Code / JetBrains 里工作、希望用开源可审计扩展的人。 需要把同一 agent 用到终端与 CI（<code>cn -p</code>）的人。 <strong>不适合</strong>需要持续维护与长期演进的场景——上游仓库已 read-only， 公司被 Cursor 收购，后续只会以「代码仍可自由使用」的形态存在。</dd>
+        </div>
+      </dl>
+
+            <div class="panel warn">
+        <h2 class="warn"><span data-zh>头号误解</span><span data-en>Top misconception</span></h2>
+        <ul>
+
+          <li><span data-zh>以为 Continue 仍在持续维护 —— 仓库 README 已标 no longer actively maintained and is read-only</span><span data-en>Assuming Continue is still actively maintained — the repo README now states it is &quot;no longer actively maintained and is read-only for all users&quot;.</span></li>
+          <li><span data-zh>以为 Hub 商业线旧价目仍有效 —— 官网已被收购公告替换，原定价页 continue.dev/pricing 已 404</span><span data-en>Assuming the old Hub commercial price list still applies — the site is now an acquisition notice and continue.dev/pricing returns 404.</span></li>
+          <li><span data-zh>以为模型自带额度 —— 扩展本身免费开源，模型费要自备 provider 或本地 Ollama</span><span data-en>Assuming models come with included quota — the extension itself is free and open source, but model costs are yours (bring your own provider or run local Ollama).</span></li>
+        </ul>
+      </div>
+
+
+            <div class="panel is-slim">
+        <h2><span data-zh>价格</span><span data-en>Pricing</span></h2>
+        <table class="src">
+          <tbody>
+            <tr><th class="w-28"><span data-zh>月度入口</span><span data-en>Monthly entry</span></th><td><span data-zh>商业线 Team $20/席/月（含 $10 额度）；Starter 按量 $3/百万 token</span><span data-en>商业线 Team $20/席/月（含 $10 额度）；Starter 按量 $3/百万 token</span></td></tr>
+            <tr><th class="w-28"><span data-zh>月度数值</span><span data-en>Monthly price</span></th><td>20</td></tr>
+            <tr><th class="w-28"><span data-zh>年付</span><span data-en>Annual</span></th><td><span data-zh>未核验年付报价</span><span data-en>未核验年付报价</span></td></tr>
+            <tr><th class="w-28"><span data-zh>额度说明</span><span data-en>Quota note</span></th><td><span data-zh>核心代码开源：仓库 README 原文 "Apache 2.0 © 2023-2026 Continue Dev, Inc."， **扩展本身无授权费**，模型调用费自付（可 BYOK，或用本地 Ollama）。 商业线定价（hub.continue.dev/pricing，2026-10-08 取到）现为 **Continuous AI**： Starter **$3 / 百万 token**（pay-as-you-go）、Team **$20/席/月**（含 $10 credits/席）、 Company 定制（含 SAML/OIDC、BYOK、SLA）。 **重要背景**：Continue **已被 Cursor 收购**，官网 continue.dev 现为收购公告， 原 Hub 定价页 `continue.dev/pricing` 已 404，仓库亦标为 read-only。</span><span data-en>核心代码开源：仓库 README 原文 "Apache 2.0 © 2023-2026 Continue Dev, Inc."， **扩展本身无授权费**，模型调用费自付（可 BYOK，或用本地 Ollama）。 商业线定价（hub.continue.dev/pricing，2026-10-08 取到）现为 **Continuous AI**： Starter **$3 / 百万 token**（pay-as-you-go）、Team **$20/席/月**（含 $10 credits/席）、 Company 定制（含 SAML/OIDC、BYOK、SLA）。 **重要背景**：Continue **已被 Cursor 收购**，官网 continue.dev 现为收购公告， 原 Hub 定价页 `continue.dev/pricing` 已 404，仓库亦标为 read-only。</span></td></tr>
+          </tbody>
+        </table>
+        <p class="fine mt-3"><span data-zh>不同币种不做折算。优惠、地区、税费与登录后报价可能变化，购买前请到官方页面确认。</span><span data-en>No currency conversion. Discounts, regions, tax and post-login pricing can change — confirm on the official page before buying.</span></p>
+      </div>
+
+
+            <div class="panel is-slim">
+        <h2><span data-zh>未知项清单</span><span data-en>Known unknowns</span></h2>
+        <ul>
+          <li>仓库归档的具体日期与收购完成时间 —— 官方未给出确切日期（已查仓库 README、官网公告与 Releases）</li>
+          <li>原 Continue 账户 / 订阅的去向与数据处理 —— 官网 FAQ 仅列出问题，答案官方未公开</li>
+          <li>代码库语义索引的实现方式 —— 官方未说明（已查 docs.continue.dev 首页与 Chat 上下文选择两页）</li>
+          <li>数据是否用于模型训练 —— 官方已查页面未说明（已查仓库 README 与文档站首页）</li>
+          <li>各 provider 换用后 tool calling 质量的官方对比</li>
+        </ul>
+      </div>
+
+
+      <div class="panel">
+        <h2><span data-zh>证据来源</span><span data-en>Evidence sources</span></h2>
+        <p class="t-sm"><span data-zh>判断可回到以下一手源复核。本站核验日</span><span data-en>Every judgement can be rechecked against the primary sources below. Verified on</span> 2026-10-08，<span data-zh>内容更新日</span><span data-en>content updated on</span> 2026-10-08。</p>
+        <table class="src">
+          <thead><tr><th class="w-20"><span data-zh>类型</span><span data-en>Type</span></th><th class="w-52"><span data-zh>名称</span><span data-en>Name</span></th><th><span data-zh>链接</span><span data-en>Link</span></th></tr></thead>
+          <tbody>
+            <tr><td>repo</td><td>Continue · 仓库 README（三形态、Apache-2.0、read-only 公告）</td><td><a href="https://github.com/continuedev/continue" target="_blank" rel="noopener">https://github.com/continuedev/continue</a></td></tr>
+            <tr><td>changelog</td><td>Continue · Releases（最终 2.0.0 与 v2.1.0-vscode，2026-10-08 取到）</td><td><a href="https://github.com/continuedev/continue/releases" target="_blank" rel="noopener">https://github.com/continuedev/continue/releases</a></td></tr>
+            <tr><td>docs</td><td>Continue · 官网（被 Cursor 收购公告）</td><td><a href="https://continue.dev" target="_blank" rel="noopener">https://continue.dev</a></td></tr>
+            <tr><td>docs</td><td>Continue · 文档站首页（开源、VS Code / JetBrains、CLI cn）</td><td><a href="https://docs.continue.dev" target="_blank" rel="noopener">https://docs.continue.dev</a></td></tr>
+            <tr><td>docs</td><td>Continue Docs · MCP 深潜（三种传输、仅 agent 模式）</td><td><a href="https://docs.continue.dev/customize/deep-dives/mcp" target="_blank" rel="noopener">https://docs.continue.dev/customize/deep-dives/mcp</a></td></tr>
+            <tr><td>docs</td><td>Continue Docs · Model providers（含 Ollama 本地模型与 30+ provider）</td><td><a href="https://docs.continue.dev/customize/model-providers" target="_blank" rel="noopener">https://docs.continue.dev/customize/model-providers</a></td></tr>
+            <tr><td>docs</td><td>Continue Docs · Agent quick-start（默认逐工具询问权限）</td><td><a href="https://docs.continue.dev/ide-extensions/agent/quick-start" target="_blank" rel="noopener">https://docs.continue.dev/ide-extensions/agent/quick-start</a></td></tr>
+            <tr><td>docs</td><td>Continue Docs · CLI quickstart（cn 安装、headless、--auto / --readonly）</td><td><a href="https://docs.continue.dev/cli/quickstart" target="_blank" rel="noopener">https://docs.continue.dev/cli/quickstart</a></td></tr>
+            <tr><td>docs</td><td>Continue Docs · CLI headless（ask 权限自动排除、--allow）</td><td><a href="https://docs.continue.dev/cli/headless-mode" target="_blank" rel="noopener">https://docs.continue.dev/cli/headless-mode</a></td></tr>
+            <tr><td>pricing</td><td>Continue · 商业线定价页 hub.continue.dev/pricing（现 Continuous AI）</td><td><a href="https://hub.continue.dev/pricing" target="_blank" rel="noopener">https://hub.continue.dev/pricing</a></td></tr>
+          </tbody>
+        </table>
+      </div>
+
+            <div class="panel is-slim">
+        <h2><span data-zh>实测记录</span><span data-en>Measured runs</span></h2>
+        <p>本站尚未完成实测。测试协议见 <a href="https://github.com/speculcom/ai-agent-guide/blob/main/tracks/agents/tasks/_protocol.md" target="_blank" rel="noopener">tasks/_protocol.md</a>。
+
+<strong>实测建议</strong>：重点测**同一 <code>config.yaml</code> 在 IDE 扩展与 CLI（<code>cn</code>）两形态下的
+行为一致性<strong>，以及</strong>headless 模式对 <code>ask</code> 权限工具自动排除的边界**——
+官方明确「没人批准就自动排除」，这是最容易被脚本化用户踩到的一点。</p>
+      </div>
+
+
+            <div class="panel is-slim">
+        <h2><span data-zh>相关条目</span><span data-en>Related entries</span></h2>
+        <ul class="rel-list">
+          <li><span class="rel-t"><a href="./cursor.html">Cursor</a></span><span class="rel-n">收购方；两者在「模型自配 vs 目录内模型」上正好对立，值得并排看</span></li>
+          <li><span class="rel-t"><a href="./cline.html">Cline</a></span><span class="rel-n">同为开源 IDE 扩展，Cline 仍在活跃维护，是 Continue 停更后的直接替代参照</span></li>
+          <li><span class="rel-t"><a href="./codex-ide.html">Codex IDE 扩展</a></span><span class="rel-n">同为「扩展而非独立编辑器」，可对照宿主与权限模型</span></li>
+          <li><span class="rel-t"><a href="/tools/filesystem.html"><span data-zh>Filesystem MCP Server</span><span data-en>Filesystem MCP Server</span></a></span><span class="rel-n"><span data-zh>另一层 · 给 agent 装的工具</span><span data-en>Other layer · MCP tools</span></span></li>
+        </ul>
+      </div>
+
+
+      <p class="fine mt-6">
+        <span data-zh>本页由</span><span data-en>This page is generated from the</span> <a href="https://github.com/speculcom/ai-agent-guide" target="_blank" rel="noopener" class="link-brand">ai-agent-guide</a> <span data-zh>数据层生成（CC BY 4.0）。</span><span data-en>data layer (CC BY 4.0).</span>
+        方法论与坐标系定义见仓库内 <code>METHODOLOGY.md</code>。
+      </p>
+    </div>
+  </main>
+  <footer class="site-footer">
+    <div class="container foot-row">
+      <div class="foot-brand">
+        <span class="brand-dot" aria-hidden="true"></span>
+        <span class="foot-copy">© 2026 投机取巧 · <span data-zh>Specul</span><span data-en>Specul</span></span>
+      </div>
+      <nav class="foot-links" aria-label="页脚导航">
+          <a href="https://specul.com/"><span data-zh>首页</span><span data-en>Home</span></a>
+          <a href="https://learn.specul.com/"><span data-zh>学 AI</span><span data-en>Learn</span></a>
+          <a href="https://agent.specul.com/"><span data-zh>Agent</span><span data-en>Agent</span></a>
+          <a href="https://models.specul.com/"><span data-zh>本地模型</span><span data-en>Models</span></a>
+          <a href="https://vg.specul.com/"><span data-zh>AI 做游戏</span><span data-en>Vibe Gaming</span></a>
+          <a href="https://nav.specul.com/"><span data-zh>导航</span><span data-en>Directory</span></a>
+          <a href="https://github.com/speculcom/ai-agent-guide" target="_blank" rel="noopener">GitHub</a>
+      </nav>
+      <nav class="foot-legal-links" aria-label="法律">
+        <a href="https://specul.com/legal.html"><span data-zh>法律条款</span><span data-en>Legal terms</span></a>
+        <a href="https://specul.com/legal.html#s6"><span data-zh>免责声明</span><span data-en>Disclaimer</span></a>
+        <a href="https://specul.com/legal.html#s8"><span data-zh>隐私与本地存储</span><span data-en>Privacy</span></a>
+      </nav>
+    </div>
+  </footer>
+  <script src="brand.js"></script>
+  <script>
+    (function () {
+      var root = document.documentElement;
+      function sync() { root.setAttribute('data-lang', root.lang === 'en' ? 'en' : 'zh'); }
+      new MutationObserver(sync).observe(root, { attributes: true, attributeFilter: ['lang'] });
+      sync();
+    })();
+  </script>
+</body>
+</html>
