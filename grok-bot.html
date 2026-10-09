@@ -39,8 +39,34 @@
           <button class="icon-btn" id="langBtn" type="button" aria-label="Switch language" title="Switch language">EN</button>
         </span>
       </nav>
+      <!-- B6（2026-10-09）：与共享 shell 同步加的移动端导航入口。
+           ⚠ 本文件是 agent 站**自己的** shell 副本（它多一层分区切换），
+             所以每次改共享 shell 的骨架，这里也要跟一次 —— 这是双份实现固有的代价。
+             样式与行为都在共享 brand.css / brand.js 里，这里只出标记。 -->
+      <button class="nav-burger" type="button" aria-label="打开菜单" aria-expanded="false" aria-controls="navDrawer">
+        <i></i><i></i><i></i>
+      </button>
     </div>
   </header>
+  <div class="nav-scrim"></div>
+  <aside class="nav-drawer" id="navDrawer" aria-hidden="true" aria-label="站点导航">
+    <div class="nav-drawer-h">
+      <span class="brand-name"><span data-zh>投机取巧</span><span data-en>Speculative Speculation</span></span>
+      <button class="nav-dclose" type="button" aria-label="关闭">×</button>
+    </div>
+    <nav class="nav-drawer-list">
+      <a href="https://specul.com/"><span><span data-zh>首页</span><span data-en>Home</span></span><span class="ar" aria-hidden="true">→</span></a>
+      <a href="https://learn.specul.com/"><span><span data-zh>学 AI</span><span data-en>Learn</span></span><span class="ar" aria-hidden="true">→</span></a>
+      <a href="https://agent.specul.com/" aria-current="page"><span><span data-zh>Agent</span><span data-en>Agent</span></span><span class="ar" aria-hidden="true">→</span></a>
+      <a href="https://models.specul.com/"><span><span data-zh>本地模型</span><span data-en>Models</span></span><span class="ar" aria-hidden="true">→</span></a>
+      <a href="https://vg.specul.com/"><span><span data-zh>AI 做游戏</span><span data-en>Vibe Gaming</span></span><span class="ar" aria-hidden="true">→</span></a>
+      <a href="https://nav.specul.com/"><span><span data-zh>导航</span><span data-en>Directory</span></span><span class="ar" aria-hidden="true">→</span></a>
+    </nav>
+    <div class="nav-drawer-foot">
+      <p><span data-zh>6 个站，各管一件事</span><span data-en>Six sites, one job each</span></p>
+      <nav><a href="https://specul.com/legal.html"><span data-zh>法律条款</span><span data-en>Legal terms</span></a></nav>
+    </div>
+  </aside>
   <main id="main">
     <div class="container detail">
       <nav class="crumbs" aria-label="面包屑">
@@ -72,7 +98,7 @@
         <span class="badge"><span data-zh>核验</span><span data-en>Checked</span> 2026-10-03</span>
       </div>
 
-            <p class="panel-lead"><span data-zh><strong>Of the three released at the same time, the only one whose official page lists the jobs</strong> — it does not discuss mechanism, it lists nine roles directly (sales leads, site building, inbox triage, meeting attendance and more).</span><span data-en><strong>Of the three released at the same time, the only one whose official page lists the jobs</strong> — it does not discuss mechanism, it lists nine roles directly (sales leads, site building, inbox triage, meeting attendance and more).</span></p>
+            <p class="panel-lead"><span data-zh><strong>三家同期发布里唯一一家官方页上能读到「jobs 清单」的</strong> —— 它不谈机制，直接列了九个岗位（销售线索、网站搭建、收件箱、会议代听……）。</span><span data-en><strong>Of the three released at the same time, the only one whose official page lists the jobs</strong> — it does not discuss mechanism, it lists nine roles directly (sales leads, site building, inbox triage, meeting attendance and more).</span></p>
 
             <div class="panel is-slim">
         <h2><span data-zh>适合与不适合</span><span data-en>When to use it, when not to</span></h2>
@@ -94,7 +120,7 @@ people who need local file read/write; people who need to know the underlying mo
       <dl class="axes">
         <div class="axis">
           <dt><span data-zh>模型与开放条件</span><span data-en>Model & openness</span></dt>
-          <dd><strong>官方发布页未指定底层模型名</strong> —— 这是三家里唯一没写模型的一条。 站内可确认的关联：同期的Grok 4.6 发布页明确写 「a particular focus on long-running agents」，而 Grok Bot 正是常驻型 agent， <strong>但两页没有互相点名，所以「Grok Bot 跑在哪个模型上」本次未核验，不做推断。</strong> 与另两家对比：OpenAI Dot 明确写了 GPT‑6 Astra，Meta Muse 明确写了 Muse Spark， <strong>只有本条留白</strong>。</dd>
+          <dd><strong>官方两篇发布页均未点名底层模型，也未给出「可换模型」的表述</strong> （已查 x.ai「Introducing Grok Bot」与「Grok Bot is now included with more plans」两页）。 站内平行证据：同期「Introducing Grok 4.6」页写 「a particular focus on long-running agents」，与 Grok Bot 的常驻定位吻合， <strong>但两页无互相点名</strong>，故本站不写「Grok Bot 跑在 4.6 上」（R5：不推断）。 与另两家对比：OpenAI Dot 明确写了 GPT‑6 Astra、Meta Muse 明确写了 Muse Spark，<strong>只有本条留白</strong>。<strong>是否可换模型、可换哪些，官方未说明。</strong></dd>
         </div>
         <div class="axis">
           <dt><span data-zh>运行位置</span><span data-en>Where it runs</span></dt>
@@ -102,11 +128,11 @@ people who need local file read/write; people who need to know the underlying mo
         </div>
         <div class="axis">
           <dt><span data-zh>本地文件</span><span data-en>Local files</span></dt>
-          <dd><strong>官方未提及本地文件系统</strong>，数据/工作面在它自己的云端机器。 可间接看到的工作面是已登录的 app： 官方列的例子里有 audit email, Drive, and paid subscriptions、 以及「Works across apps and inboxes」，说明它确实在动邮箱与云盘， <strong>但权限粒度与是否全量同步，官方未说明，本次未核验。</strong></dd>
+          <dd><strong>官方未提及本地文件系统</strong>，工作面在它自己的云端机器（官方原文 &quot;They have their own computer. It&#39;s always on, with browser and terminal access&quot;）。 可间接看到的工作面是已登录的 app：官方例子里有 audit email, Drive, and paid subscriptions、以及「Works across apps and inboxes」， 说明它确实在动邮箱与云盘。 <strong>权限粒度与是否全量同步，官方未说明</strong>（已查两篇发布页与 x.ai/bot 治理规范）。</dd>
         </div>
         <div class="axis">
           <dt><span data-zh>关机后的任务</span><span data-en>Tasks after shutdown</span></dt>
-          <dd><strong>官方直接给了时长承诺</strong>：首发页原文「keep working 24/7」， 另一篇「Bots work across apps and inboxes, keep going when you step away, and only pull you in for judgment calls」。 <strong>「only pull you in for judgment calls」是这一维度里最清楚的一句</strong> —— 它明确了回调条件是「需要判断的时候」，而不是定时汇报。 另有官方给的固化机制：「Ask a Bot to follow along the next time you do the job, so it can run on its own after that」（教一次之后自己跑）。 并明确它可并行：「Stand up a researcher, writer, and chief of staff. Put them in a group chat so they pass work between themselves」。 ⚠ 与 OpenAI Dot 一样，后台自主时工具的权限级别<strong>官方未给只读或读写表述</strong>，<strong>未核验</strong>。</dd>
+          <dd><strong>官方直接给了时长承诺</strong>：首发页原文「keep working 24/7」， 另一篇「Bots work across apps and inboxes, keep going when you step away, and only pull you in for judgment calls」。 <strong>「only pull you in for judgment calls」是这一维度里最清楚的一句</strong> —— 它明确了回调条件是「需要判断的时候」，而不是定时汇报。 另有官方给的固化机制：「Ask a Bot to follow along the next time you do the job, so it can run on its own after that」（教一次之后自己跑）。 并明确它可并行：「Stand up a researcher, writer, and chief of staff. Put them in a group chat so they pass work between themselves」。 <strong>后台自主时工具的权限级别（只读还是读写），官方未说明</strong> （已查两篇发布页与 x.ai/bot 治理规范，后者只列必审动作、不述权限级别）。</dd>
         </div>
         <div class="axis">
           <dt><span data-zh>工具与扩展</span><span data-en>Tools & extensions</span></dt>
@@ -114,11 +140,11 @@ people who need local file read/write; people who need to know the underlying mo
         </div>
         <div class="axis">
           <dt><span data-zh>上下文与记忆</span><span data-en>Context & memory</span></dt>
-          <dd><strong>官方表述偏交互记忆，不是上下文窗口</strong>： 「They remember conversations, learn how you like things done, and get sharper the more work together」； 接入口是「A text-thread UX. Message a Bot the way you would message someone on your team, from mobile or desktop, so you can pick up the same thread on either — with nothing to set up first」。 <strong>即跨端续同一条对话线程。</strong> 多Bot 协作有独立描述（group chat 里互相传活，用户不在中间）。 <strong>上下文窗口大小、记忆的存储与删除机制，官方发布页完全未提，本次未核验</strong> （对比：Meta Muse 官方给了删除与 forget skill，这是本条明显的信息缺口）。</dd>
+          <dd><strong>官方表述偏交互记忆，不是上下文窗口</strong>： 「They remember conversations, learn how you like things done, and get sharper the more work together」； 接入口是「A text-thread UX. Message a Bot the way you would message someone on your team, from mobile or desktop, so you can pick up the same thread on either — with nothing to set up first」。 <strong>即跨端续同一条对话线程。</strong> 多 Bot 协作有独立描述（group chat 里互相传活，用户不在中间）。 <strong>上下文窗口大小与记忆的存储、删除机制，官方未说明</strong> （已查两篇发布页与 x.ai/bot 治理规范；对比 Meta Muse 官方给了删除与 forget skill，这是本条明显的信息缺口）。</dd>
         </div>
         <div class="axis">
           <dt><span data-zh>权限与限制</span><span data-en>Permissions & limits</span></dt>
-          <dd><strong>官方发布页对权限的描述比另两家薄，但官方域内另有一份 Bot 治理规范补上了一部分</strong> （2026-10-03 补，文档性质见正文「那份治理规范怎么读」一节）。 发布页已核验的三处： 已核验的只有三处： ① 回调即审批 —— 「only come back when something needs your approval」、 「Leaves every send for you to approve in your inbox or navigator」； ② 例行任务自带保守动词 —— declutterer「Only discards or unsubscribes if you say so」、 refunds manager「Comes back with the refund or discount it recovered」 （不自行执行退款，把结果拿回来）； ③ 一个值得记的设计 —— Website builder 官方写 「Helps configure plugins, delivers a live URL, and adds redirect rules」， <strong>即它连改域名解析都做，但官网未把它列为需审批项。</strong> <strong>⚠ 官方域内 <code>x.ai/bot/…</code> 的Bot 治理规范给出了一份明确的审批清单</strong> （原文「Explicit approval required before…」），逐条列出的必审动作包括： 创建/编辑/复制/隐藏/删除 Bot；保存或实质修改 Skill； 创建/启用/编辑/暂停 Routine；创建或变更群聊； 安装或认证连接器；<strong>扩张权限</strong>；写入外部源；发送或发布； 联系外部人员；<strong>采购、转账、改定价、商业承诺</strong>；删除或覆写数据；改动生产环境； 接受法律条款；敏感雇佣/医疗/法律/财务决策；创建公开分享链接或市场提交。 <strong>三条与本档案直接相关的</strong>： 「<strong>Do not infer approval from silence, vague agreement, a previous approval, another version, or an example</strong>」——<strong>沉默不算同意</strong>， 这与 Dot 的「always ask」是不同强度的档位； 「Approval applies only to the <strong>exact action, target, scope, version, configuration, connection, permission, and schedule</strong>」——<strong>审批不外溢</strong>， 换一个版本或配置就不再有效； 「<strong>Never delete a Bot automatically</strong>」+ 「Agents cannot be deleted by another agent; <strong>the user deletes from the sidebar</strong>」。 另有两条凭据规则：「<strong>Never store credentials</strong>」、 「Never request passwords, passkeys, 2FA, private keys, recovery codes, payment confirmations, or API secrets in chat」。 <strong>⚠ 仍未核验</strong>：是否有类似 Dot 的<strong>自动审核器</strong>、是否有<strong>可自定义的权限规则界面</strong>、 <strong>审计日志</strong>长什么样、凭据的<strong>技术保管方式</strong>（只知「不存凭据」的规约， 不知如何加密或隔离）、以及上述规范是<strong>产品级强制</strong>还是<strong>单个 Bot 的行为约束</strong>。 ⚠ 三份档案里<strong>本条仍是最薄的一份</strong> —— 补上的是行为规约，不是产品机制说明。</dd>
+          <dd><strong>发布页只有「回调即审批」一层，官方域内另有 Bot 治理规范补上审批清单</strong> （2026-10-03 补，文档性质见正文「那份治理规范怎么读」一节）。 发布页已核验三处： ① 回调即审批 —— 「only come back when something needs your approval」、 「Leaves every send for you to approve in your inbox or navigator」； ② 例行任务自带保守动词 —— declutterer「Only discards or unsubscribes if you say so」、refunds manager「Comes back with the refund or discount it recovered」（不自行执行退款，把结果拿回来）； ③ 一个值得记的设计 —— Website builder 官方写 「Helps configure plugins, delivers a live URL, and adds redirect rules」， <strong>它连改域名解析都做，但官网未把它列为需审批项。</strong> <strong>官方域内 <code>x.ai/bot/…</code> 的 Bot 治理规范给出了明确的审批清单</strong> （原文「Explicit approval required before…」），必审动作包括： 创建/编辑/复制/隐藏/删除 Bot；保存或实质修改 Skill； 创建/启用/编辑/暂停 Routine；创建或变更群聊；安装或认证连接器； <strong>扩张权限</strong>；写入外部源；发送或发布；联系外部人员； <strong>采购、转账、改定价、商业承诺</strong>；删除或覆写数据；改动生产环境； 接受法律条款；敏感雇佣/医疗/法律/财务决策；创建公开分享链接或市场提交。 三条与本档案直接相关的行为规约： 「<strong>Do not infer approval from silence, vague agreement, a previous approval, another version, or an example</strong>」——<strong>沉默不算同意</strong>； 「Approval applies only to the <strong>exact action, target, scope, version, configuration, connection, permission, and schedule</strong>」——<strong>审批不外溢</strong>； 「<strong>Never delete a Bot automatically</strong>」+ 「Agents cannot be deleted by another agent; <strong>the user deletes from the sidebar</strong>」。另有两条凭据规则：「<strong>Never store credentials</strong>」、 「Never request passwords, passkeys, 2FA, private keys, recovery codes, payment confirmations, or API secrets in chat」。 <strong>产品级机制（可自定义的权限规则界面、自动审核器、审计日志、 凭据的技术保管方式、规范是产品级强制还是单个 Bot 的约束），官方未说明</strong> —— 补到的是一份 Bot 行为规范，不是产品机制文档（已查两篇发布页与 x.ai/bot 规范）。</dd>
         </div>
         <div class="axis">
           <dt><span data-zh>适合什么任务</span><span data-en>Best for</span></dt>
@@ -200,6 +226,7 @@ people who need local file read/write; people who need to know the underlying mo
           <li><span class="rel-t"><a href="./openai-dot.html">OpenAI Dot</a></span><span class="rel-n">同期发布，权限信息最完整的一份</span></li>
           <li><span class="rel-t"><a href="./meta-muse.html">Meta Muse</a></span><span class="rel-n">同期发布，Sentinel 独立否决层</span></li>
           <li><span class="rel-t"><a href="./codex-ide.html">Codex</a></span><span class="rel-n">本地 CLI 形态的对照项（机器归你）</span></li>
+          <li><span class="rel-t"><a href="/tools/playwright.html"><span data-zh>Playwright MCP Server</span><span data-en>Playwright MCP Server</span></a></span><span class="rel-n"><span data-zh>另一层 · 给 agent 装的工具</span><span data-en>Other layer · MCP tools</span></span></li>
         </ul>
       </div>
 
