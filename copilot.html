@@ -11,7 +11,7 @@
   <meta property="og:url" content="https://agent.specul.com/copilot.html" />
   <meta property="og:title" content="GitHub Copilot — Agents | 投机取巧" />
   <meta property="og:description" content="GitHub Copilot（GitHub / Microsoft）：形态最广、生态最依附 GitHub 的一个——从网站到 CLI 到主流编辑器全覆盖，且能把任务委派给 Claude / Codex（Preview）。" />
-  <meta name="theme-color" content="#05080f" />
+  <meta name="theme-color" content="#16121f" />
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%238b7cf8'/%3E%3Cstop offset='1' stop-color='%2322d3c5'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='48' height='48' rx='12' fill='%2305080f'/%3E%3Cpath d='M14 32 L24 12 L34 32' fill='none' stroke='url(%23g)' stroke-width='2.4' stroke-linejoin='round'/%3E%3Ccircle cx='24' cy='27' r='2.4' fill='%2322d3c5'/%3E%3C/svg%3E" />
   <link rel="stylesheet" href="brand.css" />
   <link rel="stylesheet" href="site.css" />
@@ -96,59 +96,79 @@
         <span class="badge"><span data-zh>核验</span><span data-en>Checked</span> 2026-10-08</span>
       </div>
 
-            <p class="panel-lead"><span data-zh><strong>形态最广、生态最依附 GitHub</strong> 的一个——从网站到 CLI 到主流编辑器全覆盖，且能把任务委派给 Claude / Codex（Preview）。</span><span data-en><strong>The widest form coverage and the most GitHub-bound ecosystem</strong> — website, CLI and mainstream editors, and it can delegate tasks to Claude / Codex (Preview).</span></p>
+            <div class="panel-lead"><span data-zh><p><strong>形态最广、生态最依附 GitHub</strong> 的一个——从网站到 CLI 到主流编辑器全覆盖，且能把任务委派给 Claude / Codex（Preview）。</p></span><span data-en><p><strong>The widest form coverage and the most GitHub-bound ecosystem</strong> — website, CLI and mainstream editors, and it can delegate tasks to Claude / Codex (Preview).</p></span></div>
 
             <div class="panel is-slim">
         <h2><span data-zh>适合与不适合</span><span data-en>When to use it, when not to</span></h2>
-<span data-zh>        <p>已在 GitHub 生态内（用 PR / Issue / Actions 工作）的人。
-需要最广编辑器覆盖的人（VS Code / JetBrains / Eclipse / Xcode 都能用）。
-企业采购需要额度池治理与管理员支出控制的人。</p>
-        <p class="warn-p"><strong>不适合</strong>要求定价一次讲清的人——
-本次未能逐档确认价格数字，必须自行到官网核对。
-也不适合依赖第三方 agent 委派的场景（官方标注为 Preview）。</p></span><span data-en>        <p>People already inside the GitHub ecosystem (working via PR / Issue / Actions).
-People who need the widest editor coverage (VS Code / JetBrains / Eclipse / Xcode).
-Organisations that need quota-pool governance and admin spend controls.</p>
-        <p class="warn-p"><strong>Not a fit for</strong> anyone requiring pricing stated once and clearly — this round could not confirm the price figures tier by tier; check the official site yourself.
-Also not a fit if you rely on third-party agent delegation (officially marked Preview).</p></span>
+<span data-zh>        <div><p>已在 GitHub 生态内（用 PR / Issue / Actions 工作）的人。 需要最广编辑器覆盖的人（VS Code / JetBrains / Eclipse / Xcode 都能用）。 企业采购需要额度池治理与管理员支出控制的人。</p></div>
+        <div class="warn-p"><p><strong>不适合</strong>要求定价一次讲清的人—— 本次未能逐档确认价格数字，必须自行到官网核对。 也不适合依赖第三方 agent 委派的场景（官方标注为 Preview）。</p></div></span><span data-en>        <div><p>People already inside the GitHub ecosystem (working via PR / Issue / Actions). People who need the widest editor coverage (VS Code / JetBrains / Eclipse / Xcode). Organisations that need quota-pool governance and admin spend controls.</p></div>
+        <div class="warn-p"><p><strong>Not a fit for</strong> anyone requiring pricing stated once and clearly — this round could not confirm the price figures tier by tier; check the official site yourself. Also not a fit if you rely on third-party agent delegation (officially marked Preview).</p></div></span>
       </div>
 
 
       <div class="block-head">
         <h2 class="t-h2"><span data-zh>固定坐标系</span><span data-en>Fixed coordinate system</span></h2>
-        <p class="t-section-lead">8 <span data-zh>个维度</span><span data-en>dimensions</span>, <span data-zh>与同赛道其他对象逐项可比</span><span data-en>each comparable item by item against others in the same track</span>.</p>
+        <p class="t-section-lead">8 <span data-zh>个维度</span><span data-en>dimensions</span>, <span data-zh>与同分区其他对象逐项可比</span><span data-en>each comparable item by item against others in the same section</span>.</p>
       </div>
       <dl class="axes">
         <div class="axis">
           <dt><span data-zh>模型与开放条件</span><span data-en>Model & openness</span></dt>
-          <dd>由 GitHub / Microsoft 统一托管，绑定 GitHub 账号体系； <strong>官方有模型清单页</strong>，覆盖多厂商：OpenAI（GPT-5 / 5.3-Codex / 5.4 / 5.5 / 5.6 / 6.x）、Anthropic（Claude Fable / Opus / Sonnet）、 Google（Gemini Flash）、Microsoft（MAI-Code）、Moonshot（Kimi）、 xAI（Grok）。<strong>模型随套餐与客户端变化</strong>：Pro / Pro+ / Max / Business / Enterprise 各不同，Free 与 Student <strong>仅能经 Auto 模型选择</strong>使用；组织 / 企业可启用或限制具体模型。 聊天框有模型切换器（另有 Auto），部分模型支持 1M token 上下文 与可调 reasoning（VS Code 与 CLI）。 <strong>BYOK 已核验</strong>：VS Code 可从 provider（Anthropic / Gemini / OpenAI 等）或 AI Toolkit 添加模型，可能需 API key 或 PAT； Business / Enterprise 需先启用「Bring Your Own Language Model Key in Select IDEs」策略。 第三方 agent 委派（Claude / Codex）仍标 <strong>Preview</strong>。</dd>
+          <dd><p>由 GitHub / Microsoft 统一托管，绑定 GitHub 账号体系。</p>
+            <p><strong>官方有模型清单页</strong>，覆盖多厂商：</p>
+            <ul><li>OpenAI（GPT-5 / 5.3-Codex / 5.4 / 5.5 / 5.6 / 6.x）</li><li>Anthropic（Claude Fable / Opus / Sonnet）</li><li>Google（Gemini Flash）</li><li>Microsoft（MAI-Code）</li><li>Moonshot（Kimi）</li><li>xAI（Grok）</li></ul>
+            <p><strong>模型随套餐与客户端变化</strong>：Pro / Pro+ / Max / Business / Enterprise 各不同，Free 与 Student <strong>仅能经 Auto 模型选择</strong>使用；组织 / 企业可启用或限制具体模型。</p>
+            <p>聊天框有模型切换器（另有 Auto），部分模型支持 1M token 上下文 与可调 reasoning（VS Code 与 CLI）。</p>
+            <p><strong>BYOK 已核验</strong>：VS Code 可从 provider（Anthropic / Gemini / OpenAI 等）或 AI Toolkit 添加模型，可能需 API key 或 PAT。</p>
+            <p>Business / Enterprise 需先启用「Bring Your Own Language Model Key in Select IDEs」策略。</p>
+            <p>第三方 agent 委派（Claude / Codex）仍标 <strong>Preview</strong>。</p></dd>
         </div>
         <div class="axis">
           <dt><span data-zh>运行位置</span><span data-en>Where it runs</span></dt>
-          <dd><strong>形态最广的一个</strong>： GitHub 网站本身（含 github.com 与 GitHub Mobile）、 Copilot app、Copilot CLI、 以及 VS Code / Visual Studio / JetBrains / Eclipse / Xcode 等编辑器。 另有 Codespaces 提供的即时开发环境。</dd>
+          <dd><p><strong>形态最广的一个</strong>：</p>
+            <ul><li>GitHub 网站本身（含 github.com 与 GitHub Mobile）</li><li>Copilot app</li><li>Copilot CLI</li><li>以及 VS Code / Visual Studio / JetBrains / Eclipse / Xcode 等编辑器</li></ul>
+            <p>另有 Codespaces 提供的即时开发环境。</p></dd>
         </div>
         <div class="axis">
           <dt><span data-zh>本地文件</span><span data-en>Local files</span></dt>
-          <dd>通过编辑器扩展或 GitHub 平台访问代码；<strong>官方有语义代码索引 （semantic code search）</strong>：后台建立，大仓库首次索引最长约 60 秒，此后增量更新通常在新会话开始后数秒内完成； 供 GitHub 网站与 VS Code 的 Copilot Chat、以及 cloud agent 使用。 非 GitHub 仓库（GitLab、本地仓库）在 VS Code 也可语义索引， 但<strong>会把数据上传到 GitHub</strong>，且默认关闭、需管理员启用 「Semantic indexing for non-GitHub repositories」策略。 <strong>Content exclusion</strong> 可让 Copilot 忽略指定文件。 官方明说索引结果 <strong>不用于模型训练</strong>。</dd>
+          <dd><p>通过编辑器扩展或 GitHub 平台访问代码。</p>
+            <p><strong>官方有语义代码索引（semantic code search）</strong>：</p>
+            <p>后台建立，大仓库首次索引最长约 60 秒， 此后增量更新通常在新会话开始后数秒内完成。</p>
+            <p>供 GitHub 网站与 VS Code 的 Copilot Chat、以及 cloud agent 使用。</p>
+            <p>非 GitHub 仓库（GitLab、本地仓库）在 VS Code 也可语义索引， 但<strong>会把数据上传到 GitHub</strong>，且默认关闭、需管理员启用 <strong>「Semantic indexing for non-GitHub repositories」</strong>策略。</p>
+            <p><strong>Content exclusion</strong> 可让 Copilot 忽略指定文件。</p>
+            <p>官方明说索引结果 <strong>不用于模型训练</strong>。</p></dd>
         </div>
         <div class="axis">
           <dt><span data-zh>关机后的任务</span><span data-en>Tasks after shutdown</span></dt>
-          <dd><strong>有明确的真后台 cloud agent（原 coding agent）</strong>： 官方原文「GitHub Copilot can work independently in the background」，在<strong>由 GitHub Actions 驱动的临时开发环境</strong>里独立 跑任务——即<strong>厂商托管，你的机器关闭后仍继续</strong>。 触发方式：派 GitHub issue、在 PR 评论 <code>@copilot</code>，或从 VS Code 入口；可产出分支 / PR（一次一分支、一任务一 PR）。 Business / Enterprise 默认禁用，需管理员先启用。 <strong>限制</strong>：cloud agent <strong>不遵守 content exclusion</strong>。 用量：消耗 GitHub Actions 分钟 + Copilot premium requests。</dd>
+          <dd><p><strong>有明确的真后台 cloud agent（原 coding agent）</strong>。</p>
+            <p><strong>官方原文</strong>：「GitHub Copilot can work independently in the background」</p>
+            <p>在<strong>由 GitHub Actions 驱动的临时开发环境</strong>里独立跑任务—— 即<strong>厂商托管，你的机器关闭后仍继续</strong>。</p>
+            <p>触发方式：派 GitHub issue、在 PR 评论 <code>@copilot</code>，或从 VS Code 入口； 可产出分支 / PR（一次一分支、一任务一 PR）。</p>
+            <p>Business / Enterprise 默认禁用，需管理员先启用。</p>
+            <p><strong>限制</strong>：cloud agent <strong>不遵守 content exclusion</strong>。</p>
+            <p>用量：消耗 GitHub Actions 分钟 + Copilot premium requests。</p></dd>
         </div>
         <div class="axis">
           <dt><span data-zh>工具与扩展</span><span data-en>Tools & extensions</span></dt>
-          <dd><strong>MCP 是官方平台级能力</strong>—— 导航栏即有独立的「MCP Registry / Integrate external tools」条目。 支持自定义指令与自定义 agent。 <strong>File diff reviews in code editors</strong> 在更高档位提供。</dd>
+          <dd><p><strong>MCP 是官方平台级能力</strong>—— 导航栏即有独立的<strong>「MCP Registry / Integrate external tools」</strong>条目。 支持自定义指令与自定义 agent。 <strong>File diff reviews in code editors</strong> 在更高档位提供。</p></dd>
         </div>
         <div class="axis">
           <dt><span data-zh>上下文与记忆</span><span data-en>Context & memory</span></dt>
-          <dd><strong>上下文窗口有上限说明</strong>：部分模型支持 <strong>1M token 上下文</strong> （仅 VS Code 与 Copilot CLI 可用），并有可调 reasoning （VS Code、CLI 与 cloud agent）。 <strong>跨会话记忆已核验为官方功能 Copilot Memory（public preview）</strong>： 存仓库级事实与用户级偏好，带引用并在当前分支校验， 未使用的条目 <strong>28 天后自动删除</strong>，可在多个 feature 间共享； 付费套餐可用，组织 / 企业需管理员先启用。 另有 custom instructions 三类（个人 / 仓库 / 组织），优先级 个人 &gt; 仓库 &gt; 组织；仓库级用 <code>.github/copilot-instructions.md</code>， 路径级用 <code>.github/instructions/**/*.instructions.md</code>， 以及 <code>AGENTS.md</code> 等 agent 指令。</dd>
+          <dd><p><strong>上下文窗口有上限说明</strong>：部分模型支持 <strong>1M token 上下文</strong> （仅 VS Code 与 Copilot CLI 可用），并有可调 reasoning （VS Code、CLI 与 cloud agent）。</p>
+            <p><strong>跨会话记忆已核验为官方功能 Copilot Memory（public preview）</strong>： 存仓库级事实与用户级偏好，带引用并在当前分支校验， 未使用的条目 <strong>28 天后自动删除</strong>，可在多个 feature 间共享； 付费套餐可用，组织 / 企业需管理员先启用。</p>
+            <p>另有 custom instructions 三类（个人 / 仓库 / 组织），优先级 个人 &gt; 仓库 &gt; 组织：</p>
+            <ul><li>仓库级用 <code>.github/copilot-instructions.md</code></li><li>路径级用 <code>.github/instructions/**/*.instructions.md</code></li><li>以及 <code>AGENTS.md</code> 等 agent 指令</li></ul></dd>
         </div>
         <div class="axis">
           <dt><span data-zh>权限与限制</span><span data-en>Permissions & limits</span></dt>
-          <dd><strong>依赖 GitHub 权限体系</strong>（仓库 / PR / 组织策略）。 官方已核验的边界： ① <strong>Content exclusion</strong>（Business / Enterprise）可让 Copilot 忽略 指定文件；但不覆盖 symlink 与远程文件系统、在 VS Code 的 Edit / Agent 模式不支持，且 <strong>cloud agent 不适用内容排除</strong>。 ② <strong>cloud agent 默认受防火墙限制联网</strong>：官方称按域名 / URL 允许清单放行，可在组织与仓库级配置；但防火墙只作用于 agent 经 Bash 工具启动的进程、不覆盖 MCP，且官方承认可能被绕过。 ③ Business / Enterprise 需管理员先启用 agent、模型切换与 BYOK 策略；仓库可 opt out。索引不用于模型训练。</dd>
+          <dd><p><strong>依赖 GitHub 权限体系</strong>（仓库 / PR / 组织策略）。</p>
+            <p>官方已核验的边界：</p>
+            <ul><li>① <strong>Content exclusion</strong>（Business / Enterprise）可让 Copilot 忽略 指定文件；但不覆盖 symlink 与远程文件系统、在 VS Code 的 Edit / Agent 模式不支持，且 <strong>cloud agent 不适用内容排除</strong>。</li><li>② <strong>cloud agent 默认受防火墙限制联网</strong>：官方称按域名 / URL 允许清单放行，可在组织与仓库级配置；但防火墙只作用于 agent 经 Bash 工具启动的进程、不覆盖 MCP，且官方承认可能被绕过。</li><li>③ Business / Enterprise 需管理员先启用 agent、模型切换与 BYOK 策略；仓库可 opt out。索引不用于模型训练。</li></ul></dd>
         </div>
         <div class="axis">
           <dt><span data-zh>适合什么任务</span><span data-en>Best for</span></dt>
-          <dd>已在 GitHub 生态内（用 PR / Issue / Actions 工作）的人； 需要最广编辑器覆盖的人（VS Code / JetBrains / Eclipse / Xcode 都能用）； 企业采购需要额度池治理与管理员支出控制的人。 只想试 AI 补全的人可用 Copilot Free（有限额度）。</dd>
+          <dd><p>已在 GitHub 生态内（用 PR / Issue / Actions 工作）的人； 需要最广编辑器覆盖的人（VS Code / JetBrains / Eclipse / Xcode 都能用）； 企业采购需要额度池治理与管理员支出控制的人。</p>
+            <p>只想试 AI 补全的人可用 Copilot Free（有限额度）。</p></dd>
         </div>
       </dl>
 
@@ -156,10 +176,10 @@ Also not a fit if you rely on third-party agent delegation (officially marked Pr
         <h2 class="warn"><span data-zh>头号误解</span><span data-en>Top misconception</span></h2>
         <ul>
 
-          <li>把 Flex allotment 当固定额度，官方明确说它会变</li>
-          <li>忽略 Preview 状态的第三方 agent 委派（Claude / Codex）</li>
-          <li>以为个人档也有额度池共享，Pooled usage 仅 Business / Enterprise</li>
-          <li>以为 cloud agent 会遵守 content exclusion——官方明说它不遵守</li>
+          <li><span data-zh>把 Flex allotment 当固定额度，官方明确说它会变</span><span data-en>Reading Flex allotment as a fixed quota — the official docs say it changes</span></li>
+          <li><span data-zh>忽略 Preview 状态的第三方 agent 委派（Claude / Codex）</span><span data-en>Overlooking third-party agent delegation in Preview (Claude / Codex)</span></li>
+          <li><span data-zh>以为个人档也有额度池共享，Pooled usage 仅 Business / Enterprise</span><span data-en>Assuming individual plans share a quota pool — pooled usage is Business / Enterprise only</span></li>
+          <li><span data-zh>以为 cloud agent 会遵守 content exclusion——官方明说它不遵守</span><span data-en>Assuming the cloud agent honours content exclusion — the official docs say plainly that it does not</span></li>
         </ul>
       </div>
 
@@ -168,10 +188,10 @@ Also not a fit if you rely on third-party agent delegation (officially marked Pr
         <h2><span data-zh>价格</span><span data-en>Pricing</span></h2>
         <table class="src">
           <tbody>
-            <tr><th class="w-28"><span data-zh>月度入口</span><span data-en>Monthly entry</span></th><td><span data-zh>Copilot Free（2,000 补全/月）/ Pro $10 / Pro+ $39 / Max $100 每月</span><span data-en>Copilot Free（2,000 补全/月）/ Pro $10 / Pro+ $39 / Max $100 每月</span></td></tr>
+            <tr><th class="w-28"><span data-zh>月度入口</span><span data-en>Monthly entry</span></th><td><span data-zh><p>Copilot Free（2,000 补全/月）/ Pro $10 / Pro+ $39 / Max $100 每月</p></span><span data-en><p>Copilot Free（2,000 补全/月）/ Pro $10 / Pro+ $39 / Max $100 每月</p></span></td></tr>
             <tr><th class="w-28"><span data-zh>月度数值</span><span data-en>Monthly price</span></th><td>10</td></tr>
-            <tr><th class="w-28"><span data-zh>年付</span><span data-en>Annual</span></th><td><span data-zh>年付按档折算（Pro $15、Pro+ $70、Max $200 每月等值），无统一折算率</span><span data-en>年付按档折算（Pro $15、Pro+ $70、Max $200 每月等值），无统一折算率</span></td></tr>
-            <tr><th class="w-28"><span data-zh>额度说明</span><span data-en>Quota note</span></th><td><span data-zh>**2026-10-01 用 Playwright 渲染官方 plans 页后逐档确认，月付/年付两套口径都拿到**： 个人四档 —— Free $0（**每月 2,000 次补全**，chat 与 agent 用量有限）、 Pro $10/月、Pro+ $39/月、Max $100/月；这三档的 agent 与 chat 配额均为 **Unlimited**。 **月付额度**：Pro $15、Pro+ $70、Max $200 每月总credits（官方标注序号 6的附加说明）。 团队每用户每月 —— Pro $10、Pro+ $39、Max $100（另有 Enterprise 定制）。 **年付口径数字不同**（Pro $15、Pro+ $70、Max $200），页面同时呈现两套， 本站按「月付=当年付折扣后」理解，但**具体折算率官方未单列，勿自行推算**。 另有机制：Flex allotment（官方明确标注「Flex allotments may change over time」， 即额度可变）、可额外购买 GitHub AI Credits、 Business/Enterprise 有 Pooled usage（组织内共享额度 + 管理员支出控制）。</span><span data-en>**2026-10-01 用 Playwright 渲染官方 plans 页后逐档确认，月付/年付两套口径都拿到**： 个人四档 —— Free $0（**每月 2,000 次补全**，chat 与 agent 用量有限）、 Pro $10/月、Pro+ $39/月、Max $100/月；这三档的 agent 与 chat 配额均为 **Unlimited**。 **月付额度**：Pro $15、Pro+ $70、Max $200 每月总credits（官方标注序号 6的附加说明）。 团队每用户每月 —— Pro $10、Pro+ $39、Max $100（另有 Enterprise 定制）。 **年付口径数字不同**（Pro $15、Pro+ $70、Max $200），页面同时呈现两套， 本站按「月付=当年付折扣后」理解，但**具体折算率官方未单列，勿自行推算**。 另有机制：Flex allotment（官方明确标注「Flex allotments may change over time」， 即额度可变）、可额外购买 GitHub AI Credits、 Business/Enterprise 有 Pooled usage（组织内共享额度 + 管理员支出控制）。</span></td></tr>
+            <tr><th class="w-28"><span data-zh>年付</span><span data-en>Annual</span></th><td><span data-zh><p>年付按档折算（Pro $15、Pro+ $70、Max $200 每月等值），无统一折算率</p></span><span data-en><p>年付按档折算（Pro $15、Pro+ $70、Max $200 每月等值），无统一折算率</p></span></td></tr>
+            <tr><th class="w-28"><span data-zh>额度说明</span><span data-en>Quota note</span></th><td><span data-zh><p><strong>2026-10-01 用 Playwright 渲染官方 plans 页后逐档确认，月付/年付两套口径都拿到</strong>： 个人四档 —— Free $0（<strong>每月 2,000 次补全</strong>，chat 与 agent 用量有限）、 Pro $10/月、Pro+ $39/月、Max $100/月；这三档的 agent 与 chat 配额均为 <strong>Unlimited</strong>。 <strong>月付额度</strong>：Pro $15、Pro+ $70、Max $200 每月总credits（官方标注序号 6的附加说明）。 团队每用户每月 —— Pro $10、Pro+ $39、Max $100（另有 Enterprise 定制）。 <strong>年付口径数字不同</strong>（Pro $15、Pro+ $70、Max $200），页面同时呈现两套， 本站按「月付=当年付折扣后」理解，但<strong>具体折算率官方未单列，勿自行推算</strong>。 另有机制：Flex allotment（官方明确标注「Flex allotments may change over time」， 即额度可变）、可额外购买 GitHub AI Credits、 Business/Enterprise 有 Pooled usage（组织内共享额度 + 管理员支出控制）。</p></span><span data-en><p><strong>2026-10-01 用 Playwright 渲染官方 plans 页后逐档确认，月付/年付两套口径都拿到</strong>： 个人四档 —— Free $0（<strong>每月 2,000 次补全</strong>，chat 与 agent 用量有限）、 Pro $10/月、Pro+ $39/月、Max $100/月；这三档的 agent 与 chat 配额均为 <strong>Unlimited</strong>。 <strong>月付额度</strong>：Pro $15、Pro+ $70、Max $200 每月总credits（官方标注序号 6的附加说明）。 团队每用户每月 —— Pro $10、Pro+ $39、Max $100（另有 Enterprise 定制）。 <strong>年付口径数字不同</strong>（Pro $15、Pro+ $70、Max $200），页面同时呈现两套， 本站按「月付=当年付折扣后」理解，但<strong>具体折算率官方未单列，勿自行推算</strong>。 另有机制：Flex allotment（官方明确标注「Flex allotments may change over time」， 即额度可变）、可额外购买 GitHub AI Credits、 Business/Enterprise 有 Pooled usage（组织内共享额度 + 管理员支出控制）。</p></span></td></tr>
           </tbody>
         </table>
         <p class="fine mt-3"><span data-zh>不同币种不做折算。优惠、地区、税费与登录后报价可能变化，购买前请到官方页面确认。</span><span data-en>No currency conversion. Discounts, regions, tax and post-login pricing can change — confirm on the official page before buying.</span></p>
@@ -212,18 +232,61 @@ Also not a fit if you rely on third-party agent delegation (officially marked Pr
 
             <div class="panel is-slim">
         <h2><span data-zh>实测记录</span><span data-en>Measured runs</span></h2>
-        <p>本站尚未完成实测。测试协议见 <a href="https://github.com/speculcom/ai-agent-guide/blob/main/tracks/agents/tasks/_protocol.md" target="_blank" rel="noopener">tasks/_protocol.md</a>。
-
-<strong>实测建议</strong>：重点测<strong>第三方 agent 委派（Preview）</strong>的实际可用性——
-这是本赛道唯一有这个能力的对象，值得先验证。</p>
+        <p>本站尚未完成实测。测试协议见 <a href="https://github.com/speculcom/ai-agent-guide/blob/main/tracks/agents/tasks/_protocol.md" target="_blank" rel="noopener">tasks/_protocol.md</a>。</p>
+            <p><strong>实测建议</strong>：重点测<strong>第三方 agent 委派（Preview）</strong>的实际可用性—— 这是本分区唯一有这个能力的对象，值得先验证。</p>
       </div>
 
 
             <div class="panel is-slim">
+        <h2>本分区的形态覆盖之最</h2>
+        <div class="tbl-wrap"><table><thead><tr><th>形态</th><th>Copilot 是否覆盖</th></tr></thead><tbody><tr><td>GitHub 网站 / Mobile</td><td>✅</td></tr><tr><td>Copilot app</td><td>✅</td></tr><tr><td>Copilot CLI</td><td>✅</td></tr><tr><td>VS Code / Visual Studio / JetBrains / Eclipse / Xcode</td><td>✅</td></tr><tr><td>Codespaces 云端环境</td><td>✅</td></tr><tr><td>云端 agent</td><td>✅</td></tr></tbody></table></div>
+            <p><strong>没有任何其他对象能覆盖这么多形态。</strong></p>
+      </div>
+      <div class="panel is-slim">
+        <h2>三个值得单独记录的能力</h2>
+        <h3 class="sub-h">① 可委派任务给第三方 agent（Preview）</h3>
+            <p>官方 plans 页原文：</p>
+            <p>``<code> Delegate tasks to third-party coding agents like Claude by Anthropic and OpenAI Codex (Preview) </code>``</p>
+            <p><strong>这是本分区里唯一明确写出「能把任务交给竞品 agent」的对象。</strong></p>
+            <p>含义：<strong>Copilot 正在从「自己干活」转向「调度别人干活」</strong>。 它把自己定位成任务分发层，而非模型的唯一提供方。</p>
+            <p><strong>注意标注是 Preview。</strong></p>
+            <h3 class="sub-h">② 额度机制有三层</h3>
+            <p>从 plans 页可见的机制：</p>
+            <div class="tbl-wrap"><table><thead><tr><th>机制</th><th>说明</th></tr></thead><tbody><tr><td><strong>Base credits</strong></td><td>各档位的基础额度</td></tr><tr><td><strong>Flex allotment</strong></td><td>变量额外用量，<strong>官方明确标注「Flex allotments may change over time」</strong></td></tr><tr><td><strong>Purchase additional GitHub AI Credits</strong></td><td>可额外购买额度</td></tr><tr><td><strong>Pooled usage</strong></td><td><strong>组织内共享额度 + 管理员支出控制</strong>（Business / Enterprise 专有）</td></tr></tbody></table></div>
+            <p><strong>Flex allotment 那句话值得单独记</strong>： 官方主动声明它会变——这意味着它<strong>不能被当作可依赖的固定额度</strong>。</p>
+            <h3 class="sub-h">③ 企业侧的额度治理</h3>
+            <p>``<code> Pooled usage Included AI credits are shared org-wide with admin controls for spending. </code>``</p>
+            <p><strong>组织内共享 + 管理员支出控制</strong>—— 这在个人档完全不可用，是企业采购时的关键能力。</p>
+      </div>
+      <div class="panel is-slim">
+        <h2>功能逐项对照（官方 plans 页结构）</h2>
+        <p>从采集到的对照表可见，档位差异主要在这些项：</p>
+            <div class="tbl-wrap"><table><thead><tr><th>功能</th><th>覆盖情况</th></tr></thead><tbody><tr><td>Editors and IDEs</td><td>多编辑器支持</td></tr><tr><td>GitHub（github.com + Mobile）</td><td>覆盖</td></tr><tr><td>Agent mode</td><td>多档位提供（VS Code / Visual Studio / JetBrains / Eclipse / Xcode）</td></tr><tr><td>Integrates with MCP servers</td><td>覆盖</td></tr><tr><td>Custom instructions and agents</td><td>覆盖</td></tr><tr><td>App modernization for Java and .NET</td><td>部分档位</td></tr><tr><td>Assign work and create a pull request</td><td>部分档位</td></tr><tr><td>Code review（PR 审查）</td><td>覆盖</td></tr><tr><td><strong>File diff reviews in code editors</strong></td><td><strong>仅更高档</strong></td></tr><tr><td><strong>Custom instructions with instructions.md</strong></td><td><strong>仅更高档</strong></td></tr><tr><td><strong>Cloud agent</strong></td><td><strong>部分档位</strong></td></tr><tr><td>第三方 agent 委派（Claude / Codex）</td><td><strong>标注 Preview</strong></td></tr></tbody></table></div>
+      </div>
+      <div class="panel is-slim">
+        <h2>价格数字（本次采集中最完整，但需注意口径）</h2>
+        <p>官方 plans 页呈现的数字序列：</p>
+            <div class="tbl-wrap"><table><thead><tr><th>序列</th><th>数字</th></tr></thead><tbody><tr><td>个人档相关</td><td><strong>$15 / $70 / $200</strong></td></tr><tr><td>Business 档相关</td><td><strong>$100 per month</strong>、<strong>$5 / $31 / $100</strong></td></tr></tbody></table></div>
+            <p><strong>必须说明的局限</strong>： 页面同时存在月付与年付口径， 本次采集<strong>未能逐档确认每个数字对应哪个档位的哪种周期</strong>。</p>
+            <p><strong>按本站方法论，这里应该标为未知而不是猜测。</strong> 具体价格请以官网为准。</p>
+      </div>
+      <div class="panel is-slim">
+        <h2>官方生态位：MCP Registry 是平台级能力</h2>
+        <p>值得注意的是，GitHub 把<strong>「MCP Registry / Integrate external tools」</strong> 放在<strong>平台导航的显眼位置</strong>，与 Copilot app 并列。</p>
+            <p><strong>这说明 MCP 在 GitHub 的战略里不只是「一个插件」，而是平台级基础设施。</strong></p>
+            <p>对本仓库的意义： 工具分区的条目如果哪天要选一个上游， <strong>GitHub 的 MCP Registry 是一个候选分发渠道</strong>。</p>
+      </div>
+      <div class="panel is-slim">
+        <h2>采集限制</h2>
+        <div class="tbl-wrap"><table><thead><tr><th>页面</th><th>状态</th></tr></thead><tbody><tr><td>plans 页</td><td>✅ 取到 71K 字符，功能逐项对照完整，⚠️ 价格数字未逐档对应</td></tr><tr><td>docs.github.com</td><td>✅ 2026-10-08 已取到模型、cloud agent、索引、内容排除、Memory、指令、防火墙等页</td></tr><tr><td>Changelog</td><td>✅ 取到 5838 字符</td></tr></tbody></table></div>
+            <p><strong>价格数字的逐档对应仍是缺口，故 confidence: partial。</strong></p>
+      </div>
+
+            <div class="panel is-slim">
         <h2><span data-zh>相关条目</span><span data-en>Related entries</span></h2>
         <ul class="rel-list">
-          <li><span class="rel-t"><a href="./cursor.html">Cursor</a></span><span class="rel-n">同赛道，架构更激进（自托管 + 子智能体编排）</span></li>
-          <li><span class="rel-t"><a href="./windsurf.html">Windsurf</a></span><span class="rel-n">同赛道，已改称 Devin Desktop</span></li>
+          <li><span class="rel-t"><a href="./cursor.html">Cursor</a></span><span class="rel-n">同分区，架构更激进（自托管 + 子智能体编排）</span></li>
+          <li><span class="rel-t"><a href="./windsurf.html">Windsurf</a></span><span class="rel-n">同分区，已改称 Devin Desktop</span></li>
           <li><span class="rel-t"><a href="/tools/github-mcp.html"><span data-zh>GitHub MCP Server</span><span data-en>GitHub MCP Server</span></a></span><span class="rel-n"><span data-zh>另一层 · 给 agent 装的工具</span><span data-en>Other layer · MCP tools</span></span></li>
           <li><span class="rel-t"><a href="/tools/filesystem.html"><span data-zh>Filesystem MCP Server</span><span data-en>Filesystem MCP Server</span></a></span><span class="rel-n"><span data-zh>另一层 · 给 agent 装的工具</span><span data-en>Other layer · MCP tools</span></span></li>
         </ul>
