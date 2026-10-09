@@ -4,13 +4,13 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Google ADK（Agent Development Kit） — Harness | 投机取巧</title>
-  <meta name="description" content="Google ADK（Agent Development Kit）（Google）：「code-first 的 agent 编排框架，核心资产是一个图执行引擎」 —— 官方 README 第一项特性就说明了它的身份： &gt; Workflow Runtime: A graph-based executi" />
+  <meta name="description" content="Google ADK（Agent Development Kit）（Google）：「code-first 的 agent 编排框架，核心资产是一个图执行引擎」 —— 官方 README 第一项特性就说明了它的身份： &gt; Workflow Runtime: A graph-based execution e…" />
   <link rel="canonical" href="https://agent.specul.com/harness/google-adk.html" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Google ADK（Agent Development Kit）" />
   <meta property="og:url" content="https://agent.specul.com/harness/google-adk.html" />
   <meta property="og:title" content="Google ADK（Agent Development Kit） — Harness | 投机取巧" />
-  <meta property="og:description" content="Google ADK（Agent Development Kit）（Google）：「code-first 的 agent 编排框架，核心资产是一个图执行引擎」 —— 官方 README 第一项特性就说明了它的身份： &gt; Workflow Runtime: A graph-based executi" />
+  <meta property="og:description" content="Google ADK（Agent Development Kit）（Google）：「code-first 的 agent 编排框架，核心资产是一个图执行引擎」 —— 官方 README 第一项特性就说明了它的身份： &gt; Workflow Runtime: A graph-based execution e…" />
   <meta name="theme-color" content="#05080f" />
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%238b7cf8'/%3E%3Cstop offset='1' stop-color='%2322d3c5'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='48' height='48' rx='12' fill='%2305080f'/%3E%3Cpath d='M14 32 L24 12 L34 32' fill='none' stroke='url(%23g)' stroke-width='2.4' stroke-linejoin='round'/%3E%3Ccircle cx='24' cy='27' r='2.4' fill='%2322d3c5'/%3E%3C/svg%3E" />
   <link rel="stylesheet" href="../brand.css" />
@@ -39,8 +39,34 @@
           <button class="icon-btn" id="langBtn" type="button" aria-label="Switch language" title="Switch language">EN</button>
         </span>
       </nav>
+      <!-- B6（2026-10-09）：与共享 shell 同步加的移动端导航入口。
+           ⚠ 本文件是 agent 站**自己的** shell 副本（它多一层分区切换），
+             所以每次改共享 shell 的骨架，这里也要跟一次 —— 这是双份实现固有的代价。
+             样式与行为都在共享 brand.css / brand.js 里，这里只出标记。 -->
+      <button class="nav-burger" type="button" aria-label="打开菜单" aria-expanded="false" aria-controls="navDrawer">
+        <i></i><i></i><i></i>
+      </button>
     </div>
   </header>
+  <div class="nav-scrim"></div>
+  <aside class="nav-drawer" id="navDrawer" aria-hidden="true" aria-label="站点导航">
+    <div class="nav-drawer-h">
+      <span class="brand-name"><span data-zh>投机取巧</span><span data-en>Speculative Speculation</span></span>
+      <button class="nav-dclose" type="button" aria-label="关闭">×</button>
+    </div>
+    <nav class="nav-drawer-list">
+      <a href="https://specul.com/"><span><span data-zh>首页</span><span data-en>Home</span></span><span class="ar" aria-hidden="true">→</span></a>
+      <a href="https://learn.specul.com/"><span><span data-zh>学 AI</span><span data-en>Learn</span></span><span class="ar" aria-hidden="true">→</span></a>
+      <a href="https://agent.specul.com/" aria-current="page"><span><span data-zh>Agent</span><span data-en>Agent</span></span><span class="ar" aria-hidden="true">→</span></a>
+      <a href="https://models.specul.com/"><span><span data-zh>本地模型</span><span data-en>Models</span></span><span class="ar" aria-hidden="true">→</span></a>
+      <a href="https://vg.specul.com/"><span><span data-zh>AI 做游戏</span><span data-en>Vibe Gaming</span></span><span class="ar" aria-hidden="true">→</span></a>
+      <a href="https://nav.specul.com/"><span><span data-zh>导航</span><span data-en>Directory</span></span><span class="ar" aria-hidden="true">→</span></a>
+    </nav>
+    <div class="nav-drawer-foot">
+      <p><span data-zh>6 个站，各管一件事</span><span data-en>Six sites, one job each</span></p>
+      <nav><a href="https://specul.com/legal.html"><span data-zh>法律条款</span><span data-en>Legal terms</span></a></nav>
+    </div>
+  </aside>
   <main id="main">
     <div class="container detail">
       <nav class="crumbs" aria-label="面包屑">
@@ -83,7 +109,7 @@
 &gt; <strong>Workflow Runtime</strong>: A graph-based execution engine for composing **deterministic
 &gt; execution flows** for agentic apps, with support for routing, fan-out/fan-in,
 &gt; <strong>loops</strong>, <strong>retry</strong>, <strong>state management</strong>, <strong>dynamic nodes</strong>, <strong>human-in-the-loop</strong>,
-&gt; and <strong>nested workflows</strong>.</span><span data-en><strong>&quot;A code-first agent orchestration framework whose core asset is a graph execution engine&quot;</strong> — the first feature in the official README states its identity:
+&gt; and <strong>nested workflows</strong>.</span><span data-en><strong>&quot;A code-first agent orchestration framework whose core asset is a graph execution engine&quot;</strong> — the first feature listed in the official README states its identity:
 
 &gt; <strong>Workflow Runtime</strong>: A graph-based execution engine for composing **deterministic
 &gt; execution flows** for agentic apps, with support for routing, fan-out/fan-in,
@@ -96,7 +122,7 @@
 要 code-first 定义逻辑便于测试与版本管理；团队在 Google 生态内；
 需要内建 eval 与开发 UI。
 <strong>不适合</strong>：只跑单个 agent、不需要图结构（用 OpenAI Agents SDK 更轻）；
-需要文件级/网络级沙箱边界但不想自己实现；长上下文压缩是硬需求（本站未核验其手段）。</p></span><span data-en>        <p><strong>Fits</strong>: organising multiple agents into deterministic flows with branches, loops and human intervention; defining logic code-first so it is testable and versionable; a team inside the Google ecosystem; needing built-in eval and a development UI.
+需要文件级/网络级沙箱边界但不想自己实现（官方未提供沙箱）；长上下文压缩依赖 1.16+ 的 Context Compaction（滑动窗口）。</p></span><span data-en>        <p><strong>Fits</strong>: organising multiple agents into deterministic flows with branches, loops and human intervention; defining logic code-first so it is testable and versionable; a team inside the Google ecosystem; needing built-in eval and a development UI.
 <strong>Not a fit</strong>: running a single agent with no graph structure (OpenAI Agents SDK is lighter); needing file- or network-level sandbox boundaries without implementing them yourself; making long-context compaction a hard requirement (this site&#39;s checks did not verify how it is done).</p></span>
       </div>
 
@@ -108,7 +134,7 @@
       <dl class="axes">
         <div class="axis">
           <dt><span data-zh>模型与开放条件</span><span data-en>Model & openness</span></dt>
-          <dd><strong>官方口径：optimized for Gemini，但 model-agnostic。</strong> README 原文：&quot;While optimized for Gemini, ADK is <strong>model-agnostic</strong>, deployment-agnostic, and compatible with other frameworks.&quot; ⚠ <strong>未核验</strong>：model-agnostic 的具体实现路径（是否有 LiteLLM 一类适配层）、 非 Gemini 模型下工具调用与 structured output 的可靠性、 以及「optimized for Gemini」到底优化了什么。</dd>
+          <dd><strong>官方口径：optimized for Gemini，但 model-agnostic，且有官方 LiteLLM 适配层（本轮已核验实现路径）。</strong> README 原文：&quot;While optimized for Gemini, ADK is <strong>model-agnostic</strong>, deployment-agnostic, and compatible with other frameworks.&quot; 官方「Models for Agents」页给出三条接入机制： ① 直接字符串 / 注册表（Gemini、Claude、Agent Platform 托管模型）； ② model connectors，即 <code>LiteLlm</code> / <code>ApigeeLlm</code> 包装类——官方原文 LiteLLM &quot;providing a standardized, OpenAI-compatible interface to over 100+ LLMs&quot;；③ 模型路由（运行时动态选型 + 出错自动切换）。 本地/自托管模型有官方专页：Ollama、vLLM、LiteRT-LM。 ⚠ 官方未说明 &quot;optimized for Gemini&quot; 优化了什么，也未给出 非 Gemini 模型下工具调用与 structured output 的可靠性对比 （已查 Models 页与 LiteLLM 页）。</dd>
         </div>
         <div class="axis">
           <dt><span data-zh>运行位置</span><span data-en>Where it runs</span></dt>
@@ -116,27 +142,27 @@
         </div>
         <div class="axis">
           <dt><span data-zh>本地文件</span><span data-en>Local files</span></dt>
-          <dd><strong>⚠ 本维度是本站最明显的证据缺口。</strong> README 讲工具生态时列的是pre-built tools、custom functions、<strong>OpenAPI specs</strong>、 MCP tools 与既有工具接入（&quot;all for tight integration with the Google ecosystem&quot;）， <strong>全文没有把「读写本地文件」列为一项能力，也没有描述默认的文件访问边界</strong>。 它给的是「怎么把工具接进来」，不是「文件访问受什么约束」。 <strong>未核验</strong>：默认沙箱机制、文件系统权限模型、是否需要自行处理容器挂载。</dd>
+          <dd><strong>官方对「文件」的答案是抽象层 Artifacts，不是裸文件系统（本轮已核验）。</strong> 官方 Artifacts 页原文：Artifacts &quot;represent a crucial mechanism for managing named, versioned binary data associated either with a specific user interaction session or persistently with a user&quot;. 落盘位置由你选的 ArtifactService 决定——&quot;Their storage and retrieval are managed by a dedicated Artifact Service&quot;：InMemoryArtifactService （重启即丢）或 GcsArtifactService（持久、带版本）。 ADK 是库、不内置 Read/Write/Bash 这类文件工具：磁盘访问要靠自己写 function tool，或接 MCP——官方 MCP 页示例正是 filesystem MCP server。 ⚠ 官方未提供沙箱机制或文件系统权限模型（已查 Artifacts、tools、 deploy 各页）；默认访问边界取决于你自己接的工具。</dd>
         </div>
         <div class="axis">
           <dt><span data-zh>关机后的任务</span><span data-en>Tasks after shutdown</span></dt>
-          <dd><strong>图执行引擎本身就是「可靠运行」的答案</strong> —— 官方列出的能力里， <code>retry</code>、<code>state management</code>、<code>human-in-the-loop</code>、<code>nested workflows</code> 都是控制流层面的原语，<strong>这正是「可靠长期运行」需要的构件</strong>。 单个 agent 内部的重试与循环可以由框架管（loops、retry 在特性列表里）。 ⚠ <strong>未核验</strong>：跨进程/跨机的任务续跑语义（断掉后从哪个节点恢复）、 分布式部署时的状态存储方案（官方给了 Cloud Run / Agent Engine 两条路， 但状态持久化机制本文未核验）。</dd>
+          <dd><strong>官方有两条明确证据：会话/状态持久化 + 中断续跑（Resume）。</strong> <strong>① 持久化</strong>：SessionService 分三档——InMemorySessionService （&quot;All conversation data is lost if the application restarts&quot;）、 DatabaseSessionService（&quot;Data survives application restarts&quot;）、 VertexAiSessionService（托管）；MemoryService 另有 InMemory 与 Vertex AI Memory Bank 两档。 <strong>② 续跑</strong>：ADK Python 1.16+ 可给 App 配 <code>ResumabilityConfig(is_resumable=True)</code>，官方原文 &quot;allows an agent workflow to pick up where it left off&quot;，用 Invocation ID 经 <code>/run_sse</code> 或 <code>runner.run_async</code> 恢复。 <strong>ADK 本身是库、不托管</strong>：真后台要靠部署到 Cloud Run / Vertex AI Agent Engine（你的云资源）。⚠ 官方两条边界：Resume 目前 &quot;not currently supported&quot; 从 Web UI / CLI 触发；工具可能被重复执行 （官方提醒有副作用的工具要自己防重）。</dd>
         </div>
         <div class="axis">
           <dt><span data-zh>工具与扩展</span><span data-en>Tools & extensions</span></dt>
-          <dd><strong>工具生态是它最强调的部分，且MCP 是一等能力。</strong> README 原文：&quot;Utilize pre-built tools, custom functions, <strong>OpenAPI specs</strong>, <strong>MCP tools</strong> or integrate existing tools&quot;。 ⚠ 但这里有个<strong>本站必须标出的判断</strong>：README 把MCP 与 OpenAPI specs 并列， 说明它接MCP 的方式是<strong>把 MCP 当作一种工具来源</strong>，而不是像 <a href="./openai-agents-sdk.html">OpenAI Agents SDK</a>（<code>mcp&gt;=1.19.0</code> 在 <code>dependencies</code> 里） 那样把 MCP 客户端做成框架级依赖。<strong>两者不是同一量级的一等公民，本站标记为推断，未核验实现。</strong> <strong>另有一项官方独有能力：Tool Confirmation（HITL）</strong> —— 官方原文&quot;a tool confirmation flow (HITL) that can guard tool execution with explicit confirmation and custom input&quot;，对应文档 <code>tools/confirmation</code>。 <strong>这是本站已收录对象里少见的「工具级人工确认」</strong>，与 OpenAI Agents SDK 的 input/output guardrail 是不同层次的东西。</dd>
+          <dd><strong>工具生态是它最强调的部分，MCP 在官方文档里是一等能力。</strong> README 原文：&quot;Utilize pre-built tools, custom functions, <strong>OpenAPI specs</strong>, <strong>MCP tools</strong> or integrate existing tools&quot;。 官方另有专门的 MCP tools 文档页，给出 <code>McpToolset</code> 类，且<strong>双向</strong>： 既让 ADK 作 MCP 客户端接外部 MCP server（示例含 filesystem / Google Maps MCP server），也能把 ADK 工具包成 MCP server 对外暴露； 传输覆盖 stdio 与 Streamable HTTP。 <strong>工具级人工确认（HITL）</strong>：官方原文 &quot;a tool confirmation flow (HITL) that can guard tool execution with explicit confirmation and custom input&quot;，对应文档 <code>tools/confirmation</code>，机制细节见 permissions 轴。 <strong>这是本站已收录对象里少见的「工具级人工确认」</strong>，与 OpenAI Agents SDK 的 input/output guardrail 是不同层次的东西。</dd>
         </div>
         <div class="axis">
           <dt><span data-zh>上下文与记忆</span><span data-en>Context & memory</span></dt>
-          <dd><strong>⚠ 未核验，本站不下结论。</strong> README 的特性列表里没有上下文压缩、摘要或落盘的任何表述。 图执行引擎的状态管理（<code>state management</code>）管的是<strong>流程状态</strong>， 按本站「状态 ≠ 上下文」的主张，<strong>不能据此推断它有上下文管理</strong>。 长任务里工具输出的落盘、对话历史的裁剪，官方文档本文未取到，标记为未核验。</dd>
+          <dd><strong>官方对 session / memory 有清晰区分，且有专门的上下文压缩特性。</strong> 官方 sessions 页原文：<code>Session</code> 是 &quot;single, ongoing interaction&quot;， <code>State</code> 是 &quot;data within the current conversation&quot;， <code>Memory</code> 是 &quot;searchable, cross-session information&quot;；前两者由 <code>SessionService</code> 管，长期知识由 <code>MemoryService</code> 管。 <strong>压缩</strong>：ADK Python 1.16.0+ 提供 Context Compaction，官方原文 &quot;reduce the size of context as an agent is running by summarizing older parts of the agent workflow event history&quot;，用<strong>滑动窗口</strong>： 配 <code>EventsCompactionConfig(compaction_interval, overlap_size)</code>， 到阈值即摘要更早的 event，<code>summarizer</code> 可换模型。 ⚠ 按本站「状态 ≠ 上下文」：<code>state</code> 管流程数据、Compaction 管历史 压缩，是两套机制，官方也分开描述。</dd>
         </div>
         <div class="axis">
           <dt><span data-zh>权限与限制</span><span data-en>Permissions & limits</span></dt>
-          <dd><strong>官方给的是「工具级人工确认」这一个明确机制</strong>： Tool Confirmation / HITL（文档 <code>tools/confirmation</code>），原文 &quot;can guard tool execution with explicit confirmation and custom input&quot;。 <strong>但这只是「执行前问一下」，不是边界划定</strong>： README 未提及沙箱机制、未提及文件系统权限模型、未提及网络访问控制 （对比本站收录的 OpenHands 提供了明确的 Docker 沙箱与 API key 机制， Codex SDK 源码里有三档SandboxMode 枚举）。 ⚠ <strong>未核验</strong>：容器部署时的默认权限、是否支持网络白名单、是否有其它隔离层。</dd>
+          <dd><strong>官方明确的机制是「工具级人工确认」Tool Confirmation（HITL）。</strong> 文档 <code>tools/confirmation</code>（v1.14.0 起，标注 <strong>Experimental</strong>）原文： &quot;allows an ADK Tool to pause its execution and interact with a user or other system for confirmation&quot;。 两种用法已核验：① <code>FunctionTool(..., require_confirmation=True)</code> 要一次 yes/no，也可传入返回布尔值的函数（如&quot;金额 &gt; 1000 才问&quot;）； ② 高级确认 <code>tool_context.request_confirmation(hint, payload)</code>， 可暂停工具、收集结构化数据（如审批天数）后再续跑；无 UI 时可用 ADK server 的 <code>/run</code> 或 <code>/run_sse</code> REST 端点远程确认。 <strong>这只是「执行前问一下」，不是边界划定</strong>：官方未提供沙箱或文件系统 权限模型（已查 confirmation、Artifacts、deploy 各页）。 ⚠ 官方已知限制：DatabaseSessionService 与 VertexAiSessionService 不支持该特性。</dd>
         </div>
         <div class="axis">
           <dt><span data-zh>适合什么任务</span><span data-en>Best for</span></dt>
-          <dd><strong>适合</strong>：需要把多个 agent 组织成<strong>有分支、有循环、有人工介入的确定性流程</strong>； 要用代码优先（code-first）定义 agent 与工具，便于测试与版本管理； 团队在 Google 生态内（Cloud Run / Vertex / Gemini）； 需要内建 eval 与开发 UI；希望用同一套框架覆盖 Python 与 TypeScript。 <strong>不适合</strong>：只跑单个 agent、不需要图结构（用 OpenAI Agents SDK 或 Deep Agents 更轻）； 运行时需要文件级/网络级沙箱边界且不想自己实现（本站未核验其沙箱能力）； 长上下文的压缩与落盘是硬需求（本站未核验其手段）。</dd>
+          <dd><strong>适合</strong>：需要把多个 agent 组织成<strong>有分支、有循环、有人工介入的确定性流程</strong>； 要用代码优先（code-first）定义 agent 与工具，便于测试与版本管理； 团队在 Google 生态内（Cloud Run / Vertex / Gemini）； 需要内建 eval 与开发 UI；希望用同一套框架覆盖 Python 与 TypeScript； 需要工具级人工确认、会话持久化与中断续跑。 <strong>不适合</strong>：只跑单个 agent、不需要图结构（用 OpenAI Agents SDK 或 Deep Agents 更轻）；需要框架内置的文件/网络沙箱边界——官方未提供 （文件访问靠 Artifacts 抽象或自接工具）；想开箱即用接自托管权重 又不愿经 LiteLLM 适配层。</dd>
         </div>
       </dl>
 
@@ -145,7 +171,7 @@
         <ul>
 
           <li><span data-zh>以为是「Google 版 OpenAI Agents SDK」—— <strong>它是编排框架</strong>，核心资产是 Workflow Runtime 的图执行引擎，不是单 agent 原语</span><span data-en>Assuming it is &quot;Google&#39;s version of the OpenAI Agents SDK&quot; — <strong>it is an orchestration framework</strong> whose core asset is the Workflow Runtime graph engine, not single-agent primitives</span></li>
-          <li><span data-zh>把 <code>state management</code> 读成「有上下文管理」—— 前者是流程状态，后者本站未核验</span><span data-en>Reading <code>state management</code> as &quot;has context management&quot; — the former is process state; the latter was not verified here</span></li>
+          <li><span data-zh>把 <code>state management</code> 读成「有上下文管理」—— 前者是流程状态；后者是独立的 Context Compaction 机制（1.16+）</span><span data-en>Reading <code>state management</code> as &quot;has context management&quot; — the former is process state; the latter was not verified here</span></li>
           <li><span data-zh>把 MCP 当成它的核心依赖 —— README 只把 MCP 列为工具来源之一，与 OpenAI Agents SDK 把 <code>mcp&gt;=1.19.0</code> 放进 <code>dependencies</code> 不是一回事</span><span data-en>Treating MCP as a core dependency — the README lists MCP only as one tool source, which is not the same as OpenAI Agents SDK putting <code>mcp&gt;=1.19.0</code> in <code>dependencies</code></span></li>
           <li><span data-zh>以为 Tool Confirmation 等于沙箱 —— 它是「执行前问一句」，不是边界划定</span><span data-en>Assuming Tool Confirmation equals a sandbox — it is &quot;ask once before running&quot;, not a boundary</span></li>
           <li><span data-zh>以为开源免费等于零成本 —— Cloud Run / Vertex Agent Engine 的云费用自理，且有 <code>GOOGLE_GENAI_USE_ENTERPRISE</code> 开关</span><span data-en>Assuming open source and free means zero cost — Cloud Run / Vertex Agent Engine costs are yours, and there is a <code>GOOGLE_GENAI_USE_ENTERPRISE</code> switch</span></li>
@@ -172,7 +198,6 @@
         <h2><span data-zh>未知项清单</span><span data-en>Known unknowns</span></h2>
         <ul>
           <li>默认沙箱机制、文件系统权限模型、网络访问控制</li>
-          <li>对话上下文压缩 / 摘要 / 落盘策略</li>
           <li>跨进程、跨机的任务续跑与恢复粒度</li>
           <li>分布式部署下的状态存储方案</li>
           <li>MCP 接入的实现层次（框架级依赖 vs 工具来源）</li>
@@ -192,7 +217,13 @@
             <tr><td>repo</td><td>google/adk-python · 仓库（21,688★，Apache-2.0，核验 2026-10-01）</td><td><a href="https://github.com/google/adk-python" target="_blank" rel="noopener">https://github.com/google/adk-python</a></td></tr>
             <tr><td>docs</td><td>主 README（Workflow Runtime / Task API / Tool Confirmation / 部署方式 / eval）</td><td><a href="https://github.com/google/adk-python/blob/main/README.md" target="_blank" rel="noopener">https://github.com/google/adk-python/blob/main/README.md</a></td></tr>
             <tr><td>docs</td><td>官方文档首页</td><td><a href="https://google.github.io/adk-docs/" target="_blank" rel="noopener">https://google.github.io/adk-docs/</a></td></tr>
-            <tr><td>docs</td><td>官方文档 · Tool Confirmation（HITL）</td><td><a href="https://google.github.io/adk-docs/tools/confirmation/" target="_blank" rel="noopener">https://google.github.io/adk-docs/tools/confirmation/</a></td></tr>
+            <tr><td>docs</td><td>官方文档 · Tool Confirmation（HITL）（require_confirmation / request_confirmation 机制、Experimental、已知限制，核验 2026-10-08）</td><td><a href="https://google.github.io/adk-docs/tools/confirmation/" target="_blank" rel="noopener">https://google.github.io/adk-docs/tools/confirmation/</a></td></tr>
+            <tr><td>docs</td><td>官方文档 · Models for Agents（三条模型接入机制：直接注册表 / model connectors / 模型路由，核验 2026-10-08）</td><td><a href="https://google.github.io/adk-docs/agents/models/" target="_blank" rel="noopener">https://google.github.io/adk-docs/agents/models/</a></td></tr>
+            <tr><td>docs</td><td>官方文档 · Sessions &amp; Memory（Session/State/Memory 区分、SessionService 三档持久化，核验 2026-10-08）</td><td><a href="https://google.github.io/adk-docs/sessions/" target="_blank" rel="noopener">https://google.github.io/adk-docs/sessions/</a></td></tr>
+            <tr><td>docs</td><td>官方文档 · Context Compaction（滑动窗口摘要，v1.16.0+，核验 2026-10-08）</td><td><a href="https://google.github.io/adk-docs/context/compaction/" target="_blank" rel="noopener">https://google.github.io/adk-docs/context/compaction/</a></td></tr>
+            <tr><td>docs</td><td>官方文档 · Artifacts（ArtifactService、InMemory/GCS 落盘，核验 2026-10-08）</td><td><a href="https://google.github.io/adk-docs/artifacts/" target="_blank" rel="noopener">https://google.github.io/adk-docs/artifacts/</a></td></tr>
+            <tr><td>docs</td><td>官方文档 · Resume stopped agents（ResumabilityConfig、Invocation ID 续跑，核验 2026-10-08）</td><td><a href="https://google.github.io/adk-docs/runtime/resume/" target="_blank" rel="noopener">https://google.github.io/adk-docs/runtime/resume/</a></td></tr>
+            <tr><td>docs</td><td>官方文档 · MCP tools（McpToolset、ADK 作 MCP 客户端 / ADK 工具暴露为 MCP server，核验 2026-10-08）</td><td><a href="https://google.github.io/adk-docs/tools/mcp-tools/" target="_blank" rel="noopener">https://google.github.io/adk-docs/tools/mcp-tools/</a></td></tr>
             <tr><td>docs</td><td>官方文档 · Agent Config（不写代码建agent）</td><td><a href="https://google.github.io/adk-docs/agents/config/" target="_blank" rel="noopener">https://google.github.io/adk-docs/agents/config/</a></td></tr>
             <tr><td>docs</td><td>Google Cloud 文档 · Manage sessions with Agent Development Kit（同一组三变量的另一种取值写法 TRUE / True，核验 2026-10-01）</td><td><a href="https://docs.cloud.google.com/gemini-enterprise-agent-platform/scale/sessions/manage-with-adk" target="_blank" rel="noopener">https://docs.cloud.google.com/gemini-enterprise-agent-platform/scale/sessions/manage-with-adk</a></td></tr>
             <tr><td>repo</td><td>google/adk-js · TypeScript 版（1,426★，Apache-2.0）</td><td><a href="https://github.com/google/adk-js" target="_blank" rel="noopener">https://github.com/google/adk-js</a></td></tr>
@@ -226,6 +257,7 @@
           <li><span class="rel-t"><a href="./crewai.html">CrewAI</a></span><span class="rel-n">同为编排框架，但 crewai 以「角色/任务/流程」的抽象为中心，ADK 以「图节点」为中心 —— 抽象层次不同。</span></li>
           <li><span class="rel-t"><a href="./openai-agents-sdk.html">OpenAI Agents SDK</a></span><span class="rel-n">同为厂商系框架但形态相反：那个是单 agent 原语（primitives-only），ADK 是多 agent 编排。</span></li>
           <li><span class="rel-t"><a href="./openhands.html">OpenHands</a></span><span class="rel-n">反面对照：OpenHands 是带 Web UI 的调度平台、也可接第三方 agent；ADK 是 code-first 的库。两者都能编排，但一个面向界面、一个面向代码。</span></li>
+          <li><span class="rel-t"><a href="/gemini-cli.html"><span data-zh>Gemini CLI</span><span data-en>Gemini CLI</span></a></span><span class="rel-n"><span data-zh>另一层 · 成品 Agent</span><span data-en>Other layer · Finished agents</span></span></li>
         </ul>
       </div>
 
