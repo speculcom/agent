@@ -4,13 +4,13 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>LlamaIndex Framework — Harness | 投机取巧</title>
-  <meta name="description" content="LlamaIndex Framework（LlamaIndex（run-llama））：⚠ 但先得说清一件事：官方已明确把公司重心从「编排框架」移走了。 README 首屏 NOTE 段落原文（核验 2026-10-01）： &gt; The current focus of LlamaIndex is " />
+  <meta name="description" content="LlamaIndex Framework（LlamaIndex（run-llama））：⚠ 但先得说清一件事：官方已明确把公司重心从「编排框架」移走了。 README 首屏 NOTE 段落原文（核验 2026-10-01）： &gt; The current focus of LlamaIndex is to b…" />
   <link rel="canonical" href="https://agent.specul.com/harness/llamaindex.html" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="LlamaIndex Framework" />
   <meta property="og:url" content="https://agent.specul.com/harness/llamaindex.html" />
   <meta property="og:title" content="LlamaIndex Framework — Harness | 投机取巧" />
-  <meta property="og:description" content="LlamaIndex Framework（LlamaIndex（run-llama））：⚠ 但先得说清一件事：官方已明确把公司重心从「编排框架」移走了。 README 首屏 NOTE 段落原文（核验 2026-10-01）： &gt; The current focus of LlamaIndex is " />
+  <meta property="og:description" content="LlamaIndex Framework（LlamaIndex（run-llama））：⚠ 但先得说清一件事：官方已明确把公司重心从「编排框架」移走了。 README 首屏 NOTE 段落原文（核验 2026-10-01）： &gt; The current focus of LlamaIndex is to b…" />
   <meta name="theme-color" content="#05080f" />
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%238b7cf8'/%3E%3Cstop offset='1' stop-color='%2322d3c5'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='48' height='48' rx='12' fill='%2305080f'/%3E%3Cpath d='M14 32 L24 12 L34 32' fill='none' stroke='url(%23g)' stroke-width='2.4' stroke-linejoin='round'/%3E%3Ccircle cx='24' cy='27' r='2.4' fill='%2322d3c5'/%3E%3C/svg%3E" />
   <link rel="stylesheet" href="../brand.css" />
@@ -39,8 +39,34 @@
           <button class="icon-btn" id="langBtn" type="button" aria-label="Switch language" title="Switch language">EN</button>
         </span>
       </nav>
+      <!-- B6（2026-10-09）：与共享 shell 同步加的移动端导航入口。
+           ⚠ 本文件是 agent 站**自己的** shell 副本（它多一层分区切换），
+             所以每次改共享 shell 的骨架，这里也要跟一次 —— 这是双份实现固有的代价。
+             样式与行为都在共享 brand.css / brand.js 里，这里只出标记。 -->
+      <button class="nav-burger" type="button" aria-label="打开菜单" aria-expanded="false" aria-controls="navDrawer">
+        <i></i><i></i><i></i>
+      </button>
     </div>
   </header>
+  <div class="nav-scrim"></div>
+  <aside class="nav-drawer" id="navDrawer" aria-hidden="true" aria-label="站点导航">
+    <div class="nav-drawer-h">
+      <span class="brand-name"><span data-zh>投机取巧</span><span data-en>Speculative Speculation</span></span>
+      <button class="nav-dclose" type="button" aria-label="关闭">×</button>
+    </div>
+    <nav class="nav-drawer-list">
+      <a href="https://specul.com/"><span><span data-zh>首页</span><span data-en>Home</span></span><span class="ar" aria-hidden="true">→</span></a>
+      <a href="https://learn.specul.com/"><span><span data-zh>学 AI</span><span data-en>Learn</span></span><span class="ar" aria-hidden="true">→</span></a>
+      <a href="https://agent.specul.com/" aria-current="page"><span><span data-zh>Agent</span><span data-en>Agent</span></span><span class="ar" aria-hidden="true">→</span></a>
+      <a href="https://models.specul.com/"><span><span data-zh>本地模型</span><span data-en>Models</span></span><span class="ar" aria-hidden="true">→</span></a>
+      <a href="https://vg.specul.com/"><span><span data-zh>AI 做游戏</span><span data-en>Vibe Gaming</span></span><span class="ar" aria-hidden="true">→</span></a>
+      <a href="https://nav.specul.com/"><span><span data-zh>导航</span><span data-en>Directory</span></span><span class="ar" aria-hidden="true">→</span></a>
+    </nav>
+    <div class="nav-drawer-foot">
+      <p><span data-zh>6 个站，各管一件事</span><span data-en>Six sites, one job each</span></p>
+      <nav><a href="https://specul.com/legal.html"><span data-zh>法律条款</span><span data-en>Legal terms</span></a></nav>
+    </div>
+  </aside>
   <main id="main">
     <div class="container detail">
       <nav class="crumbs" aria-label="面包屑">
@@ -76,30 +102,37 @@
         <span class="badge"><span data-zh>核验</span><span data-en>Checked</span> 2026-10-01</span>
       </div>
 
-            <p class="panel-lead"><span data-zh><strong>⚠ But one thing has to be stated first: the project has explicitly moved its company focus away from &quot;orchestration frameworks&quot;.</strong>
+            <p class="panel-lead"><span data-zh><strong>⚠ 但先得说清一件事：官方已明确把公司重心从「编排框架」移走了。</strong>
 
-The NOTE block at the top of the README reads (checked 2026-10-01):
+README 首屏 NOTE 段落原文（核验 2026-10-01）：
 
 &gt; The <strong>current focus</strong> of LlamaIndex is to build the best AI-powered engine for
 &gt; <strong>document parsing and extraction</strong>. <strong>LlamaParse</strong> is our <strong>enterprise platform</strong> for
 &gt; agentic OCR, parsing, extraction, indexing and more.
-&gt; &gt;
+&gt;
 &gt; ...the company itself has undergone an <strong>evolution</strong> since when this OSS framework
 &gt; first launched 3 years ago in 2023.
-&gt; &gt;
+&gt;
 &gt; While we still have the OSS framework available as an open toolkit that you&#39;re welcome
 &gt; to use, <strong>our primary focus has shifted towards LlamaParse</strong>...
 
-<strong>The selection implication is direct</strong>: if what you want is multi-agent orchestration / workflows, <strong>that capability now lives in the commercial platform LlamaAgents</strong> — the README puts Workflows in the commercial platform section (the link points at <code>cloud/llamaagents</code>), not the OSS section.
+<strong>这句话的选型含义很直接</strong>：
+公司的资源向文档解析倾斜是真的，<strong>但编排能力没有离开 OSS</strong> ——
+README 只是把 Workflows 写在商业平台那一节（链接指向 <code>cloud/llamaagents</code>），
+官方框架文档则明示 <code>llama-index-core</code> 仍含稳定版 Workflows（2026-10-08 核验）。
 
-<strong>What the OSS framework now really provides</strong>: data ingestion + indices/graph structures + retrieval query interfaces + 300+ integrations. The README&#39;s own &quot;Proposed Solution&quot; list puts it precisely:
+<strong>OSS 框架现在实质提供的是</strong>：数据接入 + 索引/图结构 + 检索查询接口 + 300+ 集成 + Workflows 编排。
+README 自己的 Proposed Solution 四条说得很准：
 
 &gt; - <strong>data connectors</strong> to ingest your existing data sources and data formats (APIs, PDFs, docs, SQL, etc.)
 &gt; - ways to <strong>structure your data</strong> (indices, graphs)
 &gt; - an <strong>advanced retrieval/query interface</strong> over your data
 &gt; - easy <strong>integrations with your outer application framework</strong>
 
-<strong>This site&#39;s inclusion judgement</strong>: it meets the v3 inclusion criteria (pushed 2026-09-29, still active), but the real value of this entry is <strong>recording that turn honestly</strong> — so readers know that behind those 52,377★ the company is heading towards document parsing / agentic OCR, which is LlamaParse and ParseBench territory, not this open-source framework&#39;s.</span><span data-en><strong>⚠ But one thing has to be stated first: the project has explicitly moved its company focus away from &quot;orchestration frameworks&quot;.</strong>
+<strong>本站的收录判断</strong>：它符合 v3 铁律的收录标准（推送 2026-09-29，仍活跃），
+但这条档案的<strong>真正价值是如实记录这个转折</strong> ——
+让读者知道 52,377★ 背后的公司正在往文档解析 / agentic OCR 走，
+而那是 LlamaParse 与 ParseBench 的战场，不是这个开源框架的。</span><span data-en><strong>⚠ But one thing has to be stated first: the project has explicitly moved its company focus away from &quot;orchestration frameworks&quot;.</strong>
 
 The NOTE block at the top of the README reads (checked 2026-10-01):
 
@@ -128,8 +161,7 @@ The NOTE block at the top of the README reads (checked 2026-10-01):
         <h2><span data-zh>适合与不适合</span><span data-en>When to use it, when not to</span></h2>
 <span data-zh>        <p><strong>适合</strong>：核心任务是把外部数据源接进来做检索与问答；需要 300+ 集成里的某一个。
 <strong>不适合</strong>：主要目的是多 Agent 编排 / 工作流（<strong>那部分在商业平台 LlamaAgents</strong>）；
-需要 agent 在工作区读写文件（那是 Deep Agents 那一类）；需要明确沙箱与权限边界；
-需要长任务的上下文压缩机制。</p></span><span data-en>        <p><strong>Fits</strong>: the core task is bringing external data sources in for retrieval and question answering; needing one of the 300+ integrations.
+需要 agent 在工作区读写文件（那是 Deep Agents 那一类）；需要明确沙箱与权限边界。</p></span><span data-en>        <p><strong>Fits</strong>: the core task is bringing external data sources in for retrieval and question answering; needing one of the 300+ integrations.
 <strong>Not a fit</strong>: multi-agent orchestration / workflow as the main goal (<strong>that part lives in the commercial LlamaAgents platform</strong>); agents that read and write files in the workspace (that&#39;s the Deep Agents category); explicit sandbox and permission boundaries; a context-compaction mechanism for long tasks.</p></span>
       </div>
 
@@ -141,27 +173,27 @@ The NOTE block at the top of the README reads (checked 2026-10-01):
       <dl class="axes">
         <div class="axis">
           <dt><span data-zh>模型与开放条件</span><span data-en>Model & openness</span></dt>
-          <dd><strong>官方给的数字最激进，但形态是「300+ 分散的集成包」而不是统一网关。</strong> README 原文：&quot;There are <strong>over 300 LlamaIndex integration packages</strong> that work seamlessly with core, allowing you to build with your <strong>preferred LLM, embedding, and vector store providers</strong>.&quot; <strong>命名空间约定值得记</strong>（README 给的代码示例说明）： <code>from llama_index.core.xxx import ClassABC</code> 是核心， <code>from llama_index.xxx.yyy import SubclassABC</code> 是集成包 —— 带 <code>.core</code> 意味着用核心，不带意味着用集成。 ⚠ <strong>未核验</strong>：300+ 集成包的质量分层与维护状态。 <strong>这一点对选型很关键</strong> —— 官方原话是&quot;work seamlessly&quot;， 但本站未实测过任何跨 provider 的能力对齐度。</dd>
+          <dd><strong>形态是「300+ 分散的集成包」，不是统一网关；官方称其为社区集成。</strong> README 原文：&quot;There are <strong>over 300 LlamaIndex integration packages</strong> that work seamlessly with core, allowing you to build with your <strong>preferred LLM, embedding, and vector store providers</strong>.&quot; 命名空间约定：<code>from llama_index.core.xxx</code> 是核心， <code>from llama_index.xxx.yyy</code> 是集成包（带 <code>.core</code> 用核心，不带用集成）。 官方 integrations 页把这些包归为 &quot;community integrations&quot;（社区集成）， README 说新集成需经维护者审核（&quot;some integrations may be declined&quot;）。 <strong>官方未公布集成包的质量分层与维护活跃度分级（已查 README 与 integrations 页）。</strong></dd>
         </div>
         <div class="axis">
           <dt><span data-zh>运行位置</span><span data-en>Where it runs</span></dt>
-          <dd><strong>纯库，且有两个安装档位（官方 README 明示，这是它少见的清晰之处）。</strong> <strong>① Starter</strong>：<code>llama-index</code>（PyPI）—— 核心 + 一批常用集成的合集； <strong>② Customized</strong>：<code>llama-index-core</code> —— 只装核心，再按需从集成页挑包 （README 说有 300+ 个集成包可选）。 <strong>⚠ 一个必须指出的定位缺口</strong>：README 里<strong>没有 CLI 启动命令、没有 Web UI、 没有容器部署示例</strong> —— 至少在本次核验的 223 行 README 里没有。 它是库，不是平台。 ⚠ 未核验：官方推荐的部署形态（对比本站收录的 Google ADK 有 <code>adk deploy docker/cloud_run</code>、 OpenHands 有四种部署形态）。</dd>
+          <dd><strong>OSS 形态是纯库，且有两个安装档位；托管运行在商业平台侧。</strong> <strong>① Starter</strong>：<code>llama-index</code>（PyPI）—— 核心 + 一批常用集成的合集； <strong>② Customized</strong>：<code>llama-index-core</code> —— 只装核心，再按需从集成页挑包。 框架本身是被 import 的库，集成方式是与外部应用框架对接 （README Proposed Solution 第四条 &quot;integrations with your outer application framework&quot;）。 官方另有一套托管/部署路径：LlamaAgents 的 <code>llamactl</code> CLI 可 &quot;serve locally, and deploy to LlamaCloud or export for self-hosting&quot;，LlamaCloud 另有托管 Index。 <strong>即托管是 LlamaCloud / LlamaAgents 那一层（商业），不是 OSS 自带的运行形态。</strong></dd>
         </div>
         <div class="axis">
           <dt><span data-zh>本地文件</span><span data-en>Local files</span></dt>
-          <dd><strong>⚠ 这是 LlamaIndex 的真正主场，但不是「agent 读文件」意义上的本地文件。</strong> README 的Proposed Solution 第一条原文：&quot;Offers <strong>data connectors</strong> to ingest your existing data sources and data formats (<strong>APIs, PDFs, docs, SQL</strong>, etc.)&quot;。 即它的文件能力是<strong>批量接入与解析数据源</strong>，不是「让 agent 在工作区里改文件」那套。 ⚠ <strong>本站要提醒的区分</strong>：这一点很容易与 <a href="./deepagents.html">Deep Agents</a> 的 filesystem（agent 工作区文件操作）混为一谈 —— <strong>两者是不同的东西</strong>。 本地模型侧：它有 LiteParse 项目（官方定位为「free, fast, cheap text parser」， 独立仓 <code>run-llama/liteparse</code>），⚠ 该项目与框架的集成方式本站未核验。</dd>
+          <dd><strong>它不是「agent 工作区」文件系统，而是「数据源接入 + 索引」层的本地文件读取。</strong> 官方 <code>SimpleDirectoryReader</code> 文档原文：&quot;the simplest way to load data from local files into LlamaIndex&quot;，可传 <code>input_dir</code>、<code>recursive=True</code>、<code>exclude</code>、 <code>required_exts</code>、<code>num_files_limit</code>，并支持 <code>fsspec</code> 远程文件系统（S3、GDrive 等）。 索引默认存内存，官方示例可 <code>index.storage_context.persist()</code> 落到 <code>./storage</code> 再 <code>load_index_from_storage</code> 重载。 <strong>本站按「索引层视角」记这一轴</strong>：它读盘是为了把文档变成可检索的索引， 与 Deep Agents 那种「agent 在工作区里改文件」不是一回事。</dd>
         </div>
         <div class="axis">
           <dt><span data-zh>关机后的任务</span><span data-en>Tasks after shutdown</span></dt>
-          <dd><strong>⚠ 本站最看重的一维，而这里有一个必须说清的事实：编排能力已被移出 OSS。</strong> README 里Workflows 只出现在<strong>商业平台那一节</strong>： &quot;<strong>Agents</strong> — Build end-to-end document agents with <code>Workflows</code> and Agent Builder&quot; （链接指向 <code>developers.llamaindex.ai/python/llamaagents/overview</code>）。 OSS 那节（Proposed Solution）谈的是数据接入、结构化、检索接口、应用集成， <strong>没有提后台任务、定时、队列或跨进程恢复</strong>。 ⚠ <strong>未核验</strong>：OSS 的 <code>llama-index-core</code> 里是否仍有 workflow / agent 编排模块 （README 首屏也提到&quot;the framework has consisted of a broad set of orchestration tools&quot;， 说明历史上是有编排工具的，但<strong>当前 OSS 那部分剩多少，本次无法从 README 判断</strong>）—— <strong>这是本条最需要补核验的一项。</strong></dd>
+          <dd><strong>OSS 是库，没有「关机后继续跑」的托管执行；但编排（Workflows）仍留在 OSS。</strong> <strong>先纠正一个易被 README 误导的点</strong>：README 把 Workflows 列在 LlamaParse 平台的 Agents 节，但官方框架文档明示 Workflows 仍在开源核心里 —— &quot;llama-index-core comes with a stable version of Workflows included&quot;， import 路径为 <code>llama_index.core.workflow</code>，也可独立 <code>pip install llama-index-workflows</code>。 <strong>即编排并未被移出 OSS。</strong> 至于后台执行：官方框架文档未提供「关机续跑」的托管运行时， 进程要你自己跑；需要托管时走 LlamaAgents / <code>llamactl</code> 部署到 LlamaCloud 或自托管 （原文 &quot;deploy them to LlamaCloud or your own infrastructure&quot;），那是平台侧。</dd>
         </div>
         <div class="axis">
           <dt><span data-zh>工具与扩展</span><span data-en>Tools & extensions</span></dt>
-          <dd><strong>300+ 集成包是它的绝对优势，也是它的维护负担。</strong> 官方给的 import 示例本身就是工具接入范式（核心类 + 集成子类）。 ⚠ <strong>未核验</strong>：MCP 支持情况 —— <strong>本次核验的README 里没有出现 MCP</strong>。 本站因此<strong>不把它与本站 MCP 站的 9 个官方 server 关联</strong>。 ⚠ 未核验：300+ 集成包里的官方 vs 社区比例与维护活跃度分层。</dd>
+          <dd><strong>工具层两件事：社区 ToolSpec + 官方 MCP 接入包。</strong> 官方 tools 文档给出 <code>FunctionTool</code> / <code>QueryEngineTool</code> 与 &quot;Community contributed ToolSpecs&quot;，并有 Utility Tools 处理「工具返回超大输出」 （<code>OnDemandLoaderTool</code> / <code>LoadAndSearchToolSpec</code>）。 <strong>MCP：官方支持，且是独立包</strong> —— 文档原文 &quot;LlamaIndex provides robust support for consuming MCP servers through the <code>llama-index-tools-mcp</code> package&quot;， 支持 SSE / Streamable HTTP / stdio 三种传输，还能把 Workflow 反发布为 MCP server； 官方另托管 <code>mcp.llamaindex.ai</code>（文档检索 / LlamaParse 的 MCP 服务）。</dd>
         </div>
         <div class="axis">
           <dt><span data-zh>上下文与记忆</span><span data-en>Context & memory</span></dt>
-          <dd><strong>⚠ 本维度有明确官方表述，且与本站主张直接相关。</strong> README 对整个框架的定位原句：&quot;LlamaIndex is a &quot;<strong>data framework</strong>&quot; to help you build LLM apps&quot; 以及 &quot;Provides ways to structure your data (<strong>indices, graphs</strong>) so that your data can be easily used with LLMs&quot;、&quot;an <strong>advanced retrieval/query interface</strong> over your data&quot;。 <strong>本站的判断（推断）</strong>：它处理的是「<strong>把外部数据变成可检索的上下文</strong>」， 这在本站的坐标系里属于<strong>上下文获取层</strong>，而不是上下文压缩层。 ⚠ <strong>未核验</strong>：检索结果如何裁剪以适配上下文窗口、 是否有明确的压缩/摘要机制（README 未提及任何压缩手段）。</dd>
+          <dd><strong>这一维度官方有具体机制，不是空白。</strong> README 对框架的定位是 &quot;data framework&quot;，核心能力是 structure your data （indices, graphs）+ retrieval/query interface —— 即处理「把外部数据变成可检索的上下文」。 <strong>检索后如何塞进上下文窗口，官方用 Response Synthesizer 回答</strong>（原文）： <code>compact</code>（默认）&quot;stuff as many text ... that can fit within the context window&quot;、 <code>refine</code>（逐块精炼）、<code>tree_summarize</code>（递归摘要）、<code>simple_summarize</code>（截断到单 prompt）。 <strong>这就是它的上下文裁剪与摘要机制</strong>：先按窗口装箱，装不下再切块，摘要类模式做压缩。</dd>
         </div>
         <div class="axis">
           <dt><span data-zh>权限与限制</span><span data-en>Permissions & limits</span></dt>
@@ -169,7 +201,7 @@ The NOTE block at the top of the README reads (checked 2026-10-01):
         </div>
         <div class="axis">
           <dt><span data-zh>适合什么任务</span><span data-en>Best for</span></dt>
-          <dd><strong>适合</strong>：核心任务是把外部数据源（API / PDF / 文档 / SQL）接进来做检索与问答， 且需要 300+ 现成集成里的某一个；团队 Python 栈； 或明确要用 LlamaParse 的解析能力（那走商业平台）。 <strong>不适合</strong>：主要目的是「多 Agent 编排 / 工作流」—— <strong>那部分能力现在在商业平台 LlamaAgents</strong>； 需要 agent 在工作区里读写文件（那是 Deep Agents 那一类，不是 LlamaIndex）； 需要明确沙箱与权限边界（README 无任何表述）； 需要长任务的上下文压缩机制（未核验）。</dd>
+          <dd><strong>适合</strong>：核心任务是把外部数据源（API / PDF / 文档 / SQL）接进来做检索与问答， 需要 300+ 现成集成里的某一个；团队 Python 栈； 或明确要用 LlamaParse 的解析能力（那走商业平台）。 <strong>不太适合</strong>：需要 agent 在自己项目目录里读写文件并跑命令 （那是 Deep Agents 那一类「工作区文件系统」）；需要明确的沙箱与权限边界 （官方框架文档无此类机制）；需要「关机后托管续跑」（走 LlamaAgents 平台侧）。</dd>
         </div>
       </dl>
 
@@ -194,7 +226,7 @@ The NOTE block at the top of the README reads (checked 2026-10-01):
           <tbody>
             <tr><th class="w-28"><span data-zh>月度入口</span><span data-en>Monthly entry</span></th><td><span data-zh>OSS 框架免费（MIT）；LlamaParse 平台 Free $0 / Starter $50 / Pro $500 每月</span><span data-en>OSS 框架免费（MIT）；LlamaParse 平台 Free $0 / Starter $50 / Pro $500 每月</span></td></tr>
             <tr><th class="w-28"><span data-zh>月度数值</span><span data-en>Monthly price</span></th><td>0</td></tr>
-            <tr><th class="w-28"><span data-zh>额度说明</span><span data-en>Quota note</span></th><td><span data-zh>**这一条必须写在最前面，因为它决定了这个对象现在是什么。** 核验依据：仓库 MIT（经license API）+ README 首屏NOTE 段落原文。 **README 首屏原文（核验 2026-10-01）**： "The **current focus** of LlamaIndex is to build the best AI-powered engine for **document parsing and extraction**. **LlamaParse** is our **enterprise platform** for agentic OCR, parsing, extraction, indexing and more." 并明确说（原文）： "While we still have the OSS framework available as an open toolkit that you're welcome to use, **our primary focus has shifted towards LlamaParse**, along with liteparse and our benchmarking efforts." **换句话说：公司的主战场已从「编排框架」移到「文档解析 / agentic OCR」， 编排（Workflows）本身被放进了商业平台 LlamaAgents。** **LlamaParse 定价（2026-10-01 官方 pricing 页核实，以 credits 计费）**： Free $0/月含 **10K credits**；Starter **$50/月含 40K credits**（可加购至 400K）； Pro **$500/月含 400K credits**（另有一次性 800K credits 赠额，官方折算价值 $1,000， 可加购至 $5,000/月）；Enterprise 定制。**三档均含 100 个用户席位**， 超出按 **1,000 credits = $1.25** 加购。 ⚠ **关键：官方只给 credits 单价，没给「一页文档消耗多少 credits」的口径** —— 所以「$50 能解析多少页 PDF」**在公开信息里换算不出来**， 选型前必须自己拿真实文档试跑。这一点是本站明确的信息缺口，不做推测。 另外官方另推**LiteParse**（VLM-free、可本地跑的 OSS 解析器）—— **它不吃 credits、免费**， 官方自己形容为 "VLM-free fast and local OSS parsing"，这是零成本路线的存在。</span><span data-en>**这一条必须写在最前面，因为它决定了这个对象现在是什么。** 核验依据：仓库 MIT（经license API）+ README 首屏NOTE 段落原文。 **README 首屏原文（核验 2026-10-01）**： "The **current focus** of LlamaIndex is to build the best AI-powered engine for **document parsing and extraction**. **LlamaParse** is our **enterprise platform** for agentic OCR, parsing, extraction, indexing and more." 并明确说（原文）： "While we still have the OSS framework available as an open toolkit that you're welcome to use, **our primary focus has shifted towards LlamaParse**, along with liteparse and our benchmarking efforts." **换句话说：公司的主战场已从「编排框架」移到「文档解析 / agentic OCR」， 编排（Workflows）本身被放进了商业平台 LlamaAgents。** **LlamaParse 定价（2026-10-01 官方 pricing 页核实，以 credits 计费）**： Free $0/月含 **10K credits**；Starter **$50/月含 40K credits**（可加购至 400K）； Pro **$500/月含 400K credits**（另有一次性 800K credits 赠额，官方折算价值 $1,000， 可加购至 $5,000/月）；Enterprise 定制。**三档均含 100 个用户席位**， 超出按 **1,000 credits = $1.25** 加购。 ⚠ **关键：官方只给 credits 单价，没给「一页文档消耗多少 credits」的口径** —— 所以「$50 能解析多少页 PDF」**在公开信息里换算不出来**， 选型前必须自己拿真实文档试跑。这一点是本站明确的信息缺口，不做推测。 另外官方另推**LiteParse**（VLM-free、可本地跑的 OSS 解析器）—— **它不吃 credits、免费**， 官方自己形容为 "VLM-free fast and local OSS parsing"，这是零成本路线的存在。</span></td></tr>
+            <tr><th class="w-28"><span data-zh>额度说明</span><span data-en>Quota note</span></th><td><span data-zh>**这一条必须写在最前面，因为它决定了这个对象现在是什么。** 核验依据：仓库 MIT（经license API）+ README 首屏NOTE 段落原文。 **README 首屏原文（核验 2026-10-01）**： "The **current focus** of LlamaIndex is to build the best AI-powered engine for **document parsing and extraction**. **LlamaParse** is our **enterprise platform** for agentic OCR, parsing, extraction, indexing and more." 并明确说（原文）： "While we still have the OSS framework available as an open toolkit that you're welcome to use, **our primary focus has shifted towards LlamaParse**, along with liteparse and our benchmarking efforts." **换句话说：公司的主战场已从「编排框架」移到「文档解析 / agentic OCR」—— 但注意：编排（Workflows）的代码仍在 OSS core（`llama_index.core.workflow`， 2026-10-08 核验），商业平台 LlamaAgents 提供的是托管形态与 Agent Builder。** **LlamaParse 定价（2026-10-01 官方 pricing 页核实，以 credits 计费）**： Free $0/月含 **10K credits**；Starter **$50/月含 40K credits**（可加购至 400K）； Pro **$500/月含 400K credits**（另有一次性 800K credits 赠额，官方折算价值 $1,000， 可加购至 $5,000/月）；Enterprise 定制。**三档均含 100 个用户席位**， 超出按 **1,000 credits = $1.25** 加购。 ⚠ **关键：官方只给 credits 单价，没给「一页文档消耗多少 credits」的口径** —— 所以「$50 能解析多少页 PDF」**在公开信息里换算不出来**， 选型前必须自己拿真实文档试跑。这一点是本站明确的信息缺口，不做推测。 另外官方另推**LiteParse**（VLM-free、可本地跑的 OSS 解析器）—— **它不吃 credits、免费**， 官方自己形容为 "VLM-free fast and local OSS parsing"，这是零成本路线的存在。</span><span data-en>**这一条必须写在最前面，因为它决定了这个对象现在是什么。** 核验依据：仓库 MIT（经license API）+ README 首屏NOTE 段落原文。 **README 首屏原文（核验 2026-10-01）**： "The **current focus** of LlamaIndex is to build the best AI-powered engine for **document parsing and extraction**. **LlamaParse** is our **enterprise platform** for agentic OCR, parsing, extraction, indexing and more." 并明确说（原文）： "While we still have the OSS framework available as an open toolkit that you're welcome to use, **our primary focus has shifted towards LlamaParse**, along with liteparse and our benchmarking efforts." **换句话说：公司的主战场已从「编排框架」移到「文档解析 / agentic OCR」—— 但注意：编排（Workflows）的代码仍在 OSS core（`llama_index.core.workflow`， 2026-10-08 核验），商业平台 LlamaAgents 提供的是托管形态与 Agent Builder。** **LlamaParse 定价（2026-10-01 官方 pricing 页核实，以 credits 计费）**： Free $0/月含 **10K credits**；Starter **$50/月含 40K credits**（可加购至 400K）； Pro **$500/月含 400K credits**（另有一次性 800K credits 赠额，官方折算价值 $1,000， 可加购至 $5,000/月）；Enterprise 定制。**三档均含 100 个用户席位**， 超出按 **1,000 credits = $1.25** 加购。 ⚠ **关键：官方只给 credits 单价，没给「一页文档消耗多少 credits」的口径** —— 所以「$50 能解析多少页 PDF」**在公开信息里换算不出来**， 选型前必须自己拿真实文档试跑。这一点是本站明确的信息缺口，不做推测。 另外官方另推**LiteParse**（VLM-free、可本地跑的 OSS 解析器）—— **它不吃 credits、免费**， 官方自己形容为 "VLM-free fast and local OSS parsing"，这是零成本路线的存在。</span></td></tr>
           </tbody>
         </table>
         <p class="fine mt-3"><span data-zh>不同币种不做折算。优惠、地区、税费与登录后报价可能变化，购买前请到官方页面确认。</span><span data-en>No currency conversion. Discounts, regions, tax and post-login pricing can change — confirm on the official page before buying.</span></p>
@@ -204,12 +236,9 @@ The NOTE block at the top of the README reads (checked 2026-10-01):
             <div class="panel is-slim">
         <h2><span data-zh>未知项清单</span><span data-en>Known unknowns</span></h2>
         <ul>
-          <li><strong>OSS 侧当前是否仍有 workflow / agent 编排模块，剩多少（本站最关键的缺口）</strong></li>
-          <li>沙箱、文件权限、网络访问控制、人工确认机制（README 无任何表述）</li>
-          <li>MCP 支持情况（README 未提及）</li>
           <li>300+ 集成包的官方 vs 社区比例与维护活跃度分层</li>
-          <li>检索结果的上下文压缩 / 裁剪策略</li>
-          <li>LlamaParse 的定价与免费额度</li>
+          <li>检索结果的端到端上下文裁剪行为（合成模式已有官方文档，实际行为待实测）</li>
+          <li>LlamaParse 的 credits 换算口径（官方只给单价，不给每页消耗）</li>
           <li>LiteParse 与框架的集成方式</li>
           <li>TypeScript 版的能力对齐度</li>
           <li>README 自己声明更新频率低于文档 —— 细节需查文档站而非 GitHub</li>
@@ -231,6 +260,9 @@ The NOTE block at the top of the README reads (checked 2026-10-01):
             <tr><td>pricing</td><td>LlamaParse 官方定价页（Free/Starter/Pro 三档credits 额度、加购上限、1,000 credits = $1.25、LiteParse 免费 OSS，核验 2026-10-01）</td><td><a href="https://www.llamaindex.ai/pricing" target="_blank" rel="noopener">https://www.llamaindex.ai/pricing</a></td></tr>
             <tr><td>repo</td><td>run-llama/liteparse · 免费快速文本解析器（官方另立项目）</td><td><a href="https://github.com/run-llama/liteparse" target="_blank" rel="noopener">https://github.com/run-llama/liteparse</a></td></tr>
             <tr><td>changelog</td><td>Releases（v0.14.25 @ 2026-09-21）</td><td><a href="https://github.com/run-llama/llama_index/releases" target="_blank" rel="noopener">https://github.com/run-llama/llama_index/releases</a></td></tr>
+            <tr><td>docs</td><td>官方文档 · Response Synthesizers（compact/refine/tree_summarize 的窗口装箱与摘要）</td><td><a href="https://developers.llamaindex.ai/python/framework/module_guides/querying/response_synthesizers/" target="_blank" rel="noopener">https://developers.llamaindex.ai/python/framework/module_guides/querying/response_synthesizers/</a></td></tr>
+            <tr><td>docs</td><td>官方文档 · SimpleDirectoryReader（本地目录读取、fsspec 远程文件系统）</td><td><a href="https://developers.llamaindex.ai/python/framework/module_guides/loading/simpledirectoryreader/" target="_blank" rel="noopener">https://developers.llamaindex.ai/python/framework/module_guides/loading/simpledirectoryreader/</a></td></tr>
+            <tr><td>docs</td><td>官方文档 · 社区集成（300+ 集成包被归为 community integrations）</td><td><a href="https://developers.llamaindex.ai/python/framework/community/integrations/" target="_blank" rel="noopener">https://developers.llamaindex.ai/python/framework/community/integrations/</a></td></tr>
           </tbody>
         </table>
       </div>
@@ -243,11 +275,11 @@ The NOTE block at the top of the README reads (checked 2026-10-01):
 
 | # | 测什么 | 为什么值得测 |
 |:--:|---|---|
-| 1 | <strong>装 <code>llama-index-core</code> 后检查是否还有 workflow / agent 模块</strong> | 补上本站最大的缺口，也决定这条档案怎么改写 |
+| 1 | 装 llama-index-core 后核对 <code>llama_index.core.workflow</code> 的 API 形态与版本 | 官方文档已明示仍在 core；实测确认可用的编排面 |
 | 2 | 用 Starter 档跑一个「文档→ 检索问答」最小闭环 | 判断它现在的核心体验是否顺畅 |
 | 3 | 数据接入的实际覆盖面（本次挑 PDF + SQL 各一种） | 「300+ 集成」与「API/PDF/docs/SQL」是两回事，要测具体那几个 |
 | 4 | 换非OpenAI provider 后的检索质量与结构化输出 | 官方说 work seamlessly，需验证 |
-| 5 | 检索结果在长文档下的上下文裁剪行为 | 补上 context 维度 |
+| 5 | 检索结果在长文档下的上下文裁剪行为（合成模式已官方文档化） | 实际行为待实测 |
 | 6 | 对比 LlamaIndex OSS 与 LlamaParse 的实际差距 | 官方自己说 focus 已转移，差距有多大要亲自看 |</p>
       </div>
 
@@ -255,10 +287,11 @@ The NOTE block at the top of the README reads (checked 2026-10-01):
             <div class="panel is-slim">
         <h2><span data-zh>相关条目</span><span data-en>Related entries</span></h2>
         <ul class="rel-list">
-          <li><span class="rel-t"><a href="./langgraph.html">LangGraph</a></span><span class="rel-n"><strong>编排家族对照，且最能说明转向问题</strong>：LangGraph 把状态持久化做在核心（每 superstep checkpoint）且完全 OSS；LlamaIndex 的编排（Workflows）已被官方放进商业平台。</span></li>
+          <li><span class="rel-t"><a href="./langgraph.html">LangGraph</a></span><span class="rel-n"><strong>编排家族对照，且最能说明转向问题</strong>：LangGraph 把状态持久化做在核心（每 superstep checkpoint）且完全 OSS；LlamaIndex 的 Workflows 同样仍在 OSS core，但公司的投入重心已转向文档解析 —— 对照点是「重心」而不是「归属」。</span></li>
           <li><span class="rel-t"><a href="./google-adk.html">Google ADK</a></span><span class="rel-n">同为编排家族但重心不同：ADK 给的是 agent 工作流的图执行引擎 + 三种部署命令；LlamaIndex 给的是数据接入与检索。两者都不是「谁能接 300+ 集成」这一格。</span></li>
           <li><span class="rel-t"><a href="./crewai.html">CrewAI</a></span><span class="rel-n">同为编排框架，抽象中心不同（Crew 角色协作 / Flow 事件驱动 vs 数据管线与检索）。</span></li>
           <li><span class="rel-t"><a href="./deepagents.html">Deep Agents</a></span><span class="rel-n"><strong>最需要区分的一对</strong>：Deep Agents 的 filesystem 是 agent 工作区文件操作，LlamaIndex 的 data connectors 是数据源接入与解析 —— 常被混为一谈。</span></li>
+          <li><span class="rel-t"><a href="/tools/memory.html"><span data-zh>Knowledge Graph Memory Server</span><span data-en>Knowledge Graph Memory Server</span></a></span><span class="rel-n"><span data-zh>另一层 · 给 agent 装的工具</span><span data-en>Other layer · MCP tools</span></span></li>
         </ul>
       </div>
 
