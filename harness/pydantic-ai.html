@@ -4,18 +4,18 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Pydantic AI — Harness | 投机取巧</title>
-  <meta name="description" content="Pydantic AI（Pydantic）：「Python 里类型安全的 agent loop」 —— 官方自述把两个关键词并在一起： &gt; Pydantic AI is the Python AI SDK: a typed, extensible agent loop &gt; with every mod…" />
+  <meta name="description" content="Pydantic AI（Pydantic）：Pydantic AI 是 Pydantic 出的 Python agent 库。 主打类型安全。官方自述把两个关键词并在一起 —— Pydantic AI is the Python AI SDK: a typed, extensible agent loop wit…" />
   <link rel="canonical" href="https://agent.specul.com/harness/pydantic-ai.html" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Pydantic AI" />
   <meta property="og:url" content="https://agent.specul.com/harness/pydantic-ai.html" />
   <meta property="og:title" content="Pydantic AI — Harness | 投机取巧" />
-  <meta property="og:description" content="Pydantic AI（Pydantic）：「Python 里类型安全的 agent loop」 —— 官方自述把两个关键词并在一起： &gt; Pydantic AI is the Python AI SDK: a typed, extensible agent loop &gt; with every mod…" />
-  <meta name="theme-color" content="#05080f" />
+  <meta property="og:description" content="Pydantic AI（Pydantic）：Pydantic AI 是 Pydantic 出的 Python agent 库。 主打类型安全。官方自述把两个关键词并在一起 —— Pydantic AI is the Python AI SDK: a typed, extensible agent loop wit…" />
+  <meta name="theme-color" content="#16121f" />
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%238b7cf8'/%3E%3Cstop offset='1' stop-color='%2322d3c5'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='48' height='48' rx='12' fill='%2305080f'/%3E%3Cpath d='M14 32 L24 12 L34 32' fill='none' stroke='url(%23g)' stroke-width='2.4' stroke-linejoin='round'/%3E%3Ccircle cx='24' cy='27' r='2.4' fill='%2322d3c5'/%3E%3C/svg%3E" />
   <link rel="stylesheet" href="../brand.css" />
   <link rel="stylesheet" href="../site.css" />
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Pydantic AI","applicationCategory":"DeveloperApplication","url":"https://ai.pydantic.dev","sameAs":"https://ai.pydantic.dev","description":"「Python 里类型安全的 agent loop」 —— 官方自述把两个关键词并在一起： > Pydantic AI is the Python AI SDK: a typed, extensible agent loop > with every model a string swap away. 「typed」是它的世界观（Pydantic 原生贯穿数据层到 agent 输出）， 「agent loop」是它的形态（给原语，不给你一个成品）。 它与 OpenAI Agents SDK 同属这一档， 但把「类型安全」和「durable execution」两点做到明显更深。","dateModified":"2026-10-08"}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Pydantic AI","applicationCategory":"DeveloperApplication","url":"https://ai.pydantic.dev","sameAs":"https://ai.pydantic.dev","description":"Pydantic AI 是 Pydantic 出的 Python agent 库。 主打类型安全。官方自述把两个关键词并在一起 —— Pydantic AI is the Python AI SDK: a typed, extensible agent loop with every model a string swap away. 「typed」是它的世界观：Pydantic 原生贯穿数据层到 agent 输出。 「agent loop」是它的形态：给原语，不给你一个成品。 它与 OpenAI Agents SDK 同属这一档。 但它把「类型安全」和「durable execution」两","dateModified":"2026-10-08"}</script>
 </head>
 <body class="brand-ambient">
   <a class="t-skip" href="#main"><span data-zh>跳到主要内容</span><span data-en>Skip to main content</span></a>
@@ -110,72 +110,126 @@
         <span class="badge"><span data-zh>核验</span><span data-en>Checked</span> 2026-10-08</span>
       </div>
 
-            <p class="panel-lead"><span data-zh><strong>「Python 里类型安全的 agent loop」</strong> —— 官方自述把两个关键词并在一起：
-
-&gt; <strong>Pydantic AI</strong> is the Python AI SDK: a <strong>typed</strong>, extensible <strong>agent loop</strong>
-&gt; with every model a string swap away.
-
-「typed」是它的世界观（Pydantic 原生贯穿数据层到 agent 输出），
-「agent loop」是它的形态（<strong>给原语，不给你一个成品</strong>）。
-它与 <a href="./openai-agents-sdk.html">OpenAI Agents SDK</a> 同属这一档，
-但把「类型安全」和「durable execution」两点做到明显更深。</span><span data-en>A Python agent framework that brings &quot;the FastAPI feeling&quot; to GenAI app and agent development, built by the Pydantic team. Official overview: &quot;<strong>Model-agnostic</strong>: Supports <strong>virtually every</strong> model and provider&quot; — from OpenAI, Anthropic, Gemini, DeepSeek, Groq, Mistral and xAI to AWS Bedrock, Google Cloud, Azure AI Foundry, and local/self-hosted paths like <strong>Ollama</strong>, vLLM and LiteLLM, selected with a <code>&lt;provider<strong>:</strong>model&gt;</code> string (e.g. <code>Agent(&#39;openai:gpt-5.2&#39;)</code>).
-
-<strong>Two differentiators set it apart from the OpenAI Agents SDK</strong>, the other thin Python agent-loop library. First, <strong>type safety end to end</strong>: structured output, typed dependency injection, and typed tools are all Pydantic-native. Second, <strong>durable execution with eight officially supported engines</strong> — Temporal, DBOS, Prefect, Restate, AWS Lambda, Kitaru, Airflow and Absurd — where &quot;each engine wraps <strong>every model request and tool call as its own durable unit</strong>&quot;, so a run &quot;survives restarts, failures, and long waits&quot;. Note the official boundary: &quot;<strong>Durability is not storage</strong>&quot; — a durable engine keeps one run alive; storing chat threads is a separate concern (<code>Persistence</code>).
-
-It also ships <strong>Pydantic AI Harness</strong> (memory, guardrails, sub-agents, planning, context compaction, persistence as composable <code>capabilities</code>, plus complete Coder/Researcher agents) and the standalone <strong><code>pydantic-graph</code></strong> typed state machine. License MIT; latest release v2.54.0 (2026-10-02). Commercial add-ons (Pydantic Logfire observability, Pydantic AI Gateway) are optional, and the library is &quot;always has been, always will be ... completely free and permissively licensed under the MIT license&quot;.</span></p>
+            <div class="panel-lead"><span data-zh><p><strong>Pydantic AI 是 Pydantic 出的 Python agent 库。</strong></p>
+            <p>主打类型安全。官方自述把两个关键词并在一起 ——</p>
+            <blockquote><strong>Pydantic AI</strong> is the Python AI SDK: a <strong>typed</strong>, extensible <strong>agent loop</strong> with every model a string swap away.</blockquote>
+            <p>「typed」是它的世界观：Pydantic 原生贯穿数据层到 agent 输出。 「agent loop」是它的形态：<strong>给原语，不给你一个成品</strong>。</p>
+            <p>它与 <a href="./openai-agents-sdk.html">OpenAI Agents SDK</a> 同属这一档。 但它把「类型安全」和「durable execution」两点做到明显更深。</p></span><span data-en><p><strong>Pydantic AI is the Python agent library from Pydantic.</strong> Its selling point is type safety. The official self-description puts two keywords together: &quot;<strong>Pydantic AI</strong> is the Python AI SDK: a <strong>typed</strong>, extensible <strong>agent loop</strong> with every model a string swap away.&quot; &quot;Typed&quot; is its worldview: Pydantic runs natively from the data layer all the way to agent output. &quot;Agent loop&quot; is its shape: it hands you primitives, not a finished product. It sits in the same bracket as the OpenAI Agents SDK, but goes noticeably deeper on two points — type safety and durable execution.</p></span></div>
 
             <div class="panel is-slim">
         <h2><span data-zh>适合与不适合</span><span data-en>When to use it, when not to</span></h2>
-<span data-zh>        <p><strong>适合</strong>：Python 团队要「类型安全的结构化输出 + 依赖注入」；要把 agent run 变成 durable
-（用自己已有的引擎）；做多 agent（delegation / hand-off / graph）；
-要 MCP 一等支持且希望默认本地运行；既要薄 agent loop，又想要官方现成 Harness。
-<strong>不适合</strong>：TypeScript / Node 团队（看 Mastra）；追求最小依赖、不想引入 Pydantic 世界观；
-想完全避开任何商业组件（Logfire / Gateway 官方推荐但可选）；需要核心 SDK 自带进程级沙箱与网络策略。</p></span><span data-en>        <p><strong>Python teams</strong> that want typed structured output plus dependency injection for their agents.
-Turning an agent run into a <strong>durable</strong> one (survive restarts, long waits, human-in-the-loop) using an engine you already operate, such as Temporal, DBOS or Prefect.
-Multi-agent work (agent delegation, programmatic hand-off, or graph-based control flow).
-First-class MCP support where you want the MCP server to <strong>run locally by default</strong> to keep credentials under your control.
-Wanting both a thin agent loop and official batteries (Pydantic AI Harness: Coder, memory, guardrails).
-Carrying Pydantic validation all the way from the data layer to the agent&#39;s output.</p>
-        <p class="warn-p"><strong>Not a fit for</strong> TypeScript / Node teams (see Mastra); people who want minimal dependencies and don&#39;t want Pydantic&#39;s world view baked in; anyone who must avoid every commercial component (Logfire and the Gateway are recommended but optional — official docs state OTel and self-hosting work too); and anyone needing a process-level sandbox and network policy inside the core SDK, since sandboxing lives in the Harness / Monty layer.</p></span>
+<span data-zh>        <div><p><strong>适合</strong>这几种情况：</p></div>
+        <div><ul><li>Python 团队要「类型安全的结构化输出 + 依赖注入」</li><li>要把 agent run 变成 durable，用自己已有的引擎</li><li>做多 agent（delegation / hand-off / graph）</li><li>要 MCP 一等支持，且希望默认本地运行</li><li>既要薄 agent loop，又想要官方现成 Harness</li></ul></div>
+        <div class="warn-p"><p><strong>不适合</strong>这几种情况：</p></div>
+        <div><ul><li>TypeScript / Node 团队（看 <a href="./mastra.html">Mastra</a>）</li><li>追求最小依赖、不想引入 Pydantic 世界观</li><li>想完全避开任何商业组件（Logfire / Gateway 官方推荐但可选）</li><li>需要核心 SDK 自带进程级沙箱与网络策略</li></ul></div></span><span data-en>        <div><p><strong>A fit when:</strong> you are a Python team that wants type-safe structured output plus dependency injection for your agents; you need to turn an agent run <strong>durable</strong>, using an engine you already operate; you are doing multi-agent work (delegation / hand-off / graph); you want first-class MCP support and want MCP running <strong>locally</strong> so you keep control of credentials; you want a thin agent loop and also want the official ready-made Harness (Coder / Researcher / memory / guardrails). <strong>Not a fit when:</strong> you are on TypeScript / Node (see Mastra); you want the smallest possible dependency set and do not want to bring in Pydantic; you want to avoid every commercial component (Logfire and Gateway are official recommendations but <strong>optional</strong>); you need process-level sandboxing and network policy built into the framework — the sandbox lives in the Harness / Monty, not in the core SDK.</p></div></span>
       </div>
 
 
       <div class="block-head">
         <h2 class="t-h2"><span data-zh>固定坐标系</span><span data-en>Fixed coordinate system</span></h2>
-        <p class="t-section-lead">8 <span data-zh>个维度</span><span data-en>dimensions</span>, <span data-zh>与同赛道其他对象逐项可比</span><span data-en>each comparable item by item against others in the same track</span>.</p>
+        <p class="t-section-lead">8 <span data-zh>个维度</span><span data-en>dimensions</span>, <span data-zh>与同分区其他对象逐项可比</span><span data-en>each comparable item by item against others in the same section</span>.</p>
       </div>
       <dl class="axes">
         <div class="axis">
           <dt><span data-zh>模型与开放条件</span><span data-en>Model & openness</span></dt>
-          <dd><strong>官方第一卖点就是 model-agnostic，且给出了完整的 provider 目录。</strong> 官方 overview 原文：&quot;<strong>Model-agnostic</strong>: Supports <strong>virtually every</strong> model and provider&quot;，并列出 OpenAI、Anthropic、Gemini、DeepSeek、Grok、Cohere、Mistral、Perplexity 等模型开发商， Azure AI Foundry、Amazon Bedrock、Google Cloud 等云平台，Ollama、LiteLLM、Groq、OpenRouter、 Together AI、Fireworks AI、Cerebras、Hugging Face、GitHub、Heroku、Vercel、Nebius、OVHcloud、 Alibaba Cloud、SambaNova 等；&quot;If your favorite model or provider is not listed, you can easily implement a custom model.&quot; 用法是 <code>&lt;provider<strong>:</strong>model&gt;</code> 前缀字符串（<code>Agent(&#39;openai:gpt-5.2&#39;)</code>），官方 models/overview 页给出 <strong>provider 目录表</strong>（OpenAI / Anthropic / Google / Bedrock / Vertex / Azure / DeepSeek / Groq / Mistral / Ollama / OpenRouter / vLLM / LiteLLM / Pydantic AI Gateway 等，每个附服务类型与选择语法）。 <strong>本地模型官方明确支持</strong>：Ollama（<code>ollama:</code>）、vLLM（<code>vllm:</code>）、LiteLLM（<code>litellm:</code>）都在目录里。 换模型是「a string swap away」，并有 <strong>fallback model</strong> 与 <strong>ModelProfile</strong>（<code>supports_tools</code>、 <code>supports_json_schema_output</code> 等能力标记）可用。<strong>官方明确说明能力随模型/API 不同</strong>： &quot;Feature support depends on the model and API you select, even when two services use the same API format.&quot; —— 即<strong>换 provider 后行为完全等价，官方未给出此保证</strong>。 <strong>换 provider 后零改动，官方口径是同一 agent 可移植</strong>，但各家行为一致性需实测。</dd>
+          <dd><p><strong>能接的模型 provider 最多，官方给了完整目录，换模型就是一个字符串。</strong></p>
+            <p>官方第一卖点就是 model-agnostic。<strong>官方 overview 原文</strong>：</p>
+            <p><strong>Model-agnostic</strong>: Supports <strong>virtually every</strong> model and provider: OpenAI, Anthropic, Gemini, DeepSeek, Grok, Cohere, Mistral, and Perplexity; Azure AI Foundry, Amazon Bedrock, Google Cloud, <strong>Ollama</strong>, LiteLLM, Groq, OpenRouter, Together AI, Fireworks AI, Cerebras, Hugging Face, GitHub, Heroku, Vercel, Nebius, OVHcloud, Alibaba Cloud, and SambaNova.</p>
+            <p>官方还补了一句，给自研模型留了口子。<strong>官方原文</strong>：</p>
+            <p><strong>官方原文</strong>：&quot;If your favorite model or provider is not listed, you can easily implement a custom model.&quot;</p>
+            <p>官方目录把 provider 分四类。</p>
+            <ul><li><strong>模型开发商 9 家</strong> —— OpenAI、Anthropic、Google(Gemini)、DeepSeek、Mistral 另有 Cohere / xAI / Moonshot(Kimi) / Z.AI</li></ul>
+            <ul><li><strong>云平台 6 家</strong> —— AWS Bedrock、Google Cloud(Vertex AI)、Azure Foundry、 Alibaba Cloud、Snowflake Cortex、Heroku</li></ul>
+            <ul><li><strong>本地与自托管 3 个</strong> —— Ollama（<code>ollama:</code>）、vLLM（<code>vllm:</code>）、LiteLLM（<code>litellm:</code>）</li><li><strong>推理平台与网关 8 个</strong> —— Groq、Cerebras、Hugging Face、Together、Fireworks、OpenRouter 这六个是推理平台，Vercel AI Gateway 与 Pydantic AI Gateway 是两个网关</li></ul>
+            <p>用法是 <code>&lt;provider&gt;:&lt;model&gt;</code> 前缀字符串，例如 <code>Agent(&#39;openai:gpt-5.2&#39;)</code>。 官方 models/overview 页给出 <strong>provider 目录表</strong>。 每个 provider 在表里附服务类型与选择语法。</p>
+            <p>另有 <strong>fallback model</strong> 与 <strong>ModelProfile</strong> 可用。 后者标记 <code>supports_tools</code>、<code>supports_json_schema_output</code> 等能力。</p>
+            <p>⚠ <strong>一处官方自己划的边界</strong>：能力<strong>不保证跨 provider 等价</strong>。</p>
+            <p><strong>官方原文</strong>：&quot;Feature support depends on the model and API you select, even when two services use the same API format.&quot;</p>
+            <p>换 provider 后行为完全等价，官方未给出此保证。 官方口径是同一个 agent 可移植，但各家行为一致性需实测。</p></dd>
         </div>
         <div class="axis">
           <dt><span data-zh>运行位置</span><span data-en>Where it runs</span></dt>
-          <dd><strong>纯 Python 库，官方口径是「同一个 agent 到处运行」。</strong> README 原文：&quot;The same agent <strong>runs everywhere you need it</strong>: behind a web frontend, in the terminal, on a voice call, on a <strong>durable background queue</strong>, in GitHub Actions, or as a plain object you call <code>run()</code> on.&quot; 安装是 <code>uv add pydantic-ai</code>（或 slim 变体）。它<strong>不是一个服务、不启动 server</strong>： 运行面由你决定 —— 嵌进 Web 前端（AG-UI / Vercel AI 事件流）、终端（官方 CLI <code>clai</code>）、 语音会话、或丢进队列。<strong>durable background queue 那一路要把 engine（如 Temporal）接上</strong>（见 background 轴）。 <strong>谁运营 agent loop</strong>：你自己。官方另提供 <strong>Pydantic AI Gateway</strong>（可自托管）做模型路由， 与 <strong>Logfire</strong> 做观测 —— 两者可选、不改变「库由你运营」的事实。 官方还提供 GitHub Agentic Workflows（无头跑在 issues / PR 上）与 web chat 内置入口， 但都建立在同一个库之上。</dd>
+          <dd><p><strong>纯 Python 库，不是一个服务</strong> —— 安装后由你自己决定把它跑在哪。</p>
+            <p>安装是 <code>uv add pydantic-ai</code>（或 slim 变体）。它<strong>不启动 server</strong>。 官方口径是「同一个 agent 到处运行」。<strong>官方 README 原文</strong>：</p>
+            <p>&quot;The same agent <strong>runs everywhere you need it</strong>: behind a web frontend, in the terminal, on a voice call, on a <strong>durable background queue</strong>, in GitHub Actions, or as a plain object you call <code>run()</code> on.&quot;</p>
+            <p>运行面由你决定，官方给了这些入口：</p>
+            <ul><li>嵌进 Web 前端（AG-UI / Vercel AI 事件流）</li><li>终端（官方 CLI <code>clai</code>）</li><li>端侧语音会话</li><li>丢进 durable background queue（那一路要把 engine 接上，见 background 轴）</li></ul>
+            <p><strong>谁运营 agent loop</strong>：你自己。 官方另给两个可选组件 —— <strong>Pydantic AI Gateway</strong>（可自托管）做模型路由， <strong>Logfire</strong> 做观测。 两者可选，不改变「库由你运营」这个事实。</p>
+            <p>官方还提供 GitHub Agentic Workflows，无头跑在 issues / PR 上。 另有内置 web chat 入口。两者都建立在同一个库之上。</p></dd>
         </div>
         <div class="axis">
           <dt><span data-zh>本地文件</span><span data-en>Local files</span></dt>
-          <dd><strong>核心 agent 不带文件系统，但官方 Harness 给了成套的本地文件能力。</strong> 普通 <code>Agent</code> 没有本地工作区概念；文件能力在 <strong>Pydantic AI Harness</strong> 里。 README 原文（Coding agent 段）：&quot;A complete coding agent in your terminal: <strong>workspace-rooted file access</strong>, <strong>allowlisted shell</strong>, repo orientation, planning, and <strong>context management</strong> that survives long sessions.&quot; 实现是一组可拆的 <strong>capabilities</strong>：<code>FileSystem(&#39;.&#39;)</code>、<code>Shell(cwd=&#39;.&#39;)</code>、<code>RepoContext()</code>、 <code>SubAgents(...)</code>、<code>ClearToolResults()</code>、<code>ToolOutputLimits()</code> 等 —— 官方强调 Coder 只是把它们组合， &quot;use it whole, or use the blocks it bundles directly; the two are equivalent&quot;。 <strong>关键边界官方写明了</strong>：文件访问是 <strong>workspace-rooted</strong>（限定工作区），shell 是 <strong>allowlisted</strong>（白名单）。 另有 <strong>Monty</strong> —— 官方称其为 &quot;a sandboxed Python interpreter that runs model-written code&quot;， 用于跑模型写出的代码。 <strong>核心 SDK 层面的文件访问默认边界（不经 Harness 时），官方未说明</strong>（已查 overview 与 harness 页）。</dd>
+          <dd><p><strong>核心 agent 不带文件系统；官方 Harness 给了成套的本地文件能力。</strong></p>
+            <p>普通 <code>Agent</code> 没有本地工作区概念。 文件能力在 <strong>Pydantic AI Harness</strong> 里。<strong>官方 README 原文</strong>（Coding agent 段）：</p>
+            <p>&quot;A complete coding agent in your terminal: <strong>workspace-rooted file access</strong>, <strong>allowlisted shell</strong>, repo orientation, planning, and <strong>context management</strong> that survives long sessions.&quot;</p>
+            <p>实现是一组可拆的 <strong>capabilities</strong>：</p>
+            <ul><li><code>FileSystem(&#39;.&#39;)</code></li><li><code>Shell(cwd=&#39;.&#39;)</code></li><li><code>RepoContext()</code></li><li><code>SubAgents(...)</code></li><li><code>ClearToolResults()</code></li><li><code>ToolOutputLimits()</code></li></ul>
+            <p>官方强调 Coder 只是把它们组合起来。<strong>官方原文</strong>：</p>
+            <p><strong>官方原文</strong>：&quot;use it whole, or use the blocks it bundles directly; the two are equivalent&quot;</p>
+            <p><strong>关键边界官方写明了</strong>：文件访问是 <strong>workspace-rooted</strong>（限定工作区）， shell 是 <strong>allowlisted</strong>（白名单）。</p>
+            <p>另有 <strong>Monty</strong>，官方称其为 &quot;a sandboxed Python interpreter that runs model-written code&quot;。 它用来跑模型写出的代码。</p>
+            <p><strong>未知：核心 SDK 层面的文件访问默认边界（不经 Harness 时），官方未说明</strong> <strong>核验：</strong>overview 与 harness 页已查。</p></dd>
         </div>
         <div class="axis">
           <dt><span data-zh>关机后的任务</span><span data-en>Tasks after shutdown</span></dt>
-          <dd><strong>这是它最硬的差异点：durable execution 官方列出八种引擎，且「每个模型与工具调用都成为一个 durable 单元」。</strong> 官方 durable execution 页原文：&quot;Pydantic AI allows you to build <strong>durable agents</strong> that can <strong>preserve their progress across transient API failures and application errors or restarts</strong>, and handle long-running, asynchronous, and human-in-the-loop workflows with production-grade reliability.&quot; 机制原文：&quot;Each engine wraps <strong>every model request and tool call as its own durable unit</strong>&quot;。 官方README 列举引擎为 <strong>Temporal、DBOS、Prefect、Restate、AWS Lambda、Kitaru、Airflow、Absurd</strong>， 其中 &quot;the <strong>first five co-maintained</strong> with the vendor teams&quot;；并给第三方一个 <strong>durable execution backend builder</strong>。 接法示例：<code>TemporalDurability()</code> capability + <code>PydanticAIWorkflow</code>，官方称 &quot;a run working through a background queue <strong>survives restarts, failures, and long waits</strong>&quot;。 ⚠ <strong>边界要读出来</strong>：官方专设一句 &quot;<strong>Durability is not storage</strong>&quot; —— durable engine 只保证一次 run 跨崩溃存活，<strong>不替你存对话线程</strong>（那是另设的 Persistence）。 <code>run_sync()</code>/<code>run_stream_sync()</code> 不能在工具内使用（须 <code>async def</code>）。 <strong>每个 agent 只能挂一个 durable engine</strong>，挂第二个会抛 <code>UserError</code>。</dd>
+          <dd><p><strong>这是它最硬的差异点：durable execution 官方列出八种引擎，</strong> 且「每个模型与工具调用都成为一个 <strong>durable</strong> 单元」。</p>
+            <p><strong>官方 durable execution 页原文</strong>：</p>
+            <p>&quot;Pydantic AI allows you to build <strong>durable agents</strong> that can <strong>preserve their progress across transient API failures and application errors or restarts</strong>, and handle long-running, asynchronous, and human-in-the-loop workflows with production-grade reliability.&quot;</p>
+            <p>机制见<strong>官方原文</strong>：</p>
+            <p>&quot;Each engine wraps <strong>every model request and tool call as its own durable unit</strong>&quot;</p>
+            <p>官方 README 列举引擎为 <strong>Temporal、DBOS、Prefect、Restate、AWS Lambda、Kitaru、Airflow、Absurd</strong>， 其中 &quot;the <strong>first five co-maintained</strong> with the vendor teams&quot;。 第三方还有一种 <strong>durable execution backend builder</strong>，可以自接引擎。</p>
+            <p>接法示例：<code>TemporalDurability()</code> capability + <code>PydanticAIWorkflow</code>，官方称：</p>
+            <p>&quot;a run working through a background queue <strong>survives restarts, failures, and long waits</strong>&quot;</p>
+            <p>⚠ <strong>边界要读出来</strong>：官方专设一句 ——</p>
+            <p>&quot;<strong>Durability is not storage</strong>&quot;</p>
+            <p>意思是：durable engine 只保证一次 run 跨崩溃存活。 它<strong>不替你存对话线程</strong>，那是另设的 Persistence。</p>
+            <p>另外两条限制：<code>run_sync()</code> / <code>run_stream_sync()</code> 不能在工具内使用，须 <code>async def</code>。 <strong>每个 agent 只能挂一个 durable engine</strong>，挂第二个会抛 <code>UserError</code>。</p></dd>
         </div>
         <div class="axis">
           <dt><span data-zh>工具与扩展</span><span data-en>Tools & extensions</span></dt>
-          <dd><strong>工具面有「函数工具 + MCP + A2A + capabilities 组合」四层，MCP 是核心能力。</strong> 函数工具用 <code>@agent.tool</code> 注册：官方原文 &quot;the rest of its signature and its docstring become the tool schema, arguments are validated before your code runs&quot;，参数错误回传给 LLM 重试。 <strong>MCP 官方支持两种方向</strong>（mcp/overview 页）：① agent 连 MCP server 用其工具； ② agent 被放进 MCP server。推荐做法是 <strong><code>MCP</code> capability</strong>， 官方称 &quot;It <strong>runs the MCP server locally by default</strong> — keeping credentials, hooks, and tracing under your control&quot;，并可用 <code>native=True</code> 选择走模型 provider 的原生 MCP（不支持时回落本地）。 低层用 <code>MCPToolset</code>（<code>toolsets=[...]</code>）。<strong>本地 MCP 默认</strong>这点对凭据可控性很重要。 <strong>A2A</strong>：官方 integrations/a2a 页明确 —— <code>Agent.to_a2a()</code> 与 <code>pydantic-ai-slim[a2a]</code> &quot;<strong>deprecated and will be removed in 2.0</strong>&quot;，<code>fasta2a</code> 已迁到 <code>datalayer/fasta2a</code> 并附带 Pydantic AI bridge。 <strong>UI/接口</strong>：AG-UI、Vercel AI 事件流、CLI、内置 web chat、voice。 另有 <strong>capabilities</strong> 组合机制与 <strong>YAML/JSON agent specs</strong>（无代码定义 agent）。</dd>
+          <dd><p><strong>工具面有「函数工具 + MCP + A2A + capabilities 组合」四层。MCP 是核心能力。</strong></p>
+            <p>函数工具用 <code>@agent.tool</code> 注册。<strong>官方原文</strong>：</p>
+            <p><strong>官方原文</strong>：&quot;the rest of its signature and its docstring become the tool schema, arguments are validated before your code runs&quot;</p>
+            <p>参数错误会回传给 LLM 重试。</p>
+            <p><strong>MCP 官方支持两种方向</strong>（mcp/overview 页）：</p>
+            <ul><li>① agent 连 MCP server，用它的工具</li><li>② agent 被放进 MCP server</li></ul>
+            <p>推荐做法是 <strong><code>MCP</code> capability</strong>。官方称：</p>
+            <p>&quot;It <strong>runs the MCP server locally by default</strong> — keeping credentials, hooks, and tracing under your control&quot;</p>
+            <p>并可用一个 <code>native=True</code> 开关选择走模型 provider 的原生 MCP（不支持时回落本地）。 低层用 <code>MCPToolset</code>（<code>toolsets=[...]</code>）。 <strong>本地 MCP 默认</strong>这点对凭据可控性很重要。</p>
+            <p>⚠ <strong>A2A 已在退场</strong>。官方 integrations/a2a 页明确：</p>
+            <ul><li><code>Agent.to_a2a()</code> 与 <code>pydantic-ai-slim[a2a]</code> &quot;<strong>deprecated and will be removed in 2.0</strong>&quot;</li><li><code>fasta2a</code> 已迁到 <code>datalayer/fasta2a</code>，并附带 Pydantic AI bridge</li></ul>
+            <p><strong>UI/接口</strong>：AG-UI、Vercel AI 事件流、CLI、内置 web chat、voice。 另有 <strong>capabilities</strong> 组合机制。 还有 <strong>YAML/JSON agent specs</strong>，可以无代码定义 agent。</p></dd>
         </div>
         <div class="axis">
           <dt><span data-zh>上下文与记忆</span><span data-en>Context & memory</span></dt>
-          <dd><strong>它把「持久化」和「durability」明确分成两件事，这是本维度的核心口径。</strong> 官方 durable execution 页原文：&quot;<strong>Durability is not storage</strong> — A durable engine keeps one run alive across crashes and restarts. It <strong>does not store your chat threads</strong>: saving a conversation and picking it up later is a different problem ... laid out in <strong>Persistence</strong>.&quot; —— 即：durable engine 管 run 的存活；<strong>Persistence</strong> 管对话线程的保存与恢复（另设模块）。 <strong>Harness 另给上下文管理</strong>：官方 capabilities 列表含 <strong>memory</strong>、<strong>context management</strong>（compaction）、 <strong>persistence</strong>，README 称 Harness &quot;has everything an agent needs for complex, long-running work, snapped on as capabilities&quot;。 即本站的「状态 ≠ 上下文」在这里被官方拆成三块：durable run（引擎）、chat thread（Persistence）、 上下文压缩（compaction）。<strong>compaction 的具体裁剪策略与阈值，官方文档未给出默认值</strong>（已查 README 与 durable 页）。</dd>
+          <dd><p><strong>它把「持久化」和「durability」明确分成两件事，这是本维度的核心口径。</strong></p>
+            <p><strong>官方 durable execution 页原文</strong>：</p>
+            <p>&quot;<strong>Durability is not storage</strong> — A durable engine keeps one run alive across crashes and restarts. It <strong>does not store your chat threads</strong>: saving a conversation and picking it up later is a different problem ... laid out in <strong>Persistence</strong>.&quot;</p>
+            <p>即：durable engine 管 run 的存活。 <strong>Persistence</strong> 管对话线程的保存与恢复，是另设模块。</p>
+            <p><strong>Harness 另给上下文管理</strong>：官方 capabilities 列表含 <strong>memory</strong>、 <strong>context management</strong>（compaction）、<strong>persistence</strong>。<strong>官方 README 原文</strong>称 Harness：</p>
+            <p><strong>官方原文</strong>：&quot;has everything an agent needs for complex, long-running work, snapped on as capabilities&quot;</p>
+            <p>所以本站的「状态 ≠ 上下文」在这里被官方拆成三块： durable run（引擎）、chat thread（Persistence）、上下文压缩（compaction）。</p>
+            <p><strong>未知：compaction 的具体裁剪策略与阈值，官方文档未给出默认值</strong> <strong>核验：</strong>README 与 durable 页已查。</p></dd>
         </div>
         <div class="axis">
           <dt><span data-zh>权限与限制</span><span data-en>Permissions & limits</span></dt>
-          <dd><strong>人工介入是「工具级审批」，沙箱在 Harness / Monty，凭据默认本地。</strong> <strong>HITL 工具审批</strong>是官方 overview 第 8 条：&quot;<strong>Human-in-the-Loop Tool Approval</strong>: Easily lets you flag that certain tool calls <strong>require approval</strong> before they can proceed, <strong>possibly depending on tool call arguments, conversation history, or user preferences</strong>.&quot;（deferred tools 页）。 这与本站其它对象的层次不同 —— <strong>它拦的是「这次工具调用能不能跑」，且可依据参数与历史动态判定</strong>。 <strong>guardrails</strong> 也随 Harness 提供（官方 Harness 能力列表含 guardrails）。 <strong>沙箱</strong>：官方 <strong>Monty</strong> 是 &quot;a sandboxed Python interpreter that runs model-written code&quot;； Harness 的 <code>Shell</code> 是 <strong>allowlisted</strong>、<code>FileSystem</code> 是 <strong>workspace-rooted</strong>。 <strong>凭据</strong>：MCP 默认本地运行，&quot;keeping credentials, hooks, and tracing under your control&quot;。 <strong>核心 SDK 是否有进程/网络级沙箱、以及内置认证/权限边界，官方未说明</strong>（已查 overview、durable、mcp 三页）； 企业级权限与审计由 Logfire / Gateway 那侧承担。</dd>
+          <dd><p><strong>人工介入是「工具级审批」，沙箱在 Harness / Monty，凭据默认本地。</strong></p>
+            <p><strong>HITL 工具审批</strong>是官方 overview 第 8 条：</p>
+            <p>&quot;<strong>Human-in-the-Loop Tool Approval</strong>: Easily lets you flag that certain tool calls <strong>require approval</strong> before they can proceed, <strong>possibly depending on tool call arguments, conversation history, or user preferences</strong>.&quot;</p>
+            <p>这一条出自 deferred tools 页。 它与本站其它对象的层次不同：<strong>它拦的是「这次工具调用能不能跑」， 且可依据参数与历史动态判定。</strong></p>
+            <p><strong>guardrails</strong> 也随 Harness 提供（官方 Harness 能力列表含 guardrails）。</p>
+            <p><strong>沙箱</strong>：官方 <strong>Monty</strong> 是 &quot;a sandboxed Python interpreter that runs model-written code&quot;。 Harness 的 <code>Shell</code> 是 <strong>allowlisted</strong>，<code>FileSystem</code> 是 <strong>workspace-rooted</strong>。</p>
+            <p><strong>凭据</strong>：MCP 默认本地运行，官方称 &quot;keeping credentials, hooks, and tracing under your control&quot;。</p>
+            <p><strong>未知：核心 SDK 是否有进程/网络级沙箱、以及内置认证/权限边界，官方未说明</strong> <strong>核验：</strong>overview、durable、mcp 三页已查。 企业级权限与审计由 Logfire / Gateway 那侧承担。</p></dd>
         </div>
         <div class="axis">
           <dt><span data-zh>适合什么任务</span><span data-en>Best for</span></dt>
-          <dd><strong>适合</strong>：<strong>Python 团队</strong>要做「类型安全的结构化输出 + 依赖注入」的 agent； 需要把 agent run 变成 <strong>durable</strong>（跨重启、长等待、HITL，且想用自己已有的引擎如 Temporal/DBOS/Prefect）； 要做多 agent（agent delegation / hand-off / graph）； 需要 MCP 一等支持且希望 MCP <strong>本地运行以控制凭据</strong>； 既要薄 agent loop，又想要官方现成的 Harness（Coder / Researcher / memory / guardrails）； 想要 Pydantic 验证从数据层一路贯穿到 agent 输出。 <strong>不适合</strong>：TypeScript / Node 团队（该看 <a href="./mastra.html">Mastra</a>）； 追求最小依赖、不想引入 Pydantic 与可选能力包（它的世界观是 typed end to end）； 想完全避免任何商业组件（Logfire 与 Gateway 是官方推荐但<strong>可选</strong>，官方声明 OTel 与自托管都支持）； 需要框架开箱自带进程级沙箱与网络策略（沙箱在 Harness / Monty，非核心 SDK）。</dd>
+          <dd><p><strong>适合：需要类型安全的 Python 团队，以及要把 agent run 变成 durable 的人。</strong></p>
+            <ul><li><strong>Python 团队</strong>要做「类型安全的结构化输出 + 依赖注入」的 agent</li><li>需要把 agent run 变成 <strong>durable</strong>（跨重启、长等待、HITL）， 且想用自己已有的引擎，如 Temporal / DBOS / Prefect</li></ul>
+            <ul><li>要做多 agent（agent delegation / hand-off / graph）</li><li>需要 MCP 一等支持，且希望 MCP <strong>本地运行以控制凭据</strong></li><li>既要薄 agent loop，又想要官方现成的 Harness（Coder / Researcher / memory / guardrails）</li><li>想要 Pydantic 验证从数据层一路贯穿到 agent 输出</li></ul>
+            <p><strong>不适合：非 Python 栈、极简主义者，以及需要核心 SDK 自带沙箱的人。</strong></p>
+            <ul><li>TypeScript / Node 团队（该看 <a href="./mastra.html">Mastra</a>）</li><li>追求最小依赖、不想引入 Pydantic 与可选能力包（它的世界观是 typed end to end）</li><li>想完全避免任何商业组件 —— Logfire 与 Gateway 是官方推荐但<strong>可选</strong>， 官方声明 OTel 与自托管都支持</li></ul>
+            <ul><li>需要框架开箱自带进程级沙箱与网络策略 —— 沙箱在 Harness / Monty，非核心 SDK</li></ul></dd>
         </div>
       </dl>
 
@@ -195,9 +249,17 @@ Carrying Pydantic validation all the way from the data layer to the agent&#39;s 
         <h2><span data-zh>价格</span><span data-en>Pricing</span></h2>
         <table class="src">
           <tbody>
-            <tr><th class="w-28"><span data-zh>月度入口</span><span data-en>Monthly entry</span></th><td><span data-zh>库本身 MIT 免费；Pydantic Logfire 观测平台 Free $0 / Pro 按量（核验 2026-10-08）</span><span data-en>库本身 MIT 免费；Pydantic Logfire 观测平台 Free $0 / Pro 按量（核验 2026-10-08）</span></td></tr>
-            <tr><th class="w-28"><span data-zh>年付</span><span data-en>Annual</span></th><td><span data-zh>未核验年付报价</span><span data-en>未核验年付报价</span></td></tr>
-            <tr><th class="w-28"><span data-zh>额度说明</span><span data-en>Quota note</span></th><td><span data-zh>**库永久 MIT 免费，商业价值在观测与网关两条线。** 核验依据：仓库 README（Logfire free tier 段）+ 官方定价页 pydantic.dev/pricing（核验 2026-10-08）。 定价页 FAQ 原文："The Pydantic Library is (always has been, always will be) **completely free and permissively licensed under the MIT license**. Prices displayed on this page apply to **Pydantic Logfire, only**." **Logfire（观测）**：官方定价页列 **Free $0**（每月 1,000 万 spans/metrics 免费、 1 个月数据保留、无需信用卡）、**Pro $2/百万**（超出 1,000 万后按量）、**Enterprise**（定制、多组织/项目/席位）。 **Pydantic AI Gateway**：官方称 "one key for every model, with cost monitoring and spending limits"， 可自托管；其**具体加价费率官方定价页未单列**（README 只说带成本监控与预算控制）。 **框架免费 ≠ 运行免费**：默认需自备各 provider 的 API key，推理费用自理； 官方提供内置 `'test'` 模型（TestModel），无 key 也能先跑通流程。</span><span data-en>**库永久 MIT 免费，商业价值在观测与网关两条线。** 核验依据：仓库 README（Logfire free tier 段）+ 官方定价页 pydantic.dev/pricing（核验 2026-10-08）。 定价页 FAQ 原文："The Pydantic Library is (always has been, always will be) **completely free and permissively licensed under the MIT license**. Prices displayed on this page apply to **Pydantic Logfire, only**." **Logfire（观测）**：官方定价页列 **Free $0**（每月 1,000 万 spans/metrics 免费、 1 个月数据保留、无需信用卡）、**Pro $2/百万**（超出 1,000 万后按量）、**Enterprise**（定制、多组织/项目/席位）。 **Pydantic AI Gateway**：官方称 "one key for every model, with cost monitoring and spending limits"， 可自托管；其**具体加价费率官方定价页未单列**（README 只说带成本监控与预算控制）。 **框架免费 ≠ 运行免费**：默认需自备各 provider 的 API key，推理费用自理； 官方提供内置 `'test'` 模型（TestModel），无 key 也能先跑通流程。</span></td></tr>
+            <tr><th class="w-28"><span data-zh>月度入口</span><span data-en>Monthly entry</span></th><td><span data-zh><p>库本身 MIT 免费；Pydantic Logfire 观测平台 Free $0 / Pro 按量（核验 2026-10-08）</p></span><span data-en><p>库本身 MIT 免费；Pydantic Logfire 观测平台 Free $0 / Pro 按量（核验 2026-10-08）</p></span></td></tr>
+            <tr><th class="w-28"><span data-zh>年付</span><span data-en>Annual</span></th><td><span data-zh><p>未核验年付报价</p></span><span data-en><p>未核验年付报价</p></span></td></tr>
+            <tr><th class="w-28"><span data-zh>额度说明</span><span data-en>Quota note</span></th><td><span data-zh><p><strong>库永久 MIT 免费，商业价值在观测与网关两条线。</strong></p>
+            <p>核验依据：仓库 README（Logfire free tier 段）+ 官方定价页 pydantic.dev/pricing（核验 2026-10-08）。 定价页 FAQ 原文：&quot;The Pydantic Library is (always has been, always will be) <strong>completely free and permissively licensed under the MIT license</strong>. Prices displayed on this page apply to <strong>Pydantic Logfire, only</strong>.&quot;</p>
+            <p><strong>Logfire（观测）</strong>：官方定价页列 <strong>Free $0</strong>（每月 1,000 万 spans/metrics 免费、 1 个月数据保留、无需信用卡）、<strong>Pro $2/百万</strong>（超出 1,000 万后按量）、<strong>Enterprise</strong>（定制、多组织/项目/席位）。</p>
+            <p><strong>Pydantic AI Gateway</strong>：官方称 &quot;one key for every model, with cost monitoring and spending limits&quot;， 可自托管；其<strong>具体加价费率官方定价页未单列</strong>（README 只说带成本监控与预算控制）。</p>
+            <p><strong>框架免费 ≠ 运行免费</strong>：默认需自备各 provider 的 API key，推理费用自理； 官方提供内置 <code>&#39;test&#39;</code> 模型（TestModel），无 key 也能先跑通流程。</p></span><span data-en><p><strong>库永久 MIT 免费，商业价值在观测与网关两条线。</strong></p>
+            <p>核验依据：仓库 README（Logfire free tier 段）+ 官方定价页 pydantic.dev/pricing（核验 2026-10-08）。 定价页 FAQ 原文：&quot;The Pydantic Library is (always has been, always will be) <strong>completely free and permissively licensed under the MIT license</strong>. Prices displayed on this page apply to <strong>Pydantic Logfire, only</strong>.&quot;</p>
+            <p><strong>Logfire（观测）</strong>：官方定价页列 <strong>Free $0</strong>（每月 1,000 万 spans/metrics 免费、 1 个月数据保留、无需信用卡）、<strong>Pro $2/百万</strong>（超出 1,000 万后按量）、<strong>Enterprise</strong>（定制、多组织/项目/席位）。</p>
+            <p><strong>Pydantic AI Gateway</strong>：官方称 &quot;one key for every model, with cost monitoring and spending limits&quot;， 可自托管；其<strong>具体加价费率官方定价页未单列</strong>（README 只说带成本监控与预算控制）。</p>
+            <p><strong>框架免费 ≠ 运行免费</strong>：默认需自备各 provider 的 API key，推理费用自理； 官方提供内置 <code>&#39;test&#39;</code> 模型（TestModel），无 key 也能先跑通流程。</p></span></td></tr>
           </tbody>
         </table>
         <p class="fine mt-3"><span data-zh>不同币种不做折算。优惠、地区、税费与登录后报价可能变化，购买前请到官方页面确认。</span><span data-en>No currency conversion. Discounts, regions, tax and post-login pricing can change — confirm on the official page before buying.</span></p>
@@ -242,20 +304,68 @@ Carrying Pydantic validation all the way from the data layer to the agent&#39;s 
 
             <div class="panel is-slim">
         <h2><span data-zh>实测记录</span><span data-en>Measured runs</span></h2>
-        <p>本站尚未完成实测。测试协议见 <a href="https://github.com/speculcom/ai-agent-guide/blob/main/tracks/agents/tasks/_protocol.md" target="_blank" rel="noopener">tasks/_protocol.md</a>。
-
-<strong>实测建议</strong>（按编程底座 + 类型安全 / durable 维度定制）：
-
-| # | 测什么 | 为什么值得测 |
-|:--:|---|---|
-| 1 | 最小 hello agent 要几个文件、多少行 | 量化「薄 agent loop」的真实上手成本 |
-| 2 | 给一个 Pydantic 输出模型，验证 run 必返回该类型 | 官方卖点是 typed end to end，要验证「返库即类型」 |
-| 3 | 接 Ollama 本地模型跑通一个带工具与结构化输出的 agent | 官方目录单列 Ollama，验证真实可行性 |
-| 4 | 用 TemporalDurability 跑一个长任务，kill 进程后续跑 | 官方 durable 承诺的核心，必须验证 |
-| 5 | agent delegation / hand-off / graph 三种多 agent 写法代码量对比 | 官方给五种复杂度层级，验证选型建议 |
-| 6 | MCP capability 默认本地 vs <code>native=True</code> 的凭据与行为差异 | 官方强调默认本地保凭据可控，值得验证 |</p>
+        <p>本站尚未完成实测。测试协议见 <a href="https://github.com/speculcom/ai-agent-guide/blob/main/tracks/agents/tasks/_protocol.md" target="_blank" rel="noopener">tasks/_protocol.md</a>。</p>
+            <p><strong>实测建议</strong>（按编程底座 + 类型安全 / durable 维度定制）：</p>
+            <div class="tbl-wrap"><table><thead><tr><th>#</th><th>测什么</th><th>为什么值得测</th></tr></thead><tbody><tr><td>1</td><td>最小 hello agent 要几个文件、多少行</td><td>量化「薄 agent loop」的真实上手成本</td></tr><tr><td>2</td><td>给一个 Pydantic 输出模型，验证 run 必返回该类型</td><td>官方卖点是 typed end to end，要验证「返库即类型」</td></tr><tr><td>3</td><td>接 Ollama 本地模型跑通一个带工具与结构化输出的 agent</td><td>官方目录单列 Ollama，验证真实可行性</td></tr><tr><td>4</td><td>用 TemporalDurability 跑一个长任务，kill 进程后续跑</td><td>官方 durable 承诺的核心，必须验证</td></tr><tr><td>5</td><td>agent delegation / hand-off / graph 三种多 agent 写法代码量对比</td><td>官方给五种复杂度层级，验证选型建议</td></tr><tr><td>6</td><td>MCP capability 默认本地 vs <code>native=True</code> 的凭据与行为差异</td><td>官方强调默认本地保凭据可控，值得验证</td></tr></tbody></table></div>
       </div>
 
+
+            <div class="panel is-slim">
+        <h2>与 OpenAI Agents SDK 的对照：本站最该给读者看的一张表</h2>
+        <p>两者都是「给你 agent loop 的 Python 库」，风格相近。差异点很具体：</p>
+            <div class="tbl-wrap"><table><thead><tr><th></th><th>OpenAI Agents SDK</th><th><strong>Pydantic AI</strong></th></tr></thead><tbody><tr><td>类型体系</td><td>可选 dataclass / Pydantic 输出</td><td><strong>Pydantic 原生</strong>：typed 输出 + typed 依赖注入 + typed tools</td></tr><tr><td>非 OpenAI 模型</td><td>litellm / any-llm 适配器</td><td><strong>provider 目录原生</strong>：<code>&lt;provider&gt;:&lt;model&gt;</code> 字符串切换，含本地 Ollama/vLLM</td></tr><tr><td>durable execution</td><td>无独立引擎（自建）</td><td><strong>官方八种引擎</strong>（Temporal/DBOS/Prefect/Restate/AWS Lambda/Kitaru/Airflow/Absurd）</td></tr><tr><td>上层能力</td><td>primitives-only</td><td><strong>另有 Pydantic AI Harness</strong>（memory/guardrails/sub-agents/compaction + 现成 Coder）</td></tr><tr><td>观测</td><td>Traces 默认上报 OpenAI 后端</td><td><strong>标准 OpenTelemetry</strong>，任何 OTLP 后端；Logfire 可选</td></tr></tbody></table></div>
+            <p><strong>一句口诀</strong>：要 Python 的「类型安全 + durable」选 Pydantic AI； 要极简、要 guardrails 内建、认 OpenAI 生态选 OpenAI Agents SDK。</p>
+      </div>
+      <div class="panel is-slim">
+        <h2>model-agnostic：provider 目录是官方的第一卖点</h2>
+        <p><strong>官方 overview 原文</strong>：</p>
+            <blockquote><strong>Model-agnostic</strong>: Supports <strong>virtually every</strong> model and provider: OpenAI, Anthropic, Gemini, DeepSeek, Grok, Cohere, Mistral, and Perplexity; Azure AI Foundry, Amazon Bedrock, Google Cloud, <strong>Ollama</strong>, LiteLLM, Groq, OpenRouter, Together AI, Fireworks AI, Cerebras, Hugging Face, GitHub, Heroku, Vercel, Nebius, OVHcloud, Alibaba Cloud, and SambaNova.</blockquote>
+            <p>用法是前缀字符串 <code>Agent(&#39;openai:gpt-5.2&#39;)</code>。 换模型是 &quot;a string swap away&quot;，也就是改一个字符串。</p>
+            <p>官方 models/overview 页有完整的 <strong>provider 目录表</strong>。 <strong>Ollama / vLLM / LiteLLM 这些本地与自托管路径都在其中。</strong></p>
+            <p>⚠ <strong>一处官方自己划的边界</strong>：能力<strong>不保证跨 provider 等价</strong>。</p>
+            <blockquote>&quot;Feature support depends on the model and API you select, even when two services use the same API format.&quot;</blockquote>
+      </div>
+      <div class="panel is-slim">
+        <h2>durable execution：官方八引擎，且「每个模型与工具调用都成为 durable 单元」</h2>
+        <p>这是它区别于 OpenAI Agents SDK 的核心。 <strong>官方 durable execution 页原文</strong>：</p>
+            <blockquote>Pydantic AI allows you to build <strong>durable agents</strong> that can <strong>preserve their progress across transient API failures and application errors or restarts</strong> ... Each engine wraps <strong>every model request and tool call as its own durable unit</strong>.</blockquote>
+            <p>引擎清单（README 原文）：<strong>Temporal、DBOS、Prefect、Restate、AWS Lambda、Kitaru、Airflow、Absurd</strong>。 前五个 &quot;co-maintained with the vendor teams&quot;。 第三方还可走 <strong>backend builder</strong>，自接引擎。</p>
+            <p>⚠ <strong>必须读出来的一条边界</strong>：官方专设一句 ——</p>
+            <blockquote><strong>Durability is not storage.</strong> A durable engine keeps one run alive across crashes and restarts. It <strong>does not store your chat threads</strong>: saving a conversation and picking it up later is a different problem ... laid out in <strong>Persistence</strong>.</blockquote>
+            <p>即：<strong>durable run 与对话线程持久化是两件事</strong>，正是本站「状态 ≠ 上下文」的同构表达。</p>
+      </div>
+      <div class="panel is-slim">
+        <h2>MCP：两个方向都支持，且默认本地运行以控制凭据</h2>
+        <p>官方 mcp/overview 页写了两个方向：</p>
+            <ul><li>① agent 连 MCP server，用它的工具</li><li>② agent 被放进 MCP server</li></ul>
+            <p>推荐做法是 <strong><code>MCP</code> capability</strong>。官方称：</p>
+            <blockquote>It <strong>runs the MCP server locally by default</strong> — keeping credentials, hooks, and tracing <strong>under your control</strong> — and lets you opt into the model provider&#39;s <strong>native MCP support</strong> with a single <code>native=True</code> flag.</blockquote>
+            <p>低层可用 <code>MCPToolset</code>（<code>toolsets=[...]</code>）。 <strong>「默认本地」这点对凭据可控性很有价值</strong>。 与<strong>「把凭据交给 provider 原生 MCP」</strong>相比，这是一个可选取舍。</p>
+      </div>
+      <div class="panel is-slim">
+        <h2>A2A：官方已开始退场，注意时点</h2>
+        <p>这一条要写清，否则会误判为长期内建能力。 官方 integrations/a2a 页大标题就是：</p>
+            <blockquote><strong>Deprecated in 1.x, removed in 2.0</strong></blockquote>
+            <ul><li><code>Agent.to_a2a()</code> 与 <code>pydantic-ai-slim[a2a]</code> 已弃用，2.0 移除。</li><li><code>fasta2a</code> 现由 <strong>datalayer/fasta2a</strong> 维护。 自 v0.6.1 起附带 Pydantic AI bridge（<code>agent_to_a2a</code>）。</li></ul>
+            <p>所以「Pydantic AI 支持 A2A」这句话，要补上<strong>版本时点</strong>才准确。</p>
+      </div>
+      <div class="panel is-slim">
+        <h2>Harness 与 Graph 是两个独立上层</h2>
+        <ul><li><strong>Pydantic AI Harness</strong>：官方称把 memory、guardrails、sub-agents、planning、 context management（compaction）、persistence 打包成 <strong>capabilities</strong>， 并附现成的 <strong>Coder / Researcher</strong> 完整 agent。</li></ul>
+            <p>官方也强调 Coder 不是黑盒。<strong>官方原文</strong>：&quot;use it whole, or use the blocks it bundles directly; the two are equivalent&quot;。</p>
+            <ul><li><strong><code>pydantic-graph</code></strong>：官方 graphs 页称它<strong>可独立于 pydantic-ai 使用</strong> —— &quot;it has <strong>no dependency on <code>pydantic-ai</code></strong> and can be considered as a pure graph-based state machine library&quot;。 官方还幽默地提醒：图是 nail gun，不是所有任务的正确工具。</li></ul>
+            <p>结论：<strong>这两块都是从核心库上长出来的可选层</strong>，这也是本站仍按 coding-base 归档的理由。</p>
+      </div>
+      <div class="panel is-slim">
+        <h2>核验说明</h2>
+        <p><code>confidence: partial</code> 的依据：</p>
+            <p><strong>为什么仍是 partial</strong>：八维已从官方页核到结论。 但仍有若干处<strong>官方确实没写</strong>、只能记「官方未说明」的项：</p>
+            <ul><li>核心 SDK 不经 Harness 时的文件访问默认边界</li><li>核心 SDK 是否有进程/网络级沙箱与内置权限边界</li><li>compaction 的默认裁剪策略</li><li>Gateway 的加价费率</li><li>八种 durable 引擎之间的功能对齐度</li></ul>
+            <p>这些不是「没查到」，是官方文档本身未给，故不足以升到 verified。</p>
+            <p><strong>本轮核到的官方页</strong>：</p>
+            <ul><li>仓库 README（定位、model-agnostic 清单、durable 八引擎、Harness、Coder 示例）</li><li><code>docs/ai/overview</code>（Why use 十二条 + bank support 示例）</li><li><code>docs/ai/models/overview</code>（provider 目录表、ModelProfile、fallback）</li><li><code>docs/ai/capabilities/durable_execution/overview</code></li><li><code>docs/ai/graph/graph</code></li><li><code>docs/ai/evals/evals</code></li><li><code>docs/ai/mcp/overview</code></li><li><code>docs/ai/core-concepts/dependencies</code></li><li><code>docs/ai/guides/multi-agent-applications</code></li><li><code>docs/ai/integrations/a2a</code></li><li>官方定价页 <code>pydantic.dev/pricing</code></li><li>releases（<code>v2.54.0</code> @ 2026-10-02）</li></ul>
+            <p><strong>核验方法</strong>：WebFetch 打开各官方页与 GitHub API（仓库元数据、releases）。</p>
+      </div>
 
             <div class="panel is-slim">
         <h2><span data-zh>相关条目</span><span data-en>Related entries</span></h2>
