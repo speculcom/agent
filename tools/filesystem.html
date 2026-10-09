@@ -11,7 +11,7 @@
   <meta property="og:url" content="https://agent.specul.com/tools/filesystem.html" />
   <meta property="og:title" content="Filesystem MCP Server — Tools | 投机取巧" />
   <meta property="og:description" content="Filesystem MCP Server（Model Context Protocol）：MCP 官方 reference server 里的文件操作实现，强制显式声明允许目录，不允许静默访问全盘。" />
-  <meta name="theme-color" content="#05080f" />
+  <meta name="theme-color" content="#16121f" />
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%238b7cf8'/%3E%3Cstop offset='1' stop-color='%2322d3c5'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='48' height='48' rx='12' fill='%2305080f'/%3E%3Cpath d='M14 32 L24 12 L34 32' fill='none' stroke='url(%23g)' stroke-width='2.4' stroke-linejoin='round'/%3E%3Ccircle cx='24' cy='27' r='2.4' fill='%2322d3c5'/%3E%3C/svg%3E" />
   <link rel="stylesheet" href="../brand.css" />
   <link rel="stylesheet" href="../site.css" />
@@ -95,66 +95,71 @@
         <span class="badge"><span data-zh>核验</span><span data-en>Checked</span> 2026-10-08</span>
       </div>
 
-            <p class="panel-lead"><span data-zh>MCP 官方 reference server 里的文件操作实现，<strong>强制显式声明允许目录，不允许静默访问全盘</strong>。</span><span data-en>The file-operation implementation among MCP&#39;s official reference servers, <strong>requiring allowed directories to be declared explicitly, with no silent whole-disk access</strong>.</span></p>
+            <div class="panel-lead"><span data-zh><p>MCP 官方 reference server 里的文件操作实现，<strong>强制显式声明允许目录，不允许静默访问全盘</strong>。</p></span><span data-en><p>The file-operation implementation among MCP&#39;s official reference servers, <strong>requiring allowed directories to be declared explicitly, with no silent whole-disk access</strong>.</p></span></div>
 
             <div class="panel is-slim">
         <h2><span data-zh>适合与不适合</span><span data-en>When to use it, when not to</span></h2>
-<span data-zh>        <p>让 Agent 在明确指定的目录内读写文本与媒体文件。需要目录边界清晰、
-且不需要删除操作时。</p>
-        <p class="warn-p"><strong>不适合</strong>需要删除操作、需要跨目录聚合，
-或需要任意路径访问的场景——本 server 的设计目标就是收紧这个边界。</p></span><span data-en>        <p>Scenarios where an agent must read or write within explicitly declared directories.</p>
-        <p class="warn-p"><strong>Not a fit for</strong> open-ended exploration of the filesystem — allowed directories must be declared, there is no silent whole-disk access.</p></span>
+<span data-zh>        <div><p>让 Agent 在明确指定的目录内读写文本与媒体文件。需要目录边界清晰、 且不需要删除操作时。</p></div>
+        <div class="warn-p"><p><strong>不适合</strong>需要删除操作、需要跨目录聚合， 或需要任意路径访问的场景——本 server 的设计目标就是收紧这个边界。</p></div></span><span data-en>        <div><p>Scenarios where an agent must read or write within explicitly declared directories.</p></div>
+        <div class="warn-p"><p><strong>Not a fit for</strong> open-ended exploration of the filesystem — allowed directories must be declared, there is no silent whole-disk access.</p></div></span>
       </div>
 
 
       <div class="block-head">
         <h2 class="t-h2"><span data-zh>固定坐标系</span><span data-en>Fixed coordinate system</span></h2>
-        <p class="t-section-lead">11 <span data-zh>个维度</span><span data-en>dimensions</span>, <span data-zh>与同赛道其他对象逐项可比</span><span data-en>each comparable item by item against others in the same track</span>.</p>
+        <p class="t-section-lead">11 <span data-zh>个维度</span><span data-en>dimensions</span>, <span data-zh>与同分区其他对象逐项可比</span><span data-en>each comparable item by item against others in the same section</span>.</p>
       </div>
       <dl class="axes">
         <div class="axis">
           <dt><span data-zh>模型与开放条件</span><span data-en>Model & openness</span></dt>
-          <dd>本身不调用模型，是被客户端调用的接口实现。 依赖 @modelcontextprotocol/sdk（npm 2026.8.31 实测 ^1.30.0）； 协议版本在 initialize 握手时由 SDK 与客户端协商，不绑定单一版本。</dd>
+          <dd><p>本身不调用模型，是被客户端调用的接口实现。</p>
+            <p>依赖 @modelcontextprotocol/sdk（npm 2026.8.31 实测 ^1.30.0）； 协议版本在 initialize 握手时由 SDK 与客户端协商，不绑定单一版本。</p></dd>
         </div>
         <div class="axis">
           <dt><span data-zh>运行位置</span><span data-en>Where it runs</span></dt>
-          <dd>本地 Node.js 子进程，通过 stdio 与客户端通信。 生命周期绑定客户端进程，客户端退出即停止。</dd>
+          <dd><p>本地 Node.js 子进程，通过 stdio 与客户端通信。 生命周期绑定客户端进程，客户端退出即停止。</p></dd>
         </div>
         <div class="axis">
           <dt><span data-zh>本地文件</span><span data-en>Local files</span></dt>
-          <dd>核心能力。<strong>默认不支持无限制访问</strong>： 必须通过命令行参数指定允许目录，或客户端支持 Roots 协议动态下发。 <strong>若无参数启动且客户端不支持 roots，server 在初始化阶段直接报错。</strong></dd>
+          <dd><p>核心能力。<strong>默认不支持无限制访问</strong>： 必须通过命令行参数指定允许目录，或客户端支持 Roots 协议动态下发。 <strong>若无参数启动且客户端不支持 roots，server 在初始化阶段直接报错。</strong></p></dd>
         </div>
         <div class="axis">
           <dt><span data-zh>关机后的任务</span><span data-en>Tasks after shutdown</span></dt>
-          <dd>不支持。本地 stdio 进程随客户端生死， 无独立守护或云端执行形态。</dd>
+          <dd><p>不支持。本地 stdio 进程随客户端生死， 无独立守护或云端执行形态。</p></dd>
         </div>
         <div class="axis">
           <dt><span data-zh>工具与扩展</span><span data-en>Tools & extensions</span></dt>
-          <dd>提供 11 个工具：read_text_file、read_media_file、read_multiple_files、 write_file、edit_file、create_directory、list_directory、 list_directory_with_sizes、move_file、search_files、directory_tree。 输出为结构化内容，可直接消费。</dd>
+          <dd><p>提供 11 个工具：read_text_file、read_media_file、read_multiple_files、</p>
+            <p>write_file、edit_file、create_directory、list_directory、</p>
+            <p>list_directory_with_sizes、move_file、search_files、directory_tree。</p>
+            <p>输出为结构化内容，可直接消费。</p></dd>
         </div>
         <div class="axis">
           <dt><span data-zh>上下文与记忆</span><span data-en>Context & memory</span></dt>
-          <dd>无状态。每次调用独立，不保留会话记忆。 list_allowed_directories 可查询当前生效目录。</dd>
+          <dd><p>无状态。每次调用独立，不保留会话记忆。 list_allowed_directories 可查询当前生效目录。</p></dd>
         </div>
         <div class="axis">
           <dt><span data-zh>权限与限制</span><span data-en>Permissions & limits</span></dt>
-          <dd><strong>无独立审批机制</strong>，权限边界完全由允许目录决定。 全部文件操作限制在允许目录内，越界会被拒绝。 <strong>注意：提供 write_file / edit_file / move_file / create_directory， 属可写但无删除工具的组合。</strong></dd>
+          <dd><p><strong>无独立审批机制</strong>，权限边界完全由允许目录决定。 全部文件操作限制在允许目录内，越界会被拒绝。</p>
+            <p><strong>注意：提供 write_file / edit_file / move_file / create_directory， 属可写但无删除工具的组合。</strong></p></dd>
         </div>
         <div class="axis">
           <dt><span data-zh>适合什么任务</span><span data-en>Best for</span></dt>
-          <dd>让 Agent 安全读写指定目录内的文本与媒体文件。 不适合需要删除操作或需要跨目录聚合的场景。</dd>
+          <dd><p>让 Agent 安全读写指定目录内的文本与媒体文件。 不适合需要删除操作或需要跨目录聚合的场景。</p></dd>
         </div>
         <div class="axis">
           <dt><span data-zh>传输方式</span><span data-en>Transport</span></dt>
-          <dd>仅 stdio。本地 Node.js 进程，通过标准输入输出通信。 官方 README（2026-10-08 全文核验）只给 npx / Docker 两种本地启动方式， 没有远程传输的官方配置；目录控制走命令行参数或 MCP Roots（可动态更新）。</dd>
+          <dd><p>仅 stdio。本地 Node.js 进程，通过标准输入输出通信。</p>
+            <p>官方 README（2026-10-08 全文核验）只给 npx / Docker 两种本地启动方式， 没有远程传输的官方配置；目录控制走命令行参数或 MCP Roots（可动态更新）。</p></dd>
         </div>
         <div class="axis">
           <dt><span data-zh>认证机制</span><span data-en>Authentication</span></dt>
-          <dd>无独立认证层。stdio 形态继承启动它的客户端用户的全部文件权限。 权限边界不是认证机制，而是目录白名单。</dd>
+          <dd><p>无独立认证层。stdio 形态继承启动它的客户端用户的全部文件权限。 权限边界不是认证机制，而是目录白名单。</p></dd>
         </div>
         <div class="axis">
           <dt><span data-zh>权限范围</span><span data-en>Permission scope</span></dt>
-          <dd><strong>默认范围窄且强制显式</strong>：必须通过命令行参数指定允许目录， 或客户端支持 Roots 协议动态下发。 无参数且客户端不支持 roots 时，server 初始化即报错。 <strong>不提供删除工具</strong>；提供写入、编辑、移动、建目录。 可用 list_allowed_directories 查询当前生效目录。</dd>
+          <dd><p><strong>默认范围窄且强制显式</strong>：必须通过命令行参数指定允许目录， 或客户端支持 Roots 协议动态下发。 无参数且客户端不支持 roots 时，server 初始化即报错。</p>
+            <p><strong>不提供删除工具</strong>；提供写入、编辑、移动、建目录。 可用 list_allowed_directories 查询当前生效目录。</p></dd>
         </div>
       </dl>
 
@@ -173,9 +178,9 @@
         <h2><span data-zh>价格</span><span data-en>Pricing</span></h2>
         <table class="src">
           <tbody>
-            <tr><th class="w-28"><span data-zh>月度入口</span><span data-en>Monthly entry</span></th><td><span data-zh>无商业费用</span><span data-en>无商业费用</span></td></tr>
-            <tr><th class="w-28"><span data-zh>年付</span><span data-en>Annual</span></th><td><span data-zh>无商业费用</span><span data-en>无商业费用</span></td></tr>
-            <tr><th class="w-28"><span data-zh>额度说明</span><span data-en>Quota note</span></th><td><span data-zh>npm 发布为 @modelcontextprotocol/server-filesystem，开源无授权费。 实际成本来自所访问资源所在机器与账号，不来自本 server。</span><span data-en>npm 发布为 @modelcontextprotocol/server-filesystem，开源无授权费。 实际成本来自所访问资源所在机器与账号，不来自本 server。</span></td></tr>
+            <tr><th class="w-28"><span data-zh>月度入口</span><span data-en>Monthly entry</span></th><td><span data-zh><p>无商业费用</p></span><span data-en><p>无商业费用</p></span></td></tr>
+            <tr><th class="w-28"><span data-zh>年付</span><span data-en>Annual</span></th><td><span data-zh><p>无商业费用</p></span><span data-en><p>无商业费用</p></span></td></tr>
+            <tr><th class="w-28"><span data-zh>额度说明</span><span data-en>Quota note</span></th><td><span data-zh><p>npm 发布为 @modelcontextprotocol/server-filesystem，开源无授权费。 实际成本来自所访问资源所在机器与账号，不来自本 server。</p></span><span data-en><p>npm 发布为 @modelcontextprotocol/server-filesystem，开源无授权费。 实际成本来自所访问资源所在机器与账号，不来自本 server。</p></span></td></tr>
           </tbody>
         </table>
         <p class="fine mt-3"><span data-zh>不同币种不做折算。优惠、地区、税费与登录后报价可能变化，购买前请到官方页面确认。</span><span data-en>No currency conversion. Discounts, regions, tax and post-login pricing can change — confirm on the official page before buying.</span></p>
@@ -213,6 +218,32 @@
         <p>本站尚未完成实测。测试协议见 <a href="https://github.com/speculcom/ai-agent-guide/blob/main/tracks/agents/tasks/_protocol.md" target="_blank" rel="noopener">tasks/_protocol.md</a>。</p>
       </div>
 
+
+            <div class="panel is-slim">
+        <h2>变更记录说明</h2>
+        <p><strong>本对象无独立 changelog 页</strong>。变更记录体现在 MCP servers 仓库的 releases 与目录 commit 历史中：</p>
+            <div class="tbl-wrap"><table><thead><tr><th>日期</th><th>类型</th><th>内容</th></tr></thead><tbody><tr><td>2026-09-03</td><td>fix</td><td>声明 zod 运行时依赖</td></tr><tr><td>2026-08-30</td><td>fix</td><td>拒绝 POSIX 下的 Windows 路径</td></tr><tr><td>2026-08-28</td><td>fix</td><td><code>create_directory</code> 不创建父目录</td></tr></tbody></table></div>
+            <p>仓库整体 releases：2026.8.31 / 2026.8.18 / 2026.7.10。</p>
+            <p><strong>注意 08-30 那个修复</strong>——它说明 filesystem server 在不同平台路径语义上出过问题。这是实测时值得关注的点。</p>
+      </div>
+      <div class="panel is-slim">
+        <h2>⚠ 生产环境免责声明（适用于全部官方 reference server）</h2>
+        <p>MCP servers 仓库 README 原文：</p>
+            <blockquote>The servers in this repository are intended as <strong>reference implementations</strong> to demonstrate MCP features and SDK usage. They are meant to serve as educational examples for developers building their own MCP servers, <strong>not as production-ready solutions</strong>. Developers should evaluate their own security requirements and implement appropriate safeguards based on their specific threat model and use case.</blockquote>
+            <p><strong>翻译</strong>：本仓库的 server 是<strong>参考实现</strong>，用于演示 MCP 特性与 SDK 用法， 面向的是正在构建自己 MCP server 的开发者，<strong>不是生产就绪方案</strong>。 使用者需自行评估安全需求并按自身威胁模型实现防护。</p>
+            <blockquote><strong>注意</strong>：这句话适用于本分区所有官方 reference server， 每个条目的正文都应保留这一提示。</blockquote>
+      </div>
+      <div class="panel is-slim">
+        <h2>权限设计实测记录</h2>
+        <p>这是本 server 最有价值的设计细节。</p>
+            <div class="tbl-wrap"><table><thead><tr><th>场景</th><th>行为</th></tr></thead><tbody><tr><td>启动时传目录参数</td><td>以参数为允许目录</td></tr><tr><td>启动时不传参数 + 客户端支持 Roots</td><td>客户端 roots <strong>完全替换</strong>服务端目录</td></tr><tr><td>启动时不传参数 + 客户端不支持 Roots</td><td><strong>初始化阶段报错</strong></td></tr><tr><td>运行时客户端 roots 变更</td><td>通过 <code>roots/list_changed</code> 通知更新，无需重启</td></tr></tbody></table></div>
+            <p><strong>&quot;无参数 + 不支持 roots = 启动失败&quot;这个设计值得肯定</strong>—— 它把一个潜在的权限失控（无限制文件访问）变成了显式的失败。</p>
+      </div>
+      <div class="panel is-slim">
+        <h2>工具清单</h2>
+        <div class="tbl-wrap"><table><thead><tr><th>类别</th><th>工具</th></tr></thead><tbody><tr><td>读</td><td><code>read_text_file</code> <code>read_media_file</code> <code>read_multiple_files</code></td></tr><tr><td>写</td><td><code>write_file</code> <code>edit_file</code></td></tr><tr><td>目录</td><td><code>create_directory</code> <code>list_directory</code> <code>list_directory_with_sizes</code> <code>move_file</code> <code>directory_tree</code></td></tr><tr><td>检索</td><td><code>search_files</code></td></tr></tbody></table></div>
+            <p><strong>注意</strong>：<strong>没有删除工具</strong>。这是有意的权限收敛设计。</p>
+      </div>
 
             <div class="panel is-slim">
         <h2><span data-zh>相关条目</span><span data-en>Related entries</span></h2>
