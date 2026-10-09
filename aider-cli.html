@@ -15,7 +15,7 @@
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%238b7cf8'/%3E%3Cstop offset='1' stop-color='%2322d3c5'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='48' height='48' rx='12' fill='%2305080f'/%3E%3Cpath d='M14 32 L24 12 L34 32' fill='none' stroke='url(%23g)' stroke-width='2.4' stroke-linejoin='round'/%3E%3Ccircle cx='24' cy='27' r='2.4' fill='%2322d3c5'/%3E%3C/svg%3E" />
   <link rel="stylesheet" href="brand.css" />
   <link rel="stylesheet" href="site.css" />
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Aider","applicationCategory":"DeveloperApplication","url":"https://github.com/Aider-AI/aider","sameAs":"https://github.com/Aider-AI/aider","description":"Git 集成是核心设计而非附加功能的终端 pair programming 工具——AI 改动始终在版本控制里，可 diff 可撤销。","dateModified":"2026-09-29"}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Aider","applicationCategory":"DeveloperApplication","url":"https://github.com/Aider-AI/aider","sameAs":"https://github.com/Aider-AI/aider","description":"Git 集成是核心设计而非附加功能的终端 pair programming 工具——AI 改动始终在版本控制里，可 diff 可撤销。","dateModified":"2026-10-08"}</script>
 </head>
 <body class="brand-ambient">
   <a class="t-skip" href="#main"><span data-zh>跳到主要内容</span><span data-en>Skip to main content</span></a>
@@ -39,8 +39,34 @@
           <button class="icon-btn" id="langBtn" type="button" aria-label="Switch language" title="Switch language">EN</button>
         </span>
       </nav>
+      <!-- B6（2026-10-09）：与共享 shell 同步加的移动端导航入口。
+           ⚠ 本文件是 agent 站**自己的** shell 副本（它多一层分区切换），
+             所以每次改共享 shell 的骨架，这里也要跟一次 —— 这是双份实现固有的代价。
+             样式与行为都在共享 brand.css / brand.js 里，这里只出标记。 -->
+      <button class="nav-burger" type="button" aria-label="打开菜单" aria-expanded="false" aria-controls="navDrawer">
+        <i></i><i></i><i></i>
+      </button>
     </div>
   </header>
+  <div class="nav-scrim"></div>
+  <aside class="nav-drawer" id="navDrawer" aria-hidden="true" aria-label="站点导航">
+    <div class="nav-drawer-h">
+      <span class="brand-name"><span data-zh>投机取巧</span><span data-en>Speculative Speculation</span></span>
+      <button class="nav-dclose" type="button" aria-label="关闭">×</button>
+    </div>
+    <nav class="nav-drawer-list">
+      <a href="https://specul.com/"><span><span data-zh>首页</span><span data-en>Home</span></span><span class="ar" aria-hidden="true">→</span></a>
+      <a href="https://learn.specul.com/"><span><span data-zh>学 AI</span><span data-en>Learn</span></span><span class="ar" aria-hidden="true">→</span></a>
+      <a href="https://agent.specul.com/" aria-current="page"><span><span data-zh>Agent</span><span data-en>Agent</span></span><span class="ar" aria-hidden="true">→</span></a>
+      <a href="https://models.specul.com/"><span><span data-zh>本地模型</span><span data-en>Models</span></span><span class="ar" aria-hidden="true">→</span></a>
+      <a href="https://vg.specul.com/"><span><span data-zh>AI 做游戏</span><span data-en>Vibe Gaming</span></span><span class="ar" aria-hidden="true">→</span></a>
+      <a href="https://nav.specul.com/"><span><span data-zh>导航</span><span data-en>Directory</span></span><span class="ar" aria-hidden="true">→</span></a>
+    </nav>
+    <div class="nav-drawer-foot">
+      <p><span data-zh>6 个站，各管一件事</span><span data-en>Six sites, one job each</span></p>
+      <nav><a href="https://specul.com/legal.html"><span data-zh>法律条款</span><span data-en>Legal terms</span></a></nav>
+    </div>
+  </aside>
   <main id="main">
     <div class="container detail">
       <nav class="crumbs" aria-label="面包屑">
@@ -66,10 +92,10 @@
         <span class="tag on">开源</span>
         <span class="badge accent">partial</span>
         <span class="badge">lifecycle: maintenance</span>
-        <span class="badge"><span data-zh>核验</span><span data-en>Checked</span> 2026-09-29</span>
+        <span class="badge"><span data-zh>核验</span><span data-en>Checked</span> 2026-10-08</span>
       </div>
 
-            <p class="panel-lead"><span data-zh>A terminal pair-programming tool where <strong>Git integration is core design, not an add-on</strong> — AI changes always live in version control, diffable and revertible.</span><span data-en>A terminal pair-programming tool where <strong>Git integration is core design, not an add-on</strong> — AI changes always live in version control, diffable and revertible.</span></p>
+            <p class="panel-lead"><span data-zh>Git 集成是<strong>核心设计而非附加功能</strong>的终端 pair programming 工具——AI 改动始终在版本控制里，可 diff 可撤销。</span><span data-en>A terminal pair-programming tool where <strong>Git integration is core design, not an add-on</strong> — AI changes always live in version control, diffable and revertible.</span></p>
 
             <div class="panel is-slim">
         <h2><span data-zh>适合与不适合</span><span data-en>When to use it, when not to</span></h2>
@@ -97,7 +123,7 @@ Users who need to connect local models or several cloud providers.</p>
         </div>
         <div class="axis">
           <dt><span data-zh>本地文件</span><span data-en>Local files</span></dt>
-          <dd><strong>Repo Map 是本工具的核心机制</strong>（官方文档 <code>docs/repomap.md</code> 原文）： Aider 使用「一份简洁的整个 git 仓库的地图」， 包含<strong>最重要的类与函数及其类型与调用签名</strong>。 <strong>每次用户提出改动请求时，repo map 都随请求一起发给模型</strong>， map 包含仓库文件列表 + 每个文件的关键符号。 <strong>两个作用</strong>（文档明确列出）： 一是帮助它理解正在编辑的代码及其与代码库其他部分的关系； 二是帮助它写新代码时<strong>复用代码库里已有的库、模块与抽象</strong>。 支持 100+ 编程语言。 <strong>大仓库的 repo map 耗时与 token 开销本次未实测，记为未知。</strong></dd>
+          <dd><strong>Repo Map 是本工具的核心机制</strong>（官方文档 <code>docs/repomap.md</code> 原文）： Aider 使用「一份简洁的整个 git 仓库的地图」， 包含<strong>最重要的类与函数及其类型与调用签名</strong>。 <strong>每次用户提出改动请求时，repo map 都随请求一起发给模型</strong>， map 包含仓库文件列表 + 每个文件的关键符号。 <strong>两个作用</strong>（文档明确列出）： 一是帮助它理解正在编辑的代码及其与代码库其他部分的关系； 二是帮助它写新代码时<strong>复用代码库里已有的库、模块与抽象</strong>。 支持 100+ 编程语言。 <strong>文件访问范围</strong>：能编辑的是你 <code>/add</code> 进 chat 的文件， 但 repo map 扫描整个 git 仓库；范围受 <code>.gitignore</code> / <code>.aiderignore</code> 约束（<code>--aiderignore</code> 指定忽略文件，默认 git 根目录 <code>.aiderignore</code>； <code>--subtree-only</code> 只考虑当前子树）。 仓库须是 git 仓库——官方 <code>docs/git.html</code>：无 git 时会先问你是否新建。 <strong>map 的 token 预算由 <code>--map-tokens</code> 控制、刷新频率由 <code>--map-refresh</code> （auto/always/files/manual）控制；大仓库的实际耗时与 token 开销 官方未给数字，本站未实测。</strong></dd>
         </div>
         <div class="axis">
           <dt><span data-zh>关机后的任务</span><span data-en>Tasks after shutdown</span></dt>
@@ -105,15 +131,15 @@ Users who need to connect local models or several cloud providers.</p>
         </div>
         <div class="axis">
           <dt><span data-zh>工具与扩展</span><span data-en>Tools & extensions</span></dt>
-          <dd>文件编辑 + <strong>Git 操作</strong>。<strong>README 强调 Git 集成本身就是核心功能</strong>： 自动用合理的 commit message 提交， 可用熟悉的 git 工具 diff、管理与撤销 AI 改动。 官方文档另有 <code>docs/languages.md</code>（语言支持）与 <code>docs/git.md</code>。 <strong>MCP 接入方式本次未核验，记为未知。</strong></dd>
+          <dd>文件编辑 + <strong>Git 操作</strong>。<strong>README 强调 Git 集成本身就是核心功能</strong>： 自动用合理的 commit message 提交， 可用熟悉的 git 工具 diff、管理与撤销 AI 改动。 官方文档另有 <code>docs/languages.md</code>（语言支持）与 <code>docs/git.md</code>。 <strong>可配置 lint / 测试命令自动运行</strong>（<code>docs/usage/lint-test.html</code>）： <code>--lint-cmd</code> / <code>--auto-lint</code>（默认对编辑过的文件跑 lint）、 <code>--test-cmd</code> / <code>--auto-test</code>；<code>/run</code> 跑 shell 命令并可选加输出进 chat、 <code>/web</code> 抓网页转 markdown、<code>/paste</code> 贴图。 <strong>无内置 MCP 支持</strong>——官方选项表与文档站导航都没有任何 MCP 条目 （已查 <code>config/options.html</code> 与 docs 目录），故不能接 MCP server。</dd>
         </div>
         <div class="axis">
           <dt><span data-zh>上下文与记忆</span><span data-en>Context & memory</span></dt>
-          <dd><strong>Repo Map 提供全库结构视图</strong>，每次请求随附（见 local_files）。 <strong>上下文窗口大小与压缩策略本次未核验，记为未知。</strong></dd>
+          <dd><strong>Repo Map 提供全库结构视图</strong>，每次请求随附（见 local_files）。 <strong>上下文超限用「摘要压缩」而非简单截断</strong>：官方选项 <code>--max-chat-history-tokens</code> 描述为 &quot;Soft limit on tokens for chat history, after which summarization begins&quot; （超过软上限即开始摘要，摘要由 <code>--weak-model</code> 生成）； 每个模型的上下文窗口与费用由 <code>--model-metadata-file</code> 提供。 会话内可用 <code>/tokens</code> 查看用量、<code>/drop</code>、<code>/clear</code>、<code>/reset</code> 腾空间； <strong>默认不跨启动恢复</strong>（<code>--restore-chat-history</code> 默认 False）， chat 历史默认写 <code>.aider.chat.history.md</code>。</dd>
         </div>
         <div class="axis">
           <dt><span data-zh>权限与限制</span><span data-en>Permissions & limits</span></dt>
-          <dd><strong>具备自动提交能力</strong>（auto-commit），这是它的一体化设计而非附加功能。 撤销路径是 <strong>git 本身</strong>（不是工具提供的回滚功能）—— README 明确说「用熟悉的 git 工具 diff、管理与撤销 AI 的改动」。 <strong>沙箱机制与「执行命令前是否询问」本次未核验，记为未知。</strong></dd>
+          <dd><strong>默认自动提交</strong>（<code>--auto-commits</code> 默认 True）， 这是它的一体化设计而非附加功能； <code>--dirty-commits</code>（默认 True）会先把已有的未提交改动也提交。 撤销路径是 <strong>git 本身</strong>（不是工具提供的回滚功能）—— README 明确说「用熟悉的 git 工具 diff、管理与撤销 AI 的改动」， 会话内用 <code>/undo</code>。 <strong>存在确认环节</strong>：官方提供 <code>--yes-always</code>（别名 <code>--yes</code>）， 描述为 &quot;Always say yes to every confirmation&quot;—— 即默认会对某些操作询问，加此开关才全自动； <code>--dry-run</code> 可不改文件地预演。 <strong>无沙箱机制</strong>——官方选项表没有任何沙箱项； 除你配置的 lint / 测试命令（<code>--auto-lint</code> / <code>--auto-test</code>）外， 它不会自主执行任意 shell 命令（<code>--suggest-shell-commands</code> 只是建议）。</dd>
         </div>
         <div class="axis">
           <dt><span data-zh>适合什么任务</span><span data-en>Best for</span></dt>
@@ -148,18 +174,15 @@ Users who need to connect local models or several cloud providers.</p>
             <div class="panel is-slim">
         <h2><span data-zh>未知项清单</span><span data-en>Known unknowns</span></h2>
         <ul>
-          <li>Repo Map 的具体算法与 token 预算控制</li>
-          <li>上下文窗口与压缩策略</li>
-          <li>是否支持 MCP</li>
-          <li>执行命令前是否有确认机制</li>
-          <li>watch 模式的具体行为</li>
+          <li>大仓库 Repo Map 的实际耗时与 token 开销（官方未给数字，待实测）</li>
+          <li><code>--yes-always</code> 默认会就哪些具体操作询问（官方未逐项列举）</li>
         </ul>
       </div>
 
 
       <div class="panel">
         <h2><span data-zh>证据来源</span><span data-en>Evidence sources</span></h2>
-        <p class="t-sm"><span data-zh>判断可回到以下一手源复核。本站核验日</span><span data-en>Every judgement can be rechecked against the primary sources below. Verified on</span> 2026-09-29，<span data-zh>内容更新日</span><span data-en>content updated on</span> 2026-09-29。</p>
+        <p class="t-sm"><span data-zh>判断可回到以下一手源复核。本站核验日</span><span data-en>Every judgement can be rechecked against the primary sources below. Verified on</span> 2026-10-08，<span data-zh>内容更新日</span><span data-en>content updated on</span> 2026-10-08。</p>
         <table class="src">
           <thead><tr><th class="w-20"><span data-zh>类型</span><span data-en>Type</span></th><th class="w-52"><span data-zh>名称</span><span data-en>Name</span></th><th><span data-zh>链接</span><span data-en>Link</span></th></tr></thead>
           <tbody>
@@ -167,6 +190,10 @@ Users who need to connect local models or several cloud providers.</p>
             <tr><td>changelog</td><td>Aider · Releases（v0.86.0 @ 2025-08-09 为最新）</td><td><a href="https://github.com/Aider-AI/aider/releases" target="_blank" rel="noopener">https://github.com/Aider-AI/aider/releases</a></td></tr>
             <tr><td>docs</td><td>Aider · 官方文档站</td><td><a href="https://aider.chat/docs/" target="_blank" rel="noopener">https://aider.chat/docs/</a></td></tr>
             <tr><td>changelog</td><td>Aider · 变更历史</td><td><a href="https://aider.chat/HISTORY.html" target="_blank" rel="noopener">https://aider.chat/HISTORY.html</a></td></tr>
+            <tr><td>docs</td><td>Aider · 选项参考（--aiderignore/--auto-commits/--yes-always/--map-tokens/--max-chat-history-tokens）</td><td><a href="https://aider.chat/docs/config/options.html" target="_blank" rel="noopener">https://aider.chat/docs/config/options.html</a></td></tr>
+            <tr><td>docs</td><td>Aider · Git 集成（自动提交、dirty 提交、/undo、默认跳过 pre-commit hook）</td><td><a href="https://aider.chat/docs/git.html" target="_blank" rel="noopener">https://aider.chat/docs/git.html</a></td></tr>
+            <tr><td>docs</td><td>Aider · Linting and testing（--lint-cmd/--test-cmd/--auto-lint/--auto-test）</td><td><a href="https://aider.chat/docs/usage/lint-test.html" target="_blank" rel="noopener">https://aider.chat/docs/usage/lint-test.html</a></td></tr>
+            <tr><td>docs</td><td>Aider · Scripting（--yes/--auto-commits/--dry-run 官方帮助文本）</td><td><a href="https://aider.chat/docs/scripting.html" target="_blank" rel="noopener">https://aider.chat/docs/scripting.html</a></td></tr>
           </tbody>
         </table>
       </div>
@@ -186,6 +213,7 @@ Users who need to connect local models or several cloud providers.</p>
         <ul class="rel-list">
           <li><span class="rel-t"><a href="./codex-cli.html">Codex CLI</a></span><span class="rel-n">同类工具，维护活跃</span></li>
           <li><span class="rel-t"><a href="./opencode.html">OpenCode</a></span><span class="rel-n">同类工具，更新频繁</span></li>
+          <li><span class="rel-t"><a href="/tools/git.html"><span data-zh>Git MCP Server</span><span data-en>Git MCP Server</span></a></span><span class="rel-n"><span data-zh>另一层 · 给 agent 装的工具</span><span data-en>Other layer · MCP tools</span></span></li>
         </ul>
       </div>
 
