@@ -39,8 +39,34 @@
           <button class="icon-btn" id="langBtn" type="button" aria-label="Switch language" title="Switch language">EN</button>
         </span>
       </nav>
+      <!-- B6（2026-10-09）：与共享 shell 同步加的移动端导航入口。
+           ⚠ 本文件是 agent 站**自己的** shell 副本（它多一层分区切换），
+             所以每次改共享 shell 的骨架，这里也要跟一次 —— 这是双份实现固有的代价。
+             样式与行为都在共享 brand.css / brand.js 里，这里只出标记。 -->
+      <button class="nav-burger" type="button" aria-label="打开菜单" aria-expanded="false" aria-controls="navDrawer">
+        <i></i><i></i><i></i>
+      </button>
     </div>
   </header>
+  <div class="nav-scrim"></div>
+  <aside class="nav-drawer" id="navDrawer" aria-hidden="true" aria-label="站点导航">
+    <div class="nav-drawer-h">
+      <span class="brand-name"><span data-zh>投机取巧</span><span data-en>Speculative Speculation</span></span>
+      <button class="nav-dclose" type="button" aria-label="关闭">×</button>
+    </div>
+    <nav class="nav-drawer-list">
+      <a href="https://specul.com/"><span><span data-zh>首页</span><span data-en>Home</span></span><span class="ar" aria-hidden="true">→</span></a>
+      <a href="https://learn.specul.com/"><span><span data-zh>学 AI</span><span data-en>Learn</span></span><span class="ar" aria-hidden="true">→</span></a>
+      <a href="https://agent.specul.com/" aria-current="page"><span><span data-zh>Agent</span><span data-en>Agent</span></span><span class="ar" aria-hidden="true">→</span></a>
+      <a href="https://models.specul.com/"><span><span data-zh>本地模型</span><span data-en>Models</span></span><span class="ar" aria-hidden="true">→</span></a>
+      <a href="https://vg.specul.com/"><span><span data-zh>AI 做游戏</span><span data-en>Vibe Gaming</span></span><span class="ar" aria-hidden="true">→</span></a>
+      <a href="https://nav.specul.com/"><span><span data-zh>导航</span><span data-en>Directory</span></span><span class="ar" aria-hidden="true">→</span></a>
+    </nav>
+    <div class="nav-drawer-foot">
+      <p><span data-zh>6 个站，各管一件事</span><span data-en>Six sites, one job each</span></p>
+      <nav><a href="https://specul.com/legal.html"><span data-zh>法律条款</span><span data-en>Legal terms</span></a></nav>
+    </div>
+  </aside>
   <main id="main">
     <div class="container detail">
       <nav class="crumbs" aria-label="面包屑">
@@ -68,7 +94,7 @@
         <span class="badge"><span data-zh>核验</span><span data-en>Checked</span> 2026-09-29</span>
       </div>
 
-            <p class="panel-lead"><span data-zh>A TUI coding agent in the Charm ecosystem, with <strong>the most complete annotation of the three MCP transports</strong>, plus an official subscription plan, Hyper.</span><span data-en>A TUI coding agent in the Charm ecosystem, with <strong>the most complete annotation of the three MCP transports</strong>, plus an official subscription plan, Hyper.</span></p>
+            <p class="panel-lead"><span data-zh>Charm 生态的 TUI 编码 agent，<strong>MCP 三种传输方式标注最完整</strong>，并提供官方订阅方案 Hyper。</span><span data-en>A TUI coding agent in the Charm ecosystem, with <strong>the most complete annotation of the three MCP transports</strong>, plus an official subscription plan, Hyper.</span></p>
 
             <div class="panel is-slim">
         <h2><span data-zh>适合与不适合</span><span data-en>When to use it, when not to</span></h2>
@@ -90,7 +116,7 @@ People who want to switch between the official Hyper subscription and their own 
       <dl class="axes">
         <div class="axis">
           <dt><span data-zh>模型与开放条件</span><span data-en>Model & openness</span></dt>
-          <dd>多 provider 接入。 <strong>README 明确 Hyper（来自 Charm）是 Crush 的官方 provider，采用订阅制</strong>； 同时说明也可以用 Anthropic、OpenAI 等其他 provider， 自选 provider 并粘贴 API key，也可用环境变量配置首选 provider。 <strong>完整的 provider 清单本次未核验。</strong></dd>
+          <dd><strong>BYOK 多 provider，官方 README 给了完整清单与多种换法。</strong> 官方自营 provider <strong>Hyper</strong> 原文： &quot;Hyper, from Charm, is the official Crush provider. It&#39;s subscription-based&quot;，另有免费层与零数据留存（ZDR）表述。 其余点名 provider 覆盖 Anthropic、OpenAI、Gemini、OpenRouter、 Vercel AI Gateway、Z.ai、MiniMax、Synthetic、Hugging Face、 Cerebras、io.net、Alibaba、Groq、Avian、OpenCode Zen &amp; Go、 Google Cloud VertexAI、Amazon Bedrock（Claude）、Azure OpenAI、 Moonshot，每家都有对应环境变量（如 <code>ANTHROPIC_API_KEY</code>）。 <strong>换法</strong>：<code>provider add &lt;id<strong> --type openai-compat|anthropic --base-url … --api-key …</code> 可接任意兼容端点； 模型用 <code>model add </strong>provider<strong>/</strong>id&gt; --context-window …</code> 注册， 用 <code>model large</code> / <code>model small</code> 设默认大、小模型。 默认清单由官方维护的 Catwalk 仓库提供并自动更新。 <strong>本地模型</strong>：官方支持 llamacpp、omlx、lmstudio、litellm、ollama 并自动发现模型（<code>provider add ollama --type ollama --base-url http://localhost:11434/v1/</code>）。</dd>
         </div>
         <div class="axis">
           <dt><span data-zh>运行位置</span><span data-en>Where it runs</span></dt>
@@ -98,11 +124,11 @@ People who want to switch between the official Hyper subscription and their own 
         </div>
         <div class="axis">
           <dt><span data-zh>本地文件</span><span data-en>Local files</span></dt>
-          <dd><strong>LSP 增强上下文</strong>（README 原文「LSP-Enhanced: Crush uses LSPs for additional context, just like you do」）—— 与人一样靠 LSP 拿额外上下文。 <strong>按项目维护多个工作会话与上下文</strong> （README「Session-Based: maintain multiple work sessions and contexts per project」）。 <strong>可在会话中途切换模型且保留上下文</strong> （README「Flexible: switch LLMs mid-session while preserving context」）。 <strong>索引算法与大仓库耗时本次未核验。</strong></dd>
+          <dd><strong>默认在项目工作区读写，无全量语义索引，靠 LSP 与忽略规则界定范围。</strong> <strong>忽略边界</strong>：README 原文「Crush respects <code>.gitignore</code> files by default」， 并可用同语法的 <code>.crushignore</code> 追加排除（放项目根或子目录）。 <strong>初始化</strong>：<code>crush init</code> 分析代码库并生成一份上下文文件， 默认名 <code>AGENTS.md</code>，可用 <code>initialize-as</code> 改名或改路径。 <strong>符号级能力取决于外接 LSP</strong>：README 原文 「LSP-Enhanced: Crush uses LSPs for additional context」， 可 <code>lsp add go --command gopls</code> 手动配置，或让 <code>auto-lsp</code> 自动配置。 <strong>上下文文件</strong>：全局 <code>~/.config/crush/CRUSH.md</code>（Crush 专用）与 <code>~/.config/AGENTS.md</code>（跨工具通用）自动注入， 路径可用 <code>global-context-path</code> 追加。 <strong>索引算法与大仓库耗时，官方未说明</strong>（已查 README 与 docs/config 两处）。</dd>
         </div>
         <div class="axis">
           <dt><span data-zh>关机后的任务</span><span data-en>Tasks after shutdown</span></dt>
-          <dd>不支持终端形态的后台长任务。 <strong>是否有其他运行形态本次未核验。</strong></dd>
+          <dd><strong>本地 CLI，不支持关机续跑——形态决定的边界，不是缺陷。</strong> <strong>多客户端共享 workspace 不等于后台</strong>：README 说明运行 <code>crush serve</code> 暴露本地后端后，多个 TUI 客户端按 <code>--cwd</code> 并入同一 workspace， 但官方原文「A workspace lives as long as at least one client has an SSE event stream open against it. When the last stream disconnects, the workspace is torn down.」即最后一条流断开即拆除。 <strong>执行环境归你的本地机器</strong>：<code>crush serve</code> 也是本机后端， 官方 README 与 docs/config 均无厂商托管或「关机后继续」的表述。 <strong>中断可恢复</strong>：会话按项目保存、可经会话选择器 resume， 退出横幅也提示 resume；但进程本身不常驻。</dd>
         </div>
         <div class="axis">
           <dt><span data-zh>工具与扩展</span><span data-en>Tools & extensions</span></dt>
@@ -110,7 +136,7 @@ People who want to switch between the official Hyper subscription and their own 
         </div>
         <div class="axis">
           <dt><span data-zh>上下文与记忆</span><span data-en>Context & memory</span></dt>
-          <dd><strong>LSP 提供额外上下文</strong>（见 local_files）。 <strong>按项目维护多个工作会话与上下文</strong>（per-project sessions）。 <strong>切换模型时保留上下文</strong>——这是本赛道少见的明确承诺， 因为换模型通常也意味着换上下文策略。 <strong>上下文压缩策略本次未核验。</strong></dd>
+          <dd><strong>会话机制 + 全局上下文文件 + LSP 三段，压缩策略官方已给。</strong> <strong>会话</strong>：README「Session-Based: maintain multiple work sessions and contexts per project」——按项目维护多个工作会话与上下文，可切换与 resume。 <strong>跨模型保留上下文</strong>：README「Flexible: switch LLMs mid-session while preserving context」，官方明确换模型不丢上下文。 <strong>上下文文件</strong>：全局 <code>~/.config/crush/CRUSH.md</code> 与 <code>~/.config/AGENTS.md</code> 自动注入；项目侧由 <code>crush init</code> 生成 <code>AGENTS.md</code>； 可用 <code>context-path</code> / <code>global-context-path</code> 追加。 <strong>压缩策略已核到</strong>：docs/config 的 <code>auto-summarize</code> 布尔项官方说明为 &quot;automatically summarize long conversations&quot;，命令面板另有 &quot;Summarize Session&quot; 可手动压缩当前会话。 <strong>LSP 提供额外上下文</strong>（见 local_files）。</dd>
         </div>
         <div class="axis">
           <dt><span data-zh>权限与限制</span><span data-en>Permissions & limits</span></dt>
@@ -151,10 +177,7 @@ People who want to switch between the official Hyper subscription and their own 
         <ul>
           <li><strong>许可证具体条款</strong>（GitHub 识别为 NOASSERTION）</li>
           <li>Hyper 订阅的价格与额度</li>
-          <li>完整 provider 清单</li>
-          <li>索引策略与大仓库表现</li>
-          <li>上下文窗口与压缩策略</li>
-          <li>工具执行的确认机制</li>
+          <li>索引算法与大仓库首次索引耗时（官方未说明，已查 README 与 docs/config）</li>
         </ul>
       </div>
 
@@ -166,6 +189,7 @@ People who want to switch between the official Hyper subscription and their own 
           <thead><tr><th class="w-20"><span data-zh>类型</span><span data-en>Type</span></th><th class="w-52"><span data-zh>名称</span><span data-en>Name</span></th><th><span data-zh>链接</span><span data-en>Link</span></th></tr></thead>
           <tbody>
             <tr><td>repo</td><td>Charm · Crush 仓库 README</td><td><a href="https://github.com/charmbracelet/crush" target="_blank" rel="noopener">https://github.com/charmbracelet/crush</a></td></tr>
+            <tr><td>repo</td><td>Charm · Catwalk 官方 provider/model 目录（README 指明的默认清单来源）</td><td><a href="https://github.com/charmbracelet/catwalk" target="_blank" rel="noopener">https://github.com/charmbracelet/catwalk</a></td></tr>
             <tr><td>changelog</td><td>Charm · Crush Releases</td><td><a href="https://github.com/charmbracelet/crush/releases" target="_blank" rel="noopener">https://github.com/charmbracelet/crush/releases</a></td></tr>
             <tr><td>changelog</td><td>Charm · Crush Commits</td><td><a href="https://github.com/charmbracelet/crush/commits/main" target="_blank" rel="noopener">https://github.com/charmbracelet/crush/commits/main</a></td></tr>
             <tr><td>docs</td><td>Charm · Crush 官网</td><td><a href="https://charm.land/crush/" target="_blank" rel="noopener">https://charm.land/crush/</a></td></tr>
@@ -187,6 +211,7 @@ People who want to switch between the official Hyper subscription and their own 
         <ul class="rel-list">
           <li><span class="rel-t"><a href="./opencode.html">OpenCode</a></span><span class="rel-n">同类多 provider 工具，MCP 支持</span></li>
           <li><span class="rel-t"><a href="./gemini-cli.html">Gemini CLI</a></span><span class="rel-n">同类工具，工程化更完整</span></li>
+          <li><span class="rel-t"><a href="/tools/context7.html"><span data-zh>Context7</span><span data-en>Context7</span></a></span><span class="rel-n"><span data-zh>另一层 · 给 agent 装的工具</span><span data-en>Other layer · MCP tools</span></span></li>
         </ul>
       </div>
 
