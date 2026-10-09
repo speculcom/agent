@@ -11,7 +11,7 @@
   <meta property="og:url" content="https://agent.specul.com/opencode.html" />
   <meta property="og:title" content="OpenCode — Agents | 投机取巧" />
   <meta property="og:description" content="OpenCode（OpenCode）：MIT 许可的多 provider 编程 harness，运行 bash 命令前会询问权限，并支持 ACP 载入。" />
-  <meta name="theme-color" content="#05080f" />
+  <meta name="theme-color" content="#16121f" />
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%238b7cf8'/%3E%3Cstop offset='1' stop-color='%2322d3c5'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='48' height='48' rx='12' fill='%2305080f'/%3E%3Cpath d='M14 32 L24 12 L34 32' fill='none' stroke='url(%23g)' stroke-width='2.4' stroke-linejoin='round'/%3E%3Ccircle cx='24' cy='27' r='2.4' fill='%2322d3c5'/%3E%3C/svg%3E" />
   <link rel="stylesheet" href="brand.css" />
   <link rel="stylesheet" href="site.css" />
@@ -95,55 +95,79 @@
         <span class="badge"><span data-zh>核验</span><span data-en>Checked</span> 2026-10-08</span>
       </div>
 
-            <p class="panel-lead"><span data-zh>MIT 许可的多 provider 编程 harness，<strong>运行 bash 命令前会询问权限</strong>，并支持 ACP 载入。</span><span data-en>An MIT-licensed multi-provider programming harness that <strong>asks permission before running bash commands</strong>, and supports loading via ACP.</span></p>
+            <div class="panel-lead"><span data-zh><p>MIT 许可的多 provider 编程 harness，<strong>运行 bash 命令前会询问权限</strong>，并支持 ACP 载入。</p></span><span data-en><p>An MIT-licensed multi-provider programming harness that <strong>asks permission before running bash commands</strong>, and supports loading via ACP.</p></span></div>
 
             <div class="panel is-slim">
         <h2><span data-zh>适合与不适合</span><span data-en>When to use it, when not to</span></h2>
-<span data-zh>        <p>需要多 provider 可切换、重视 bash 命令执行前确认的用户。
-ACP 生态参与者。</p>
-        <p class="warn-p"><strong>不适合</strong>需要完全免打扰的自动化场景——
-执行命令前询问会打断流程，需确认 YOLO 模式的具体开关方式。</p></span><span data-en>        <p>Users who need switchable multiple providers and who care about confirmation before bash commands run.
-Participants in the ACP ecosystem.</p>
-        <p class="warn-p"><strong>Not a fit for</strong> fully unattended automation — asking before each command interrupts the flow; the exact switch for YOLO mode was not verified.</p></span>
+<span data-zh>        <div><p>需要多 provider 可切换、重视 bash 命令执行前确认的用户。 ACP 生态参与者。</p></div>
+        <div class="warn-p"><p><strong>不适合</strong>需要完全免打扰的自动化场景—— 执行命令前询问会打断流程，需确认 YOLO 模式的具体开关方式。</p></div></span><span data-en>        <div><p>Users who need switchable multiple providers and who care about confirmation before bash commands run. Participants in the ACP ecosystem.</p></div>
+        <div class="warn-p"><p><strong>Not a fit for</strong> fully unattended automation — asking before each command interrupts the flow; the exact switch for YOLO mode was not verified.</p></div></span>
       </div>
 
 
       <div class="block-head">
         <h2 class="t-h2"><span data-zh>固定坐标系</span><span data-en>Fixed coordinate system</span></h2>
-        <p class="t-section-lead">8 <span data-zh>个维度</span><span data-en>dimensions</span>, <span data-zh>与同赛道其他对象逐项可比</span><span data-en>each comparable item by item against others in the same track</span>.</p>
+        <p class="t-section-lead">8 <span data-zh>个维度</span><span data-en>dimensions</span>, <span data-zh>与同分区其他对象逐项可比</span><span data-en>each comparable item by item against others in the same section</span>.</p>
       </div>
       <dl class="axes">
         <div class="axis">
           <dt><span data-zh>模型与开放条件</span><span data-en>Model & openness</span></dt>
-          <dd>多 provider 接入的编程 harness。官方 <code>models</code> 与 <code>providers</code> 页原文： OpenCode 用 AI SDK 与 Models.dev，<strong>支持 75+ LLM 提供商， 也支持运行本地模型</strong>。目录含 302.AI、Amazon Bedrock、Anthropic、 Azure OpenAI、DeepSeek、Google Vertex AI、Groq、Hugging Face、 llama.cpp、LM Studio、Ollama、OpenAI、OpenRouter、xAI、Z.AI、ZenMux 等。 凭据经 <code>/connect</code> 存入 <code>~/.local/share/opencode/auth.json</code>； 可用 <code>enabled_providers</code> / <code>disabled_providers</code> 白黑名单， 也能自定义 provider（<code>npm</code> + <code>baseURL</code>，含 OpenAI 兼容）； 另有官方精选清单 OpenCode Zen。<strong>本地模型可接</strong>—— 官方点名 llama.cpp、LM Studio、Ollama、Atomic Chat。 注意：用 Claude Pro/Max 订阅接入「不是 Anthropic 官方支持的用法」。</dd>
+          <dd><p>多 provider 接入的编程 harness。官方 <code>models</code> 与 <code>providers</code> 页原文： OpenCode 用 AI SDK 与 Models.dev，<strong>支持 75+ LLM 提供商， 也支持运行本地模型</strong>。目录含：</p>
+            <ul><li>302.AI</li><li>Amazon Bedrock</li><li>Anthropic</li><li>Azure OpenAI</li><li>DeepSeek</li><li>Google Vertex AI</li><li>Groq</li><li>Hugging Face</li><li>llama.cpp</li><li>LM Studio</li><li>Ollama</li><li>OpenAI</li><li>OpenRouter</li><li>xAI</li><li>Z.AI</li><li>ZenMux 等。</li></ul>
+            <p>凭据经 <code>/connect</code> 存入 <code>~/.local/share/opencode/auth.json</code>；</p>
+            <p>可用 <code>enabled_providers</code> / <code>disabled_providers</code> 白黑名单， 也能自定义 provider（<code>npm</code> + <code>baseURL</code>，含 OpenAI 兼容）； 另有官方精选清单 OpenCode Zen。<strong>本地模型可接</strong>——</p>
+            <p>官方点名 llama.cpp、LM Studio、Ollama、Atomic Chat。</p>
+            <p>注意：用 Claude Pro/Max 订阅接入<strong>「不是 Anthropic 官方支持的用法」</strong>。</p></dd>
         </div>
         <div class="axis">
           <dt><span data-zh>运行位置</span><span data-en>Where it runs</span></dt>
-          <dd>本地进程，在终端运行。提供多平台安装方式（macOS Homebrew / Windows Scoop 等）。 生命周期绑定终端会话。</dd>
+          <dd><p>本地进程，在终端运行。提供多平台安装方式（macOS Homebrew / Windows Scoop 等）。 生命周期绑定终端会话。</p></dd>
         </div>
         <div class="axis">
           <dt><span data-zh>本地文件</span><span data-en>Local files</span></dt>
-          <dd>面向真实代码仓库的编程能力。<code>read</code>/<code>edit</code>/<code>write</code>/<code>grep</code>/<code>glob</code> 直接读写工作区；<code>grep</code>/<code>glob</code> 底层用 ripgrep，<strong>默认遵循 <code>.gitignore</code></strong>。 <strong>访问范围默认限定在启动时的工作目录</strong>——越界路径须在 <code>permission</code> 里用 <code>external_directory</code> 显式放行（如 <code>~/projects/personal/<strong></code>）。 <code>read</code> 默认 allow，但 </strong><code>.env</code> / <code>.env.*</code> 默认 deny<strong>（<code>.env.example</code> allow）。 <code>@</code> 键可模糊搜索项目文件；文件变动有 <code>watcher</code>（可配 <code>ignore</code>）。 符号能力来自 </strong>LSP 工具（实验性）<strong>：需 <code>OPENCODE_EXPERIMENTAL_LSP_TOOL=true</code> 并自配 LSP 服务器，支持 goToDefinition / findReferences / hover 等。 </strong>官方未见代码库向量化索引的描述**（已查 tools / config / permissions 页）。</dd>
+          <dd><p>面向真实代码仓库的编程能力。<code>read</code>/<code>edit</code>/<code>write</code>/<code>grep</code>/<code>glob</code> 直接读写工作区；<code>grep</code>/<code>glob</code> 底层用 ripgrep，<strong>默认遵循 <code>.gitignore</code></strong>。</p>
+            <p><strong>访问范围默认限定在启动时的工作目录</strong>——越界路径须在 <code>permission</code> 里用 <code>external_directory</code> 显式放行（如 <code>~/projects/personal/**</code>）。</p>
+            <p><code>read</code> 默认 allow，但 <strong><code>.env</code> / <code>.env.*</code> 默认 deny</strong>（<code>.env.example</code> allow）。 <code>@</code> 键可模糊搜索项目文件；文件变动有 <code>watcher</code>（可配 <code>ignore</code>）。</p>
+            <p>符号能力来自 <strong>LSP 工具（实验性）</strong>：需 <code>OPENCODE_EXPERIMENTAL_LSP_TOOL=true</code> 并自配 LSP 服务器，支持 goToDefinition / findReferences / hover 等。</p>
+            <p><strong>官方未见代码库向量化索引的描述</strong>（已查 tools / config / permissions 页）。</p></dd>
         </div>
         <div class="axis">
           <dt><span data-zh>关机后的任务</span><span data-en>Tasks after shutdown</span></dt>
-          <dd>终端形态，本地进程，生命周期绑定会话。官方另有 <code>opencode serve</code> （无头 HTTP 服务器）与 <code>opencode web</code> / 桌面应用——<strong>都跑在你自己的机器上</strong>， 为客户提供会话 API（含 <code>prompt_async</code> 异步发送），执行环境归你自己， 不是厂商托管云。<strong>官方未见「客户端关闭后仍继续 / 关机续跑」的云端后台能力</strong> （已查 server 页与 docs 概览）。</dd>
+          <dd><p>终端形态，本地进程，生命周期绑定会话。</p>
+            <p>官方另有 <code>opencode serve</code> （无头 HTTP 服务器）与 <code>opencode web</code> / 桌面应用——<strong>都跑在你自己的机器上</strong>， 为客户提供会话 API（含 <code>prompt_async</code> 异步发送），执行环境归你自己， 不是厂商托管云。</p>
+            <p><strong>官方未见「客户端关闭后仍继续 / 关机续跑」的云端后台能力</strong> （已查 server 页与 docs 概览）。</p></dd>
         </div>
         <div class="axis">
           <dt><span data-zh>工具与扩展</span><span data-en>Tools & extensions</span></dt>
-          <dd><strong>内置工具官方逐项列出</strong>：bash、edit、write、read、grep、glob、 lsp（实验性）、patch、skill、todowrite、webfetch、 websearch（Exa，需 OpenCode 提供商或 <code>OPENCODE_ENABLE_EXA</code>）、question， 另有 <code>task</code> 派发子代理。内置代理含 build、plan、general、explore、 scout、compaction、title、summary。<strong>MCP 接入方式已核到</strong>： 本地 <code>type:&quot;local&quot;</code> 与远程 <code>type:&quot;remote&quot;</code> 两类，支持 OAuth 动态客户端注册（RFC 7591）与 <code>opencode mcp auth</code> 等命令； 还支持自定义工具与插件（hooks）。</dd>
+          <dd><p><strong>内置工具官方逐项列出</strong>：</p>
+            <ul><li>bash</li><li>edit</li><li>write</li><li>read</li><li>grep</li><li>glob</li><li>lsp（实验性）</li><li>patch</li><li>skill</li><li>todowrite</li><li>webfetch</li><li>websearch（Exa，需 OpenCode 提供商或 <code>OPENCODE_ENABLE_EXA</code>）</li><li>question</li></ul>
+            <p>另有 <code>task</code> 派发子代理。</p>
+            <p>内置代理含：</p>
+            <ul><li>build</li><li>plan</li><li>general</li><li>explore</li><li>scout</li><li>compaction</li><li>title</li><li>summary</li></ul>
+            <p><strong>MCP 接入方式已核到</strong>： 本地 <code>type:&quot;local&quot;</code> 与远程 <code>type:&quot;remote&quot;</code> 两类，支持 OAuth 动态客户端注册（RFC 7591）与 <code>opencode mcp auth</code> 等命令； 还支持自定义工具与插件（hooks）。</p></dd>
         </div>
         <div class="axis">
           <dt><span data-zh>上下文与记忆</span><span data-en>Context & memory</span></dt>
-          <dd><strong>ACP（Agent Client Protocol）载入能力是其差异化设计</strong>—— 在恢复与分叉时保留模型、effort 与模式边界。 会话机制已核到：<code>/session</code> API 支持创建、<strong>fork（在某条消息处分叉）</strong>、 revert/unrevert 与 summarize；TUI 有 <code>/undo</code>、<code>/redo</code>、<code>/share</code>。 <strong>压缩策略官方给了配置</strong>——<code>compaction</code> 项：<code>auto</code>（默认 true， 上下文满时自动压缩会话）、<code>prune</code>（删旧工具输出省 token，默认 false）、 <code>reserved</code>（压缩缓冲）。另有 compaction / title / summary 三个内置代理。</dd>
+          <dd><p><strong>ACP（Agent Client Protocol）载入能力是其差异化设计</strong>—— 在恢复与分叉时保留模型、effort 与模式边界。</p>
+            <p>会话机制已核到：<code>/session</code> API 支持创建、<strong>fork（在某条消息处分叉）</strong>、 revert/unrevert 与 summarize；TUI 有 <code>/undo</code>、<code>/redo</code>、<code>/share</code>。</p>
+            <p><strong>压缩策略官方给了配置</strong>——<code>compaction</code> 项：</p>
+            <ul><li><code>auto</code>（默认 true，上下文满时自动压缩会话）</li><li><code>prune</code>（删旧工具输出省 token，默认 false）</li><li><code>reserved</code>（压缩缓冲）</li></ul>
+            <p>另有 compaction / title / summary 三个内置代理。</p></dd>
         </div>
         <div class="axis">
           <dt><span data-zh>权限与限制</span><span data-en>Permissions & limits</span></dt>
-          <dd><strong>权限策略已核到</strong>：<code>permission</code> 配置决定每个操作是自动运行、 提示审批还是阻止，三档 <code>&quot;allow&quot;</code> / <code>&quot;ask&quot;</code> / <code>&quot;deny&quot;</code>。 可按工具细粒度配置，支持通配符与对象语法（如 bash 的 <code>git *</code> allow、<code>rm *</code> deny，<strong>最后匹配的规则优先</strong>）。 可配权限键：read / edit（涵盖 edit、write、patch）/ glob / grep / bash / task / skill / lsp / webfetch / websearch / external_directory / doom_loop。<strong>默认值宽松</strong>：多数 allow， <code>doom_loop</code> 与 <code>external_directory</code> 为 ask；<code>read</code> 为 allow 但 <code>.env</code> / <code>.env.*</code> 默认 deny。官方 config 页亦称「默认允许所有操作， 无需明确批准」。审批 UI 给 once / always / reject， 且可对每个代理单独覆盖。v1.1.1 起旧版 <code>tools</code> 布尔配置并入 <code>permission</code>。</dd>
+          <dd><p><strong>权限策略已核到</strong>：<code>permission</code> 配置决定每个操作是自动运行、 提示审批还是阻止，三档 <code>&quot;allow&quot;</code> / <code>&quot;ask&quot;</code> / <code>&quot;deny&quot;</code>。</p>
+            <p>可按工具细粒度配置，支持通配符与对象语法（如 bash 的 <code>git *</code> allow、<code>rm *</code> deny，<strong>最后匹配的规则优先</strong>）。</p>
+            <p>可配权限键：</p>
+            <ul><li>read</li><li>edit（涵盖 edit、write、patch）</li><li>glob</li><li>grep</li><li>bash</li><li>task</li><li>skill</li><li>lsp</li><li>webfetch</li><li>websearch</li><li>external_directory</li><li>doom_loop</li></ul>
+            <p><strong>默认值宽松</strong>：多数 allow， <code>doom_loop</code> 与 <code>external_directory</code> 为 ask；<code>read</code> 为 allow 但 <code>.env</code> / <code>.env.*</code> 默认 deny。</p>
+            <p>官方 config 页亦称「默认允许所有操作，无需明确批准」。</p>
+            <p>审批 UI 给 once / always / reject，且可对每个代理单独覆盖。</p>
+            <p>v1.1.1 起旧版 <code>tools</code> 布尔配置并入 <code>permission</code>。</p></dd>
         </div>
         <div class="axis">
           <dt><span data-zh>适合什么任务</span><span data-en>Best for</span></dt>
-          <dd>需要多 provider 可切换、且重视命令执行前确认的用户。 ACP 生态参与者。</dd>
+          <dd><p>需要多 provider 可切换、且重视命令执行前确认的用户。 ACP 生态参与者。</p></dd>
         </div>
       </dl>
 
@@ -162,9 +186,9 @@ Participants in the ACP ecosystem.</p>
         <h2><span data-zh>价格</span><span data-en>Pricing</span></h2>
         <table class="src">
           <tbody>
-            <tr><th class="w-28"><span data-zh>月度入口</span><span data-en>Monthly entry</span></th><td><span data-zh>开源免费，模型费用另计</span><span data-en>开源免费，模型费用另计</span></td></tr>
-            <tr><th class="w-28"><span data-zh>年付</span><span data-en>Annual</span></th><td><span data-zh>开源免费，模型费用另计</span><span data-en>开源免费，模型费用另计</span></td></tr>
-            <tr><th class="w-28"><span data-zh>额度说明</span><span data-en>Quota note</span></th><td><span data-zh>MIT 开源，无授权费。 模型调用费用由用户自付——支持多 provider 接入， 也支持连接本地模型。</span><span data-en>MIT 开源，无授权费。 模型调用费用由用户自付——支持多 provider 接入， 也支持连接本地模型。</span></td></tr>
+            <tr><th class="w-28"><span data-zh>月度入口</span><span data-en>Monthly entry</span></th><td><span data-zh><p>开源免费，模型费用另计</p></span><span data-en><p>开源免费，模型费用另计</p></span></td></tr>
+            <tr><th class="w-28"><span data-zh>年付</span><span data-en>Annual</span></th><td><span data-zh><p>开源免费，模型费用另计</p></span><span data-en><p>开源免费，模型费用另计</p></span></td></tr>
+            <tr><th class="w-28"><span data-zh>额度说明</span><span data-en>Quota note</span></th><td><span data-zh><p>MIT 开源，无授权费。 模型调用费用由用户自付——支持多 provider 接入， 也支持连接本地模型。</p></span><span data-en><p>MIT 开源，无授权费。 模型调用费用由用户自付——支持多 provider 接入， 也支持连接本地模型。</p></span></td></tr>
           </tbody>
         </table>
         <p class="fine mt-3"><span data-zh>不同币种不做折算。优惠、地区、税费与登录后报价可能变化，购买前请到官方页面确认。</span><span data-en>No currency conversion. Discounts, regions, tax and post-login pricing can change — confirm on the official page before buying.</span></p>
@@ -204,13 +228,46 @@ Participants in the ACP ecosystem.</p>
 
             <div class="panel is-slim">
         <h2><span data-zh>实测记录</span><span data-en>Measured runs</span></h2>
-        <p>本站尚未完成实测。测试协议见 <a href="https://github.com/speculcom/ai-agent-guide/blob/main/tracks/agents/tasks/_protocol.md" target="_blank" rel="noopener">tasks/_protocol.md</a>。
-
-<strong>实测建议</strong>：这个工具的实测重点应放在
-<strong>「命令执行前的询问」这个设计在长任务中的实际打断成本</strong>——
-这是它与全权执行类工具的核心工作流差异。</p>
+        <p>本站尚未完成实测。测试协议见 <a href="https://github.com/speculcom/ai-agent-guide/blob/main/tracks/agents/tasks/_protocol.md" target="_blank" rel="noopener">tasks/_protocol.md</a>。</p>
+            <p><strong>实测建议</strong>：这个工具的实测重点应放在 <strong>「命令执行前的询问」这个设计在长任务中的实际打断成本</strong>—— 这是它与全权执行类工具的核心工作流差异。</p>
       </div>
 
+
+            <div class="panel is-slim">
+        <h2>变更记录说明</h2>
+        <div class="tbl-wrap"><table><thead><tr><th>版本</th><th>日期</th></tr></thead><tbody><tr><td><code>v1.18.33</code></td><td>2026-09-28</td></tr></tbody></table></div>
+            <p><strong>更新频率很高</strong>（release 与 changelog 都在 09-28）。</p>
+      </div>
+      <div class="panel is-slim">
+        <h2>权限设计：执行前询问</h2>
+        <p>这是本条目最值得注意的一条，来自 README：</p>
+            <p>``<code> Asks permission before running bash commands </code>``</p>
+            <p><strong>多数终端 agent 默认自动执行命令，OpenCode 默认会问。</strong></p>
+            <p>这降低了「模型误删文件 / 误跑危险命令」的风险， 代价是打断流程。README 另有 <strong>YOLO</strong> 相关内容， 推测是可选的免询问模式，<strong>但具体开关方式本次未核验，记为未知</strong>。</p>
+      </div>
+      <div class="panel is-slim">
+        <h2>子代理能力</h2>
+        <p>``<code> Also included is a general subagent for complex searches and multistep tasks. </code>``</p>
+            <p>内置一个<strong>通用子代理</strong>，用于复杂搜索与多步任务。 这让它能处理「先调研再动手」这类需要多轮的任务。</p>
+            <p><strong>子代理的具体调度方式与 token 开销本次未核验。</strong></p>
+      </div>
+      <div class="panel is-slim">
+        <h2>ACP：Agent Client Protocol</h2>
+        <p>这是它的架构亮点：</p>
+            <p>``<code> ACP 载入、恢复、分叉时保留模型、effort 和模式边界 </code>``</p>
+            <p><strong>「分叉时保留模型与 effort」这个细节值得注意</strong>—— 很多工具分叉后会丢失设置，导致每次都要重设。</p>
+      </div>
+      <div class="panel is-slim">
+        <h2>稳定性修复是重要信号</h2>
+        <p>参考 AgentClash 对 OpenCode v1.18.33 的核验记录（09-28）， 该版本包含四项修复：</p>
+            <p>1. Cloudflare 超时控制 2. MCP 浏览器启动失败反馈 3. <strong>调试凭据脱敏</strong> 4. Gemini 推理参数修正</p>
+            <p><strong>四项里两项与权限/可靠性相关</strong>（凭据脱敏、MCP 启动失败反馈）。 这说明项目的可靠性投入在权限与可诊断性上， 但也说明<strong>这些方面曾经出过问题</strong>。</p>
+      </div>
+      <div class="panel is-slim">
+        <h2>权限定级说明</h2>
+        <p><code>confidence: partial</code> 的原因：</p>
+            <ul><li>✅ 已核验：仓库、许可（MIT）、最新版本与日期、star 数（210,642，本分区最高）、权限策略（allow/ask/deny 细粒度）、ACP、安装方式；<strong>A6.2 本轮补</strong>：75+ provider 与本地模型、内置工具清单与 MCP 接入方式、<code>compaction</code> 上下文策略</li><li>❌ 未核验：YOLO 模式的具体开关方式、子代理的调度细节与 token 开销</li></ul>
+      </div>
 
             <div class="panel is-slim">
         <h2><span data-zh>相关条目</span><span data-en>Related entries</span></h2>
