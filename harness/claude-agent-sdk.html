@@ -4,18 +4,18 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Claude Agent SDK — Harness | 投机取巧</title>
-  <meta name="description" content="Claude Agent SDK（Anthropic）：「Claude Code 的编程接口」 —— 不是自建 agent 框架，是把一个成熟的 coding CLI 变成 Python 可驱动的对象。" />
+  <meta name="description" content="Claude Agent SDK（Anthropic）：它是什么：Claude Code 的编程接口（Python 版）。 它把一个成熟的 coding CLI 变成 Python 能驱动的对象。 它不是一个自建 agent 的框架。 这也是本站十个对象里唯一不能换模型的编程底座 —— 后面所有取舍都由这条决定。…" />
   <link rel="canonical" href="https://agent.specul.com/harness/claude-agent-sdk.html" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Claude Agent SDK" />
   <meta property="og:url" content="https://agent.specul.com/harness/claude-agent-sdk.html" />
   <meta property="og:title" content="Claude Agent SDK — Harness | 投机取巧" />
-  <meta property="og:description" content="Claude Agent SDK（Anthropic）：「Claude Code 的编程接口」 —— 不是自建 agent 框架，是把一个成熟的 coding CLI 变成 Python 可驱动的对象。" />
-  <meta name="theme-color" content="#05080f" />
+  <meta property="og:description" content="Claude Agent SDK（Anthropic）：它是什么：Claude Code 的编程接口（Python 版）。 它把一个成熟的 coding CLI 变成 Python 能驱动的对象。 它不是一个自建 agent 的框架。 这也是本站十个对象里唯一不能换模型的编程底座 —— 后面所有取舍都由这条决定。…" />
+  <meta name="theme-color" content="#16121f" />
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%238b7cf8'/%3E%3Cstop offset='1' stop-color='%2322d3c5'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='48' height='48' rx='12' fill='%2305080f'/%3E%3Cpath d='M14 32 L24 12 L34 32' fill='none' stroke='url(%23g)' stroke-width='2.4' stroke-linejoin='round'/%3E%3Ccircle cx='24' cy='27' r='2.4' fill='%2322d3c5'/%3E%3C/svg%3E" />
   <link rel="stylesheet" href="../brand.css" />
   <link rel="stylesheet" href="../site.css" />
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Claude Agent SDK","applicationCategory":"DeveloperApplication","url":"https://platform.claude.com/docs/en/agent-sdk/python","sameAs":"https://platform.claude.com/docs/en/agent-sdk/python","description":"「Claude Code 的编程接口」 —— 不是自建 agent 框架，是把一个成熟的 coding CLI 变成 Python 可驱动的对象。","dateModified":"2026-09-30"}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Claude Agent SDK","applicationCategory":"DeveloperApplication","url":"https://platform.claude.com/docs/en/agent-sdk/python","sameAs":"https://platform.claude.com/docs/en/agent-sdk/python","description":"它是什么：Claude Code 的编程接口（Python 版）。 它把一个成熟的 coding CLI 变成 Python 能驱动的对象。 它不是一个自建 agent 的框架。 这也是本站十个对象里唯一不能换模型的编程底座 —— 后面所有取舍都由这条决定。 官方 README 首行：\"Python SDK for Claude Agent.\"","dateModified":"2026-09-30"}</script>
 </head>
 <body class="brand-ambient">
   <a class="t-skip" href="#main"><span data-zh>跳到主要内容</span><span data-en>Skip to main content</span></a>
@@ -99,52 +99,119 @@
         <span class="badge"><span data-zh>核验</span><span data-en>Checked</span> 2026-09-30</span>
       </div>
 
-            <p class="panel-lead"><span data-zh><strong>「Claude Code 的编程接口」</strong> —— 不是自建 agent 框架，是把一个成熟的 coding CLI 变成 Python 可驱动的对象。</span><span data-en><strong>&quot;The programming interface to Claude Code&quot;</strong> — not a framework for building your own agent, but a mature coding CLI turned into an object you can drive from Python.</span></p>
+            <div class="panel-lead"><span data-zh><p><strong>它是什么</strong>：Claude Code 的编程接口（Python 版）。</p>
+            <p>它把一个成熟的 coding CLI 变成 Python 能驱动的对象。</p>
+            <p>它不是一个自建 agent 的框架。</p>
+            <p><strong>这也是本站十个对象里唯一不能换模型的编程底座</strong> —— 后面所有取舍都由这条决定。</p>
+            <blockquote>官方 README 首行：&quot;Python SDK for Claude Agent.&quot;</blockquote></span><span data-en><p><strong>What it is</strong>: the Python programming interface to Claude Code. It turns a polished coding CLI into an object you can drive from Python. It is not a framework for building your own agent. <strong>It is also the only coding base among our ten objects that cannot switch models</strong> — every trade-off below follows from that.</p>
+            <blockquote>Official README, first line: &quot;Python SDK for Claude Agent.&quot;</blockquote></span></div>
 
             <div class="panel is-slim">
         <h2><span data-zh>适合与不适合</span><span data-en>When to use it, when not to</span></h2>
-<span data-zh>        <p><strong>适合</strong>：要一个已被打磨的 coding agent（工具集 + 权限链 + hooks + session fork 都在），团队用 Python，愿意把推理全权交给 Claude。
-<strong>不适合</strong>：需要换模型或接自托管权重（<strong>直接排除</strong>）；要自定义 agent loop 形状（用 OpenAI Agents SDK 或 LangGraph）；要多 agent 编排。</p></span><span data-en>        <p><strong>Fits</strong>: you want a coding agent that has already been polished (tool set, permission chain, hooks and session fork all included), your team works in Python, and you are happy handing reasoning entirely to Claude.
-<strong>Not a fit</strong>: needing a different model or self-hosted weights (<strong>rules that out outright</strong>); needing to customise the shape of the agent loop (use OpenAI Agents SDK or LangGraph); needing multi-agent orchestration.</p></span>
+<span data-zh>        <div><p><strong>适合三类情况</strong>：</p></div>
+        <div><ul><li>想要一个<strong>已经被打磨过的 coding agent</strong> —— 工具集、权限链、hooks、session fork 都在</li><li>团队用 Python</li><li>愿意把推理完全交给 Claude</li></ul></div>
+        <div class="warn-p"><p><strong>不适合三类情况</strong>：</p></div>
+        <div><ul><li>需要换模型，或接自托管权重 —— <strong>直接排除</strong></li><li>需要框架级的自定义 agent loop —— 形状由 Claude Code 决定（备选 OpenAI Agents SDK 或 LangGraph）</li><li>需要多 agent 编排 —— 它没有 agents-as-tools 那种一等委派机制</li></ul></div></span><span data-en>        <div><p><strong>One line: it is a coding agent that has already been polished.</strong></p></div>
+        <div><p><strong>Swapping models and shaping the agent loop are the two things it cannot do.</strong></p></div>
+        <div><p><strong>Fits</strong>:</p></div>
+        <div><ul><li>you want a coding agent that has already been polished — tool set, permission chain, hooks and session fork all included</li><li>your team works in Python</li><li>you are happy handing reasoning entirely to Claude</li></ul></div>
+        <div class="warn-p"><p><strong>Not a fit</strong>:</p></div>
+        <div><ul><li>you need a different model / self-hosted weights — <strong>ruled out outright</strong></li><li>you need a framework-level custom agent loop — the loop shape is decided by Claude Code</li><li>you need multi-agent orchestration — it has no first-class agents-as-tools delegation</li></ul></div></span>
       </div>
 
 
       <div class="block-head">
         <h2 class="t-h2"><span data-zh>固定坐标系</span><span data-en>Fixed coordinate system</span></h2>
-        <p class="t-section-lead">8 <span data-zh>个维度</span><span data-en>dimensions</span>, <span data-zh>与同赛道其他对象逐项可比</span><span data-en>each comparable item by item against others in the same track</span>.</p>
+        <p class="t-section-lead">8 <span data-zh>个维度</span><span data-en>dimensions</span>, <span data-zh>与同分区其他对象逐项可比</span><span data-en>each comparable item by item against others in the same section</span>.</p>
       </div>
       <dl class="axes">
         <div class="axis">
           <dt><span data-zh>模型与开放条件</span><span data-en>Model & openness</span></dt>
-          <dd><strong>只支持 Claude。</strong> README 全文没有 provider-agnostic 的表述， <code>pyproject.toml</code> 层面也没有 litellm / any-llm 之类的可选依赖。 ⚠ <strong>这是它与其他九个对象最本质的差别</strong>：本站其他 harness 都能接自托管模型（Ollama / vLLM / llama.cpp）， 本 SDK 不能。模型层（models.specul.com）推荐的本地量化路线在这里走不通。</dd>
+          <dd><p><strong>只支持 Claude，没有第二条路可走。</strong></p>
+            <ul><li><code>pyproject.toml</code> 里没有 litellm / any-llm 之类的可选依赖</li><li>本站其他 harness 都能接自托管模型（Ollama / vLLM / llama.cpp），本 SDK 不能</li></ul>
+            <p>⚠ <strong>这是它与其他九个对象最本质的差别。</strong></p>
+            <p>模型层（<code>models.specul.com</code>）推荐的本地量化路线，在这里走不通。</p>
+            <p><strong>核验</strong>：README 全文没有 provider-agnostic 的表述。</p></dd>
         </div>
         <div class="axis">
           <dt><span data-zh>运行位置</span><span data-en>Where it runs</span></dt>
-          <dd><strong>它是「你运营 Python 进程 + 它驱动一个 CLI 子进程」的双层结构。</strong> README 明说CLI 随 wheel 捆绑（核验：<code>_cli_version.py</code> 里 <code>__cli_version__ = &quot;2.1.286&quot;</code>）， 默认用捆绑版；也可指向系统安装（<code>ClaudeAgentOptions(cli_path=&quot;/path/to/claude&quot;)</code>）。 <strong>实际形态</strong>：pip 包 → 内含 Claude Code CLI → CLI 连 Anthropic API。 换句话说这不是「库」，是「带 CLI 的库」。</dd>
+          <dd><p><strong>它是「你运营 Python 进程 + 它驱动一个 CLI 子进程」的双层结构。</strong></p>
+            <p><strong>实际形态</strong>：pip 包，内含 Claude Code CLI。</p>
+            <p>CLI 再去连 Anthropic API。换句话说，它不是「库」，是「带 CLI 的库」。</p>
+            <p><strong>CLI 默认用捆绑版，也可以指向系统安装</strong>：</p>
+            <ul><li>换成本机已装的 CLI：<code>ClaudeAgentOptions(cli_path=&quot;/path/to/claude&quot;)</code></li><li>工作目录：<code>ClaudeAgentOptions(cwd=&quot;/path/to/project&quot;)</code></li></ul>
+            <p><strong>核验</strong>：README 明说 CLI 随 wheel 捆绑；<code>_cli_version.py</code> 里 <code>__cli_version__ = &quot;2.1.286&quot;</code>。</p></dd>
         </div>
         <div class="axis">
           <dt><span data-zh>本地文件</span><span data-en>Local files</span></dt>
-          <dd><strong>默认就是全套文件工具，且是全权限起步。</strong> README 原文： 「By default, Claude has access to the <strong>full Claude Code toolset</strong> (Read, Write, Edit, Bash, and others)」。 工作目录用 <code>ClaudeAgentOptions(cwd=&quot;/path/to/project&quot;)</code> 指定。 <strong>这是与本站其他对象最大的风险差异 —— 默认就能读文件、改文件、跑 Bash。</strong></dd>
+          <dd><p><strong>默认就是全套文件工具，而且是全权限起步。</strong></p>
+            <p><strong>README 原文</strong>：</p>
+            <p>By default, Claude has access to the <strong>full Claude Code toolset</strong> (Read, Write, Edit, Bash, and others).</p>
+            <ul><li>工作目录：<code>ClaudeAgentOptions(cwd=&quot;/path/to/project&quot;)</code></li></ul>
+            <p>⚠ <strong>这是与本站其他对象最大的风险差异</strong>：默认就能读文件、改文件、跑 Bash。</p></dd>
         </div>
         <div class="axis">
           <dt><span data-zh>关机后的任务</span><span data-en>Tasks after shutdown</span></dt>
-          <dd><strong>进程关了就停，但会话有官方持久化与续跑语义。</strong> 官方 sessions 页原文：&quot;A session is the conversation history the SDK accumulates... The SDK writes it to disk automatically&quot;。 存储位置已核验：<code>~/.claude/projects/&lt;encoded-cwd<strong>/*.jsonl</code> （设 <code>CLAUDE_CONFIG_DIR</code> 则在其 <code>projects/</code> 下）。 续跑三档：<code>continue_conversation=True</code> 续最近会话、 <code>resume=</strong>session_id&gt;</code> 续指定会话（官方原文 &quot;picks up with full context from wherever the session left off&quot;）、<code>fork_session=True</code> 分叉。 <strong>真正的「关机也跑」不存在</strong>：官方 hosting 页说明一个会话等于一个 <code>claude</code> CLI 子进程，进程停则 loop 停；跨主机续跑要把 transcript 镜像到共享存储（<code>SessionStore</code> 适配器）。 ⚠ 官方提醒：session 持久化的是<strong>对话</strong>而非文件系统 （&quot;Sessions persist the conversation, not the filesystem&quot;）， 文件回滚要用 file checkpointing。</dd>
+          <dd><p><strong>进程关了就停 —— 真正的「关机也跑」不存在。</strong></p>
+            <p>但会话有官方持久化与续跑语义。<strong>存储位置已核验</strong>：</p>
+            <p><code>~/.claude/projects/&lt;encoded-cwd&gt;/*.jsonl</code>；设 <code>CLAUDE_CONFIG_DIR</code> 则在其 <code>projects/</code> 下。</p>
+            <p><strong>续跑有三档</strong>：</p>
+            <ul><li><code>continue_conversation=True</code>：续最近会话</li><li><code>resume=&lt;session_id&gt;</code>：续指定会话</li><li><code>fork_session=True</code>：分叉</li></ul>
+            <p><strong>官方对 <code>resume</code> 的说明</strong>：&quot;picks up with full context from wherever the session left off&quot;</p>
+            <p><strong>官方 sessions 页原文</strong>：</p>
+            <p><strong>官方原文</strong>：&quot;A session is the conversation history the SDK accumulates... The SDK writes it to disk automatically&quot;</p>
+            <p><strong>一个会话等于一个 <code>claude</code> CLI 子进程</strong>，进程停则 loop 停。</p>
+            <p>跨主机续跑要把 transcript 镜像到共享存储。适配器是 <code>SessionStore</code>。</p>
+            <p>⚠ 官方提醒：session 持久化的是<strong>对话</strong>而非文件系统。</p>
+            <p>文件回滚要用 file checkpointing。</p>
+            <p><strong>官方原文</strong>：&quot;Sessions persist the conversation, not the filesystem&quot;</p></dd>
         </div>
         <div class="axis">
           <dt><span data-zh>工具与扩展</span><span data-en>Tools & extensions</span></dt>
-          <dd><strong>两个入口，能力不同</strong>（这是很关键的设计细节）： <code>query()</code> 是单向提问，只能用 CLI 自带工具集； <code>ClaudeSDKClient</code> 是双向会话，<strong>额外解锁 custom tools 与 hooks</strong>。 <strong>custom tools 是「进程内 MCP server」</strong>：README 说它们是 「in-process MCP servers that run directly within your Python application」， 官方列的收益是 no subprocess management / no IPC overhead / 单进程部署 / 更好调试 / 类型安全。 <strong>外部 MCP server 也支持，且两者可混用</strong>（<code>mcp_servers</code> 可同时放 SDK server 与 stdio 外部 server）。</dd>
+          <dd><p><strong>两个入口，能力不同 —— 这是很关键的设计细节。</strong></p>
+            <ul><li><code>query()</code>：单向提问，只能用 CLI 自带工具集</li><li><code>ClaudeSDKClient</code>：双向会话，<strong>额外解锁 custom tools 与 hooks</strong></li></ul>
+            <p><strong>custom tools 是「进程内 MCP server」</strong> —— 官方原话：</p>
+            <p>&quot;in-process MCP servers that run directly within your Python application&quot;</p>
+            <p><strong>官方列的收益有五条</strong>：</p>
+            <div class="tbl-wrap"><table><thead><tr><th>收益</th><th>说明</th></tr></thead><tbody><tr><td>No subprocess management</td><td>与应用同进程，无需管理子进程</td></tr><tr><td>Better performance</td><td>工具调用无 IPC 开销</td></tr><tr><td>Simpler deployment</td><td>单进程而非多进程</td></tr><tr><td>Easier debugging</td><td>全部代码同进程</td></tr><tr><td>Type safety</td><td>带类型提示的直接 Python 函数调用</td></tr></tbody></table></div>
+            <p><strong>外部 MCP server 照样支持，两者可混用。</strong></p>
+            <p><code>mcp_servers</code> 字典里可以同时放：</p>
+            <ul><li><code>create_sdk_mcp_server(...)</code> 的产物</li><li><code>{&quot;type&quot;:&quot;stdio&quot;, ...}</code> 外部 server</li></ul></dd>
         </div>
         <div class="axis">
           <dt><span data-zh>上下文与记忆</span><span data-en>Context & memory</span></dt>
-          <dd><strong>有一个本站很关注、但容易被忽略的机制：system prompt 的 snapshot 语义。</strong> README 原文：Claude Code 会在会话首次请求时构建并记录 system prompt， 之后每次请求（含<strong>恢复会话后</strong>）都复用它； 改了自定义 prompt 或 <code>claude_code</code> preset 的 <code>append</code> 文本， <strong>要等到会话被compact 或开了新会话才生效</strong>—— 除非把 <code>snapshot</code> 设为 <code>False</code>（需要 CLI 2.1.257+）。 <strong>这实质上是「上下文快照不可变」的设计</strong>，与本站「状态 ≠ 上下文」的讨论直接相关： 它保证了 prompt 的确定性，代价是改动生效有延迟。</dd>
+          <dd><p><strong>容易忽略的一个机制：system prompt 的 snapshot 语义。</strong></p>
+            <p><strong>Claude Code 在会话首次请求时构建它，之后每次请求都复用。</strong></p>
+            <p><strong>恢复会话之后也照样复用。</strong></p>
+            <p><strong>改了自定义 prompt 不会立刻生效。</strong></p>
+            <p>改了 <code>claude_code</code> preset 的 <code>append</code> 文本也一样。</p>
+            <p><strong>要等会话被 compact，或者开一个新会话。</strong></p>
+            <p>除非把 <code>snapshot</code> 设为 <code>False</code>（需要 CLI 2.1.257+）。</p>
+            <p><strong>这实质上是「上下文快照不可变」的设计。</strong></p>
+            <p>它保证了 prompt 的确定性，代价是改动生效有延迟。</p>
+            <p>这与本站「状态 ≠ 上下文」的讨论直接相关。</p></dd>
         </div>
         <div class="axis">
           <dt><span data-zh>权限与限制</span><span data-en>Permissions & limits</span></dt>
-          <dd><strong>官方给了完整的权限求值链，这是本站目前见到的最详细的一份。</strong> README 原文： 「<code>allowed_tools</code> is a permission allowlist: listed tools are auto-approved, and unlisted tools fall through to <code>permission_mode</code> and <code>can_use_tool</code> for a decision. <strong>It does not remove tools from Claude&#39;s toolset.</strong> To block specific tools, use <code>disallowed_tools</code>.」 翻译：<code>allowed_tools</code> 是<strong>准入白名单</strong>（列进去=自动批准）， 未列的走 <code>permission_mode</code> 与 <code>can_use_tool</code> 判定； <strong>它不会把工具从工具集里移除</strong> —— 要真正禁用得用 <code>disallowed_tools</code>。 <strong>hooks 提供确定性拦截</strong>：README 说 hooks 是「Python 函数，由 Claude Code *应用*（不是 Claude）调用」， 可在 <code>PreToolUse</code> 返回 <code>permissionDecision: &quot;deny&quot;</code> + 理由，<strong>示例就是拦 Bash 命令</strong>。 ⚠ <strong>默认起步是全工具 + 无沙箱</strong>，想收紧必须主动配置。</dd>
+          <dd><p><strong>结论先给：默认全开，权限要你自己收。</strong></p>
+            <p>官方给的求值链是本站目前见到的最详细的一份。<strong>README 原文</strong>：</p>
+            <p><code>allowed_tools</code> is a permission allowlist: listed tools are auto-approved, and unlisted tools fall through to <code>permission_mode</code> and <code>can_use_tool</code> for a decision. <strong>It does not remove tools from Claude&#39;s toolset.</strong> To block specific tools, use <code>disallowed_tools</code>.</p>
+            <p>翻译过来是四条：</p>
+            <ul><li><code>allowed_tools</code> 是<strong>准入白名单</strong>：列进去 = 自动批准</li><li>未列的工具走 <code>permission_mode</code> 与 <code>can_use_tool</code> 判定</li><li><strong>它不会把工具从工具集里移除</strong></li><li>要真正禁用某个工具，得用 <code>disallowed_tools</code></li></ul>
+            <p><strong>hooks 提供确定性拦截</strong>：</p>
+            <ul><li>它是「Python 函数，由 Claude Code *应用*（不是 Claude）调用」</li><li>拦截点：<code>PreToolUse</code> 返回 <code>permissionDecision: &quot;deny&quot;</code> 加理由</li><li>官方示例：拦 Bash 命令</li></ul>
+            <p>⚠ <strong>默认起步是全工具 + 无沙箱</strong>，想收紧必须主动配置。</p>
+            <p><strong>三个开关</strong>：</p>
+            <ul><li><code>disallowed_tools</code></li><li>hooks</li><li><code>permission_mode</code></li></ul></dd>
         </div>
         <div class="axis">
           <dt><span data-zh>适合什么任务</span><span data-en>Best for</span></dt>
-          <dd><strong>适合</strong>：想要一个<strong>已经被打磨过的 coding agent</strong>（工具集、权限链、hooks、session fork 都在） 并且团队用 Python；愿意把推理完全交给 Claude。 <strong>不适合</strong>：需要换模型 / 接自托管权重（<strong>直接排除</strong>）； 需要框架级的自定义 agent loop（它是 CLI 的接口，loop 形状由 Claude Code 决定）； 需要多agent 编排（它没有 agents-as-tools 那种一等委派机制）。</dd>
+          <dd><p><strong>一句话：它是一个已经被打磨过的 coding agent。</strong></p>
+            <p><strong>换模型和自定义 loop 形状，它做不到。</strong></p>
+            <p><strong>适合</strong>：</p>
+            <ul><li>想要一个<strong>已经被打磨过的 coding agent</strong> —— 工具集、权限链、hooks、session fork 都在</li><li>团队用 Python</li><li>愿意把推理完全交给 Claude</li></ul>
+            <p><strong>不适合</strong>：</p>
+            <ul><li>需要换模型 / 接自托管权重 —— <strong>直接排除</strong></li><li>需要框架级的自定义 agent loop —— loop 形状由 Claude Code 决定</li><li>需要多 agent 编排 —— 它没有 agents-as-tools 那种一等委派机制</li></ul></dd>
         </div>
       </dl>
 
@@ -154,10 +221,10 @@
 
           <li><span data-zh>以为它是「Anthropic 版的 OpenAI Agents SDK」—— <strong>不是</strong>。它是 Claude Code CLI 的 SDK，能力来自那个 CLI，不是框架自带</span><span data-en>Assuming it is &quot;Anthropic&#39;s version of the OpenAI Agents SDK&quot; — <strong>it is not</strong>. It is the SDK for the Claude Code CLI; its capabilities come from that CLI, not from the framework</span></li>
           <li><span data-zh>以为 <code>allowed_tools</code> 能限制工具集 —— 官方明确「It does not remove tools from Claude&#39;s toolset」，禁用要用 <code>disallowed_tools</code></span><span data-en>Assuming <code>allowed_tools</code> restricts the toolset — the official docs state &quot;It does not remove tools from Claude&#39;s toolset&quot;; use <code>disallowed_tools</code> to disable</span></li>
-          <li><span data-zh>以为默认是安全的 —— 默认是 <strong>full toolset（Read/Write/Edit/Bash）</strong>，且没有沙箱层</span><span data-en>Assuming the default is safe — the default is the <strong>full toolset (Read/Write/Edit/Bash) with no sandbox layer</strong></span></li>
-          <li><span data-zh>以为改了 system prompt 立刻生效 —— 会被 snapshot 冻结，要compact 或新会话才生效（除非 snapshot=False）</span><span data-en>Assuming a system prompt change takes effect immediately — it is frozen by a snapshot; compact or start a new session (unless snapshot=False)</span></li>
+          <li><span data-zh>以为默认是安全的 —— 默认是 <strong>full toolset（Read/Write/Edit/Bash）</strong>，且没有沙箱层</span><span data-en>Assuming the default is safe — the default is the <strong>full toolset (Read/Write/Edit/Bash)</strong>, with no sandbox layer</span></li>
+          <li><span data-zh>以为改了 system prompt 立刻生效 —— 会被 snapshot 冻结，要 compact 或新会话才生效（除非 snapshot=False）</span><span data-en>Assuming a system prompt change takes effect immediately — a snapshot freezes it. It lands only after a compact or a new session (unless snapshot=False)</span></li>
           <li><span data-zh>以为 MIT = 无附加条款 —— 受 Anthropic 商业条款约束（见正文）</span><span data-en>Assuming MIT means no additional terms — Anthropic&#39;s commercial terms still apply (see the body above)</span></li>
-          <li><span data-zh>以为 TS 版授权与 Python 版一致 —— <strong>核验发现 TS 版无 LICENSE 文件、license API 返回 null，授权状态不明</strong>（核验 2026-09-30）</span><span data-en>Assuming the TypeScript build is licensed like the Python one — <strong>verification found no LICENSE file in the TS build and the licence API returns null, so its licensing status is unknown</strong> (checked 2026-09-30)</span></li>
+          <li><span data-zh>以为 TS 版授权与 Python 版一致 —— <strong>核验发现 TS 版无 LICENSE 文件、license API 返回 null，授权状态不明</strong>（核验 2026-09-30）</span><span data-en>Assuming the TypeScript build is licensed like the Python one: <strong>verification found no LICENSE file in the TS build, and the licence API returns null</strong>. Its licensing status is unknown (checked 2026-09-30)</span></li>
         </ul>
       </div>
 
@@ -166,8 +233,16 @@
         <h2><span data-zh>价格</span><span data-en>Pricing</span></h2>
         <table class="src">
           <tbody>
-            <tr><th class="w-28"><span data-zh>月度入口</span><span data-en>Monthly entry</span></th><td><span data-zh>库免费（MIT）· 模型按 Claude API 计费（无法预置月费）</span><span data-en>库免费（MIT）· 模型按 Claude API 计费（无法预置月费）</span></td></tr>
-            <tr><th class="w-28"><span data-zh>额度说明</span><span data-en>Quota note</span></th><td><span data-zh>**这是本站十对象里唯一不支持换provider 的编程底座。** SDK 只包装 Claude Code CLI，agent 的推理全部走 Anthropic API，**没有 litellm / any-llm 这类旁路**。 换模型 = 换方案，不是换配置。</span><span data-en>**这是本站十对象里唯一不支持换provider 的编程底座。** SDK 只包装 Claude Code CLI，agent 的推理全部走 Anthropic API，**没有 litellm / any-llm 这类旁路**。 换模型 = 换方案，不是换配置。</span></td></tr>
+            <tr><th class="w-28"><span data-zh>月度入口</span><span data-en>Monthly entry</span></th><td><span data-zh><p>库免费（MIT）· 模型按 Claude API 计费（无法预置月费）</p></span><span data-en><p>库免费（MIT）· 模型按 Claude API 计费（无法预置月费）</p></span></td></tr>
+            <tr><th class="w-28"><span data-zh>额度说明</span><span data-en>Quota note</span></th><td><span data-zh><p><strong>库免费，模型不免费 —— 这就是它的定价全貌。</strong></p>
+            <p>仓库是 MIT。推理费用全部按 Claude API 计费，所以月费无法预置。</p>
+            <p><strong>它也是本站十个对象里唯一不支持换 provider 的编程底座。</strong></p>
+            <p>SDK 只包装 Claude Code CLI，agent 的推理全部走 Anthropic API。 没有 litellm / any-llm 这类旁路。</p>
+            <p><strong>换模型 = 换方案，不是换配置。</strong></p></span><span data-en><p><strong>库免费，模型不免费 —— 这就是它的定价全貌。</strong></p>
+            <p>仓库是 MIT。推理费用全部按 Claude API 计费，所以月费无法预置。</p>
+            <p><strong>它也是本站十个对象里唯一不支持换 provider 的编程底座。</strong></p>
+            <p>SDK 只包装 Claude Code CLI，agent 的推理全部走 Anthropic API。 没有 litellm / any-llm 这类旁路。</p>
+            <p><strong>换模型 = 换方案，不是换配置。</strong></p></span></td></tr>
           </tbody>
         </table>
         <p class="fine mt-3"><span data-zh>不同币种不做折算。优惠、地区、税费与登录后报价可能变化，购买前请到官方页面确认。</span><span data-en>No currency conversion. Discounts, regions, tax and post-login pricing can change — confirm on the official page before buying.</span></p>
@@ -210,24 +285,123 @@
 
             <div class="panel is-slim">
         <h2><span data-zh>实测记录</span><span data-en>Measured runs</span></h2>
-        <p>本站尚未完成实测。测试协议见 <a href="https://github.com/speculcom/ai-agent-guide/blob/main/tracks/agents/tasks/_protocol.md" target="_blank" rel="noopener">tasks/_protocol.md</a>。
-
-<strong>实测建议</strong>：
-
-| # | 测什么 | 为什么值得测 |
-|:--:|---|---|
-| 1 | pip 装完到底拉了多少东西（含捆绑 CLI 的体积） | CLI 随包捆绑，部署体积影响未知 |
-| 2 | 默认配置下agent 实际能碰到哪些目录 | 默认 full toolset 且无沙箱，边界要实测 |
-| 3 | <code>disallowed_tools</code> 与 hooks 哪条先生效 | README 只说求值顺序概述，实测才知道 |
-| 4 | resume 会话后状态恢复到什么粒度 | 本站最关心的「可靠长期运行」 |
-| 5 | 改system prompt 后多久生效（测compact 触发条件） | snapshot 语义的边界 |</p>
+        <p>本站尚未完成实测。测试协议见 <a href="https://github.com/speculcom/ai-agent-guide/blob/main/tracks/agents/tasks/_protocol.md" target="_blank" rel="noopener">tasks/_protocol.md</a>。</p>
+            <p><strong>实测建议</strong>：</p>
+            <div class="tbl-wrap"><table><thead><tr><th>#</th><th>测什么</th><th>为什么值得测</th></tr></thead><tbody><tr><td>1</td><td>pip 装完到底拉了多少东西（含捆绑 CLI 的体积）</td><td>CLI 随包捆绑，部署体积影响未知</td></tr><tr><td>2</td><td>默认配置下 agent 实际能碰到哪些目录</td><td>默认 full toolset 且无沙箱，边界要实测</td></tr><tr><td>3</td><td><code>disallowed_tools</code> 与 hooks 哪条先生效</td><td>README 只说求值顺序概述，实测才知道</td></tr><tr><td>4</td><td>resume 会话后状态恢复到什么粒度</td><td>本站最关心的「可靠长期运行」</td></tr><tr><td>5</td><td>改 system prompt 后多久生效（测 compact 触发条件）</td><td>snapshot 语义的边界</td></tr></tbody></table></div>
       </div>
 
 
             <div class="panel is-slim">
+        <h2>⚠ 先讲清最容易误解的一点：它是 CLI 的包装，不是框架</h2>
+        <p><strong>README 首行就把这事说了</strong>：</p>
+            <blockquote>Python SDK for Claude Agent. <strong>The Claude Code CLI is automatically bundled with the package</strong> — no separate installation required!</blockquote>
+            <p><strong>捆绑的是哪个 CLI，有确切记录</strong>：</p>
+            <blockquote>核验 <code>_cli_version.py</code>：<code>__cli_version__ = &quot;2.1.286&quot;</code>（捆绑的确切 CLI 版本）。</blockquote>
+            <p><strong>这意味着能力边界是固定的</strong>：</p>
+            <div class="tbl-wrap"><table><thead><tr><th>你以为</th><th>实际</th></tr></thead><tbody><tr><td>引入一个 agent 框架</td><td>引入一个<strong>内含 CLI 的 wheel</strong>，CLI 再去连 API</td></tr><tr><td>agent loop 由 SDK 定义</td><td><strong>agent loop 由 Claude Code CLI 定义</strong></td></tr><tr><td>可以改 agent 的形状</td><td>只能通过 options 配置它暴露出来的开关</td></tr></tbody></table></div>
+            <p><strong>与 OpenAI Agents SDK 的根本差别</strong>：</p>
+            <ul><li>后者是自建 agent loop 的框架（primitives-only）</li><li>本 SDK 是既有 CLI 的 SDK 化</li></ul>
+            <p><strong>这是本站最需要讲清的一组对照。</strong></p>
+      </div>
+      <div class="panel is-slim">
+        <h2>十个对象里唯一不能换模型的编程底座</h2>
+        <p><strong>换 provider 这条路，在这套 SDK 上是关着的。</strong></p>
+            <div class="tbl-wrap"><table><thead><tr><th></th><th>OpenAI Agents SDK</th><th>Claude Agent SDK</th></tr></thead><tbody><tr><td>provider</td><td>provider-agnostic，100+</td><td><strong>仅 Claude</strong></td></tr><tr><td>换自托管权重</td><td>可（litellm / any-llm extra）</td><td><strong>不可</strong></td></tr><tr><td>agent loop</td><td>SDK 给出原语</td><td>CLI 决定形状</td></tr></tbody></table></div>
+            <p>⚠ <strong>这直接关掉了本站的一条推荐路线。</strong></p>
+            <ul><li>模型层（<code>models.specul.com</code>）主推的本地量化模型 + Ollama/vLLM 自托管</li><li><strong>在这套 SDK 上走不通</strong> —— 想用本地权重就得换方案</li></ul>
+      </div>
+      <div class="panel is-slim">
+        <h2>权限：官方给了完整求值链，但默认是全开的</h2>
+        <p><strong>官方给了完整的权限求值链 —— 这是本站目前见到的最详细的一份。</strong></p>
+            <p><strong>README 这段是权威说明</strong>：</p>
+            <blockquote><code>allowed_tools</code> is a permission allowlist: listed tools are <strong>auto-approved</strong>, and unlisted tools fall through to <code>permission_mode</code> and <code>can_use_tool</code> for a decision. <strong>It does not remove tools from Claude&#39;s toolset.</strong> To block specific tools, use <code>disallowed_tools</code>.</blockquote>
+            <p>翻译成一张表：</p>
+            <div class="tbl-wrap"><table><thead><tr><th>机制</th><th>作用</th><th>常被误解之处</th></tr></thead><tbody><tr><td><code>allowed_tools</code></td><td><strong>准入白名单</strong>，列进去 = 自动批准</td><td>⚠ <strong>不会把工具从工具集移除</strong></td></tr><tr><td><code>permission_mode</code></td><td>未列入的工具走这里判定</td><td>例：<code>acceptEdits</code> 自动接受文件编辑</td></tr><tr><td><code>can_use_tool</code></td><td>自定义回调函数</td><td>官方给了完整求值顺序文档</td></tr><tr><td><code>disallowed_tools</code></td><td><strong>真正禁用</strong>某些工具</td><td>想真正拦就得用这个</td></tr><tr><td><strong>hooks</strong></td><td><code>PreToolUse</code> 返回 <code>deny</code> 加理由</td><td><strong>确定性拦截，由应用层而非模型层执行</strong></td></tr></tbody></table></div>
+            <p><strong>⚠ 默认起步状态必须知道</strong>：</p>
+            <blockquote>By default, Claude has access to the <strong>full Claude Code toolset</strong> (Read, Write, Edit, Bash, and others).</blockquote>
+            <p><strong>默认就有 Read / Write / Edit / Bash，而且没有沙箱层。</strong></p>
+            <p>想收紧必须主动配置，三个开关：</p>
+            <ul><li><code>disallowed_tools</code></li><li>hooks</li><li><code>permission_mode</code></li></ul>
+            <p><strong>hooks 的定位值得单独记</strong>：</p>
+            <ul><li>它是「Python 函数，由 Claude Code *应用*（<strong>not</strong> Claude）调用」</li><li>拦截发生在确定性代码里，不是靠模型自我约束</li></ul>
+            <p><strong>对照 Deep Agents</strong>：</p>
+            <ul><li>那个的立场是「trust the LLM，不要指望模型自我约束」</li><li><strong>Anthropic 的答案</strong>：把拦截放在应用层</li></ul>
+      </div>
+      <div class="panel is-slim">
+        <h2>custom tools = 进程内 MCP server（一个省心的设计）</h2>
+        <p><strong>custom tools 不是普通函数调用，而是「进程内 MCP server」。</strong></p>
+            <p><strong>官方原话</strong>：</p>
+            <blockquote>&quot;<strong>in-process MCP servers</strong> that run directly within your Python application&quot;</blockquote>
+            <p><strong>官方列的收益有五条</strong>：</p>
+            <div class="tbl-wrap"><table><thead><tr><th>收益</th><th>说明</th></tr></thead><tbody><tr><td>No subprocess management</td><td>与应用同进程，无需管理子进程</td></tr><tr><td>Better performance</td><td>工具调用无 IPC 开销</td></tr><tr><td>Simpler deployment</td><td>单进程而非多进程</td></tr><tr><td>Easier debugging</td><td>全部代码同进程</td></tr><tr><td>Type safety</td><td>带类型提示的直接 Python 函数调用</td></tr></tbody></table></div>
+            <p><strong>外部 MCP server 照样支持，两者可混用。</strong></p>
+            <p><code>mcp_servers</code> 字典里可以同时放：</p>
+            <ul><li><code>create_sdk_mcp_server(...)</code> 的产物</li><li><code>{&quot;type&quot;:&quot;stdio&quot;, ...}</code> 外部 server</li></ul>
+            <p>⚠ <strong>注意能力边界</strong>：</p>
+            <ul><li>custom tools 与 hooks 只在 <code>ClaudeSDKClient</code> 下可用</li><li><code>query()</code> 用不了</li></ul>
+      </div>
+      <div class="panel is-slim">
+        <h2>「状态 ≠ 上下文」：这里有个反直觉的 snapshot 设计</h2>
+        <p><strong>system prompt 有「快照」语义。</strong></p>
+            <p>会话中途改 prompt 不会立刻生效。</p>
+            <p><strong>README 原文</strong>：</p>
+            <blockquote>Claude Code builds the system prompt on a session&#39;s <strong>first</strong> request, <strong>records it</strong>, and reuses it on every later request, <strong>including after you resume the session</strong>. A changed custom prompt, or changed <code>append</code> text... then has no effect <strong>until the session is compacted or you start a new session</strong>. To rebuild the prompt on every request instead... set <code>snapshot</code> to <code>False</code>.</blockquote>
+            <p><strong>想每次重建，要显式设 <code>snapshot: False</code>。</strong></p>
+            <p>这需要 CLI 2.1.257+。</p>
+            <p><strong>README 还记了一个历史 bug</strong>：</p>
+            <blockquote>&quot;Before 2.1.265, a session with an <code>append</code> or custom prompt recorded it only when <code>snapshot</code> was True&quot;</blockquote>
+            <p><strong>这实质是「上下文快照不可变」</strong>：保证了 prompt 的确定性，代价是修改有延迟。</p>
+            <p><strong>与本站主张的关系</strong>：</p>
+            <ul><li>其他 harness 讲的是「如何压缩/持久化上下文」</li><li>这里讲的是「<strong>如何冻结上下文</strong>」</li></ul>
+            <p><strong>它保证同一会话内 prompt 恒定</strong>，避免 prompt 漂移导致行为不可预测。</p>
+            <p>这是一个<strong>第三种思路，本站首次记录</strong>（标注为本站观察，非官方表述）。</p>
+      </div>
+      <div class="panel is-slim">
+        <h2>许可条款的真相：MIT 但不是「无附加条件」</h2>
+        <p><strong>结论：仓库是 MIT，用起来却还受 Anthropic 商业条款约束。</strong></p>
+            <p><strong>README 末节原文</strong>：</p>
+            <blockquote>Use of this SDK is governed by Anthropic&#39;s <strong>Commercial Terms of Service</strong>, including when you use it to power products and services that you make available to your own customers and end users, <strong>except to the extent a specific component or dependency is covered by a different license</strong>.</blockquote>
+            <p><strong>仓库许可证标记是 MIT。</strong></p>
+            <blockquote>license API 确认 <code>spdx_id: MIT</code>。</blockquote>
+            <p><strong>但使用受 Anthropic 商业条款约束。</strong></p>
+            <p>尤其「用它给你自己的客户提供产品/服务」这一条。</p>
+            <p>⚠ <strong>本站标注</strong>：这不是「非开源」，也不是「不能商用」。</p>
+            <p>但<strong>做产品前必须读那份商业条款</strong>，MIT 标记本身不构成完整授权判断。</p>
+            <p><strong>附一处核验发现</strong>：</p>
+            <ul><li>TypeScript 版仓库：<code>anthropics/claude-agent-sdk-typescript</code></li><li>1,780★，活跃</li><li><strong>没有 LICENSE 文件，license API 返回 <code>null</code></strong></li></ul>
+            <p>授权状态与 Python 版是否一致<strong>未核实</strong>。</p>
+            <p>Python 版是 MIT + 商业条款；TS 版<strong>无文件可查</strong>。</p>
+            <p>选型时若要用 TS 版，<strong>授权需另行确认</strong>。</p>
+      </div>
+      <div class="panel is-slim">
+        <h2>附：仓库描述字段为空</h2>
+        <p><strong>两条元数据是空的，如实记下来。</strong></p>
+            <blockquote>核验：<code>description</code> 为 <code>null</code>（GitHub API），<code>homepage</code> 也为 null。 文档入口在 README 首行的 <code>platform.claude.com/docs/en/agent-sdk/python</code>。</blockquote>
+            <p><strong>这样记，是为了避免读者以为信息缺失是我们没查。</strong></p>
+      </div>
+      <div class="panel is-slim">
+        <h2>核验说明</h2>
+        <p><code>confidence: partial</code> 的依据如下。</p>
+            <p><strong>降级时间</strong>：2026-10-03，由 verified 降为 partial。</p>
+            <blockquote><strong>为什么降级</strong>：下方 ❌ 项的主语是<strong>本站的取证缺口</strong>，不是「官方未提供」。 按 v3 铁律「未知就说未知」，这些条目存在时标 verified 属于虚高，故降为 partial。</blockquote>
+            <p><strong>主要缺口有三处</strong>：</p>
+            <ul><li>Anthropic 商业条款的具体条款内容</li><li>TS 版许可状态</li><li>hooks 生命周期边界</li></ul>
+            <p><strong>已核验</strong>：</p>
+            <ul><li>✅ 仓库存在与星数（8,197）</li><li>✅ 许可（license API 返回 MIT）</li><li>✅ 最近推送（2026-09-30 22:29）</li><li>✅ 最新版本 <strong>0.2.163</strong>（<strong>2026-09-30 19:47 发布</strong>）</li><li>✅ 捆绑 CLI 版本 <strong>2.1.286</strong>（<code>_cli_version.py</code> 原文）</li><li>✅ README 全文 —— 权限求值链、hooks 定位、错误类型清单、default full toolset 表述</li><li>✅ README 全文 —— custom tools 为进程内 MCP server、system prompt snapshot 语义</li><li>✅ 许可条款末节原文</li><li>✅ v3 计划记录的 <strong>0.2.162</strong> 已被超越（今天发布 0.2.163）</li></ul>
+            <p><strong>⚠ 异常发现</strong>：</p>
+            <ul><li>仓库 <code>description</code> 与 <code>homepage</code> 均为 <code>null</code></li><li>TS 版无 LICENSE 文件，license API 返回 <code>null</code></li></ul>
+            <p><strong>❌ 未核验</strong>：</p>
+            <ul><li>Anthropic 商业条款的具体条款内容（未读原文，属法务范畴）</li><li>会话的多进程并发语义</li><li>session forking 的具体形态与限制</li><li><code>can_use_tool</code> 与 <code>permission_mode</code> 的完整优先级链（README 只给了概述，细节在 permissions 专章）</li></ul>
+            <p><strong>一处计划数据修正</strong>：</p>
+            <p>v3 计划 §2.2 记的是 v0.2.162。</p>
+            <p>实际核验时已发布 <strong>v0.2.163</strong>，晚于计划编写。</p>
+            <p><strong>这再次印证「快照会过期、必须现场核验」。</strong></p>
+      </div>
+
+            <div class="panel is-slim">
         <h2><span data-zh>相关条目</span><span data-en>Related entries</span></h2>
         <ul class="rel-list">
-          <li><span class="rel-t"><a href="./openai-agents-sdk.html">OpenAI Agents SDK</a></span><span class="rel-n"><strong>本站最该对照的一对</strong>：同样是模型厂商出品、同为「编程底座」档。OpenAI 侧是自建 loop 的框架 + provider-agnostic；Anthropic 侧是 CLI 的 SDK + 仅 Claude。</span></li>
+          <li><span class="rel-t"><a href="./openai-agents-sdk.html">OpenAI Agents SDK</a></span><span class="rel-n"><strong>本站最该对照的一对</strong>：同为模型厂商出品、同为「编程底座」档。OpenAI 侧是自建 loop 的框架 + provider-agnostic；Anthropic 侧是 CLI 的 SDK + 仅 Claude。</span></li>
           <li><span class="rel-t"><a href="./codex-sdk.html">Codex SDK</a></span><span class="rel-n">第三家厂商的同档选择。<strong>三家是同一个问题的三种答案</strong>：自建框架 / 包装 CLI / 包装 CLI。</span></li>
           <li><span class="rel-t"><a href="./deepagents.html">Deep Agents</a></span><span class="rel-n">权限哲学的对照：「信任 LLM」vs「应用层确定性拦截」</span></li>
           <li><span class="rel-t"><a href="./hermes-agent.html">Hermes Agent</a></span><span class="rel-n">路线相反、厂商不同（本站前者 Anthropic、后者 Nous Research）：那个是自托管优先的通用 harness，本条只包 Anthropic 自家的 CLI。</span></li>
