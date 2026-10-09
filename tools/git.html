@@ -11,7 +11,7 @@
   <meta property="og:url" content="https://agent.specul.com/tools/git.html" />
   <meta property="og:title" content="Git MCP Server — Tools | 投机取巧" />
   <meta property="og:description" content="Git MCP Server（Model Context Protocol）：MCP 官方 reference server 里的版本控制实现，作用域限定在指定 git 仓库，但具备完整的本地写操作能力。" />
-  <meta name="theme-color" content="#05080f" />
+  <meta name="theme-color" content="#16121f" />
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%238b7cf8'/%3E%3Cstop offset='1' stop-color='%2322d3c5'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='48' height='48' rx='12' fill='%2305080f'/%3E%3Cpath d='M14 32 L24 12 L34 32' fill='none' stroke='url(%23g)' stroke-width='2.4' stroke-linejoin='round'/%3E%3Ccircle cx='24' cy='27' r='2.4' fill='%2322d3c5'/%3E%3C/svg%3E" />
   <link rel="stylesheet" href="../brand.css" />
   <link rel="stylesheet" href="../site.css" />
@@ -94,66 +94,70 @@
         <span class="badge"><span data-zh>核验</span><span data-en>Checked</span> 2026-10-08</span>
       </div>
 
-            <p class="panel-lead"><span data-zh>MCP 官方 reference server 里的版本控制实现，<strong>作用域限定在指定 git 仓库，但具备完整的本地写操作能力</strong>。</span><span data-en>The version-control implementation among MCP&#39;s official reference servers, <strong>scoped to a given git repository but with full local write capability</strong>.</span></p>
+            <div class="panel-lead"><span data-zh><p>MCP 官方 reference server 里的版本控制实现，<strong>作用域限定在指定 git 仓库，但具备完整的本地写操作能力</strong>。</p></span><span data-en><p>The version-control implementation among MCP&#39;s official reference servers, <strong>scoped to a given git repository but with full local write capability</strong>.</p></span></div>
 
             <div class="panel is-slim">
         <h2><span data-zh>适合与不适合</span><span data-en>When to use it, when not to</span></h2>
-<span data-zh>        <p>读取仓库状态、历史与 diff，并在受控前提下执行提交与分支操作。
-需要明确作用域边界（限于传入的 git 仓库）的场景。</p>
-        <p class="warn-p"><strong>不适合</strong>需要 push / 创建 PR / 远程仓库管理的场景——
-本 server 只做本地操作，原 github server 已归档。</p></span><span data-en>        <p>Scenarios where an agent should make version-control operations inside a specific repository.</p>
-        <p class="warn-p"><strong>Not a fit for</strong> read-only use — full local write capability, so scope matters.</p></span>
+<span data-zh>        <div><p>读取仓库状态、历史与 diff，并在受控前提下执行提交与分支操作。 需要明确作用域边界（限于传入的 git 仓库）的场景。</p></div>
+        <div class="warn-p"><p><strong>不适合</strong>需要 push / 创建 PR / 远程仓库管理的场景—— 本 server 只做本地操作，原 github server 已归档。</p></div></span><span data-en>        <div><p>Scenarios where an agent should make version-control operations inside a specific repository.</p></div>
+        <div class="warn-p"><p><strong>Not a fit for</strong> read-only use — full local write capability, so scope matters.</p></div></span>
       </div>
 
 
       <div class="block-head">
         <h2 class="t-h2"><span data-zh>固定坐标系</span><span data-en>Fixed coordinate system</span></h2>
-        <p class="t-section-lead">11 <span data-zh>个维度</span><span data-en>dimensions</span>, <span data-zh>与同赛道其他对象逐项可比</span><span data-en>each comparable item by item against others in the same track</span>.</p>
+        <p class="t-section-lead">11 <span data-zh>个维度</span><span data-en>dimensions</span>, <span data-zh>与同分区其他对象逐项可比</span><span data-en>each comparable item by item against others in the same section</span>.</p>
       </div>
       <dl class="axes">
         <div class="axis">
           <dt><span data-zh>模型与开放条件</span><span data-en>Model & openness</span></dt>
-          <dd>本身不调用模型，是被客户端调用的接口实现。 直接调用本机 git 命令行，继承本机 git 版本与配置。</dd>
+          <dd><p>本身不调用模型，是被客户端调用的接口实现。 直接调用本机 git 命令行，继承本机 git 版本与配置。</p></dd>
         </div>
         <div class="axis">
           <dt><span data-zh>运行位置</span><span data-en>Where it runs</span></dt>
-          <dd>本地进程，通过 stdio 通信； 也支持容器部署（Docker / Podman），但需显式挂载仓库目录。 2026-08-30 修复了容器 bind mount 在 Docker / Podman / SELinux 下的安全与兼容问题。</dd>
+          <dd><p>本地进程，通过 stdio 通信； 也支持容器部署（Docker / Podman），但需显式挂载仓库目录。</p>
+            <p>2026-08-30 修复了容器 bind mount 在 Docker / Podman / SELinux 下的安全与兼容问题。</p></dd>
         </div>
         <div class="axis">
           <dt><span data-zh>本地文件</span><span data-en>Local files</span></dt>
-          <dd><strong>通过 git 操作仓库，不需要任意文件读写</strong>。 每个工具都要求传入 repo_path，作用域限于该 git 仓库。 仓库内文件内容通过 git show / git_log 等命令间接读取。</dd>
+          <dd><p><strong>通过 git 操作仓库，不需要任意文件读写</strong>。 每个工具都要求传入 repo_path，作用域限于该 git 仓库。 仓库内文件内容通过 git show / git_log 等命令间接读取。</p></dd>
         </div>
         <div class="axis">
           <dt><span data-zh>关机后的任务</span><span data-en>Tasks after shutdown</span></dt>
-          <dd>不支持。本地进程随客户端生死； 容器部署时取决于容器编排方式，不受本 server 自身控制。</dd>
+          <dd><p>不支持。本地进程随客户端生死； 容器部署时取决于容器编排方式，不受本 server 自身控制。</p></dd>
         </div>
         <div class="axis">
           <dt><span data-zh>工具与扩展</span><span data-en>Tools & extensions</span></dt>
-          <dd>提供 11 个工具，含 git_status、git_diff_unstaged、git_diff_staged、 git_diff、git_commit、git_add、git_reset、git_log、 git_create_branch、git_checkout、git_show。 <strong>含 4 个写操作</strong>（commit / add / reset / checkout）， 输出为结构化文本或 diff，可直接消费。</dd>
+          <dd><p>提供 11 个工具，含：</p>
+            <ul><li>git_status</li><li>git_diff_unstaged</li><li>git_diff_staged</li><li>git_diff</li><li>git_commit</li><li>git_add</li><li>git_reset</li><li>git_log</li><li>git_create_branch</li><li>git_checkout</li><li>git_show</li></ul>
+            <p><strong>含 4 个写操作</strong>（commit / add / reset / checkout）， 输出为结构化文本或 diff，可直接消费。</p></dd>
         </div>
         <div class="axis">
           <dt><span data-zh>上下文与记忆</span><span data-en>Context & memory</span></dt>
-          <dd>无跨会话记忆。状态完全由 git 仓库本身承载， 会话断开不影响仓库状态。</dd>
+          <dd><p>无跨会话记忆。状态完全由 git 仓库本身承载， 会话断开不影响仓库状态。</p></dd>
         </div>
         <div class="axis">
           <dt><span data-zh>权限与限制</span><span data-en>Permissions & limits</span></dt>
-          <dd><strong>无独立审批机制</strong>。权限边界等于本机 git 用户的文件权限， 且<strong>具备完整写操作能力</strong>，包括提交、重置暂存区与切换分支。 git_reset 只取消暂存，不丢弃工作区改动； 但 git_checkout 可切换到任意分支。</dd>
+          <dd><p><strong>无独立审批机制</strong>。权限边界等于本机 git 用户的文件权限， 且<strong>具备完整写操作能力</strong>，包括提交、重置暂存区与切换分支。</p>
+            <p>git_reset 只取消暂存，不丢弃工作区改动； 但 git_checkout 可切换到任意分支。</p></dd>
         </div>
         <div class="axis">
           <dt><span data-zh>适合什么任务</span><span data-en>Best for</span></dt>
-          <dd>让 Agent 读取仓库状态、历史与 diff，并在受控前提下执行提交与分支操作。 不适合需要 push / PR / 远程仓库管理的场景（本 server 不提供远程操作）。</dd>
+          <dd><p>让 Agent 读取仓库状态、历史与 diff，并在受控前提下执行提交与分支操作。 不适合需要 push / PR / 远程仓库管理的场景（本 server 不提供远程操作）。</p></dd>
         </div>
         <div class="axis">
           <dt><span data-zh>传输方式</span><span data-en>Transport</span></dt>
-          <dd>支持 stdio。README 同时给出容器部署方式（Docker / Podman） 与 uvx / pip 本地安装（2026-10-08 全文核验）； 没有远程传输（SSE / Streamable HTTP）的官方启动方式。</dd>
+          <dd><p>支持 stdio。README 同时给出容器部署方式（Docker / Podman）</p>
+            <p>与 uvx / pip 本地安装（2026-10-08 全文核验）； 没有远程传输（SSE / Streamable HTTP）的官方启动方式。</p></dd>
         </div>
         <div class="axis">
           <dt><span data-zh>认证机制</span><span data-en>Authentication</span></dt>
-          <dd>无独立认证层。stdio 形态继承客户端用户的 git 权限； 容器形态的认证取决于容器编排配置，仓库未说明。</dd>
+          <dd><p>无独立认证层。stdio 形态继承客户端用户的 git 权限； 容器形态的认证取决于容器编排配置，仓库未说明。</p></dd>
         </div>
         <div class="axis">
           <dt><span data-zh>权限范围</span><span data-en>Permission scope</span></dt>
-          <dd><strong>作用域限定在传入的 git 仓库</strong>，比 filesystem server 更收敛。 但<strong>具备完整写操作能力</strong>（commit / add / reset / checkout）， 无独立审批。切分支可改变工作区状态，需注意。</dd>
+          <dd><p><strong>作用域限定在传入的 git 仓库</strong>，比 filesystem server 更收敛。</p>
+            <p>但<strong>具备完整写操作能力</strong>（commit / add / reset / checkout）， 无独立审批。切分支可改变工作区状态，需注意。</p></dd>
         </div>
       </dl>
 
@@ -172,9 +176,9 @@
         <h2><span data-zh>价格</span><span data-en>Pricing</span></h2>
         <table class="src">
           <tbody>
-            <tr><th class="w-28"><span data-zh>月度入口</span><span data-en>Monthly entry</span></th><td><span data-zh>无商业费用</span><span data-en>无商业费用</span></td></tr>
-            <tr><th class="w-28"><span data-zh>年付</span><span data-en>Annual</span></th><td><span data-zh>无商业费用</span><span data-en>无商业费用</span></td></tr>
-            <tr><th class="w-28"><span data-zh>额度说明</span><span data-en>Quota note</span></th><td><span data-zh>随 MCP servers 仓库分发，无授权费。 实际成本来自本机 git 环境与所操作的仓库，不来自本 server。</span><span data-en>随 MCP servers 仓库分发，无授权费。 实际成本来自本机 git 环境与所操作的仓库，不来自本 server。</span></td></tr>
+            <tr><th class="w-28"><span data-zh>月度入口</span><span data-en>Monthly entry</span></th><td><span data-zh><p>无商业费用</p></span><span data-en><p>无商业费用</p></span></td></tr>
+            <tr><th class="w-28"><span data-zh>年付</span><span data-en>Annual</span></th><td><span data-zh><p>无商业费用</p></span><span data-en><p>无商业费用</p></span></td></tr>
+            <tr><th class="w-28"><span data-zh>额度说明</span><span data-en>Quota note</span></th><td><span data-zh><p>随 MCP servers 仓库分发，无授权费。 实际成本来自本机 git 环境与所操作的仓库，不来自本 server。</p></span><span data-en><p>随 MCP servers 仓库分发，无授权费。 实际成本来自本机 git 环境与所操作的仓库，不来自本 server。</p></span></td></tr>
           </tbody>
         </table>
         <p class="fine mt-3"><span data-zh>不同币种不做折算。优惠、地区、税费与登录后报价可能变化，购买前请到官方页面确认。</span><span data-en>No currency conversion. Discounts, regions, tax and post-login pricing can change — confirm on the official page before buying.</span></p>
@@ -211,6 +215,34 @@
         <p>本站尚未完成实测。测试协议见 <a href="https://github.com/speculcom/ai-agent-guide/blob/main/tracks/agents/tasks/_protocol.md" target="_blank" rel="noopener">tasks/_protocol.md</a>。</p>
       </div>
 
+
+            <div class="panel is-slim">
+        <h2>变更记录说明</h2>
+        <p><strong>本对象无独立 changelog 页</strong>，变更记录在目录 commit 历史中：</p>
+            <div class="tbl-wrap"><table><thead><tr><th>日期</th><th>内容</th></tr></thead><tbody><tr><td>2026-09-02</td><td>统一 <code>git_log</code> 输出 schema，移除 <code>run</code> 中的 <code>raise_exceptions</code></td></tr><tr><td>2026-08-30</td><td>修复 Fetch / Git / Time 的容器 bind mount 安全与兼容问题（Docker / Podman / SELinux）</td></tr><tr><td>2026-08-18</td><td>文档补充 fetch、git、time 的 Python MCP 1.x 版本要求</td></tr></tbody></table></div>
+            <p><strong>两条值得注意</strong>：</p>
+            <ul><li><strong>09-02 的输出 schema 统一</strong>说明 <code>git_log</code> 返回结构变过。如果你在解析它的输出，需要核对版本。</li><li><strong>08-30 的容器安全修复</strong>说明这些 server 的容器部署路径存在过安全问题，且涉及 SELinux——如果你在企业环境用容器跑，值得读那条 commit。</li></ul>
+      </div>
+      <div class="panel is-slim">
+        <h2>工具清单与读写属性</h2>
+        <div class="tbl-wrap"><table><thead><tr><th>工具</th><th>属性</th><th>说明</th></tr></thead><tbody><tr><td><code>git_status</code></td><td>读</td><td>工作区与暂存区状态</td></tr><tr><td><code>git_diff_unstaged</code></td><td>读</td><td>未暂存的改动</td></tr><tr><td><code>git_diff_staged</code></td><td>读</td><td>已暂存的改动</td></tr><tr><td><code>git_diff</code></td><td>读</td><td>与目标分支/提交比较</td></tr><tr><td><code>git_log</code></td><td>读</td><td>提交历史，支持时间过滤</td></tr><tr><td><code>git_show</code></td><td>读</td><td>某次提交的内容</td></tr><tr><td><code>git_add</code></td><td><strong>写</strong></td><td>暂存指定文件</td></tr><tr><td><code>git_commit</code></td><td><strong>写</strong></td><td>提交并返回新 hash</td></tr><tr><td><code>git_reset</code></td><td><strong>写</strong></td><td>取消全部暂存（不动工作区）</td></tr><tr><td><code>git_create_branch</code></td><td><strong>写</strong></td><td>从当前或指定基点建分支</td></tr><tr><td><code>git_checkout</code></td><td><strong>写</strong></td><td>切换分支，会改变工作区状态</td></tr></tbody></table></div>
+            <p><strong>6 读 5 写</strong>。这不是只读工具——<code>git_checkout</code> 切分支会直接改变工作区，如果工作区有未提交改动，行为需要特别留意。</p>
+      </div>
+      <div class="panel is-slim">
+        <h2>与 filesystem server 的对比</h2>
+        <div class="tbl-wrap"><table><thead><tr><th>维度</th><th>filesystem</th><th>git</th></tr></thead><tbody><tr><td>作用域</td><td>目录白名单</td><td>传入的 git 仓库</td></tr><tr><td>写操作</td><td>有（write / edit / move）</td><td><strong>有且更强</strong>（commit / reset / checkout）</td></tr><tr><td>删除</td><td>不提供</td><td>不提供</td></tr><tr><td>执行命令</td><td>不提供</td><td>内部调用 git 命令行</td></tr><tr><td>认证</td><td>无（靠进程权限）</td><td>无（靠进程权限）</td></tr></tbody></table></div>
+            <p><strong>结论</strong>：git server 的写能力更强，但因为作用域限定在 git 仓库内，风险面比 filesystem 小。</p>
+      </div>
+      <div class="panel is-slim">
+        <h2>能力边界</h2>
+        <p><strong>本 server 只做本地操作</strong>，不提供：</p>
+            <ul><li><code>git push</code></li><li>创建 PR / Issue</li><li>远程仓库管理</li></ul>
+            <p>需要远程操作要另找方案（旧的 github server 已归档，见下文）。</p>
+      </div>
+      <div class="panel is-slim">
+        <h2>已归档的替代方案</h2>
+        <p>原 <code>github</code> server（提供仓库管理、文件操作与 GitHub API 集成）<strong>已归档</strong>至 <a href="https://github.com/modelcontextprotocol/servers-archived/tree/main/src/github" target="_blank" rel="noopener">servers-archived</a>，归档仓库自 2025-05 后基本无更新。</p>
+      </div>
 
             <div class="panel is-slim">
         <h2><span data-zh>相关条目</span><span data-en>Related entries</span></h2>
