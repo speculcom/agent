@@ -39,8 +39,34 @@
           <button class="icon-btn" id="langBtn" type="button" aria-label="Switch language" title="Switch language">EN</button>
         </span>
       </nav>
+      <!-- B6（2026-10-09）：与共享 shell 同步加的移动端导航入口。
+           ⚠ 本文件是 agent 站**自己的** shell 副本（它多一层分区切换），
+             所以每次改共享 shell 的骨架，这里也要跟一次 —— 这是双份实现固有的代价。
+             样式与行为都在共享 brand.css / brand.js 里，这里只出标记。 -->
+      <button class="nav-burger" type="button" aria-label="打开菜单" aria-expanded="false" aria-controls="navDrawer">
+        <i></i><i></i><i></i>
+      </button>
     </div>
   </header>
+  <div class="nav-scrim"></div>
+  <aside class="nav-drawer" id="navDrawer" aria-hidden="true" aria-label="站点导航">
+    <div class="nav-drawer-h">
+      <span class="brand-name"><span data-zh>投机取巧</span><span data-en>Speculative Speculation</span></span>
+      <button class="nav-dclose" type="button" aria-label="关闭">×</button>
+    </div>
+    <nav class="nav-drawer-list">
+      <a href="https://specul.com/"><span><span data-zh>首页</span><span data-en>Home</span></span><span class="ar" aria-hidden="true">→</span></a>
+      <a href="https://learn.specul.com/"><span><span data-zh>学 AI</span><span data-en>Learn</span></span><span class="ar" aria-hidden="true">→</span></a>
+      <a href="https://agent.specul.com/" aria-current="page"><span><span data-zh>Agent</span><span data-en>Agent</span></span><span class="ar" aria-hidden="true">→</span></a>
+      <a href="https://models.specul.com/"><span><span data-zh>本地模型</span><span data-en>Models</span></span><span class="ar" aria-hidden="true">→</span></a>
+      <a href="https://vg.specul.com/"><span><span data-zh>AI 做游戏</span><span data-en>Vibe Gaming</span></span><span class="ar" aria-hidden="true">→</span></a>
+      <a href="https://nav.specul.com/"><span><span data-zh>导航</span><span data-en>Directory</span></span><span class="ar" aria-hidden="true">→</span></a>
+    </nav>
+    <div class="nav-drawer-foot">
+      <p><span data-zh>6 个站，各管一件事</span><span data-en>Six sites, one job each</span></p>
+      <nav><a href="https://specul.com/legal.html"><span data-zh>法律条款</span><span data-en>Legal terms</span></a></nav>
+    </div>
+  </aside>
   <main id="main">
     <div class="container detail">
       <nav class="crumbs" aria-label="面包屑">
@@ -73,7 +99,7 @@
         <span class="badge"><span data-zh>核验</span><span data-en>Checked</span> 2026-09-30</span>
       </div>
 
-            <p class="panel-lead"><span data-zh><strong>&quot;The programming interface to Claude Code&quot;</strong> — not a framework for building your own agent, but a mature coding CLI turned into an object you can drive from Python.</span><span data-en><strong>&quot;The programming interface to Claude Code&quot;</strong> — not a framework for building your own agent, but a mature coding CLI turned into an object you can drive from Python.</span></p>
+            <p class="panel-lead"><span data-zh><strong>「Claude Code 的编程接口」</strong> —— 不是自建 agent 框架，是把一个成熟的 coding CLI 变成 Python 可驱动的对象。</span><span data-en><strong>&quot;The programming interface to Claude Code&quot;</strong> — not a framework for building your own agent, but a mature coding CLI turned into an object you can drive from Python.</span></p>
 
             <div class="panel is-slim">
         <h2><span data-zh>适合与不适合</span><span data-en>When to use it, when not to</span></h2>
@@ -102,7 +128,7 @@
         </div>
         <div class="axis">
           <dt><span data-zh>关机后的任务</span><span data-en>Tasks after shutdown</span></dt>
-          <dd><strong>进程关了就停，但会话可续。</strong> 错误类型里 <code>CLIConnectionError</code> / <code>CLINotFoundError</code> / <code>ProcessError</code> / <code>ResultError</code> 揭示了进程依赖结构。 <strong>会话持久化有官方支撑</strong>：README 提到「records it, and reuses it on every later request, <strong>including after you resume the session</strong>」，以及 CHANGELOG 的 「session forking features」—— 即 resume + fork 是一等能力。 具体存储位置本次未核验。</dd>
+          <dd><strong>进程关了就停，但会话有官方持久化与续跑语义。</strong> 官方 sessions 页原文：&quot;A session is the conversation history the SDK accumulates... The SDK writes it to disk automatically&quot;。 存储位置已核验：<code>~/.claude/projects/&lt;encoded-cwd<strong>/*.jsonl</code> （设 <code>CLAUDE_CONFIG_DIR</code> 则在其 <code>projects/</code> 下）。 续跑三档：<code>continue_conversation=True</code> 续最近会话、 <code>resume=</strong>session_id&gt;</code> 续指定会话（官方原文 &quot;picks up with full context from wherever the session left off&quot;）、<code>fork_session=True</code> 分叉。 <strong>真正的「关机也跑」不存在</strong>：官方 hosting 页说明一个会话等于一个 <code>claude</code> CLI 子进程，进程停则 loop 停；跨主机续跑要把 transcript 镜像到共享存储（<code>SessionStore</code> 适配器）。 ⚠ 官方提醒：session 持久化的是<strong>对话</strong>而非文件系统 （&quot;Sessions persist the conversation, not the filesystem&quot;）， 文件回滚要用 file checkpointing。</dd>
         </div>
         <div class="axis">
           <dt><span data-zh>工具与扩展</span><span data-en>Tools & extensions</span></dt>
@@ -153,7 +179,7 @@
         <ul>
           <li>Anthropic 商业条款的具体约束（尤其面向客户的场景）</li>
           <li>TypeScript 版的授权状态</li>
-          <li>会话持久化的存储位置与多进程并发语义</li>
+          <li>会话持久化的多进程并发语义</li>
           <li>session forking 的具体形态与限制</li>
           <li><code>permission_mode</code> 全部取值与 <code>can_use_tool</code> 的优先级细节</li>
           <li>捆绑 CLI 版本与系统安装版本的兼容差异</li>
@@ -173,6 +199,8 @@
             <tr><td>docs</td><td>Hooks（官方专章）</td><td><a href="https://platform.claude.com/docs/en/agent-sdk/hooks" target="_blank" rel="noopener">https://platform.claude.com/docs/en/agent-sdk/hooks</a></td></tr>
             <tr><td>docs</td><td>Claude Code 工具集清单（tools available to Claude）</td><td><a href="https://code.claude.com/docs/en/settings#tools-available-to-claude" target="_blank" rel="noopener">https://code.claude.com/docs/en/settings#tools-available-to-claude</a></td></tr>
             <tr><td>docs</td><td>修改 system prompts（snapshot 语义的权威说明）</td><td><a href="https://code.claude.com/docs/en/agent-sdk/modifying-system-prompts" target="_blank" rel="noopener">https://code.claude.com/docs/en/agent-sdk/modifying-system-prompts</a></td></tr>
+            <tr><td>docs</td><td>Work with sessions（会话写盘位置、continue/resume/fork、跨主机 SessionStore，核验 2026-10-08）</td><td><a href="https://code.claude.com/docs/en/agent-sdk/sessions" target="_blank" rel="noopener">https://code.claude.com/docs/en/agent-sdk/sessions</a></td></tr>
+            <tr><td>docs</td><td>Hosting the Agent SDK（subprocess 模型、本地磁盘状态、跨主机持久化，核验 2026-10-08）</td><td><a href="https://code.claude.com/docs/en/agent-sdk/hosting" target="_blank" rel="noopener">https://code.claude.com/docs/en/agent-sdk/hosting</a></td></tr>
             <tr><td>docs</td><td>Anthropic 商业条款（README 末节指向，授权关键）</td><td><a href="https://www.anthropic.com/legal/commercial-terms" target="_blank" rel="noopener">https://www.anthropic.com/legal/commercial-terms</a></td></tr>
             <tr><td>changelog</td><td>Releases（0.2.163 @ 2026-09-30）</td><td><a href="https://github.com/anthropics/claude-agent-sdk-python/releases" target="_blank" rel="noopener">https://github.com/anthropics/claude-agent-sdk-python/releases</a></td></tr>
             <tr><td>changelog</td><td>CHANGELOG（Claude Code SDK &lt;0.1.0 的破坏性变更）</td><td><a href="https://github.com/anthropics/claude-agent-sdk-python/blob/main/CHANGELOG.md" target="_blank" rel="noopener">https://github.com/anthropics/claude-agent-sdk-python/blob/main/CHANGELOG.md</a></td></tr>
@@ -203,6 +231,7 @@
           <li><span class="rel-t"><a href="./codex-sdk.html">Codex SDK</a></span><span class="rel-n">第三家厂商的同档选择。<strong>三家是同一个问题的三种答案</strong>：自建框架 / 包装 CLI / 包装 CLI。</span></li>
           <li><span class="rel-t"><a href="./deepagents.html">Deep Agents</a></span><span class="rel-n">权限哲学的对照：「信任 LLM」vs「应用层确定性拦截」</span></li>
           <li><span class="rel-t"><a href="./hermes-agent.html">Hermes Agent</a></span><span class="rel-n">路线相反、厂商不同（本站前者 Anthropic、后者 Nous Research）：那个是自托管优先的通用 harness，本条只包 Anthropic 自家的 CLI。</span></li>
+          <li><span class="rel-t"><a href="/claude-code-cli.html"><span data-zh>Claude Code CLI</span><span data-en>Claude Code CLI</span></a></span><span class="rel-n"><span data-zh>另一层 · 成品 Agent</span><span data-en>Other layer · Finished agents</span></span></li>
         </ul>
       </div>
 
