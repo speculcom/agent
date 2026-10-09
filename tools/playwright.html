@@ -11,7 +11,7 @@
   <meta property="og:url" content="https://agent.specul.com/tools/playwright.html" />
   <meta property="og:title" content="Playwright MCP Server — Tools | 投机取巧" />
   <meta property="og:description" content="Playwright MCP Server（Microsoft）：微软维护的浏览器自动化 server，用无障碍树而非截图驱动——不需要视觉模型，输出是结构化快照。" />
-  <meta name="theme-color" content="#05080f" />
+  <meta name="theme-color" content="#16121f" />
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%238b7cf8'/%3E%3Cstop offset='1' stop-color='%2322d3c5'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='48' height='48' rx='12' fill='%2305080f'/%3E%3Cpath d='M14 32 L24 12 L34 32' fill='none' stroke='url(%23g)' stroke-width='2.4' stroke-linejoin='round'/%3E%3Ccircle cx='24' cy='27' r='2.4' fill='%2322d3c5'/%3E%3C/svg%3E" />
   <link rel="stylesheet" href="../brand.css" />
   <link rel="stylesheet" href="../site.css" />
@@ -95,68 +95,74 @@
         <span class="badge"><span data-zh>核验</span><span data-en>Checked</span> 2026-10-08</span>
       </div>
 
-            <p class="panel-lead"><span data-zh>微软维护的浏览器自动化 server，<strong>用无障碍树而非截图驱动</strong>——不需要视觉模型，输出是结构化快照。</span><span data-en>A browser automation server maintained by Microsoft, <strong>driven by the accessibility tree rather than screenshots</strong> — no vision model needed, and the output is a structured snapshot.</span></p>
+            <div class="panel-lead"><span data-zh><p>微软维护的浏览器自动化 server，<strong>用无障碍树而非截图驱动</strong>——不需要视觉模型，输出是结构化快照。</p></span><span data-en><p>A browser automation server maintained by Microsoft, <strong>driven by the accessibility tree rather than screenshots</strong> — no vision model needed, and the output is a structured snapshot.</p></span></div>
 
             <div class="panel is-slim">
         <h2><span data-zh>适合与不适合</span><span data-en>When to use it, when not to</span></h2>
-<span data-zh>        <p>需要浏览器自动化<strong>且要保持会话状态</strong>的场景：
-探索性自动化、自愈测试、长时自主工作流。</p>
-        <p class="warn-p"><strong>不适合</strong>高吞吐编码 agent**——README 自己建议这类场景改用
-Playwright CLI + SKILLS，因为 MCP 形态要加载大工具 schema 和无障碍树，
-token 效率更低。
-也不适合需要真正网络隔离的场景：官方明确声明来源限制不构成安全边界。</p></span><span data-en>        <p>Scenarios where an agent must operate a real browser and read the page as structure rather than as a picture.</p>
-        <p class="warn-p"><strong>Not a fit for</strong> visual-only understanding — it drives the accessibility tree, so anything conveyed purely by pixels is out of reach.</p></span>
+<span data-zh>        <div><p>需要浏览器自动化<strong>且要保持会话状态</strong>的场景： 探索性自动化、自愈测试、长时自主工作流。</p></div>
+        <div class="warn-p"><p><strong>不适合高吞吐编码 agent</strong>——README 自己建议这类场景改用 Playwright CLI + SKILLS，因为 MCP 形态要加载大工具 schema 和无障碍树， token 效率更低。</p></div>
+        <div class="warn-p"><p>也不适合需要真正网络隔离的场景：官方明确声明来源限制不构成安全边界。</p></div></span><span data-en>        <div><p>Scenarios where an agent must operate a real browser and read the page as structure rather than as a picture.</p></div>
+        <div class="warn-p"><p><strong>Not a fit for</strong> visual-only understanding — it drives the accessibility tree, so anything conveyed purely by pixels is out of reach.</p></div></span>
       </div>
 
 
       <div class="block-head">
         <h2 class="t-h2"><span data-zh>固定坐标系</span><span data-en>Fixed coordinate system</span></h2>
-        <p class="t-section-lead">11 <span data-zh>个维度</span><span data-en>dimensions</span>, <span data-zh>与同赛道其他对象逐项可比</span><span data-en>each comparable item by item against others in the same track</span>.</p>
+        <p class="t-section-lead">11 <span data-zh>个维度</span><span data-en>dimensions</span>, <span data-zh>与同分区其他对象逐项可比</span><span data-en>each comparable item by item against others in the same section</span>.</p>
       </div>
       <dl class="axes">
         <div class="axis">
           <dt><span data-zh>模型与开放条件</span><span data-en>Model & openness</span></dt>
-          <dd>本身不调用模型，是被客户端调用的接口实现。 <strong>用 Playwright 的无障碍树（accessibility tree）而非像素输入</strong>， 因此不需要视觉模型，输出为结构化快照。</dd>
+          <dd><p>本身不调用模型，是被客户端调用的接口实现。 <strong>用 Playwright 的无障碍树（accessibility tree）而非像素输入</strong>， 因此不需要视觉模型，输出为结构化快照。</p></dd>
         </div>
         <div class="axis">
           <dt><span data-zh>运行位置</span><span data-en>Where it runs</span></dt>
-          <dd>本地 Node.js 进程（需 Node.js 18+），通过 stdio 通信。 也提供 HTTP endpoint 模式与浏览器扩展模式（Edge / Chrome）。 默认有头模式，可用 --headless 切换。</dd>
+          <dd><p>本地 Node.js 进程（需 Node.js 18+），通过 stdio 通信。 也提供 HTTP endpoint 模式与浏览器扩展模式（Edge / Chrome）。 默认有头模式，可用 --headless 切换。</p></dd>
         </div>
         <div class="axis">
           <dt><span data-zh>本地文件</span><span data-en>Local files</span></dt>
-          <dd><strong>无本地文件访问能力</strong>。核心能力是浏览器控制。 用户 profile 默认落盘在 Playwright 缓存目录（按 workspace hash 隔离）， 用 --isolated 可改为仅存内存。</dd>
+          <dd><p><strong>无本地文件访问能力</strong>。核心能力是浏览器控制。 用户 profile 默认落盘在 Playwright 缓存目录（按 workspace hash 隔离）， 用 --isolated 可改为仅存内存。</p></dd>
         </div>
         <div class="axis">
           <dt><span data-zh>关机后的任务</span><span data-en>Tasks after shutdown</span></dt>
-          <dd>浏览器进程可保持常驻。--idle-timeout 控制空闲关闭： <strong>headless 默认 1 小时关闭，headed 模式默认永不关闭</strong>； 下次工具调用会重新拉起浏览器。</dd>
+          <dd><p>浏览器进程可保持常驻。--idle-timeout 控制空闲关闭： <strong>headless 默认 1 小时关闭，headed 模式默认永不关闭</strong>； 下次工具调用会重新拉起浏览器。</p></dd>
         </div>
         <div class="axis">
           <dt><span data-zh>工具与扩展</span><span data-en>Tools & extensions</span></dt>
-          <dd>提供完整的浏览器自动化工具集，<strong>本站已按官方 README 逐条核对：共 72 个工具</strong> （2026-10-08）：导航与标签页、点击 / 拖放 / 悬停、表单与键盘输入、 无障碍树快照（snapshot）、截图与 PDF、网络请求与路由（route / unroute）、 Cookie 与 localStorage / sessionStorage 读写、文件上传、对话框处理、 视频录制与 tracing（start / stop）、以及 verify_* 断言组等。 输出以无障碍树结构为主，是结构化数据，可直接消费。</dd>
+          <dd><p>提供完整的浏览器自动化工具集，<strong>本站已按官方 README 逐条核对：共 72 个工具</strong> （2026-10-08）：</p>
+            <ul><li>导航与标签页</li><li>点击 / 拖放 / 悬停</li><li>表单与键盘输入</li><li>无障碍树快照（snapshot）</li><li>截图与 PDF</li><li>网络请求与路由（route / unroute）</li><li>Cookie 与 localStorage / sessionStorage 读写</li><li>文件上传</li><li>对话框处理</li><li>视频录制与 tracing（start / stop）、以及 verify_* 断言组等</li></ul>
+            <p>输出以无障碍树结构为主，是结构化数据，可直接消费。</p></dd>
         </div>
         <div class="axis">
           <dt><span data-zh>上下文与记忆</span><span data-en>Context & memory</span></dt>
-          <dd><strong>保持浏览器上下文是本 server 的核心价值</strong>—— README 明确指出 MCP 形态适合需要持久状态、 丰富内省与迭代推理的 agentic loop， 例如探索性自动化、自愈测试、长时自主工作流。</dd>
+          <dd><p><strong>保持浏览器上下文是本 server 的核心价值</strong>—— README 明确指出 MCP 形态适合需要持久状态、 丰富内省与迭代推理的 agentic loop， 例如探索性自动化、自愈测试、长时自主工作流。</p></dd>
         </div>
         <div class="axis">
           <dt><span data-zh>权限与限制</span><span data-en>Permissions & limits</span></dt>
-          <dd><strong>需要给浏览器授予权限，且官方明确说明限制手段不是安全边界。</strong> --grant-permissions 可授予 geolocation、clipboard-read、clipboard-write 等权限。 <strong>--allowed-origins 与 --blocked-origins 的文档原文明确写着 「does not serve as a security boundary」且不影响重定向。</strong> 默认允许所有来源。</dd>
+          <dd><p><strong>需要给浏览器授予权限，且官方明确说明限制手段不是安全边界。</strong></p>
+            <p>--grant-permissions 可授予 geolocation、clipboard-read、clipboard-write 等权限。</p>
+            <p><strong>--allowed-origins 与 --blocked-origins 的文档原文明确写着</strong>： 「does not serve as a security boundary」且不影响重定向。 默认允许所有来源。</p></dd>
         </div>
         <div class="axis">
           <dt><span data-zh>适合什么任务</span><span data-en>Best for</span></dt>
-          <dd>需要浏览器自动化且要保持会话状态的场景： 探索性自动化、自愈测试、长时自主工作流。 <strong>不适合高吞吐编码 agent</strong>——README 自己建议这类场景改用 Playwright CLI + SKILLS，因为 token 效率更高。</dd>
+          <dd><p>需要浏览器自动化且要保持会话状态的场景： 探索性自动化、自愈测试、长时自主工作流。</p>
+            <p><strong>不适合高吞吐编码 agent</strong>——README 自己建议这类场景改用 Playwright CLI + SKILLS，因为 token 效率更高。</p></dd>
         </div>
         <div class="axis">
           <dt><span data-zh>传输方式</span><span data-en>Transport</span></dt>
-          <dd>支持 <strong>stdio</strong>，另提供 <strong>HTTP endpoint</strong> 模式（--endpoint） 与浏览器扩展连接模式（--extension，需装 Playwright 扩展，仅 Edge / Chrome）。 --shared-browser-context 可让多个 HTTP 客户端共用同一浏览器上下文。</dd>
+          <dd><p>支持 <strong>stdio</strong>，另提供 <strong>HTTP endpoint</strong> 模式（--endpoint） 与浏览器扩展连接模式（--extension，需装 Playwright 扩展，仅 Edge / Chrome）。</p>
+            <p>--shared-browser-context 可让多个 HTTP 客户端共用同一浏览器上下文。</p></dd>
         </div>
         <div class="axis">
           <dt><span data-zh>认证机制</span><span data-en>Authentication</span></dt>
-          <dd>stdio 形态无独立认证层，继承客户端用户权限。 <strong>HTTP 模式（2026-10-08 核验官方 README）</strong>：选项表没有 token / auth 相关参数，Docker 示例直接以 <code>--host 0.0.0.0</code> 裸监听；官方明确声明 “Playwright MCP is <strong>not</strong> a security boundary”，要求按 MCP 安全最佳 实践自行加固（反向代理 / 网络层）。<strong>认证要自己加，别默认它有。</strong></dd>
+          <dd><p>stdio 形态无独立认证层，继承客户端用户权限。</p>
+            <p><strong>HTTP 模式（2026-10-08 核验官方 README）</strong>：选项表没有 token / auth 相关参数，Docker 示例直接以 <code>--host 0.0.0.0</code> 裸监听；官方明确声明</p>
+            <p>“Playwright MCP is <strong>not</strong> a security boundary”，要求按 MCP 安全最佳 实践自行加固（反向代理 / 网络层）。<strong>认证要自己加，别默认它有。</strong></p></dd>
         </div>
         <div class="axis">
           <dt><span data-zh>权限范围</span><span data-en>Permission scope</span></dt>
-          <dd><strong>控制的是浏览器而非文件</strong>，但风险面同样宽： 默认允许访问所有来源（--allowed-origins 默认放行全部）， 且可被授予地理位置、剪贴板读写等浏览器权限。 官方<strong>明确声明来源限制不是安全边界</strong>， 需要真正隔离时应使用 --isolated 或容器化网络策略。</dd>
+          <dd><p><strong>控制的是浏览器而非文件</strong>，但风险面同样宽： 默认允许访问所有来源（--allowed-origins 默认放行全部）， 且可被授予地理位置、剪贴板读写等浏览器权限。</p>
+            <p>官方<strong>明确声明来源限制不是安全边界</strong>， 需要真正隔离时应使用 --isolated 或容器化网络策略。</p></dd>
         </div>
       </dl>
 
@@ -164,9 +170,9 @@ token 效率更低。
         <h2 class="warn"><span data-zh>头号误解</span><span data-en>Top misconception</span></h2>
         <ul>
 
-          <li><span data-zh>以为 allowed-origins 能当访问白名单，官方明说不构成安全边界且不防重定向</span><span data-en>Assuming allowed-origins works as an access allowlist — the official docs state it is not a security boundary and does not guard redirects</span></li>
-          <li><span data-zh>以为无头模式会常驻，实际 headless 默认 1 小时空闲即关，headed 默认永不关</span><span data-en>Assuming headless mode stays resident — headless closes after an hour idle by default; headed never closes</span></li>
-          <li><span data-zh>在高吞吐编码场景硬上 MCP，官方自己建议改用 CLI + SKILLS</span><span data-en>Driving MCP in a high-throughput coding workload — the official guidance is to use the CLI + SKILLS instead</span></li>
+          <li><span data-zh>以为 allowed-origins 能当访问白名单，官方明说不构成安全边界且不防重定向</span><span data-en>Treating <code>allowed-origins</code> as an access allowlist — the official docs state it is not a security boundary and does not guard against redirects</span></li>
+          <li><span data-zh>以为无头模式会常驻，实际 headless 默认 1 小时空闲即关，headed 默认永不关</span><span data-en>Assuming headless mode stays resident — headless closes after 1 hour idle by default, while headed never closes by default</span></li>
+          <li><span data-zh>在高吞吐编码场景硬上 MCP，官方自己建议改用 CLI + SKILLS</span><span data-en>Forcing MCP into high-throughput coding work — the official guidance itself suggests CLI + SKILLS instead</span></li>
         </ul>
       </div>
 
@@ -175,9 +181,9 @@ token 效率更低。
         <h2><span data-zh>价格</span><span data-en>Pricing</span></h2>
         <table class="src">
           <tbody>
-            <tr><th class="w-28"><span data-zh>月度入口</span><span data-en>Monthly entry</span></th><td><span data-zh>无商业费用</span><span data-en>无商业费用</span></td></tr>
-            <tr><th class="w-28"><span data-zh>年付</span><span data-en>Annual</span></th><td><span data-zh>无商业费用</span><span data-en>无商业费用</span></td></tr>
-            <tr><th class="w-28"><span data-zh>额度说明</span><span data-en>Quota note</span></th><td><span data-zh>Apache-2.0 开源，无授权费。 实际成本来自浏览器运行与目标网站的访问，不来自本 server。</span><span data-en>Apache-2.0 开源，无授权费。 实际成本来自浏览器运行与目标网站的访问，不来自本 server。</span></td></tr>
+            <tr><th class="w-28"><span data-zh>月度入口</span><span data-en>Monthly entry</span></th><td><span data-zh><p>无商业费用</p></span><span data-en><p>无商业费用</p></span></td></tr>
+            <tr><th class="w-28"><span data-zh>年付</span><span data-en>Annual</span></th><td><span data-zh><p>无商业费用</p></span><span data-en><p>无商业费用</p></span></td></tr>
+            <tr><th class="w-28"><span data-zh>额度说明</span><span data-en>Quota note</span></th><td><span data-zh><p>Apache-2.0 开源，无授权费。 实际成本来自浏览器运行与目标网站的访问，不来自本 server。</p></span><span data-en><p>Apache-2.0 开源，无授权费。 实际成本来自浏览器运行与目标网站的访问，不来自本 server。</p></span></td></tr>
           </tbody>
         </table>
         <p class="fine mt-3"><span data-zh>不同币种不做折算。优惠、地区、税费与登录后报价可能变化，购买前请到官方页面确认。</span><span data-en>No currency conversion. Discounts, regions, tax and post-login pricing can change — confirm on the official page before buying.</span></p>
@@ -209,12 +215,53 @@ token 效率更低。
 
             <div class="panel is-slim">
         <h2><span data-zh>实测记录</span><span data-en>Measured runs</span></h2>
-        <p>本站尚未完成实测。测试协议见 <a href="https://github.com/speculcom/ai-agent-guide/blob/main/tracks/agents/tasks/_protocol.md" target="_blank" rel="noopener">tasks/_protocol.md</a>。
-
-<strong>实测建议</strong>：重点测 token 消耗——同一任务下 MCP 形态 vs 截图形态的
-上下文占用差异，这是官方选型建议的核心依据，值得量化。</p>
+        <p>本站尚未完成实测。测试协议见 <a href="https://github.com/speculcom/ai-agent-guide/blob/main/tracks/agents/tasks/_protocol.md" target="_blank" rel="noopener">tasks/_protocol.md</a>。</p>
+            <p><strong>实测建议</strong>：重点测 token 消耗——同一任务下 MCP 形态 vs 截图形态的 上下文占用差异，这是官方选型建议的核心依据，值得量化。</p>
       </div>
 
+
+            <div class="panel is-slim">
+        <h2>变更记录说明</h2>
+        <p>本对象有独立 releases，可直接引用：</p>
+            <div class="tbl-wrap"><table><thead><tr><th>版本</th><th>日期</th></tr></thead><tbody><tr><td>v0.0.83</td><td>2026-09-28</td></tr><tr><td>v0.0.82</td><td>2026-09-18</td></tr><tr><td>v0.0.81</td><td>2026-09-14</td></tr></tbody></table></div>
+            <p><strong>版本号仍在 0.0.x</strong>，说明接口可能还会变。引用具体工具名时要注意。</p>
+      </div>
+      <div class="panel is-slim">
+        <h2>核心设计：用无障碍树，不用像素</h2>
+        <p>``<code> Fast and lightweight — Uses Playwright&#39;s accessibility tree, not pixel-based input. LLM-friendly — No vision models needed, operates purely on structured data. Deterministic tool application — Avoids ambiguity common with screenshot-based approaches. </code>``</p>
+            <p><strong>这三点是这个 server 与其他浏览器自动化方案的根本差异</strong>：</p>
+            <div class="tbl-wrap"><table><thead><tr><th>方式</th><th>代价</th><th>确定性</th></tr></thead><tbody><tr><td>截图 + 视觉模型</td><td>token 消耗大，需要视觉能力</td><td>低（模型可能看错）</td></tr><tr><td><strong>无障碍树</strong></td><td>token 可控</td><td><strong>高</strong>（结构化数据）</td></tr></tbody></table></div>
+      </div>
+      <div class="panel is-slim">
+        <h2>⚠ 官方对来源限制的自我限制（原文）</h2>
+        <p><code>--allowed-origins</code> 与 <code>--blocked-origins</code> 的文档里写着：</p>
+            <blockquote>Important: <strong>does not serve as a security boundary</strong> and <strong>does not affect redirects</strong>.</blockquote>
+            <p><strong>翻译</strong>：重要——<strong>不构成安全边界</strong>，且<strong>不影响重定向</strong>。</p>
+            <p>这意味着：</p>
+            <ul><li>配了 allowed-origins，<strong>重定向仍可绕过</strong></li><li>它是「减少意外」的工具，<strong>不是「阻止访问」的机制</strong></li></ul>
+            <p><strong>官方主动写出这句话，比我们自己推断更有价值。</strong> 这正是本站想做的：把官方自己承认的边界记录下来。</p>
+      </div>
+      <div class="panel is-slim">
+        <h2>MCP 还是 CLI？官方给了明确建议</h2>
+        <p>这是 README 里少见的、直接给出选型建议的一段：</p>
+            <div class="tbl-wrap"><table><thead><tr><th>形态</th><th>官方判断</th><th>理由</th></tr></thead><tbody><tr><td><strong>Playwright CLI + SKILLS</strong></td><td><strong>更适合高吞吐编码 agent</strong></td><td>CLI 调用 token 效率更高，不用加载大工具 schema 和冗长无障碍树</td></tr><tr><td><strong>MCP</strong></td><td>适合特定 agentic loop</td><td>需要持久状态、丰富内省、对页面结构做迭代推理时</td></tr></tbody></table></div>
+            <p>具体场景：探索性自动化、自愈测试、长时自主工作流。</p>
+            <p><strong>换句话说</strong>：如果你是编码 agent 且要频繁操作浏览器，官方建议你<strong>别用 MCP</strong>。</p>
+      </div>
+      <div class="panel is-slim">
+        <h2>配置项与安全相关性</h2>
+        <div class="tbl-wrap"><table><thead><tr><th>参数</th><th>默认</th><th>安全影响</th></tr></thead><tbody><tr><td><code>--allowed-origins</code></td><td><strong>放行全部</strong></td><td>官方声明不构成安全边界</td></tr><tr><td><code>--blocked-origins</code></td><td>未设置</td><td>黑名单在白名单前评估；单独使用时未匹配仍放行</td></tr><tr><td><code>--grant-permissions</code></td><td>无</td><td>可授予 geolocation / clipboard-read / clipboard-write</td></tr><tr><td><code>--isolated</code></td><td>关</td><td>开启后 profile 仅存内存，不落盘</td></tr><tr><td><code>--headless</code></td><td>关（有头）</td><td>影响 idle-timeout 行为</td></tr></tbody></table></div>
+            <p><strong><code>--isolated</code> 是这里最值得注意的安全选项</strong>——它让浏览器 profile 不落盘， 适合处理敏感登录态的场景。</p>
+      </div>
+      <div class="panel is-slim">
+        <h2>浏览器生命周期</h2>
+        <p>``<code> --idle-timeout：空闲多少毫秒后关闭浏览器，下次工具调用会重新拉起。 headless 默认 1 小时 headed    默认永不关闭 0         禁用该行为 </code>``</p>
+            <p><strong>这个默认值差异很重要</strong>：headless 会自动关（省资源），headed 常驻（保持登录态）。 如果你依赖登录状态，headed 模式反而更省事。</p>
+      </div>
+      <div class="panel is-slim">
+        <h2>能力边界</h2>
+        <ul><li>✅ 浏览器自动化、无障碍树快照、结构化输出</li><li>✅ stdio / HTTP endpoint / 扩展三种连接方式</li><li>❌ <strong>不提供文件访问</strong></li><li>⚠ 来源限制<strong>不构成安全边界</strong></li></ul>
+      </div>
 
             <div class="panel is-slim">
         <h2><span data-zh>相关条目</span><span data-en>Related entries</span></h2>
