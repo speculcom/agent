@@ -11,7 +11,7 @@
   <meta property="og:url" content="https://agent.specul.com/tools/time.html" />
   <meta property="og:title" content="Time MCP Server — Tools | 投机取巧" />
   <meta property="og:description" content="Time MCP Server（Model Context Protocol）：只做两件事：查当前时间、换时区。无文件无网络，是权限风险最低的一类 server。" />
-  <meta name="theme-color" content="#05080f" />
+  <meta name="theme-color" content="#16121f" />
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%238b7cf8'/%3E%3Cstop offset='1' stop-color='%2322d3c5'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='48' height='48' rx='12' fill='%2305080f'/%3E%3Cpath d='M14 32 L24 12 L34 32' fill='none' stroke='url(%23g)' stroke-width='2.4' stroke-linejoin='round'/%3E%3Ccircle cx='24' cy='27' r='2.4' fill='%2322d3c5'/%3E%3C/svg%3E" />
   <link rel="stylesheet" href="../brand.css" />
   <link rel="stylesheet" href="../site.css" />
@@ -93,70 +93,69 @@
         <span class="badge"><span data-zh>核验</span><span data-en>Checked</span> 2026-10-08</span>
       </div>
 
-            <p class="panel-lead"><span data-zh>只做两件事：查当前时间、换时区。<strong>无文件无网络，是权限风险最低的一类 server。</strong></span><span data-en>Does two things only: report the current time and convert time zones. <strong>No files, no network — the lowest-risk category of server.</strong></span></p>
+            <div class="panel-lead"><span data-zh><p>只做两件事：查当前时间、换时区。<strong>无文件无网络，是权限风险最低的一类 server。</strong></p></span><span data-en><p>Does two things only: report the current time and convert time zones. <strong>No files, no network — the lowest-risk category of server.</strong></p></span></div>
 
             <div class="panel is-slim">
         <h2><span data-zh>适合与不适合</span><span data-en>When to use it, when not to</span></h2>
-<span data-zh>        <p>| 场景 | 是否适合 |
-|---|---|
-| 日程安排需要准确时间 | ✅ |
-| 跨时区协作 | ✅ |
-| 避免模型编造时间 | ✅ |
-| <strong>做定时任务 / 调度</strong> | ❌ 它只查询时间，不调度 |</p>
-        <p><strong>最后一条是常见误解</strong>——名字叫 time，容易以为能做定时。
-实际它只回答「现在几点」和「A 时区的 X 点是 B 时区几点」。</p></span><span data-en>        <p>Scenarios where an agent needs the current date and time to reason about scheduling, logs or freshness.</p>
-        <p class="warn-p"><strong>Not a fit for</strong> anything beyond time — it is one tool with one narrow purpose.</p></span>
+<span data-zh>        <div><div class="tbl-wrap"><table><thead><tr><th>场景</th><th>是否适合</th></tr></thead><tbody><tr><td>日程安排需要准确时间</td><td>✅</td></tr><tr><td>跨时区协作</td><td>✅</td></tr><tr><td>避免模型编造时间</td><td>✅</td></tr><tr><td><strong>做定时任务 / 调度</strong></td><td>❌ 它只查询时间，不调度</td></tr></tbody></table></div></div>
+        <div><p><strong>最后一条是常见误解</strong>——名字叫 time，容易以为能做定时。 实际它只回答「现在几点」和「A 时区的 X 点是 B 时区几点」。</p></div></span><span data-en>        <div><p>Scenarios where an agent needs the current date and time to reason about scheduling, logs or freshness.</p></div>
+        <div class="warn-p"><p><strong>Not a fit for</strong> anything beyond time — it is one tool with one narrow purpose.</p></div></span>
       </div>
 
 
       <div class="block-head">
         <h2 class="t-h2"><span data-zh>固定坐标系</span><span data-en>Fixed coordinate system</span></h2>
-        <p class="t-section-lead">11 <span data-zh>个维度</span><span data-en>dimensions</span>, <span data-zh>与同赛道其他对象逐项可比</span><span data-en>each comparable item by item against others in the same track</span>.</p>
+        <p class="t-section-lead">11 <span data-zh>个维度</span><span data-en>dimensions</span>, <span data-zh>与同分区其他对象逐项可比</span><span data-en>each comparable item by item against others in the same section</span>.</p>
       </div>
       <dl class="axes">
         <div class="axis">
           <dt><span data-zh>模型与开放条件</span><span data-en>Model & openness</span></dt>
-          <dd>本身不调用模型，是被客户端调用的接口实现。 使用 IANA 时区名，支持系统时区自动检测。</dd>
+          <dd><p>本身不调用模型，是被客户端调用的接口实现。 使用 IANA 时区名，支持系统时区自动检测。</p></dd>
         </div>
         <div class="axis">
           <dt><span data-zh>运行位置</span><span data-en>Where it runs</span></dt>
-          <dd>本地 <strong>Python</strong> 进程，通过 stdio 通信。 依赖 Python MCP SDK 1.x（要求 mcp<strong>=1.29.0,</strong>2），SDK 2.0 重命名了该 server 使用的 API。 2026-08-30 修复了容器 bind mount 在 Docker / Podman / SELinux 下的安全与兼容问题。 推荐用 uvx 直接运行，无需预安装。</dd>
+          <dd><p>本地 <strong>Python</strong> 进程，通过 stdio 通信。</p>
+            <p>依赖 Python MCP SDK 1.x（要求 mcp<strong>=1.29.0,</strong>2），SDK 2.0 重命名了该 server 使用的 API。</p>
+            <p>2026-08-30 修复了容器 bind mount 在 Docker / Podman / SELinux 下的安全与兼容问题。</p>
+            <p>推荐用 uvx 直接运行，无需预安装。</p></dd>
         </div>
         <div class="axis">
           <dt><span data-zh>本地文件</span><span data-en>Local files</span></dt>
-          <dd><strong>无任何文件访问能力</strong>。不涉及文件读写。</dd>
+          <dd><p><strong>无任何文件访问能力</strong>。不涉及文件读写。</p></dd>
         </div>
         <div class="axis">
           <dt><span data-zh>关机后的任务</span><span data-en>Tasks after shutdown</span></dt>
-          <dd>不支持。单次时间查询为同步操作，随客户端进程结束。</dd>
+          <dd><p>不支持。单次时间查询为同步操作，随客户端进程结束。</p></dd>
         </div>
         <div class="axis">
           <dt><span data-zh>工具与扩展</span><span data-en>Tools & extensions</span></dt>
-          <dd>提供 2 个工具：<code>get_current_time</code>（按指定时区取当前时间） 与 <code>convert_time</code>（时区间转换）。 输出为结构化时间数据，可直接消费。</dd>
+          <dd><p>提供 2 个工具：<code>get_current_time</code>（按指定时区取当前时间） 与 <code>convert_time</code>（时区间转换）。 输出为结构化时间数据，可直接消费。</p></dd>
         </div>
         <div class="axis">
           <dt><span data-zh>上下文与记忆</span><span data-en>Context & memory</span></dt>
-          <dd>无状态。每次调用独立，不保留历史。</dd>
+          <dd><p>无状态。每次调用独立，不保留历史。</p></dd>
         </div>
         <div class="axis">
           <dt><span data-zh>权限与限制</span><span data-en>Permissions & limits</span></dt>
-          <dd><strong>无实质权限风险</strong>：不访问文件、不访问网络、不写任何状态。 全部权限是「能查询当前时间和做时区换算」。</dd>
+          <dd><p><strong>无实质权限风险</strong>：不访问文件、不访问网络、不写任何状态。 全部权限是「能查询当前时间和做时区换算」。</p></dd>
         </div>
         <div class="axis">
           <dt><span data-zh>适合什么任务</span><span data-en>Best for</span></dt>
-          <dd>给 Agent 提供可靠的时间与时区换算能力。 适合需要避免模型猜时间的场景（如日程、跨时区协作）。</dd>
+          <dd><p>给 Agent 提供可靠的时间与时区换算能力。 适合需要避免模型猜时间的场景（如日程、跨时区协作）。</p></dd>
         </div>
         <div class="axis">
           <dt><span data-zh>传输方式</span><span data-en>Transport</span></dt>
-          <dd>支持 stdio，<strong>并提供容器部署方式（Docker / Podman）</strong>。 2026-08-30 修复 bind mount 安全与兼容问题（含 SELinux）， 与 fetch、git 属同一条修复 commit（#2205）。 官方 README（2026-10-08 全文核验）只给本地进程接入（uvx / pip / Docker）， 没有远程传输的官方启动方式。</dd>
+          <dd><p>支持 stdio，<strong>并提供容器部署方式（Docker / Podman）</strong>。</p>
+            <p>2026-08-30 修复 bind mount 安全与兼容问题（含 SELinux），与 fetch、git 属同一条修复 commit（#2205）。</p>
+            <p>官方 README（2026-10-08 全文核验）只给本地进程接入（uvx / pip / Docker），没有远程传输的官方启动方式。</p></dd>
         </div>
         <div class="axis">
           <dt><span data-zh>认证机制</span><span data-en>Authentication</span></dt>
-          <dd>无独立认证层，但<strong>本 server 无任何外部资源访问</strong>， 认证与否不影响安全。</dd>
+          <dd><p>无独立认证层，但<strong>本 server 无任何外部资源访问</strong>， 认证与否不影响安全。</p></dd>
         </div>
         <div class="axis">
           <dt><span data-zh>权限范围</span><span data-en>Permission scope</span></dt>
-          <dd><strong>无文件与网络访问，不读不写任何外部资源</strong>。 与 sequential-thinking 同属权限风险最低的一类，可放心在敏感环境使用。</dd>
+          <dd><p><strong>无文件与网络访问，不读不写任何外部资源</strong>。 与 sequential-thinking 同属权限风险最低的一类，可放心在敏感环境使用。</p></dd>
         </div>
       </dl>
 
@@ -164,8 +163,8 @@
         <h2 class="warn"><span data-zh>头号误解</span><span data-en>Top misconception</span></h2>
         <ul>
 
-          <li><span data-zh>以为模型自己知道准确时间，需要它取系统时间而非猜</span><span data-en>Assuming the model knows the exact time itself — it needs the system time rather than guessing</span></li>
-          <li><span data-zh>以为能用它做定时任务，它只查询时间，不调度</span><span data-en>Assuming it can schedule tasks — it only queries the time, it does not schedule</span></li>
+          <li><span data-zh>以为模型自己知道准确时间，需要它取系统时间而非猜</span><span data-en>Assuming the model already knows the exact time — it needs this to read the system clock rather than guess</span></li>
+          <li><span data-zh>以为能用它做定时任务，它只查询时间，不调度</span><span data-en>Assuming it can schedule tasks — it only reads the time, it does not schedule</span></li>
         </ul>
       </div>
 
@@ -174,9 +173,9 @@
         <h2><span data-zh>价格</span><span data-en>Pricing</span></h2>
         <table class="src">
           <tbody>
-            <tr><th class="w-28"><span data-zh>月度入口</span><span data-en>Monthly entry</span></th><td><span data-zh>无商业费用</span><span data-en>无商业费用</span></td></tr>
-            <tr><th class="w-28"><span data-zh>年付</span><span data-en>Annual</span></th><td><span data-zh>无商业费用</span><span data-en>无商业费用</span></td></tr>
-            <tr><th class="w-28"><span data-zh>额度说明</span><span data-en>Quota note</span></th><td><span data-zh>随 MCP servers 仓库分发，pip 包为 mcp-server-time。无授权费。</span><span data-en>随 MCP servers 仓库分发，pip 包为 mcp-server-time。无授权费。</span></td></tr>
+            <tr><th class="w-28"><span data-zh>月度入口</span><span data-en>Monthly entry</span></th><td><span data-zh><p>无商业费用</p></span><span data-en><p>无商业费用</p></span></td></tr>
+            <tr><th class="w-28"><span data-zh>年付</span><span data-en>Annual</span></th><td><span data-zh><p>无商业费用</p></span><span data-en><p>无商业费用</p></span></td></tr>
+            <tr><th class="w-28"><span data-zh>额度说明</span><span data-en>Quota note</span></th><td><span data-zh><p>随 MCP servers 仓库分发，pip 包为 mcp-server-time。无授权费。</p></span><span data-en><p>随 MCP servers 仓库分发，pip 包为 mcp-server-time。无授权费。</p></span></td></tr>
           </tbody>
         </table>
         <p class="fine mt-3"><span data-zh>不同币种不做折算。优惠、地区、税费与登录后报价可能变化，购买前请到官方页面确认。</span><span data-en>No currency conversion. Discounts, regions, tax and post-login pricing can change — confirm on the official page before buying.</span></p>
@@ -212,6 +211,28 @@
         <p>本站尚未完成实测。测试协议见 <a href="https://github.com/speculcom/ai-agent-guide/blob/main/tracks/agents/tasks/_protocol.md" target="_blank" rel="noopener">tasks/_protocol.md</a>。</p>
       </div>
 
+
+            <div class="panel is-slim">
+        <h2>变更记录说明</h2>
+        <p><strong>本对象无独立 changelog 页</strong>，变更记录在目录 commit 历史中：</p>
+            <div class="tbl-wrap"><table><thead><tr><th>日期</th><th>内容</th></tr></thead><tbody><tr><td>2026-08-30</td><td>修复容器 bind mount 安全与兼容问题（与 fetch、git 同一条 commit #2205）</td></tr><tr><td>2026-08-18</td><td>文档补充 Python MCP 1.x 版本要求</td></tr></tbody></table></div>
+            <p><strong>注意</strong>：SDK 2.0 重命名了该 server 使用的 API，官方锁在 <code>mcp&gt;=1.29.0,&lt;2</code>。 如果你的环境装了 SDK 2.x，这个 server 可能起不来。</p>
+      </div>
+      <div class="panel is-slim">
+        <h2>工具清单</h2>
+        <div class="tbl-wrap"><table><thead><tr><th>工具</th><th>参数</th><th>说明</th></tr></thead><tbody><tr><td><code>get_current_time</code></td><td><code>timezone</code>（IANA 名）</td><td>取指定时区的当前时间</td></tr><tr><td><code>convert_time</code></td><td><code>source_timezone</code> <code>time</code>（HH:MM） <code>target_timezone</code></td><td>时区换算</td></tr></tbody></table></div>
+            <p><strong>用 IANA 时区名</strong>（如 <code>America/New_York</code>），不是 UTC 偏移量。 这也是它比「让模型自己算时区」可靠的地方——IANA 名带夏令时规则。</p>
+      </div>
+      <div class="panel is-slim">
+        <h2>权限评价</h2>
+        <p><strong>MCP server 里权限风险最低的一类</strong>：</p>
+            <div class="tbl-wrap"><table><thead><tr><th>检查项</th><th>结果</th></tr></thead><tbody><tr><td>读文件</td><td>❌ 无</td></tr><tr><td>写文件</td><td>❌ 无</td></tr><tr><td>访问网络</td><td>❌ 无</td></tr><tr><td>持久化状态</td><td>❌ 无</td></tr><tr><td>删除能力</td><td>❌ 无</td></tr></tbody></table></div>
+            <p>全部权限就是「能问系统现在几点」。这类 server 值得单独指出—— 它说明 MCP 生态里也有零风险工具。</p>
+      </div>
+      <div class="panel is-slim">
+        <h2>安装</h2>
+        <p>官方推荐 <code>uvx</code> 直接运行，无需预安装： ``<code>bash uvx mcp-server-time </code>`<code> 也支持 </code>pip install mcp-server-time`。</p>
+      </div>
 
             <div class="panel is-slim">
         <h2><span data-zh>相关条目</span><span data-en>Related entries</span></h2>
