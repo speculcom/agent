@@ -4,18 +4,18 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Codex IDE 扩展 — Agents | 投机取巧</title>
-  <meta name="description" content="Codex IDE 扩展（OpenAI）：不是独立 IDE，是装进 VS Code / Cursor / Windsurf 的扩展——通过 app server 与 CLI 共享同一套会话机制。" />
+  <meta name="description" content="Codex IDE 扩展（OpenAI）：Codex IDE 扩展是装进 VS Code / Cursor / Windsurf 的扩展，不是独立 IDE —— 它通过 app server 与 CLI 共享同一套会话机制。" />
   <link rel="canonical" href="https://agent.specul.com/codex-ide.html" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Codex IDE 扩展" />
   <meta property="og:url" content="https://agent.specul.com/codex-ide.html" />
   <meta property="og:title" content="Codex IDE 扩展 — Agents | 投机取巧" />
-  <meta property="og:description" content="Codex IDE 扩展（OpenAI）：不是独立 IDE，是装进 VS Code / Cursor / Windsurf 的扩展——通过 app server 与 CLI 共享同一套会话机制。" />
-  <meta name="theme-color" content="#05080f" />
+  <meta property="og:description" content="Codex IDE 扩展（OpenAI）：Codex IDE 扩展是装进 VS Code / Cursor / Windsurf 的扩展，不是独立 IDE —— 它通过 app server 与 CLI 共享同一套会话机制。" />
+  <meta name="theme-color" content="#16121f" />
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%238b7cf8'/%3E%3Cstop offset='1' stop-color='%2322d3c5'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='48' height='48' rx='12' fill='%2305080f'/%3E%3Cpath d='M14 32 L24 12 L34 32' fill='none' stroke='url(%23g)' stroke-width='2.4' stroke-linejoin='round'/%3E%3Ccircle cx='24' cy='27' r='2.4' fill='%2322d3c5'/%3E%3C/svg%3E" />
   <link rel="stylesheet" href="brand.css" />
   <link rel="stylesheet" href="site.css" />
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Codex IDE 扩展","applicationCategory":"DeveloperApplication","url":"https://developers.openai.com/codex/ide","sameAs":"https://developers.openai.com/codex/ide","description":"不是独立 IDE，是装进 VS Code / Cursor / Windsurf 的扩展——通过 app server 与 CLI 共享同一套会话机制。","dateModified":"2026-10-08"}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Codex IDE 扩展","applicationCategory":"DeveloperApplication","url":"https://developers.openai.com/codex/ide","sameAs":"https://developers.openai.com/codex/ide","description":"Codex IDE 扩展是装进 VS Code / Cursor / Windsurf 的扩展，不是独立 IDE —— 它通过 app server 与 CLI 共享同一套会话机制。","dateModified":"2026-10-08"}</script>
 </head>
 <body class="brand-ambient">
   <a class="t-skip" href="#main"><span data-zh>跳到主要内容</span><span data-en>Skip to main content</span></a>
@@ -94,59 +94,94 @@
         <span class="badge"><span data-zh>核验</span><span data-en>Checked</span> 2026-10-08</span>
       </div>
 
-            <p class="panel-lead"><span data-zh><strong>不是独立 IDE，是装进 VS Code / Cursor / Windsurf 的扩展</strong>——通过 app server 与 CLI 共享同一套会话机制。</span><span data-en><strong>Not a standalone IDE but an extension for VS Code / Cursor / Windsurf</strong> — sharing the same session mechanism with the CLI through the app server.</span></p>
+            <div class="panel-lead"><span data-zh><p><strong>Codex IDE 扩展是装进 VS Code / Cursor / Windsurf 的扩展，不是独立 IDE</strong> —— 它通过 app server 与 CLI 共享同一套会话机制。</p></span><span data-en><p><strong>The Codex IDE extension is an extension you install into VS Code / Cursor / Windsurf, not a standalone IDE</strong> — it shares the same session mechanism with the CLI through the app server.</p></span></div>
 
             <div class="panel is-slim">
         <h2><span data-zh>适合与不适合</span><span data-en>When to use it, when not to</span></h2>
-<span data-zh>        <p>已在用 VS Code / Cursor / Windsurf 等编辑器，
-希望在同一环境里用 Codex 而不切换工具的人。
-需要 IDE 与 CLI 共享会话的人（app server 架构）。</p>
-        <p class="warn-p"><strong>不适合</strong>需要独立编辑器的人——
-本形态必须依附已有编辑器，无法单独使用。
-另需注意：本地任务依赖编辑器进程常驻，
-要「关机后继续跑」须改用云委派（Codex Cloud）。</p></span><span data-en>        <p>People already in VS Code / Cursor / Windsurf who want Codex in the same environment without switching tools.
-People who need IDE and CLI to share sessions (the app server architecture).</p>
-        <p class="warn-p"><strong>Not a fit for</strong> people who need a standalone editor — this form must attach to an existing editor and cannot be used alone.
-Also not a fit where permission behaviour must be strictly identical between IDE and CLI; this round did not verify consistency.</p></span>
+<span data-zh>        <div><p>适合两类人：</p></div>
+        <div><ul><li>已在用 VS Code / Cursor / Windsurf 等编辑器，希望在同一环境里用 Codex 而不切换工具的人</li><li>需要 IDE 与 CLI 共享会话的人（app server 架构）</li></ul></div>
+        <div class="warn-p"><p><strong>不适合</strong>需要独立编辑器的人 —— 本形态必须依附已有编辑器，无法单独使用。</p></div>
+        <div><p>另需注意：本地任务依赖编辑器进程常驻。</p></div>
+        <div><p>要「关机后继续跑」，须改用云委派（Codex Cloud）。</p></div></span><span data-en>        <div><p>A fit for two groups:</p></div>
+        <div><ul><li>People already in VS Code / Cursor / Windsurf who want Codex in the same environment without switching tools</li><li>People who need the IDE and the CLI to share sessions (the app server architecture)</li></ul></div>
+        <div class="warn-p"><p><strong>Not a fit for</strong> people who need a standalone editor — this form must attach to an existing editor and cannot be used alone.</p></div>
+        <div><p>Also note: local tasks depend on the editor process staying alive, so &quot;keep running after shutdown&quot; requires cloud delegation (Codex Cloud).</p></div></span>
       </div>
 
 
       <div class="block-head">
         <h2 class="t-h2"><span data-zh>固定坐标系</span><span data-en>Fixed coordinate system</span></h2>
-        <p class="t-section-lead">8 <span data-zh>个维度</span><span data-en>dimensions</span>, <span data-zh>与同赛道其他对象逐项可比</span><span data-en>each comparable item by item against others in the same track</span>.</p>
+        <p class="t-section-lead">8 <span data-zh>个维度</span><span data-en>dimensions</span>, <span data-zh>与同分区其他对象逐项可比</span><span data-en>each comparable item by item against others in the same section</span>.</p>
       </div>
       <dl class="axes">
         <div class="axis">
           <dt><span data-zh>模型与开放条件</span><span data-en>Model & openness</span></dt>
-          <dd>与 CLI 形态同一套 agent 与配置（官方 IDE 页原文： &quot;It uses the same agent as the Codex CLI and shares the same configuration&quot;）。官方定价页列出可用模型：GPT-5.5、GPT-5.4、 GPT-5.4 mini，Pro 另有 GPT-5.3-Codex-Spark（research preview）。 聊天输入框下有 <strong>模型切换器</strong>，并可调 reasoning effort （low / medium / high）。<strong>默认模型在共享 config.toml 里设</strong> （<code>model = &quot;...&quot;</code>），IDE 与 CLI 共用，故自定义 provider 走同一套 <code>model_providers</code> 配置（见 CLI / SDK 档案）。 <strong>BYOK 可用</strong>：官方支持用 API key 登录；JetBrains 集成还可走 JetBrains AI 订阅；API key 路径下模型可用范围跟随该 key 的 API 模型。</dd>
+          <dd><p><strong>用的是 CLI 那套 agent 和配置，模型可以换。</strong></p>
+            <p><strong>官方 IDE 页原文</strong>：&quot;It uses the same agent as the Codex CLI and shares the same configuration&quot;</p>
+            <p>官方定价页列出的可用模型：</p>
+            <ul><li>GPT-5.5</li><li>GPT-5.4</li><li>GPT-5.4 mini</li><li>Pro 另有 GPT-5.3-Codex-Spark（research preview）</li></ul>
+            <p>聊天输入框下有 <strong>模型切换器</strong>，可以调 reasoning effort（<code>low</code> / <code>medium</code> / <code>high</code>）。</p>
+            <p><strong>默认模型在共享的 <code>config.toml</code> 里设</strong>（<code>model = &quot;...&quot;</code>），IDE 与 CLI 共用， 所以自定义 provider 也走同一套 <code>model_providers</code> 配置（见 CLI / SDK 档案）。</p>
+            <p><strong>BYOK 可用</strong>：官方支持用 API key 登录；JetBrains 集成还可走 JetBrains AI 订阅。 API key 路径下，模型可用范围跟随该 key 的 API 模型。</p></dd>
         </div>
         <div class="axis">
           <dt><span data-zh>运行位置</span><span data-en>Where it runs</span></dt>
-          <dd><strong>IDE 形态是扩展，不是独立编辑器。</strong> 官方 README 原文： &quot;If you want Codex in your code editor (VS Code, Cursor, Windsurf), install in your IDE.&quot; 即<strong>装进 VS Code / Cursor / Windsurf 这类已有编辑器</strong>。 这与 Zed（独立编辑器）、Cline Desktop（原生应用）是不同形态。</dd>
+          <dd><p><strong>它是扩展，不是独立编辑器。</strong></p>
+            <p><strong>官方 README 原文</strong>：&quot;If you want Codex in your code editor (VS Code, Cursor, Windsurf), install in your IDE.&quot;</p>
+            <p>也就是<strong>装进 VS Code / Cursor / Windsurf 这类已有编辑器</strong>。</p>
+            <p>这和 Zed（独立编辑器）、Cline Desktop（原生应用）是不同形态。</p></dd>
         </div>
         <div class="axis">
           <dt><span data-zh>本地文件</span><span data-en>Local files</span></dt>
-          <dd>通过宿主编辑器访问工作区文件；上下文来自打开的文件、选区与 <code>@file</code> 引用，另有 <strong>Auto Context</strong>（自动带入最近文件与 IDE 上下文， 见 <code>/auto-context</code>）。官方口径：工作区 = 当前目录加临时目录 （如 <code>/tmp</code>），写入默认限工作区。Windows 上可原生运行（走 Windows 沙箱）或改用 WSL2（设置项 <code>chatgpt.runCodexInWindowsSubsystemForLinux</code>）。 官方 IDE 文档<strong>未描述独立语义索引</strong>——本地文件检索由同一 agent 的工具完成（已查官方 features 与 settings 两页）。</dd>
+          <dd><p>通过宿主编辑器访问工作区文件。</p>
+            <p>上下文来自打开的文件、选区与 <code>@file</code> 引用。 另有 <strong>Auto Context</strong>：自动带入最近文件与 IDE 上下文 （见 <code>/auto-context</code>）。</p>
+            <p>官方口径：工作区 = 当前目录加临时目录（如 <code>/tmp</code>），写入默认限工作区。</p>
+            <p>Windows 上可以原生运行（走 Windows 沙箱），也可以改用 WSL2 （设置项 <code>chatgpt.runCodexInWindowsSubsystemForLinux</code>）。</p>
+            <p><strong>官方 IDE 文档没有描述独立语义索引</strong> —— 本地文件检索由同一 agent 的工具完成。</p>
+            <p><strong>核验</strong>：已查官方 features 与 settings 两页。</p></dd>
         </div>
         <div class="axis">
           <dt><span data-zh>关机后的任务</span><span data-en>Tasks after shutdown</span></dt>
-          <dd><strong>有云端形态，官方称可从 IDE 委派任务到 Codex Cloud。</strong> IDE 页原文：&quot;delegate tasks to Codex Cloud&quot;；功能页原文 &quot;Offload longer jobs to a cloud environment&quot;，可用 <code>/cloud</code> 与 <code>/local</code> 切换。云任务在 <strong>OpenAI 托管的容器</strong>里后台运行 （含并行），因此<strong>本地编辑器关闭后云任务仍继续</strong>； <strong>本地任务依赖宿主编辑器进程，关闭即停止</strong>。 云任务与本地消息共享套餐用量（官方定价页称共用 5 小时窗口）。</dd>
+          <dd><p><strong>有云端形态：官方称可以从 IDE 委派任务到 Codex Cloud。</strong></p>
+            <p><strong>IDE 页原文</strong>：&quot;delegate tasks to Codex Cloud&quot;</p>
+            <p><strong>功能页原文</strong>：&quot;Offload longer jobs to a cloud environment&quot;</p>
+            <p>用 <code>/cloud</code> 与 <code>/local</code> 切换。</p>
+            <p>云任务在 <strong>OpenAI 托管的容器</strong>里后台运行（含并行）， 所以<strong>本地编辑器关掉之后云任务还会继续</strong>。 <strong>本地任务依赖宿主编辑器进程，关掉就停。</strong></p>
+            <p>云任务与本地消息共享套餐用量（官方定价页称共用 5 小时窗口）。</p></dd>
         </div>
         <div class="axis">
           <dt><span data-zh>工具与扩展</span><span data-en>Tools & extensions</span></dt>
-          <dd><strong>内置第一方工具与命令已核验</strong>：网页搜索（官方称默认启用， 走 OpenAI 维护的搜索缓存，可配 <code>web_search = &quot;live&quot; | &quot;disabled&quot;</code>）、 图像生成（<code>$imagegen</code>，模型 <code>gpt-image-2</code>，计入用量且更快耗尽额度）、 代码审查（<code>/review</code>）、编辑器上下文（<code>@file</code>、选区、拖拽图片）， 以及命令面板命令（<code>chatgpt.newChat</code> / <code>addToThread</code> / <code>addFileToThread</code> / <code>implementTodo</code>）与 TODO CodeLens。 <strong>MCP 官方明确支持 IDE 扩展</strong>：原文 &quot;Codex supports MCP servers in both the CLI and the IDE extension&quot;， 支持 STDIO 与 Streamable HTTP，CLI 与 IDE 共享 <code>config.toml</code> 里的 <code>[mcp_servers.&lt;name&gt;]</code>（含 <code>enabled_tools</code> 与逐 server、逐 tool 的 <code>approval_mode</code>）。</dd>
+          <dd><p><strong>内置第一方工具与命令都已核验。</strong></p>
+            <p>工具：</p>
+            <ul><li>网页搜索 —— 官方称默认启用，走 OpenAI 维护的搜索缓存，可配 <code>web_search = &quot;live&quot; | &quot;disabled&quot;</code></li><li>图像生成 —— <code>$imagegen</code>，模型 <code>gpt-image-2</code>，计入用量且更快耗尽额度</li><li>代码审查 —— <code>/review</code></li><li>编辑器上下文 —— <code>@file</code>、选区、拖拽图片</li></ul>
+            <p>命令面板命令：<code>chatgpt.newChat</code> / <code>addToThread</code> / <code>addFileToThread</code> / <code>implementTodo</code>， 另有 TODO CodeLens。</p>
+            <p><strong>MCP 官方明确支持 IDE 扩展。</strong></p>
+            <p>支持 STDIO 与 Streamable HTTP；CLI 与 IDE 共享 <code>config.toml</code> 里的 <code>[mcp_servers.&lt;name&gt;]</code>（含 <code>enabled_tools</code>，以及逐 server、逐 tool 的 <code>approval_mode</code>）。</p>
+            <p><strong>原文</strong>：&quot;Codex supports MCP servers in both the CLI and the IDE extension&quot;</p></dd>
         </div>
         <div class="axis">
           <dt><span data-zh>上下文与记忆</span><span data-en>Context & memory</span></dt>
-          <dd><strong>app server 架构仍是关键设计</strong>——线程可启动、续接与恢复， IDE 与 CLI 共享同一套会话机制与同一份配置。 官方另补三点：从本地会话发起云任务会记住会话上下文 （云任务转回本地续聊也保留上下文）；<code>/status</code> 显示 thread ID、 上下文用量与速率限额；<code>/goal</code> 可设持久目标。 上下文窗口的具体数值与自动压缩策略，官方未在 IDE 文档单列 （压缩在 CLI / SDK 侧经 <code>compact_prompt</code> 等配置项， 已查官方 features 与 slash-commands 两页）。</dd>
+          <dd><p><strong>app server 架构仍是关键设计</strong> —— 线程可以启动、续接与恢复， IDE 与 CLI 共享同一套会话机制和同一份配置。</p>
+            <p>官方另外补了三点：</p>
+            <ul><li>从本地会话发起云任务会记住会话上下文（云任务转回本地续聊也保留上下文）</li><li><code>/status</code> 显示 thread ID、上下文用量与速率限额</li><li><code>/goal</code> 可设持久目标</li></ul>
+            <p><strong>上下文窗口的具体数值与自动压缩策略，官方未在 IDE 文档单列。</strong></p>
+            <p>压缩在 CLI / SDK 侧经 <code>compact_prompt</code> 等配置项；</p>
+            <p><strong>核验</strong>：已查官方 features 与 slash-commands 两页。</p></dd>
         </div>
         <div class="axis">
           <dt><span data-zh>权限与限制</span><span data-en>Permissions & limits</span></dt>
-          <dd><strong>IDE 与 CLI 共用同一套沙箱与审批——官方 settings 页明说 &quot;The Codex IDE extension uses the Codex CLI&quot;，审批与沙箱在共享 <code>~/.codex/config.toml</code> 里配置。</strong> UI 侧有三档审批模式： <code>Chat</code> / <code>Agent</code> / <code>Agent (Full Access)</code>；默认 <code>Agent</code>： 在工作目录内自动读写并执行命令，<strong>工作目录外或联网仍需审批</strong>； 只有 <code>Full Access</code> 才免审批联网。官方安全页口径（含 IDE extension）：默认 <strong>无网络 + 写入限当前工作区</strong>， <code>.git</code> / <code>.agents</code> / <code>.codex</code> 递归只读；审批与沙箱键同 CLI （<code>approval_policy</code> / <code>sandbox_mode</code> / <code>[sandbox_workspace_write] network_access</code> 与 <code>network_proxy</code> 域名清单）；Windows 原生沙箱默认 <code>elevated</code>。</dd>
+          <dd><p><strong>IDE 与 CLI 共用同一套沙箱与审批。</strong></p>
+            <p><strong>官方 settings 页原文</strong>：&quot;The Codex IDE extension uses the Codex CLI&quot;</p>
+            <p><strong>同页</strong>：审批与沙箱在共享的 <code>~/.codex/config.toml</code> 里配置。</p>
+            <p>UI 侧有三档审批模式：<code>Chat</code> / <code>Agent</code> / <code>Agent (Full Access)</code>。</p>
+            <ul><li>默认 <code>Agent</code> —— 在工作目录内自动读写并执行命令，<strong>工作目录外或联网仍需审批</strong></li><li>只有 <code>Full Access</code> 才免审批联网</li></ul>
+            <p>官方安全页口径（含 IDE extension）： 默认 <strong>无网络 + 写入限当前工作区</strong>；<code>.git</code> / <code>.agents</code> / <code>.codex</code> 递归只读。</p>
+            <p>审批与沙箱键同 CLI：<code>approval_policy</code> / <code>sandbox_mode</code> / <code>[sandbox_workspace_write] network_access</code> 与 <code>network_proxy</code> 域名清单。 Windows 原生沙箱默认 <code>elevated</code>。</p></dd>
         </div>
         <div class="axis">
           <dt><span data-zh>适合什么任务</span><span data-en>Best for</span></dt>
-          <dd>已在用 VS Code / Cursor / Windsurf 等编辑器， 希望在同一环境里用 Codex 而不切换工具的人。 需要 IDE 与 CLI 共享会话的人（app server 架构）。</dd>
+          <dd><p>适合两类人：</p>
+            <ul><li>已在用 VS Code / Cursor / Windsurf 等编辑器，希望在同一环境里用 Codex 而不切换工具的人</li><li>需要 IDE 与 CLI 共享会话的人（app server 架构）</li></ul></dd>
         </div>
       </dl>
 
@@ -154,9 +189,9 @@ Also not a fit where permission behaviour must be strictly identical between IDE
         <h2 class="warn"><span data-zh>头号误解</span><span data-en>Top misconception</span></h2>
         <ul>
 
-          <li><span data-zh>把它当成独立 IDE，其实质是装进已有编辑器的扩展</span><span data-en>Treating it as a standalone IDE — it is an extension inside an existing editor</span></li>
-          <li><span data-zh>以为 IDE 扩展与 CLI 是两套独立系统，app server 架构让它们共享会话</span><span data-en>Assuming the IDE extension and the CLI are separate systems — the app server architecture lets them share sessions</span></li>
-          <li><span data-zh>以为 IDE 扩展的权限体系与 CLI 不同——两者共用 config.toml，沙箱与审批一致</span><span data-en>Carrying CLI permission behaviour over to the IDE extension; this round did not verify that they match</span></li>
+          <li><span data-zh>把它当成独立 IDE，其实质是装进已有编辑器的扩展</span><span data-en>Treating it as a standalone IDE — it is really an extension installed into an existing editor</span></li>
+          <li><span data-zh>以为 IDE 扩展与 CLI 是两套独立系统，app server 架构让它们共享会话</span><span data-en>Assuming the IDE extension and the CLI are two separate systems — the app server architecture lets them share sessions</span></li>
+          <li><span data-zh>以为 IDE 扩展的权限体系与 CLI 不同——两者共用 config.toml，沙箱与审批一致</span><span data-en>Assuming the IDE extension has its own permission model — both share config.toml, and the sandbox and approvals are the same</span></li>
         </ul>
       </div>
 
@@ -165,9 +200,9 @@ Also not a fit where permission behaviour must be strictly identical between IDE
         <h2><span data-zh>价格</span><span data-en>Pricing</span></h2>
         <table class="src">
           <tbody>
-            <tr><th class="w-28"><span data-zh>月度入口</span><span data-en>Monthly entry</span></th><td><span data-zh>随 ChatGPT 套餐，档位见定价页</span><span data-en>随 ChatGPT 套餐，档位见定价页</span></td></tr>
-            <tr><th class="w-28"><span data-zh>年付</span><span data-en>Annual</span></th><td><span data-zh>未收录年付报价</span><span data-en>未收录年付报价</span></td></tr>
-            <tr><th class="w-28"><span data-zh>额度说明</span><span data-en>Quota note</span></th><td><span data-zh>与 [CLI 形态](./codex-cli.md) 共享同一授权： 随 ChatGPT 订阅。 **API 计费与订阅不是同一额度。** 官方 IDE 文档站对 curl 返回 403（2026-10-08：改用 WebFetch 取到定价页， 模型档位已核）；额度细则未逐档录入，以官方定价页为准。</span><span data-en>与 [CLI 形态](./codex-cli.md) 共享同一授权： 随 ChatGPT 订阅。 **API 计费与订阅不是同一额度。** 官方 IDE 文档站对 curl 返回 403（2026-10-08：改用 WebFetch 取到定价页， 模型档位已核）；额度细则未逐档录入，以官方定价页为准。</span></td></tr>
+            <tr><th class="w-28"><span data-zh>月度入口</span><span data-en>Monthly entry</span></th><td><span data-zh><p>随 ChatGPT 套餐，档位见定价页</p></span><span data-en><p>随 ChatGPT 套餐，档位见定价页</p></span></td></tr>
+            <tr><th class="w-28"><span data-zh>年付</span><span data-en>Annual</span></th><td><span data-zh><p>未收录年付报价</p></span><span data-en><p>未收录年付报价</p></span></td></tr>
+            <tr><th class="w-28"><span data-zh>额度说明</span><span data-en>Quota note</span></th><td><span data-zh><p>与 <a href="./codex-cli.html">CLI 形态</a> 共享同一授权：随 ChatGPT 订阅。 <strong>API 计费与订阅不是同一额度。</strong> 取证：官方 IDE 文档站对 curl 返回 403（2026-10-08 改用 WebFetch 取到定价页，模型档位已核）； 额度细则未逐档录入，以官方定价页为准。</p></span><span data-en><p>与 <a href="./codex-cli.html">CLI 形态</a> 共享同一授权：随 ChatGPT 订阅。 <strong>API 计费与订阅不是同一额度。</strong> 取证：官方 IDE 文档站对 curl 返回 403（2026-10-08 改用 WebFetch 取到定价页，模型档位已核）； 额度细则未逐档录入，以官方定价页为准。</p></span></td></tr>
           </tbody>
         </table>
         <p class="fine mt-3"><span data-zh>不同币种不做折算。优惠、地区、税费与登录后报价可能变化，购买前请到官方页面确认。</span><span data-en>No currency conversion. Discounts, regions, tax and post-login pricing can change — confirm on the official page before buying.</span></p>
@@ -209,19 +244,45 @@ Also not a fit where permission behaviour must be strictly identical between IDE
 
             <div class="panel is-slim">
         <h2><span data-zh>实测记录</span><span data-en>Measured runs</span></h2>
-        <p>本站尚未完成实测。测试协议见 <a href="https://github.com/speculcom/ai-agent-guide/blob/main/tracks/agents/tasks/_protocol.md" target="_blank" rel="noopener">tasks/_protocol.md</a>。
-
-<strong>实测建议</strong>：重点测 <strong>app server 的会话续接</strong>——
-在 IDE 开会话、切到 CLI 继续，看状态是否完整保留。
-这是它架构上最有价值也最需要验证的点。</p>
+        <p>本站尚未完成实测。测试协议见 <a href="https://github.com/speculcom/ai-agent-guide/blob/main/tracks/agents/tasks/_protocol.md" target="_blank" rel="noopener">tasks/_protocol.md</a>。</p>
+            <p><strong>实测建议</strong>：重点测 <strong>app server 的会话续接</strong> —— 在 IDE 开会话、切到 CLI 继续，看状态是否完整保留。</p>
+            <p>这是它架构上最有价值也最需要验证的点。</p>
       </div>
 
+
+            <div class="panel is-slim">
+        <h2>形态澄清（这一条最容易被误解）</h2>
+        <p>它明确列出支持的三种宿主编辑器。</p>
+            <blockquote>官方 README 原文：&quot;If you want Codex in your code editor (VS Code, Cursor, Windsurf), install in your IDE.&quot;</blockquote>
+            <p><strong>关键信息</strong>：这说明 <strong>Codex IDE 形态是「扩展」而不是「编辑器」</strong>。</p>
+            <h3 class="sub-h">IDE 形态三种对比</h3>
+            <div class="tbl-wrap"><table><thead><tr><th>形态</th><th>代表</th><th>含义</th></tr></thead><tbody><tr><td><strong>独立编辑器</strong></td><td>Zed</td><td>自带完整编辑器，AI 是其中一部分</td></tr><tr><td><strong>原生桌面应用</strong></td><td>Cline Desktop</td><td>不依附于任何编辑器</td></tr><tr><td><strong>编辑器扩展</strong></td><td><strong>Codex IDE</strong>、Copilot、Cline 扩展</td><td>装进已有编辑器</td></tr></tbody></table></div>
+            <p><strong>这个区分很重要</strong>：</p>
+            <ul><li>扩展形态的「索引策略」「上下文构建」往往由宿主编辑器决定，而不是由这个工具自己决定</li><li>所以本条目与 <a href="./zed.html">Zed</a> 不完全可比 —— 一个是独立编辑器，一个是扩展</li></ul>
+      </div>
+      <div class="panel is-slim">
+        <h2>与 CLI 形态的关系</h2>
+        <p>两个条目，不同分区，但共享后端：</p>
+            <div class="tbl-wrap"><table><thead><tr><th></th><th><a href="/codex-cli.html">CLI 形态</a></th><th>IDE 形态（本条目）</th></tr></thead><tbody><tr><td>形态</td><td>终端进程</td><td>编辑器扩展</td></tr><tr><td>授权</td><td>随 ChatGPT 订阅</td><td><strong>同一授权</strong></td></tr><tr><td>后端</td><td>app server</td><td><strong>同一个 app server</strong></td></tr></tbody></table></div>
+            <p><strong>app server 架构的实际意义</strong>：线程可启动、续接与恢复。</p>
+            <p>所以<strong>在 IDE 里开的会话可以在 CLI 里续上</strong>，反过来也一样。</p>
+            <p><strong>这是本工具最有价值的架构特点</strong>，也是 CLI 与 IDE 两个条目必须交叉引用的原因。</p>
+      </div>
+      <div class="panel is-slim">
+        <h2>采集限制</h2>
+        <p>本次（2026-10-08）已取到官方 IDE 文档站正文 <code>developers.openai.com/codex/ide</code> 及其 features / settings / slash-commands 子页， 并交叉核对了 cloud、config-basic、安全与 MCP 页。</p>
+            <blockquote>此前一度取不到，属取证故障，非官方缺页。</blockquote>
+            <p><strong>已核验</strong>：</p>
+            <ul><li>工具集（web search、图像生成、code review、编辑器上下文）与 MCP 支持</li><li>三档审批模式（Chat / Agent / Agent Full Access）与沙箱默认值</li><li>云委派（Codex Cloud）与本地 / 云端会话上下文保留</li><li>模型切换器、可用模型清单与 API key 登录</li><li>授权随 ChatGPT 订阅；许可证 Apache-2.0</li></ul>
+            <p><strong>官方未说明</strong>：</p>
+            <ul><li>IDE 与 CLI 沙箱的逐平台实现差异（官方只说 OS 级强制）</li></ul>
+      </div>
 
             <div class="panel is-slim">
         <h2><span data-zh>相关条目</span><span data-en>Related entries</span></h2>
         <ul class="rel-list">
           <li><span class="rel-t"><a href="./claude-code.html">Claude Code</a></span><span class="rel-n">同为「扩展 + CLI」双形态架构</span></li>
-          <li><span class="rel-t"><a href="./zed.html">Zed</a></span><span class="rel-n">同赛道的另一端：独立编辑器</span></li>
+          <li><span class="rel-t"><a href="./zed.html">Zed</a></span><span class="rel-n">同分区的另一端：独立编辑器</span></li>
           <li><span class="rel-t"><a href="./cline.html">Cline</a></span><span class="rel-n">三形态全覆盖的另一实现</span></li>
           <li><span class="rel-t"><a href="/harness/codex-sdk.html"><span data-zh>Codex SDK</span><span data-en>Codex SDK</span></a></span><span class="rel-n"><span data-zh>另一层 · 自己搭的底座</span><span data-en>Other layer · Runtimes & SDKs</span></span></li>
         </ul>
