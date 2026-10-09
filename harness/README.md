@@ -10,7 +10,7 @@
 
 ## 这个分区提供什么
 
-- **10 个对象**，按固定 8 个维度记录
+- **15 个对象**，按固定 8 个维度记录
 - 每个维度都能回溯到官方一手源，附来源类型与核验日期
 - **不给总分排名**——缺少跨工具的统一实测，排名会误导
 - **「未知」是合法答案**——查不到就写未知并说明原因，不用推测填充
@@ -19,16 +19,21 @@
 
 | 对象 | 形态 | 厂商 | 可信度 | 核验日 |
 |---|---|---|---|---|
+| [AG2](./ag2.html) | 编排框架 | ag2ai | partial | 2026-10-08 |
 | [Claude Agent SDK](./claude-agent-sdk.html) | 编程底座 | Anthropic | partial | 2026-09-30 |
 | [Codex SDK](./codex-sdk.html) | 编程底座 | OpenAI | partial | 2026-10-01 |
-| [CrewAI](./crewai.html) | 编排框架 | CrewAI Inc | partial | 2026-10-01 |
+| [CrewAI](./crewai.html) | 编排框架 | CrewAI Inc | partial | 2026-10-08 |
 | [Deep Agents](./deepagents.html) | 通用 Harness | LangChain | partial | 2026-09-30 |
 | [Google ADK（Agent Development Kit）](./google-adk.html) | 编排框架 | Google | partial | 2026-10-01 |
 | [Hermes Agent](./hermes-agent.html) | 通用 Harness | Nous Research | partial | 2026-10-01 |
 | [LangGraph](./langgraph.html) | 编排框架 | LangChain Inc | partial | 2026-10-01 |
 | [LlamaIndex Framework](./llamaindex.html) | 编排框架 | LlamaIndex（run-llama） | partial | 2026-10-01 |
+| [Mastra](./mastra.html) | 编排框架 | Mastra AI | partial | 2026-10-08 |
+| [Microsoft Agent Framework](./microsoft-agent-framework.html) | 编排框架 | Microsoft | partial | 2026-10-08 |
 | [OpenAI Agents SDK](./openai-agents-sdk.html) | 编程底座 | OpenAI | partial | 2026-09-30 |
 | [OpenHands Agent Canvas](./openhands.html) | 通用 Harness | OpenHands（All-Hands-AI） | partial | 2026-10-01 |
+| [Pydantic AI](./pydantic-ai.html) | 编程底座 | Pydantic | partial | 2026-10-08 |
+| [smolagents](./smolagents.html) | 编程底座 | Hugging Face | partial | 2026-10-08 |
 
 ## 可信度标记
 
@@ -38,7 +43,7 @@
 | `partial` | some dimensions unknown, or official docs unreachable, or checked over 90 days ago |
 | `stale` | 官方已发布重大变化，本站尚未核验 |
 
-当前 10 个对象中，**0 个为 verified**。
+当前 15 个对象中，**0 个为 verified**。
 
 ## 数据来源
 
@@ -51,9 +56,9 @@
 
 | 分区 | 主题 | 对象数 |
 |---|---|---|
-| [Agents](/) | <span data-zh>装在编辑器、终端，或厂商云里</span><span data-en>Installed in an editor, a terminal, or a vendor cloud</span> | 17 |
-| [Harness](/harness/) | <span data-zh>运行时、编排框架、SDK</span><span data-en>Runtimes, orchestration frameworks, SDKs</span> | 10 |
-| [Tools](/tools/) | <span data-zh>缺什么，装什么 —— 给 agent 装的 MCP 工具</span><span data-en>Fill the gap — MCP tools an agent can install</span> | 9 |
+| [Agents](/) | <span data-zh>装在编辑器、终端，或厂商云里</span><span data-en>Installed in an editor, a terminal, or a vendor cloud</span> | 27 |
+| [Harness](/harness/) | <span data-zh>运行时、编排框架、SDK</span><span data-en>Runtimes, orchestration frameworks, SDKs</span> | 15 |
+| [Tools](/tools/) | <span data-zh>缺什么，装什么 —— 给 agent 装的 MCP 工具</span><span data-en>Fill the gap — MCP tools an agent can install</span> | 10 |
 
 ---
 
