@@ -10,9 +10,9 @@
 
 | 分区 | 主题 | 对象数 | 主要坐标系 |
 |---|---|---|---|
-| [Agents](./) | <span data-zh>装在编辑器、终端，或厂商云里</span><span data-en>Installed in an editor, a terminal, or a vendor cloud</span> | 17 | 8 通用维度，按形态分组 |
-| [Harness](./harness/) | <span data-zh>运行时、编排框架、SDK</span><span data-en>Runtimes, orchestration frameworks, SDKs</span> | 10 | 8 通用维度，按抽象层分组 |
-| [Tools](./tools/) | <span data-zh>缺什么，装什么 —— 给 agent 装的 MCP 工具</span><span data-en>Fill the gap — MCP tools an agent can install</span> | 9 | 8 通用 + 3 MCP 特有 |
+| [Agents](./) | <span data-zh>装在编辑器、终端，或厂商云里</span><span data-en>Installed in an editor, a terminal, or a vendor cloud</span> | 27 | 8 通用维度，按形态分组 |
+| [Harness](./harness/) | <span data-zh>运行时、编排框架、SDK</span><span data-en>Runtimes, orchestration frameworks, SDKs</span> | 15 | 8 通用维度，按抽象层分组 |
+| [Tools](./tools/) | <span data-zh>缺什么，装什么 —— 给 agent 装的 MCP 工具</span><span data-en>Fill the gap — MCP tools an agent can install</span> | 10 | 8 通用 + 3 MCP 特有 |
 
 **为什么不给一张 33 行的总表**：三层的坐标系不同，混排会制造假的可比性。
 成品 agent 与自己搭的底座都能进同一个八维坐标系，但它们解决的不是同一个问题；
