@@ -4,18 +4,18 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Goose — Agents | 投机取巧</title>
-  <meta name="description" content="Goose（Agentic AI Foundation）：由 Block 创建、现属 Agentic AI Foundation（Linux Foundation） 的本地优先开源通用 agent： 桌面应用 + CLI + 可嵌入 API 三形态，provider 可换成 Ollama 等本地模型， 并以 MC…" />
+  <meta name="description" content="Goose（Agentic AI Foundation）：本地优先的开源通用 agent：桌面应用 + CLI + 可嵌入 API 三种形态都能跑。 由 Block 创建，现属 Agentic AI Foundation（Linux Foundation）。 provider 可换成 Ollama 等本地模型。…" />
   <link rel="canonical" href="https://agent.specul.com/goose.html" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Goose" />
   <meta property="og:url" content="https://agent.specul.com/goose.html" />
   <meta property="og:title" content="Goose — Agents | 投机取巧" />
-  <meta property="og:description" content="Goose（Agentic AI Foundation）：由 Block 创建、现属 Agentic AI Foundation（Linux Foundation） 的本地优先开源通用 agent： 桌面应用 + CLI + 可嵌入 API 三形态，provider 可换成 Ollama 等本地模型， 并以 MC…" />
-  <meta name="theme-color" content="#05080f" />
+  <meta property="og:description" content="Goose（Agentic AI Foundation）：本地优先的开源通用 agent：桌面应用 + CLI + 可嵌入 API 三种形态都能跑。 由 Block 创建，现属 Agentic AI Foundation（Linux Foundation）。 provider 可换成 Ollama 等本地模型。…" />
+  <meta name="theme-color" content="#16121f" />
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%238b7cf8'/%3E%3Cstop offset='1' stop-color='%2322d3c5'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='48' height='48' rx='12' fill='%2305080f'/%3E%3Cpath d='M14 32 L24 12 L34 32' fill='none' stroke='url(%23g)' stroke-width='2.4' stroke-linejoin='round'/%3E%3Ccircle cx='24' cy='27' r='2.4' fill='%2322d3c5'/%3E%3C/svg%3E" />
   <link rel="stylesheet" href="brand.css" />
   <link rel="stylesheet" href="site.css" />
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Goose","applicationCategory":"DeveloperApplication","url":"https://goose-docs.ai/docs/getting-started/installation","sameAs":"https://github.com/aaif-goose/goose","description":"由 Block 创建、现属 Agentic AI Foundation（Linux Foundation） 的本地优先开源通用 agent： 桌面应用 + CLI + 可嵌入 API 三形态，provider 可换成 Ollama 等本地模型， 并以 MCP extensions 作为核心扩展面。","dateModified":"2026-10-08"}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Goose","applicationCategory":"DeveloperApplication","url":"https://goose-docs.ai/docs/getting-started/installation","sameAs":"https://github.com/aaif-goose/goose","description":"本地优先的开源通用 agent：桌面应用 + CLI + 可嵌入 API 三种形态都能跑。 由 Block 创建，现属 Agentic AI Foundation（Linux Foundation）。 provider 可换成 Ollama 等本地模型。 扩展面以 MCP extensions 为核心。","dateModified":"2026-10-08"}</script>
 </head>
 <body class="brand-ambient">
   <a class="t-skip" href="#main"><span data-zh>跳到主要内容</span><span data-en>Skip to main content</span></a>
@@ -96,64 +96,130 @@
         <span class="badge"><span data-zh>核验</span><span data-en>Checked</span> 2026-10-08</span>
       </div>
 
-            <p class="panel-lead"><span data-zh>由 Block 创建、<strong>现属 Agentic AI Foundation（Linux Foundation）</strong> 的本地优先开源通用 agent：
-桌面应用 + CLI + 可嵌入 API 三形态，provider 可换成 Ollama 等本地模型，
-并以 MCP extensions 作为核心扩展面。</span><span data-en>A general-purpose AI agent that runs on your machine, not just for code — official README: &quot;goose is a general-purpose AI agent that runs on your machine. Not just for code — use it for research, writing, automation, data analysis, or anything you need to get done.&quot;
-
-<strong>Three forms, local first</strong>: &quot;A native desktop app for macOS, Linux, and Windows. A full CLI for terminal workflows. An API to embed it anywhere. Built in Rust for performance and portability.&quot; It works with 15+ providers — Anthropic, OpenAI, Google, <strong>Ollama</strong>, OpenRouter, Azure, Bedrock and more — using API keys, local models, or your existing Claude / ChatGPT / Gemini subscriptions via ACP, and connects to 70+ extensions through the Model Context Protocol.
-
-<strong>Stewardship note (checked 2026-10-08)</strong>: Block donated goose to the <strong>Agentic AI Foundation (AAIF)</strong> at the Linux Foundation (official blog, 2026-04-07); the repository now redirects to <code>aaif-goose/goose</code> and the README states goose is part of AAIF. This entry records <code>vendor: Agentic AI Foundation</code> as the current steward — matching this site&#39;s convention of recording the current owner (as with Windsurf → Cognition) — while Block is the creator and remains credited in the body; <code>homepage</code> points at the current canonical repository. The documentation site has also moved to <code>goose-docs.ai</code> (old links redirect).</span></p>
+            <div class="panel-lead"><span data-zh><p><strong>本地优先的开源通用 agent</strong>：桌面应用 + CLI + 可嵌入 API 三种形态都能跑。</p>
+            <p>由 Block 创建，现属 <strong>Agentic AI Foundation（Linux Foundation）</strong>。</p>
+            <p>provider 可换成 Ollama 等本地模型。</p>
+            <p>扩展面以 MCP extensions 为核心。</p></span><span data-en><p><strong>A local-first, open-source general-purpose agent</strong>: it runs as a desktop app, a full CLI and an embeddable API.</p>
+            <p>Created by Block and now hosted by the <strong>Agentic AI Foundation (Linux Foundation)</strong>.</p>
+            <p>You can point it at Ollama or other local models, and its extension surface is built on MCP extensions.</p>
+            <p><strong>Stewardship note (checked 2026-10-08)</strong>: this entry&#39;s collection started at the old repo address <code>github.com/block/goose</code>, which now redirects to <code>github.com/aaif-goose/goose</code>.</p>
+            <p>Official blog (2026-04-07): &quot;Block has donated goose to the <strong>Agentic AI Foundation (AAIF)</strong> at the Linux Foundation&quot;. README: &quot;goose is part of the <strong>Agentic AI Foundation (AAIF)</strong> at the Linux Foundation&quot;.</p>
+            <p>So this entry records the <strong>current steward</strong> Agentic AI Foundation in <code>vendor</code> — matching this site&#39;s convention of recording the current owner (as with Windsurf → Cognition). Block is the creator and stays credited in the body. <code>homepage</code> points at the <strong>current canonical repository</strong>, <code>github.com/aaif-goose/goose</code>, so no redirect address is collected.</p>
+            <p>The documentation site has also moved to <code>goose-docs.ai</code> (old docs links redirect).</p></span></div>
 
             <div class="panel is-slim">
         <h2><span data-zh>适合与不适合</span><span data-en>When to use it, when not to</span></h2>
-<span data-zh>        <p>想要一个<strong>本地优先、可换任意 provider（含本地模型）的通用 agent</strong>、而不止写代码的人；
-需要桌面应用 + CLI 双形态的人；需要以 MCP 扩展为核心、可白名单管控的企业；
-需要把 agent 接进脚本或 CI 的人。</p>
-        <p class="warn-p"><strong>不适合</strong>需要「关机后任务继续跑」的场景——goose 是本地进程，
-<code>goose run</code> 的非交互模式只是脚本化执行，电脑一关就中断。</p></span><span data-en>        <p>People who want a <strong>local-first, general-purpose agent</strong> that can switch to any provider — including local models — and does more than write code.
-People who need both a desktop app and a CLI.
-Organisations that want MCP extensions as the core extension surface, with an allowlist for control.
-People wiring an agent into scripts or CI (<code>goose run --output-format json</code>).</p>
-        <p class="warn-p"><strong>Not a fit for</strong> anyone who assumes approval is on by default — goose runs in <strong>Autonomous permission mode by default</strong> and will run shell commands and edit any accessible file without asking. Also not a fit for tasks that must survive your machine being switched off: goose is a local process, and <code>goose run</code> is only scripted execution, not background.</p></span>
+<span data-zh>        <div><p><strong>适合四类人。</strong></p></div>
+        <div><ul><li>想要一个<strong>本地优先、可换任意 provider（含本地模型）的通用 agent</strong>，而不止写代码的人</li><li>需要桌面应用 + CLI 双形态的人</li><li>需要以 MCP 扩展能力为中心、可白名单管控的企业</li><li>需要把 agent 接进脚本或 CI 的人（<code>goose run --output-format json</code>）</li></ul></div>
+        <div class="warn-p"><p><strong>不适合</strong>需要「关机后任务继续跑」的场景。</p></div>
+        <div><p>goose 是本地进程。</p></div>
+        <div><p><code>goose run</code> 的非交互模式只是脚本化执行，电脑一关就中断。</p></div></span><span data-en>        <div><p><strong>A fit for four kinds of people.</strong></p></div>
+        <div><ul><li>People who want a <strong>local-first, general-purpose agent</strong> that can switch to any provider — including local models — and does more than write code.</li><li>People who need both a desktop app and a CLI.</li><li>Organisations that want MCP extensions as the core extension surface, with an allowlist for control.</li><li>People wiring an agent into scripts or CI (<code>goose run --output-format json</code>).</li></ul></div>
+        <div class="warn-p"><p><strong>Not a fit for</strong> anything that has to keep running after your machine is switched off.</p></div>
+        <div><p>goose is a local process.</p></div>
+        <div><p>The non-interactive mode of <code>goose run</code> is only scripted execution — close the computer and it stops.</p></div></span>
       </div>
 
 
       <div class="block-head">
         <h2 class="t-h2"><span data-zh>固定坐标系</span><span data-en>Fixed coordinate system</span></h2>
-        <p class="t-section-lead">8 <span data-zh>个维度</span><span data-en>dimensions</span>, <span data-zh>与同赛道其他对象逐项可比</span><span data-en>each comparable item by item against others in the same track</span>.</p>
+        <p class="t-section-lead">8 <span data-zh>个维度</span><span data-en>dimensions</span>, <span data-zh>与同分区其他对象逐项可比</span><span data-en>each comparable item by item against others in the same section</span>.</p>
       </div>
       <dl class="axes">
         <div class="axis">
           <dt><span data-zh>模型与开放条件</span><span data-en>Model & openness</span></dt>
-          <dd><strong>多 provider，且可接本地模型</strong>。官方 README 原文列出 &quot;15+ providers — Anthropic, OpenAI, Google, Ollama, OpenRouter, Azure, Bedrock, and more&quot;，并说明可用 API Key 或「已有的 Claude / ChatGPT / Gemini 订阅」（经 ACP）。 <strong>本地与自托管路径完整</strong>：Ollama、Ollama Cloud、LM Studio、Docker Model Runner、 Ramalama（走 Ollama provider）；任何 OpenAI 兼容端点也可接 （OPENAI_HOST 可指向自建 vLLM / KServe）。 <strong>订阅接入分两类</strong>：CLI Provider（cursor-agent）与 ACP Provider （claude-acp / codex-acp，后者把 goose 的 extensions 作为 MCP 传给对方）。 选模型在 Desktop 的 Models 标签或 <code>goose configure</code> 完成； 官方提示 <code>goose configure</code> 不支持输入自定义模型名，需改 GOOSE_MODEL 或走 Desktop。 <strong>官方称 tool calling 目前以 Claude 4 表现最好</strong>，并推荐参考 BFCL 榜单。</dd>
+          <dd><p><strong>能用多家模型，也能接本地模型。</strong></p>
+            <p>官方 README 列了 15+ 家 provider：</p>
+            <p><strong>&quot;15+ providers — Anthropic, OpenAI, Google, Ollama, OpenRouter, Azure, Bedrock, and more&quot;</strong></p>
+            <p>接入方式有三种：</p>
+            <ul><li>直接用 API Key</li><li>用本地模型</li><li>经 ACP 接已有的 Claude / ChatGPT / Gemini 订阅</li></ul>
+            <p>本地与自托管这条路是完整的。</p>
+            <p>Ollama、Ollama Cloud、LM Studio 都能用。 Docker Model Runner 与 Ramalama 也能用。 Ramalama 走 Ollama provider。</p>
+            <p>任何 OpenAI 兼容端点也能接。 <code>OPENAI_HOST</code> 可指向自建的 vLLM / KServe。</p>
+            <p>订阅接入分两类：</p>
+            <ul><li>CLI Provider：<code>cursor-agent</code></li><li>ACP Provider：<code>claude-acp</code> / <code>codex-acp</code> 后者把 goose 的 extensions 作为 MCP 传给对方</li></ul>
+            <p>选模型有两个入口。 一个是 Desktop 的 Models 标签，一个是 <code>goose configure</code>。</p>
+            <p>官方提示一件事：<code>goose configure</code> 不支持输入自定义模型名。 这种情况要改 <code>GOOSE_MODEL</code>，或者走 Desktop。</p>
+            <p>官方另称，tool calling 目前以 Claude 4 表现最好。 官方还推荐参考 BFCL 榜单。</p></dd>
         </div>
         <div class="axis">
           <dt><span data-zh>运行位置</span><span data-en>Where it runs</span></dt>
-          <dd><strong>本地优先的三形态</strong>：桌面应用（macOS / Linux / Windows）、完整 CLI、 以及可嵌入的 API（GDK / SDK）。官方 README 原文 &quot;A native desktop app for macOS, Linux, and Windows. A full CLI for terminal workflows. An API to embed it anywhere. <strong>Built in Rust</strong> for performance and portability.&quot; 代码在本机跑，模型请求出网或到本地模型端点。 另有 <code>goose serve</code>（Desktop 默认在后台起的本地 ACP server）， 也可把 <code>goose serve</code> 单独跑在远程 VM 上再让 Desktop 连过去。</dd>
+          <dd><p><strong>本地优先，三种形态都有。</strong></p>
+            <ul><li>桌面应用：macOS / Linux / Windows</li><li>完整 CLI：面向终端工作流</li><li>可嵌入的 API：GDK / SDK</li></ul>
+            <p>官方 README 原文：</p>
+            <p>&quot;A native desktop app for macOS, Linux, and Windows. A full CLI for terminal workflows. An API to embed it anywhere. <strong>Built in Rust</strong> for performance and portability.&quot;</p>
+            <p>代码在本机跑。</p>
+            <p>模型请求要么出网，要么打到本地模型端点。</p>
+            <p>另有 <code>goose serve</code>。 Desktop 默认在后台起它，它是个本地 ACP server。</p>
+            <p>也可以把 <code>goose serve</code> 单独跑在远程 VM 上，再让 Desktop 连过去。</p></dd>
         </div>
         <div class="axis">
           <dt><span data-zh>本地文件</span><span data-en>Local files</span></dt>
-          <dd><strong>靠内置 Developer 扩展读写文件与执行命令，默认权限很宽</strong>。 官方 Developer 扩展页列出的工具：<code>shell</code>（执行命令，标注 High 风险）、 <code>write</code>（创建/覆盖文件，High）、<code>edit</code>（精确替换文本，High）、 <code>tree</code>（列目录树，Low）、<code>read_image</code>（看图，Low）； 官方原文明确默认状态下「goose can run system commands with your user privileges and edit any accessible file <strong>without your approval</strong>」。 MCP Roots 会把当前工作目录共享给支持 roots 的扩展； 可在 Docker 容器里跑扩展（<code>--container</code> 与 goose-in-docker 教程）。 另有独立的 Analyze 扩展做<strong>语义分析与调用图</strong>。</dd>
+          <dd><p><strong>靠内置的 Developer 扩展读写文件、执行命令，默认权限很宽。</strong></p>
+            <p>Developer 扩展页列出的工具：</p>
+            <ul><li><code>shell</code> —— 执行命令，官方标注 High 风险</li><li><code>write</code> —— 创建 / 覆盖文件，High</li><li><code>edit</code> —— 精确替换文本，High</li><li><code>tree</code> —— 列目录树，Low</li><li><code>read_image</code> —— 看图，Low</li></ul>
+            <p>官方原文说得很直白：</p>
+            <p>&quot;goose can run system commands with your user privileges and edit any accessible file <strong>without your approval</strong>&quot;</p>
+            <p>另外两点：</p>
+            <ul><li>MCP Roots 会把当前工作目录共享给支持 roots 的扩展</li><li>可以在 Docker 容器里跑扩展（<code>--container</code> 与 goose-in-docker 教程）</li></ul>
+            <p>还有独立的 Analyze 扩展，做<strong>语义分析与调用图</strong>。</p></dd>
         </div>
         <div class="axis">
           <dt><span data-zh>关机后的任务</span><span data-en>Tasks after shutdown</span></dt>
-          <dd><strong>本地进程，不支持关机续跑</strong>。CLI 会话随终端结束，模型请求在本机发起。 <strong>非交互不是后台</strong>：<code>goose run</code> 是一次跑完即退出的脚本化执行（详见 tools 轴）， 仍占用本机进程。 <strong>有定时与远程入口，但都依赖本机在线</strong>：官方有 Recipes 的定时调度（schedules）、 <code>goose serve</code> ACP server、把 Desktop 指向远程 goose server 的玩法， 以及 Roaming Agents（从另一台机器连到正在运行的 goose）—— 主机一关机，任务即中断。</dd>
+          <dd><p><strong>本地进程，不支持关机续跑。</strong></p>
+            <p>CLI 会话随终端结束。</p>
+            <p>模型请求在本机发起。</p>
+            <p><strong>非交互不是后台</strong>：<code>goose run</code> 只是脚本化执行。 它一次跑完就退出，仍占用本机进程（详见 tools 轴）。</p>
+            <p><strong>有定时与远程入口，但都依赖本机在线</strong>：</p>
+            <ul><li>Recipes 的定时调度（schedules）</li><li><code>goose serve</code> ACP server</li><li>把 Desktop 指向远程 goose server</li><li>Roaming Agents（从另一台机器连到正在运行的 goose）</li></ul>
+            <p>主机一关机，任务即中断。</p></dd>
         </div>
         <div class="axis">
           <dt><span data-zh>工具与扩展</span><span data-en>Tools & extensions</span></dt>
-          <dd><strong>MCP 是一等公民（extensions 即 MCP server）</strong>。官方 README 原文 &quot;Connect to <strong>70+ extensions</strong> via the Model Context Protocol (MCP) open standard&quot;。 <strong>传输方式已核到两种</strong>：stdio（<code>--with-extension</code>，可带 ENV=val 与显式名字）、 Streamable HTTP（<code>--with-streamable-http-extension &lt;url&gt;</code>）；另有 <code>--with-builtin</code>。 <strong>内置扩展</strong>（官方 Browse Extensions 页）：Developer、Computer Controller、 Memory、Auto Visualiser（MCP-UI）、Code Mode（用 JS 调 MCP 工具）、 Summon（加载技能并派发子代理）、Top of Mind、Analyze 等。 <strong>扩展白名单</strong>（Extension Allowlist）可限制企业内可装的 MCP server。 并支持 MCP Elicitation、MCP Roots 与 MCP Apps。 <strong>非交互命令 <code>goose run</code></strong>：<code>-t &quot;text&quot;</code> / <code>-i file</code> / <code>-i -</code>（stdin）， <code>--output-format json|stream-json</code>，<code>--no-session</code>，<code>-s</code> 转交互。</dd>
+          <dd><p><strong>MCP 是一等公民</strong>：extensions 就是 MCP server。</p>
+            <p>官方 README 原文：</p>
+            <p>&quot;Connect to <strong>70+ extensions</strong> via the Model Context Protocol (MCP) open standard&quot;</p>
+            <p><strong>传输方式已核到两种</strong>：</p>
+            <ul><li>stdio：<code>--with-extension</code>，可带 ENV=val 与显式名字</li><li>Streamable HTTP：<code>--with-streamable-http-extension &lt;url&gt;</code></li></ul>
+            <p>另有 <code>--with-builtin</code>。</p>
+            <p><strong>内置扩展</strong>（官方 Browse Extensions 页）：</p>
+            <ul><li>Developer</li><li>Computer Controller</li><li>Memory</li><li>Auto Visualiser（MCP-UI）</li><li>Code Mode（用 JS 调 MCP 工具）</li><li>Summon（加载技能并派发子代理）</li><li>Top of Mind</li><li>Analyze 等</li></ul>
+            <p><strong>扩展白名单</strong>（Extension Allowlist）可限制企业内可装的 MCP server。 并支持 MCP Elicitation、MCP Roots 与 MCP Apps。</p>
+            <p><strong>非交互命令 <code>goose run</code></strong> 的参数：</p>
+            <ul><li><code>-t &quot;text&quot;</code> / <code>-i file</code> / <code>-i -</code>（stdin）</li><li><code>--output-format json|stream-json</code></li><li><code>--no-session</code></li><li><code>-s</code> 转交互</li></ul></dd>
         </div>
         <div class="axis">
           <dt><span data-zh>上下文与记忆</span><span data-en>Context & memory</span></dt>
-          <dd><strong>会话落本地 SQLite，可续接可分叉</strong>。官方 CLI Commands 页原文： 自 1.10.0 起会话存于 SQLite 数据库 sessions.db（不再是单个 .jsonl）； <code>goose session -r</code> 续接、<code>--fork</code> 复制历史开新会话、<code>--edit</code> 用编辑器改对话， <code>session list / rename / remove / export</code>（markdown / json / yaml）。 <strong>压缩</strong>：官方 changelog 提到在 unrolled agent loop 的<strong>工具边界自动压缩</strong>。 <strong>记忆</strong>：内置 Memory 扩展提供持久上下文（跨会话的信息存储）， Top of Mind 每轮注入持久指令；官方另有 goosehints 一类的上下文工程手段。</dd>
+          <dd><p><strong>会话落本地 SQLite，可续接、可分叉。</strong></p>
+            <p>官方 CLI Commands 页记了一条变化：</p>
+            <p>自 1.10.0 起，会话存于 SQLite 数据库 sessions.db，不再是单个 .jsonl</p>
+            <p>会话操作命令：</p>
+            <ul><li><code>goose session -r</code> —— 续接</li><li><code>--fork</code> —— 复制历史，开新会话</li><li><code>--edit</code> —— 用编辑器改对话</li><li><code>session list / rename / remove / export</code> —— 可导出 markdown / json / yaml</li></ul>
+            <p><strong>压缩</strong>：官方 changelog 提到过这一条。</p>
+            <p>压缩发生在 unrolled agent loop 的工具边界。</p>
+            <p><strong>记忆</strong>：内置 Memory 扩展提供持久上下文。 也就是跨会话的信息存储。</p>
+            <p>Top of Mind 每轮注入持久指令。 官方另有 goosehints 一类的上下文工程手段。</p></dd>
         </div>
         <div class="axis">
           <dt><span data-zh>权限与限制</span><span data-en>Permissions & limits</span></dt>
-          <dd><strong>默认最宽松的一档，值得单独记</strong>：官方 Developer 扩展页原文 &quot;goose runs in <strong>Autonomous permission mode by default</strong>&quot;—— 即不经审批即可执行 shell 命令、改任意可访问文件。 <strong>四档权限模式</strong>（GOOSE_MODE 或会话内 <code>/mode</code>）：<code>auto</code>（无需审批）、 <code>approve</code>（每次动作都要审）、<code>smart_approve</code>（AI 判断哪些要审）、 <code>chat</code>（禁用全部工具）。 <strong>工具级权限</strong>：在 approve / smart_approve 下可对单个扩展工具设 Always allow / Ask before / Never allow。 <strong>数据面</strong>：官方 Usage Data 页说明收集匿名用量数据需<strong>首次征得同意</strong>、可随时更改； 诊断包（<code>goose session diagnostics</code>）会包含会话消息与配置，官方提示分享前先检查。 <strong>模型推理的数据流向取决于你选的 provider</strong>，goose 本体是 Apache-2.0 本地程序。</dd>
+          <dd><p><strong>默认就是最宽松的一档，值得单独记。</strong></p>
+            <p>官方 Developer 扩展页原文：</p>
+            <p>&quot;goose runs in <strong>Autonomous permission mode by default</strong>&quot;</p>
+            <p>也就是不经审批即可执行 shell 命令、改任意可访问的文件。</p>
+            <p><strong>四档权限模式</strong>（<code>GOOSE_MODE</code> 或会话内 <code>/mode</code>）：</p>
+            <ul><li><code>auto</code> —— 无需审批</li><li><code>approve</code> —— 每次动作都要审</li><li><code>smart_approve</code> —— AI 判断哪些要审</li><li><code>chat</code> —— 禁用全部工具</li></ul>
+            <p><strong>工具级权限</strong>也可以单独设。</p>
+            <p>在 approve / smart_approve 下，每个扩展工具有三种策略可选：</p>
+            <ul><li>Always allow</li><li>Ask before</li><li>Never allow</li></ul>
+            <p><strong>数据面</strong>：官方 Usage Data 页说明了两件事。</p>
+            <p>收集匿名用量数据需<strong>首次征得同意</strong>。 同意与否可随时更改。</p>
+            <p>诊断包 <code>goose session diagnostics</code> 会包含会话消息与配置。 官方提示分享前先检查。</p>
+            <p><strong>模型推理的数据流向取决于你选的 provider</strong>。 goose 本体是 Apache-2.0 的本地程序。</p></dd>
         </div>
         <div class="axis">
           <dt><span data-zh>适合什么任务</span><span data-en>Best for</span></dt>
-          <dd>想要一个<strong>本地优先、可换任意 provider（含本地模型）的通用 agent</strong>， 而不止写代码的人；需要桌面应用 + CLI 双形态的人； 需要以 MCP 扩展能力为中心、可白名单管控的企业； 需要把 agent 接进脚本或 CI 的人（<code>goose run --output-format json</code>）。</dd>
+          <dd><p>四类人适合用：</p>
+            <ul><li>想要一个<strong>本地优先、可换任意 provider（含本地模型）的通用 agent</strong>，而不止写代码的人</li><li>需要桌面应用 + CLI 双形态的人</li><li>需要以 MCP 扩展能力为中心、可白名单管控的企业</li><li>需要把 agent 接进脚本或 CI 的人（<code>goose run --output-format json</code>）</li></ul></dd>
         </div>
       </dl>
 
@@ -172,9 +238,19 @@ People wiring an agent into scripts or CI (<code>goose run --output-format json<
         <h2><span data-zh>价格</span><span data-en>Pricing</span></h2>
         <table class="src">
           <tbody>
-            <tr><th class="w-28"><span data-zh>月度入口</span><span data-en>Monthly entry</span></th><td><span data-zh>Apache-2.0 开源，goose 本身无订阅档</span><span data-en>Apache-2.0 开源，goose 本身无订阅档</span></td></tr>
-            <tr><th class="w-28"><span data-zh>年付</span><span data-en>Annual</span></th><td><span data-zh>未核验年付报价</span><span data-en>未核验年付报价</span></td></tr>
-            <tr><th class="w-28"><span data-zh>额度说明</span><span data-en>Quota note</span></th><td><span data-zh>Apache-2.0 开源，goose 本体不收费、无官方订阅档。 **2026-10-08 按官方仓库与文档核实**：模型推理要自付—— 自带 API Key（如 ANTHROPIC_API_KEY / OPENAI_API_KEY）、 用本地模型（Ollama / LM Studio / Docker Model Runner / Ramalama，无 API 费用）， 或经 ACP / CLI Provider 接入已有的 Claude / ChatGPT / Gemini 订阅。 官方新手向导另推荐 Agent Router by Tetrate： 首次通过 goose 自动认证可获 **10 美元免费额度**（新老 Tetrate 用户均可）。</span><span data-en>Apache-2.0 开源，goose 本体不收费、无官方订阅档。 **2026-10-08 按官方仓库与文档核实**：模型推理要自付—— 自带 API Key（如 ANTHROPIC_API_KEY / OPENAI_API_KEY）、 用本地模型（Ollama / LM Studio / Docker Model Runner / Ramalama，无 API 费用）， 或经 ACP / CLI Provider 接入已有的 Claude / ChatGPT / Gemini 订阅。 官方新手向导另推荐 Agent Router by Tetrate： 首次通过 goose 自动认证可获 **10 美元免费额度**（新老 Tetrate 用户均可）。</span></td></tr>
+            <tr><th class="w-28"><span data-zh>月度入口</span><span data-en>Monthly entry</span></th><td><span data-zh><p>Apache-2.0 开源，goose 本身无订阅档</p></span><span data-en><p>Apache-2.0 开源，goose 本身无订阅档</p></span></td></tr>
+            <tr><th class="w-28"><span data-zh>年付</span><span data-en>Annual</span></th><td><span data-zh><p>未核验年付报价</p></span><span data-en><p>未核验年付报价</p></span></td></tr>
+            <tr><th class="w-28"><span data-zh>额度说明</span><span data-en>Quota note</span></th><td><span data-zh><p>Apache-2.0 开源，goose 本体不收费、无官方订阅档。</p>
+            <p><strong>2026-10-08 按官方仓库与文档核实</strong>：模型推理要自付。</p>
+            <p>三条路：</p>
+            <ul><li>自带 API Key（如 ANTHROPIC_API_KEY / OPENAI_API_KEY）</li><li>用本地模型：Ollama / LM Studio / Docker Model Runner / Ramalama，无 API 费用</li><li>经 ACP / CLI Provider 接入已有的 Claude / ChatGPT / Gemini 订阅</li></ul>
+            <p>官方新手向导另推荐 Agent Router by Tetrate。</p>
+            <p>首次通过 goose 自动认证，可获 <strong>10 美元免费额度</strong>（新老 Tetrate 用户均可）。</p></span><span data-en><p>Apache-2.0 开源，goose 本体不收费、无官方订阅档。</p>
+            <p><strong>2026-10-08 按官方仓库与文档核实</strong>：模型推理要自付。</p>
+            <p>三条路：</p>
+            <ul><li>自带 API Key（如 ANTHROPIC_API_KEY / OPENAI_API_KEY）</li><li>用本地模型：Ollama / LM Studio / Docker Model Runner / Ramalama，无 API 费用</li><li>经 ACP / CLI Provider 接入已有的 Claude / ChatGPT / Gemini 订阅</li></ul>
+            <p>官方新手向导另推荐 Agent Router by Tetrate。</p>
+            <p>首次通过 goose 自动认证，可获 <strong>10 美元免费额度</strong>（新老 Tetrate 用户均可）。</p></span></td></tr>
           </tbody>
         </table>
         <p class="fine mt-3"><span data-zh>不同币种不做折算。优惠、地区、税费与登录后报价可能变化，购买前请到官方页面确认。</span><span data-en>No currency conversion. Discounts, regions, tax and post-login pricing can change — confirm on the official page before buying.</span></p>
@@ -184,9 +260,9 @@ People wiring an agent into scripts or CI (<code>goose run --output-format json<
             <div class="panel is-slim">
         <h2><span data-zh>未知项清单</span><span data-en>Known unknowns</span></h2>
         <ul>
-          <li>各内置扩展的<strong>默认权限档位</strong>：官方未说明每个扩展的默认审批级别 （已查 Browse Extensions 与 Developer Extension 两页）</li>
+          <li>各内置扩展的<strong>默认权限档位</strong>：官方未说明每个扩展的默认审批级别（已查 Browse Extensions 与 Developer Extension 两页）</li>
           <li>定时调度（schedules / recipes）的并发与时长上限：官方文档未给数字</li>
-          <li>桌面应用与 CLI 在权限默认值上是否完全一致：官方未说明 （已查 CLI Commands 与 Developer Extension 两页）</li>
+          <li>桌面应用与 CLI 在权限默认值上是否完全一致：官方未说明（已查 CLI Commands 与 Developer Extension 两页）</li>
           <li><code>goose serve</code> 远程形态的认证与网络边界：官方文档给了入口，未展开安全细节</li>
         </ul>
       </div>
@@ -212,14 +288,31 @@ People wiring an agent into scripts or CI (<code>goose run --output-format json<
 
             <div class="panel is-slim">
         <h2><span data-zh>实测记录</span><span data-en>Measured runs</span></h2>
-        <p>本站尚未完成实测。测试协议见 <a href="https://github.com/speculcom/ai-agent-guide/blob/main/tracks/agents/tasks/_protocol.md" target="_blank" rel="noopener">tasks/_protocol.md</a>。
-
-<strong>实测建议</strong>：重点验三处——
-① 默认 Autonomous 权限模式下改文件/跑命令的实际边界；
-② <code>goose run --output-format json</code> 在 CI（无 TTY）里的可用性与退出码；
-③ 把 provider 换成 Ollama 本地模型后的 tool calling 质量。</p>
+        <p>本站尚未完成实测。</p>
+            <p>测试协议见 <a href="https://github.com/speculcom/ai-agent-guide/blob/main/tracks/agents/tasks/_protocol.md" target="_blank" rel="noopener">tasks/_protocol.md</a>。</p>
+            <p><strong>实测建议</strong>：重点验三处。</p>
+            <ul><li>默认 Autonomous 权限模式下，改文件 / 跑命令的实际边界</li><li><code>goose run --output-format json</code> 在 CI（无 TTY）里的可用性与退出码</li><li>把 provider 换成 Ollama 本地模型后的 tool calling 质量</li></ul>
       </div>
 
+
+            <div class="panel is-slim">
+        <h2>核验说明</h2>
+        <p><code>confidence: partial</code> 的原因：能力面已经核到，细节还缺。</p>
+            <p><strong>已核到的能力面</strong>：多形态、provider、MCP 扩展、会话、权限模式、非交互执行。</p>
+            <p><strong>还缺的细节</strong>：各扩展的默认权限档位、定时调度的额度上限。</p>
+            <p>这些官方未逐项列出，所以不给 <code>verified</code>。</p>
+            <p><strong>一处必须记录的变化（2026-10-08 核到）</strong>：旧仓库地址换了。</p>
+            <p>本条目采集起点是 <code>github.com/block/goose</code>。</p>
+            <p>该地址现已重定向到 <code>github.com/aaif-goose/goose</code>。</p>
+            <blockquote>官方博客（2026-04-07）原文：&quot;Block has donated goose to the <strong>Agentic AI Foundation (AAIF)</strong> at the Linux Foundation&quot;</blockquote>
+            <blockquote>README 原文：&quot;goose is part of the <strong>Agentic AI Foundation (AAIF)</strong> at the Linux Foundation&quot;</blockquote>
+            <p><code>vendor</code> 记的是<strong>当前托管方</strong> Agentic AI Foundation。</p>
+            <p>记法与本站 Windsurf→Cognition 一致：都记当前归属。 Block 是创建方，写在正文里。</p>
+            <p><code>homepage</code> 指向<strong>当前权威仓库</strong>。</p>
+            <p>它写的是 <code>github.com/aaif-goose/goose</code>。 这样不会收进重定向地址。</p>
+            <p>文档站也已迁到 <code>goose-docs.ai</code>（旧 docs 链接会重定向）。</p>
+            <blockquote>本轮核到的官方页：仓库 README、Releases（v1.53.0）、Supported LLM Providers、Run Tasks、CLI Commands、Developer Extension、Browse Extensions、Usage Data</blockquote>
+      </div>
 
             <div class="panel is-slim">
         <h2><span data-zh>相关条目</span><span data-en>Related entries</span></h2>
