@@ -11,7 +11,7 @@
   <meta property="og:url" content="https://agent.specul.com/tools/sequential-thinking.html" />
   <meta property="og:title" content="Sequential Thinking MCP Server — Tools | 投机取巧" />
   <meta property="og:description" content="Sequential Thinking MCP Server（Model Context Protocol）：提供单个 sequential_thinking 工具，让 Agent 以可修订、可分支的方式逐步推进复杂问题——它不产生智能，只产生结构。" />
-  <meta name="theme-color" content="#05080f" />
+  <meta name="theme-color" content="#16121f" />
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%238b7cf8'/%3E%3Cstop offset='1' stop-color='%2322d3c5'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='48' height='48' rx='12' fill='%2305080f'/%3E%3Cpath d='M14 32 L24 12 L34 32' fill='none' stroke='url(%23g)' stroke-width='2.4' stroke-linejoin='round'/%3E%3Ccircle cx='24' cy='27' r='2.4' fill='%2322d3c5'/%3E%3C/svg%3E" />
   <link rel="stylesheet" href="../brand.css" />
   <link rel="stylesheet" href="../site.css" />
@@ -94,66 +94,68 @@
         <span class="badge"><span data-zh>核验</span><span data-en>Checked</span> 2026-10-08</span>
       </div>
 
-            <p class="panel-lead"><span data-zh>提供单个 <code>sequential_thinking</code> 工具，让 Agent 以<strong>可修订、可分支</strong>的方式逐步推进复杂问题——<strong>它不产生智能，只产生结构</strong>。</span><span data-en>Provides a single <code>sequential_thinking</code> tool that lets an agent work through a complex problem <strong>in a revisable, branchable way</strong> — <strong>it produces no intelligence, only structure</strong>.</span></p>
+            <div class="panel-lead"><span data-zh><p>提供单个 <code>sequential_thinking</code> 工具，让 Agent 以<strong>可修订、可分支</strong>的方式逐步推进复杂问题——<strong>它不产生智能，只产生结构</strong>。</p></span><span data-en><p>Provides a single <code>sequential_thinking</code> tool that lets an agent work through a complex problem <strong>in a revisable, branchable way</strong> — <strong>it produces no intelligence, only structure</strong>.</p></span></div>
 
             <div class="panel is-slim">
         <h2><span data-zh>适合与不适合</span><span data-en>When to use it, when not to</span></h2>
-<span data-zh>        <p>让 Agent 用结构化、可修订、可分支的方式推进复杂问题分析：
-分解复杂问题、可能需要修正的分析、初期范围不明确的任务。</p>
-        <p class="warn-p"><strong>不适合简单任务</strong>——它不提升模型能力，只约束输出结构，
-增加调用轮次而无收益。</p></span><span data-en>        <p>Scenarios where a complex problem benefits from being worked through step by step in a revisable, branchable way.</p>
-        <p class="warn-p"><strong>Not a fit for</strong> adding capability — <strong>it produces structure, not intelligence.</strong></p></span>
+<span data-zh>        <div><p>让 Agent 用结构化、可修订、可分支的方式推进复杂问题分析： 分解复杂问题、可能需要修正的分析、初期范围不明确的任务。</p></div>
+        <div class="warn-p"><p><strong>不适合简单任务</strong>——它不提升模型能力，只约束输出结构， 增加调用轮次而无收益。</p></div></span><span data-en>        <div><p>Scenarios where a complex problem benefits from being worked through step by step in a revisable, branchable way.</p></div>
+        <div class="warn-p"><p><strong>Not a fit for</strong> adding capability — <strong>it produces structure, not intelligence.</strong></p></div></span>
       </div>
 
 
       <div class="block-head">
         <h2 class="t-h2"><span data-zh>固定坐标系</span><span data-en>Fixed coordinate system</span></h2>
-        <p class="t-section-lead">11 <span data-zh>个维度</span><span data-en>dimensions</span>, <span data-zh>与同赛道其他对象逐项可比</span><span data-en>each comparable item by item against others in the same track</span>.</p>
+        <p class="t-section-lead">11 <span data-zh>个维度</span><span data-en>dimensions</span>, <span data-zh>与同分区其他对象逐项可比</span><span data-en>each comparable item by item against others in the same section</span>.</p>
       </div>
       <dl class="axes">
         <div class="axis">
           <dt><span data-zh>模型与开放条件</span><span data-en>Model & openness</span></dt>
-          <dd>本身不调用模型，是被客户端调用的接口实现。 <strong>本 server 不产生智能，只提供结构</strong>—— 它约束的是 Agent 调用它的方式（逐步思考并允许修订）， 真正的推理仍由客户端背后的模型完成。</dd>
+          <dd><p>本身不调用模型，是被客户端调用的接口实现。 <strong>本 server 不产生智能，只提供结构</strong>—— 它约束的是 Agent 调用它的方式（逐步思考并允许修订）， 真正的推理仍由客户端背后的模型完成。</p></dd>
         </div>
         <div class="axis">
           <dt><span data-zh>运行位置</span><span data-en>Where it runs</span></dt>
-          <dd>本地 Node.js 进程，通过 stdio 通信。无文件与网络访问需求。</dd>
+          <dd><p>本地 Node.js 进程，通过 stdio 通信。无文件与网络访问需求。</p></dd>
         </div>
         <div class="axis">
           <dt><span data-zh>本地文件</span><span data-en>Local files</span></dt>
-          <dd><strong>无任何文件访问能力</strong>。不提供读写工具，是本赛道权限最窄的一类。</dd>
+          <dd><p><strong>无任何文件访问能力</strong>。不提供读写工具，是本分区权限最窄的一类。</p></dd>
         </div>
         <div class="axis">
           <dt><span data-zh>关机后的任务</span><span data-en>Tasks after shutdown</span></dt>
-          <dd>不支持。纯计算型工具，无状态，无需后台。</dd>
+          <dd><p>不支持。纯计算型工具，无状态，无需后台。</p></dd>
         </div>
         <div class="axis">
           <dt><span data-zh>工具与扩展</span><span data-en>Tools & extensions</span></dt>
-          <dd><strong>仅 1 个工具</strong> <code>sequential_thinking</code>， 参数包含 thought、thoughtNumber、totalThoughts、nextThoughtNeeded， 以及修订（isRevision / revisesThought）与 分支（branchFromThought / branchId）控制。 输出为结构化对象。</dd>
+          <dd><p><strong>仅 1 个工具</strong> <code>sequential_thinking</code>，</p>
+            <p>参数包含：</p>
+            <ul><li>thought</li><li>thoughtNumber</li><li>totalThoughts</li><li>nextThoughtNeeded</li></ul>
+            <p>以及修订（isRevision / revisesThought）与 分支（branchFromThought / branchId）控制。</p>
+            <p>输出为结构化对象。</p></dd>
         </div>
         <div class="axis">
           <dt><span data-zh>上下文与记忆</span><span data-en>Context & memory</span></dt>
-          <dd>无跨会话记忆。每次调用接收完整的思考文本， 修订与分支通过参数显式传递，不依赖服务端存储。</dd>
+          <dd><p>无跨会话记忆。每次调用接收完整的思考文本， 修订与分支通过参数显式传递，不依赖服务端存储。</p></dd>
         </div>
         <div class="axis">
           <dt><span data-zh>权限与限制</span><span data-en>Permissions & limits</span></dt>
-          <dd><strong>无任何权限风险</strong>：不访问文件、不访问网络、不写任何状态。 全部权限就是「能调用一个纯函数」。</dd>
+          <dd><p><strong>无任何权限风险</strong>：不访问文件、不访问网络、不写任何状态。 全部权限就是「能调用一个纯函数」。</p></dd>
         </div>
         <div class="axis">
           <dt><span data-zh>适合什么任务</span><span data-en>Best for</span></dt>
-          <dd>让 Agent 用结构化、可修订、可分支的方式推进复杂问题的分析。 不适合简单任务（增加调用轮次无收益）。</dd>
+          <dd><p>让 Agent 用结构化、可修订、可分支的方式推进复杂问题的分析。 不适合简单任务（增加调用轮次无收益）。</p></dd>
         </div>
         <div class="axis">
           <dt><span data-zh>传输方式</span><span data-en>Transport</span></dt>
-          <dd>仅 stdio。npx / Docker 本地进程（2026-10-08 README 全文核验）； 没有远程传输的官方启动方式。Docker 镜像为 mcp/sequentialthinking。</dd>
+          <dd><p>仅 stdio。npx / Docker 本地进程（2026-10-08 README 全文核验）； 没有远程传输的官方启动方式。Docker 镜像为 mcp/sequentialthinking。</p></dd>
         </div>
         <div class="axis">
           <dt><span data-zh>认证机制</span><span data-en>Authentication</span></dt>
-          <dd>无独立认证层，但<strong>这是本赛道唯一无实质权限边界的 server</strong>—— 无文件、无网络、无状态，认证与否不影响安全。</dd>
+          <dd><p>无独立认证层，但<strong>这是本分区唯一无实质权限边界的 server</strong>—— 无文件、无网络、无状态，认证与否不影响安全。</p></dd>
         </div>
         <div class="axis">
           <dt><span data-zh>权限范围</span><span data-en>Permission scope</span></dt>
-          <dd><strong>无文件与网络访问，不读不写任何外部资源</strong>。 权限范围为空，是 MCP server 里权限风险最低的一类。 可放心在敏感环境使用。</dd>
+          <dd><p><strong>无文件与网络访问，不读不写任何外部资源</strong>。 权限范围为空，是 MCP server 里权限风险最低的一类。 可放心在敏感环境使用。</p></dd>
         </div>
       </dl>
 
@@ -161,9 +163,9 @@
         <h2 class="warn"><span data-zh>头号误解</span><span data-en>Top misconception</span></h2>
         <ul>
 
-          <li><span data-zh>以为它能让模型变聪明，实际只约束输出结构，推理能力来自模型本身</span><span data-en>Assuming it makes the model smarter — it only constrains the output structure; the reasoning ability is the model&#39;s own</span></li>
-          <li><span data-zh>以为会记住之前的思考，实际每次调用要自己带上完整上下文</span><span data-en>Assuming it remembers earlier thinking — every call must carry its own full context</span></li>
-          <li><span data-zh>以为工具越多越好，本 server 只有一个工具且是有意设计</span><span data-en>Assuming more tools is better — this server has exactly one tool, and that is deliberate</span></li>
+          <li><span data-zh>以为它能让模型变聪明，实际只约束输出结构，推理能力来自模型本身</span><span data-en>Assuming it makes the model smarter — it only constrains the shape of the output; the reasoning comes from the model itself</span></li>
+          <li><span data-zh>以为会记住之前的思考，实际每次调用要自己带上完整上下文</span><span data-en>Assuming it remembers previous thoughts — each call has to carry the full context itself</span></li>
+          <li><span data-zh>以为工具越多越好，本 server 只有一个工具且是有意设计</span><span data-en>Assuming more tools are better — this server deliberately ships exactly one</span></li>
         </ul>
       </div>
 
@@ -172,9 +174,9 @@
         <h2><span data-zh>价格</span><span data-en>Pricing</span></h2>
         <table class="src">
           <tbody>
-            <tr><th class="w-28"><span data-zh>月度入口</span><span data-en>Monthly entry</span></th><td><span data-zh>无商业费用</span><span data-en>无商业费用</span></td></tr>
-            <tr><th class="w-28"><span data-zh>年付</span><span data-en>Annual</span></th><td><span data-zh>无商业费用</span><span data-en>无商业费用</span></td></tr>
-            <tr><th class="w-28"><span data-zh>额度说明</span><span data-en>Quota note</span></th><td><span data-zh>随 MCP servers 仓库分发，npm 包为 @modelcontextprotocol/server-sequential-thinking。无授权费。</span><span data-en>随 MCP servers 仓库分发，npm 包为 @modelcontextprotocol/server-sequential-thinking。无授权费。</span></td></tr>
+            <tr><th class="w-28"><span data-zh>月度入口</span><span data-en>Monthly entry</span></th><td><span data-zh><p>无商业费用</p></span><span data-en><p>无商业费用</p></span></td></tr>
+            <tr><th class="w-28"><span data-zh>年付</span><span data-en>Annual</span></th><td><span data-zh><p>无商业费用</p></span><span data-en><p>无商业费用</p></span></td></tr>
+            <tr><th class="w-28"><span data-zh>额度说明</span><span data-en>Quota note</span></th><td><span data-zh><p>随 MCP servers 仓库分发，npm 包为 @modelcontextprotocol/server-sequential-thinking。无授权费。</p></span><span data-en><p>随 MCP servers 仓库分发，npm 包为 @modelcontextprotocol/server-sequential-thinking。无授权费。</p></span></td></tr>
           </tbody>
         </table>
         <p class="fine mt-3"><span data-zh>不同币种不做折算。优惠、地区、税费与登录后报价可能变化，购买前请到官方页面确认。</span><span data-en>No currency conversion. Discounts, regions, tax and post-login pricing can change — confirm on the official page before buying.</span></p>
@@ -207,12 +209,37 @@
 
             <div class="panel is-slim">
         <h2><span data-zh>实测记录</span><span data-en>Measured runs</span></h2>
-        <p>本站尚未完成实测。测试协议见 <a href="https://github.com/speculcom/ai-agent-guide/blob/main/tracks/agents/tasks/_protocol.md" target="_blank" rel="noopener">tasks/_protocol.md</a>。
-
-<strong>实测建议</strong>：这类 server 的实测重点在<strong>调用轮次与 token 成本</strong>，
-而不是能否完成任务。要对比「用 / 不用」在同一任务上的总 token 与轮次差异。</p>
+        <p>本站尚未完成实测。测试协议见 <a href="https://github.com/speculcom/ai-agent-guide/blob/main/tracks/agents/tasks/_protocol.md" target="_blank" rel="noopener">tasks/_protocol.md</a>。</p>
+            <p><strong>实测建议</strong>：这类 server 的实测重点在<strong>调用轮次与 token 成本</strong>， 而不是能否完成任务。要对比「用 / 不用」在同一任务上的总 token 与轮次差异。</p>
       </div>
 
+
+            <div class="panel is-slim">
+        <h2>变更记录说明</h2>
+        <p><strong>本对象无独立 changelog 页</strong>，变更记录在目录 commit 历史中：</p>
+            <div class="tbl-wrap"><table><thead><tr><th>日期</th><th>内容</th></tr></thead><tbody><tr><td>2026-09-03</td><td>声明 zod 运行时依赖</td></tr><tr><td>2026-08-28</td><td>恢复 <code>nextThoughtNeeded</code> 在 inputSchema required 数组中的声明</td></tr><tr><td>2026-08-28</td><td>从 package.json 读取 server 版本（不再硬编码）</td></tr><tr><td>2026-07-29</td><td>依赖批量更新</td></tr></tbody></table></div>
+            <p><strong>08-28 那条 schema 修复值得注意</strong>：<code>nextThoughtNeeded</code> 曾被错误地从 required 数组中移除。 如果你的客户端严格校验 schema，这会导致调用被拒。</p>
+      </div>
+      <div class="panel is-slim">
+        <h2>工具设计</h2>
+        <p><strong>只有一个工具</strong>，参数分四组：</p>
+            <div class="tbl-wrap"><table><thead><tr><th>组</th><th>参数</th><th>作用</th></tr></thead><tbody><tr><td><strong>进度</strong></td><td><code>thought</code> <code>thoughtNumber</code> <code>totalThoughts</code> <code>nextThoughtNeeded</code></td><td>当前这一步是什么、总共几步、是否还需继续</td></tr><tr><td><strong>修订</strong></td><td><code>isRevision</code> <code>revisesThought</code></td><td>承认要改前面的某一步</td></tr><tr><td><strong>分支</strong></td><td><code>branchFromThought</code> <code>branchId</code></td><td>从某一步分出另一条推理路径</td></tr><tr><td><strong>追加</strong></td><td><code>needsMoreThoughts</code></td><td>中途发现需要更多步骤</td></tr></tbody></table></div>
+            <p><strong>「修订」和「分支」是这个 server 的核心价值</strong>—— 它让 Agent 在推理过程中回头改，而不是一条路走到底。</p>
+      </div>
+      <div class="panel is-slim">
+        <h2>关键澄清：它不提升模型能力</h2>
+        <p>这是最容易误解的一点。</p>
+            <p>``<code> 本 server 不调用模型，不做任何推理。 它约束的是客户端的调用方式，推理仍由模型完成。 </code>``</p>
+            <p><strong>它解决的是「结构」问题，不是「智力」问题</strong>：</p>
+            <div class="tbl-wrap"><table><thead><tr><th>它做的</th><th>它不做的</th></tr></thead><tbody><tr><td>让推理分步可见</td><td>让模型更聪明</td></tr><tr><td>允许中途修订</td><td>提高结论正确率</td></tr><tr><td>支持并行分支探索</td><td>减少 token 消耗（相反会增加）</td></tr><tr><td>让调用方能观察过程</td><td>替代思考预算控制</td></tr></tbody></table></div>
+            <p><strong>简单任务上用它会增加调用轮次而无收益。</strong> README 自己列的适用场景也限定在： 分解复杂问题、可能需要修正的分析、初期范围不明确的任务、需要过滤无关信息的长任务。</p>
+      </div>
+      <div class="panel is-slim">
+        <h2>权限评价</h2>
+        <p><strong>MCP server 里权限风险最低的一类</strong>，可以放心在敏感环境使用：</p>
+            <div class="tbl-wrap"><table><thead><tr><th>检查项</th><th>结果</th></tr></thead><tbody><tr><td>读文件</td><td>❌ 无</td></tr><tr><td>写文件</td><td>❌ 无</td></tr><tr><td>访问网络</td><td>❌ 无</td></tr><tr><td>持久化状态</td><td>❌ 无</td></tr><tr><td>删除能力</td><td>❌ 无</td></tr></tbody></table></div>
+            <p>全部权限就是「能调用一个纯函数」。这类 server 值得单独指出—— 它说明 MCP 生态里也有零风险的工具，不全是权限敏感型。</p>
+      </div>
 
             <div class="panel is-slim">
         <h2><span data-zh>相关条目</span><span data-en>Related entries</span></h2>
