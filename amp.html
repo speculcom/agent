@@ -4,18 +4,18 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Amp — Agents | 投机取巧</title>
-  <meta name="description" content="Amp（Sourcegraph）：Sourcegraph 的 Amp：CLI + 云端 orb + runner 三执行面的前沿编码 agent—— 发一句提示就能合上笔记本继续跑，多模型前沿路由，Oracle 提供「第二意见」模型。" />
+  <meta name="description" content="Amp（Sourcegraph）：Amp 是 Sourcegraph 出的前沿编码 agent，CLI + 云端 orb + runner 三执行面。 发一句提示就能合上笔记本继续跑。 它多模型前沿路由，Oracle 提供「第二意见」模型。" />
   <link rel="canonical" href="https://agent.specul.com/amp.html" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Amp" />
   <meta property="og:url" content="https://agent.specul.com/amp.html" />
   <meta property="og:title" content="Amp — Agents | 投机取巧" />
-  <meta property="og:description" content="Amp（Sourcegraph）：Sourcegraph 的 Amp：CLI + 云端 orb + runner 三执行面的前沿编码 agent—— 发一句提示就能合上笔记本继续跑，多模型前沿路由，Oracle 提供「第二意见」模型。" />
-  <meta name="theme-color" content="#05080f" />
+  <meta property="og:description" content="Amp（Sourcegraph）：Amp 是 Sourcegraph 出的前沿编码 agent，CLI + 云端 orb + runner 三执行面。 发一句提示就能合上笔记本继续跑。 它多模型前沿路由，Oracle 提供「第二意见」模型。" />
+  <meta name="theme-color" content="#16121f" />
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%238b7cf8'/%3E%3Cstop offset='1' stop-color='%2322d3c5'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='48' height='48' rx='12' fill='%2305080f'/%3E%3Cpath d='M14 32 L24 12 L34 32' fill='none' stroke='url(%23g)' stroke-width='2.4' stroke-linejoin='round'/%3E%3Ccircle cx='24' cy='27' r='2.4' fill='%2322d3c5'/%3E%3C/svg%3E" />
   <link rel="stylesheet" href="brand.css" />
   <link rel="stylesheet" href="site.css" />
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Amp","applicationCategory":"DeveloperApplication","url":"https://ampcode.com/","sameAs":"https://ampcode.com","description":"Sourcegraph 的 Amp：CLI + 云端 orb + runner 三执行面的前沿编码 agent—— 发一句提示就能合上笔记本继续跑，多模型前沿路由，Oracle 提供「第二意见」模型。","dateModified":"2026-10-08","offers":{"@type":"Offer","price":"20","priceCurrency":"USD"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Amp","applicationCategory":"DeveloperApplication","url":"https://ampcode.com/","sameAs":"https://ampcode.com","description":"Amp 是 Sourcegraph 出的前沿编码 agent，CLI + 云端 orb + runner 三执行面。 发一句提示就能合上笔记本继续跑。 它多模型前沿路由，Oracle 提供「第二意见」模型。","dateModified":"2026-10-08","offers":{"@type":"Offer","price":"20","priceCurrency":"USD"}}</script>
 </head>
 <body class="brand-ambient">
   <a class="t-skip" href="#main"><span data-zh>跳到主要内容</span><span data-en>Skip to main content</span></a>
@@ -96,65 +96,111 @@
         <span class="badge"><span data-zh>核验</span><span data-en>Checked</span> 2026-10-08</span>
       </div>
 
-            <p class="panel-lead"><span data-zh>Sourcegraph 的 Amp：<strong>CLI + 云端 orb + runner 三执行面的前沿编码 agent</strong>——
-发一句提示就能合上笔记本继续跑，多模型前沿路由，Oracle 提供「第二意见」模型。</span><span data-en>Official positioning: &quot;Amp is the frontier agent and development environment that lets you build from anywhere.&quot;
-
-<strong>The signature feature is the orb</strong> — &quot;Machines that Amp creates per thread, with your code, tools, and plugins already set up. Send a prompt, close your laptop, and the agent keeps working.&quot; Threads can run locally, in an <strong>orb</strong> (a machine Amp creates in the cloud) or on one of your own <strong>runners</strong> (<code>--executor local|orb|runner:&lt;id&gt;</code>). Architecturally Amp is two components: the local <strong>Amp Client</strong> (primarily the CLI — local code/context, settings and thread history) and the <strong>Amp Server</strong> at ampcode.com (a multi-tenant service on Google Cloud Platform handling auth, thread sync and LLM proxying).
-
-Amp is multi-model and routes by task: the four agent modes (<code>low</code> / <code>medium</code> / <code>high</code> / <code>ultra</code>) are officially described as &quot;capability presets, not fixed model selectors&quot;, with the <code>oracle</code> tool offering a stronger second-opinion model. Pricing starts free: &quot;Start free. Scale your orbs and team.&quot;</span></p>
+            <div class="panel-lead"><span data-zh><p>Amp 是 Sourcegraph 出的前沿编码 agent，<strong>CLI + 云端 orb + runner 三执行面</strong>。</p>
+            <p>发一句提示就能合上笔记本继续跑。</p>
+            <p>它多模型前沿路由，Oracle 提供「第二意见」模型。</p></span><span data-en><p>Amp is Sourcegraph&#39;s frontier coding agent, spanning <strong>CLI + cloud orbs + runners</strong>. Send a prompt and you can close your laptop while it keeps working. It routes across frontier models, with the Oracle as a second-opinion model.</p></span></div>
 
             <div class="panel is-slim">
         <h2><span data-zh>适合与不适合</span><span data-en>When to use it, when not to</span></h2>
-<span data-zh>        <p>想让 agent 在云端机器（orb）里长跑、合上笔记本仍继续的人；
-需要多模型前沿路由与 Oracle 第二意见的团队；
-已在终端或 VS Code 系编辑器里工作、想顺带接 IDE 的人；
-需要企业级管控（SSO、审计日志、MCP allowlist、零数据保留）的组织。</p>
-        <p class="warn-p"><strong>不适合</strong>假定「执行动作前一定会先问」的场景——
-官方原文明确 &quot;By default, Amp does not ask for approval before running tools&quot;，
-审批要靠自定义 policy plugin 自己加。</p></span><span data-en>        <p>People who want an agent that <strong>keeps working in a cloud orb after you close your laptop</strong>.
-Teams that need <strong>multi-model frontier routing plus the Oracle second-opinion model</strong>.
-People already working in a terminal or a VS Code-family editor who want IDE integration.
-Organisations needing enterprise controls (SSO, audit logs, MCP allowlists, zero data retention).</p>
-        <p class="warn-p"><strong>Not a fit for</strong> anyone who assumes tools are gated by approval — officially, &quot;Amp does not ask for approval before running tools,&quot; and control relies on writing a custom policy plugin. Also not a fit for anyone who needs a standalone VS Code extension: Amp connects to VS Code / Cursor / Windsurf / Zed / Neovim through the CLI and <code>ide connect</code>, not as a separate extension.</p></span>
+<span data-zh>        <div><ul><li>想让 agent 在云端机器（orb）里长跑、合上笔记本仍继续的人</li><li>需要多模型前沿路由与 Oracle 第二意见的团队</li><li>已在终端或 VS Code 系编辑器里工作、想顺带接 IDE 的人</li><li>需要企业级管控（SSO、审计日志、MCP allowlist、零数据保留）的组织</li></ul></div>
+        <div class="warn-p"><p><strong>不适合</strong>假定「执行动作前一定会先问」的场景。</p></div>
+        <div><p>官方原文明确：</p></div>
+        <div><p><strong>官方原文</strong>：&quot;By default, Amp does not ask for approval before running tools&quot;</p></div>
+        <div><p>审批要靠自定义 policy plugin 自己加。</p></div></span><span data-en>        <div><p>Four kinds of use fit:</p></div>
+        <div><ul><li>People who want an agent that <strong>keeps working in a cloud orb after you close your laptop</strong></li><li>Teams that need <strong>multi-model frontier routing plus the Oracle second-opinion model</strong></li><li>People already working in a terminal or a VS Code-family editor who want IDE integration</li><li>Organisations needing enterprise controls (SSO, audit logs, MCP allowlists, zero data retention)</li></ul></div>
+        <div class="warn-p"><p><strong>Not a fit for</strong> anyone who assumes tools are gated by approval — officially, &quot;By default, Amp does not ask for approval before running tools&quot;. Approval takes a custom policy plugin that you write yourself.</p></div></span>
       </div>
 
 
       <div class="block-head">
         <h2 class="t-h2"><span data-zh>固定坐标系</span><span data-en>Fixed coordinate system</span></h2>
-        <p class="t-section-lead">8 <span data-zh>个维度</span><span data-en>dimensions</span>, <span data-zh>与同赛道其他对象逐项可比</span><span data-en>each comparable item by item against others in the same track</span>.</p>
+        <p class="t-section-lead">8 <span data-zh>个维度</span><span data-en>dimensions</span>, <span data-zh>与同分区其他对象逐项可比</span><span data-en>each comparable item by item against others in the same section</span>.</p>
       </div>
       <dl class="axes">
         <div class="axis">
           <dt><span data-zh>模型与开放条件</span><span data-en>Model & openness</span></dt>
-          <dd><strong>多模型前沿路由，按任务分档而非锁死单模型</strong>。官方 Why Amp 原文 &quot;Multi-Model: GPT-5.6, Claude Fable 5, fast models—Amp uses them all, for what each model is best at.&quot; <strong>四个 Agent Modes 是能力预设、不是固定模型选择器</strong>：<code>low</code> / <code>medium</code> / <code>high</code> / <code>ultra</code>， 官方原文 &quot;Modes are capability presets, not fixed model selectors&quot;， 并会按已连接的 provider 订阅、workspace 限制与模型可用性自定义主 agent 与 Oracle 路由。 <strong>Oracle 是「第二意见」模型</strong>：<code>high</code> 档主 agent 用 GPT-6 Astra（medium）， Oracle 用 Claude Fable 5.1；低 / 中 / ultra 档 Oracle 默认 GPT-6 Astra。 <strong>BYOK 已全线开放</strong>（官方 news 注明 2026-09-30 起对所有档）：OpenRouter、Bedrock、 Google Cloud Agent Platform、Azure Foundry、Vercel / Cloudflare AI Gateway、 Ollama Cloud、OpenCode Go 与自定义端点 URL，并可用 ChatGPT 订阅。 ⚠ <strong>官方源之间存在不一致</strong>：安全参考页仍写 &quot;Amp doesn&#39;t support Bring Your Own Key or self-hosted deployments&quot;，与定价页/news 的 BYOK 口径相反，引用时以定价页为准。</dd>
+          <dd><p><strong>多模型前沿路由，按任务分档而非锁死单模型。</strong></p>
+            <p>官方 Why Amp 原文：</p>
+            <p><strong>&quot;Multi-Model</strong>: GPT-5.6, Claude Fable 5, fast models—Amp uses them all, for what each model is best at.&quot;</p>
+            <p><strong>四个 Agent Modes 是能力预设、不是固定模型选择器</strong>： <code>low</code> / <code>medium</code> / <code>high</code> / <code>ultra</code>。</p>
+            <p><strong>官方原文</strong>：&quot;Modes are capability presets, not fixed model selectors&quot;</p>
+            <p>路由可以自定义。它看已连接的 provider 订阅、workspace 限制与模型可用性， 来决定主 agent 与 Oracle 怎么走。</p>
+            <p><strong>Oracle 是「第二意见」模型。</strong></p>
+            <p><code>high</code> 档主 agent 用 GPT-6 Astra（medium），Oracle 用 Claude Fable 5.1。 低 / 中 / ultra 档 Oracle 默认 GPT-6 Astra。</p>
+            <p><strong>BYOK 已全线开放</strong>（官方 news 注明 2026-09-30 起对所有档）。</p>
+            <p>支持 OpenRouter、Bedrock、Google Cloud Agent Platform、 Azure Foundry、Vercel / Cloudflare AI Gateway、Ollama Cloud、OpenCode Go 与自定义端点 URL， 并可用 ChatGPT 订阅。</p>
+            <p>⚠ <strong>官方源之间存在不一致。</strong> 安全参考页仍写：</p>
+            <p><strong>官方原文</strong>：&quot;Amp doesn&#39;t support Bring Your Own Key or self-hosted deployments&quot;</p>
+            <p>这与定价页/news 的 BYOK 口径相反，引用时以定价页为准。</p></dd>
         </div>
         <div class="axis">
           <dt><span data-zh>运行位置</span><span data-en>Where it runs</span></dt>
-          <dd><strong>混合：本地 Client + 云端 Server，线程还可跑在三种执行面</strong>。 官方安全参考把 Amp 拆为 <strong>Amp Client</strong>（本地：代码与上下文管理、本地设置、本地线程历史） 与 <strong>Amp Server</strong>（ampcode.com 上的多租户云服务，GCP 托管，做认证、线程同步与 LLM 代理）。 <strong>线程执行面三分</strong>：本地、<strong>orb</strong>（Amp 在云端为你创建的机器）、 <strong>runner</strong>（你自己的机器，<code>amp --no-tui --runner-id &lt;id<strong></code>）。 CLI 用 <code>--executor local|orb|runner:</strong>id&gt;</code> 选执行位置。 另有 Web 与 macOS / iOS 应用，同一 agent、同一线程到处可用。</dd>
+          <dd><p><strong>混合：本地 Client + 云端 Server。</strong> 线程还可跑在三种执行面。</p>
+            <p>官方安全参考把 Amp 拆为两个组件。</p>
+            <p><strong>Amp Client</strong> 在本地：管代码与上下文管理、本地设置、本地线程历史。</p>
+            <p><strong>Amp Server</strong> 是 ampcode.com 上的多租户云服务，GCP 托管。 它做认证、线程同步与 LLM 代理。</p>
+            <p><strong>线程执行面三分</strong>：本地、<strong>orb</strong>（Amp 在云端为你创建的机器）、 <strong>runner</strong>（你自己的机器，<code>amp --no-tui --runner-id &lt;id&gt;</code>）。</p>
+            <p>CLI 用 <code>--executor local|orb|runner:&lt;id&gt;</code> 选执行位置。</p>
+            <p>另有 Web 与 macOS / iOS 应用，同一 agent、同一线程到处可用。</p></dd>
         </div>
         <div class="axis">
           <dt><span data-zh>本地文件</span><span data-en>Local files</span></dt>
-          <dd><strong>Client 只带局部上下文，官方明确不索引整库</strong>。安全参考原文 &quot;The Amp Client and Amp Server do not <strong>see, store, clone, or index the entire codebase</strong>&quot;， 只把「被选作上下文的代码片段 / 整文件」（partial code data）发给 Server。 工具侧有 <code>Read</code> / <code>create_file</code> / <code>edit_file</code> / <code>glob</code> / <code>Grep</code> / <code>Bash</code> 等。 <strong>IDE 集成</strong>（VS Code、Cursor、Windsurf、Zed、Neovim）：连上后 Amp 能看到 当前打开文件与选区，并<strong>通过你的 IDE 编辑文件、支持完整 undo</strong>。</dd>
+          <dd><p><strong>Client 只带局部上下文，官方明确不索引整库。</strong></p>
+            <p>官方安全参考原文：</p>
+            <p>&quot;The Amp Client and Amp Server do not <strong>see, store, clone, or index the entire codebase</strong>&quot;</p>
+            <p>它只把「被选作上下文的代码片段 / 整文件」 （partial code data）发给 Server。</p>
+            <p>工具侧有 <code>Read</code> / <code>create_file</code> / <code>edit_file</code> / <code>glob</code> / <code>Grep</code> / <code>Bash</code> 等。</p>
+            <p><strong>IDE 集成</strong>（VS Code、Cursor、Windsurf、Zed、Neovim）： 连上后 Amp 能看到当前打开文件与选区。 它还能<strong>通过你的 IDE 编辑文件、支持完整 undo</strong>。</p></dd>
         </div>
         <div class="axis">
           <dt><span data-zh>关机后的任务</span><span data-en>Tasks after shutdown</span></dt>
-          <dd><strong>有真后台形态——orbs</strong>。官方首页原文 &quot;Run agents anywhere and they <strong>keep working after you close your laptop</strong>&quot;， 每个线程一台 orb（已含你的代码、工具与插件），可关机续跑、可从手机继续。 <strong>runners 在你自己机器上</strong>：<code>--share</code> 可把 runner 共享给 workspace， 别人也能从 ampcode.com 在它上面起线程（机器需开机）。 <strong>定时与自唤醒</strong>：官方 manual 有 Schedules；官方演示视频显示 agent &quot;uses automations to wake itself up&quot;（按计划醒来查生产）。</dd>
+          <dd><p><strong>有真后台形态——orbs。</strong></p>
+            <p>官方首页原文：</p>
+            <p>&quot;Run agents anywhere and they <strong>keep working after you close your laptop</strong>&quot;</p>
+            <p>每个线程一台 orb（已含你的代码、工具与插件），可关机续跑、可从手机继续。</p>
+            <p><strong>runners 在你自己机器上</strong>：<code>--share</code> 可把 runner 共享给 workspace， 别人也能从 ampcode.com 在它上面起线程（机器需开机）。</p>
+            <p><strong>定时与自唤醒</strong>：官方 manual 有 Schedules。</p>
+            <p>官方演示视频显示 agent：</p>
+            <p><strong>官方原文</strong>：&quot;uses automations to wake itself up&quot;</p>
+            <p>也就是按计划醒来查生产。</p></dd>
         </div>
         <div class="axis">
           <dt><span data-zh>工具与扩展</span><span data-en>Tools & extensions</span></dt>
-          <dd><strong>内置工具 + 子代理 + 插件 + MCP，四层都有官方页</strong>。 内置（<code>amp tools list</code> 可见）：<code>Bash</code>、<code>Read</code>、<code>create_file</code>、<code>edit_file</code>、 <code>glob</code>、<code>Grep</code>、<code>web_search</code>、<code>read_web_page</code>、<code>Task</code>、<code>todo_*</code>、<code>undo_edit</code>。 <strong>子代理 / 工具</strong>：<code>oracle</code>（复杂推理第二意见）、<strong>Librarian</strong>（跨仓库检索， 可读全部公开 GitHub 代码及你的私有仓库）、<strong>Painter</strong>（GPT Image 生成与编辑）、 Search、Read Thread。 <strong>插件系统</strong>：可写自定义 policy plugin（含 permissions 插件示例）与自定义 agent mode / subagent。 <strong>MCP</strong>：本地（<code>amp.mcpServers</code>，command / args / env，stdio）与 远程定义（存 ampcode.com，url / headers，含 SSE 与 Streamable）； 认证含自动 <strong>OAuth</strong>、bearer、<strong>Amp ID token</strong>、Workload Identity； 官方建议把 MCP server 打包进 <strong>skills</strong>（<code>mcp.json</code>）以保持工具列表精简。</dd>
+          <dd><p><strong>内置工具 + 子代理 + 插件 + MCP，四层都有官方页。</strong></p>
+            <p><strong>内置工具</strong>：<code>amp tools list</code> 可见的有 <code>Bash</code>、<code>Read</code>、<code>create_file</code>、<code>edit_file</code>。 另有 <code>glob</code>、<code>Grep</code>、<code>web_search</code>、<code>read_web_page</code>、<code>Task</code>、<code>todo_*</code>、<code>undo_edit</code>。</p>
+            <p><strong>子代理 / 工具</strong>：<code>oracle</code>（复杂推理第二意见）、 <strong>Librarian</strong>（跨仓库检索，可读全部公开 GitHub 代码及你的私有仓库）、 <strong>Painter</strong>（GPT Image 生成与编辑）、Search、Read Thread。</p>
+            <p><strong>插件系统</strong>：可写自定义 policy plugin（含 permissions 插件示例）与自定义 agent mode / subagent。</p>
+            <p><strong>MCP</strong>：本地（<code>amp.mcpServers</code>，command / args / env，stdio）与 远程定义（存 ampcode.com，url / headers）。</p>
+            <p>传输含 SSE 与 Streamable。</p>
+            <p>认证含自动 <strong>OAuth</strong>、bearer、<strong>Amp ID token</strong>、Workload Identity。</p>
+            <p>官方建议把 MCP server 打包进 <strong>skills</strong>（<code>mcp.json</code>）以保持工具列表精简。</p></dd>
         </div>
         <div class="axis">
           <dt><span data-zh>上下文与记忆</span><span data-en>Context & memory</span></dt>
-          <dd><strong>threads 是核心单位，可保存、检索、分享</strong>。官方 Why Amp 原文 &quot;Threads: You can save and share your interactions with Amp.&quot; 可 @ 引用别的 thread（URL 或 <code>@T-...</code>），可按关键词 / 文件 / 仓库 / 作者 / 日期 检索历史 thread，workspace 支持 <strong>thread sharing 与 multiplayer</strong>。 <strong>AGENTS.md 分层</strong>：官方列 cwd / 父目录 / 子树、<code>$HOME/.config/amp/AGENTS.md</code>、 系统级 <code>/etc/ampcode/AGENTS.md</code> 等层级，子树 AGENTS.md 在读到该子树文件时纳入； 支持 @-mention、globs 条件加载，并给出从 CLAUDE.md / .cursorrules 的迁移方式。 <strong>压缩</strong>：官方 Models 页把 Compaction 列为「Context summarization for long threads」。</dd>
+          <dd><p><strong>threads 是核心单位，可保存、检索、分享。</strong></p>
+            <p>官方 Why Amp 原文：</p>
+            <p><strong>&quot;Threads</strong>: You can save and share your interactions with Amp.&quot;</p>
+            <p>可 @ 引用别的 thread（URL 或 <code>@T-...</code>）。 也可按关键词 / 文件 / 仓库 / 作者 / 日期检索历史 thread。 workspace 支持 <strong>thread sharing 与 multiplayer</strong>。</p>
+            <p><strong>AGENTS.md 分层</strong>：官方列 cwd / 父目录 / 子树、<code>$HOME/.config/amp/AGENTS.md</code>、 系统级 <code>/etc/ampcode/AGENTS.md</code> 等层级。 子树 AGENTS.md 在读到该子树文件时纳入。</p>
+            <p>它还支持 @-mention、globs 条件加载，并给出从 CLAUDE.md / .cursorrules 的迁移方式。</p>
+            <p><strong>压缩</strong>：官方 Models 页把 Compaction 列为「Context summarization for long threads」。</p></dd>
         </div>
         <div class="axis">
           <dt><span data-zh>权限与限制</span><span data-en>Permissions & limits</span></dt>
-          <dd><strong>默认不审批——这是最需要点出的一条</strong>。官方 Tools 页原文 &quot;By default, Amp <strong>does not ask for approval</strong> before running tools.&quot; 官方给出的替代是<strong>自定义 policy plugin</strong>（可分发为 workspace 级 plugin）。 <strong>workspace 的 MCP server 需要显式批准</strong>（<code>.amp/settings.json</code> 里的 server 首次检测时提示 <code>awaiting approval</code>，需 <code>amp mcp approve</code>）， 全局设置与 <code>--mcp-config</code> 传的不需要。 <strong>数据面较硬</strong>：官方<strong>自动检测并脱敏</strong>常见密钥（AWS / GCP / Azure、GitHub / GitLab、 OpenAI / Anthropic、Stripe / Slack / npm 等，替换为 <code>[REDACTED:amp]</code>），但承认是 best-effort；线程数据存于 ampcode.com（GCP）；<strong>默认不用你的数据训练</strong> （企业档永不可开）；删除线程后数据 30 天内移除；Enterprise 提供零数据保留（ZDR）。 <strong>订阅与 BYOK 额度是两回事</strong>：自带 Key / 订阅时无 Amp token 费用。</dd>
+          <dd><p><strong>默认不审批——这是最需要点出的一条。</strong></p>
+            <p>官方 Tools 页原文：</p>
+            <p>&quot;By default, Amp <strong>does not ask for approval</strong> before running tools.&quot;</p>
+            <p>官方给出的替代是<strong>自定义 policy plugin</strong> （可分发为 workspace 级 plugin）。</p>
+            <p><strong>workspace 的 MCP server 需要显式批准。</strong> <code>.amp/settings.json</code> 里的 server 首次检测时提示 <code>awaiting approval</code>，需 <code>amp mcp approve</code>。</p>
+            <p>全局设置与 <code>--mcp-config</code> 传的不需要。</p>
+            <p><strong>数据面较硬</strong>：官方<strong>自动检测并脱敏</strong>常见密钥。 （AWS / GCP / Azure、GitHub / GitLab、OpenAI / Anthropic、Stripe / Slack / npm 等， 替换为 <code>[REDACTED:amp]</code>），但承认是 best-effort。</p>
+            <p>线程数据存于 ampcode.com（GCP）；<strong>默认不用你的数据训练</strong>（企业档永不可开）。 删除线程后数据 30 天内移除；Enterprise 提供零数据保留（ZDR）。</p>
+            <p><strong>订阅与 BYOK 额度是两回事</strong>：自带 Key / 订阅时无 Amp token 费用。</p></dd>
         </div>
         <div class="axis">
           <dt><span data-zh>适合什么任务</span><span data-en>Best for</span></dt>
-          <dd>想让 agent <strong>在自己的云端机器（orb）里长跑、合上笔记本仍继续</strong>的人； 需要<strong>多模型前沿路由 + Oracle 第二意见</strong>的团队； 已在终端或 VS Code 系编辑器里工作、想顺带接 IDE 的人； 需要企业级管控（SSO、审计日志、MCP allowlist、零数据保留）的组织。</dd>
+          <dd><p>适合四类用法：</p>
+            <ul><li>想让 agent <strong>在自己的云端机器（orb）里长跑、合上笔记本仍继续</strong>的人</li><li>需要<strong>多模型前沿路由 + Oracle 第二意见</strong>的团队</li><li>已在终端或 VS Code 系编辑器里工作、想顺带接 IDE 的人</li><li>需要企业级管控（SSO、审计日志、MCP allowlist、零数据保留）的组织</li></ul></dd>
         </div>
       </dl>
 
@@ -173,10 +219,26 @@ Organisations needing enterprise controls (SSO, audit logs, MCP allowlists, zero
         <h2><span data-zh>价格</span><span data-en>Pricing</span></h2>
         <table class="src">
           <tbody>
-            <tr><th class="w-28"><span data-zh>月度入口</span><span data-en>Monthly entry</span></th><td><span data-zh>Hobby 免费 / Individual $20 每月（Megawatt、Gigawatt 两级）/ Teams 不加价 / Enterprise 定制</span><span data-en>Hobby 免费 / Individual $20 每月（Megawatt、Gigawatt 两级）/ Teams 不加价 / Enterprise 定制</span></td></tr>
+            <tr><th class="w-28"><span data-zh>月度入口</span><span data-en>Monthly entry</span></th><td><span data-zh><p>Hobby 免费 / Individual $20 每月（Megawatt、Gigawatt 两级）/ Teams 不加价 / Enterprise 定制</p></span><span data-en><p>Hobby 免费 / Individual $20 每月（Megawatt、Gigawatt 两级）/ Teams 不加价 / Enterprise 定制</p></span></td></tr>
             <tr><th class="w-28"><span data-zh>月度数值</span><span data-en>Monthly price</span></th><td>20</td></tr>
-            <tr><th class="w-28"><span data-zh>年付</span><span data-en>Annual</span></th><td><span data-zh>未核验年付报价</span><span data-en>未核验年付报价</span></td></tr>
-            <tr><th class="w-28"><span data-zh>额度说明</span><span data-en>Quota note</span></th><td><span data-zh>**2026-10-08 按官方定价页核实（ampcode.com/pricing 与 ampcode.com/docs/pricing）**： Hobby 免费；Individual **$20/mo**（官方页以 Megawatt / Gigawatt 两级切换呈现， 官方另称 Megawatt 平均 60% 折扣、Gigawatt 平均 65% 折扣）； Teams「No extra charge」；Enterprise 定制。 官方原文「Start free. Scale your orbs and team.」—— **真正按量计费的是用法**：Amp 对 provider 的 API 价不加价， 超量可购 paid credits（购买后 12 个月过期）， non-model 工具（如 web search）也消耗 credits； **orbs 按分钟计费、独立额度**，暂停中的 orb 不计费。 官方另说明：用自带 Key / 订阅时**无 Amp token 费用或上限**。</span><span data-en>**2026-10-08 按官方定价页核实（ampcode.com/pricing 与 ampcode.com/docs/pricing）**： Hobby 免费；Individual **$20/mo**（官方页以 Megawatt / Gigawatt 两级切换呈现， 官方另称 Megawatt 平均 60% 折扣、Gigawatt 平均 65% 折扣）； Teams「No extra charge」；Enterprise 定制。 官方原文「Start free. Scale your orbs and team.」—— **真正按量计费的是用法**：Amp 对 provider 的 API 价不加价， 超量可购 paid credits（购买后 12 个月过期）， non-model 工具（如 web search）也消耗 credits； **orbs 按分钟计费、独立额度**，暂停中的 orb 不计费。 官方另说明：用自带 Key / 订阅时**无 Amp token 费用或上限**。</span></td></tr>
+            <tr><th class="w-28"><span data-zh>年付</span><span data-en>Annual</span></th><td><span data-zh><p>未核验年付报价</p></span><span data-en><p>未核验年付报价</p></span></td></tr>
+            <tr><th class="w-28"><span data-zh>额度说明</span><span data-en>Quota note</span></th><td><span data-zh><p><strong>定价按官方定价页核实（ampcode.com/pricing 与 ampcode.com/docs/pricing，2026-10-08）</strong>：Hobby 免费。</p>
+            <p>Individual <strong>$20/mo</strong>。官方页以 Megawatt / Gigawatt 两级切换呈现。</p>
+            <p>官方另称 Megawatt 平均 60% 折扣、Gigawatt 平均 65% 折扣。</p>
+            <p>Teams「No extra charge」；Enterprise 定制。</p>
+            <p>官方原文「Start free. Scale your orbs and team.」</p>
+            <p><strong>真正按量计费的是用法。</strong> Amp 对 provider 的 API 价不加价。</p>
+            <p>超量可购 paid credits（购买后 12 个月过期）。non-model 工具（如 web search）也消耗 credits。</p>
+            <p><strong>orbs 按分钟计费、独立额度。</strong> 暂停中的 orb 不计费。</p>
+            <p>官方另说明：用自带 Key / 订阅时<strong>无 Amp token 费用或上限</strong>。</p></span><span data-en><p><strong>定价按官方定价页核实（ampcode.com/pricing 与 ampcode.com/docs/pricing，2026-10-08）</strong>：Hobby 免费。</p>
+            <p>Individual <strong>$20/mo</strong>。官方页以 Megawatt / Gigawatt 两级切换呈现。</p>
+            <p>官方另称 Megawatt 平均 60% 折扣、Gigawatt 平均 65% 折扣。</p>
+            <p>Teams「No extra charge」；Enterprise 定制。</p>
+            <p>官方原文「Start free. Scale your orbs and team.」</p>
+            <p><strong>真正按量计费的是用法。</strong> Amp 对 provider 的 API 价不加价。</p>
+            <p>超量可购 paid credits（购买后 12 个月过期）。non-model 工具（如 web search）也消耗 credits。</p>
+            <p><strong>orbs 按分钟计费、独立额度。</strong> 暂停中的 orb 不计费。</p>
+            <p>官方另说明：用自带 Key / 订阅时<strong>无 Amp token 费用或上限</strong>。</p></span></td></tr>
           </tbody>
         </table>
         <p class="fine mt-3"><span data-zh>不同币种不做折算。优惠、地区、税费与登录后报价可能变化，购买前请到官方页面确认。</span><span data-en>No currency conversion. Discounts, regions, tax and post-login pricing can change — confirm on the official page before buying.</span></p>
@@ -186,7 +248,7 @@ Organisations needing enterprise controls (SSO, audit logs, MCP allowlists, zero
             <div class="panel is-slim">
         <h2><span data-zh>未知项清单</span><span data-en>Known unknowns</span></h2>
         <ul>
-          <li>Individual 档 Megawatt 与 Gigawatt 的<strong>具体额度差</strong>：官方定价页以切换形式呈现， 本页并列展示的是默认那一级的 $20/mo 与 45,000 分钟 orb 时长</li>
+          <li>Individual 档 Megawatt 与 Gigawatt 的<strong>具体额度差</strong>：官方定价页以切换形式呈现，本页并列展示的是默认那一级的 $20/mo 与 45,000 分钟 orb 时长</li>
           <li>官方定价页 FAQ 的<strong>问答正文</strong>：本页只抓到问题标题，具体答复内容未展开</li>
           <li>orb 的并发上限与单次最长时长：官方未说明（已查 docs/orbs 与定价页）</li>
           <li>自托管部署：官方安全参考称为空（明确不支持），未提供任何自托管路径</li>
@@ -214,14 +276,22 @@ Organisations needing enterprise controls (SSO, audit logs, MCP allowlists, zero
 
             <div class="panel is-slim">
         <h2><span data-zh>实测记录</span><span data-en>Measured runs</span></h2>
-        <p>本站尚未完成实测。测试协议见 <a href="https://github.com/speculcom/ai-agent-guide/blob/main/tracks/agents/tasks/_protocol.md" target="_blank" rel="noopener">tasks/_protocol.md</a>。
-
-<strong>实测建议</strong>：重点验三处——
-① 无审批默认下跑工具的越权边界（是否只靠 policy plugin 兜底）；
-② orb 的「合上笔记本继续跑」与暂停计费规则（官方称 5 / 20 分钟阈值）；
-③ <code>amp --execute ... --stream-json</code> 在脚本 / CI 里的可用性（官方称尽量兼容 Claude Code 格式）。</p>
+        <p>本站尚未完成实测。测试协议见 <a href="https://github.com/speculcom/ai-agent-guide/blob/main/tracks/agents/tasks/_protocol.md" target="_blank" rel="noopener">tasks/_protocol.md</a>。</p>
+            <p><strong>实测建议</strong>：重点验三处。</p>
+            <ul><li>① 无审批默认下跑工具的越权边界（是否只靠 policy plugin 兜底）</li><li>② orb 的「合上笔记本继续跑」与暂停计费规则（官方称 5 / 20 分钟阈值）</li><li>③ <code>amp --execute ... --stream-json</code> 在脚本 / CI 里的可用性（官方称尽量兼容 Claude Code 格式）</li></ul>
       </div>
 
+
+            <div class="panel is-slim">
+        <h2>核验说明</h2>
+        <p><code>confidence: partial</code> 的原因：大部分维度都已从官方页核到。</p>
+            <p>具体是运行面、执行面、provider / 模式、MCP 接入、权限与数据面。</p>
+            <p>没核到的是两处：<strong>Individual 档 Megawatt / Gigawatt 两级的具体额度差</strong>， 以及官方定价页「Questions &amp; Answers」问答正文。</p>
+            <p>前者官方以切换形式呈现、未页面并列给出；后者本次抓取未展开。故不给 <code>verified</code>。</p>
+            <p><strong>两处需标注的官方源不一致</strong>：</p>
+            <ul><li>① 安全参考页仍写「不支持 BYOK 与自托管」，与定价页 / news 的 BYOK 口径相反（以定价页与新近 news 为准）</li><li>② 任务给的 npm 包名是 <code>@sourcegraph/amp</code>，而官方安装文档当前给的是 <strong><code>@ampcode/cli</code>（官方标注 not recommended）</strong>，两者以官方文档为准</li></ul>
+            <p>本轮核到的官方页：首页、定价页、Chronicle、Owner&#39;s Manual、docs/cli、docs/tools、docs/customize/mcp、Security Reference。</p>
+      </div>
 
             <div class="panel is-slim">
         <h2><span data-zh>相关条目</span><span data-en>Related entries</span></h2>
