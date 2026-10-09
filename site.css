@@ -223,9 +223,19 @@ html[data-theme="light"] {
   display: grid; place-items: center;
   font-size: 15px; font-weight: 700; letter-spacing: -.01em;
   border-radius:var(--r-sm);
-  color: var(--card-accent, var(--accent, var(--brand)));
-  background: color-mix(in srgb, var(--card-accent, var(--accent, var(--brand))) 13%, transparent);
-  border: 1px solid color-mix(in srgb, var(--card-accent, var(--accent, var(--brand))) 32%, transparent);
+  /* B5（2026-10-09）：字色改用**中性 ink**，品牌色只留在底色与描边上。
+     为什么不能直接用品牌色当字色（两次都试过，都不成立）：
+       ① 沿用原来的「品牌色 13% 透明底」：深色 logo（GitHub #24292F、Cursor #111）
+          在深色卡上 1.04–1.52:1，等于看不见；
+       ② 改成「近白底片」：深色 logo 好了，但中间调品牌色（OpenAI #10A37F 2.9:1、
+          Anthropic #D97757 2.6:1、Google #4285F4 3.5:1）在浅底上又不够。
+     厂商 logo 色的明度跨度太大，**任何固定底片都覆盖不了**。
+     所以：字母用中性 ink（深色主题近白、浅色主题近黑，两侧都是 13:1 以上），
+     品牌色退到底色与描边 —— 视觉识别仍在，但可读性不再取决于 logo 色。
+     （这比给 logo 申请 WCAG 的 logotype 豁免更实在：豁免只是允许它不可读。） */
+  color: var(--ink);
+  background: color-mix(in srgb, var(--card-accent, var(--accent, var(--brand))) 16%, transparent);
+  border: 1px solid color-mix(in srgb, var(--card-accent, var(--accent, var(--brand))) 38%, transparent);
 }
 .card h3 {
   font-size: var(--fs-lg); font-weight: 650; line-height: var(--lh-snug);
@@ -337,9 +347,10 @@ table.src a:hover { text-decoration: underline; }
   display: inline-grid; place-items: center;
   width: 22px; height: 22px; border-radius:var(--r-sm);
   font-size: 11px; font-weight: 700; vertical-align: -5px; margin-right: 8px;
-  color: var(--card-accent, var(--accent, var(--brand)));
-  background: color-mix(in srgb, var(--card-accent, var(--accent, var(--brand))) 14%, transparent);
-  border: 1px solid color-mix(in srgb, var(--card-accent, var(--accent, var(--brand))) 30%, transparent);
+  color: var(--ink);
+  /* 同 .mark：中性字色 + 品牌色底，理由见那里。 */
+  background: color-mix(in srgb, var(--card-accent, var(--accent, var(--brand))) 16%, transparent);
+  border: 1px solid color-mix(in srgb, var(--card-accent, var(--accent, var(--brand))) 38%, transparent);
 }
 td a { display: inline-flex; align-items: center; color: var(--ink); }
 td a:hover { color: var(--accent, var(--brand)); }
@@ -521,6 +532,21 @@ dl.axes { margin: 0; }
   color: var(--ink); letter-spacing: -.01em;
 }
 .part-bar a[aria-current="page"] b { color: var(--pa, var(--brand)); }
+/* B6（2026-10-09）：分区色改为**带亮色变体的 token**。
+ * 原先由内联 style 直接传十六进制（#8b7cf8 / #3b82f6 / #22d3c5），
+ * 这三个是**深色主题**调出来的亮色，亮色主题下当文字色只有 3.3–3.9:1 —— 不够 AA。
+ * 现在 markup 传的是 `var(--pa-agents)` 这类 token，两套主题各有一份值。
+ * 亮色值取的是共享 `--brand` / `--c-form` / `--c-use` 的亮色档（同一色相、已按 4.5:1 算过）。 */
+:root {
+  --pa-agents: #8b7cf8;
+  --pa-harness: #3b82f6;
+  --pa-tools: #22d3c5;
+}
+[data-theme="light"] {
+  --pa-agents: #6d4fd6;
+  --pa-harness: #1f6fc4;
+  --pa-tools: #0b7c72;
+}
 .part-bar a span {
   font-size: var(--fs-micro); line-height: 1.5; color: var(--ink-faint);
   overflow-wrap: anywhere;
@@ -540,3 +566,19 @@ dl.axes { margin: 0; }
 .crumbs a:hover { color: var(--brand); }
 .crumbs span[aria-current="page"] { color: var(--ink); }
 .crumbs > * + *::before { content: "/"; margin-right: 6px; color: var(--ink-faint); }
+
+/* ═══ B2（2026-10-09）· 索引页筛选与排序 ═══
+   作用域 .afilter（三张分区页各一份），脚本在 agent-filter.js。
+   一律用 brand.css 的 token（本仓原则：内容层不定义字号/颜色/间距）——
+   顺带避开半像素字号：--fs-micro=11 / --fs-xs=12 / --fs-sm=14 都是整数 px
+   （手写 .8125rem=13px 看着也对，却绕过设计系统，_design-audit 会抓）。 */
+.afilter{display:flex;flex-wrap:wrap;gap:var(--sp-2);align-items:flex-end;margin:var(--sp-4) 0;padding:var(--sp-3) var(--sp-4);border:1px solid var(--line);border-radius:var(--r-sm)}
+.afilter .af-f{display:flex;flex-direction:column;gap:var(--sp-1);min-width:9rem}
+.afilter .af-h{font-size:var(--fs-micro);letter-spacing:.06em;text-transform:uppercase;color:var(--ink-faint)}
+.afilter input,.afilter select{font:inherit;font-size:var(--fs-sm);padding:var(--sp-1) var(--sp-2);border:1px solid var(--line);border-radius:var(--r-xs);background:transparent;color:var(--ink)}
+.afilter .af-f:first-child{min-width:13rem;flex:1 1 13rem}
+.acount{margin-left:auto;font-size:var(--fs-xs);color:var(--ink-faint);white-space:nowrap}
+@media(max-width:560px){.afilter{flex-direction:column;align-items:stretch}.acount{margin-left:0}}
+
+/* B2：无差异维度的说明（取代不产生变化的排序控件） */
+.afilter .af-note{font-size:var(--fs-xs);color:var(--ink-faint);align-self:center}
