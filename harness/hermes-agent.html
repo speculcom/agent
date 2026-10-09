@@ -4,13 +4,13 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Hermes Agent — Harness | 投机取巧</title>
-  <meta name="description" content="Hermes Agent（Nous Research）：「唯一带学习闭环的常驻个人助手」 —— 官方 README 这么写： &gt; The self-improving AI agent built by Nous Research. &gt; It&#39;s the only agent with a buil" />
+  <meta name="description" content="Hermes Agent（Nous Research）：「唯一带学习闭环的常驻个人助手」 —— 官方 README 这么写： &gt; The self-improving AI agent built by Nous Research. &gt; It&#39;s the only agent with a b…" />
   <link rel="canonical" href="https://agent.specul.com/harness/hermes-agent.html" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Hermes Agent" />
   <meta property="og:url" content="https://agent.specul.com/harness/hermes-agent.html" />
   <meta property="og:title" content="Hermes Agent — Harness | 投机取巧" />
-  <meta property="og:description" content="Hermes Agent（Nous Research）：「唯一带学习闭环的常驻个人助手」 —— 官方 README 这么写： &gt; The self-improving AI agent built by Nous Research. &gt; It&#39;s the only agent with a buil" />
+  <meta property="og:description" content="Hermes Agent（Nous Research）：「唯一带学习闭环的常驻个人助手」 —— 官方 README 这么写： &gt; The self-improving AI agent built by Nous Research. &gt; It&#39;s the only agent with a b…" />
   <meta name="theme-color" content="#05080f" />
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%238b7cf8'/%3E%3Cstop offset='1' stop-color='%2322d3c5'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='48' height='48' rx='12' fill='%2305080f'/%3E%3Cpath d='M14 32 L24 12 L34 32' fill='none' stroke='url(%23g)' stroke-width='2.4' stroke-linejoin='round'/%3E%3Ccircle cx='24' cy='27' r='2.4' fill='%2322d3c5'/%3E%3C/svg%3E" />
   <link rel="stylesheet" href="../brand.css" />
@@ -39,8 +39,34 @@
           <button class="icon-btn" id="langBtn" type="button" aria-label="Switch language" title="Switch language">EN</button>
         </span>
       </nav>
+      <!-- B6（2026-10-09）：与共享 shell 同步加的移动端导航入口。
+           ⚠ 本文件是 agent 站**自己的** shell 副本（它多一层分区切换），
+             所以每次改共享 shell 的骨架，这里也要跟一次 —— 这是双份实现固有的代价。
+             样式与行为都在共享 brand.css / brand.js 里，这里只出标记。 -->
+      <button class="nav-burger" type="button" aria-label="打开菜单" aria-expanded="false" aria-controls="navDrawer">
+        <i></i><i></i><i></i>
+      </button>
     </div>
   </header>
+  <div class="nav-scrim"></div>
+  <aside class="nav-drawer" id="navDrawer" aria-hidden="true" aria-label="站点导航">
+    <div class="nav-drawer-h">
+      <span class="brand-name"><span data-zh>投机取巧</span><span data-en>Speculative Speculation</span></span>
+      <button class="nav-dclose" type="button" aria-label="关闭">×</button>
+    </div>
+    <nav class="nav-drawer-list">
+      <a href="https://specul.com/"><span><span data-zh>首页</span><span data-en>Home</span></span><span class="ar" aria-hidden="true">→</span></a>
+      <a href="https://learn.specul.com/"><span><span data-zh>学 AI</span><span data-en>Learn</span></span><span class="ar" aria-hidden="true">→</span></a>
+      <a href="https://agent.specul.com/" aria-current="page"><span><span data-zh>Agent</span><span data-en>Agent</span></span><span class="ar" aria-hidden="true">→</span></a>
+      <a href="https://models.specul.com/"><span><span data-zh>本地模型</span><span data-en>Models</span></span><span class="ar" aria-hidden="true">→</span></a>
+      <a href="https://vg.specul.com/"><span><span data-zh>AI 做游戏</span><span data-en>Vibe Gaming</span></span><span class="ar" aria-hidden="true">→</span></a>
+      <a href="https://nav.specul.com/"><span><span data-zh>导航</span><span data-en>Directory</span></span><span class="ar" aria-hidden="true">→</span></a>
+    </nav>
+    <div class="nav-drawer-foot">
+      <p><span data-zh>6 个站，各管一件事</span><span data-en>Six sites, one job each</span></p>
+      <nav><a href="https://specul.com/legal.html"><span data-zh>法律条款</span><span data-en>Legal terms</span></a></nav>
+    </div>
+  </aside>
   <main id="main">
     <div class="container detail">
       <nav class="crumbs" aria-label="面包屑">
@@ -81,7 +107,7 @@
         <span class="badge"><span data-zh>核验</span><span data-en>Checked</span> 2026-10-01</span>
       </div>
 
-            <p class="panel-lead"><span data-zh><strong>&quot;The only resident personal assistant with a learning loop&quot;</strong> — the official README puts it this way:
+            <p class="panel-lead"><span data-zh><strong>「唯一带学习闭环的常驻个人助手」</strong> —— 官方 README 这么写：
 
 &gt; <strong>The self-improving AI agent</strong> built by Nous Research.
 &gt; It&#39;s the only agent with a <strong>built-in learning loop</strong> — it creates skills from experience,
@@ -90,7 +116,8 @@
 &gt; Run it on a $5 VPS, a GPU cluster, or serverless infrastructure that costs nearly nothing when idle.
 &gt; <strong>It&#39;s not tied to your laptop</strong> — talk to it from Telegram while it works on a cloud VM.
 
-⚠ <strong>This site&#39;s position on &quot;the only agent&quot;</strong>: that is the <strong>vendor&#39;s own marketing line</strong>. This site <strong>ran no cross-product comparison to verify that &quot;only&quot; holds</strong>. It is recorded as a vendor claim, not as this site&#39;s conclusion.</span><span data-en><strong>&quot;The only resident personal assistant with a learning loop&quot;</strong> — the official README puts it this way:
+⚠ <strong>本站对「the only agent」这句话的态度</strong>：这是<strong>官方自我宣传语</strong>，
+本站<strong>未做跨产品对比测试来验证 &quot;only&quot; 是否成立</strong>。记录为官方声明，不是本站结论。</span><span data-en><strong>&quot;The only resident personal assistant with a learning loop&quot;</strong> — the official README puts it this way:
 
 &gt; <strong>The self-improving AI agent</strong> built by Nous Research.
 &gt; It&#39;s the only agent with a <strong>built-in learning loop</strong> — it creates skills from experience,
@@ -119,7 +146,7 @@
       <dl class="axes">
         <div class="axis">
           <dt><span data-zh>模型与开放条件</span><span data-en>Model & openness</span></dt>
-          <dd><strong>官方给了四种路径并强调无锁定，是本站收录对象里对模型自由度表述最直白的。</strong> README 原文：&quot;Use any model you want — <strong>Nous Portal</strong>, <strong>OpenRouter, OpenAI, your own endpoint</strong>, and many others. <strong>Switch with <code>hermes model</code> — no code changes, no lock-in.</strong>&quot; <strong>「your own endpoint」这一条对本站读者最有用</strong> —— 自建网关/自托管推理可以直接接。 换模型的操作是<strong>运行时命令 <code>/model [provider:model]</code></strong>（CLI 与消息平台共用， 见 CLI vs Messaging 对照表），不是改代码。 ⚠ <strong>未核验</strong>：完整 provider 清单（官方 <code>docs/integrations/providers</code> 未取到正文）、 换模型后的能力对齐度、本地量化模型在多后端下的行为差异。</dd>
+          <dd><strong>官方给了四种路径并强调无锁定，是本站收录对象里对模型自由度表述最直白的。</strong> README 原文：&quot;Use any model you want — <strong>Nous Portal</strong>, <strong>OpenRouter, OpenAI, your own endpoint</strong>, and many others. <strong>Switch with <code>hermes model</code> — no code changes, no lock-in.</strong>&quot; <strong>「your own endpoint」这一条对本站读者最有用</strong> —— 自建网关/自托管推理可以直接接。 换模型的操作是<strong>运行时命令 <code>/model [provider:model]</code></strong>（CLI 与消息平台共用， 见 CLI vs Messaging 对照表），不是改代码。 <strong>完整 provider 清单已核验</strong>（官方 <code>docs/integrations/providers</code>）：官方列出 40+ 家， 含 Nous Portal（&quot;300+ frontier agentic models&quot;）、OpenRouter、Anthropic、 GitHub Copilot、xAI Grok、Google Gemini / Vertex AI、AWS Bedrock、 Azure AI Foundry、DeepSeek、Hugging Face、NVIDIA Build；<strong>本地/自托管路径</strong>有 Ollama、LM Studio、<strong>Custom Endpoint</strong>（&quot;saved in <code>config.yaml</code>&quot;）。 官方对该页定位原文：&quot;from cloud APIs ... to self-hosted endpoints like <strong>Ollama and vLLM</strong>, to advanced routing and fallback configurations.&quot; <strong>换模型后的能力对齐度、本地量化模型在多后端下的行为差异</strong>，官方未给量化结论， 本站未实测（已查 providers 页与 configuration 页）。</dd>
         </div>
         <div class="axis">
           <dt><span data-zh>运行位置</span><span data-en>Where it runs</span></dt>
@@ -127,11 +154,11 @@
         </div>
         <div class="axis">
           <dt><span data-zh>本地文件</span><span data-en>Local files</span></dt>
-          <dd><strong>本地文件能力通过终端后端间接获得，且有明确的隔离机制（见 permissions）。</strong> 它的工作区由所选后端决定（local 后端 = 本机，Docker/SSH/Singularity 等各有隔离）。 <strong>Context Files 是官方的一等概念</strong>（文档 <code>features/context-files</code>）： &quot;Project context that shapes every conversation&quot; —— 项目上下文文件会影响<strong>每一次</strong>对话。 ⚠ <strong>未核验</strong>：context files 的确切格式与加载优先级、 工作区与「本地文件」的边界在哪（local 后端下的默认文件访问范围）。</dd>
+          <dd><strong>本地文件能力通过终端后端间接获得，且有明确的隔离机制（见 permissions）。</strong> 工作区由所选后端决定：官方 <code>terminal.backend</code> <strong>默认是 <code>local</code></strong> （&quot;Run on your machine (default)&quot;），<code>cwd</code> 决定工作目录； Docker / SSH / Singularity / Modal / Daytona / Vercel 后端各提供隔离。 <strong>Context Files 是官方的一等概念，格式与优先级已核验</strong> （文档 <code>features/context-files</code>）：支持 <code>.hermes.md</code>/<code>HERMES.md</code>、<code>AGENTS.md</code>、 <code>AGENTS.override.md</code>、<code>CLAUDE.md</code>、<code>SOUL.md</code>、<code>.cursorrules</code>、<code>.cursor/rules/*.mdc</code>； <strong>优先级 first match wins</strong>：<code>.hermes.md</code> → <code>AGENTS.override.md</code> → <code>AGENTS.md</code> → <code>CLAUDE.md</code> → <code>.cursorrules</code>，<code>SOUL.md</code> 作为身份始终单独加载。 git 仓库内按 <strong>git root → 工作目录</strong> 合并整条 <code>AGENTS.md</code> 链， 会话中再渐进发现子目录 context；每文件字数上限为 floor 20,000 / ceiling 500,000。 <strong>文件访问边界</strong>：官方安全页第 8 层原文——terminal 后端的工作目录参数 &quot;validated against an allowlist to prevent shell injection&quot;； <code>write_file</code> / <code>patch</code> 有 denylist 与可选 write sandbox（安全页第 3 层）。</dd>
         </div>
         <div class="axis">
           <dt><span data-zh>关机后的任务</span><span data-en>Tasks after shutdown</span></dt>
-          <dd><strong>这一维它是全站最强的，而且有官方三重机制。</strong> <strong>① 内建cron 调度器</strong>：官方特性表写&quot;Built-in <strong>cron scheduler</strong> with delivery to any platform. Daily reports, nightly backups, weekly audits — all in natural language, <strong>running unattended</strong>.&quot;（文档 <code>features/cron</code>）。 <strong>② serverless 休眠后唤醒</strong>：Daytona / Modal 后端空闲时休眠、需唤醒 —— 本站未核验唤醒延迟。 <strong>③ 常驻网关进程</strong>：gateway 一旦运行，就能从六个消息平台随时触发。 ⚠ <strong>未核验</strong>：cron 未触发任务的补偿逻辑、网关断线后的任务补跑、 跨休眠/唤醒的状态一致性。</dd>
+          <dd><strong>这一维它是全站最强的，而且有官方三重机制。</strong> <strong>① 内建 cron 调度器</strong>：官方特性表写&quot;Built-in <strong>cron scheduler</strong> with delivery to any platform. Daily reports, nightly backups, weekly audits — all in natural language, <strong>running unattended</strong>.&quot;（文档 <code>features/cron</code>）。 <strong>② serverless 休眠后唤醒</strong>：Daytona / Modal / Vercel 后端空闲时休眠、需唤醒 （官方：&quot;hibernates when idle and wakes on demand&quot;）。 <strong>③ 常驻网关进程</strong>：gateway 一旦运行就能从多个消息平台随时触发。 <strong>补偿与补跑机制官方已写明</strong>（<code>features/cron</code>）：有 <strong>misfire catch-up</strong> 扫描； <code>resume</code> 后&quot;the next tick fires one <strong>catch-up run</strong>&quot;（可关：<code>cron.catch_up_missed: false</code>）； 全局 <code>hermes pause</code> 期间托管 cron 的 fire webhook 返 <code>503 Retry-After: 60</code> 让调度器重投， &quot;nothing is lost: due work catches up on the first tick&quot;；运行中的任务&quot;never killed&quot;。 网关侧有 <strong>event-loop liveness watchdog</strong>（连续 3 次探针无响应即 code 75 退出、 由 supervisor 重启）与 60s 心跳。 <strong>跨休眠/唤醒的状态一致性官方未说明</strong>（已查 <code>features/cron</code>、<code>features/tools</code>、 <code>user-guide/messaging</code> 三页）。</dd>
         </div>
         <div class="axis">
           <dt><span data-zh>工具与扩展</span><span data-en>Tools & extensions</span></dt>
@@ -143,11 +170,11 @@
         </div>
         <div class="axis">
           <dt><span data-zh>权限与限制</span><span data-en>Permissions & limits</span></dt>
-          <dd><strong>官方文档目录里有一节独立的 &quot;Security&quot;，这是本站判断它权限面做得比较细的依据。</strong> 该节副标题原文（核验自 README 文档目录表）： &quot;<strong>Command approval, DM pairing, container isolation</strong>&quot;。 逐项解读： <strong>① Command approval</strong> —— 命令级审批（与 OpenHands 的 API key、 Codex SDK 的 ApprovalMode 属不同层面的做法；本站未核验其粒度与默认值）。 <strong>② DM pairing</strong> —— 私聊配对，即<strong>只有配对过的用户能指挥它</strong>。 <strong>这一点在六个消息平台入口的前提下极其重要</strong> —— 一个能通过 Telegram/WhatsApp 接指令、还能在文件系统上动手的 agent， 「谁能给它下指令」就是最关键的安全问题。 <strong>③ Container isolation</strong> —— 容器隔离。 ⚠ <strong>未核验</strong>：三者的默认状态（默认开还是默认关）、 command approval 的粒度与是否可白名单化、 gateway 暴露面与端口安全。 ⚠ 另有一处需要注意：<code>hermes claw migrate --preset user-data</code> 之类的迁移会涉及 API keys（README 列出 Telegram / OpenRouter / OpenAI / Anthropic / ElevenLabs）， <strong>迁移脚本本身接触密钥</strong> —— 用 dry-run 预览是官方给的手段。</dd>
+          <dd><strong>官方文档里有一节独立的 &quot;Security&quot;，而且把权限面拆成了八层（原文）</strong>： user authorization（allowlists、DM pairing）、dangerous command approval、 file write safety、container isolation、MCP credential filtering、 context file scanning、cross-session isolation、input sanitization。 逐项核验（官方 <code>user-guide/security</code>）： <strong>① Command approval（默认已核验）</strong>：<code>approvals.mode</code> 三档，<strong>默认 <code>smart</code></strong> —— 用辅助 LLM 评风险，低危命令自动批准、真正危险自动拒绝、不确定升级为手动； <code>manual</code> 每次都问，<code>off</code> 等于 <code>--yolo</code>。超时默认 <code>300</code> 秒，<strong>未回复即 fail-closed</strong>。 另有<strong>始终生效的 hardline blocklist</strong>（<code>rm -rf /</code>、fork bomb、<code>dd</code> 写块设备等， <code>--yolo</code>/<code>approvals.mode: off</code> 都不能越过）与<strong>用户可编辑的 deny 规则</strong> <code>approvals.deny</code>（fnmatch glob、大小写不敏感，可写&quot;yolo 但除这些之外&quot;）。 <strong>② DM pairing（默认拒绝）</strong>：授权检查顺序为 平台 allow-all → <strong>DM pairing 已批准名单</strong> → 平台 allowlist（<code>TELEGRAM_ALLOWED_USERS</code> 等）→ 全局 allowlist → 全局 allow-all → <strong>Default: deny</strong>。配对流程是 8 位码 + <code>hermes pairing approve &lt;platform<strong> </strong>code&gt;</code>， <code>unauthorized_dm_behavior</code> 默认 <code>pair</code>（另可 <code>ignore</code>/<code>decline</code>）， 配对码 1 小时过期、限速、5 次失败锁 1 小时。 <strong>③ Container isolation（默认关）</strong>：<code>terminal.backend</code> 默认 <code>local</code>， 容器隔离是<strong>改用 docker/ssh/singularity/modal/daytona/vercel 后端时才启用</strong>； 启用后官方列出一整套 Docker 加固 flag（<code>--cap-drop ALL</code>、 <code>--security-opt no-new-privileges</code>、<code>--pids-limit 256</code>、noexec tmpfs 等）。 <strong>迁移脚本会碰密钥</strong>：<code>hermes claw migrate</code> 会导入五家 API keys （Telegram / OpenRouter / OpenAI / Anthropic / ElevenLabs），官方给 <code>--dry-run</code> 预览。 <strong>gateway 端口安全</strong>官方未单列一节；dashboard 侧有 OAuth / 自托管 OIDC 鉴权。</dd>
         </div>
         <div class="axis">
           <dt><span data-zh>适合什么任务</span><span data-en>Best for</span></dt>
-          <dd><strong>适合</strong>：想要一个<strong>常驻的跨平台个人助手</strong>（Telegram/Discord/Slack/WhatsApp/Signal/Email）； 把它放在云VM / serverless 上而不绑在自己笔记本；需要定时任务无人值守跑； 需要跨会话记忆与技能自积累；想用自建 endpoint 或 OpenRouter 等多provider； 需要命令级审批与 DM 配对做安全边界。 <strong>不适合</strong>：只做编程任务（它是通用助手，编程只是其一）； 需要拿它当嵌入式 SDK（它是完整运行时，不是库）； 需要详细的「状态 vs 上下文」分层保证（它机制多但官方没按这两层分）； 需要企业级多用户与审计（本次未核验）。</dd>
+          <dd><strong>适合</strong>：想要一个<strong>常驻的跨平台个人助手</strong>（Telegram/Discord/Slack/WhatsApp/Signal/Email）； 把它放在云VM / serverless 上而不绑在自己笔记本；需要定时任务无人值守跑； 需要跨会话记忆与技能自积累；想用自建 endpoint 或 OpenRouter 等多provider； 需要命令级审批与 DM 配对做安全边界。 <strong>不适合</strong>：只做编程任务（它是通用助手，编程只是其一）； 需要拿它当嵌入式 SDK（它是完整运行时，不是库）； 需要详细的「状态 vs 上下文」分层保证（它机制多但官方没按这两层分）。 <strong>企业级多用户与审计官方未单独提供文档</strong>（已查 security 与 messaging 两页， 二者只讲单 owner 的 allowlist / DM pairing 授权，未讲多租户审计）。</dd>
         </div>
       </dl>
 
@@ -182,12 +209,7 @@
             <div class="panel is-slim">
         <h2><span data-zh>未知项清单</span><span data-en>Known unknowns</span></h2>
         <ul>
-          <li>command approval 的粒度、是否可白名单化、默认状态</li>
-          <li>container isolation 的默认状态与覆盖范围</li>
-          <li>DM pairing 的配对流程与撤销机制</li>
-          <li>Context Files 的格式、加载顺序与优先级</li>
           <li>serverless 后端的唤醒延迟与跨休眠状态一致性</li>
-          <li>cron 未触发时的补偿与补跑逻辑</li>
           <li>「zero-context-cost」的实际上下文节省量</li>
           <li>skills 自我改进的边界（会不会越学越歪）</li>
           <li>Honcho 用户建模的数据去向与隐私</li>
@@ -195,7 +217,7 @@
           <li>Nous Portal 的<strong>官方</strong>定价（官网不公开，第三方口径未获确认）</li>
           <li>Nous Portal 额度制的实际消耗速度（长agent 循环能几天烧完一档，第三方说法未实证）</li>
           <li>Nous Portal 与 OpenRouter 的差异（同样走credit，但模型目录与工具网关不同）</li>
-          <li>完整 provider 清单与本地模型的可靠性</li>
+          <li>本地/自托管模型在各后端下的可靠性（完整 provider 清单已核验）</li>
         </ul>
       </div>
 
@@ -209,6 +231,8 @@
             <tr><td>repo</td><td>NousResearch/hermes-agent · 仓库（250,401★，MIT，核验 2026-10-01）</td><td><a href="https://github.com/NousResearch/hermes-agent" target="_blank" rel="noopener">https://github.com/NousResearch/hermes-agent</a></td></tr>
             <tr><td>docs</td><td>主 README（定位、六项特性表含七种终端后端与学习闭环、CLI vs Messaging 对照表、文档目录、安全与 MCP 页、OpenClaw 迁移清单）</td><td><a href="https://github.com/NousResearch/hermes-agent/blob/main/README.md" target="_blank" rel="noopener">https://github.com/NousResearch/hermes-agent/blob/main/README.md</a></td></tr>
             <tr><td>docs</td><td>官方文档首页</td><td><a href="https://hermes-agent.nousresearch.com/docs/" target="_blank" rel="noopener">https://hermes-agent.nousresearch.com/docs/</a></td></tr>
+            <tr><td>docs</td><td>LLM and Model Providers（官方 provider 清单 40+ 家、Nous Portal 300+ models、Ollama / LM Studio / vLLM / Custom Endpoint）</td><td><a href="https://hermes-agent.nousresearch.com/docs/integrations/providers" target="_blank" rel="noopener">https://hermes-agent.nousresearch.com/docs/integrations/providers</a></td></tr>
+            <tr><td>docs</td><td>Tools &amp; Toolsets（40+ tools、terminal backends 七种、container security、background 进程管理）</td><td><a href="https://hermes-agent.nousresearch.com/docs/user-guide/features/tools" target="_blank" rel="noopener">https://hermes-agent.nousresearch.com/docs/user-guide/features/tools</a></td></tr>
             <tr><td>docs</td><td>Security（Command approval / DM pairing / container isolation）</td><td><a href="https://hermes-agent.nousresearch.com/docs/user-guide/security" target="_blank" rel="noopener">https://hermes-agent.nousresearch.com/docs/user-guide/security</a></td></tr>
             <tr><td>docs</td><td>Memory（Persistent memory、user profiles、best practices）</td><td><a href="https://hermes-agent.nousresearch.com/docs/user-guide/features/memory" target="_blank" rel="noopener">https://hermes-agent.nousresearch.com/docs/user-guide/features/memory</a></td></tr>
             <tr><td>docs</td><td>MCP Integration（Connect any MCP server）</td><td><a href="https://hermes-agent.nousresearch.com/docs/user-guide/features/mcp" target="_blank" rel="noopener">https://hermes-agent.nousresearch.com/docs/user-guide/features/mcp</a></td></tr>
@@ -247,6 +271,7 @@
           <li><span class="rel-t"><a href="./openhands.html">OpenHands</a></span><span class="rel-n"><strong>常驻诉求的同类，但形态不同</strong>：两者都主打「关掉笔记本后agent 仍在跑」。OpenHands 是带 Web UI 的控制中心 + 定时/webhook 触发；本对象是 TUI + 六个消息平台 + 内建 cron，且定位是通用助手而非纯编程。</span></li>
           <li><span class="rel-t"><a href="./deepagents.html">Deep Agents</a></span><span class="rel-n">同为 general-harness 家族，但 Deep Agents 面向编程任务（filesystem + 子代理是卖点），本对象面向跨平台常驻的个人助手。</span></li>
           <li><span class="rel-t"><a href="./langgraph.html">LangGraph</a></span><span class="rel-n"><strong>记忆与状态的分野对照</strong>：LangGraph 明确区分 working memory 与 persistent memory、checkpoint 每 superstep 落盘；本对象机制更丰富但官方未按这两层分，且记忆是明文 markdown 文件。</span></li>
+          <li><span class="rel-t"><a href="/tools/memory.html"><span data-zh>Knowledge Graph Memory Server</span><span data-en>Knowledge Graph Memory Server</span></a></span><span class="rel-n"><span data-zh>另一层 · 给 agent 装的工具</span><span data-en>Other layer · MCP tools</span></span></li>
         </ul>
       </div>
 
