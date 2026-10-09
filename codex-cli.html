@@ -15,7 +15,7 @@
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%238b7cf8'/%3E%3Cstop offset='1' stop-color='%2322d3c5'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='48' height='48' rx='12' fill='%2305080f'/%3E%3Cpath d='M14 32 L24 12 L34 32' fill='none' stroke='url(%23g)' stroke-width='2.4' stroke-linejoin='round'/%3E%3Ccircle cx='24' cy='27' r='2.4' fill='%2322d3c5'/%3E%3C/svg%3E" />
   <link rel="stylesheet" href="brand.css" />
   <link rel="stylesheet" href="site.css" />
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Codex CLI","applicationCategory":"DeveloperApplication","url":"https://github.com/openai/codex","sameAs":"https://github.com/openai/codex","description":"OpenAI 官方的终端编码 agent，Rust 实现，架构上强调 app server 与线程续接。","dateModified":"2026-09-29","offers":{"@type":"Offer","price":"20","priceCurrency":"USD"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Codex CLI","applicationCategory":"DeveloperApplication","url":"https://github.com/openai/codex","sameAs":"https://github.com/openai/codex","description":"OpenAI 官方的终端编码 agent，Rust 实现，架构上强调 app server 与线程续接。","dateModified":"2026-10-08","offers":{"@type":"Offer","price":"20","priceCurrency":"USD"}}</script>
 </head>
 <body class="brand-ambient">
   <a class="t-skip" href="#main"><span data-zh>跳到主要内容</span><span data-en>Skip to main content</span></a>
@@ -39,8 +39,34 @@
           <button class="icon-btn" id="langBtn" type="button" aria-label="Switch language" title="Switch language">EN</button>
         </span>
       </nav>
+      <!-- B6（2026-10-09）：与共享 shell 同步加的移动端导航入口。
+           ⚠ 本文件是 agent 站**自己的** shell 副本（它多一层分区切换），
+             所以每次改共享 shell 的骨架，这里也要跟一次 —— 这是双份实现固有的代价。
+             样式与行为都在共享 brand.css / brand.js 里，这里只出标记。 -->
+      <button class="nav-burger" type="button" aria-label="打开菜单" aria-expanded="false" aria-controls="navDrawer">
+        <i></i><i></i><i></i>
+      </button>
     </div>
   </header>
+  <div class="nav-scrim"></div>
+  <aside class="nav-drawer" id="navDrawer" aria-hidden="true" aria-label="站点导航">
+    <div class="nav-drawer-h">
+      <span class="brand-name"><span data-zh>投机取巧</span><span data-en>Speculative Speculation</span></span>
+      <button class="nav-dclose" type="button" aria-label="关闭">×</button>
+    </div>
+    <nav class="nav-drawer-list">
+      <a href="https://specul.com/"><span><span data-zh>首页</span><span data-en>Home</span></span><span class="ar" aria-hidden="true">→</span></a>
+      <a href="https://learn.specul.com/"><span><span data-zh>学 AI</span><span data-en>Learn</span></span><span class="ar" aria-hidden="true">→</span></a>
+      <a href="https://agent.specul.com/" aria-current="page"><span><span data-zh>Agent</span><span data-en>Agent</span></span><span class="ar" aria-hidden="true">→</span></a>
+      <a href="https://models.specul.com/"><span><span data-zh>本地模型</span><span data-en>Models</span></span><span class="ar" aria-hidden="true">→</span></a>
+      <a href="https://vg.specul.com/"><span><span data-zh>AI 做游戏</span><span data-en>Vibe Gaming</span></span><span class="ar" aria-hidden="true">→</span></a>
+      <a href="https://nav.specul.com/"><span><span data-zh>导航</span><span data-en>Directory</span></span><span class="ar" aria-hidden="true">→</span></a>
+    </nav>
+    <div class="nav-drawer-foot">
+      <p><span data-zh>6 个站，各管一件事</span><span data-en>Six sites, one job each</span></p>
+      <nav><a href="https://specul.com/legal.html"><span data-zh>法律条款</span><span data-en>Legal terms</span></a></nav>
+    </div>
+  </aside>
   <main id="main">
     <div class="container detail">
       <nav class="crumbs" aria-label="面包屑">
@@ -65,17 +91,18 @@
         <span class="tag on">本地</span>
         <span class="badge accent">partial</span>
         <span class="badge">lifecycle: active</span>
-        <span class="badge"><span data-zh>核验</span><span data-en>Checked</span> 2026-09-29</span>
+        <span class="badge"><span data-zh>核验</span><span data-en>Checked</span> 2026-10-08</span>
       </div>
 
-            <p class="panel-lead"><span data-zh>OpenAI&#39;s official terminal coding agent, <strong>written in Rust</strong>, architecturally centred on the app server and thread resumption.</span><span data-en>OpenAI&#39;s official terminal coding agent, <strong>written in Rust</strong>, architecturally centred on the app server and thread resumption.</span></p>
+            <p class="panel-lead"><span data-zh>OpenAI 官方的终端编码 agent，<strong>Rust 实现</strong>，架构上强调 app server 与线程续接。</span><span data-en>OpenAI&#39;s official terminal coding agent, <strong>written in Rust</strong>, architecturally centred on the app server and thread resumption.</span></p>
 
             <div class="panel is-slim">
         <h2><span data-zh>适合与不适合</span><span data-en>When to use it, when not to</span></h2>
 <span data-zh>        <p>在终端做工程任务，需要接入 CI 或自建客户端的场景。
 已有仓库的续接与恢复是它的架构重点。</p>
-        <p class="warn-p"><strong>不适合</strong>需要沙箱与权限机制完全明确可控的场景——
-本次采集环境无法访问官方文档站，这几项标为未知，采购前需自行核对。</p></span><span data-en>        <p>Engineering work in the terminal, including CI integration or building your own client.
+        <p class="warn-p"><strong>不适合</strong>需要「沙箱逐平台实现逐条明确」的场景——
+官方只说明 OS 级强制与 Windows 的 <code>elevated</code> / <code>unelevated</code> 档位，
+未按 macOS / Linux / Windows 分别列出实现细节，采购前仍建议实测。</p></span><span data-en>        <p>Engineering work in the terminal, including CI integration or building your own client.
 Its architecture emphasises resumption and recovery of existing repositories.</p></span>
       </div>
 
@@ -87,7 +114,7 @@ Its architecture emphasises resumption and recovery of existing repositories.</p
       <dl class="axes">
         <div class="axis">
           <dt><span data-zh>模型与开放条件</span><span data-en>Model & openness</span></dt>
-          <dd>OpenAI 自家模型。官方描述为「Lightweight coding agent that runs in your terminal」。 <strong>本次未核验统一默认模型与具体模型映射</strong>，README 未列出，记为未知。</dd>
+          <dd><strong>默认走 OpenAI 自家模型，但架构上可换 provider。</strong> 官方 config-basic 的「Default model」示例为 <code>model = &quot;gpt-5.5&quot;</code>， CLI 有 <code>--model</code> / <code>-m</code> 覆盖（示例 <code>gpt-5.4</code>）， 另有 <code>model_context_window</code>、<code>model_reasoning_effort</code>、 <code>model_catalog_json</code> 与 <code>codex debug models</code> 可查看模型目录。 <strong>自定义 provider 官方明确支持</strong>（config-advanced「Custom model providers」）： 顶层 <code>model</code> + <code>model_provider</code> 配合 <code>[model_providers.&lt;id&gt;]</code> （<code>base_url</code> / <code>env_key</code> / <code>wire_api</code> / <code>http_headers</code> / <code>auth.command</code>）； 保留内置 ID 为 <code>openai</code>、<code>ollama</code>、<code>lmstudio</code>，另内置 <code>amazon-bedrock</code>， 示例直接给 <code>[model_providers.mistral] base_url=&quot;https://api.mistral.ai/v1&quot;</code>； 并支持 <strong>OSS 模式</strong> <code>--oss</code> + <code>oss_provider = &quot;ollama&quot; | &quot;lmstudio&quot;</code>， <code>openai_base_url</code> 可改内置 OpenAI provider 的 base URL。 <strong>换第三方模型后 tool calling 质量官方未给量化结论。</strong></dd>
         </div>
         <div class="axis">
           <dt><span data-zh>运行位置</span><span data-en>Where it runs</span></dt>
@@ -95,23 +122,23 @@ Its architecture emphasises resumption and recovery of existing repositories.</p
         </div>
         <div class="axis">
           <dt><span data-zh>本地文件</span><span data-en>Local files</span></dt>
-          <dd>在用户工作目录内操作。README 提供 npm 与 Homebrew 两种安装方式。 <strong>具体的沙箱默认档位与目录边界本次未核验，记为未知。</strong></dd>
+          <dd><strong>在用户工作目录内操作，默认写入限工作区，且要求是 Git 仓库。</strong> 官方 agent-approvals-security 原文：默认 &quot;no network access and write permissions limited to the active workspace&quot;，工作区含当前目录与 <code>/tmp</code> （<code>/status</code> 可查看工作区目录）。 沙箱默认档位：<strong>版本控制目录默认 <code>workspace-write</code>，非版本控制目录默认 <code>read-only</code></strong>；<code>workspace-write</code> 下 <code>.git</code> / <code>.agents</code> / <code>.codex</code> 递归只读。 可用 <code>--add-dir</code> 追加可写目录、<code>-C/--cd</code> 指定工作目录、 <code>project_root_markers</code> 自定义项目根识别（默认含 <code>.git</code>）。 <strong>硬约束</strong>：非交互 <code>codex exec</code> 要求工作目录是 Git 仓库，官方原文 &quot;Codex requires commands to run inside a Git repository&quot;， 可用 <code>--skip-git-repo-check</code> 跳过。</dd>
         </div>
         <div class="axis">
           <dt><span data-zh>关机后的任务</span><span data-en>Tasks after shutdown</span></dt>
-          <dd>不支持终端形态的长后台任务。 <strong>是否存在云端任务入口本次未核验，记为未知。</strong></dd>
+          <dd><strong>终端进程随会话结束，但官方有云端任务形态已核到。</strong> 官方 Codex cloud 页原文：Codex cloud 让 Codex &quot;work on tasks in the background (including in parallel) using its own cloud environment&quot;，跑在 &quot;isolated OpenAI-managed containers&quot;， 不访问你的宿主机或无关数据。 CLI 侧有 <code>codex cloud</code> 子命令（实验性，别名 <code>codex cloud-tasks</code>） 与 <code>codex apply</code>（把云任务 diff 应用到本地工作树）； 云端按 ChatGPT 套餐提供（Plus / Pro / Business / Edu / Enterprise）。 <strong>云端任务的并发与时长额度官方未给具体数值，只写随套餐。</strong></dd>
         </div>
         <div class="axis">
           <dt><span data-zh>工具与扩展</span><span data-en>Tools & extensions</span></dt>
-          <dd>面向工程任务的工具集（读写文件、执行命令等）。 <strong>官方文档站 developers.openai.com 在本次采集环境对 curl 返回 403， 具体工具清单与 MCP 接入方式本次未核验，记为未知。</strong></dd>
+          <dd><strong>内置工具面与 MCP 均已核到。</strong> 官方能力分散在 config 的能力开关里：<code>shell</code>（执行命令， <code>features.shell_tool</code>）、<code>unified_exec</code>（PTY 执行）、web search （<code>web_search = cached | live | disabled</code>）、undo、git commit、 <strong>multi-agent 协作</strong>（<code>spawn_agent</code> / <code>send_input</code> / <code>resume_agent</code> / <code>wait_agent</code> / <code>close_agent</code>，<code>features.multi_agent</code>）与 memories； <code>codex exec --json</code> 的事件类型含 command executions、file changes、 MCP tool calls、web searches、plan updates。 扩展机制：<strong>Hooks</strong>（PreToolUse / PostToolUse / PreCompact 等）、 <strong>Skills</strong>（<code>SKILL.md</code>，可打包为 plugins）与 <strong>plugin marketplace</strong>。 <strong>MCP 官方支持完整</strong>（官方 MCP 页原文 &quot;Codex supports MCP servers in both the CLI and the IDE extension&quot;）：支持 STDIO 与 Streamable HTTP （Bearer / OAuth，<code>codex mcp login</code>），<code>codex mcp</code> CLI 与 <code>[mcp_servers.&lt;name&gt;]</code> 均可配，有 <code>enabled_tools</code> / <code>disabled_tools</code> 与 per-tool <code>approval_mode</code>；<code>codex mcp-server</code> 还能把 Codex 本身 作为 MCP server 暴露给别的 agent。</dd>
         </div>
         <div class="axis">
           <dt><span data-zh>上下文与记忆</span><span data-en>Context & memory</span></dt>
-          <dd><strong>app server 架构是本工具的关键设计</strong>—— 官方文档提及自定义客户端通过 app server 接入，线程可启动、续接与恢复。 <strong>具体上下文窗口与压缩策略本次未核验。</strong></dd>
+          <dd><strong>会话续接 + 自动压缩 + 可选 memories，三轮机制都已核到。</strong> <strong>续接</strong>：<code>codex resume</code>（交互）与 <code>codex exec resume</code>（非交互， <code>--last</code> 或 <code>&lt;SESSION_ID&gt;</code>），<code>codex fork</code> 可把会话分叉成新线程； app server 架构让线程可启动、续接与恢复。 <strong>压缩</strong>：官方配置键 <code>compact_prompt</code>（内联覆盖压缩提示词）与 <code>experimental_compact_prompt_file</code>，并有 <code>PreCompact</code> / <code>PostCompact</code> hook 事件；上下文窗口可由 <code>model_context_window</code> 显式设置（示例 128000）。 <strong>记忆</strong>：<code>[features] memories = true</code> 开启后，Codex 把既往会话提炼为 本地记忆文件（默认 <code>~/.codex/memories/</code>），TUI 用 <code>/memories</code> 按线程控制， 由 <code>memories.*</code> 调参；官方称 memories 会 &quot;redacts secrets&quot;。 <strong>注意 memories 默认关闭。</strong></dd>
         </div>
         <div class="axis">
           <dt><span data-zh>权限与限制</span><span data-en>Permissions & limits</span></dt>
-          <dd>沙箱与审批边界跟随运行环境。 <strong>API key 计费与订阅不是同一额度</strong>（此点已在定价说明中确认）。 <strong>审批与沙箱模式已于 2026-10-01 核验完成</strong>（此前记为未核验）： 来自 <code>@openai/codex-sdk</code> 源码 <code>sdk/typescript/src/threadOptions.ts</code> 的类型定义 —— <code>ApprovalMode = &quot;never&quot; | &quot;on-request&quot; | &quot;on-failure&quot; | &quot;untrusted&quot;</code>（四档）、 <code>SandboxMode = &quot;read-only&quot; | &quot;workspace-write&quot; | &quot;danger-full-access&quot;</code>（三档）， 网络由 <code>networkAccessEnabled</code> / <code>webSearchMode</code>（disabled/cached/live）单独控制。 证据在 SDK 侧而非 CLI 文档侧 —— <code>docs/sandbox.md</code> 正文只有外链，所以当初核验不到。 ⚠ 三档沙箱的<strong>跨平台实现差异仍未核验</strong>（尤其 Windows）。详见 <a href="/harness/codex-sdk.html">Codex SDK 档案</a>。</dd>
+          <dd>沙箱与审批边界跟随运行环境。 <strong>API key 计费与订阅不是同一额度</strong>（此点已在定价说明中确认）。 <strong>审批与沙箱模式已核验完成</strong>，官方口径（agent-approvals-security / config-advanced / config-reference）与 SDK 源码一致： 顶层 <code>approval_policy</code> = <code>untrusted</code> / <code>on-request</code> / <code>never</code> / <code>granular</code>（<code>on-failure</code> 已弃用），<code>approvals_reviewer</code> = <code>user</code> / <code>auto_review</code>；<code>sandbox_mode</code> = <code>read-only</code> / <code>workspace-write</code> / <code>danger-full-access</code>（另有命名 profile <code>:read-only</code> / <code>:workspace</code> / <code>:danger-full-access</code>）。 <strong>本地默认 <code>workspace-write</code> + 网络关闭</strong>，非版本控制目录默认 <code>read-only</code>； <code>workspace-write</code> 下 <code>.git</code> / <code>.agents</code> / <code>.codex</code> 递归只读； 网络另有 <code>features.network_proxy</code> 域名 allowlist + DNS 重绑定防护。 TUI 里用 <code>/permissions</code> 切 read-only，<code>--ask-for-approval never</code> 关审批， <code>--dangerously-bypass-approvals-and-sandbox</code>（别名 <code>--yolo</code>）全放开。 <strong>Windows 另有专属档位</strong> <code>[windows] sandbox = &quot;elevated&quot; | &quot;unelevated&quot;</code>， <code>codex sandbox</code> 子命令可在 macOS / Linux / Windows 提供沙箱； 但<strong>逐平台的实现细节官方未按平台分别展开</strong>（已查 config-basic 与 agent-approvals-security 两页）。详见 <a href="/harness/codex-sdk.html">Codex SDK 档案</a>。</dd>
         </div>
         <div class="axis">
           <dt><span data-zh>适合什么任务</span><span data-en>Best for</span></dt>
@@ -147,19 +174,16 @@ Its architecture emphasises resumption and recovery of existing repositories.</p
             <div class="panel is-slim">
         <h2><span data-zh>未知项清单</span><span data-en>Known unknowns</span></h2>
         <ul>
-          <li>统一默认模型与模型映射</li>
-          <li>沙箱默认档位与目录边界</li>
-          <li>完整工具清单与 MCP 接入方式</li>
-          <li>上下文窗口与压缩策略</li>
-          <li>审批模式的具体形态</li>
-          <li>是否提供云端任务入口</li>
+          <li>三档沙箱在 macOS / Linux / Windows 的<strong>逐平台</strong>实现细节 （官方只说 OS 级强制 + Windows <code>elevated</code> / <code>unelevated</code>，未分平台展开）</li>
+          <li>换第三方 provider 后 tool calling 的质量对齐</li>
+          <li>云端任务的并发数与时长具体数值（官方只说随套餐） &gt; 原「默认模型 / 沙箱档位 / 工具清单 / 上下文策略 / 审批模式 / 云端任务入口」 &gt; 六项已由官方 developers.openai.com/codex（config-basic、config-advanced、 &gt; agent-approvals-security、noninteractive、mcp、cli/reference、cloud）核到， &gt; 见上方 axes。</li>
         </ul>
       </div>
 
 
       <div class="panel">
         <h2><span data-zh>证据来源</span><span data-en>Evidence sources</span></h2>
-        <p class="t-sm"><span data-zh>判断可回到以下一手源复核。本站核验日</span><span data-en>Every judgement can be rechecked against the primary sources below. Verified on</span> 2026-09-29，<span data-zh>内容更新日</span><span data-en>content updated on</span> 2026-09-29。</p>
+        <p class="t-sm"><span data-zh>判断可回到以下一手源复核。本站核验日</span><span data-en>Every judgement can be rechecked against the primary sources below. Verified on</span> 2026-10-08，<span data-zh>内容更新日</span><span data-en>content updated on</span> 2026-10-08。</p>
         <table class="src">
           <thead><tr><th class="w-20"><span data-zh>类型</span><span data-en>Type</span></th><th class="w-52"><span data-zh>名称</span><span data-en>Name</span></th><th><span data-zh>链接</span><span data-en>Link</span></th></tr></thead>
           <tbody>
@@ -167,6 +191,16 @@ Its architecture emphasises resumption and recovery of existing repositories.</p
             <tr><td>changelog</td><td>OpenAI · Codex CLI Releases（rust-v0.158.0 @ 2026-09-28）</td><td><a href="https://github.com/openai/codex/releases" target="_blank" rel="noopener">https://github.com/openai/codex/releases</a></td></tr>
             <tr><td>changelog</td><td>OpenAI · Codex CLI Commits</td><td><a href="https://github.com/openai/codex/commits/main" target="_blank" rel="noopener">https://github.com/openai/codex/commits/main</a></td></tr>
             <tr><td>docs</td><td>OpenAI · Codex 文档</td><td><a href="https://developers.openai.com/codex/cli" target="_blank" rel="noopener">https://developers.openai.com/codex/cli</a></td></tr>
+            <tr><td>docs</td><td>OpenAI · Config basics（默认模型 gpt-5.5、sandbox_mode、Windows sandbox）</td><td><a href="https://developers.openai.com/codex/config-basic" target="_blank" rel="noopener">https://developers.openai.com/codex/config-basic</a></td></tr>
+            <tr><td>docs</td><td>OpenAI · Advanced Configuration（自定义 provider / OSS / hooks）</td><td><a href="https://developers.openai.com/codex/config-advanced" target="_blank" rel="noopener">https://developers.openai.com/codex/config-advanced</a></td></tr>
+            <tr><td>docs</td><td>OpenAI · Configuration Reference（approval_policy 等配置键）</td><td><a href="https://developers.openai.com/codex/config-reference" target="_blank" rel="noopener">https://developers.openai.com/codex/config-reference</a></td></tr>
+            <tr><td>docs</td><td>OpenAI · Agent approvals &amp; security（沙箱 / 审批默认 / 网络）</td><td><a href="https://developers.openai.com/codex/agent-approvals-security" target="_blank" rel="noopener">https://developers.openai.com/codex/agent-approvals-security</a></td></tr>
+            <tr><td>docs</td><td>OpenAI · Non-interactive mode（codex exec / Git 仓库要求）</td><td><a href="https://developers.openai.com/codex/noninteractive" target="_blank" rel="noopener">https://developers.openai.com/codex/noninteractive</a></td></tr>
+            <tr><td>docs</td><td>OpenAI · MCP（STDIO / Streamable HTTP、per-tool approval_mode）</td><td><a href="https://developers.openai.com/codex/mcp" target="_blank" rel="noopener">https://developers.openai.com/codex/mcp</a></td></tr>
+            <tr><td>docs</td><td>OpenAI · CLI 参考（--model / --sandbox / codex cloud / exec）</td><td><a href="https://developers.openai.com/codex/cli/reference" target="_blank" rel="noopener">https://developers.openai.com/codex/cli/reference</a></td></tr>
+            <tr><td>docs</td><td>OpenAI · Codex cloud / web（云任务跑在 OpenAI 托管容器）</td><td><a href="https://developers.openai.com/codex/cloud" target="_blank" rel="noopener">https://developers.openai.com/codex/cloud</a></td></tr>
+            <tr><td>docs</td><td>OpenAI · Memories（跨会话记忆，默认关闭）</td><td><a href="https://developers.openai.com/codex/memories" target="_blank" rel="noopener">https://developers.openai.com/codex/memories</a></td></tr>
+            <tr><td>docs</td><td>OpenAI · Customization（AGENTS.md / Skills / MCP / Subagents）</td><td><a href="https://developers.openai.com/codex/concepts/customization" target="_blank" rel="noopener">https://developers.openai.com/codex/concepts/customization</a></td></tr>
           </tbody>
         </table>
       </div>
@@ -182,6 +216,8 @@ Its architecture emphasises resumption and recovery of existing repositories.</p
         <ul class="rel-list">
           <li><span class="rel-t"><a href="./claude-code-cli.html">Claude Code CLI</a></span><span class="rel-n">同为终端编码 agent</span></li>
           <li><span class="rel-t"><a href="./gemini-cli.html">Gemini CLI</a></span><span class="rel-n">Google 官方同类</span></li>
+          <li><span class="rel-t"><a href="/harness/codex-sdk.html"><span data-zh>Codex SDK</span><span data-en>Codex SDK</span></a></span><span class="rel-n"><span data-zh>另一层 · 自己搭的底座</span><span data-en>Other layer · Runtimes & SDKs</span></span></li>
+          <li><span class="rel-t"><a href="/tools/filesystem.html"><span data-zh>Filesystem MCP Server</span><span data-en>Filesystem MCP Server</span></a></span><span class="rel-n"><span data-zh>另一层 · 给 agent 装的工具</span><span data-en>Other layer · MCP tools</span></span></li>
         </ul>
       </div>
 
