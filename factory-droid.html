@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Droid — Agents | 投机取巧</title>
+  <meta name="description" content="Droid（Factory AI）：Factory AI 的终端编码 agent，模型无关（官方托管 + BYOK + 本地模型三路并存）， 并以「滚动 Rate Limits + 分级自主」面向企业治理。" />
+  <link rel="canonical" href="https://agent.specul.com/factory-droid.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Droid" />
+  <meta property="og:url" content="https://agent.specul.com/factory-droid.html" />
+  <meta property="og:title" content="Droid — Agents | 投机取巧" />
+  <meta property="og:description" content="Droid（Factory AI）：Factory AI 的终端编码 agent，模型无关（官方托管 + BYOK + 本地模型三路并存）， 并以「滚动 Rate Limits + 分级自主」面向企业治理。" />
+  <meta name="theme-color" content="#05080f" />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%238b7cf8'/%3E%3Cstop offset='1' stop-color='%2322d3c5'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='48' height='48' rx='12' fill='%2305080f'/%3E%3Cpath d='M14 32 L24 12 L34 32' fill='none' stroke='url(%23g)' stroke-width='2.4' stroke-linejoin='round'/%3E%3Ccircle cx='24' cy='27' r='2.4' fill='%2322d3c5'/%3E%3C/svg%3E" />
+  <link rel="stylesheet" href="brand.css" />
+  <link rel="stylesheet" href="site.css" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Droid","applicationCategory":"DeveloperApplication","url":"https://app.factory.ai","sameAs":"https://factory.ai","description":"Factory AI 的终端编码 agent，模型无关（官方托管 + BYOK + 本地模型三路并存）， 并以「滚动 Rate Limits + 分级自主」面向企业治理。","dateModified":"2026-10-08","offers":{"@type":"Offer","price":"20","priceCurrency":"USD"}}</script>
+</head>
+<body class="brand-ambient">
+  <a class="t-skip" href="#main"><span data-zh>跳到主要内容</span><span data-en>Skip to main content</span></a>
+  <header class="site-header">
+    <div class="container site-bar">
+      <a class="brand" href="https://specul.com/" title="投机取巧">
+        <span class="brand-dot" aria-hidden="true"></span>
+        <span class="brand-text">
+          <span class="brand-name" id="markName" data-zh-name="投机取巧" data-en-name="Speculative Speculation">投机取巧</span>
+        </span>
+      </a>
+      <nav class="nav-links" aria-label="站点导航">
+        <a href="https://specul.com/"><span data-zh>首页</span><span data-en>Home</span></a>
+        <a href="https://learn.specul.com/"><span data-zh>学 AI</span><span data-en>Learn</span></a>
+        <a href="https://agent.specul.com/" aria-current="page"><span data-zh>Agent</span><span data-en>Agent</span></a>
+        <a href="https://models.specul.com/"><span data-zh>本地模型</span><span data-en>Models</span></a>
+        <a href="https://vg.specul.com/"><span data-zh>AI 做游戏</span><span data-en>Vibe Gaming</span></a>
+        <a href="https://nav.specul.com/"><span data-zh>导航</span><span data-en>Directory</span></a>
+        <span class="nav-tools">
+          <button class="icon-btn" id="themeBtn" type="button" aria-label="切换明暗主题" title="切换明暗主题">☾</button>
+          <button class="icon-btn" id="langBtn" type="button" aria-label="Switch language" title="Switch language">EN</button>
+        </span>
+      </nav>
+      <!-- B6（2026-10-09）：与共享 shell 同步加的移动端导航入口。
+           ⚠ 本文件是 agent 站**自己的** shell 副本（它多一层分区切换），
+             所以每次改共享 shell 的骨架，这里也要跟一次 —— 这是双份实现固有的代价。
+             样式与行为都在共享 brand.css / brand.js 里，这里只出标记。 -->
+      <button class="nav-burger" type="button" aria-label="打开菜单" aria-expanded="false" aria-controls="navDrawer">
+        <i></i><i></i><i></i>
+      </button>
+    </div>
+  </header>
+  <div class="nav-scrim"></div>
+  <aside class="nav-drawer" id="navDrawer" aria-hidden="true" aria-label="站点导航">
+    <div class="nav-drawer-h">
+      <span class="brand-name"><span data-zh>投机取巧</span><span data-en>Speculative Speculation</span></span>
+      <button class="nav-dclose" type="button" aria-label="关闭">×</button>
+    </div>
+    <nav class="nav-drawer-list">
+      <a href="https://specul.com/"><span><span data-zh>首页</span><span data-en>Home</span></span><span class="ar" aria-hidden="true">→</span></a>
+      <a href="https://learn.specul.com/"><span><span data-zh>学 AI</span><span data-en>Learn</span></span><span class="ar" aria-hidden="true">→</span></a>
+      <a href="https://agent.specul.com/" aria-current="page"><span><span data-zh>Agent</span><span data-en>Agent</span></span><span class="ar" aria-hidden="true">→</span></a>
+      <a href="https://models.specul.com/"><span><span data-zh>本地模型</span><span data-en>Models</span></span><span class="ar" aria-hidden="true">→</span></a>
+      <a href="https://vg.specul.com/"><span><span data-zh>AI 做游戏</span><span data-en>Vibe Gaming</span></span><span class="ar" aria-hidden="true">→</span></a>
+      <a href="https://nav.specul.com/"><span><span data-zh>导航</span><span data-en>Directory</span></span><span class="ar" aria-hidden="true">→</span></a>
+    </nav>
+    <div class="nav-drawer-foot">
+      <p><span data-zh>6 个站，各管一件事</span><span data-en>Six sites, one job each</span></p>
+      <nav><a href="https://specul.com/legal.html"><span data-zh>法律条款</span><span data-en>Legal terms</span></a></nav>
+    </div>
+  </aside>
+  <main id="main">
+    <div class="container detail">
+      <nav class="crumbs" aria-label="面包屑">
+        <a href="https://agent.specul.com/">Agent 图谱</a>
+        <span aria-current="page">Agents</span>
+        <a href="/harness/">Harness</a>
+        <a href="/tools/">Tools</a>
+      </nav>
+      <a class="back" href="./">← Agents</a>
+
+      <div class="detail-head">
+        <div class="mark" style="--card-accent:#8b7cf8" aria-hidden="true">D</div>
+        <div>
+          <h1><span data-zh>Droid</span><span data-en>Droid</span></h1>
+          <div class="vendor is-caps">Factory AI</div>
+        </div>
+      </div>
+
+      <div class="badges">
+        <span class="tag on">编程</span>
+        <span class="tag on">终端</span>
+        <span class="tag on">多模型</span>
+        <span class="tag on">本地</span>
+        <span class="badge accent">partial</span>
+        <span class="badge">lifecycle: active</span>
+        <span class="badge"><span data-zh>核验</span><span data-en>Checked</span> 2026-10-08</span>
+      </div>
+
+            <p class="panel-lead"><span data-zh>Factory AI 的终端编码 agent，<strong>模型无关（官方托管 + BYOK + 本地模型三路并存）</strong>，
+并以「滚动 Rate Limits + 分级自主」面向企业治理。</span><span data-en>Factory AI&#39;s terminal coding agent. Its pitch is <strong>model independence</strong> — the official BYOK page says &quot;Use your own OpenAI or Anthropic keys, connect to any open source model providers, or run models locally&quot;, and <strong>your keys stay local: &quot;Your API keys remain local and are not uploaded to Factory servers&quot;</strong>. Quota is not one monthly bucket but three independent rolling windows (5-hour / 7-day / 30-day); when you hit one you can fall back to <strong>Droid Core</strong> (a free open-weight model pool) or <strong>Extra Usage</strong> (prepaid credits, $10 minimum, never expiring). Every mutating action is gated by an <strong>Autonomy Level</strong> (Off / Low / Medium / High) plus command allow / deny / block lists. And it is not a single CLI: the official pricing page lists the Pro tier as &quot;Factory App / Droid CLI / Droid SDK&quot;.</span></p>
+
+            <div class="panel is-slim">
+        <h2><span data-zh>适合与不适合</span><span data-en>When to use it, when not to</span></h2>
+<span data-zh>        <p>在终端里完成端到端软件工程任务，且需要企业级治理的团队。
+已有仓库的规划—实现—测试闭环（<code>/missions</code>）、CI/CD 自动化
+（<code>droid exec</code> 单次执行 + JSON 输出 + 失败非零码）是它的重点场景。</p>
+        <p class="warn-p"><strong>不适合</strong>只想找一个免费轻量终端助手的个人——
+官方最低档就是 Pro $20/月，没有免费层；
+<code>droid exec</code> 默认只读，想让它自动改文件要显式提级。</p></span><span data-en>        <p>End-to-end software engineering in the terminal for teams that need enterprise governance.
+Particularly good for: a plan-implement-test loop on an existing repo (<code>/missions</code> multi-agent orchestration); CI/CD automation (<code>droid exec</code> one-shot runs with JSON output and a non-zero exit on failure); organizations that need BYOK, local models or airgapped deployment to avoid a single-vendor lock-in.</p>
+        <p class="warn-p"><strong>Not a fit for</strong> individuals looking for a free, lightweight terminal assistant — the lowest tier is already Pro at $20/mo, with no free plan; and <code>droid exec</code> is read-only by default, so auto-editing files requires explicitly raising the autonomy level.</p></span>
+      </div>
+
+
+      <div class="block-head">
+        <h2 class="t-h2"><span data-zh>固定坐标系</span><span data-en>Fixed coordinate system</span></h2>
+        <p class="t-section-lead">8 <span data-zh>个维度</span><span data-en>dimensions</span>, <span data-zh>与同赛道其他对象逐项可比</span><span data-en>each comparable item by item against others in the same track</span>.</p>
+      </div>
+      <dl class="axes">
+        <div class="axis">
+          <dt><span data-zh>模型与开放条件</span><span data-en>Model & openness</span></dt>
+          <dd><strong>模型无关是其卖点：官方托管模型 + BYOK + 本地模型三路并存。</strong> 官方 models 页列出 Factory 原生托管模型，覆盖 Anthropic（Claude Opus / Sonnet / Fable / Haiku）、OpenAI（GPT-6 / GPT-5.5 / GPT-5.3-Codex）、Google（Gemini）、 xAI（Grok），以及 <strong>Droid Core 开放权重模型</strong>（GLM、Kimi、Qwen、DeepSeek、 MiniMax、Nemotron 等），每个模型都标了消耗倍率（如 <code>gpt-5.5</code> 2×、 <code>claude-sonnet-5</code> 0.8×）与支持的 <code>reasoningEffort</code>。 <strong>BYOK</strong>：官方 BYOK 页原文「Use your own OpenAI or Anthropic keys, connect to any open source model providers, or run models locally」—— 在 <code>~/.factory/settings.json</code> 的 <code>customModels</code> 里配 <code>baseUrl</code> / <code>apiKey</code> / <code>provider</code>（三选一：<code>anthropic</code>、<code>openai</code>、<code>generic-chat-completion-api</code>）， 可用 <code>${VAR}</code> 引用环境变量；能接 OpenRouter / Fireworks / Together / Ollama / vLLM 等任意 OpenAI 兼容端点。<strong>API key 留在本地不上传</strong>——官方原文 「Your API keys remain local and are not uploaded to Factory servers」。 换模型用 <code>/model</code>；<strong>自定义模型只在 CLI 可用，不出现在 Web / 移动端</strong>。 另有官方 <strong>Factory Router</strong> 自动跨 provider 路由。</dd>
+        </div>
+        <div class="axis">
+          <dt><span data-zh>运行位置</span><span data-en>Where it runs</span></dt>
+          <dd><strong>CLI 优先，但官方是「一种 agent、多平台」形态。</strong> 主力是终端进程 <code>droid</code>（交互式 REPL）——安装三选一：官方脚本 <code>curl -fsSL https://app.factory.ai/cli | sh</code>（macOS / Linux）、 Windows 的 <code>irm https://app.factory.ai/cli/windows | iex</code>、 或 <code>npm install -g droid</code>。生命周期绑定终端会话。 <strong>同一 agent 另有两个入口</strong>：<strong>Factory App</strong>（桌面客户端）与 <strong>Droid SDK</strong>（TypeScript <code>@factory/droid-sdk</code> / Python <code>droid-sdk</code>）—— 官方定价页把三者并列为 Pro 档内容「Factory App / Droid CLI / Droid SDK」。 企业侧还有 <strong>Droid Computers</strong>（Factory 托管的远端云环境，Plus 起）。 <strong>本条目只记录 CLI 形态</strong>，桌面与 SDK 形态的差异以官方页面为准。</dd>
+        </div>
+        <div class="axis">
+          <dt><span data-zh>本地文件</span><span data-en>Local files</span></dt>
+          <dd><strong>在用户工作目录内读写，官方提供 git worktree 与工作目录参数做隔离。</strong> 官方 CLI 参考给 <code>--cwd &lt;path&gt;</code> 指定工作目录；<code>-w, --worktree [name]</code> 可在独立 git worktree 上跑，官方说明其用途是「fanning out parallel <code>droid exec</code> jobs against the same repo without file conflicts」—— clean worktree 退出自动删除、dirty 的保留待评审。 非交互 <code>droid exec</code> <strong>默认只读</strong>：DEFAULT 档明确列出可跑的读命令 （<code>cat</code> / <code>ls</code> / <code>find</code>（不带 <code>-delete</code> / <code>-exec</code>）/ <code>git status</code> / <code>git log</code> 等）， 并写明「No modifications to files or system」；要改文件须显式 <code>--auto low</code> 以上。 <strong>是否对代码库做向量索引、大仓库首次建索引耗时官方未说明</strong> （已查 CLI Reference 与 Quickstart 两页）。</dd>
+        </div>
+        <div class="axis">
+          <dt><span data-zh>关机后的任务</span><span data-en>Tasks after shutdown</span></dt>
+          <dd><strong>CLI 本体绑定会话，但云端后台形态官方明确。</strong> 终端进程退出即结束。官方定价页 Pro 档写有「Cloud &amp; local background agents」， Plus 档解锁 <strong>Droid Computers</strong>——官方原文「Factory-managed Droid Computers (remote cloud environments)」；企业页亦称 Droid 可跑在「CI runners、VMs、 Kubernetes clusters」上。<strong>Missions</strong> 是多 agent 编排形态 （orchestrator 协调 worker 与 validator），可用 <code>/missions</code> 或 <code>droid exec --mission</code> 发起，官方要求 High 自主级别或 <code>--skip-permissions-unsafe</code>。<strong>云端并发的具体数值与配额官方未给</strong> （已查 Plans &amp; Pricing 与 Missions 概览两页）。</dd>
+        </div>
+        <div class="axis">
+          <dt><span data-zh>工具与扩展</span><span data-en>Tools & extensions</span></dt>
+          <dd><strong>内置工具面丰富，MCP 支持完整且带交互式管理器。</strong> 内置能力含命令执行、文件读写、git 操作、代码评审（<code>/review</code>）、 图像生成、PDF 读取等；官方另有 <strong>Skills</strong>（<code>/skills</code>、<code>/create-skill</code>）、 <strong>Hooks</strong>（PreToolUse / PostToolUse / PreCompact 等九类事件）、 <strong>Custom Droids 子代理</strong>（<code>/droids</code>）、<strong>Plugins</strong>（<code>/plugins</code>，经 marketplace 分发）、自定义斜杠命令与 <strong>AGENTS.md</strong>。 <strong>MCP</strong>：官方原文「Droid supports two types of servers: http (remote endpoints) and stdio (local processes)」——<code>droid mcp add &lt;name<strong> </strong>url<strong> --type http</code> 或 <code>droid mcp add </strong>name<strong> &quot;</strong>command&gt;&quot;</code> 添加，<code>/mcp</code> 打开 交互式管理器（浏览 / 查看工具 / 启停 / OAuth 认证 / 从注册表添加 40+ server）； 配置分用户级 <code>~/.factory/mcp.json</code> 与项目级 <code>.factory/mcp.json</code>， 支持 <code>disabledTools</code> 按工具禁用，OAuth token 存系统 keyring。 <strong>非交互模式官方支持</strong>：<code>droid exec</code> 输出 <code>text</code> / <code>json</code>， 并有 <code>--input-format stream-jsonrpc</code> 的长期 JSON-RPC 控制面。</dd>
+        </div>
+        <div class="axis">
+          <dt><span data-zh>上下文与记忆</span><span data-en>Context & memory</span></dt>
+          <dd><strong>会话可按 id 续接与分叉，并有压缩与公开的控制面。</strong> 非交互侧 <code>droid exec --session-id &lt;id<strong></code> 续接、<code>--fork </strong>id&gt;</code> 分叉； 交互侧退出会提示 resume，CLI 参考有 <code>-r, --resume</code>。 stream-jsonrpc 控制面暴露 <code>droid.load_session</code>、fork 会话与 compact history 等能力，官方原文列举其客户端可「interrupt work, update settings, manage MCP servers/tools, inspect context, fork sessions, or compact history」；<strong>压缩</strong>另有 <code>PreCompact</code> hook 事件，changelog 也有 「in-place compression」条目。<strong>记忆</strong>：官方企业形态提到跨仓库的 「organizational knowledge」与 issue 跟踪上下文，Enterprise 档另有 「Cross-harness agent memory」——但<strong>CLI 侧记忆的持久化边界与保留策略 官方未在 CLI 页说明</strong>（已查 CLI Overview 与 Droid Exec 两页）。</dd>
+        </div>
+        <div class="axis">
+          <dt><span data-zh>权限与限制</span><span data-en>Permissions & limits</span></dt>
+          <dd><strong>分级自主（Autonomy Level）× 命令黑白名单，企业可设上限。</strong> 官方 Autonomy 页把执行风险分为 <code>low</code> / <code>medium</code> / <code>high</code>，共四档： <strong>Off</strong>（只读工具 + 白名单命令）、<strong>Low</strong>（文件编辑 + 低风险命令 / MCP）、 <strong>Medium</strong>（+ 可逆工作区改动，如 <code>npm install</code>、<code>git commit</code>）、 <strong>High</strong>（高风险，如 <code>git push</code>、迁移）。<code>Ctrl+L</code> 循环切换，<code>Shift+Tab</code> 切 Auto / Spec。 命令策略三张表：<code>commandAllowlist</code>（视为低风险）、<code>commandDenylist</code> （即使放宽也需批准）、<code>commandBlocklist</code>（<strong>任何级别都拒绝、无审批提示</strong>， 官方称「the strongest control available」，能识破 <code>bash -c</code> 包裹绕过）。 非交互 <code>droid exec</code> 默认只读，<code>--auto low|medium|high</code> 逐级放开， <code>--skip-permissions-unsafe</code> 全放开（官方标注 DANGEROUS，仅限隔离环境）， 并 <strong>fail-fast</strong>：越级即停、返回非零码、不做部分改动。 企业可设 Default / Maximum Autonomy Level 封顶。</dd>
+        </div>
+        <div class="axis">
+          <dt><span data-zh>适合什么任务</span><span data-en>Best for</span></dt>
+          <dd>在终端里完成端到端软件工程任务、且需要企业级治理的团队。 <strong>特别适合</strong>：已有仓库的规划—实现—测试闭环（<code>/missions</code> 多 agent 编排）、 CI/CD 自动化（<code>droid exec</code> 单次执行 + JSON 输出 + 失败非零码）、 需要 BYOK / 本地模型 / 气隙部署以摆脱单一厂商锁定的组织。 <strong>不适合</strong>：只想找一个免费轻量终端助手的个人——官方最低档即 Pro $20/月。</dd>
+        </div>
+      </dl>
+
+            <div class="panel warn">
+        <h2 class="warn"><span data-zh>头号误解</span><span data-en>Top misconception</span></h2>
+        <ul>
+
+          <li><span data-zh>以为 BYOK 就完全不受额度限制，官方写明 Individual 档 BYOK 也有免费额度上限</span><span data-en>Assuming BYOK has no quota — official docs state Individual plans include only an allowance of free BYOK usage</span></li>
+          <li><span data-zh>把 Droid 当成纯 CLI，其实官方主推 CLI + 桌面 App + SDK 三入口</span><span data-en>Treating Droid as CLI-only, when the vendor actually leads with CLI + desktop App + SDK</span></li>
+          <li><span data-zh>以为 droid exec 会直接改文件，它默认是只读模式</span><span data-en>Expecting droid exec to edit files, when it defaults to read-only mode</span></li>
+        </ul>
+      </div>
+
+
+            <div class="panel is-slim">
+        <h2><span data-zh>价格</span><span data-en>Pricing</span></h2>
+        <table class="src">
+          <tbody>
+            <tr><th class="w-28"><span data-zh>月度入口</span><span data-en>Monthly entry</span></th><td><span data-zh>Pro $20 / Plus $100 / Max $200 每月；Business / Enterprise 定制报价</span><span data-en>Pro $20 / Plus $100 / Max $200 每月；Business / Enterprise 定制报价</span></td></tr>
+            <tr><th class="w-28"><span data-zh>月度数值</span><span data-en>Monthly price</span></th><td>20</td></tr>
+            <tr><th class="w-28"><span data-zh>年付</span><span data-en>Annual</span></th><td><span data-zh>官方定价页只列月付；年付价未列出，记为官方未说明</span><span data-en>官方定价页只列月付；年付价未列出，记为官方未说明</span></td></tr>
+            <tr><th class="w-28"><span data-zh>额度说明</span><span data-en>Quota note</span></th><td><span data-zh>**2026-10-08 按 factory.ai/pricing 与 docs.factory.ai/pricing 逐档核实（美元口径）**： Pro $20/月、Plus $100/月（约 5× Pro 用量，并解锁 Droid Computers——Factory 托管的云电脑）、 Max $200/月（约 10× Pro 用量 + 新功能抢先体验）； Business 最多 150 席、Enterprise 不限席位，两者均需联系销售，**公开页未给数字**。 **额度机制官方写明是「滚动 Rate Limits」**：5 小时 / 7 天 / 30 天三窗口独立计算、 都需有余量才能发请求，Standard Usage 先扣；撞限后可切 **Droid Core** （一批开放权重模型，独立额度、免费）或 **Extra Usage**（预付额度，最低 $10、永不过期）。 **BYOK 也有额度**：官方原文「All Individual plans include an allowance of free BYOK usage」，超出后按套餐计费。**没有任何免费档**——最低就是 Pro $20/月。</span><span data-en>**2026-10-08 按 factory.ai/pricing 与 docs.factory.ai/pricing 逐档核实（美元口径）**： Pro $20/月、Plus $100/月（约 5× Pro 用量，并解锁 Droid Computers——Factory 托管的云电脑）、 Max $200/月（约 10× Pro 用量 + 新功能抢先体验）； Business 最多 150 席、Enterprise 不限席位，两者均需联系销售，**公开页未给数字**。 **额度机制官方写明是「滚动 Rate Limits」**：5 小时 / 7 天 / 30 天三窗口独立计算、 都需有余量才能发请求，Standard Usage 先扣；撞限后可切 **Droid Core** （一批开放权重模型，独立额度、免费）或 **Extra Usage**（预付额度，最低 $10、永不过期）。 **BYOK 也有额度**：官方原文「All Individual plans include an allowance of free BYOK usage」，超出后按套餐计费。**没有任何免费档**——最低就是 Pro $20/月。</span></td></tr>
+          </tbody>
+        </table>
+        <p class="fine mt-3"><span data-zh>不同币种不做折算。优惠、地区、税费与登录后报价可能变化，购买前请到官方页面确认。</span><span data-en>No currency conversion. Discounts, regions, tax and post-login pricing can change — confirm on the official page before buying.</span></p>
+      </div>
+
+
+            <div class="panel is-slim">
+        <h2><span data-zh>未知项清单</span><span data-en>Known unknowns</span></h2>
+        <ul>
+          <li>代码库向量索引是否存在、大仓库首次建索引耗时（官方未说明，已查 CLI Reference 与 Quickstart）</li>
+          <li>云端背景 agent 与 Droid Computers 的并发数值与配额（官方只说随套餐，未给数字）</li>
+          <li>CLI 侧跨会话记忆的持久化边界与保留策略（官方未在 CLI 页说明，已查 CLI Overview 与 Droid Exec）</li>
+          <li>Business / Enterprise 的具体价格（官方页只写「联系销售」）</li>
+        </ul>
+      </div>
+
+
+      <div class="panel">
+        <h2><span data-zh>证据来源</span><span data-en>Evidence sources</span></h2>
+        <p class="t-sm"><span data-zh>判断可回到以下一手源复核。本站核验日</span><span data-en>Every judgement can be rechecked against the primary sources below. Verified on</span> 2026-10-08，<span data-zh>内容更新日</span><span data-en>content updated on</span> 2026-10-08。</p>
+        <table class="src">
+          <thead><tr><th class="w-20"><span data-zh>类型</span><span data-en>Type</span></th><th class="w-52"><span data-zh>名称</span><span data-en>Name</span></th><th><span data-zh>链接</span><span data-en>Link</span></th></tr></thead>
+          <tbody>
+            <tr><td>pricing</td><td>Factory AI · 官方定价页（Pro $20 / Plus $100 / Max $200；2026-10-08 核验）</td><td><a href="https://factory.ai/pricing" target="_blank" rel="noopener">https://factory.ai/pricing</a></td></tr>
+            <tr><td>pricing</td><td>Factory AI · 官方文档 · Plans &amp; Pricing（滚动 Rate Limits、Droid Core、Extra Usage、BYOK）</td><td><a href="https://docs.factory.ai/pricing" target="_blank" rel="noopener">https://docs.factory.ai/pricing</a></td></tr>
+            <tr><td>changelog</td><td>Factory AI · 官方文档 · Full Changelog（CLI / App / API / Web / Enterprise 分面维护）</td><td><a href="https://docs.factory.ai/changelog/release-notes" target="_blank" rel="noopener">https://docs.factory.ai/changelog/release-notes</a></td></tr>
+            <tr><td>changelog</td><td>Factory AI · 官方文档 · CLI Updates</td><td><a href="https://docs.factory.ai/changelog/cli-updates" target="_blank" rel="noopener">https://docs.factory.ai/changelog/cli-updates</a></td></tr>
+            <tr><td>docs</td><td>Factory AI · 官方文档 · CLI Overview（安装三选一、Key capabilities）</td><td><a href="https://docs.factory.ai/cli/getting-started/overview" target="_blank" rel="noopener">https://docs.factory.ai/cli/getting-started/overview</a></td></tr>
+            <tr><td>docs</td><td>Factory AI · 官方文档 · Quickstart（安装脚本、审批流程）</td><td><a href="https://docs.factory.ai/cli/getting-started/quickstart" target="_blank" rel="noopener">https://docs.factory.ai/cli/getting-started/quickstart</a></td></tr>
+            <tr><td>docs</td><td>Factory AI · 官方文档 · Droid Exec（headless、自主级别、输出格式）</td><td><a href="https://docs.factory.ai/cli/droid-exec/overview" target="_blank" rel="noopener">https://docs.factory.ai/cli/droid-exec/overview</a></td></tr>
+            <tr><td>docs</td><td>Factory AI · 官方文档 · Autonomy Level（四档、命令名单、企业上限）</td><td><a href="https://docs.factory.ai/cli/user-guides/auto-run" target="_blank" rel="noopener">https://docs.factory.ai/cli/user-guides/auto-run</a></td></tr>
+            <tr><td>docs</td><td>Factory AI · 官方文档 · Model Context Protocol (MCP)（http / stdio、注册表、分层配置）</td><td><a href="https://docs.factory.ai/cli/configuration/mcp" target="_blank" rel="noopener">https://docs.factory.ai/cli/configuration/mcp</a></td></tr>
+            <tr><td>docs</td><td>Factory AI · 官方文档 · Bring Your Own Key (BYOK)（三 provider 类型、本地模型、key 不外传）</td><td><a href="https://docs.factory.ai/cli/byok/overview" target="_blank" rel="noopener">https://docs.factory.ai/cli/byok/overview</a></td></tr>
+            <tr><td>docs</td><td>Factory AI · 官方文档 · Available Models（托管模型清单与倍率、Droid Core）</td><td><a href="https://docs.factory.ai/models" target="_blank" rel="noopener">https://docs.factory.ai/models</a></td></tr>
+            <tr><td>docs</td><td>Factory AI · 官方文档 · Enterprise Overview（云 / 混合 / 气隙部署、SOC 2 / ISO）</td><td><a href="https://docs.factory.ai/enterprise" target="_blank" rel="noopener">https://docs.factory.ai/enterprise</a></td></tr>
+            <tr><td>docs</td><td>Factory AI · 官方文档 · Droid CLI Reference（--cwd / --worktree / 安装与更新）</td><td><a href="https://docs.factory.ai/reference/cli-reference" target="_blank" rel="noopener">https://docs.factory.ai/reference/cli-reference</a></td></tr>
+            <tr><td>repo</td><td>Factory AI · 官方仓库 · Droid TypeScript SDK</td><td><a href="https://github.com/Factory-AI/droid-sdk-typescript" target="_blank" rel="noopener">https://github.com/Factory-AI/droid-sdk-typescript</a></td></tr>
+          </tbody>
+        </table>
+      </div>
+
+            <div class="panel is-slim">
+        <h2><span data-zh>实测记录</span><span data-en>Measured runs</span></h2>
+        <p>本站尚未完成实测。测试协议见 <a href="https://github.com/speculcom/ai-agent-guide/blob/main/tracks/agents/tasks/_protocol.md" target="_blank" rel="noopener">tasks/_protocol.md</a>。
+
+<strong>实测建议</strong>：重点测<strong>三窗口 Rate Limit 的实际打断频率</strong>——
+这是它与「按月给一个总量」类工具最不同的工作流摩擦点。</p>
+      </div>
+
+
+            <div class="panel is-slim">
+        <h2><span data-zh>相关条目</span><span data-en>Related entries</span></h2>
+        <ul class="rel-list">
+          <li><span class="rel-t"><a href="./codex-cli.html">Codex CLI</a></span><span class="rel-n">同为多 provider 终端 agent，架构侧重 app server</span></li>
+          <li><span class="rel-t"><a href="./opencode.html">OpenCode</a></span><span class="rel-n">同为 BYOK 多 provider，可对照开放许可一侧</span></li>
+          <li><span class="rel-t"><a href="./claude-code-cli.html">Claude Code CLI</a></span><span class="rel-n">同为终端编码 agent，权限模型与生态不同</span></li>
+          <li><span class="rel-t"><a href="/tools/filesystem.html"><span data-zh>Filesystem MCP Server</span><span data-en>Filesystem MCP Server</span></a></span><span class="rel-n"><span data-zh>另一层 · 给 agent 装的工具</span><span data-en>Other layer · MCP tools</span></span></li>
+        </ul>
+      </div>
+
+
+      <p class="fine mt-6">
+        <span data-zh>本页由</span><span data-en>This page is generated from the</span> <a href="https://github.com/speculcom/ai-agent-guide" target="_blank" rel="noopener" class="link-brand">ai-agent-guide</a> <span data-zh>数据层生成（CC BY 4.0）。</span><span data-en>data layer (CC BY 4.0).</span>
+        方法论与坐标系定义见仓库内 <code>METHODOLOGY.md</code>。
+      </p>
+    </div>
+  </main>
+  <footer class="site-footer">
+    <div class="container foot-row">
+      <div class="foot-brand">
+        <span class="brand-dot" aria-hidden="true"></span>
+        <span class="foot-copy">© 2026 投机取巧 · <span data-zh>Specul</span><span data-en>Specul</span></span>
+      </div>
+      <nav class="foot-links" aria-label="页脚导航">
+          <a href="https://specul.com/"><span data-zh>首页</span><span data-en>Home</span></a>
+          <a href="https://learn.specul.com/"><span data-zh>学 AI</span><span data-en>Learn</span></a>
+          <a href="https://agent.specul.com/"><span data-zh>Agent</span><span data-en>Agent</span></a>
+          <a href="https://models.specul.com/"><span data-zh>本地模型</span><span data-en>Models</span></a>
+          <a href="https://vg.specul.com/"><span data-zh>AI 做游戏</span><span data-en>Vibe Gaming</span></a>
+          <a href="https://nav.specul.com/"><span data-zh>导航</span><span data-en>Directory</span></a>
+          <a href="https://github.com/speculcom/ai-agent-guide" target="_blank" rel="noopener">GitHub</a>
+      </nav>
+      <nav class="foot-legal-links" aria-label="法律">
+        <a href="https://specul.com/legal.html"><span data-zh>法律条款</span><span data-en>Legal terms</span></a>
+        <a href="https://specul.com/legal.html#s6"><span data-zh>免责声明</span><span data-en>Disclaimer</span></a>
+        <a href="https://specul.com/legal.html#s8"><span data-zh>隐私与本地存储</span><span data-en>Privacy</span></a>
+      </nav>
+    </div>
+  </footer>
+  <script src="brand.js"></script>
+  <script>
+    (function () {
+      var root = document.documentElement;
+      function sync() { root.setAttribute('data-lang', root.lang === 'en' ? 'en' : 'zh'); }
+      new MutationObserver(sync).observe(root, { attributes: true, attributeFilter: ['lang'] });
+      sync();
+    })();
+  </script>
+</body>
+</html>
