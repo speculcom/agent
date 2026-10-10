@@ -17,7 +17,7 @@
   <link rel="stylesheet" href="../site.css" />
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"CollectionPage","name":"自己搭的底座","description":"<span data-zh>Agent 运行时 / 编排框架 / SDK 的责任边界、状态持久化能力与权限模型。收录标准：提供 Agent 运行时或编排层、有官方文档可回溯、近 30 天有实质更新。</span><span data-en>The responsibility boundaries of agent runtimes, orchestration frameworks and SDKs, plus state persistence and permission models. Admission criteria: provides an agent runtime or orchestration layer, has official documentation that can be traced back, and has substantive updates within the last 30 days.</span>","url":"https://agent.specul.com/harness/","isPartOf":{"@type":"WebSite","name":"Specul","url":"https://specul.com/"},"about":[{"@type":"SoftwareApplication","name":"AG2","applicationCategory":"DeveloperApplication","url":"https://ag2.ai"},{"@type":"SoftwareApplication","name":"Claude Agent SDK","applicationCategory":"DeveloperApplication","url":"https://platform.claude.com/docs/en/agent-sdk/python"},{"@type":"SoftwareApplication","name":"Codex SDK","applicationCategory":"DeveloperApplication","url":"https://developers.openai.com/codex/"},{"@type":"SoftwareApplication","name":"CrewAI","applicationCategory":"DeveloperApplication","url":"https://crewai.com"},{"@type":"SoftwareApplication","name":"Deep Agents","applicationCategory":"DeveloperApplication","url":"https://github.com/langchain-ai/deepagents"},{"@type":"SoftwareApplication","name":"Google ADK（Agent Development Kit）","applicationCategory":"DeveloperApplication","url":"https://google.github.io/adk-docs/"},{"@type":"SoftwareApplication","name":"Hermes Agent","applicationCategory":"DeveloperApplication","url":"https://hermes-agent.nousresearch.com/"},{"@type":"SoftwareApplication","name":"LangGraph","applicationCategory":"DeveloperApplication","url":"https://docs.langchain.com/oss/python/langgraph/"},{"@type":"SoftwareApplication","name":"LlamaIndex Framework","applicationCategory":"DeveloperApplication","url":"https://developers.llamaindex.ai/"},{"@type":"SoftwareApplication","name":"Mastra","applicationCategory":"DeveloperApplication","url":"https://mastra.ai"},{"@type":"SoftwareApplication","name":"Microsoft Agent Framework","applicationCategory":"DeveloperApplication","url":"https://learn.microsoft.com/en-us/agent-framework/"},{"@type":"SoftwareApplication","name":"OpenAI Agents SDK","applicationCategory":"DeveloperApplication","url":"https://openai.github.io/openai-agents-python/"},{"@type":"SoftwareApplication","name":"OpenHands Agent Canvas","applicationCategory":"DeveloperApplication","url":"https://openhands.dev"},{"@type":"SoftwareApplication","name":"Pydantic AI","applicationCategory":"DeveloperApplication","url":"https://ai.pydantic.dev"},{"@type":"SoftwareApplication","name":"smolagents","applicationCategory":"DeveloperApplication","url":"https://huggingface.co/docs/smolagents"}]}</script>
 </head>
-<body class="brand-ambient">
+<body class="brand-ambient has-tabbar">
   <a class="t-skip" href="#main"><span data-zh>跳到主要内容</span><span data-en>Skip to main content</span></a>
   <header class="site-header">
     <div class="container site-bar">
@@ -954,7 +954,7 @@ langgraph 自认 low-level、不预置工具与文件系统；mastra 走 batteri
           <a href="https://models.specul.com/"><span data-zh>本地模型</span><span data-en>Models</span></a>
           <a href="https://vg.specul.com/"><span data-zh>AI 做游戏</span><span data-en>Vibe Gaming</span></a>
           <a href="https://nav.specul.com/"><span data-zh>导航</span><span data-en>Directory</span></a>
-          <a href="https://github.com/speculcom/ai-coding-agent-atlas" target="_blank" rel="noopener">GitHub</a>
+          <a href="https://github.com/speculcom/ai-agent-guide" target="_blank" rel="noopener"><span data-zh>开源</span><span data-en>Open source</span></a>
       </nav>
       <nav class="foot-legal-links" aria-label="法律">
         <a href="https://specul.com/legal.html"><span data-zh>法律条款</span><span data-en>Legal terms</span></a>
@@ -963,6 +963,13 @@ langgraph 自认 low-level、不预置工具与文件系统；mastra 走 batteri
       </nav>
     </div>
   </footer>
+<nav class="nav-tabbar" aria-label="快捷导航">
+  <a href="https://specul.com/"><span class="ti" aria-hidden="true">◎</span><span data-zh>首页</span><span data-en>Home</span></a>
+  <a href="https://learn.specul.com/"><span class="ti" aria-hidden="true">▤</span><span data-zh>学 AI</span><span data-en>Learn</span></a>
+  <a href="https://agent.specul.com/" aria-current="page"><span class="ti" aria-hidden="true">◈</span>Agent</a>
+  <a href="https://models.specul.com/"><span class="ti" aria-hidden="true">▦</span><span data-zh>模型</span><span data-en>Models</span></a>
+  <button type="button" id="tabMore" aria-controls="navDrawer" aria-expanded="false"><span class="ti" aria-hidden="true">⋯</span><span data-zh>更多</span><span data-en>More</span></button>
+</nav>
   <script src="../brand.js"></script>
   <script>
     (function () {
