@@ -17,7 +17,7 @@
   <link rel="stylesheet" href="../site.css" />
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Pydantic AI","applicationCategory":"DeveloperApplication","url":"https://ai.pydantic.dev","sameAs":"https://ai.pydantic.dev","description":"Pydantic AI 是 Pydantic 出的 Python agent 库。 主打类型安全。官方自述把两个关键词并在一起 —— Pydantic AI is the Python AI SDK: a typed, extensible agent loop with every model a string swap away. 「typed」是它的世界观：Pydantic 原生贯穿数据层到 agent 输出。 「agent loop」是它的形态：给原语，不给你一个成品。 它与 OpenAI Agents SDK 同属这一档。 但它把「类型安全」和「durable execution」两","dateModified":"2026-10-08"}</script>
 </head>
-<body class="brand-ambient">
+<body class="brand-ambient has-tabbar">
   <a class="t-skip" href="#main"><span data-zh>跳到主要内容</span><span data-en>Skip to main content</span></a>
   <header class="site-header">
     <div class="container site-bar">
@@ -402,7 +402,7 @@
           <a href="https://models.specul.com/"><span data-zh>本地模型</span><span data-en>Models</span></a>
           <a href="https://vg.specul.com/"><span data-zh>AI 做游戏</span><span data-en>Vibe Gaming</span></a>
           <a href="https://nav.specul.com/"><span data-zh>导航</span><span data-en>Directory</span></a>
-          <a href="https://github.com/speculcom/ai-agent-guide" target="_blank" rel="noopener">GitHub</a>
+          <a href="https://github.com/speculcom/ai-agent-guide" target="_blank" rel="noopener"><span data-zh>开源</span><span data-en>Open source</span></a>
       </nav>
       <nav class="foot-legal-links" aria-label="法律">
         <a href="https://specul.com/legal.html"><span data-zh>法律条款</span><span data-en>Legal terms</span></a>
@@ -411,6 +411,13 @@
       </nav>
     </div>
   </footer>
+<nav class="nav-tabbar" aria-label="快捷导航">
+  <a href="https://specul.com/"><span class="ti" aria-hidden="true">◎</span><span data-zh>首页</span><span data-en>Home</span></a>
+  <a href="https://learn.specul.com/"><span class="ti" aria-hidden="true">▤</span><span data-zh>学 AI</span><span data-en>Learn</span></a>
+  <a href="https://agent.specul.com/" aria-current="page"><span class="ti" aria-hidden="true">◈</span>Agent</a>
+  <a href="https://models.specul.com/"><span class="ti" aria-hidden="true">▦</span><span data-zh>模型</span><span data-en>Models</span></a>
+  <button type="button" id="tabMore" aria-controls="navDrawer" aria-expanded="false"><span class="ti" aria-hidden="true">⋯</span><span data-zh>更多</span><span data-en>More</span></button>
+</nav>
   <script src="../brand.js"></script>
   <script>
     (function () {
