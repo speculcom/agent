@@ -17,7 +17,7 @@
   <link rel="stylesheet" href="../site.css" />
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"CollectionPage","name":"给 agent 装的工具","description":"<span data-zh>MCP server 的权限范围、传输方式与输出可用性。收录标准：已发布为可安装的 MCP server、有官方仓库或文档可回溯、近 30 天有实质更新。这里是能力缺口查表，不是选型对比。</span><span data-en>The permission scope, transport and output usability of MCP servers. Admission criteria: released as an installable MCP server, has an official repository or documentation that can be traced back, and has substantive updates within the last 30 days. This is a capability-gap reference table, not a selection comparison.</span>","url":"https://agent.specul.com/tools/","isPartOf":{"@type":"WebSite","name":"Specul","url":"https://specul.com/"},"about":[{"@type":"SoftwareApplication","name":"Context7","applicationCategory":"DeveloperApplication","url":"https://github.com/upstash/context7"},{"@type":"SoftwareApplication","name":"Everything MCP Server","applicationCategory":"DeveloperApplication","url":"https://github.com/modelcontextprotocol/servers/tree/main/src/everything"},{"@type":"SoftwareApplication","name":"Fetch MCP Server","applicationCategory":"DeveloperApplication","url":"https://github.com/modelcontextprotocol/servers/tree/main/src/fetch"},{"@type":"SoftwareApplication","name":"Filesystem MCP Server","applicationCategory":"DeveloperApplication","url":"https://www.npmjs.com/package/@modelcontextprotocol/server-filesystem"},{"@type":"SoftwareApplication","name":"Git MCP Server","applicationCategory":"DeveloperApplication","url":"https://github.com/modelcontextprotocol/servers/tree/main/src/git"},{"@type":"SoftwareApplication","name":"GitHub MCP Server","applicationCategory":"DeveloperApplication","url":"https://github.com/github/github-mcp-server"},{"@type":"SoftwareApplication","name":"Knowledge Graph Memory Server","applicationCategory":"DeveloperApplication","url":"https://www.npmjs.com/package/@modelcontextprotocol/server-memory"},{"@type":"SoftwareApplication","name":"Playwright MCP Server","applicationCategory":"DeveloperApplication","url":"https://github.com/microsoft/playwright-mcp"},{"@type":"SoftwareApplication","name":"Sequential Thinking MCP Server","applicationCategory":"DeveloperApplication","url":"https://www.npmjs.com/package/@modelcontextprotocol/server-sequential-thinking"},{"@type":"SoftwareApplication","name":"Time MCP Server","applicationCategory":"DeveloperApplication","url":"https://github.com/modelcontextprotocol/servers/tree/main/src/time"}]}</script>
 </head>
-<body class="brand-ambient">
+<body class="brand-ambient has-tabbar">
   <a class="t-skip" href="#main"><span data-zh>跳到主要内容</span><span data-en>Skip to main content</span></a>
   <header class="site-header">
     <div class="container site-bar">
@@ -664,7 +664,7 @@
           <a href="https://models.specul.com/"><span data-zh>本地模型</span><span data-en>Models</span></a>
           <a href="https://vg.specul.com/"><span data-zh>AI 做游戏</span><span data-en>Vibe Gaming</span></a>
           <a href="https://nav.specul.com/"><span data-zh>导航</span><span data-en>Directory</span></a>
-          <a href="https://github.com/speculcom/ai-coding-agent-atlas" target="_blank" rel="noopener">GitHub</a>
+          <a href="https://github.com/speculcom/ai-agent-guide" target="_blank" rel="noopener"><span data-zh>开源</span><span data-en>Open source</span></a>
       </nav>
       <nav class="foot-legal-links" aria-label="法律">
         <a href="https://specul.com/legal.html"><span data-zh>法律条款</span><span data-en>Legal terms</span></a>
@@ -673,6 +673,13 @@
       </nav>
     </div>
   </footer>
+<nav class="nav-tabbar" aria-label="快捷导航">
+  <a href="https://specul.com/"><span class="ti" aria-hidden="true">◎</span><span data-zh>首页</span><span data-en>Home</span></a>
+  <a href="https://learn.specul.com/"><span class="ti" aria-hidden="true">▤</span><span data-zh>学 AI</span><span data-en>Learn</span></a>
+  <a href="https://agent.specul.com/" aria-current="page"><span class="ti" aria-hidden="true">◈</span>Agent</a>
+  <a href="https://models.specul.com/"><span class="ti" aria-hidden="true">▦</span><span data-zh>模型</span><span data-en>Models</span></a>
+  <button type="button" id="tabMore" aria-controls="navDrawer" aria-expanded="false"><span class="ti" aria-hidden="true">⋯</span><span data-zh>更多</span><span data-en>More</span></button>
+</nav>
   <script src="../brand.js"></script>
   <script>
     (function () {
