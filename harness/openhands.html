@@ -17,7 +17,7 @@
   <link rel="stylesheet" href="../site.css" />
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"OpenHands Agent Canvas","applicationCategory":"DeveloperApplication","url":"https://openhands.dev","sameAs":"https://openhands.dev","description":"它是个自托管的 agent 控制中心 —— 官方 README 现在管它叫 Agent Canvas。 它带的是一整套栈：Web GUI、Terminal UI、CLI、REST API 都在里面。 它管的 agent 不止自家那一个，Codex、Claude Code、Gemini 都能挂上去跑。 官方定位原文：The self-hosted developer control center for coding agents and automations. Run OpenHands, Claude Code, Codex, Gemini, or any ACP-compatible a","dateModified":"2026-10-01","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}</script>
 </head>
-<body class="brand-ambient">
+<body class="brand-ambient has-tabbar">
   <a class="t-skip" href="#main"><span data-zh>跳到主要内容</span><span data-en>Skip to main content</span></a>
   <header class="site-header">
     <div class="container site-bar">
@@ -430,7 +430,7 @@
           <a href="https://models.specul.com/"><span data-zh>本地模型</span><span data-en>Models</span></a>
           <a href="https://vg.specul.com/"><span data-zh>AI 做游戏</span><span data-en>Vibe Gaming</span></a>
           <a href="https://nav.specul.com/"><span data-zh>导航</span><span data-en>Directory</span></a>
-          <a href="https://github.com/speculcom/ai-agent-guide" target="_blank" rel="noopener">GitHub</a>
+          <a href="https://github.com/speculcom/ai-agent-guide" target="_blank" rel="noopener"><span data-zh>开源</span><span data-en>Open source</span></a>
       </nav>
       <nav class="foot-legal-links" aria-label="法律">
         <a href="https://specul.com/legal.html"><span data-zh>法律条款</span><span data-en>Legal terms</span></a>
@@ -439,6 +439,13 @@
       </nav>
     </div>
   </footer>
+<nav class="nav-tabbar" aria-label="快捷导航">
+  <a href="https://specul.com/"><span class="ti" aria-hidden="true">◎</span><span data-zh>首页</span><span data-en>Home</span></a>
+  <a href="https://learn.specul.com/"><span class="ti" aria-hidden="true">▤</span><span data-zh>学 AI</span><span data-en>Learn</span></a>
+  <a href="https://agent.specul.com/" aria-current="page"><span class="ti" aria-hidden="true">◈</span>Agent</a>
+  <a href="https://models.specul.com/"><span class="ti" aria-hidden="true">▦</span><span data-zh>模型</span><span data-en>Models</span></a>
+  <button type="button" id="tabMore" aria-controls="navDrawer" aria-expanded="false"><span class="ti" aria-hidden="true">⋯</span><span data-zh>更多</span><span data-en>More</span></button>
+</nav>
   <script src="../brand.js"></script>
   <script>
     (function () {
