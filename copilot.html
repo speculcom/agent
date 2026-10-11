@@ -17,6 +17,13 @@
   <link rel="stylesheet" href="site.css" />
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"GitHub Copilot","applicationCategory":"DeveloperApplication","url":"https://github.com/features/copilot","sameAs":"https://github.com/features/copilot","description":"形态最广、生态最依附 GitHub 的一个——从网站到 CLI 到主流编辑器全覆盖，且能把任务委派给 Claude / Codex（Preview）。","dateModified":"2026-10-08","offers":{"@type":"Offer","price":"10","priceCurrency":"USD"}}</script>
 </head>
+<!-- B6（2026-10-09）：--accent 原先在这里被**内联到 body 上**（style="--accent:X"），
+     同时头部又写了 :root{--accent:X} —— 两处同一份值，冗余。
+     而内联样式会**赢过任何选择器**，于是主题级覆盖（html[data-theme="light"]{--accent:…}）
+     完全无效：vg 的引擎名在亮色主题下一直是 1.62:1 的金色，就是因为这条内联。
+     现在只保留头部那一处 —— 单一真相源，且可被主题覆盖。
+     ⚠ 这段注释里**不能出现反引号**：它在模板字符串内部，反引号会提前结束模板
+     （写这段时踩了第 4 次；pitfalls 里早有记录）。 -->
 <body class="brand-ambient has-tabbar">
   <a class="t-skip" href="#main"><span data-zh>跳到主要内容</span><span data-en>Skip to main content</span></a>
   <header class="site-header">
@@ -36,16 +43,18 @@
         <a href="https://vg.specul.com/"><span data-zh>AI 做游戏</span><span data-en>Vibe Gaming</span></a>
         <a href="https://nav.specul.com/"><span data-zh>导航</span><span data-en>Directory</span></a>
       </nav>
-      <!-- 2026-10-10：.nav-tools 移到 nav 元素外，与共享 shell 保持同一骨架
-           （放里面时窄屏按钮组会被链接挤到第三条）。详见共享 shell 同处注释。 -->
+      <!-- 2026-10-10：.nav-tools 从 nav 元素**内部**移到外面，与 .nav-links 平级。
+           放里面时窄屏下它会跟着链接一起换行：链接占满整行 → 按钮被挤到第三条
+           （实测顶栏 134px、按钮组孤零零一行）。移出来后它与品牌同行，
+           链接独占第二行居中 —— 这才是下面注释里方案 B 想要的样子。 -->
       <span class="nav-tools">
         <button class="icon-btn" id="themeBtn" type="button" aria-label="切换明暗主题" title="切换明暗主题">☾</button>
         <button class="icon-btn" id="langBtn" type="button" aria-label="Switch language" title="Switch language">EN</button>
       </span>
-      <!-- B6（2026-10-09）：与共享 shell 同步加的移动端导航入口。
-           ⚠ 本文件是 agent 站**自己的** shell 副本（它多一层分区切换），
-             所以每次改共享 shell 的骨架，这里也要跟一次 —— 这是双份实现固有的代价。
-             样式与行为都在共享 brand.css / brand.js 里，这里只出标记。 -->
+      <!-- B6（2026-10-09）：窄屏（≤900px）下 .nav-links 会隐藏，这个汉堡是替代入口。
+           行为在共享 brand.js 里（一处实现、六站共用），样式在共享 brand.css。
+           无脚本时 CSS 不会显示它，而是把 .nav-links 在窄屏放出来 —— 不会出现
+           「导航被藏进一个点了没反应的按钮」。 -->
       <button class="nav-burger" type="button" aria-label="打开菜单" aria-expanded="false" aria-controls="navDrawer">
         <i></i><i></i><i></i>
       </button>
