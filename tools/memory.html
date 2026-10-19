@@ -4,18 +4,18 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Knowledge Graph Memory Server — Tools | 投机取巧</title>
-  <meta name="description" content="Knowledge Graph Memory Server（Model Context Protocol）：用本地知识图谱实现跨会话持久记忆的 reference server，记忆落盘、跨会话共享、无访问控制。" />
+  <meta name="description" content="Knowledge Graph Memory Server（Model Context Protocol）：用本地知识图谱实现跨会话持久记忆的 reference server。它记忆落盘、跨会话共享，但没有访问控制。" />
   <link rel="canonical" href="https://agent.specul.com/tools/memory.html" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Knowledge Graph Memory Server" />
   <meta property="og:url" content="https://agent.specul.com/tools/memory.html" />
   <meta property="og:title" content="Knowledge Graph Memory Server — Tools | 投机取巧" />
-  <meta property="og:description" content="Knowledge Graph Memory Server（Model Context Protocol）：用本地知识图谱实现跨会话持久记忆的 reference server，记忆落盘、跨会话共享、无访问控制。" />
+  <meta property="og:description" content="Knowledge Graph Memory Server（Model Context Protocol）：用本地知识图谱实现跨会话持久记忆的 reference server。它记忆落盘、跨会话共享，但没有访问控制。" />
   <meta name="theme-color" content="#16121f" />
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%238b7cf8'/%3E%3Cstop offset='1' stop-color='%2322d3c5'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='48' height='48' rx='12' fill='%2305080f'/%3E%3Cpath d='M14 32 L24 12 L34 32' fill='none' stroke='url(%23g)' stroke-width='2.4' stroke-linejoin='round'/%3E%3Ccircle cx='24' cy='27' r='2.4' fill='%2322d3c5'/%3E%3C/svg%3E" />
   <link rel="stylesheet" href="../brand.css" />
   <link rel="stylesheet" href="../site.css" />
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Knowledge Graph Memory Server","applicationCategory":"DeveloperApplication","url":"https://www.npmjs.com/package/@modelcontextprotocol/server-memory","sameAs":"https://github.com/modelcontextprotocol/servers/tree/main/src/memory","description":"用本地知识图谱实现跨会话持久记忆的 reference server，记忆落盘、跨会话共享、无访问控制。","dateModified":"2026-10-08"}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Knowledge Graph Memory Server","applicationCategory":"DeveloperApplication","url":"https://www.npmjs.com/package/@modelcontextprotocol/server-memory","sameAs":"https://github.com/modelcontextprotocol/servers/tree/main/src/memory","description":"用本地知识图谱实现跨会话持久记忆的 reference server。它记忆落盘、跨会话共享，但没有访问控制。","dateModified":"2026-10-08"}</script>
 </head>
 <!-- B6（2026-10-09）：--accent 原先在这里被**内联到 body 上**（style="--accent:X"），
      同时头部又写了 :root{--accent:X} —— 两处同一份值，冗余。
@@ -107,7 +107,7 @@
         <span class="badge"><span data-zh>核验</span><span data-en>Checked</span> 2026-10-08</span>
       </div>
 
-            <div class="panel-lead"><span data-zh><p>用本地知识图谱实现跨会话持久记忆的 reference server，<strong>记忆落盘、跨会话共享、无访问控制</strong>。</p></span><span data-en><p>A reference server implementing cross-session persistent memory with a local knowledge graph — <strong>memory is written to disk, shared across sessions, with no access control</strong>.</p></span></div>
+            <div class="panel-lead"><span data-zh><p>用本地知识图谱实现跨会话持久记忆的 reference server。<strong>它记忆落盘、跨会话共享，但没有访问控制</strong>。</p></span><span data-en><p>A reference server implementing cross-session persistent memory with a local knowledge graph — <strong>memory is written to disk, shared across sessions, with no access control</strong>.</p></span></div>
 
             <div class="panel is-slim">
         <h2><span data-zh>适合与不适合</span><span data-en>When to use it, when not to</span></h2>
@@ -250,7 +250,7 @@
       <div class="panel is-slim">
         <h2>数据结构</h2>
         <div class="tbl-wrap"><table><thead><tr><th>概念</th><th>说明</th><th>示例</th></tr></thead><tbody><tr><td><strong>Entity</strong></td><td>图谱节点，有唯一名称、类型、观察列表</td><td><code>{name: &quot;X&quot;, entityType: &quot;person&quot;, observations: [...]}</code></td></tr><tr><td><strong>Relation</strong></td><td>实体间的有向连接</td><td><code>{from: &quot;A&quot;, to: &quot;B&quot;, relationType: &quot;works_at&quot;}</code></td></tr><tr><td><strong>Observation</strong></td><td>挂在实体上的原子事实</td><td>建议一条观察只存一个事实</td></tr></tbody></table></div>
-            <p><strong>关系用主动语态存储</strong>（<code>works_at</code> 而非 <code>works at</code>），这是文档里的明确约定。</p>
+            <p><strong>关系用主动语态存储</strong>，如 <code>works_at</code> 而非 <code>works at</code>。这是文档里的明确约定。</p>
       </div>
       <div class="panel is-slim">
         <h2>工具清单与读写属性</h2>

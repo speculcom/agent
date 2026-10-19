@@ -128,7 +128,7 @@
         <div class="axis">
           <dt><span data-zh>模型与开放条件</span><span data-en>Model & openness</span></dt>
           <dd><p><strong>它自己不带模型，模型全要你自备（BYOK），但可接的 provider 很多。</strong></p>
-            <p>官方 README 给了完整清单与多种换法，其中包括官方自营的订阅方案 <strong>Hyper</strong>。</p>
+            <p>官方 README 给了完整清单与多种换法。其中包括官方自营的订阅方案 <strong>Hyper</strong>。</p>
             <p>官方 README 原文：</p>
             <p><strong>官方原文</strong>：&quot;Hyper, from Charm, is the official Crush provider. It&#39;s subscription-based&quot;</p>
             <p>官方 README 另提到 Hyper 有免费层，以及零数据留存（ZDR）。</p>
@@ -175,8 +175,8 @@
             <p>官方 README 原文：</p>
             <p><strong>官方原文</strong>：&quot;A workspace lives as long as at least one client has an SSE event stream open against it. When the last stream disconnects, the workspace is torn down.&quot;</p>
             <p>即最后一条流断开，workspace 就被拆除。</p>
-            <p><strong>执行环境归你的本地机器。</strong> <code>crush serve</code> 也是本机后端。 官方 README 与 docs/config 均无厂商托管或「关机后继续」的表述。</p>
-            <p><strong>中断可恢复</strong>：会话按项目保存，可经会话选择器 resume，退出横幅也提示 resume。 但进程本身不常驻。</p></dd>
+            <p><strong>执行环境归你的本地机器。</strong> <code>crush serve</code> 也是本机后端。 官方 README 与 docs/config 都没有厂商托管的表述。也没有「关机后继续」的说法。</p>
+            <p><strong>中断可恢复</strong>：会话按项目保存。可经会话选择器 resume，退出横幅也提示 resume。 但进程本身不常驻。</p></dd>
         </div>
         <div class="axis">
           <dt><span data-zh>工具与扩展</span><span data-en>Tools & extensions</span></dt>
@@ -202,7 +202,7 @@
             <p><strong>官方原文</strong>：&quot;By default, Crush will ask you for permission before running tool calls&quot;</p>
             <p>可在配置里 <code>permissions allow view edit</code> 免确认特定工具。</p>
             <p>官方对免确认模式的提醒是 <code>Use this with care</code>，意思是谨慎使用。</p>
-            <p><strong>另有 <code>--yolo</code> 开关可整体放宽审批。</strong> 但该 flag 遵循「first-wins」规则：同一 cwd 下首个客户端的设置会锁定后续客户端的行为。 不一致时会打一行 debug 日志记录这种不匹配。 <strong>多客户端同时接入同一目录时需注意这个规则。</strong></p>
+            <p><strong>另有 <code>--yolo</code> 开关可整体放宽审批。</strong> 但该 flag 遵循「first-wins」规则。同一 cwd 下，首个客户端的设置会锁定后续客户端的行为。 不一致时会打一行 debug 日志记录这种不匹配。 <strong>多客户端同时接入同一目录时需注意这个规则。</strong></p>
             <p>凭据配置也支持按机器分叉（可用 <code>$HOSTNAME</code> 条件覆盖）。</p></dd>
         </div>
         <div class="axis">
@@ -292,11 +292,11 @@
         <p>官方 README 原文：</p>
             <blockquote>&quot;Extensible: add capabilities via MCPs (http, stdio, and sse)&quot;</blockquote>
             <p><strong>这一条值得单独记一笔。</strong> 多数工具只写「支持 MCP」，Crush 直接列出了三种传输方式。</p>
-            <p>对照工具分区自己的观察：不少 reference server <strong>只支持 stdio，不支持远程传输</strong>。 所以一个明确支持 http 的 CLI 工具，扩展兼容面实际上比想象中大。</p>
+            <p>对照工具分区自己的观察：不少 reference server <strong>只支持 stdio</strong>。它们不支持远程传输。 所以一个明确支持 http 的 CLI 工具，扩展兼容面实际上比想象中大。</p>
       </div>
       <div class="panel is-slim">
         <h2>许可状态需要提醒</h2>
-        <p>GitHub API 返回的许可证字段是 <strong><code>NOASSERTION</code></strong>，也就是无法识别 —— 不是 MIT，也不是 Apache-2.0。</p>
+        <p>GitHub API 返回的许可证字段是 <strong><code>NOASSERTION</code></strong>，也就是无法识别。 它不是 MIT，也不是 Apache-2.0。</p>
             <p><strong>这意味着：</strong></p>
             <ul><li>不能假设可以商用</li><li>不能假设可以闭源分发</li><li>引用前须自行查看仓库内的 LICENSE 文件确认</li></ul>
             <p><strong>这属于「未知」，按本站方法论必须标注。</strong></p>

@@ -4,18 +4,18 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>OpenCode — Agents | 投机取巧</title>
-  <meta name="description" content="OpenCode（OpenCode）：MIT 许可的多 provider 编程 harness，运行 bash 命令前会询问权限，并支持 ACP 载入。" />
+  <meta name="description" content="OpenCode（OpenCode）：MIT 许可的多 provider 编程 harness。它运行 bash 命令前会询问权限，并支持 ACP 载入。" />
   <link rel="canonical" href="https://agent.specul.com/opencode.html" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="OpenCode" />
   <meta property="og:url" content="https://agent.specul.com/opencode.html" />
   <meta property="og:title" content="OpenCode — Agents | 投机取巧" />
-  <meta property="og:description" content="OpenCode（OpenCode）：MIT 许可的多 provider 编程 harness，运行 bash 命令前会询问权限，并支持 ACP 载入。" />
+  <meta property="og:description" content="OpenCode（OpenCode）：MIT 许可的多 provider 编程 harness。它运行 bash 命令前会询问权限，并支持 ACP 载入。" />
   <meta name="theme-color" content="#16121f" />
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%238b7cf8'/%3E%3Cstop offset='1' stop-color='%2322d3c5'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='48' height='48' rx='12' fill='%2305080f'/%3E%3Cpath d='M14 32 L24 12 L34 32' fill='none' stroke='url(%23g)' stroke-width='2.4' stroke-linejoin='round'/%3E%3Ccircle cx='24' cy='27' r='2.4' fill='%2322d3c5'/%3E%3C/svg%3E" />
   <link rel="stylesheet" href="brand.css" />
   <link rel="stylesheet" href="site.css" />
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"OpenCode","applicationCategory":"DeveloperApplication","url":"https://opencode.ai","sameAs":"https://github.com/sst/opencode","description":"MIT 许可的多 provider 编程 harness，运行 bash 命令前会询问权限，并支持 ACP 载入。","dateModified":"2026-10-08"}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"OpenCode","applicationCategory":"DeveloperApplication","url":"https://opencode.ai","sameAs":"https://github.com/sst/opencode","description":"MIT 许可的多 provider 编程 harness。它运行 bash 命令前会询问权限，并支持 ACP 载入。","dateModified":"2026-10-08"}</script>
 </head>
 <!-- B6（2026-10-09）：--accent 原先在这里被**内联到 body 上**（style="--accent:X"），
      同时头部又写了 :root{--accent:X} —— 两处同一份值，冗余。
@@ -108,7 +108,7 @@
         <span class="badge"><span data-zh>核验</span><span data-en>Checked</span> 2026-10-08</span>
       </div>
 
-            <div class="panel-lead"><span data-zh><p>MIT 许可的多 provider 编程 harness，<strong>运行 bash 命令前会询问权限</strong>，并支持 ACP 载入。</p></span><span data-en><p>An MIT-licensed multi-provider programming harness that <strong>asks permission before running bash commands</strong>, and supports loading via ACP.</p></span></div>
+            <div class="panel-lead"><span data-zh><p>MIT 许可的多 provider 编程 harness。<strong>它运行 bash 命令前会询问权限</strong>，并支持 ACP 载入。</p></span><span data-en><p>An MIT-licensed multi-provider programming harness that <strong>asks permission before running bash commands</strong>, and supports loading via ACP.</p></span></div>
 
             <div class="panel is-slim">
         <h2><span data-zh>适合与不适合</span><span data-en>When to use it, when not to</span></h2>
@@ -130,7 +130,7 @@
             <p>凭据经 <code>/connect</code> 存入 <code>~/.local/share/opencode/auth.json</code>；</p>
             <p>可用 <code>enabled_providers</code> / <code>disabled_providers</code> 白黑名单， 也能自定义 provider（<code>npm</code> + <code>baseURL</code>，含 OpenAI 兼容）； 另有官方精选清单 OpenCode Zen。<strong>本地模型可接</strong>——</p>
             <p>官方点名 llama.cpp、LM Studio、Ollama、Atomic Chat。</p>
-            <p>注意：用 Claude Pro/Max 订阅接入<strong>「不是 Anthropic 官方支持的用法」</strong>。</p></dd>
+            <p>注意：用 Claude Pro/Max 订阅接入时，<strong>这不是 Anthropic 官方支持的用法</strong>。</p></dd>
         </div>
         <div class="axis">
           <dt><span data-zh>运行位置</span><span data-en>Where it runs</span></dt>
@@ -138,7 +138,7 @@
         </div>
         <div class="axis">
           <dt><span data-zh>本地文件</span><span data-en>Local files</span></dt>
-          <dd><p>面向真实代码仓库的编程能力。<code>read</code>/<code>edit</code>/<code>write</code>/<code>grep</code>/<code>glob</code> 直接读写工作区；<code>grep</code>/<code>glob</code> 底层用 ripgrep，<strong>默认遵循 <code>.gitignore</code></strong>。</p>
+          <dd><p>面向真实代码仓库的编程能力。<code>read</code>/<code>edit</code>/<code>write</code>/<code>grep</code>/<code>glob</code> 直接读写工作区。<code>grep</code>/<code>glob</code> 底层用 ripgrep，<strong>默认遵循 <code>.gitignore</code></strong>。</p>
             <p><strong>访问范围默认限定在启动时的工作目录</strong>——越界路径须在 <code>permission</code> 里用 <code>external_directory</code> 显式放行（如 <code>~/projects/personal/**</code>）。</p>
             <p><code>read</code> 默认 allow，但 <strong><code>.env</code> / <code>.env.*</code> 默认 deny</strong>（<code>.env.example</code> allow）。 <code>@</code> 键可模糊搜索项目文件；文件变动有 <code>watcher</code>（可配 <code>ignore</code>）。</p>
             <p>符号能力来自 <strong>LSP 工具（实验性）</strong>：需 <code>OPENCODE_EXPERIMENTAL_LSP_TOOL=true</code> 并自配 LSP 服务器，支持 goToDefinition / findReferences / hover 等。</p>
@@ -147,7 +147,7 @@
         <div class="axis">
           <dt><span data-zh>关机后的任务</span><span data-en>Tasks after shutdown</span></dt>
           <dd><p>终端形态，本地进程，生命周期绑定会话。</p>
-            <p>官方另有 <code>opencode serve</code> （无头 HTTP 服务器）与 <code>opencode web</code> / 桌面应用——<strong>都跑在你自己的机器上</strong>， 为客户提供会话 API（含 <code>prompt_async</code> 异步发送），执行环境归你自己， 不是厂商托管云。</p>
+            <p>官方另有 <code>opencode serve</code>（无头 HTTP 服务器）。 还有 <code>opencode web</code> 与桌面应用。<strong>它们都跑在你自己的机器上</strong>。 它们为客户提供会话 API，含 <code>prompt_async</code> 异步发送。执行环境归你自己， 不是厂商托管云。</p>
             <p><strong>官方未见「客户端关闭后仍继续 / 关机续跑」的云端后台能力</strong> （已查 server 页与 docs 概览）。</p></dd>
         </div>
         <div class="axis">
@@ -162,7 +162,7 @@
         <div class="axis">
           <dt><span data-zh>上下文与记忆</span><span data-en>Context & memory</span></dt>
           <dd><p><strong>ACP（Agent Client Protocol）载入能力是其差异化设计</strong>—— 在恢复与分叉时保留模型、effort 与模式边界。</p>
-            <p>会话机制已核到：<code>/session</code> API 支持创建、<strong>fork（在某条消息处分叉）</strong>、 revert/unrevert 与 summarize；TUI 有 <code>/undo</code>、<code>/redo</code>、<code>/share</code>。</p>
+            <p>会话机制已核到：<code>/session</code> API 支持创建、<strong>fork（在某条消息处分叉）</strong>、 revert/unrevert 与 summarize。TUI 有 <code>/undo</code>、<code>/redo</code>、<code>/share</code>。</p>
             <p><strong>压缩策略官方给了配置</strong>——<code>compaction</code> 项：</p>
             <ul><li><code>auto</code>（默认 true，上下文满时自动压缩会话）</li><li><code>prune</code>（删旧工具输出省 token，默认 false）</li><li><code>reserved</code>（压缩缓冲）</li></ul>
             <p>另有 compaction / title / summary 三个内置代理。</p></dd>
@@ -175,7 +175,7 @@
             <ul><li>read</li><li>edit（涵盖 edit、write、patch）</li><li>glob</li><li>grep</li><li>bash</li><li>task</li><li>skill</li><li>lsp</li><li>webfetch</li><li>websearch</li><li>external_directory</li><li>doom_loop</li></ul>
             <p><strong>默认值宽松</strong>：多数 allow， <code>doom_loop</code> 与 <code>external_directory</code> 为 ask；<code>read</code> 为 allow 但 <code>.env</code> / <code>.env.*</code> 默认 deny。</p>
             <p>官方 config 页亦称「默认允许所有操作，无需明确批准」。</p>
-            <p>审批 UI 给 once / always / reject，且可对每个代理单独覆盖。</p>
+            <p>审批 UI 给 once / always / reject。它可对每个代理单独覆盖。</p>
             <p>v1.1.1 起旧版 <code>tools</code> 布尔配置并入 <code>permission</code>。</p></dd>
         </div>
         <div class="axis">

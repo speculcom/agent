@@ -4,18 +4,18 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Claude Code CLI — Agents | 投机取巧</title>
-  <meta name="description" content="Claude Code CLI（Anthropic）：本分区数据质量最高、发布最频繁的条目 —— 自带 CHANGELOG + Atom feed，权限设计颗粒度最细。" />
+  <meta name="description" content="Claude Code CLI（Anthropic）：本分区数据质量最高、发布最频繁的条目。它自带 CHANGELOG 与 Atom feed。 它的权限设计颗粒度最细。" />
   <link rel="canonical" href="https://agent.specul.com/claude-code-cli.html" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Claude Code CLI" />
   <meta property="og:url" content="https://agent.specul.com/claude-code-cli.html" />
   <meta property="og:title" content="Claude Code CLI — Agents | 投机取巧" />
-  <meta property="og:description" content="Claude Code CLI（Anthropic）：本分区数据质量最高、发布最频繁的条目 —— 自带 CHANGELOG + Atom feed，权限设计颗粒度最细。" />
+  <meta property="og:description" content="Claude Code CLI（Anthropic）：本分区数据质量最高、发布最频繁的条目。它自带 CHANGELOG 与 Atom feed。 它的权限设计颗粒度最细。" />
   <meta name="theme-color" content="#16121f" />
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%238b7cf8'/%3E%3Cstop offset='1' stop-color='%2322d3c5'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='48' height='48' rx='12' fill='%2305080f'/%3E%3Cpath d='M14 32 L24 12 L34 32' fill='none' stroke='url(%23g)' stroke-width='2.4' stroke-linejoin='round'/%3E%3Ccircle cx='24' cy='27' r='2.4' fill='%2322d3c5'/%3E%3C/svg%3E" />
   <link rel="stylesheet" href="brand.css" />
   <link rel="stylesheet" href="site.css" />
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Claude Code CLI","applicationCategory":"DeveloperApplication","url":"https://code.claude.com/docs/en/overview","sameAs":"https://github.com/anthropics/claude-code","description":"本分区数据质量最高、发布最频繁的条目 —— 自带 CHANGELOG + Atom feed，权限设计颗粒度最细。","dateModified":"2026-10-08"}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Claude Code CLI","applicationCategory":"DeveloperApplication","url":"https://code.claude.com/docs/en/overview","sameAs":"https://github.com/anthropics/claude-code","description":"本分区数据质量最高、发布最频繁的条目。它自带 CHANGELOG 与 Atom feed。 它的权限设计颗粒度最细。","dateModified":"2026-10-08"}</script>
 </head>
 <!-- B6（2026-10-09）：--accent 原先在这里被**内联到 body 上**（style="--accent:X"），
      同时头部又写了 :root{--accent:X} —— 两处同一份值，冗余。
@@ -107,7 +107,7 @@
         <span class="badge"><span data-zh>核验</span><span data-en>Checked</span> 2026-10-08</span>
       </div>
 
-            <div class="panel-lead"><span data-zh><p><strong>本分区数据质量最高、发布最频繁的条目</strong> —— 自带 CHANGELOG + Atom feed，权限设计颗粒度最细。</p></span><span data-en><p><strong>The highest data quality and most frequent releases in this track</strong> — it ships its own CHANGELOG and Atom feed, with the finest granularity in permission design.</p></span></div>
+            <div class="panel-lead"><span data-zh><p><strong>本分区数据质量最高、发布最频繁的条目</strong>。它自带 CHANGELOG 与 Atom feed。 它的权限设计颗粒度最细。</p></span><span data-en><p><strong>The highest data quality and most frequent releases in this track</strong> — it ships its own CHANGELOG and Atom feed, with the finest granularity in permission design.</p></span></div>
 
             <div class="panel is-slim">
         <h2><span data-zh>适合与不适合</span><span data-en>When to use it, when not to</span></h2>
@@ -125,7 +125,7 @@
         <div class="axis">
           <dt><span data-zh>模型与开放条件</span><span data-en>Model & openness</span></dt>
           <dd><p>Anthropic 自家 Claude 系列。</p>
-            <p><strong>v2.1.284（2026-09-28）新增 Claude Sonnet 5.5（<code>claude-sonnet-5-5</code>）， 官方标注为 Anthropic API 上的默认 Sonnet 模型：1M 上下文、 $2/$10 per Mtok、缓存读取 $0.20/Mtok。</strong></p></dd>
+            <p><strong>v2.1.284（2026-09-28）新增 Claude Sonnet 5.5（<code>claude-sonnet-5-5</code>）。 官方标注它是 Anthropic API 上的默认 Sonnet 模型。</strong> 规格为 1M 上下文、$2/$10 per Mtok、缓存读取 $0.20/Mtok。</p></dd>
         </div>
         <div class="axis">
           <dt><span data-zh>运行位置</span><span data-en>Where it runs</span></dt>
@@ -134,7 +134,7 @@
         <div class="axis">
           <dt><span data-zh>本地文件</span><span data-en>Local files</span></dt>
           <dd><p><strong>权限模型与工作目录强绑定</strong>——</p>
-            <p>CHANGELOG 记录 auto 模式在「读取工作目录之外的文件前」会询问， 且新增了「Yes, but ask again next time」选项：<strong>允许这一次读取，之后仍继续询问</strong>。</p>
+            <p>CHANGELOG 记录 auto 模式在「读取工作目录之外的文件前」会询问。 它还新增了「Yes, but ask again next time」选项。 含义是允许这一次读取，之后仍继续询问。</p>
             <p>1M 上下文档位（见 model_access）。</p></dd>
         </div>
         <div class="axis">
@@ -144,18 +144,18 @@
             <p>CLI 用 <code>claude --cloud</code> 创建云会话（旧 <code>--remote</code> 为别名）， <code>claude --teleport</code> 把云会话拉回终端继续；</p>
             <p>Routines（在 CLI 里用 <code>/schedule</code> 创建）跑在 Anthropic 托管云上， <strong>官方原文</strong>：&quot;they keep working when your laptop is closed&quot;。</p>
             <p>云会话与 routines 需 Pro / Max / Team 或 Enterprise 付费席位。</p>
-            <p>额度与限额跟随套餐（官方 routines 页单列 Usage and limits）。</p></dd>
+            <p>额度与限额跟随套餐。官方 routines 页单列了 Usage and limits。</p></dd>
         </div>
         <div class="axis">
           <dt><span data-zh>工具与扩展</span><span data-en>Tools & extensions</span></dt>
           <dd><p><strong>MCP 支持完整且在持续加强</strong>——</p>
-            <p>v2.1.284 新增 <code>/mcp reconnect all</code>：一次性重试所有连接失败或待认证的 MCP server。</p>
-            <p>同版本修复了「恢复会话时 MCP 工具调用报 No such tool available 但 server 其实仍在连接」的问题，现在会<strong>等待最多 10 秒</strong>。</p></dd>
+            <p>v2.1.284 新增 <code>/mcp reconnect all</code>。它能一次性重试所有连接失败或待认证的 MCP server。</p>
+            <p>同版本修复了一个问题。恢复会话时 MCP 工具调用会报 No such tool available， 但 server 其实仍在连接。现在会<strong>等待最多 10 秒</strong>。</p></dd>
         </div>
         <div class="axis">
           <dt><span data-zh>上下文与记忆</span><span data-en>Context & memory</span></dt>
           <dd><p><strong>上下文压缩机制有明确的边界处理</strong>——</p>
-            <p>v2.1.284 修复了「压缩后仍超长导致 Prompt is too long 持久报错」的问题： 现在会<strong>再压缩一次，并保留更少的近期对话</strong>。</p>
+            <p>v2.1.284 修复了一个持久报错问题。压缩后仍超长时， 会持续报 Prompt is too long。现在会<strong>再压缩一次，并保留更少的近期对话</strong>。</p>
             <p>这说明它确实有多轮压缩能力，且边界情况在持续修补。</p></dd>
         </div>
         <div class="axis">
@@ -292,7 +292,7 @@
         <p><code>confidence: partial</code> 的依据（2026-10-03 由 verified 降级）：</p>
             <blockquote><strong>为什么降级</strong>：下方 ❌ 项的主语是<strong>本站的取证缺口</strong>，不是「官方未提供」。 按 v3 铁律「未知就说未知」，这些条目存在时标 verified 属于虚高，故降为 partial。 主要缺口：完整工具清单、沙箱实现细节、是否支持本地模型、API 与订阅额度关系。</blockquote>
             <ul><li>✅ 已核验：仓库、<strong>许可状态原文</strong>、最近 5 个版本与日期、star 数（148,488）、<strong>模型定价原文</strong>、权限设计的三个具体机制、MCP 两处改动、上下文压缩策略、Atom feed 存在、<strong>云端形态（<code>claude --cloud</code> / Routines / 关机后续跑）</strong></li><li>❌ 未核验：完整工具清单、沙箱实现细节、是否支持本地模型、API 与订阅额度关系</li></ul>
-            <p><strong>这曾是 CLI 形态第一个达到 <code>verified</code> 的条目</strong>（因为它把大量信息写在了 CHANGELOG 与 LICENSE 里）， <strong>2026-10-03 因本站仍有取证缺口（见下）降为 <code>partial</code></strong>。</p>
+            <p><strong>这曾是 CLI 形态第一个达到 <code>verified</code> 的条目</strong>。它把大量信息写在了 CHANGELOG 与 LICENSE 里。 <strong>2026-10-03 因本站仍有取证缺口（见下）降为 <code>partial</code></strong>。</p>
       </div>
 
             <div class="panel is-slim">

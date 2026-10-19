@@ -4,18 +4,18 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>CrewAI — Harness | 投机取巧</title>
-  <meta name="description" content="CrewAI（CrewAI Inc）：CrewAI 是一个用「角色分工」和「业务流程」两套比喻来编排多 agent 的 Python 框架。 官方自述是 &quot;Framework for orchestrating role-playing, autonomous AI agents.&quot; 「rol…" />
+  <meta name="description" content="CrewAI（CrewAI Inc）：CrewAI 是一个 Python 框架。它用「角色分工」和「业务流程」两套比喻来编排多 agent。 官方自述是 &quot;Framework for orchestrating role-playing, autonomous AI agents.&quot; 「rol…" />
   <link rel="canonical" href="https://agent.specul.com/harness/crewai.html" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="CrewAI" />
   <meta property="og:url" content="https://agent.specul.com/harness/crewai.html" />
   <meta property="og:title" content="CrewAI — Harness | 投机取巧" />
-  <meta property="og:description" content="CrewAI（CrewAI Inc）：CrewAI 是一个用「角色分工」和「业务流程」两套比喻来编排多 agent 的 Python 框架。 官方自述是 &quot;Framework for orchestrating role-playing, autonomous AI agents.&quot; 「rol…" />
+  <meta property="og:description" content="CrewAI（CrewAI Inc）：CrewAI 是一个 Python 框架。它用「角色分工」和「业务流程」两套比喻来编排多 agent。 官方自述是 &quot;Framework for orchestrating role-playing, autonomous AI agents.&quot; 「rol…" />
   <meta name="theme-color" content="#16121f" />
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%238b7cf8'/%3E%3Cstop offset='1' stop-color='%2322d3c5'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='48' height='48' rx='12' fill='%2305080f'/%3E%3Cpath d='M14 32 L24 12 L34 32' fill='none' stroke='url(%23g)' stroke-width='2.4' stroke-linejoin='round'/%3E%3Ccircle cx='24' cy='27' r='2.4' fill='%2322d3c5'/%3E%3C/svg%3E" />
   <link rel="stylesheet" href="../brand.css" />
   <link rel="stylesheet" href="../site.css" />
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"CrewAI","applicationCategory":"DeveloperApplication","url":"https://crewai.com","sameAs":"https://crewai.com","description":"CrewAI 是一个用「角色分工」和「业务流程」两套比喻来编排多 agent 的 Python 框架。 官方自述是 \"Framework for orchestrating role-playing, autonomous AI agents.\" 「role-playing」这个词容易让人低估它。 同一份 README 里也写着 production-grade， 并明确承诺： \"Move from experiment to production without changing frameworks.\"","dateModified":"2026-10-08","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"CrewAI","applicationCategory":"DeveloperApplication","url":"https://crewai.com","sameAs":"https://crewai.com","description":"CrewAI 是一个 Python 框架。它用「角色分工」和「业务流程」两套比喻来编排多 agent。 官方自述是 \"Framework for orchestrating role-playing, autonomous AI agents.\" 「role-playing」这个词容易让人低估它。 同一份 README 里也写着 production-grade， 并明确承诺： \"Move from experiment to production without changing frameworks.\"","dateModified":"2026-10-08","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}</script>
 </head>
 <!-- B6（2026-10-09）：--accent 原先在这里被**内联到 body 上**（style="--accent:X"），
      同时头部又写了 :root{--accent:X} —— 两处同一份值，冗余。
@@ -118,7 +118,7 @@
         <span class="badge"><span data-zh>核验</span><span data-en>Checked</span> 2026-10-08</span>
       </div>
 
-            <div class="panel-lead"><span data-zh><p><strong>CrewAI 是一个用「角色分工」和「业务流程」两套比喻来编排多 agent 的 Python 框架。</strong> 官方自述是 &quot;Framework for orchestrating <strong>role-playing</strong>, autonomous AI agents.&quot;</p>
+            <div class="panel-lead"><span data-zh><p><strong>CrewAI 是一个 Python 框架。它用「角色分工」和「业务流程」两套比喻来编排多 agent。</strong> 官方自述是 &quot;Framework for orchestrating <strong>role-playing</strong>, autonomous AI agents.&quot;</p>
             <p><strong>「role-playing」这个词容易让人低估它。</strong> 同一份 README 里也写着 production-grade， 并明确承诺：</p>
             <blockquote>&quot;Move from experiment to production <strong>without changing frameworks</strong>.&quot;</blockquote></span><span data-en><p><strong>CrewAI is a Python framework that orchestrates multi-agent work through two metaphors: role division and business process.</strong> The official description reads: &quot;Framework for orchestrating <strong>role-playing</strong>, autonomous AI agents.&quot;</p>
             <p><strong>The word &quot;role-playing&quot; makes people underrate it.</strong> The same README also says production-grade, and promises plainly:</p>
@@ -141,8 +141,8 @@
       <dl class="axes">
         <div class="axis">
           <dt><span data-zh>模型与开放条件</span><span data-en>Model & openness</span></dt>
-          <dd><p><strong>它的模型接入路径最具体：默认走 OpenAI API，本地模型官方点名了 Ollama 工具。</strong></p>
-            <p>README 按这个顺序写：默认 OpenAI，另有多种连接方式，例如本地模型走 Ollama 工具。</p>
+          <dd><p><strong>它的模型接入路径最具体。默认走 OpenAI API，本地模型官方点名了 Ollama 工具。</strong></p>
+            <p>README 按这个顺序写。默认 OpenAI，另有多种连接方式，例如本地模型走 Ollama 工具。</p>
             <p>&quot;CrewAI supports using various LLMs through a variety of connection options. By default your agents will use the <strong>OpenAI API</strong> when querying the model. However, there are several other ways to allow your agents to connect to models. For example, you can configure your agents to use a <strong>local model via the Ollama tool</strong>.&quot;</p>
             <p>FAQ 还补了一句：<strong>LM Studio</strong> 也能接。</p>
             <p><strong>官方原文</strong>：&quot;Tools like Ollama and LM Studio allow seamless integration&quot;</p>
@@ -165,7 +165,7 @@
             <p>&quot;Add tools, memory, <strong>checkpointing</strong>, and async execution <strong>as your system grows</strong>&quot;</p>
             <p>&quot;Add deterministic steps, human input, structured outputs, and <strong>checkpointing as your system grows</strong>&quot;</p>
             <p>那是 README 的定位话术。</p>
-            <p><strong>机制本身官方文档给得很细</strong>（官方 <code>concepts/checkpointing</code> 页）：</p>
+            <p><strong>机制本身官方文档给得很细</strong>。见官方 <code>concepts/checkpointing</code> 页：</p>
             <ul><li><strong>粒度</strong>：事件驱动，默认 <code>on_events=[&quot;task_completed&quot;]</code>， 即<strong>每完成一个 task 落一次盘</strong>；<code>CheckpointConfig</code> 可改频率与上限</li></ul>
             <ul><li><strong>落盘后端两个</strong>：<code>JsonProvider</code>（每次一个文件，默认，写在 <code>./.checkpoints/</code>）、 <code>SqliteProvider</code>（单个 SQLite 库，开 WAL，适合高频）</li></ul>
             <ul><li><strong>开关</strong>：<code>Crew</code> / <code>Flow</code> / <code>Agent</code> 都可传 <code>checkpoint</code>；子级默认继承父级， 也可传 <code>False</code> 退出</li></ul>
@@ -174,7 +174,7 @@
         <div class="axis">
           <dt><span data-zh>本地文件</span><span data-en>Local files</span></dt>
           <dd><p><strong>框架本身不内置文件系统能力，文件读写靠工具提供 —— 但工具的默认边界清楚。</strong></p>
-            <p><strong>默认边界已核到</strong>（官方 FileReadTool 页）：运行时传入的路径<strong>必须落在 <code>base_dir</code> 内</strong>， <code>base_dir</code> 默认是当前工作目录。<code>..</code> 与符号链接都会先解析再校验，</p>
+            <p><strong>默认边界已核到</strong>（官方 FileReadTool 页）。运行时传入的路径<strong>必须落在 <code>base_dir</code> 内</strong>。 <code>base_dir</code> 默认是当前工作目录。<code>..</code> 与符号链接都会先解析再校验，</p>
             <p>so they cannot be used to escape</p>
             <p>两个例外：</p>
             <ul><li>构造函数里写死的 <code>file_path</code> 属开发者声明，<strong>可越过该限制</strong>，但只放行这一个文件</li><li>放开更大范围须显式 <code>base_dir=&#39;/data&#39;</code></li></ul>
@@ -187,7 +187,7 @@
         </div>
         <div class="axis">
           <dt><span data-zh>关机后的任务</span><span data-en>Tasks after shutdown</span></dt>
-          <dd><p><strong>它不托管后台。</strong> 库本身不提供厂商托管的执行环境 —— 要「电脑关了还能跑」， 得自己把进程跑在自有服务器 / VPC 上（AMP 商业侧另给 Cron scheduling）。</p>
+          <dd><p><strong>它不托管后台。</strong> 库本身不提供厂商托管的执行环境 —— 要「电脑关了还能跑」， 得自己把进程跑在自有服务器 / VPC 上。AMP 商业侧另给 Cron scheduling。</p>
             <p><strong>Flow 的 state management 是官方明文。</strong> README 把 Flow 描述成 &quot;event-driven workflows with <strong>state, branching, routing</strong>&quot;， FAQ 说 Flow 适合 &quot;detailed execution paths and <strong>secure state management</strong>&quot;。</p>
             <p><strong>state 是显式、结构化的</strong>（README「Using Crews and Flows Together」段示例代码）。</p>
             <p><code>class MarketState(BaseModel)</code>，Flow[MarketState] 里直接读写 <code>self.state.sentiment</code> 等字段，并按 <code>self.state.confidence</code> 的数值阈值分支。</p>
@@ -212,7 +212,7 @@
           <dd><p><strong>它给了一套统一 memory 系统，外加独立的 knowledge。机制已核到。</strong></p>
             <p>README 里与记忆相关的表述有两处：</p>
             <ul><li>Key Features 的 &quot;memory, <strong>knowledge</strong>, checkpointing&quot;</li><li>「Build with AI」段的 agent 配置项清单 &quot;Configuring agents — role, goal, backstory, tools, LLMs, <strong>memory</strong>, guardrails&quot;</li></ul>
-            <p><strong>机制已核到，且推翻旧判断</strong>（官方 <code>concepts/memory</code> 页）：官方现有<strong>统一 <code>Memory</code> 类</strong> ——</p>
+            <p><strong>机制已核到，且推翻旧判断</strong>（官方 <code>concepts/memory</code> 页）。官方现有<strong>统一 <code>Memory</code> 类</strong>。</p>
             <p><strong>官方原文</strong>：&quot;a single <code>Memory</code> class that replaces separate short-term, long-term, entity, and external memory types with one intelligent API&quot;</p>
             <p>即<strong>旧档案「官方不区分工作记忆 / 长期记忆」的说法已过时</strong>。</p>
             <p>具体机制：</p>
@@ -232,7 +232,7 @@
             <p><strong>关键判定：它只拦输出</strong>（task 产出），<strong>不是</strong>双向校验，也<strong>不改状态</strong>：</p>
             <ul><li><strong>不是</strong> OpenAI Agents SDK 那种 input + output 双向校验</li><li><strong>不是</strong> ADK 的 Tool Confirmation 执行前确认</li><li><strong>不是</strong> LangGraph 的 interrupts 改状态</li></ul>
             <p>所以对照表里 CrewAI 应写作「校验 task 输出、失败重试」。</p>
-            <p><strong>沙箱：OSS 无进程 / 容器级沙箱。</strong> 边界来自工具本身 —— 文件工具默认把路径限制在 <code>base_dir</code>（默认 cwd，见 local_files 轴）。 MCP 安全官方明说是「信任」问题、不提供内置防护。</p>
+            <p><strong>沙箱：OSS 无进程 / 容器级沙箱。</strong> 边界来自工具本身 —— 文件工具默认把路径限制在 <code>base_dir</code>。默认是 cwd，见 local_files 轴。 MCP 安全官方明说是「信任」问题、不提供内置防护。</p>
             <p><strong>未知：网络访问控制官方无机制</strong>（已查 tasks 页与 <code>mcp/security</code> 页）。 RBAC / SSO / PII redaction 属 AMP 商业侧，开源版没有。</p></dd>
         </div>
         <div class="axis">
@@ -273,7 +273,7 @@
             <p><strong>Enterprise 定制</strong>包含 SSO / RBAC / workload identity / PII redaction / policies。部署可选 CrewAI 云、你的自有 VPC、或你自己的基础设施。</p>
             <p>onboarding 是 45 天；forward deployed engineering 与培训按需另购。 Enterprise 的执行次数是 &quot;Sized to workflow&quot; + <strong>Flexible overage</strong>，即按实际用量谈。</p>
             <p><strong>⚠ 第三方定价站上的数字与官方页不一致，本站不采信</strong>：抓取时多个来源分别给出 Professional ~$25/mo、Basic $99/mo、Standard $6K/yr、Ultra $120K/yr 等， <strong>官方定价页上不存在这些档位</strong>（只有 Basic 与 Enterprise 两档）， 应属旧制或臆测。<strong>本站只写官方页面上能读到的两档。</strong></p>
-            <p><strong>另一条要读出来的事实</strong>：Enterprise 明确写部署可落在 <strong>CrewAI 云 / 客户自有 VPC / 客户自有基础设施</strong> —— 即以下这行 README 原文在商业侧确实兑现：</p>
+            <p><strong>另一条要读出来的事实</strong>：Enterprise 明确写部署可落在 <strong>CrewAI 云 / 客户自有 VPC / 客户自有基础设施</strong>。 即以下这行 README 原文在商业侧确实兑现：</p>
             <blockquote>On-premise and Cloud Deployment Options</blockquote>
             <p>也<strong>没有强制必须联网授权的表述</strong>。</p></span><span data-en><p><strong>开源部分与商业部分要分清。</strong></p>
             <p>核验依据：仓库 MIT（经license API）、README 的 pip 安装路径、官方定价页（核验 2026-10-01）。 商业线是 README 单列一节的 <strong>Crew Control Plane</strong>（对外称 CrewAI AMP）。</p>
@@ -282,7 +282,7 @@
             <p><strong>Enterprise 定制</strong>包含 SSO / RBAC / workload identity / PII redaction / policies。部署可选 CrewAI 云、你的自有 VPC、或你自己的基础设施。</p>
             <p>onboarding 是 45 天；forward deployed engineering 与培训按需另购。 Enterprise 的执行次数是 &quot;Sized to workflow&quot; + <strong>Flexible overage</strong>，即按实际用量谈。</p>
             <p><strong>⚠ 第三方定价站上的数字与官方页不一致，本站不采信</strong>：抓取时多个来源分别给出 Professional ~$25/mo、Basic $99/mo、Standard $6K/yr、Ultra $120K/yr 等， <strong>官方定价页上不存在这些档位</strong>（只有 Basic 与 Enterprise 两档）， 应属旧制或臆测。<strong>本站只写官方页面上能读到的两档。</strong></p>
-            <p><strong>另一条要读出来的事实</strong>：Enterprise 明确写部署可落在 <strong>CrewAI 云 / 客户自有 VPC / 客户自有基础设施</strong> —— 即以下这行 README 原文在商业侧确实兑现：</p>
+            <p><strong>另一条要读出来的事实</strong>：Enterprise 明确写部署可落在 <strong>CrewAI 云 / 客户自有 VPC / 客户自有基础设施</strong>。 即以下这行 README 原文在商业侧确实兑现：</p>
             <blockquote>On-premise and Cloud Deployment Options</blockquote>
             <p>也<strong>没有强制必须联网授权的表述</strong>。</p></span></td></tr>
           </tbody>
@@ -353,7 +353,7 @@
             <p>```python class MarketState(BaseModel): ...</p>
             <p>class AdvancedAnalysisFlow(Flow[MarketState]): def run(self): self.state.sentiment = &quot;analyzing&quot; if self.state.confidence &gt; 0.8: ... elif self.state.confidence &gt; 0.5: ... ```</p>
             <p><strong>这就是本站要找的「状态」</strong> —— 显式、结构化、可按数值阈值分支。</p>
-            <p><strong>落盘与跨进程恢复本轮已核到</strong>（官方 <code>concepts/checkpointing</code>、<code>concepts/flows</code> 页）。 README 把 checkpointing 写成<strong>按需添加</strong>，两处原话都加了限定语：</p>
+            <p><strong>落盘与跨进程恢复本轮已核到</strong>（官方 <code>concepts/checkpointing</code>、<code>concepts/flows</code> 页）。 README 把 checkpointing 写成<strong>按需添加</strong>。两处原话都加了限定语：</p>
             <ul><li>&quot;Add tools, memory, <strong>checkpointing</strong>, and async execution <strong>as your system grows</strong>&quot;</li><li>&quot;Add deterministic steps, human input, structured outputs, and <strong>checkpointing as your system grows</strong>&quot;</li></ul>
             <p>那是 README 的定位话术；<strong>机制本身官方文档给得很细</strong>：</p>
             <ul><li><strong>落盘粒度</strong>：事件驱动，默认 <code>on_events=[&quot;task_completed&quot;]</code>，即<strong>每完成一个 task 落一次盘</strong>。</li><li><strong>持久化后端</strong>：<code>JsonProvider</code>（每次一文件，默认）或 <code>SqliteProvider</code>（单库、开 WAL）。</li><li><strong>跨进程恢复</strong>：可从 <code>./.checkpoints/</code> 或 SQLite 库恢复；Flow 另有 <code>@persist</code> （默认 <code>SQLiteFlowPersistence</code>），<code>kickoff(inputs={&quot;id&quot;: ...})</code> 续跑、 <code>restore_from_state_id=</code> 分叉。</li></ul>
@@ -380,7 +380,7 @@
             <p>MCP 的接入面：</p>
             <ul><li>传输三种：<strong>stdio / SSE / Streamable HTTP</strong>（各一页）</li><li>DSL 字段 <code>mcps=</code>、多 server 聚合 <code>MCPServerAdapter</code></li><li>MCP security 专页</li><li>内置工具 <code>crewai-tools</code>（官方称 75+ OSS catalog，装 <code>crewai[tools]</code>）</li></ul>
             <p><strong>A2A（Agent-to-Agent）的规范与生态仍属外部协议</strong>，本站只记 <strong>「官方有 <code>a2a</code> extra 与一批 A2A 事件」</strong>，协议规范不在本站研究范围。</p>
-            <p>另外有个有意思的细节：CrewAI 自己托管了一个文档 MCP server （<code>docs.crewai.com/mcp</code>）。README「Build with AI」段提到有个 <code>ask-docs</code> 配置 可以<strong>「查询 CrewAI 的实时文档 MCP server 获取最新 API 细节」</strong>—— <strong>它用自己的 MCP server 来喂 AI 编程助手，属于 MCP 的一个真实自用案例。</strong></p>
+            <p>另外有个有意思的细节：CrewAI 自己托管了一个文档 MCP server （<code>docs.crewai.com/mcp</code>）。README「Build with AI」段提到有个 <code>ask-docs</code> 配置： <strong>「查询 CrewAI 的实时文档 MCP server 获取最新 API 细节」</strong> <strong>它用自己的 MCP server 来喂 AI 编程助手。这属于 MCP 的一个真实自用案例。</strong></p>
       </div>
       <div class="panel is-slim">
         <h2>权限维度：guardrails 是「任务输出校验」，不是权限边界</h2>
@@ -392,10 +392,10 @@
       </div>
       <div class="panel is-slim">
         <h2>记忆：统一 Memory 系统，机制已核到（旧判断作废）</h2>
-        <p>本轮核实官方 <code>concepts/memory</code> 页：<strong>官方已把记忆统一成一个 <code>Memory</code> 类</strong> ——</p>
+        <p>本轮核实官方 <code>concepts/memory</code> 页。<strong>官方已把记忆统一成一个 <code>Memory</code> 类</strong>。</p>
             <blockquote>a single <code>Memory</code> class that replaces separate short-term, long-term, entity, and external memory types with one intelligent API</blockquote>
             <p>即<strong>旧档案「官方不区分工作记忆 / 长期记忆」的说法已过时</strong> —— 现在它是「统一成一个 API」，而不是「没有分型」。这与 <a href="./langgraph.html">LangGraph</a> 的分型路线正好相反。</p>
-            <ul><li><strong>作用域</strong>：分层 scope 树（<code>/agent/researcher</code> 等），Crew 级默认共享， agent 可用 <code>memory.scope()</code> 取私有子树，<code>slice()</code> 做跨分支只读或读写视图。</li></ul>
+            <ul><li><strong>作用域</strong>：分层 scope 树（<code>/agent/researcher</code> 等），Crew 级默认共享， agent 可用 <code>memory.scope()</code> 取私有子树。<code>slice()</code> 做跨分支只读或读写视图。</li></ul>
             <ul><li><strong>存储后端</strong>：平台目录下的向量库（默认 ChromaDB，<code>CREWAI_STORAGE_DIR</code> 可改）。</li><li><strong>不靠截断</strong>：检索用 <code>semantic + recency + importance</code> 复合打分； 写入走 LLM 抽取原子事实 + consolidation/dedup（过阈值时 LLM 决定 keep/update/delete）。</li></ul>
             <ul><li><strong>knowledge vs memory</strong>：knowledge 是 RAG 事实库（独立 collection，agent/crew 两级）， memory 是跨任务统一记录库；两者共用向量存储但用途不同。</li></ul>
       </div>
@@ -416,7 +416,7 @@
             <p><strong>结论一：Basic 没有自助加购通道。</strong></p>
             <p>Basic 的加购一栏写的是「—」。 官方对比表 Basic 行<strong>「Maximum executions = 50」「Additional executions = —」</strong>。 <strong>超过 50 次/月的自助出路基本只有去找 Enterprise 谈。</strong></p>
             <p><strong>结论二：部署形态在商业侧确实兑现了。</strong></p>
-            <p>Enterprise 明确写可部署在 CrewAI 云 / <strong>你自己的 VPC</strong> / <strong>你自己的基础设施</strong>。 这也兑现了 README 那句原文：</p>
+            <p>Enterprise 明确写可部署在 CrewAI 云。它也支持你自己的 VPC / 你自己的基础设施。 这也兑现了 README 那句原文：</p>
             <blockquote>On-premise and Cloud Deployment Options</blockquote>
             <p><strong>官方页也没有任何强制联网授权的表述。</strong></p>
             <p><strong>结论三：第三方定价站的数字一律不可信。</strong></p>
@@ -431,7 +431,7 @@
             <p><strong>A6.2 本轮补齐的官方源</strong>：</p>
             <ul><li><code>concepts/checkpointing</code>（落盘粒度 / 后端 / 恢复 / fork）</li><li><code>concepts/flows</code>（<code>@persist</code> 与 <code>SQLiteFlowPersistence</code>）</li><li><code>learn/llm-connections</code>（provider 清单与默认模型 <code>gpt-4o-mini</code>）</li><li><code>concepts/memory</code>（统一 Memory、scope、存储与 consolidation）</li><li><code>concepts/tasks</code>（Task Guardrails 机制）</li><li><code>concepts/knowledge</code>（存储与 memory 关系）</li><li><code>mcp/security</code>（MCP 安全无内置防护）</li><li><code>FileReadTool</code> 页（<code>base_dir</code> 路径沙箱）</li><li><code>lib/crewai/pyproject.toml</code>（<code>mcp~=1.28.1</code> 在核心依赖、<code>a2a</code> 为可选 extra）</li></ul>
             <p>已核验（存量）：仓库存在与星数（59,246）、许可（MIT，经 license API）、 最近推送（2026-10-01，仍活跃）、最新版 <strong>1.15.23</strong>（releases @ 2026-09-28）、 README 关键段落（双抽象、七项 Key Features、模型接入、Crews/Flows FAQ、 MarketState 结构化状态示例、Telemetry 与 License 段）。</p>
-            <p><strong>本轮（2026-10-01）补上的</strong>：CrewAI AMP 定价（官方页两档，已写进正文表格）、 Enterprise 的部署形态（客户自有 VPC / 自有基础设施）、无强制联网授权表述。</p>
+            <p><strong>本轮（2026-10-01）补上的</strong>：CrewAI AMP 定价。官方页两档，已写进正文表格。 Enterprise 的部署形态（客户自有 VPC / 自有基础设施）。无强制联网授权表述。</p>
             <p><strong>核验方法</strong>：先试 <code>_audit/fetch-pricing.mjs</code> 渲染 <code>crewai.com/pricing</code> 超时， 改用 WebFetch 直接取官方页正文。</p>
       </div>
 

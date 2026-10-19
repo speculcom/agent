@@ -115,7 +115,7 @@
             <div class="panel is-slim">
         <h2><span data-zh>适合与不适合</span><span data-en>When to use it, when not to</span></h2>
 <span data-zh>        <div><p>在 AWS 生态里做正式工程交付、习惯「先出 spec 再实现」的团队。 需要云端会话在关机后继续跑的人（Cloud sessions，最多 10 并发）。 想把 steering 与权限规则随仓库分发的团队（<code>.kiro/</code> 可提交）。</p></div>
-        <div class="warn-p"><p><strong>不适合</strong>想接自有 API Key 或跑本地模型的人——官方 models 与 pricing 两页都没有 BYOK 说明； 也不适合要求额度口径透明的重度用户，credit 按模型倍数消耗，官方未给固定请求数换算。</p></div></span><span data-en>        <div><p>Teams doing formal engineering delivery in the AWS ecosystem who want specs before implementation. People who need a cloud session that keeps running after they close the laptop (Cloud Sessions, up to 10 concurrent). Teams that want steering and permission rules shipped with the repository (<code>.kiro/</code> is committable and consistent across surfaces). Free tier suits low-volume trials (50 credits/month, limited to open-weight models and Claude Sonnet 4.5).</p></div>
+        <div class="warn-p"><p><strong>不适合</strong>想接自有 API Key 或跑本地模型的人。官方 models 与 pricing 两页都没有 BYOK 说明。 也不适合要求额度口径透明的重度用户。credit 按模型倍数消耗，官方未给固定请求数换算。</p></div></span><span data-en>        <div><p>Teams doing formal engineering delivery in the AWS ecosystem who want specs before implementation. People who need a cloud session that keeps running after they close the laptop (Cloud Sessions, up to 10 concurrent). Teams that want steering and permission rules shipped with the repository (<code>.kiro/</code> is committable and consistent across surfaces). Free tier suits low-volume trials (50 credits/month, limited to open-weight models and Claude Sonnet 4.5).</p></div>
         <div class="warn-p"><p><strong>Not a fit for</strong> anyone who needs their own API key or local models — neither the official models page nor the pricing page documents BYOK; nor for heavy users who need a transparent quota figure, since credits are consumed by model multiplier (up to 4.4x) with no fixed request-count equivalent.</p></div></span>
       </div>
 
@@ -133,18 +133,18 @@
             <ul><li><strong>Auto</strong> —— 自动路由</li><li><strong>OpenAI</strong> —— GPT-5.6（Sol / Terra / Luna）</li><li><strong>Anthropic Claude</strong> —— Opus 5.5 / 5 / 4.8 / 4.7 / 4.6 / 4.5； Sonnet 5.5 / 5 / 4.6 / 4.5 / 4.0；Haiku 4.5</li></ul>
             <ul><li><strong>开放权重</strong> —— DeepSeek 3.2、MiniMax M2.5 / M2.1、GLM-5、Qwen3 Coder Next</li></ul>
             <p>计费按 credit 倍数：Auto 是 1.0x 基准，GPT-5.6 Sol 最高 4.4x。</p>
-            <p>区域上，GPT-5.6 一律从美国服务，其余跟随你的 profile 区域（US / EU）。 Claude Fable 5.1 是 Enterprise 预览。</p>
+            <p>区域上，GPT-5.6 一律从美国服务。其余跟随你的 profile 区域（US / EU）。 Claude Fable 5.1 是 Enterprise 预览。</p>
             <p><strong>能不能自带 API Key（BYOK）：官方未说明。</strong> （已查 models 与 pricing 两页。）</p></dd>
         </div>
         <div class="axis">
           <dt><span data-zh>运行位置</span><span data-en>Where it runs</span></dt>
-          <dd><p><strong>独立桌面 IDE，官方原文明说「a desktop development environment built on a VS Code foundation」</strong>， 不是装进别人编辑器的扩展。但官方把它定位为「one agent, every surface」： IDE / CLI / Web / Mobile 都是同一个 unified agent harness 的前端，本地客户端经 stdio 走 <strong>Agent Client Protocol（ACP）</strong>，Web / Mobile 经 WebSocket 连云端沙箱。 <strong>IDE 与 CLI 默认在本机运行 harness</strong>（工具操作本地文件与 shell）；两者也可创建并接入云端 sandbox 里的 Cloud Session。因为边界是标准 ACP，官方称兼容编辑器如 JetBrains IDE 与 Zed 也能把 Kiro 当 agent 用。</p></dd>
+          <dd><p><strong>独立桌面 IDE，官方原文明说「a desktop development environment built on a VS Code foundation」</strong>， 不是装进别人编辑器的扩展。但官方把它定位为「one agent, every surface」： IDE / CLI / Web / Mobile 都是同一个 unified agent harness 的前端，本地客户端经 stdio 走 <strong>Agent Client Protocol（ACP）</strong>，Web / Mobile 经 WebSocket 连云端沙箱。 <strong>IDE 与 CLI 默认在本机运行 harness</strong>。工具操作本地文件与 shell。 两者也可创建并接入云端 sandbox 里的 Cloud Session。 因为边界是标准 ACP。官方称 JetBrains IDE 与 Zed 也能把 Kiro 当 agent 用。</p></dd>
         </div>
         <div class="axis">
           <dt><span data-zh>本地文件</span><span data-en>Local files</span></dt>
           <dd><p>它通过 IDE 访问你的工作区文件。</p>
-            <p><strong>代码理解分两层。</strong> 第一层是内置的 Tree-sitter，覆盖 18 种语言， 提供符号模糊搜索、文档大纲、AST 结构搜索与改写、代码库概览，跨 surface 都能用。 第二层是 <strong>LSP（可选）</strong>，能做查引用、跳定义、重命名、诊断、悬停文档 —— 但只在 IDE 与 CLI 里，而且要自己装语言服务器。</p>
-            <p><strong>索引有专页说明</strong>：打开项目就自动索引源码、文档、配置与依赖； 文件变更或外部改动会增量重索引，也可以手动 Force Re-Index / Rebuild。 想让 agent 别碰某些文件，用 <code>.kiroignore</code>（gitignore 风格）排除。</p>
+            <p><strong>代码理解分两层。</strong> 第一层是内置的 Tree-sitter，覆盖 18 种语言， 提供符号模糊搜索、文档大纲、AST 结构搜索与改写、代码库概览。 这些能力跨 surface 都能用。 第二层是 <strong>LSP（可选）</strong>，能做查引用、跳定义、重命名、诊断、悬停文档 —— 但只在 IDE 与 CLI 里，而且要自己装语言服务器。</p>
+            <p><strong>索引有专页说明</strong>：打开项目就自动索引源码、文档、配置与依赖； 文件变更或外部改动会增量重索引。也可以手动 Force Re-Index / Rebuild。 想让 agent 别碰某些文件，用 <code>.kiroignore</code>（gitignore 风格）排除。</p>
             <p><strong>索引会不会上传到云端：官方未说明。</strong> （已查 codebase indexing 与 how-kiro-works 两页。）</p></dd>
         </div>
         <div class="axis">
@@ -170,8 +170,8 @@
           <dt><span data-zh>上下文与记忆</span><span data-en>Context & memory</span></dt>
           <dd><p><strong>Specs 是它的招牌。</strong> 每个 spec 生成三份文件，走「需求 → 设计 → 任务」：</p>
             <ul><li><code>requirements.md</code>（或 <code>bugfix.md</code>）</li><li><code>design.md</code></li><li><code>tasks.md</code> —— 支持按依赖图分波并行执行</li></ul>
-            <p><strong>Steering 提供持久的项目上下文</strong>，放在两个位置：工作区 <code>.kiro/steering/</code>、 全局 <code>~/.kiro/steering/</code>。内置 product / tech / structure 三份基础文件， 支持 always / fileMatch / manual / auto 四种 inclusion 模式，并兼容 <code>AGENTS.md</code>。</p>
-            <p>其它上下文相关能力：subagents（各自独立上下文窗口）· compaction （自动摘要旧历史，<strong>单向不可回滚</strong>）· checkpoints / rewind · <code>/sessions</code> 会话管理 · CLI 里实验性的 knowledge 库（语义检索）。</p>
+            <p><strong>Steering 提供持久的项目上下文</strong>。它放在两个位置：工作区 <code>.kiro/steering/</code>、 全局 <code>~/.kiro/steering/</code>。内置 product / tech / structure 三份基础文件。 支持 always / fileMatch / manual / auto 四种 inclusion 模式，并兼容 <code>AGENTS.md</code>。</p>
+            <p>其它上下文相关能力：subagents（各自独立上下文窗口）。 另有 compaction。 （自动摘要旧历史，<strong>单向不可回滚</strong>）· checkpoints / rewind · <code>/sessions</code> 做会话管理。CLI 里另有实验性的 knowledge 库（语义检索）。</p>
             <p><strong>上下文窗口的具体数值，官方 docs 没有单列。</strong> （已查 compaction 与 models 两页。）</p></dd>
         </div>
         <div class="axis">
@@ -180,15 +180,15 @@
             <p>官方列出的 capability：</p>
             <ul><li>文件：<code>fs_read</code> / <code>fs_write</code></li><li>执行：<code>shell</code> / <code>sandbox_network</code></li><li>联网：<code>web_fetch</code> / <code>web_search</code></li><li>扩展：<code>mcp</code> / <code>subagent</code> / <code>skill</code> / <code>power</code></li><li>其它：<code>context</code> / <code>diagnostics</code></li></ul>
             <p>作用域共六个：Kiro 硬编码、administration、user、workspace、agent、session。</p>
-            <p>IDE 另有 Agent Autonomy 的 Autopilot / Supervised 两档。 <strong>工作区默认不被信任</strong> —— 信任之前不加载仓库内的 agents / steering / MCP / Skills。 <strong>headless 模式下，每个 <code>ask</code> 都按 <code>deny</code> 处理。</strong></p>
+            <p>IDE 另有 Agent Autonomy 的 Autopilot / Supervised 两档。 <strong>工作区默认不被信任</strong>。信任之前不加载仓库内的 agents、steering、MCP、Skills。 <strong>headless 模式下，每个 <code>ask</code> 都按 <code>deny</code> 处理。</strong></p>
             <p><strong>官方 permissions 页原文</strong>：capability-based，&quot;replacing older binary trust models&quot;</p></dd>
         </div>
         <div class="axis">
           <dt><span data-zh>适合什么任务</span><span data-en>Best for</span></dt>
           <dd><p>适合三类人：</p>
             <ul><li>在 AWS 生态里做正式工程交付、要「先出 spec 再实现」的团队</li><li><strong>需要云端会话在关机后继续跑的人</strong>（Cloud sessions，最多 10 并发）</li><li>想把 steering 与权限规则<strong>随仓库分发</strong>的团队（<code>.kiro/</code> 可提交，跨 surface 一致）</li></ul>
-            <p>想低量试用的话，Free 档够用：每月 50 credits，限开放权重模型与 Sonnet 4.5。</p>
-            <p><strong>不适合</strong>两类人：想接自有 API Key 或跑本地模型的（官方 models 与 pricing 两页都没有 BYOK）；以及要求额度口径透明的重度用户 —— credit 按模型倍数消耗， 官方没给「固定请求数」的换算。</p></dd>
+            <p>想低量试用的话，Free 档够用。每月 50 credits，限开放权重模型与 Sonnet 4.5。</p>
+            <p><strong>不适合</strong>两类人。一是想接自有 API Key 或跑本地模型的。官方 models 与 pricing 两页都没有 BYOK 说明。二是要求额度口径透明的重度用户。credit 按模型倍数消耗， 官方没给「固定请求数」的换算。</p></dd>
         </div>
       </dl>
 

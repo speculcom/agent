@@ -4,18 +4,18 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Cline — Agents | 投机取巧</title>
-  <meta name="description" content="Cline（Cline Bot）：本分区唯一三形态全覆盖的对象——CLI、Desktop App、VS Code 扩展共享同一开源核心，且模型自选。" />
+  <meta name="description" content="Cline（Cline Bot）：本分区唯一三形态全覆盖的对象。CLI、Desktop App、VS Code 扩展共享同一开源核心。模型也是自选的。" />
   <link rel="canonical" href="https://agent.specul.com/cline.html" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Cline" />
   <meta property="og:url" content="https://agent.specul.com/cline.html" />
   <meta property="og:title" content="Cline — Agents | 投机取巧" />
-  <meta property="og:description" content="Cline（Cline Bot）：本分区唯一三形态全覆盖的对象——CLI、Desktop App、VS Code 扩展共享同一开源核心，且模型自选。" />
+  <meta property="og:description" content="Cline（Cline Bot）：本分区唯一三形态全覆盖的对象。CLI、Desktop App、VS Code 扩展共享同一开源核心。模型也是自选的。" />
   <meta name="theme-color" content="#16121f" />
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%238b7cf8'/%3E%3Cstop offset='1' stop-color='%2322d3c5'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='48' height='48' rx='12' fill='%2305080f'/%3E%3Cpath d='M14 32 L24 12 L34 32' fill='none' stroke='url(%23g)' stroke-width='2.4' stroke-linejoin='round'/%3E%3Ccircle cx='24' cy='27' r='2.4' fill='%2322d3c5'/%3E%3C/svg%3E" />
   <link rel="stylesheet" href="brand.css" />
   <link rel="stylesheet" href="site.css" />
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Cline","applicationCategory":"DeveloperApplication","url":"https://docs.cline.bot","sameAs":"https://github.com/cline/cline","description":"本分区唯一三形态全覆盖的对象——CLI、Desktop App、VS Code 扩展共享同一开源核心，且模型自选。","dateModified":"2026-10-08"}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Cline","applicationCategory":"DeveloperApplication","url":"https://docs.cline.bot","sameAs":"https://github.com/cline/cline","description":"本分区唯一三形态全覆盖的对象。CLI、Desktop App、VS Code 扩展共享同一开源核心。模型也是自选的。","dateModified":"2026-10-08"}</script>
 </head>
 <!-- B6（2026-10-09）：--accent 原先在这里被**内联到 body 上**（style="--accent:X"），
      同时头部又写了 :root{--accent:X} —— 两处同一份值，冗余。
@@ -108,11 +108,11 @@
         <span class="badge"><span data-zh>核验</span><span data-en>Checked</span> 2026-10-08</span>
       </div>
 
-            <div class="panel-lead"><span data-zh><p><strong>本分区唯一三形态全覆盖的对象</strong>——CLI、Desktop App、VS Code 扩展共享同一开源核心，且模型自选。</p></span><span data-en><p><strong>The only object here covering all three forms</strong> — CLI, desktop app and VS Code extension share one open-source core, and the model is selectable.</p></span></div>
+            <div class="panel-lead"><span data-zh><p><strong>本分区唯一三形态全覆盖的对象</strong>。CLI、Desktop App、VS Code 扩展共享同一开源核心。模型也是自选的。</p></span><span data-en><p><strong>The only object here covering all three forms</strong> — CLI, desktop app and VS Code extension share one open-source core, and the model is selectable.</p></span></div>
 
             <div class="panel is-slim">
         <h2><span data-zh>适合与不适合</span><span data-en>When to use it, when not to</span></h2>
-<span data-zh>        <div><p>需要同一工具覆盖编辑器、终端、桌面三种工作形态的用户。 需要模型自选（不绑定单一厂商）的人。 需要 CI/CD 集成（CLI headless）的人。 需要「改动可审查、可回滚」保证的人——每次编辑以 diff 呈现 + checkpoint 整体撤销。 需要周期性自动化的人（cron 调度，重启后仍生效）。</p></div>
+<span data-zh>        <div><p>需要同一工具覆盖编辑器、终端、桌面三种工作形态的用户。 需要模型自选（不绑定单一厂商）的人。 需要 CI/CD 集成（CLI headless）的人。 需要「改动可审查、可回滚」保证的人。每次编辑以 diff 呈现，checkpoint 可整体撤销。 需要周期性自动化的人（cron 调度，重启后仍生效）。</p></div>
         <div class="warn-p"><p><strong>不适合</strong>要求「审批默认最严」的场景—— CLI / headless 默认 <code>--auto-approve true</code> 全程放行， 要收紧得显式传 <code>--auto-approve false</code>（或用 PreToolUse hook 拦命令）。</p></div></span><span data-en>        <div><p>Users who need one tool across editor, terminal and desktop. People who need model choice (not locked to one vendor). People who need CI/CD integration (CLI headless). People who need reviewable, revertible changes — every edit appears as a diff plus a checkpoint to undo wholesale. People who need periodic automation (cron scheduling that survives restarts).</p></div>
         <div class="warn-p"><p><strong>Not a fit for</strong> requiring approval to behave identically across all forms — the extension form confirms human-in-the-loop, but behaviour under CLI headless was not verified.</p></div></span>
       </div>
@@ -125,7 +125,7 @@
       <dl class="axes">
         <div class="axis">
           <dt><span data-zh>模型与开放条件</span><span data-en>Model & openness</span></dt>
-          <dd><p><strong>provider 由你自选，官方给出 30+ 家清单，以自带 API key（BYOK）为主。</strong></p>
+          <dd><p><strong>provider 由你自选。官方给出 30+ 家清单，以自带 API key（BYOK）为主。</strong></p>
             <p>官方 Model Selection Guide 的 provider 表列出：</p>
             <ul><li><strong>Cline</strong> —— 免 API key，登录即用</li><li><strong>OpenRouter</strong> / <strong>Anthropic</strong> / <strong>OpenAI</strong></li><li><strong>OpenAI Codex</strong> —— 直接用 ChatGPT 订阅，无需 API key</li><li><strong>Google Gemini</strong> / <strong>DeepSeek</strong> / <strong>Alibaba Qwen</strong> / <strong>Moonshot</strong> / <strong>Cerebras</strong></li><li><strong>AWS Bedrock</strong></li><li><strong>Ollama</strong> —— 本地模型</li></ul>
             <p>官方另有「all 30+ supported providers」页，还含 xAI Grok、Mistral、Groq、 Together、Hugging Face、Baseten、SambaNova、Nebius 等。</p>
@@ -181,9 +181,9 @@
           <dd><p><strong>两级审批设计，是本站里最细的一套。</strong></p>
             <p><strong>第一级是 Plan / Act 双模式。</strong> Plan 模式下 Cline 探索代码库、提出澄清问题、 列出策略；对齐之后切到 Act 模式执行计划。</p>
             <p><strong>第二级是「每次文件编辑与终端命令都需要批准」</strong>，也可以切到 auto-approve 让它自主运行。VS Code 扩展形态的表述是<strong>「human-in-the-loop approval」</strong>。</p>
-            <p>⚠ <strong>但 CLI / headless 的默认行为是相反的，这点必须知道</strong>（已核官方 CLI Overview 与 CLI Reference）：</p>
+            <p>⚠ <strong>但 CLI / headless 的默认行为是相反的。这点必须知道</strong> （已核官方 CLI Overview 与 CLI Reference）：</p>
             <ul><li><code>--auto-approve &lt;boolean&gt;</code> <strong>默认 true</strong> —— 即默认放行工具</li><li><code>--auto-approve false</code> 时，每个工具调用前都需批准</li><li><code>--yolo</code> 跳过全部审批</li><li><strong>ACP（编辑器集成）模式默认相反</strong>，为 false</li></ul>
-            <p>另：<strong>CLI 没有 shell 命令的允许/拒绝清单</strong> —— 官方建议用 PreToolUse hook 拦截。</p>
+            <p>另：<strong>CLI 没有 shell 命令的允许/拒绝清单</strong>。官方建议用 PreToolUse hook 拦截。</p>
             <p><strong>CLI 提示语原文</strong>：Default to start in act mode with auto-approve enabled <strong>VS Code 扩展表述</strong>：use tools with human-in-the-loop approval</p></dd>
         </div>
         <div class="axis">
@@ -261,7 +261,7 @@
             <div class="panel is-slim">
         <h2>三种形态（README 明确列出）</h2>
         <div class="tbl-wrap"><table><thead><tr><th>形态</th><th>关键能力</th></tr></thead><tbody><tr><td><strong>CLI</strong></td><td><code>npm i -g cline</code>；交互式对话或<strong>完全 headless</strong>，用于 CI/CD 与脚本</td></tr><tr><td><strong>Desktop App</strong></td><td>macOS 与 Windows 原生应用；<strong>在任意文件夹运行 agent session</strong>；<strong>定时任务</strong>；管理 models / plugins / <strong>MCP servers</strong></td></tr><tr><td><strong>VS Code 扩展</strong></td><td>创建文件、执行命令、浏览网页、使用工具，<strong>human-in-the-loop approval</strong></td></tr></tbody></table></div>
-            <p><strong>这个三形态覆盖在本分区里是独一份</strong>—— 其他对象要么是 IDE + 扩展（Copilot），要么是编辑器单一形态（Zed），要么是 CLI 为主（Aider）。</p>
+            <p><strong>这个三形态覆盖在本分区里是独一份</strong>—— 其他对象要么是 IDE + 扩展（Copilot），要么是编辑器单一形态（Zed）。Aider 则是 CLI 为主。</p>
             <p><strong>对用户意味着</strong>：可以在编辑器里用、可以在终端里跑、可以在桌面端定时跑， 同一套核心，同一份配置习惯。</p>
       </div>
       <div class="panel is-slim">
@@ -276,7 +276,7 @@
         <p>VS Code 扩展形态的 README 原文：</p>
             <p>``<code> use tools with human-in-the-loop approval </code>``</p>
             <p><strong>这是本分区里少见的明确表述</strong>—— 多数工具不会在 README 首屏就说明工具执行需要人工批准。</p>
-            <p><strong>CLI / headless 的审批口径已核到</strong>（官方 CLI Overview 与 CLI Reference）： 提示语写 <strong>&quot;Default to start in act mode with auto-approve enabled&quot;</strong>， <code>--auto-approve &lt;boolean&gt;</code> <strong>默认 true</strong>——headless 运行默认放行工具， <code>--auto-approve false</code> 才改为每次工具调用前需批准，<code>--yolo</code> 跳过全部审批； ACP（编辑器集成）模式默认相反，为 false。 另：CLI 无 shell 命令允许/拒绝清单，官方建议用 PreToolUse hook 拦截。</p>
+            <p><strong>CLI / headless 的审批口径已核到</strong>（官方 CLI Overview 与 CLI Reference）： 提示语写 <strong>&quot;Default to start in act mode with auto-approve enabled&quot;</strong>， <code>--auto-approve &lt;boolean&gt;</code> <strong>默认 true</strong>——headless 运行默认放行工具， <code>--auto-approve false</code> 才改为每次工具调用前需批准。<code>--yolo</code> 跳过全部审批。 ACP（编辑器集成）模式默认相反，为 false。 另：CLI 无 shell 命令允许/拒绝清单。官方建议用 PreToolUse hook 拦截。</p>
             <p><strong>所以「三形态审批一致」并不成立</strong>：扩展形态默认要人工批准， CLI 默认自主放行——跨形态使用时必须按 <code>--auto-approve</code> 显式对齐。</p>
       </div>
       <div class="panel is-slim">

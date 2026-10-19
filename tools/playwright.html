@@ -4,18 +4,18 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Playwright MCP Server — Tools | 投机取巧</title>
-  <meta name="description" content="Playwright MCP Server（Microsoft）：微软维护的浏览器自动化 server，用无障碍树而非截图驱动——不需要视觉模型，输出是结构化快照。" />
+  <meta name="description" content="Playwright MCP Server（Microsoft）：微软维护的浏览器自动化 server。它用无障碍树而非截图驱动，不需要视觉模型。输出是结构化快照。" />
   <link rel="canonical" href="https://agent.specul.com/tools/playwright.html" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Playwright MCP Server" />
   <meta property="og:url" content="https://agent.specul.com/tools/playwright.html" />
   <meta property="og:title" content="Playwright MCP Server — Tools | 投机取巧" />
-  <meta property="og:description" content="Playwright MCP Server（Microsoft）：微软维护的浏览器自动化 server，用无障碍树而非截图驱动——不需要视觉模型，输出是结构化快照。" />
+  <meta property="og:description" content="Playwright MCP Server（Microsoft）：微软维护的浏览器自动化 server。它用无障碍树而非截图驱动，不需要视觉模型。输出是结构化快照。" />
   <meta name="theme-color" content="#16121f" />
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%238b7cf8'/%3E%3Cstop offset='1' stop-color='%2322d3c5'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='48' height='48' rx='12' fill='%2305080f'/%3E%3Cpath d='M14 32 L24 12 L34 32' fill='none' stroke='url(%23g)' stroke-width='2.4' stroke-linejoin='round'/%3E%3Ccircle cx='24' cy='27' r='2.4' fill='%2322d3c5'/%3E%3C/svg%3E" />
   <link rel="stylesheet" href="../brand.css" />
   <link rel="stylesheet" href="../site.css" />
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Playwright MCP Server","applicationCategory":"DeveloperApplication","url":"https://github.com/microsoft/playwright-mcp","sameAs":"https://github.com/microsoft/playwright-mcp","description":"微软维护的浏览器自动化 server，用无障碍树而非截图驱动——不需要视觉模型，输出是结构化快照。","dateModified":"2026-10-08"}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Playwright MCP Server","applicationCategory":"DeveloperApplication","url":"https://github.com/microsoft/playwright-mcp","sameAs":"https://github.com/microsoft/playwright-mcp","description":"微软维护的浏览器自动化 server。它用无障碍树而非截图驱动，不需要视觉模型。输出是结构化快照。","dateModified":"2026-10-08"}</script>
 </head>
 <!-- B6（2026-10-09）：--accent 原先在这里被**内联到 body 上**（style="--accent:X"），
      同时头部又写了 :root{--accent:X} —— 两处同一份值，冗余。
@@ -108,7 +108,7 @@
         <span class="badge"><span data-zh>核验</span><span data-en>Checked</span> 2026-10-08</span>
       </div>
 
-            <div class="panel-lead"><span data-zh><p>微软维护的浏览器自动化 server，<strong>用无障碍树而非截图驱动</strong>——不需要视觉模型，输出是结构化快照。</p></span><span data-en><p>A browser automation server maintained by Microsoft, <strong>driven by the accessibility tree rather than screenshots</strong> — no vision model needed, and the output is a structured snapshot.</p></span></div>
+            <div class="panel-lead"><span data-zh><p>微软维护的浏览器自动化 server。<strong>它用无障碍树而非截图驱动</strong>，不需要视觉模型。输出是结构化快照。</p></span><span data-en><p>A browser automation server maintained by Microsoft, <strong>driven by the accessibility tree rather than screenshots</strong> — no vision model needed, and the output is a structured snapshot.</p></span></div>
 
             <div class="panel is-slim">
         <h2><span data-zh>适合与不适合</span><span data-en>When to use it, when not to</span></h2>
@@ -130,7 +130,7 @@
         </div>
         <div class="axis">
           <dt><span data-zh>运行位置</span><span data-en>Where it runs</span></dt>
-          <dd><p>本地 Node.js 进程（需 Node.js 18+），通过 stdio 通信。 也提供 HTTP endpoint 模式与浏览器扩展模式（Edge / Chrome）。 默认有头模式，可用 --headless 切换。</p></dd>
+          <dd><p>本地 Node.js 进程（需 Node.js 18+），通过 stdio 通信。 它也提供 HTTP endpoint 模式。另有浏览器扩展模式（Edge / Chrome）。 默认有头模式，可用 --headless 切换。</p></dd>
         </div>
         <div class="axis">
           <dt><span data-zh>本地文件</span><span data-en>Local files</span></dt>
@@ -142,7 +142,7 @@
         </div>
         <div class="axis">
           <dt><span data-zh>工具与扩展</span><span data-en>Tools & extensions</span></dt>
-          <dd><p>提供完整的浏览器自动化工具集，<strong>本站已按官方 README 逐条核对：共 72 个工具</strong> （2026-10-08）：</p>
+          <dd><p>它提供完整的浏览器自动化工具集。<strong>本站已按官方 README 逐条核对，共 72 个工具</strong> （2026-10-08）：</p>
             <ul><li>导航与标签页</li><li>点击 / 拖放 / 悬停</li><li>表单与键盘输入</li><li>无障碍树快照（snapshot）</li><li>截图与 PDF</li><li>网络请求与路由（route / unroute）</li><li>Cookie 与 localStorage / sessionStorage 读写</li><li>文件上传</li><li>对话框处理</li><li>视频录制与 tracing（start / stop）、以及 verify_* 断言组等</li></ul>
             <p>输出以无障碍树结构为主，是结构化数据，可直接消费。</p></dd>
         </div>
@@ -164,12 +164,12 @@
         <div class="axis">
           <dt><span data-zh>传输方式</span><span data-en>Transport</span></dt>
           <dd><p>支持 <strong>stdio</strong>，另提供 <strong>HTTP endpoint</strong> 模式（--endpoint） 与浏览器扩展连接模式（--extension，需装 Playwright 扩展，仅 Edge / Chrome）。</p>
-            <p>--shared-browser-context 可让多个 HTTP 客户端共用同一浏览器上下文。</p></dd>
+            <p>--shared-browser-context 用于共享浏览器上下文。 多个 HTTP 客户端可共用同一上下文。</p></dd>
         </div>
         <div class="axis">
           <dt><span data-zh>认证机制</span><span data-en>Authentication</span></dt>
           <dd><p>stdio 形态无独立认证层，继承客户端用户权限。</p>
-            <p><strong>HTTP 模式（2026-10-08 核验官方 README）</strong>：选项表没有 token / auth 相关参数，Docker 示例直接以 <code>--host 0.0.0.0</code> 裸监听；官方明确声明</p>
+            <p><strong>HTTP 模式（2026-10-08 核验官方 README）</strong>：选项表没有 token / auth 相关参数。Docker 示例直接以 <code>--host 0.0.0.0</code> 裸监听。官方明确声明</p>
             <p>“Playwright MCP is <strong>not</strong> a security boundary”，要求按 MCP 安全最佳 实践自行加固（反向代理 / 网络层）。<strong>认证要自己加，别默认它有。</strong></p></dd>
         </div>
         <div class="axis">
@@ -264,12 +264,12 @@
       <div class="panel is-slim">
         <h2>配置项与安全相关性</h2>
         <div class="tbl-wrap"><table><thead><tr><th>参数</th><th>默认</th><th>安全影响</th></tr></thead><tbody><tr><td><code>--allowed-origins</code></td><td><strong>放行全部</strong></td><td>官方声明不构成安全边界</td></tr><tr><td><code>--blocked-origins</code></td><td>未设置</td><td>黑名单在白名单前评估；单独使用时未匹配仍放行</td></tr><tr><td><code>--grant-permissions</code></td><td>无</td><td>可授予 geolocation / clipboard-read / clipboard-write</td></tr><tr><td><code>--isolated</code></td><td>关</td><td>开启后 profile 仅存内存，不落盘</td></tr><tr><td><code>--headless</code></td><td>关（有头）</td><td>影响 idle-timeout 行为</td></tr></tbody></table></div>
-            <p><strong><code>--isolated</code> 是这里最值得注意的安全选项</strong>——它让浏览器 profile 不落盘， 适合处理敏感登录态的场景。</p>
+            <p><strong><code>--isolated</code> 是这里最值得注意的安全选项</strong>。它让浏览器 profile 不落盘。 它适合处理敏感登录态的场景。</p>
       </div>
       <div class="panel is-slim">
         <h2>浏览器生命周期</h2>
         <p>``<code> --idle-timeout：空闲多少毫秒后关闭浏览器，下次工具调用会重新拉起。 headless 默认 1 小时 headed    默认永不关闭 0         禁用该行为 </code>``</p>
-            <p><strong>这个默认值差异很重要</strong>：headless 会自动关（省资源），headed 常驻（保持登录态）。 如果你依赖登录状态，headed 模式反而更省事。</p>
+            <p><strong>这个默认值差异很重要</strong>。headless 会自动关（省资源）。headed 常驻（保持登录态）。 如果你依赖登录状态，headed 模式反而更省事。</p>
       </div>
       <div class="panel is-slim">
         <h2>能力边界</h2>

@@ -180,7 +180,7 @@
             <a class="more" href="./claude-agent-sdk.html" aria-label="Claude Agent SDK 详情"><span data-zh>详情 →</span><span data-en>Details →</span></a>
           </div>
         </article>
-        <article class="card" style="--card-accent:#10A37F" data-track="harness" data-family="coding-base" data-conf="partial" data-done="8" data-total="8" data-name="Codex SDK" data-blob="codex sdk openai **「把 codex cli 变成 node 进程里可驱动的对象」** —— 官方 readme 首句就是
+        <article class="card" style="--card-accent:#10A37F" data-track="harness" data-family="coding-base" data-conf="partial" data-done="8" data-total="8" data-name="Codex SDK" data-blob="codex sdk openai **「把 codex cli 变成 node 进程里可驱动的对象」**。官方 readme 首句就是
 「embed the codex agent in your workflows and apps」，第二句划清了形态：
 &gt; the typescript sdk **wraps** the `codex` cli from `@openai/codex`.
 &gt; it **spawns the cli** and exchanges jsonl events over stdin/stdout.">
@@ -191,7 +191,7 @@
               <div class="vendor">OpenAI</div>
             </div>
           </div>
-          <p class="tagline"><span data-zh>「把 Codex CLI 变成 Node 进程里可驱动的对象」 —— 官方 README 首句就是 「Embed the C</span><span data-en>"Turns the Codex CLI into an object you can drive inside a Nod</span></p>   // line 已是双节点，勿走 esc -->
+          <p class="tagline"><span data-zh>「把 Codex CLI 变成 Node 进程里可驱动的对象」。官方 README 首句就是 「Embed the Code</span><span data-en>"Turns the Codex CLI into an object you can drive inside a Nod</span></p>   // line 已是双节点，勿走 esc -->
           <div class="card-foot">
             <span class="t-state is-warn"><span data-zh>部分核验</span><span data-en>Partly verified</span></span>
             <a class="more" href="./codex-sdk.html" aria-label="Codex SDK 详情"><span data-zh>详情 →</span><span data-en>Details →</span></a>
@@ -242,8 +242,8 @@
 
 官方自述是 **&quot;barebones library for agents that think in code&quot;**（仓库 description 原文）。
 
-它最核心的设计是 **code-as-action**：默认的 `codeagent` 让 llm 把动作写成并执行 python 代码，
-而不是输出 json 工具调用。">
+它最核心的设计是 **code-as-action**。默认的 `codeagent` 让 llm 把动作写成 python 代码，
+并执行它。它不输出 json 工具调用。">
           <div class="card-top">
             <div class="mark" aria-hidden="true">SM</div>
             <div class="card-id">
@@ -300,7 +300,7 @@ readme 也自述维护方：
             <a class="more" href="./ag2.html" aria-label="AG2 详情"><span data-zh>详情 →</span><span data-en>Details →</span></a>
           </div>
         </article>
-        <article class="card" style="--card-accent:#EB6658" data-track="harness" data-family="orchestration" data-conf="partial" data-done="5" data-total="8" data-name="CrewAI" data-blob="crewai crewai inc **crewai 是一个用「角色分工」和「业务流程」两套比喻来编排多 agent 的 python 框架。**
+        <article class="card" style="--card-accent:#EB6658" data-track="harness" data-family="orchestration" data-conf="partial" data-done="5" data-total="8" data-name="CrewAI" data-blob="crewai crewai inc **crewai 是一个 python 框架。它用「角色分工」和「业务流程」两套比喻来编排多 agent。**
 官方自述是 &quot;framework for orchestrating **role-playing**, autonomous ai agents.&quot;
 
 **「role-playing」这个词容易让人低估它。** 同一份 readme 里也写着 production-grade，
@@ -314,7 +314,7 @@ readme 也自述维护方：
               <div class="vendor">CrewAI Inc</div>
             </div>
           </div>
-          <p class="tagline"><span data-zh>CrewAI 是一个用「角色分工」和「业务流程」两套比喻来编排多 agent 的 Python 框架。 官方自述是 "Fra</span><span data-en>"Organises multi-agent collaboration through role division and</span></p>   // line 已是双节点，勿走 esc -->
+          <p class="tagline"><span data-zh>CrewAI 是一个 Python 框架。它用「角色分工」和「业务流程」两套比喻来编排多 agent。 官方自述是 "Fra</span><span data-en>"Organises multi-agent collaboration through role division and</span></p>   // line 已是双节点，勿走 esc -->
           <div class="card-foot">
             <span class="t-state is-warn"><span data-zh>部分核验</span><span data-en>Partly verified</span></span>
             <a class="more" href="./crewai.html" aria-label="CrewAI 详情"><span data-zh>详情 →</span><span data-en>Details →</span></a>
@@ -535,10 +535,10 @@ langgraph 自认 low-level、不预置工具与文件系统；mastra 走 batteri
             <a class="more" href="./hermes-agent.html" aria-label="Hermes Agent 详情"><span data-zh>详情 →</span><span data-en>Details →</span></a>
           </div>
         </article>
-        <article class="card" style="--card-accent:#F97316" data-track="harness" data-family="general-harness" data-conf="partial" data-done="8" data-total="8" data-name="OpenHands Agent Canvas" data-blob="openhands agent canvas openhands（all-hands-ai） **它是个自托管的 agent 控制中心** —— 官方 readme 现在管它叫 **agent canvas**。
+        <article class="card" style="--card-accent:#F97316" data-track="harness" data-family="general-harness" data-conf="partial" data-done="8" data-total="8" data-name="OpenHands Agent Canvas" data-blob="openhands agent canvas openhands（all-hands-ai） **它是个自托管的 agent 控制中心**。官方 readme 现在管它叫 **agent canvas**。
 
 它带的是一整套栈：web gui、terminal ui、cli、rest api 都在里面。
-它管的 agent 不止自家那一个，codex、claude code、gemini 都能挂上去跑。
+它管的 agent 不止自家那一个。codex、claude code、gemini 都能挂上去跑。
 
 &gt; 官方定位原文：the self-hosted developer control center for coding agents and automations.
 &gt; run openhands, claude code, codex, gemini, or **any acp-compatible agent**
@@ -550,7 +550,7 @@ langgraph 自认 low-level、不预置工具与文件系统；mastra 走 batteri
               <div class="vendor">OpenHands（All-Hands-AI）</div>
             </div>
           </div>
-          <p class="tagline"><span data-zh>它是个自托管的 agent 控制中心 —— 官方 README 现在管它叫 Agent Canvas。 它带的是一整套栈：W</span><span data-en>It is a self-hosted control centre for agents — the official R</span></p>   // line 已是双节点，勿走 esc -->
+          <p class="tagline"><span data-zh>它是个自托管的 agent 控制中心。官方 README 现在管它叫 Agent Canvas。 它带的是一整套栈：Web </span><span data-en>It is a self-hosted control centre for agents — the official R</span></p>   // line 已是双节点，勿走 esc -->
           <div class="card-foot">
             <span class="t-state is-warn"><span data-zh>部分核验</span><span data-en>Partly verified</span></span>
             <a class="more" href="./openhands.html" aria-label="OpenHands Agent Canvas 详情"><span data-zh>详情 →</span><span data-en>Details →</span></a>

@@ -4,18 +4,18 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Filesystem MCP Server — Tools | 投机取巧</title>
-  <meta name="description" content="Filesystem MCP Server（Model Context Protocol）：MCP 官方 reference server 里的文件操作实现，强制显式声明允许目录，不允许静默访问全盘。" />
+  <meta name="description" content="Filesystem MCP Server（Model Context Protocol）：MCP 官方 reference server 里的文件操作实现。它强制显式声明允许目录，不允许静默访问全盘。" />
   <link rel="canonical" href="https://agent.specul.com/tools/filesystem.html" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Filesystem MCP Server" />
   <meta property="og:url" content="https://agent.specul.com/tools/filesystem.html" />
   <meta property="og:title" content="Filesystem MCP Server — Tools | 投机取巧" />
-  <meta property="og:description" content="Filesystem MCP Server（Model Context Protocol）：MCP 官方 reference server 里的文件操作实现，强制显式声明允许目录，不允许静默访问全盘。" />
+  <meta property="og:description" content="Filesystem MCP Server（Model Context Protocol）：MCP 官方 reference server 里的文件操作实现。它强制显式声明允许目录，不允许静默访问全盘。" />
   <meta name="theme-color" content="#16121f" />
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%238b7cf8'/%3E%3Cstop offset='1' stop-color='%2322d3c5'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='48' height='48' rx='12' fill='%2305080f'/%3E%3Cpath d='M14 32 L24 12 L34 32' fill='none' stroke='url(%23g)' stroke-width='2.4' stroke-linejoin='round'/%3E%3Ccircle cx='24' cy='27' r='2.4' fill='%2322d3c5'/%3E%3C/svg%3E" />
   <link rel="stylesheet" href="../brand.css" />
   <link rel="stylesheet" href="../site.css" />
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Filesystem MCP Server","applicationCategory":"DeveloperApplication","url":"https://www.npmjs.com/package/@modelcontextprotocol/server-filesystem","sameAs":"https://github.com/modelcontextprotocol/servers/tree/main/src/filesystem","description":"MCP 官方 reference server 里的文件操作实现，强制显式声明允许目录，不允许静默访问全盘。","dateModified":"2026-10-08"}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Filesystem MCP Server","applicationCategory":"DeveloperApplication","url":"https://www.npmjs.com/package/@modelcontextprotocol/server-filesystem","sameAs":"https://github.com/modelcontextprotocol/servers/tree/main/src/filesystem","description":"MCP 官方 reference server 里的文件操作实现。它强制显式声明允许目录，不允许静默访问全盘。","dateModified":"2026-10-08"}</script>
 </head>
 <!-- B6（2026-10-09）：--accent 原先在这里被**内联到 body 上**（style="--accent:X"），
      同时头部又写了 :root{--accent:X} —— 两处同一份值，冗余。
@@ -108,7 +108,7 @@
         <span class="badge"><span data-zh>核验</span><span data-en>Checked</span> 2026-10-08</span>
       </div>
 
-            <div class="panel-lead"><span data-zh><p>MCP 官方 reference server 里的文件操作实现，<strong>强制显式声明允许目录，不允许静默访问全盘</strong>。</p></span><span data-en><p>The file-operation implementation among MCP&#39;s official reference servers, <strong>requiring allowed directories to be declared explicitly, with no silent whole-disk access</strong>.</p></span></div>
+            <div class="panel-lead"><span data-zh><p>MCP 官方 reference server 里的文件操作实现。<strong>它强制显式声明允许目录，不允许静默访问全盘</strong>。</p></span><span data-en><p>The file-operation implementation among MCP&#39;s official reference servers, <strong>requiring allowed directories to be declared explicitly, with no silent whole-disk access</strong>.</p></span></div>
 
             <div class="panel is-slim">
         <h2><span data-zh>适合与不适合</span><span data-en>When to use it, when not to</span></h2>
@@ -163,7 +163,7 @@
         <div class="axis">
           <dt><span data-zh>传输方式</span><span data-en>Transport</span></dt>
           <dd><p>仅 stdio。本地 Node.js 进程，通过标准输入输出通信。</p>
-            <p>官方 README（2026-10-08 全文核验）只给 npx / Docker 两种本地启动方式， 没有远程传输的官方配置；目录控制走命令行参数或 MCP Roots（可动态更新）。</p></dd>
+            <p>官方 README（2026-10-08 全文核验）只给两种本地启动方式。 即 npx 与 Docker。它没有远程传输的官方配置。 目录控制走命令行参数或 MCP Roots（可动态更新）。</p></dd>
         </div>
         <div class="axis">
           <dt><span data-zh>认证机制</span><span data-en>Authentication</span></dt>
@@ -234,16 +234,16 @@
 
             <div class="panel is-slim">
         <h2>变更记录说明</h2>
-        <p><strong>本对象无独立 changelog 页</strong>。变更记录体现在 MCP servers 仓库的 releases 与目录 commit 历史中：</p>
+        <p><strong>本对象无独立 changelog 页</strong>。变更记录看 MCP servers 仓库的 releases 页。目录级改动看该目录的 commit 历史：</p>
             <div class="tbl-wrap"><table><thead><tr><th>日期</th><th>类型</th><th>内容</th></tr></thead><tbody><tr><td>2026-09-03</td><td>fix</td><td>声明 zod 运行时依赖</td></tr><tr><td>2026-08-30</td><td>fix</td><td>拒绝 POSIX 下的 Windows 路径</td></tr><tr><td>2026-08-28</td><td>fix</td><td><code>create_directory</code> 不创建父目录</td></tr></tbody></table></div>
             <p>仓库整体 releases：2026.8.31 / 2026.8.18 / 2026.7.10。</p>
-            <p><strong>注意 08-30 那个修复</strong>——它说明 filesystem server 在不同平台路径语义上出过问题。这是实测时值得关注的点。</p>
+            <p><strong>注意 08-30 那个修复</strong>。它说明 filesystem server 在不同平台路径语义上出过问题。这是实测时值得关注的点。</p>
       </div>
       <div class="panel is-slim">
         <h2>⚠ 生产环境免责声明（适用于全部官方 reference server）</h2>
         <p>MCP servers 仓库 README 原文：</p>
             <blockquote>The servers in this repository are intended as <strong>reference implementations</strong> to demonstrate MCP features and SDK usage. They are meant to serve as educational examples for developers building their own MCP servers, <strong>not as production-ready solutions</strong>. Developers should evaluate their own security requirements and implement appropriate safeguards based on their specific threat model and use case.</blockquote>
-            <p><strong>翻译</strong>：本仓库的 server 是<strong>参考实现</strong>，用于演示 MCP 特性与 SDK 用法， 面向的是正在构建自己 MCP server 的开发者，<strong>不是生产就绪方案</strong>。 使用者需自行评估安全需求并按自身威胁模型实现防护。</p>
+            <p><strong>翻译</strong>：本仓库的 server 是<strong>参考实现</strong>，用于演示 MCP 特性与 SDK 用法。 它面向正在构建自己 MCP server 的开发者，<strong>不是生产就绪方案</strong>。 使用者需自行评估安全需求并按自身威胁模型实现防护。</p>
             <blockquote><strong>注意</strong>：这句话适用于本分区所有官方 reference server， 每个条目的正文都应保留这一提示。</blockquote>
       </div>
       <div class="panel is-slim">

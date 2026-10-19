@@ -154,7 +154,7 @@
             <p><strong>Amp Server</strong> 是 ampcode.com 上的多租户云服务，GCP 托管。 它做认证、线程同步与 LLM 代理。</p>
             <p><strong>线程执行面三分</strong>：本地、<strong>orb</strong>（Amp 在云端为你创建的机器）、 <strong>runner</strong>（你自己的机器，<code>amp --no-tui --runner-id &lt;id&gt;</code>）。</p>
             <p>CLI 用 <code>--executor local|orb|runner:&lt;id&gt;</code> 选执行位置。</p>
-            <p>另有 Web 与 macOS / iOS 应用，同一 agent、同一线程到处可用。</p></dd>
+            <p>另有 Web 与 macOS / iOS 应用。同一 agent、同一线程到处可用。</p></dd>
         </div>
         <div class="axis">
           <dt><span data-zh>本地文件</span><span data-en>Local files</span></dt>
@@ -181,12 +181,12 @@
           <dt><span data-zh>工具与扩展</span><span data-en>Tools & extensions</span></dt>
           <dd><p><strong>内置工具 + 子代理 + 插件 + MCP，四层都有官方页。</strong></p>
             <p><strong>内置工具</strong>：<code>amp tools list</code> 可见的有 <code>Bash</code>、<code>Read</code>、<code>create_file</code>、<code>edit_file</code>。 另有 <code>glob</code>、<code>Grep</code>、<code>web_search</code>、<code>read_web_page</code>、<code>Task</code>、<code>todo_*</code>、<code>undo_edit</code>。</p>
-            <p><strong>子代理 / 工具</strong>：<code>oracle</code>（复杂推理第二意见）、 <strong>Librarian</strong>（跨仓库检索，可读全部公开 GitHub 代码及你的私有仓库）、 <strong>Painter</strong>（GPT Image 生成与编辑）、Search、Read Thread。</p>
-            <p><strong>插件系统</strong>：可写自定义 policy plugin（含 permissions 插件示例）与自定义 agent mode / subagent。</p>
+            <p><strong>子代理 / 工具</strong>：<code>oracle</code>（复杂推理第二意见）、 <strong>Librarian</strong>（跨仓库检索。可读全部公开 GitHub 代码，也可读你的私有仓库）、 <strong>Painter</strong>（GPT Image 生成与编辑）、Search、Read Thread。</p>
+            <p><strong>插件系统</strong>：可写自定义 policy plugin（含 permissions 插件示例）。 也可自定义 agent mode 与 subagent。</p>
             <p><strong>MCP</strong>：本地（<code>amp.mcpServers</code>，command / args / env，stdio）与 远程定义（存 ampcode.com，url / headers）。</p>
             <p>传输含 SSE 与 Streamable。</p>
             <p>认证含自动 <strong>OAuth</strong>、bearer、<strong>Amp ID token</strong>、Workload Identity。</p>
-            <p>官方建议把 MCP server 打包进 <strong>skills</strong>（<code>mcp.json</code>）以保持工具列表精简。</p></dd>
+            <p>官方建议把 MCP server 打包进 <strong>skills</strong>（<code>mcp.json</code>）。这样能保持工具列表精简。</p></dd>
         </div>
         <div class="axis">
           <dt><span data-zh>上下文与记忆</span><span data-en>Context & memory</span></dt>
@@ -207,8 +207,8 @@
             <p><strong>workspace 的 MCP server 需要显式批准。</strong> <code>.amp/settings.json</code> 里的 server 首次检测时提示 <code>awaiting approval</code>，需 <code>amp mcp approve</code>。</p>
             <p>全局设置与 <code>--mcp-config</code> 传的不需要。</p>
             <p><strong>数据面较硬</strong>：官方<strong>自动检测并脱敏</strong>常见密钥。 （AWS / GCP / Azure、GitHub / GitLab、OpenAI / Anthropic、Stripe / Slack / npm 等， 替换为 <code>[REDACTED:amp]</code>），但承认是 best-effort。</p>
-            <p>线程数据存于 ampcode.com（GCP）；<strong>默认不用你的数据训练</strong>（企业档永不可开）。 删除线程后数据 30 天内移除；Enterprise 提供零数据保留（ZDR）。</p>
-            <p><strong>订阅与 BYOK 额度是两回事</strong>：自带 Key / 订阅时无 Amp token 费用。</p></dd>
+            <p>线程数据存于 ampcode.com（GCP）。<strong>默认不用你的数据训练</strong>（企业档永不可开）。 删除线程后数据 30 天内移除；Enterprise 提供零数据保留（ZDR）。</p>
+            <p><strong>订阅与 BYOK 额度是两回事</strong>。自带 Key 或订阅时，无 Amp token 费用。</p></dd>
         </div>
         <div class="axis">
           <dt><span data-zh>适合什么任务</span><span data-en>Best for</span></dt>
@@ -299,7 +299,7 @@
         <h2>核验说明</h2>
         <p><code>confidence: partial</code> 的原因：大部分维度都已从官方页核到。</p>
             <p>具体是运行面、执行面、provider / 模式、MCP 接入、权限与数据面。</p>
-            <p>没核到的是两处：<strong>Individual 档 Megawatt / Gigawatt 两级的具体额度差</strong>， 以及官方定价页「Questions &amp; Answers」问答正文。</p>
+            <p>没核到的是两处。<strong>一是 Individual 档 Megawatt / Gigawatt 两级的具体额度差</strong>， 二是官方定价页「Questions &amp; Answers」问答正文。</p>
             <p>前者官方以切换形式呈现、未页面并列给出；后者本次抓取未展开。故不给 <code>verified</code>。</p>
             <p><strong>两处需标注的官方源不一致</strong>：</p>
             <ul><li>① 安全参考页仍写「不支持 BYOK 与自托管」，与定价页 / news 的 BYOK 口径相反（以定价页与新近 news 为准）</li><li>② 任务给的 npm 包名是 <code>@sourcegraph/amp</code>，而官方安装文档当前给的是 <strong><code>@ampcode/cli</code>（官方标注 not recommended）</strong>，两者以官方文档为准</li></ul>

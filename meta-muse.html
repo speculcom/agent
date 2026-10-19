@@ -4,18 +4,18 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Meta Muse — Agents | 投机取巧</title>
-  <meta name="description" content="Meta Muse（Meta）：唯一一家把「审批权交给另一个 agent」的 —— Muse Secure VM 上跑着两个系统级隔离的东西：干活的 Muse，和否决它的 Sentinel。" />
+  <meta name="description" content="Meta Muse（Meta）：唯一一家把「审批权交给另一个 agent」的。Muse Secure VM 上跑着两个系统级隔离的东西：干活的 Muse，和否决它的 Sentinel。" />
   <link rel="canonical" href="https://agent.specul.com/meta-muse.html" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Meta Muse" />
   <meta property="og:url" content="https://agent.specul.com/meta-muse.html" />
   <meta property="og:title" content="Meta Muse — Agents | 投机取巧" />
-  <meta property="og:description" content="Meta Muse（Meta）：唯一一家把「审批权交给另一个 agent」的 —— Muse Secure VM 上跑着两个系统级隔离的东西：干活的 Muse，和否决它的 Sentinel。" />
+  <meta property="og:description" content="Meta Muse（Meta）：唯一一家把「审批权交给另一个 agent」的。Muse Secure VM 上跑着两个系统级隔离的东西：干活的 Muse，和否决它的 Sentinel。" />
   <meta name="theme-color" content="#16121f" />
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%238b7cf8'/%3E%3Cstop offset='1' stop-color='%2322d3c5'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='48' height='48' rx='12' fill='%2305080f'/%3E%3Cpath d='M14 32 L24 12 L34 32' fill='none' stroke='url(%23g)' stroke-width='2.4' stroke-linejoin='round'/%3E%3Ccircle cx='24' cy='27' r='2.4' fill='%2322d3c5'/%3E%3C/svg%3E" />
   <link rel="stylesheet" href="brand.css" />
   <link rel="stylesheet" href="site.css" />
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Meta Muse","applicationCategory":"DeveloperApplication","url":"https://about.fb.com/news/2026/09/introducing-muse/","sameAs":"https://about.fb.com/news/2026/09/introducing-muse/","description":"唯一一家把「审批权交给另一个 agent」的 —— Muse Secure VM 上跑着两个系统级隔离的东西：干活的 Muse，和否决它的 Sentinel。","dateModified":"2026-10-03"}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Meta Muse","applicationCategory":"DeveloperApplication","url":"https://about.fb.com/news/2026/09/introducing-muse/","sameAs":"https://about.fb.com/news/2026/09/introducing-muse/","description":"唯一一家把「审批权交给另一个 agent」的。Muse Secure VM 上跑着两个系统级隔离的东西：干活的 Muse，和否决它的 Sentinel。","dateModified":"2026-10-03"}</script>
 </head>
 <!-- B6（2026-10-09）：--accent 原先在这里被**内联到 body 上**（style="--accent:X"），
      同时头部又写了 :root{--accent:X} —— 两处同一份值，冗余。
@@ -112,7 +112,7 @@
         <span class="badge"><span data-zh>核验</span><span data-en>Checked</span> 2026-10-03</span>
       </div>
 
-            <div class="panel-lead"><span data-zh><p><strong>唯一一家把「审批权交给另一个 agent」的</strong> —— Muse Secure VM 上跑着两个系统级隔离的东西：干活的 Muse，和否决它的 Sentinel。</p></span><span data-en><p><strong>The only one that hands approval authority to another agent</strong> — two system-isolated things run on the Muse Secure VM: Muse doing the work, and Sentinel able to veto it.</p></span></div>
+            <div class="panel-lead"><span data-zh><p><strong>唯一一家把「审批权交给另一个 agent」的</strong>。Muse Secure VM 上跑着两个系统级隔离的东西：干活的 Muse，和否决它的 Sentinel。</p></span><span data-en><p><strong>The only one that hands approval authority to another agent</strong> — two system-isolated things run on the Muse Secure VM: Muse doing the work, and Sentinel able to veto it.</p></span></div>
 
             <div class="panel is-slim">
         <h2><span data-zh>适合与不适合</span><span data-en>When to use it, when not to</span></h2>
@@ -143,7 +143,7 @@
           <dt><span data-zh>本地文件</span><span data-en>Local files</span></dt>
           <dd><p><strong>它不是为读写你本机文件设计的</strong>，官方全文未提及本地文件系统。</p>
             <p>数据都在 Muse Secure VM 里。</p>
-            <p>官方另有一句针对 app 连接的数据最小化承诺（帮助中心页）： <strong>「例如，连接你的邮件允许 Muse 搜索你的邮件， 但除非你要求，否则它不会下载你的整个收件箱」</strong>。</p>
+            <p>官方另有一句针对 app 连接的数据最小化承诺（帮助中心页）： <strong>「例如，连接你的邮件允许 Muse 搜索你的邮件」「但除非你要求，否则它不会下载你的整个收件箱」</strong>。</p>
             <p><strong>这一句是官方在数据面给出的具体边界，值得单独记。</strong></p></dd>
         </div>
         <div class="axis">
@@ -154,7 +154,7 @@
             <ul><li>任务有进展（状态栏实时显示「Is working」/「Making something」/「Is updating memory」）</li><li>到了定时任务或提醒的时间（助手图标内 <strong>Upcoming</strong> 列出 scheduled tasks 与 reminders，且每个 scheduled task 可单独设审批）</li><li>以及需要你批准的那一刻</li></ul>
             <p>另有一处官方原句用了「proactively」： <strong>官方原文</strong>：&quot;a personal AI agent that proactively helps with people&#39;s goals and suggests ideas&quot; 以及能 <strong>官方原文</strong>：&quot;make suggestions unprompted&quot;。</p>
             <p><strong>触发源不止你发指令</strong> —— 帮助中心 Connector 页写了反向推送： <strong>官方原文</strong>：&quot;Some Connectors can also share information proactively with Muse. For example, calendar Connectors can update Muse automatically when there are changes in your schedule&quot;，且<strong>这类 Connector 会在连接前标明</strong>。</p>
-            <p><strong>后台自主时是只读还是读写，本条给的是机制而非原句</strong>（2026-10-03 补齐）：默认权限档下 <strong>官方原文</strong>：&quot;your Muse will ask for permission before every write action and important read actions&quot; 而 Connector 页写默认态是 <strong>官方原文</strong>：&quot;Muse will not take <strong>many important actions</strong>, like sending an email, without your approval&quot;（注意是 many，不是 every）。</p>
+            <p><strong>后台自主时是只读还是读写？本条给的是机制而非原句</strong>（2026-10-03 补齐）。 默认权限档下 <strong>官方原文</strong>：&quot;your Muse will ask for permission before every write action and important read actions&quot; 而 Connector 页写默认态是 <strong>官方原文</strong>：&quot;Muse will not take <strong>many important actions</strong>, like sending an email, without your approval&quot;（注意是 many，不是 every）。</p>
             <p>两句合起来的后果是明确的：<strong>后台期间读操作照常跑，任何写操作都必须回前台等批准</strong> —— 这正好对上发布页那句 <strong>官方原文</strong>：&quot;comes back ... when it needs approval, like before it sends an email or makes a purchase&quot;。</p>
             <p><strong>这不是官方那句「后台是只读」的原文，是从两处权限条款推出的机制结论</strong>， 与Dot 官方明写只读不同，<strong>不要当成同一句话引用</strong>。</p></dd>
         </div>
@@ -178,7 +178,7 @@
             <p>支持重置，也支持忘掉特定主题（forget skill）。</p>
             <p>官方也提醒残留： <strong>官方原文</strong>：&quot;Muse may still remember information it learned from what you deleted&quot;</p>
             <p><strong>这条限定值得记，删除不等于抹掉已学到的。</strong></p>
-            <p><strong>残留不止删除这一条路径（2026-10-03 补）</strong>：断开 Connector 也不清记忆—— <strong>官方原文</strong>：&quot;Information that Muse previously used to perform tasks with that Connector might still remain in Muse&#39;s memories and your conversation history&quot;。</p>
+            <p><strong>残留不止删除这一条路径（2026-10-03 补）</strong>。断开 Connector 也不清记忆。 <strong>官方原文</strong>：&quot;Information that Muse previously used to perform tasks with that Connector might still remain in Muse&#39;s memories and your conversation history&quot;。</p>
             <p><strong>对比之下 reset 才是硬边界</strong>： <strong>官方原文</strong>：&quot;Resetting Muse permanently deletes all information, chat history, files and active tasks. <strong>This cannot be undone.</strong>&quot;</p>
             <p>⚠ <strong>上下文窗口大小官方没有公布</strong>，未见任何官方数字。</p>
             <p>另有一处工程细节官方提到但未展开：VM <strong>官方原文</strong>：&quot;maintains backups to help protect your agent&#39;s history from data loss&quot;</p>
@@ -195,16 +195,16 @@
             <p><strong>凭据隔离</strong>： <strong>官方原文</strong>：&quot;Muse has no visibility into people&#39;s passwords or payment methods. Any credentials a person shares with Muse go into secure storage&quot;， 且 <strong>官方原文</strong>：&quot;Muse also cannot see passwords a person types into the browser themselves&quot;；</p>
             <p>帮助中心把机制写得更细：用凭据前会过三道检查（连的是不是预期服务、 是不是你授权的、你有没有给过这类动作的许可）；</p>
             <p><strong>训练开关</strong>： <strong>官方原文</strong>：&quot;People can also opt out of their interactions being used to train Meta&#39;s AI models&quot; （帮助中心页补充：设置默认开，可随时改，改动也适用于历史交互； 开启时仍会移除姓名/邮箱/电话/SSN 等部分身份信息，并与账号脱钩）；</p>
-            <p><strong>不与广告系统共享</strong>：Muse 官方两处都写了不把对话或 VM 数据给 Meta 广告系统 （帮助中心页补充：即使 Accounts Center 里绑了其他 Meta 产品也一样）。</p>
+            <p><strong>不与广告系统共享</strong>。Muse 官方两处都写了不把对话或 VM 数据给 Meta 广告系统。 帮助中心页补充：即使 Accounts Center 里绑了其他 Meta 产品也一样。</p>
             <p><strong>⚠ 官方自己承认 prompt injection 未解决（2026-10-03 补，一手措辞）</strong>： <strong>官方原文</strong>：&quot;Websites, emails, files and connected services can contain instructions intended to manipulate an AI agent. This is sometimes called a prompt injection attack. Muse uses multiple protections to help detect and resist these attempts. These include model training, automated detection systems, and limits on the information and services Muse can access during a task.&quot;</p>
             <p><strong>关键一句</strong>： <strong>官方原文</strong>：&quot;Important permission and security checks operate separately from the AI model, meaning that they don&#39;t rely only on Muse recognizing that an instruction may be malicious.&quot;</p>
-            <p>——<strong>官方承认「模型自己认出恶意指令」不足以兜底</strong>，这与 Sentinel 的设计动机一致。</p>
+            <p>——<strong>官方承认「模型自己认出恶意指令」不足以兜底</strong>。这与 Sentinel 的设计动机一致。</p>
             <p>官方也照例写了 <strong>官方原文</strong>：&quot;No automated system is perfect&quot;，并要求用户自行复核活动。</p>
             <p><strong>⚠ Custom Connector 是官方自己标出的风险口（2026-10-03 补）</strong>： 用户可让 Muse 现造一个连接器，官方随即给出警告： <strong>官方原文</strong>：&quot;Meta doesn&#39;t review custom connectors or how they use your information, so grant access with caution and review the provider&#39;s privacy policies.&quot;</p>
             <p>——<strong>这是官方承认存在审查盲区</strong>，评估第三方接入时必须算进去。</p>
             <p>反向的权限收敛也有官方条款： <strong>官方原文</strong>：&quot;Many Connectors can also be set up so that Muse is only able to retrieve data, but not take actions (like sending a calendar invite)&quot;</p>
             <p>——<strong>读-only 连接器是官方提供的降权手段。</strong></p>
-            <p>⚠ 帮助中心页有一处<strong>尚未实现的承诺</strong>：Muse Confidential VM —— 官方写 <strong>官方原文</strong>：&quot;In the future / Later this year&quot;， 即<strong>整台 VM 用只有用户持有的密钥加密、连 Meta 都读不了</strong>，<strong>当前不可用</strong>。</p></dd>
+            <p>⚠ 帮助中心页有一处<strong>尚未实现的承诺</strong>：Muse Confidential VM。 官方写 <strong>官方原文</strong>：&quot;In the future / Later this year&quot;， 即<strong>整台 VM 用只有用户持有的密钥加密、连 Meta 都读不了</strong>，<strong>当前不可用</strong>。</p></dd>
         </div>
         <div class="axis">
           <dt><span data-zh>适合什么任务</span><span data-en>Best for</span></dt>
@@ -273,7 +273,7 @@
             <div class="panel is-slim">
         <h2><span data-zh>实测记录</span><span data-en>Measured runs</span></h2>
         <p>本站尚未完成实测。测试协议见 <a href="https://github.com/speculcom/ai-agent-guide/blob/main/tracks/agents/tasks/_protocol.md" target="_blank" rel="noopener">tasks/_protocol.md</a>。</p>
-            <p><strong>实测建议</strong>：与 OpenAI Dot 做<strong>同题对照</strong>才有意义 —— 两者同期发布、定位相近，差异集中在 <code>permissions</code>（Sentinel vs 自动审核） 与 <code>context</code>（是否默认开训练）。</p>
+            <p><strong>实测建议</strong>：与 OpenAI Dot 做<strong>同题对照</strong>才有意义 —— 两者同期发布、定位相近。差异集中在 <code>permissions</code>（Sentinel vs 自动审核） 与 <code>context</code>（是否默认开训练）。</p>
             <p>这两项都不需要跑基准，只需要读设置页 + 观察行为， 但<strong>要付费订阅才能测</strong>（Muse 目前美国首发）。</p>
       </div>
 
@@ -323,7 +323,7 @@
       <div class="panel is-slim">
         <h2>采集限制</h2>
         <div class="tbl-wrap"><table><thead><tr><th>页面</th><th>状态</th></tr></thead><tbody><tr><td>Meta Newsroom 发布页</td><td>✅ Playwright 取到 7,655 字，九维度均从正文取证</td></tr><tr><td>Help Centre · privacy/safety/security</td><td>✅ <strong>2026-10-03 取到整页正文</strong>（约 2,400 词），<code>permissions</code> / <code>context</code> 引用已逐字复核</td></tr><tr><td>Help Centre · guidance and approval</td><td>✅ <strong>2026-10-03 取到整页正文</strong>（约 1,500 词），审批档位 / 审批选项 / 可逆性出自此页</td></tr><tr><td>Help Centre · how Muse works with Connectors</td><td>✅ <strong>2026-10-03 取到整页正文</strong>（约 900 词），自定义连接器风险出自此页</td></tr><tr><td>Meta AI glasses release notes</td><td>⚠️ 仅用于确认 Muse Spark 跨形态复用与地区表述</td></tr><tr><td>Meta Careers（Muse Spark 技术描述）</td><td>⚠️ 仅取到摘要</td></tr></tbody></table></div>
-            <p><strong>⚠️ 一处取证方式不一致，如实记录</strong>： 三页 Help Centre 均为<strong>检索接口返回的整页正文</strong>（<code>WebFetch</code> 直抓 meta.com 在本机仍失败）。 正文完整、可逐字引用，但<strong>不是本机渲染抓出来的</strong>—— 若要用于正式对外引用，应再复核一次。</p>
+            <p><strong>⚠️ 一处取证方式不一致，如实记录</strong>： 三页 Help Centre 均为<strong>检索接口返回的整页正文</strong>。<code>WebFetch</code> 直抓 meta.com 在本机仍失败。 正文完整、可逐字引用，但<strong>不是本机渲染抓出来的</strong>—— 若要用于正式对外引用，应再复核一次。</p>
             <p><strong>confidence 仍为 partial，但原因已经换了两条</strong>： 补核验前是因为<strong>「Help Centre 直抓超时、只拿到检索摘要」</strong>； 补完后三页正文齐了，剩下的是<strong>官方压根没公布的数据</strong>—— 订阅档位价格、上下文窗口大小、Sentinel 判定标准。</p>
       </div>
       <div class="panel is-slim">

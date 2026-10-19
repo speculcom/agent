@@ -4,18 +4,18 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>GitHub MCP Server — Tools | 投机取巧</title>
-  <meta name="description" content="GitHub MCP Server（GitHub）：GitHub 官方自己的 MCP server（仓库自述 &quot;GitHub&#39;s official MCP Server&quot;）， 以本地 Docker + 远程托管两形态把 GitHub 平台能力暴露给任意 MCP 客户端。" />
+  <meta name="description" content="GitHub MCP Server（GitHub）：GitHub 官方自己的 MCP server（仓库自述 &quot;GitHub&#39;s official MCP Server&quot;）， 它有本地 Docker 与远程托管两种形态。它把 GitHub 平台能力暴露给任意 MCP 客户端。" />
   <link rel="canonical" href="https://agent.specul.com/tools/github-mcp.html" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="GitHub MCP Server" />
   <meta property="og:url" content="https://agent.specul.com/tools/github-mcp.html" />
   <meta property="og:title" content="GitHub MCP Server — Tools | 投机取巧" />
-  <meta property="og:description" content="GitHub MCP Server（GitHub）：GitHub 官方自己的 MCP server（仓库自述 &quot;GitHub&#39;s official MCP Server&quot;）， 以本地 Docker + 远程托管两形态把 GitHub 平台能力暴露给任意 MCP 客户端。" />
+  <meta property="og:description" content="GitHub MCP Server（GitHub）：GitHub 官方自己的 MCP server（仓库自述 &quot;GitHub&#39;s official MCP Server&quot;）， 它有本地 Docker 与远程托管两种形态。它把 GitHub 平台能力暴露给任意 MCP 客户端。" />
   <meta name="theme-color" content="#16121f" />
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%238b7cf8'/%3E%3Cstop offset='1' stop-color='%2322d3c5'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='48' height='48' rx='12' fill='%2305080f'/%3E%3Cpath d='M14 32 L24 12 L34 32' fill='none' stroke='url(%23g)' stroke-width='2.4' stroke-linejoin='round'/%3E%3Ccircle cx='24' cy='27' r='2.4' fill='%2322d3c5'/%3E%3C/svg%3E" />
   <link rel="stylesheet" href="../brand.css" />
   <link rel="stylesheet" href="../site.css" />
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"GitHub MCP Server","applicationCategory":"DeveloperApplication","url":"https://github.com/github/github-mcp-server","sameAs":"https://github.com/github/github-mcp-server","description":"GitHub 官方自己的 MCP server（仓库自述 \"GitHub's official MCP Server\"）， 以本地 Docker + 远程托管两形态把 GitHub 平台能力暴露给任意 MCP 客户端。","dateModified":"2026-10-08"}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"GitHub MCP Server","applicationCategory":"DeveloperApplication","url":"https://github.com/github/github-mcp-server","sameAs":"https://github.com/github/github-mcp-server","description":"GitHub 官方自己的 MCP server（仓库自述 \"GitHub's official MCP Server\"）， 它有本地 Docker 与远程托管两种形态。它把 GitHub 平台能力暴露给任意 MCP 客户端。","dateModified":"2026-10-08"}</script>
 </head>
 <!-- B6（2026-10-09）：--accent 原先在这里被**内联到 body 上**（style="--accent:X"），
      同时头部又写了 :root{--accent:X} —— 两处同一份值，冗余。
@@ -110,7 +110,7 @@
         <span class="badge"><span data-zh>核验</span><span data-en>Checked</span> 2026-10-08</span>
       </div>
 
-            <div class="panel-lead"><span data-zh><p><strong>GitHub 官方自己的 MCP server</strong>（仓库自述 &quot;GitHub&#39;s official MCP Server&quot;）， 以<strong>本地 Docker + 远程托管两形态</strong>把 GitHub 平台能力暴露给任意 MCP 客户端。</p></span><span data-en><p>GitHub&#39;s official MCP server (repository description: &quot;GitHub&#39;s official MCP Server&quot;). It connects any MCP client to GitHub&#39;s platform: reading repositories and code files, managing issues and PRs, monitoring Actions, inspecting code-scanning / Dependabot findings, and reading notifications.</p>
+            <div class="panel-lead"><span data-zh><p><strong>GitHub 官方自己的 MCP server</strong>（仓库自述 &quot;GitHub&#39;s official MCP Server&quot;）， 它有<strong>本地 Docker 与远程托管两种形态</strong>。它把 GitHub 平台能力暴露给任意 MCP 客户端。</p></span><span data-en><p>GitHub&#39;s official MCP server (repository description: &quot;GitHub&#39;s official MCP Server&quot;). It connects any MCP client to GitHub&#39;s platform: reading repositories and code files, managing issues and PRs, monitoring Actions, inspecting code-scanning / Dependabot findings, and reading notifications.</p>
             <p><strong>Two forms.</strong> The <strong>remote hosted</strong> server (<code>https://api.githubcopilot.com/mcp/</code>, Streamable HTTP) is &quot;hosted by GitHub and provides the easiest method for getting up and running... no local setup or runtime required.&quot; The <strong>local</strong> server runs as an stdio process via Docker (<code>ghcr.io/github/github-mcp-server</code>) or a Go binary; GitHub Enterprise Server is only supported locally.</p>
             <p><strong>Toolsets are the headline mechanism</strong>: enable only what you need to help the LLM pick tools and shrink context. Default toolsets are <code>context, repos, issues, pull_requests, users</code>; 20+ groups exist in total, and the remote server adds extras (Copilot Spaces, Support Docs Search, <code>create_pull_request_with_copilot</code>).</p>
             <p><strong>Two caution notes.</strong> read-only mode is a &quot;strict security filter&quot; that takes precedence over everything else (write tools are skipped even if explicitly requested). Lockdown mode is explicitly &quot;a best-effort content filter... <strong>not</strong> an authorization boundary.&quot;</p>
@@ -119,7 +119,7 @@
             <div class="panel is-slim">
         <h2><span data-zh>适合与不适合</span><span data-en>When to use it, when not to</span></h2>
 <span data-zh>        <div><p>让 MCP 客户端用自然语言操作 GitHub：读代码与仓库结构、管 issue / PR、盯 Actions、 查 code scanning 与 dependabot 告警、读通知。<strong>不想自己运维就选远程托管形态</strong>； <strong>GHES / 要自托管 HTTP / 要离线可控就选本地形态</strong>。</p></div>
-        <div class="warn-p"><p><strong>不适合</strong>需要本地文件系统操作（那是 filesystem / git server 的职责）， 也需要跨会话记忆或后台续跑的场景。</p></div></span><span data-en>        <div><p>Anyone who wants their MCP client (VS Code, Claude Desktop, Cursor, Windsurf, Codex, Gemini CLI, etc.) to work with GitHub in natural language — reading code and repo structure, managing issues and PRs, watching Actions, triaging code-scanning / Dependabot alerts. Users who do not want to run anything locally — pick the <strong>remote hosted</strong> form. GitHub Enterprise Server users, or anyone needing self-hosted HTTP / offline-controllable setups — pick the <strong>local</strong> form. Security-conscious setups that want read-only mode, toolset trimming and lockdown filtering.</p></div></span>
+        <div class="warn-p"><p><strong>不适合</strong>需要本地文件系统操作的场景，那是 filesystem / git server 的职责。 也不适合需要跨会话记忆或后台续跑的场景。</p></div></span><span data-en>        <div><p>Anyone who wants their MCP client (VS Code, Claude Desktop, Cursor, Windsurf, Codex, Gemini CLI, etc.) to work with GitHub in natural language — reading code and repo structure, managing issues and PRs, watching Actions, triaging code-scanning / Dependabot alerts. Users who do not want to run anything locally — pick the <strong>remote hosted</strong> form. GitHub Enterprise Server users, or anyone needing self-hosted HTTP / offline-controllable setups — pick the <strong>local</strong> form. Security-conscious setups that want read-only mode, toolset trimming and lockdown filtering.</p></div></span>
       </div>
 
 
@@ -142,21 +142,21 @@
             <p><strong>远程托管</strong>由 GitHub 自己运营，端点 <code>https://api.githubcopilot.com/mcp/</code>。</p>
             <p><strong>本地形态</strong>有三种跑法：</p>
             <ul><li>Docker 镜像 <code>ghcr.io/github/github-mcp-server</code></li><li><code>go build</code> 出来的二进制</li><li>自带 HTTP 模式 <code>github-mcp-server http</code>（默认端口 8082）</li></ul>
-            <p>⚠ <strong>GitHub Enterprise Server 不支持远程托管</strong>（官方明写）—— 只能用本地形态。 <code>ghe.com</code> 可以走远程，但有独立端点。</p>
+            <p>⚠ <strong>GitHub Enterprise Server 不支持远程托管</strong>（官方明写）。只能用本地形态。 <code>ghe.com</code> 可以走远程，但有独立端点。</p>
             <p><strong>官方对远程形态的说法</strong>：「the easiest method for getting up and running」 「no local setup or runtime required」</p></dd>
         </div>
         <div class="axis">
           <dt><span data-zh>本地文件</span><span data-en>Local files</span></dt>
           <dd><p><strong>不碰你本机的文件系统。</strong></p>
-            <p>它操作的是 GitHub 平台（远程仓库、issue、PR），跟你本地的 git 仓库没有直接关系。 本地 git 操作见本站的 git 条目。</p>
+            <p>它操作的是 GitHub 平台：远程仓库、issue、PR。它跟你本地的 git 仓库没有直接关系。 本地 git 操作见本站的 git 条目。</p>
             <p>唯一贴近「文件」的能力，是<strong>操作远端仓库内容</strong>：</p>
             <ul><li><code>get_file_contents</code> —— 读文件或目录</li><li><code>create_or_update_file</code> / <code>push_files</code> —— 写文件</li><li><code>delete_file</code> —— 删文件</li></ul>
             <p>作用域是 GitHub 上的 repo / branch。<strong>容器形态下也不需要挂载本地仓库。</strong></p></dd>
         </div>
         <div class="axis">
           <dt><span data-zh>关机后的任务</span><span data-en>Tasks after shutdown</span></dt>
-          <dd><p><strong>远程托管形态与你的客户端进程无关</strong> —— 服务在 GitHub 那边，你关机它还在线。</p>
-            <p><strong>本地形态随客户端生死</strong> —— stdio 子进程退出就停。 自托管 HTTP 模式则是你自己运营的常驻服务（<code>github-mcp-server http</code> + 反向代理）。</p>
+          <dd><p><strong>远程托管形态与你的客户端进程无关</strong>。服务在 GitHub 那边，你关机它还在线。</p>
+            <p><strong>本地形态随客户端生死</strong> —— stdio 子进程退出就停。 自托管 HTTP 模式则是你自己运营的常驻服务。即 <code>github-mcp-server http</code> 加反向代理。</p>
             <p>⚠ <strong>它不提供「后台任务续跑」语义。</strong> 它的模式是有状态 HTTP / stdio 会话， 官方没有断点续跑机制。所谓「一直在」指的是远程托管形态的可用性， 而这个可用性取决于 GitHub 侧的服务状态。</p></dd>
         </div>
         <div class="axis">
@@ -170,8 +170,8 @@
         </div>
         <div class="axis">
           <dt><span data-zh>上下文与记忆</span><span data-en>Context & memory</span></dt>
-          <dd><p><strong>没有跨会话记忆。</strong> 每次会话独立 —— 状态在 GitHub 平台本身（仓库、issue、PR 的持久状态）， 不在 server 里。</p>
-            <p>有一条官方特有的上下文控制：<strong>Insiders 模式下 <code>list_*</code> 工具可以返回 CSV</strong> （<code>csv_output</code> 特性标志），用来压缩列表类响应。</p>
+          <dd><p><strong>没有跨会话记忆。</strong> 每次会话独立。状态在 GitHub 平台本身（仓库、issue、PR 的持久状态）， 不在 server 里。</p>
+            <p>有一条官方特有的上下文控制。Insiders 模式下 <code>list_*</code> 工具可以返回 CSV （<code>csv_output</code> 特性标志），用来压缩列表类响应。</p>
             <p>⚠ 那是<strong>响应格式优化，不是记忆机制</strong>。</p>
             <p><strong>官方对它的说法</strong>：「reduce response context for agents」</p>
             <p>README 没有提供任何内建记忆或检索层。</p></dd>
@@ -190,9 +190,9 @@
           <dt><span data-zh>适合什么任务</span><span data-en>Best for</span></dt>
           <dd><p><strong>一句话：让任意 MCP 客户端用自然语言操作 GitHub。</strong></p>
             <p>客户端包括 VS Code、Claude Desktop、Cursor、Windsurf、Codex、Gemini CLI 等。</p>
-            <p>能做的事：读代码与仓库结构 · 管 issue 与 PR · 监控 Actions · 查 code scanning / dependabot 安全告警 · 读通知。</p>
+            <p>能做的事：读代码与仓库结构、管 issue 与 PR、监控 Actions。 还能查 code scanning / dependabot 安全告警、读通知。</p>
             <p><strong>远程托管形态适合「不想自己运维」的人。</strong> <strong>本地 Docker 形态适合</strong>：GitHub Enterprise Server 用户 · 需要自托管 HTTP 的人 · 要离线可控的人。</p>
-            <p><strong>不适合</strong>两类场景：需要操作本地文件系统（那是 filesystem / git server 的活）； 以及需要跨会话记忆的场景。</p></dd>
+            <p><strong>不适合</strong>两类场景。一是需要操作本地文件系统，那是 filesystem / git server 的活。 二是需要跨会话记忆的场景。</p></dd>
         </div>
         <div class="axis">
           <dt><span data-zh>传输方式</span><span data-en>Transport</span></dt>
@@ -308,17 +308,17 @@
       <div class="panel is-slim">
         <h2>read-only 与 lockdown：两个容易高估的开关</h2>
         <div class="tbl-wrap"><table><thead><tr><th>模式</th><th>开关</th><th>官方定性</th></tr></thead><tbody><tr><td><strong>read-only</strong></td><td><code>--read-only</code> / <code>X-MCP-Readonly</code></td><td><strong>strict security filter</strong>，优先级最高，显式请求写工具也禁用</td></tr><tr><td><strong>lockdown</strong></td><td><code>--lockdown-mode</code> / <code>X-MCP-Lockdown</code></td><td><strong>best-effort 内容过滤，不是授权边界</strong></td></tr></tbody></table></div>
-            <p>lockdown 的边界官方写得很实：它只减少<strong>公开仓库里无 push 权限用户产出内容</strong>的 prompt injection 风险， <strong>不改变底层凭据能读写什么</strong>，被过滤响应里隐藏的内容仍可能通过其他工具或直接调 GitHub API 拿到 （<code>github-actions[bot]</code> 与 <code>copilot</code> 是例外，始终视为可信）。</p>
+            <p>lockdown 的边界官方写得很实。它只减少一种 prompt injection 风险：<strong>公开仓库里无 push 权限用户产出的内容</strong>。 它<strong>不改变底层凭据能读写什么</strong>。被过滤响应里隐藏的内容仍可能通过其他工具拿到。也可以直接调 GitHub API 拿到 （<code>github-actions[bot]</code> 与 <code>copilot</code> 是例外，始终视为可信）。</p>
       </div>
       <div class="panel is-slim">
         <h2>认证与权限：token 决定一切</h2>
         <ul><li><strong>经典 PAT（<code>ghp_</code>）</strong>：启动时按 <code>X-OAuth-Scopes</code> <strong>隐藏</strong>无权限工具。</li><li><strong>OAuth（远程）</strong>：不预隐藏，改用 <strong>scope challenge</strong>——用到缺 scope 的工具时按需提示授权。</li><li><strong>细粒度 PAT（<code>github_pat_</code>）/ GitHub App</strong>：<strong>不做工具过滤</strong>，全量显示，权限由 GitHub API 侧强制。</li></ul>
-            <p>官方给的凭据最佳实践：最小 scope（<code>repo</code> / <code>read:packages</code> / <code>read:org</code>）、按环境分 token、 定期轮换、别硬编码（部分宿主如 Windsurf 只能硬编码，官方也点出了这个例外）。</p>
+            <p>官方给的凭据最佳实践：最小 scope（<code>repo</code> / <code>read:packages</code> / <code>read:org</code>）、按环境分 token、 定期轮换、别硬编码。部分宿主如 Windsurf 只能硬编码，官方也点出了这个例外。</p>
       </div>
       <div class="panel is-slim">
         <h2>核验说明</h2>
         <p><code>confidence: partial</code> 的依据（2026-10-08）：</p>
-            <p>八维与 mcp 三维均给出结论，但有两处<strong>官方文档本身没有内容</strong>，只能落「官方未说明」： 所谓「动态工具发现」在当前官方文档中查不到（见未知项），以及工具级审批机制官方未提供。 这些都非取证缺口，而是官方当前未提供，故不足以升到 verified。</p>
+            <p>八维与 mcp 三维均给出结论，但有两处<strong>官方文档本身没有内容</strong>，只能落「官方未说明」： 所谓「动态工具发现」在当前官方文档中查不到（见未知项）。工具级审批机制官方也未提供。 这些都非取证缺口，而是官方当前未提供，故不足以升到 verified。</p>
             <p><strong>本轮核到的官方页</strong>：README（两形态、toolsets 全表、认证、read-only / lockdown、i18n 覆写）、 docs/remote-server.md（端点、URL 修饰、X-MCP-* 头）、docs/server-configuration.md、 docs/scope-filtering.md、docs/streamable-http.md、docs/insiders-features.md、docs/feature-flags.md； 仓库元数据经 GitHub API 核验（33,446★、MIT、语言 Go、最近推送 2026-10-08、最新版 v2.0.2）。</p>
       </div>
 

@@ -4,18 +4,18 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Git MCP Server — Tools | 投机取巧</title>
-  <meta name="description" content="Git MCP Server（Model Context Protocol）：MCP 官方 reference server 里的版本控制实现，作用域限定在指定 git 仓库，但具备完整的本地写操作能力。" />
+  <meta name="description" content="Git MCP Server（Model Context Protocol）：MCP 官方 reference server 里的版本控制实现。它作用域限定在指定 git 仓库，但具备完整的本地写操作能力。" />
   <link rel="canonical" href="https://agent.specul.com/tools/git.html" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Git MCP Server" />
   <meta property="og:url" content="https://agent.specul.com/tools/git.html" />
   <meta property="og:title" content="Git MCP Server — Tools | 投机取巧" />
-  <meta property="og:description" content="Git MCP Server（Model Context Protocol）：MCP 官方 reference server 里的版本控制实现，作用域限定在指定 git 仓库，但具备完整的本地写操作能力。" />
+  <meta property="og:description" content="Git MCP Server（Model Context Protocol）：MCP 官方 reference server 里的版本控制实现。它作用域限定在指定 git 仓库，但具备完整的本地写操作能力。" />
   <meta name="theme-color" content="#16121f" />
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%238b7cf8'/%3E%3Cstop offset='1' stop-color='%2322d3c5'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='48' height='48' rx='12' fill='%2305080f'/%3E%3Cpath d='M14 32 L24 12 L34 32' fill='none' stroke='url(%23g)' stroke-width='2.4' stroke-linejoin='round'/%3E%3Ccircle cx='24' cy='27' r='2.4' fill='%2322d3c5'/%3E%3C/svg%3E" />
   <link rel="stylesheet" href="../brand.css" />
   <link rel="stylesheet" href="../site.css" />
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Git MCP Server","applicationCategory":"DeveloperApplication","url":"https://github.com/modelcontextprotocol/servers/tree/main/src/git","sameAs":"https://github.com/modelcontextprotocol/servers/tree/main/src/git","description":"MCP 官方 reference server 里的版本控制实现，作用域限定在指定 git 仓库，但具备完整的本地写操作能力。","dateModified":"2026-10-08"}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Git MCP Server","applicationCategory":"DeveloperApplication","url":"https://github.com/modelcontextprotocol/servers/tree/main/src/git","sameAs":"https://github.com/modelcontextprotocol/servers/tree/main/src/git","description":"MCP 官方 reference server 里的版本控制实现。它作用域限定在指定 git 仓库，但具备完整的本地写操作能力。","dateModified":"2026-10-08"}</script>
 </head>
 <!-- B6（2026-10-09）：--accent 原先在这里被**内联到 body 上**（style="--accent:X"），
      同时头部又写了 :root{--accent:X} —— 两处同一份值，冗余。
@@ -107,7 +107,7 @@
         <span class="badge"><span data-zh>核验</span><span data-en>Checked</span> 2026-10-08</span>
       </div>
 
-            <div class="panel-lead"><span data-zh><p>MCP 官方 reference server 里的版本控制实现，<strong>作用域限定在指定 git 仓库，但具备完整的本地写操作能力</strong>。</p></span><span data-en><p>The version-control implementation among MCP&#39;s official reference servers, <strong>scoped to a given git repository but with full local write capability</strong>.</p></span></div>
+            <div class="panel-lead"><span data-zh><p>MCP 官方 reference server 里的版本控制实现。<strong>它作用域限定在指定 git 仓库，但具备完整的本地写操作能力</strong>。</p></span><span data-en><p>The version-control implementation among MCP&#39;s official reference servers, <strong>scoped to a given git repository but with full local write capability</strong>.</p></span></div>
 
             <div class="panel is-slim">
         <h2><span data-zh>适合与不适合</span><span data-en>When to use it, when not to</span></h2>
@@ -156,7 +156,7 @@
         </div>
         <div class="axis">
           <dt><span data-zh>适合什么任务</span><span data-en>Best for</span></dt>
-          <dd><p>让 Agent 读取仓库状态、历史与 diff，并在受控前提下执行提交与分支操作。 不适合需要 push / PR / 远程仓库管理的场景（本 server 不提供远程操作）。</p></dd>
+          <dd><p>让 Agent 读取仓库状态、历史与 diff，并在受控前提下执行提交与分支操作。 不适合需要 push / PR / 远程仓库管理的场景。本 server 不提供远程操作。</p></dd>
         </div>
         <div class="axis">
           <dt><span data-zh>传输方式</span><span data-en>Transport</span></dt>
@@ -239,12 +239,12 @@
       <div class="panel is-slim">
         <h2>工具清单与读写属性</h2>
         <div class="tbl-wrap"><table><thead><tr><th>工具</th><th>属性</th><th>说明</th></tr></thead><tbody><tr><td><code>git_status</code></td><td>读</td><td>工作区与暂存区状态</td></tr><tr><td><code>git_diff_unstaged</code></td><td>读</td><td>未暂存的改动</td></tr><tr><td><code>git_diff_staged</code></td><td>读</td><td>已暂存的改动</td></tr><tr><td><code>git_diff</code></td><td>读</td><td>与目标分支/提交比较</td></tr><tr><td><code>git_log</code></td><td>读</td><td>提交历史，支持时间过滤</td></tr><tr><td><code>git_show</code></td><td>读</td><td>某次提交的内容</td></tr><tr><td><code>git_add</code></td><td><strong>写</strong></td><td>暂存指定文件</td></tr><tr><td><code>git_commit</code></td><td><strong>写</strong></td><td>提交并返回新 hash</td></tr><tr><td><code>git_reset</code></td><td><strong>写</strong></td><td>取消全部暂存（不动工作区）</td></tr><tr><td><code>git_create_branch</code></td><td><strong>写</strong></td><td>从当前或指定基点建分支</td></tr><tr><td><code>git_checkout</code></td><td><strong>写</strong></td><td>切换分支，会改变工作区状态</td></tr></tbody></table></div>
-            <p><strong>6 读 5 写</strong>。这不是只读工具——<code>git_checkout</code> 切分支会直接改变工作区，如果工作区有未提交改动，行为需要特别留意。</p>
+            <p><strong>6 读 5 写</strong>。这不是只读工具。<code>git_checkout</code> 切分支会直接改变工作区。如果工作区有未提交改动，行为需要特别留意。</p>
       </div>
       <div class="panel is-slim">
         <h2>与 filesystem server 的对比</h2>
         <div class="tbl-wrap"><table><thead><tr><th>维度</th><th>filesystem</th><th>git</th></tr></thead><tbody><tr><td>作用域</td><td>目录白名单</td><td>传入的 git 仓库</td></tr><tr><td>写操作</td><td>有（write / edit / move）</td><td><strong>有且更强</strong>（commit / reset / checkout）</td></tr><tr><td>删除</td><td>不提供</td><td>不提供</td></tr><tr><td>执行命令</td><td>不提供</td><td>内部调用 git 命令行</td></tr><tr><td>认证</td><td>无（靠进程权限）</td><td>无（靠进程权限）</td></tr></tbody></table></div>
-            <p><strong>结论</strong>：git server 的写能力更强，但因为作用域限定在 git 仓库内，风险面比 filesystem 小。</p>
+            <p><strong>结论</strong>：git server 的写能力更强。但它的作用域限定在 git 仓库内，风险面比 filesystem 小。</p>
       </div>
       <div class="panel is-slim">
         <h2>能力边界</h2>
@@ -254,7 +254,7 @@
       </div>
       <div class="panel is-slim">
         <h2>已归档的替代方案</h2>
-        <p>原 <code>github</code> server（提供仓库管理、文件操作与 GitHub API 集成）<strong>已归档</strong>至 <a href="https://github.com/modelcontextprotocol/servers-archived/tree/main/src/github" target="_blank" rel="noopener">servers-archived</a>，归档仓库自 2025-05 后基本无更新。</p>
+        <p>原 <code>github</code> server 提供仓库管理、文件操作与 GitHub API 集成。它<strong>已归档</strong>至 <a href="https://github.com/modelcontextprotocol/servers-archived/tree/main/src/github" target="_blank" rel="noopener">servers-archived</a>。归档仓库自 2025-05 后基本无更新。</p>
       </div>
 
             <div class="panel is-slim">
