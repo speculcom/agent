@@ -104,6 +104,26 @@
     </nav>
 
     
+    <section class="section">
+      <div class="container">
+        <h2><span data-zh>按任务找</span><span data-en>Find by task</span></h2>
+        <p class="section-desc"><span data-zh>这一页有 27 个对象。下面的数字是本页真正收录的条数——点进去就是筛选后的结果，不是跨站的总数。</span><span data-en>This page holds 27 objects. The numbers below are what this page actually carries — clicking filters right here, not a site-wide total.</span></p>
+        <div class="grid">
+        <article class="t-taskcard">
+          <h3><a href="./?task=write-code"><span data-zh>让 AI 替我写代码</span><span data-en>Get AI to write code for me</span></a> <span class="t-taskn">23</span></h3>
+          <p class="t-tasklead"><span data-zh>编辑器里、终端里、或厂商云上替你干活的编码 agent。</span><span data-en>Coding agents that work in your editor, your terminal, or the vendor&#39;s cloud.</span></p>
+          <a class="t-taskgo" href="./?task=write-code"><span data-zh>只看这一类 →</span><span data-en>Show only these →</span></a>
+        </article>
+        <article class="t-taskcard">
+          <h3><a href="./?task=long-task"><span data-zh>无人值守跑长任务</span><span data-en>Run long tasks unattended</span></a> <span class="t-taskn">4</span></h3>
+          <p class="t-tasklead"><span data-zh>关掉笔记本它还在跑的：厂商云形态与通用 harness。</span><span data-en>Keeps running after you shut your laptop: vendor-cloud forms and general harnesses.</span></p>
+          <a class="t-taskgo" href="./?task=long-task"><span data-zh>只看这一类 →</span><span data-en>Show only these →</span></a>
+        </article>
+        </div>
+      </div>
+    </section>
+
+    
     <section class="section guide-band">
       <div class="container">
         <h2><span data-zh>先回答一件事：你要它替你干多少事</span><span data-en>Answer one question first: how much do you want it to do for you</span></h2>
@@ -155,6 +175,8 @@
             <input type="search" class="aq" autocomplete="off" placeholder="Cursor · Claude · Aider"></label>
           <label class="af-f"><span class="af-h"><span data-zh>形态</span><span data-en>Form</span></span>
             <select class="asel-form" data-attr="track"><option value="">全部 / All</option><option value="ide">IDE 形态 / IDE form</option><option value="cli">CLI 形态 / CLI form</option><option value="cloud">厂商云形态 / Vendor cloud</option></select></label>
+          <label class="af-f"><span class="af-h"><span data-zh>任务</span><span data-en>Task</span></span>
+            <select class="asel-task"><option value="">全部 / All</option><option value="write-code">让 AI 替我写代码 / Get AI to write code for me</option><option value="long-task">无人值守跑长任务 / Run long tasks unattended</option></select></label>
           <label class="af-f"><span class="af-h"><span data-zh>排序</span><span data-en>Sort</span></span>
             <select class="asel-sort"><option value="">默认 / Default</option><option value="done-desc">完整度 高 → 低 / Completeness high–low</option><option value="done-asc">完整度 低 → 高 / Completeness low–high</option></select></label>
           <span class="acount" aria-live="polite"></span>
@@ -166,7 +188,7 @@
             <p><span data-zh>装进编辑器，或本身就是独立编辑器。看得见界面，权限多在对话里给。</span><span data-en>Installed into an editor, or an editor in its own right. You see a UI, and permissions are mostly granted in conversation.</span></p>
           </div>
           <div class="grid">
-        <article class="card" style="--card-accent:#D4A27F" data-track="ide" data-family="" data-conf="partial" data-done="8" data-total="8" data-name="Aider Watch 模式" data-blob="aider watch 模式 aider (watch mode) aider-ai **不是编辑器插件，是一种使用模式。**
+        <article class="card" style="--card-accent:#D4A27F" data-track="ide" data-family="" data-task="write-code" data-conf="partial" data-done="8" data-total="8" data-name="Aider Watch 模式" data-blob="aider watch 模式 aider (watch mode) aider-ai **不是编辑器插件，是一种使用模式。**
 
 aider 常驻 watch 你的文件，你在任意编辑器里加 ai 注释，它就响应。">
           <div class="card-top">
@@ -182,7 +204,7 @@ aider 常驻 watch 你的文件，你在任意编辑器里加 ai 注释，它就
             <a class="more" href="./aider.html" aria-label="Aider Watch 模式 详情"><span data-zh>详情 →</span><span data-en>Details →</span></a>
           </div>
         </article>
-        <article class="card" style="--card-accent:#D97757" data-track="ide" data-family="" data-conf="partial" data-done="8" data-total="8" data-name="Claude Code IDE 扩展" data-blob="claude code ide 扩展 claude code (ide extension) anthropic **一个进程、三种入口**——终端、ide、github `@claude` 提及共用同一套权限与上下文机制。">
+        <article class="card" style="--card-accent:#D97757" data-track="ide" data-family="" data-task="write-code" data-conf="partial" data-done="8" data-total="8" data-name="Claude Code IDE 扩展" data-blob="claude code ide 扩展 claude code (ide extension) anthropic **一个进程、三种入口**——终端、ide、github `@claude` 提及共用同一套权限与上下文机制。">
           <div class="card-top">
             <div class="mark" aria-hidden="true">CC</div>
             <div class="card-id">
@@ -196,7 +218,7 @@ aider 常驻 watch 你的文件，你在任意编辑器里加 ai 注释，它就
             <a class="more" href="./claude-code.html" aria-label="Claude Code IDE 扩展 详情"><span data-zh>详情 →</span><span data-en>Details →</span></a>
           </div>
         </article>
-        <article class="card" style="--card-accent:#3EA3FF" data-track="ide" data-family="" data-conf="partial" data-done="8" data-total="8" data-name="Cline" data-blob="cline cline bot **本分区唯一三形态全覆盖的对象**。cli、desktop app、vs code 扩展共享同一开源核心。模型也是自选的。">
+        <article class="card" style="--card-accent:#3EA3FF" data-track="ide" data-family="" data-task="write-code" data-conf="partial" data-done="8" data-total="8" data-name="Cline" data-blob="cline cline bot **本分区唯一三形态全覆盖的对象**。cli、desktop app、vs code 扩展共享同一开源核心。模型也是自选的。">
           <div class="card-top">
             <div class="mark" aria-hidden="true">C</div>
             <div class="card-id">
@@ -210,7 +232,7 @@ aider 常驻 watch 你的文件，你在任意编辑器里加 ai 注释，它就
             <a class="more" href="./cline.html" aria-label="Cline 详情"><span data-zh>详情 →</span><span data-en>Details →</span></a>
           </div>
         </article>
-        <article class="card" style="--card-accent:#10A37F" data-track="ide" data-family="" data-conf="partial" data-done="8" data-total="8" data-name="Codex IDE 扩展" data-blob="codex ide 扩展 codex (ide extension) openai **codex ide 扩展是装进 vs code / cursor / windsurf 的扩展，不是独立 ide** —— 它通过 app server 与 cli 共享同一套会话机制。">
+        <article class="card" style="--card-accent:#10A37F" data-track="ide" data-family="" data-task="write-code" data-conf="partial" data-done="8" data-total="8" data-name="Codex IDE 扩展" data-blob="codex ide 扩展 codex (ide extension) openai **codex ide 扩展是装进 vs code / cursor / windsurf 的扩展，不是独立 ide** —— 它通过 app server 与 cli 共享同一套会话机制。">
           <div class="card-top">
             <div class="mark" aria-hidden="true">C</div>
             <div class="card-id">
@@ -224,7 +246,7 @@ aider 常驻 watch 你的文件，你在任意编辑器里加 ai 注释，它就
             <a class="more" href="./codex-ide.html" aria-label="Codex IDE 扩展 详情"><span data-zh>详情 →</span><span data-en>Details →</span></a>
           </div>
         </article>
-        <article class="card" style="--card-accent:#8b7cf8" data-track="ide" data-family="" data-conf="partial" data-done="8" data-total="8" data-name="Continue" data-blob="continue continue **开源、模型完全自配的 ide 扩展**。
+        <article class="card" style="--card-accent:#8b7cf8" data-track="ide" data-family="" data-task="write-code" data-conf="partial" data-done="8" data-total="8" data-name="Continue" data-blob="continue continue **开源、模型完全自配的 ide 扩展**。
 但它已停更：continue 被 cursor 收购，上游仓库转入 read-only，
 官网只剩收购公告 —— **代码仍可自由使用，后续不会再有更新**。">
           <div class="card-top">
@@ -240,7 +262,7 @@ aider 常驻 watch 你的文件，你在任意编辑器里加 ai 注释，它就
             <a class="more" href="./continue.html" aria-label="Continue 详情"><span data-zh>详情 →</span><span data-en>Details →</span></a>
           </div>
         </article>
-        <article class="card" style="--card-accent:#24292F" data-track="ide" data-family="" data-conf="partial" data-done="8" data-total="8" data-name="GitHub Copilot" data-blob="github copilot github / microsoft **形态最广、生态最依附 github** 的一个——从网站到 cli 到主流编辑器全覆盖，且能把任务委派给 claude / codex（preview）。">
+        <article class="card" style="--card-accent:#24292F" data-track="ide" data-family="" data-task="write-code" data-conf="partial" data-done="8" data-total="8" data-name="GitHub Copilot" data-blob="github copilot github / microsoft **形态最广、生态最依附 github** 的一个——从网站到 cli 到主流编辑器全覆盖，且能把任务委派给 claude / codex（preview）。">
           <div class="card-top">
             <div class="mark" aria-hidden="true">GH</div>
             <div class="card-id">
@@ -254,7 +276,7 @@ aider 常驻 watch 你的文件，你在任意编辑器里加 ai 注释，它就
             <a class="more" href="./copilot.html" aria-label="GitHub Copilot 详情"><span data-zh>详情 →</span><span data-en>Details →</span></a>
           </div>
         </article>
-        <article class="card" style="--card-accent:#111111" data-track="ide" data-family="" data-conf="partial" data-done="8" data-total="8" data-name="Cursor" data-blob="cursor anysphere **本分区架构最激进的三个之一**：
+        <article class="card" style="--card-accent:#111111" data-track="ide" data-family="" data-task="write-code" data-conf="partial" data-done="8" data-total="8" data-name="Cursor" data-blob="cursor anysphere **本分区架构最激进的三个之一**：
 云端 agent 合上笔记本不中断、自托管代码不出网、代码审查拆成两个 bot 分工。">
           <div class="card-top">
             <div class="mark" aria-hidden="true">C</div>
@@ -269,7 +291,7 @@ aider 常驻 watch 你的文件，你在任意编辑器里加 ai 注释，它就
             <a class="more" href="./cursor.html" aria-label="Cursor 详情"><span data-zh>详情 →</span><span data-en>Details →</span></a>
           </div>
         </article>
-        <article class="card" style="--card-accent:#8b7cf8" data-track="ide" data-family="" data-conf="partial" data-done="8" data-total="8" data-name="Junie" data-blob="junie jetbrains **junie 是 jetbrains 官方的 ai coding agent。**
+        <article class="card" style="--card-accent:#8b7cf8" data-track="ide" data-family="" data-task="write-code" data-conf="partial" data-done="8" data-total="8" data-name="Junie" data-blob="junie jetbrains **junie 是 jetbrains 官方的 ai coding agent。**
 它的形态是插件加 cli：插件装进 jetbrains ide，cli 跑在终端与 ci/cd 里。
 
 三个招牌：先出计划再写代码、用真调试器排障、不锁模型。
@@ -289,7 +311,7 @@ plan mode 产出结构化计划文档，确认后才实现。
             <a class="more" href="./junie.html" aria-label="Junie 详情"><span data-zh>详情 →</span><span data-en>Details →</span></a>
           </div>
         </article>
-        <article class="card" style="--card-accent:#8b7cf8" data-track="ide" data-family="" data-conf="partial" data-done="8" data-total="8" data-name="Kiro" data-blob="kiro aws **aws 出的 agentic 工程环境**：一套 harness 同时撑起 ide / cli / web / mobile 四个端。
+        <article class="card" style="--card-accent:#8b7cf8" data-track="ide" data-family="" data-task="write-code" data-conf="partial" data-done="8" data-total="8" data-name="Kiro" data-blob="kiro aws **aws 出的 agentic 工程环境**：一套 harness 同时撑起 ide / cli / web / mobile 四个端。
 
 两个招牌：
 
@@ -308,7 +330,7 @@ plan mode 产出结构化计划文档，确认后才实现。
             <a class="more" href="./kiro.html" aria-label="Kiro 详情"><span data-zh>详情 →</span><span data-en>Details →</span></a>
           </div>
         </article>
-        <article class="card" style="--card-accent:#0B9D8C" data-track="ide" data-family="" data-conf="partial" data-done="8" data-total="8" data-name="Windsurf / Devin Desktop" data-blob="windsurf / devin desktop cognition **已改称 devin desktop**（被 cognition 收购后）——有自研模型 swe-2、支持 acp preview、有过 restricted mode 的 cve 修复记录。">
+        <article class="card" style="--card-accent:#0B9D8C" data-track="ide" data-family="" data-task="write-code" data-conf="partial" data-done="8" data-total="8" data-name="Windsurf / Devin Desktop" data-blob="windsurf / devin desktop cognition **已改称 devin desktop**（被 cognition 收购后）——有自研模型 swe-2、支持 acp preview、有过 restricted mode 的 cve 修复记录。">
           <div class="card-top">
             <div class="mark" aria-hidden="true">W</div>
             <div class="card-id">
@@ -322,7 +344,7 @@ plan mode 产出结构化计划文档，确认后才实现。
             <a class="more" href="./windsurf.html" aria-label="Windsurf / Devin Desktop 详情"><span data-zh>详情 →</span><span data-en>Details →</span></a>
           </div>
         </article>
-        <article class="card" style="--card-accent:#3AB7FF" data-track="ide" data-family="" data-conf="partial" data-done="8" data-total="8" data-name="Zed" data-blob="zed zed industries **不是「又一个 ai 编码工具」，而是三种 agent path 的编排层** —— 能在同一个编辑器里用 zed 原生 agent，也能挂 claude / codex / opencode / copilot / cursor。">
+        <article class="card" style="--card-accent:#3AB7FF" data-track="ide" data-family="" data-task="write-code" data-conf="partial" data-done="8" data-total="8" data-name="Zed" data-blob="zed zed industries **不是「又一个 ai 编码工具」，而是三种 agent path 的编排层** —— 能在同一个编辑器里用 zed 原生 agent，也能挂 claude / codex / opencode / copilot / cursor。">
           <div class="card-top">
             <div class="mark" aria-hidden="true">Z</div>
             <div class="card-id">
@@ -345,7 +367,7 @@ plan mode 产出结构化计划文档，确认后才实现。
             <p><span data-zh>在终端里跑。能进脚本与 CI，权限确认粒度是最细的一层。</span><span data-en>Runs in the terminal. Drops into scripts and CI, with the finest granularity of permission confirmation.</span></p>
           </div>
           <div class="grid">
-        <article class="card" style="--card-accent:#D4A27F" data-track="cli" data-family="" data-conf="partial" data-done="8" data-total="8" data-name="Aider" data-blob="aider aider-ai **aider 是一个终端 pair programming 工具。**
+        <article class="card" style="--card-accent:#D4A27F" data-track="cli" data-family="" data-task="write-code" data-conf="partial" data-done="8" data-total="8" data-name="Aider" data-blob="aider aider-ai **aider 是一个终端 pair programming 工具。**
 
 它把 git 集成当核心设计，不是附加功能。
 
@@ -363,7 +385,7 @@ ai 改动始终在版本控制里，可 diff 可撤销。">
             <a class="more" href="./aider-cli.html" aria-label="Aider 详情"><span data-zh>详情 →</span><span data-en>Details →</span></a>
           </div>
         </article>
-        <article class="card" style="--card-accent:#8b7cf8" data-track="cli" data-family="" data-conf="partial" data-done="8" data-total="8" data-name="Amp" data-blob="amp sourcegraph amp 是 sourcegraph 出的前沿编码 agent，**cli + 云端 orb + runner 三执行面**。
+        <article class="card" style="--card-accent:#8b7cf8" data-track="cli" data-family="" data-task="write-code" data-conf="partial" data-done="8" data-total="8" data-name="Amp" data-blob="amp sourcegraph amp 是 sourcegraph 出的前沿编码 agent，**cli + 云端 orb + runner 三执行面**。
 
 发一句提示就能合上笔记本继续跑。
 
@@ -381,7 +403,7 @@ ai 改动始终在版本控制里，可 diff 可撤销。">
             <a class="more" href="./amp.html" aria-label="Amp 详情"><span data-zh>详情 →</span><span data-en>Details →</span></a>
           </div>
         </article>
-        <article class="card" style="--card-accent:#D97757" data-track="cli" data-family="" data-conf="partial" data-done="8" data-total="8" data-name="Claude Code CLI" data-blob="claude code cli anthropic **本分区数据质量最高、发布最频繁的条目**。它自带 changelog 与 atom feed。
+        <article class="card" style="--card-accent:#D97757" data-track="cli" data-family="" data-task="write-code" data-conf="partial" data-done="8" data-total="8" data-name="Claude Code CLI" data-blob="claude code cli anthropic **本分区数据质量最高、发布最频繁的条目**。它自带 changelog 与 atom feed。
 它的权限设计颗粒度最细。">
           <div class="card-top">
             <div class="mark" aria-hidden="true">CC</div>
@@ -396,7 +418,7 @@ ai 改动始终在版本控制里，可 diff 可撤销。">
             <a class="more" href="./claude-code-cli.html" aria-label="Claude Code CLI 详情"><span data-zh>详情 →</span><span data-en>Details →</span></a>
           </div>
         </article>
-        <article class="card" style="--card-accent:#10A37F" data-track="cli" data-family="" data-conf="partial" data-done="8" data-total="8" data-name="Codex CLI" data-blob="codex cli openai openai 官方的终端编码 agent，**rust 实现**，架构上强调 app server 与线程续接。">
+        <article class="card" style="--card-accent:#10A37F" data-track="cli" data-family="" data-task="write-code" data-conf="partial" data-done="8" data-total="8" data-name="Codex CLI" data-blob="codex cli openai openai 官方的终端编码 agent，**rust 实现**，架构上强调 app server 与线程续接。">
           <div class="card-top">
             <div class="mark" aria-hidden="true">C</div>
             <div class="card-id">
@@ -410,7 +432,7 @@ ai 改动始终在版本控制里，可 diff 可撤销。">
             <a class="more" href="./codex-cli.html" aria-label="Codex CLI 详情"><span data-zh>详情 →</span><span data-en>Details →</span></a>
           </div>
         </article>
-        <article class="card" style="--card-accent:#24292F" data-track="cli" data-family="" data-conf="partial" data-done="8" data-total="8" data-name="GitHub Copilot CLI" data-blob="github copilot cli github **终端里的 copilot agent，与 github 订阅同源**。
+        <article class="card" style="--card-accent:#24292F" data-track="cli" data-family="" data-task="write-code" data-conf="partial" data-done="8" data-total="8" data-name="GitHub Copilot CLI" data-blob="github copilot cli github **终端里的 copilot agent，与 github 订阅同源**。
 
 它能在终端里走完一条链。
 
@@ -440,7 +462,7 @@ ai 改动始终在版本控制里，可 diff 可撤销。">
             <a class="more" href="./copilot-cli.html" aria-label="GitHub Copilot CLI 详情"><span data-zh>详情 →</span><span data-en>Details →</span></a>
           </div>
         </article>
-        <article class="card" style="--card-accent:#F26D9D" data-track="cli" data-family="" data-conf="partial" data-done="6" data-total="8" data-name="Crush" data-blob="crush charm **charm 生态的 tui 编码 agent，在终端里跑。**
+        <article class="card" style="--card-accent:#F26D9D" data-track="cli" data-family="" data-task="write-code" data-conf="partial" data-done="6" data-total="8" data-name="Crush" data-blob="crush charm **charm 生态的 tui 编码 agent，在终端里跑。**
 它的 mcp 三种传输方式标注最完整，并带一个官方订阅方案 hyper。">
           <div class="card-top">
             <div class="mark" aria-hidden="true">CR</div>
@@ -455,7 +477,7 @@ ai 改动始终在版本控制里，可 diff 可撤销。">
             <a class="more" href="./crush.html" aria-label="Crush 详情"><span data-zh>详情 →</span><span data-en>Details →</span></a>
           </div>
         </article>
-        <article class="card" style="--card-accent:#111111" data-track="cli" data-family="" data-conf="partial" data-done="8" data-total="8" data-name="Cursor CLI" data-blob="cursor cli anysphere **cursor 的终端形态：和编辑器共用同一账户、同一批模型、同一份 `mcp.json`。**
+        <article class="card" style="--card-accent:#111111" data-track="cli" data-family="" data-task="write-code" data-conf="partial" data-done="8" data-total="8" data-name="Cursor CLI" data-blob="cursor cli anysphere **cursor 的终端形态：和编辑器共用同一账户、同一批模型、同一份 `mcp.json`。**
 
 命令名是 `agent`。
 官方称它支持：
@@ -480,7 +502,7 @@ ai 改动始终在版本控制里，可 diff 可撤销。">
             <a class="more" href="./cursor-cli.html" aria-label="Cursor CLI 详情"><span data-zh>详情 →</span><span data-en>Details →</span></a>
           </div>
         </article>
-        <article class="card" style="--card-accent:#8b7cf8" data-track="cli" data-family="" data-conf="partial" data-done="8" data-total="8" data-name="Droid" data-blob="droid factory ai **droid 是 factory ai 的终端编码 agent**。
+        <article class="card" style="--card-accent:#8b7cf8" data-track="cli" data-family="" data-task="write-code" data-conf="partial" data-done="8" data-total="8" data-name="Droid" data-blob="droid factory ai **droid 是 factory ai 的终端编码 agent**。
 
 它模型无关——官方托管、byok、本地模型三路并存。
 
@@ -498,7 +520,7 @@ ai 改动始终在版本控制里，可 diff 可撤销。">
             <a class="more" href="./factory-droid.html" aria-label="Droid 详情"><span data-zh>详情 →</span><span data-en>Details →</span></a>
           </div>
         </article>
-        <article class="card" style="--card-accent:#4285F4" data-track="cli" data-family="" data-conf="partial" data-done="8" data-total="8" data-name="Gemini CLI" data-blob="gemini cli google **google 官方的开源终端 agent**，npx 免安装启动。
+        <article class="card" style="--card-accent:#4285F4" data-track="cli" data-family="" data-task="write-code" data-conf="partial" data-done="8" data-total="8" data-name="Gemini CLI" data-blob="gemini cli google **google 官方的开源终端 agent**，npx 免安装启动。
 明确支持 mcp，另有非交互脚本模式。">
           <div class="card-top">
             <div class="mark" aria-hidden="true">G</div>
@@ -513,7 +535,7 @@ ai 改动始终在版本控制里，可 diff 可撤销。">
             <a class="more" href="./gemini-cli.html" aria-label="Gemini CLI 详情"><span data-zh>详情 →</span><span data-en>Details →</span></a>
           </div>
         </article>
-        <article class="card" style="--card-accent:#8b7cf8" data-track="cli" data-family="" data-conf="partial" data-done="8" data-total="8" data-name="Goose" data-blob="goose agentic ai foundation **本地优先的开源通用 agent**：桌面应用 + cli + 可嵌入 api 三种形态都能跑。
+        <article class="card" style="--card-accent:#8b7cf8" data-track="cli" data-family="" data-task="write-code" data-conf="partial" data-done="8" data-total="8" data-name="Goose" data-blob="goose agentic ai foundation **本地优先的开源通用 agent**：桌面应用 + cli + 可嵌入 api 三种形态都能跑。
 
 由 block 创建，现属 **agentic ai foundation（linux foundation）**。
 
@@ -533,7 +555,7 @@ provider 可换成 ollama 等本地模型。
             <a class="more" href="./goose.html" aria-label="Goose 详情"><span data-zh>详情 →</span><span data-en>Details →</span></a>
           </div>
         </article>
-        <article class="card" style="--card-accent:#E5705A" data-track="cli" data-family="" data-conf="partial" data-done="8" data-total="8" data-name="OpenCode" data-blob="opencode opencode mit 许可的多 provider 编程 harness。**它运行 bash 命令前会询问权限**，并支持 acp 载入。">
+        <article class="card" style="--card-accent:#E5705A" data-track="cli" data-family="" data-task="write-code" data-conf="partial" data-done="8" data-total="8" data-name="OpenCode" data-blob="opencode opencode mit 许可的多 provider 编程 harness。**它运行 bash 命令前会询问权限**，并支持 acp 载入。">
           <div class="card-top">
             <div class="mark" aria-hidden="true">OC</div>
             <div class="card-id">
@@ -547,7 +569,7 @@ provider 可换成 ollama 等本地模型。
             <a class="more" href="./opencode.html" aria-label="OpenCode 详情"><span data-zh>详情 →</span><span data-en>Details →</span></a>
           </div>
         </article>
-        <article class="card" style="--card-accent:#8b7cf8" data-track="cli" data-family="" data-conf="partial" data-done="5" data-total="8" data-name="Warp" data-blob="warp warp **开源的终端 agent 环境。**
+        <article class="card" style="--card-accent:#8b7cf8" data-track="cli" data-family="" data-task="write-code" data-conf="partial" data-done="5" data-total="8" data-name="Warp" data-blob="warp warp **开源的终端 agent 环境。**
 
 官方自称：
 
@@ -577,7 +599,7 @@ provider 可换成 ollama 等本地模型。
             <p><span data-zh>本机不装任何东西，在厂商的云端机器上持续工作（OpenAI Dot / Meta Muse / xAI Grok Bot）。差别不在功能多寡，而在<strong>机器归谁</strong> —— 代价是本地文件与离线能力基本让出，收益是关机后仍在跑。</span><span data-en>Nothing installs locally; the work happens on the vendor's cloud machine (OpenAI Dot / Meta Muse / xAI Grok Bot). The difference is not how many features you get but <strong>whose machine it runs on</strong> — the cost is giving up local files and offline capability, the benefit is that it keeps running after shutdown.</span></p>
           </div>
           <div class="grid">
-        <article class="card" style="--card-accent:#000000" data-track="cloud" data-family="" data-conf="partial" data-done="8" data-total="8" data-name="xAI Grok Bot" data-blob="xai grok bot xai **它是三家同期发布里唯一一家官方页上能读到「jobs 清单」的。**
+        <article class="card" style="--card-accent:#000000" data-track="cloud" data-family="" data-task="long-task" data-conf="partial" data-done="8" data-total="8" data-name="xAI Grok Bot" data-blob="xai grok bot xai **它是三家同期发布里唯一一家官方页上能读到「jobs 清单」的。**
 
 它不谈机制，直接列了九个岗位：销售线索、网站搭建、收件箱、会议代听……">
           <div class="card-top">
@@ -593,7 +615,7 @@ provider 可换成 ollama 等本地模型。
             <a class="more" href="./grok-bot.html" aria-label="xAI Grok Bot 详情"><span data-zh>详情 →</span><span data-en>Details →</span></a>
           </div>
         </article>
-        <article class="card" style="--card-accent:#8b7cf8" data-track="cloud" data-family="" data-conf="partial" data-done="8" data-total="8" data-name="Jules" data-blob="jules google **本机什么都不装，任务跑在 google 的云机器上，做完给你一个 pr。**
+        <article class="card" style="--card-accent:#8b7cf8" data-track="cloud" data-family="" data-task="long-task" data-conf="partial" data-done="8" data-total="8" data-name="Jules" data-blob="jules google **本机什么都不装，任务跑在 google 的云机器上，做完给你一个 pr。**
 
 它和你熟悉的 ide / cli 助手最大的差别不是功能多少，而是**交互不是实时的**：
 你提交任务、批准计划，然后走开，回头收 pr。
@@ -612,7 +634,7 @@ provider 可换成 ollama 等本地模型。
             <a class="more" href="./jules.html" aria-label="Jules 详情"><span data-zh>详情 →</span><span data-en>Details →</span></a>
           </div>
         </article>
-        <article class="card" style="--card-accent:#0866FF" data-track="cloud" data-family="" data-conf="partial" data-done="8" data-total="8" data-name="Meta Muse" data-blob="meta muse meta **唯一一家把「审批权交给另一个 agent」的**。muse secure vm 上跑着两个系统级隔离的东西：干活的 muse，和否决它的 sentinel。">
+        <article class="card" style="--card-accent:#0866FF" data-track="cloud" data-family="" data-task="long-task" data-conf="partial" data-done="8" data-total="8" data-name="Meta Muse" data-blob="meta muse meta **唯一一家把「审批权交给另一个 agent」的**。muse secure vm 上跑着两个系统级隔离的东西：干活的 muse，和否决它的 sentinel。">
           <div class="card-top">
             <div class="mark" aria-hidden="true">MU</div>
             <div class="card-id">
@@ -626,7 +648,7 @@ provider 可换成 ollama 等本地模型。
             <a class="more" href="./meta-muse.html" aria-label="Meta Muse 详情"><span data-zh>详情 →</span><span data-en>Details →</span></a>
           </div>
         </article>
-        <article class="card" style="--card-accent:#10A37F" data-track="cloud" data-family="" data-conf="partial" data-done="8" data-total="8" data-name="OpenAI Dot" data-blob="openai dot openai **openai 官方的云端编码 agent**：本机什么都不装，所有工作发生在 openai 的云端机器上。官方给的能力边界写得很直白：
+        <article class="card" style="--card-accent:#10A37F" data-track="cloud" data-family="" data-task="long-task" data-conf="partial" data-done="8" data-total="8" data-name="OpenAI Dot" data-blob="openai dot openai **openai 官方的云端编码 agent**：本机什么都不装，所有工作发生在 openai 的云端机器上。官方给的能力边界写得很直白：
 
 - 独立云端电脑
 - 自带浏览器
@@ -1027,12 +1049,13 @@ provider 可换成 ollama 等本地模型。
  *   搜索   —— data-blob（名称 + 厂商 + 定位句）
  *   分组   —— data-form（agents 页=形态 track / harness 页=抽象层 family / tools 页无此项）
  *   核验   —— data-conf（verified / partial / stale）
+ *   任务   —— data-task（S43：空格分隔多值，卡片可挂多个任务；任务卡链 ?task=<id> 到此）
  *   排序   —— data-done & data-total（**按产品**的维度补齐数），在各自 .grid 内重排
  *
  * ⚠ 排序只在**同一个 .grid 内**进行：页面按形态/抽象层分了组，
  *   跨组重排会把分组打散（而分组本身是本站的一条判断，不能因为排序就没了）。
  *
- * URL 可还原：?q=&form=&conf=&sort= 写进地址栏。
+ * URL 可还原：?q=&form=&conf=&task=&sort= 写进地址栏。
  */
 (function () {
   'use strict';
@@ -1043,6 +1066,7 @@ provider 可换成 ollama 等本地模型。
   var q = box.querySelector('.aq');
   var selForm = box.querySelector('.asel-form');
   var selConf = box.querySelector('.asel-conf');
+  var selTask = box.querySelector('.asel-task');
   var selSort = box.querySelector('.asel-sort');
   var count = box.querySelector('.acount');
   var allCards = Array.prototype.slice.call(document.querySelectorAll('.grid > .card'));
@@ -1054,7 +1078,7 @@ provider 可换成 ollama 等本地模型。
   function writeUrl() {
     try {
       var u = new URL(location.href);
-      var vals = { q: q ? q.value.trim() : '', form: selForm ? selForm.value : '', conf: selConf ? selConf.value : '', sort: selSort ? selSort.value : '' };
+      var vals = { q: q ? q.value.trim() : '', form: selForm ? selForm.value : '', conf: selConf ? selConf.value : '', task: selTask ? selTask.value : '', sort: selSort ? selSort.value : '' };
       Object.keys(vals).forEach(function (k) { if (vals[k]) u.searchParams.set(k, vals[k]); else u.searchParams.delete(k); });
       history.replaceState(null, '', u.toString());
     } catch (e) { /* file:// 等场景静默降级：功能可用，地址栏不同步 */ }
@@ -1073,12 +1097,15 @@ provider 可换成 ollama 等本地模型。
      * 由 select 的 data-attr 指明比哪个属性 —— 卡片上两个属性都有。 */
     var formAttr = selForm ? (selForm.getAttribute('data-attr') || 'track') : 'track';
     var conf = selConf ? selConf.value : '';
+    var task = selTask ? selTask.value : '';
     var shown = 0;
     allCards.forEach(function (c) {
       var okQ = !term || (c.getAttribute('data-blob') || '').indexOf(term) !== -1;
       var okForm = !form || c.getAttribute('data-' + formAttr) === form;
       var okConf = !conf || c.getAttribute('data-conf') === conf;
-      var on = okQ && okForm && okConf;
+      /* data-task 是空格分隔多值（一份档案可挂多个任务），按 token 匹配。 */
+      var okTask = !task || (c.getAttribute('data-task') || '').split(/\s+/).indexOf(task) !== -1;
+      var on = okQ && okForm && okConf && okTask;
       c.hidden = !on;
       if (on) shown++;
     });
@@ -1112,7 +1139,7 @@ provider 可换成 ollama 等本地模型。
 
   // 首次：用 URL 参数还原
   if (q) q.value = param('q');
-  [[selForm, 'form'], [selConf, 'conf'], [selSort, 'sort']].forEach(function (pair) {
+  [[selForm, 'form'], [selConf, 'conf'], [selTask, 'task'], [selSort, 'sort']].forEach(function (pair) {
     var el = pair[0]; var v = param(pair[1]);
     if (!el || !v) return;
     /* `<select>` 遇到选项里没有的值会**静默忽略** —— 那就成了「指名筛选却被无视」。
@@ -1127,7 +1154,7 @@ provider 可换成 ollama 等本地模型。
   });
 
   if (q) q.addEventListener('input', function () { apply(); writeUrl(); });
-  [selForm, selConf].forEach(function (s) { if (s) s.addEventListener('change', function () { apply(); writeUrl(); }); });
+  [selForm, selConf, selTask].forEach(function (s) { if (s) s.addEventListener('change', function () { apply(); writeUrl(); }); });
   if (selSort) selSort.addEventListener('change', function () { sort(); writeUrl(); });
 
   sort();

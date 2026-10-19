@@ -104,6 +104,31 @@
     </nav>
 
     
+    <section class="section">
+      <div class="container">
+        <h2><span data-zh>按任务找</span><span data-en>Find by task</span></h2>
+        <p class="section-desc"><span data-zh>这一页有 10 个对象。下面的数字是本页真正收录的条数——点进去就是筛选后的结果，不是跨站的总数。</span><span data-en>This page holds 10 objects. The numbers below are what this page actually carries — clicking filters right here, not a site-wide total.</span></p>
+        <div class="grid">
+        <article class="t-taskcard">
+          <h3><a href="./?task=read-files"><span data-zh>读我的文件与记忆</span><span data-en>Read my files and memory</span></a> <span class="t-taskn">3</span></h3>
+          <p class="t-tasklead"><span data-zh>给 agent 接上本地文件、持久记忆与文档检索的工具。</span><span data-en>Tools that wire local files, persistent memory and doc retrieval into an agent.</span></p>
+          <a class="t-taskgo" href="./?task=read-files"><span data-zh>只看这一类 →</span><span data-en>Show only these →</span></a>
+        </article>
+        <article class="t-taskcard">
+          <h3><a href="./?task=web"><span data-zh>上网、浏览器、抓网页</span><span data-en>Browse, fetch, act on the web</span></a> <span class="t-taskn">2</span></h3>
+          <p class="t-tasklead"><span data-zh>让 agent 触网：抓页面、开浏览器、连 GitHub。</span><span data-en>Give an agent network reach: fetch pages, drive a browser, connect GitHub.</span></p>
+          <a class="t-taskgo" href="./?task=web"><span data-zh>只看这一类 →</span><span data-en>Show only these →</span></a>
+        </article>
+        <article class="t-taskcard">
+          <h3><a href="./?task=extend"><span data-zh>给 agent 装工具</span><span data-en>Give an agent new tools</span></a> <span class="t-taskn">5</span></h3>
+          <p class="t-tasklead"><span data-zh>MCP server 一览：每个都能回到官方 README 核对权限边界。</span><span data-en>The MCP server shelf: every entry traces back to its official README and permission scope.</span></p>
+          <a class="t-taskgo" href="./?task=extend"><span data-zh>只看这一类 →</span><span data-en>Show only these →</span></a>
+        </article>
+        </div>
+      </div>
+    </section>
+
+    
     <section class="section guide-band">
       <div class="container">
         <h2><span data-zh>先回答一件事：你到底缺什么能力</span><span data-en>Answer one question first: what capability are you actually missing</span></h2>
@@ -147,11 +172,13 @@
             <input type="search" class="aq" autocomplete="off" placeholder="Cursor · Claude · Aider"></label>
           <label class="af-f"><span class="af-h"><span data-zh>核验状态</span><span data-en>Verification</span></span>
             <select class="asel-conf"><option value="">全部 / All</option><option value="partial">部分核验 / Partly verified</option><option value="verified">已核验 / Verified</option></select></label>
+          <label class="af-f"><span class="af-h"><span data-zh>任务</span><span data-en>Task</span></span>
+            <select class="asel-task"><option value="">全部 / All</option><option value="read-files">读我的文件与记忆 / Read my files and memory</option><option value="web">上网、浏览器、抓网页 / Browse, fetch, act on the web</option><option value="extend">给 agent 装工具 / Give an agent new tools</option></select></label>
           <span class="af-note"><span data-zh>完整度：全部 10 份均 100%（无差异，故不提供排序）</span><span data-en>Completeness: all 10 entries are at 100% (no variation, so no sort)</span></span>
           <span class="acount" aria-live="polite"></span>
         </div>
         <div class="grid">
-        <article class="card" style="--card-accent:#F97316" data-track="mcp" data-family="" data-conf="partial" data-done="11" data-total="11" data-name="Context7" data-blob="context7 upstash **工具分区里唯一的远程托管条目** —— 为 agent 提供版本感知的库文档，mit 开源但核心服务在 upstash 侧。">
+        <article class="card" style="--card-accent:#F97316" data-track="mcp" data-family="" data-task="read-files" data-conf="partial" data-done="11" data-total="11" data-name="Context7" data-blob="context7 upstash **工具分区里唯一的远程托管条目** —— 为 agent 提供版本感知的库文档，mit 开源但核心服务在 upstash 侧。">
           <div class="card-top">
             <div class="mark" aria-hidden="true">C7</div>
             <div class="card-id">
@@ -165,7 +192,7 @@
             <a class="more" href="./context7.html" aria-label="Context7 详情"><span data-zh>详情 →</span><span data-en>Details →</span></a>
           </div>
         </article>
-        <article class="card" style="--card-accent:#A29BFE" data-track="mcp" data-family="" data-conf="verified" data-done="11" data-total="11" data-name="Everything MCP Server" data-blob="everything mcp server model context protocol **不是可用工具**——官方明说这是给 mcp 客户端开发者做功能测试的 server，唯一用途是验证客户端协议实现是否正确。">
+        <article class="card" style="--card-accent:#A29BFE" data-track="mcp" data-family="" data-task="extend" data-conf="verified" data-done="11" data-total="11" data-name="Everything MCP Server" data-blob="everything mcp server model context protocol **不是可用工具**——官方明说这是给 mcp 客户端开发者做功能测试的 server，唯一用途是验证客户端协议实现是否正确。">
           <div class="card-top">
             <div class="mark" aria-hidden="true">E</div>
             <div class="card-id">
@@ -179,7 +206,7 @@
             <a class="more" href="./everything.html" aria-label="Everything MCP Server 详情"><span data-zh>详情 →</span><span data-en>Details →</span></a>
           </div>
         </article>
-        <article class="card" style="--card-accent:#FF6B6B" data-track="mcp" data-family="" data-conf="verified" data-done="11" data-total="11" data-name="Fetch MCP Server" data-blob="fetch mcp server model context protocol 把网页内容转成 markdown 的 reference server，**官方在其 readme 里明确标注了安全警告：它能访问本地与内网 ip**。">
+        <article class="card" style="--card-accent:#FF6B6B" data-track="mcp" data-family="" data-task="web" data-conf="verified" data-done="11" data-total="11" data-name="Fetch MCP Server" data-blob="fetch mcp server model context protocol 把网页内容转成 markdown 的 reference server，**官方在其 readme 里明确标注了安全警告：它能访问本地与内网 ip**。">
           <div class="card-top">
             <div class="mark" aria-hidden="true">F</div>
             <div class="card-id">
@@ -193,7 +220,7 @@
             <a class="more" href="./fetch.html" aria-label="Fetch MCP Server 详情"><span data-zh>详情 →</span><span data-en>Details →</span></a>
           </div>
         </article>
-        <article class="card" style="--card-accent:#4A90D9" data-track="mcp" data-family="" data-conf="verified" data-done="11" data-total="11" data-name="Filesystem MCP Server" data-blob="filesystem mcp server model context protocol mcp 官方 reference server 里的文件操作实现。**它强制显式声明允许目录，不允许静默访问全盘**。">
+        <article class="card" style="--card-accent:#4A90D9" data-track="mcp" data-family="" data-task="read-files" data-conf="verified" data-done="11" data-total="11" data-name="Filesystem MCP Server" data-blob="filesystem mcp server model context protocol mcp 官方 reference server 里的文件操作实现。**它强制显式声明允许目录，不允许静默访问全盘**。">
           <div class="card-top">
             <div class="mark" aria-hidden="true">FS</div>
             <div class="card-id">
@@ -207,7 +234,7 @@
             <a class="more" href="./filesystem.html" aria-label="Filesystem MCP Server 详情"><span data-zh>详情 →</span><span data-en>Details →</span></a>
           </div>
         </article>
-        <article class="card" style="--card-accent:#F14E32" data-track="mcp" data-family="" data-conf="verified" data-done="11" data-total="11" data-name="Git MCP Server" data-blob="git mcp server model context protocol mcp 官方 reference server 里的版本控制实现。**它作用域限定在指定 git 仓库，但具备完整的本地写操作能力**。">
+        <article class="card" style="--card-accent:#F14E32" data-track="mcp" data-family="" data-task="extend" data-conf="verified" data-done="11" data-total="11" data-name="Git MCP Server" data-blob="git mcp server model context protocol mcp 官方 reference server 里的版本控制实现。**它作用域限定在指定 git 仓库，但具备完整的本地写操作能力**。">
           <div class="card-top">
             <div class="mark" aria-hidden="true">G</div>
             <div class="card-id">
@@ -221,7 +248,7 @@
             <a class="more" href="./git.html" aria-label="Git MCP Server 详情"><span data-zh>详情 →</span><span data-en>Details →</span></a>
           </div>
         </article>
-        <article class="card" style="--card-accent:#181717" data-track="mcp" data-family="" data-conf="partial" data-done="11" data-total="11" data-name="GitHub MCP Server" data-blob="github mcp server github **github 官方自己的 mcp server**（仓库自述 &quot;github&#39;s official mcp server&quot;），
+        <article class="card" style="--card-accent:#181717" data-track="mcp" data-family="" data-task="extend" data-conf="partial" data-done="11" data-total="11" data-name="GitHub MCP Server" data-blob="github mcp server github **github 官方自己的 mcp server**（仓库自述 &quot;github&#39;s official mcp server&quot;），
 它有**本地 docker 与远程托管两种形态**。它把 github 平台能力暴露给任意 mcp 客户端。">
           <div class="card-top">
             <div class="mark" aria-hidden="true">GH</div>
@@ -236,7 +263,7 @@
             <a class="more" href="./github-mcp.html" aria-label="GitHub MCP Server 详情"><span data-zh>详情 →</span><span data-en>Details →</span></a>
           </div>
         </article>
-        <article class="card" style="--card-accent:#7B61FF" data-track="mcp" data-family="" data-conf="verified" data-done="11" data-total="11" data-name="Knowledge Graph Memory Server" data-blob="knowledge graph memory server model context protocol 用本地知识图谱实现跨会话持久记忆的 reference server。**它记忆落盘、跨会话共享，但没有访问控制**。">
+        <article class="card" style="--card-accent:#7B61FF" data-track="mcp" data-family="" data-task="read-files" data-conf="verified" data-done="11" data-total="11" data-name="Knowledge Graph Memory Server" data-blob="knowledge graph memory server model context protocol 用本地知识图谱实现跨会话持久记忆的 reference server。**它记忆落盘、跨会话共享，但没有访问控制**。">
           <div class="card-top">
             <div class="mark" aria-hidden="true">M</div>
             <div class="card-id">
@@ -250,7 +277,7 @@
             <a class="more" href="./memory.html" aria-label="Knowledge Graph Memory Server 详情"><span data-zh>详情 →</span><span data-en>Details →</span></a>
           </div>
         </article>
-        <article class="card" style="--card-accent:#2D9CDB" data-track="mcp" data-family="" data-conf="verified" data-done="11" data-total="11" data-name="Playwright MCP Server" data-blob="playwright mcp server microsoft 微软维护的浏览器自动化 server。**它用无障碍树而非截图驱动**，不需要视觉模型。输出是结构化快照。">
+        <article class="card" style="--card-accent:#2D9CDB" data-track="mcp" data-family="" data-task="web" data-conf="verified" data-done="11" data-total="11" data-name="Playwright MCP Server" data-blob="playwright mcp server microsoft 微软维护的浏览器自动化 server。**它用无障碍树而非截图驱动**，不需要视觉模型。输出是结构化快照。">
           <div class="card-top">
             <div class="mark" aria-hidden="true">P</div>
             <div class="card-id">
@@ -264,7 +291,7 @@
             <a class="more" href="./playwright.html" aria-label="Playwright MCP Server 详情"><span data-zh>详情 →</span><span data-en>Details →</span></a>
           </div>
         </article>
-        <article class="card" style="--card-accent:#4ECDC4" data-track="mcp" data-family="" data-conf="verified" data-done="11" data-total="11" data-name="Sequential Thinking MCP Server" data-blob="sequential thinking mcp server model context protocol 提供单个 `sequential_thinking` 工具，让 agent 以**可修订、可分支**的方式逐步推进复杂问题——**它不产生智能，只产生结构**。">
+        <article class="card" style="--card-accent:#4ECDC4" data-track="mcp" data-family="" data-task="extend" data-conf="verified" data-done="11" data-total="11" data-name="Sequential Thinking MCP Server" data-blob="sequential thinking mcp server model context protocol 提供单个 `sequential_thinking` 工具，让 agent 以**可修订、可分支**的方式逐步推进复杂问题——**它不产生智能，只产生结构**。">
           <div class="card-top">
             <div class="mark" aria-hidden="true">S</div>
             <div class="card-id">
@@ -278,7 +305,7 @@
             <a class="more" href="./sequential-thinking.html" aria-label="Sequential Thinking MCP Server 详情"><span data-zh>详情 →</span><span data-en>Details →</span></a>
           </div>
         </article>
-        <article class="card" style="--card-accent:#95A5A6" data-track="mcp" data-family="" data-conf="verified" data-done="11" data-total="11" data-name="Time MCP Server" data-blob="time mcp server model context protocol 只做两件事：查当前时间、换时区。**无文件无网络，是权限风险最低的一类 server。**">
+        <article class="card" style="--card-accent:#95A5A6" data-track="mcp" data-family="" data-task="extend" data-conf="verified" data-done="11" data-total="11" data-name="Time MCP Server" data-blob="time mcp server model context protocol 只做两件事：查当前时间、换时区。**无文件无网络，是权限风险最低的一类 server。**">
           <div class="card-top">
             <div class="mark" aria-hidden="true">T</div>
             <div class="card-id">
@@ -552,12 +579,13 @@
  *   搜索   —— data-blob（名称 + 厂商 + 定位句）
  *   分组   —— data-form（agents 页=形态 track / harness 页=抽象层 family / tools 页无此项）
  *   核验   —— data-conf（verified / partial / stale）
+ *   任务   —— data-task（S43：空格分隔多值，卡片可挂多个任务；任务卡链 ?task=<id> 到此）
  *   排序   —— data-done & data-total（**按产品**的维度补齐数），在各自 .grid 内重排
  *
  * ⚠ 排序只在**同一个 .grid 内**进行：页面按形态/抽象层分了组，
  *   跨组重排会把分组打散（而分组本身是本站的一条判断，不能因为排序就没了）。
  *
- * URL 可还原：?q=&form=&conf=&sort= 写进地址栏。
+ * URL 可还原：?q=&form=&conf=&task=&sort= 写进地址栏。
  */
 (function () {
   'use strict';
@@ -568,6 +596,7 @@
   var q = box.querySelector('.aq');
   var selForm = box.querySelector('.asel-form');
   var selConf = box.querySelector('.asel-conf');
+  var selTask = box.querySelector('.asel-task');
   var selSort = box.querySelector('.asel-sort');
   var count = box.querySelector('.acount');
   var allCards = Array.prototype.slice.call(document.querySelectorAll('.grid > .card'));
@@ -579,7 +608,7 @@
   function writeUrl() {
     try {
       var u = new URL(location.href);
-      var vals = { q: q ? q.value.trim() : '', form: selForm ? selForm.value : '', conf: selConf ? selConf.value : '', sort: selSort ? selSort.value : '' };
+      var vals = { q: q ? q.value.trim() : '', form: selForm ? selForm.value : '', conf: selConf ? selConf.value : '', task: selTask ? selTask.value : '', sort: selSort ? selSort.value : '' };
       Object.keys(vals).forEach(function (k) { if (vals[k]) u.searchParams.set(k, vals[k]); else u.searchParams.delete(k); });
       history.replaceState(null, '', u.toString());
     } catch (e) { /* file:// 等场景静默降级：功能可用，地址栏不同步 */ }
@@ -598,12 +627,15 @@
      * 由 select 的 data-attr 指明比哪个属性 —— 卡片上两个属性都有。 */
     var formAttr = selForm ? (selForm.getAttribute('data-attr') || 'track') : 'track';
     var conf = selConf ? selConf.value : '';
+    var task = selTask ? selTask.value : '';
     var shown = 0;
     allCards.forEach(function (c) {
       var okQ = !term || (c.getAttribute('data-blob') || '').indexOf(term) !== -1;
       var okForm = !form || c.getAttribute('data-' + formAttr) === form;
       var okConf = !conf || c.getAttribute('data-conf') === conf;
-      var on = okQ && okForm && okConf;
+      /* data-task 是空格分隔多值（一份档案可挂多个任务），按 token 匹配。 */
+      var okTask = !task || (c.getAttribute('data-task') || '').split(/\s+/).indexOf(task) !== -1;
+      var on = okQ && okForm && okConf && okTask;
       c.hidden = !on;
       if (on) shown++;
     });
@@ -637,7 +669,7 @@
 
   // 首次：用 URL 参数还原
   if (q) q.value = param('q');
-  [[selForm, 'form'], [selConf, 'conf'], [selSort, 'sort']].forEach(function (pair) {
+  [[selForm, 'form'], [selConf, 'conf'], [selTask, 'task'], [selSort, 'sort']].forEach(function (pair) {
     var el = pair[0]; var v = param(pair[1]);
     if (!el || !v) return;
     /* `<select>` 遇到选项里没有的值会**静默忽略** —— 那就成了「指名筛选却被无视」。
@@ -652,7 +684,7 @@
   });
 
   if (q) q.addEventListener('input', function () { apply(); writeUrl(); });
-  [selForm, selConf].forEach(function (s) { if (s) s.addEventListener('change', function () { apply(); writeUrl(); }); });
+  [selForm, selConf, selTask].forEach(function (s) { if (s) s.addEventListener('change', function () { apply(); writeUrl(); }); });
   if (selSort) selSort.addEventListener('change', function () { sort(); writeUrl(); });
 
   sort();

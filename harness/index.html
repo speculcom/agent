@@ -104,6 +104,26 @@
     </nav>
 
     
+    <section class="section">
+      <div class="container">
+        <h2><span data-zh>按任务找</span><span data-en>Find by task</span></h2>
+        <p class="section-desc"><span data-zh>这一页有 15 个对象。下面的数字是本页真正收录的条数——点进去就是筛选后的结果，不是跨站的总数。</span><span data-en>This page holds 15 objects. The numbers below are what this page actually carries — clicking filters right here, not a site-wide total.</span></p>
+        <div class="grid">
+        <article class="t-taskcard">
+          <h3><a href="./?task=build-agent"><span data-zh>自己搭 agent</span><span data-en>Build your own agent</span></a> <span class="t-taskn">12</span></h3>
+          <p class="t-tasklead"><span data-zh>给程序用的底座与编排框架：agent loop、图工作流、多 agent。</span><span data-en>Bases and orchestration frameworks for programs: agent loops, graph workflows, multi-agent.</span></p>
+          <a class="t-taskgo" href="./?task=build-agent"><span data-zh>只看这一类 →</span><span data-en>Show only these →</span></a>
+        </article>
+        <article class="t-taskcard">
+          <h3><a href="./?task=long-task"><span data-zh>无人值守跑长任务</span><span data-en>Run long tasks unattended</span></a> <span class="t-taskn">3</span></h3>
+          <p class="t-tasklead"><span data-zh>关掉笔记本它还在跑的：厂商云形态与通用 harness。</span><span data-en>Keeps running after you shut your laptop: vendor-cloud forms and general harnesses.</span></p>
+          <a class="t-taskgo" href="./?task=long-task"><span data-zh>只看这一类 →</span><span data-en>Show only these →</span></a>
+        </article>
+        </div>
+      </div>
+    </section>
+
+    
     <section class="section guide-band">
       <div class="container">
         <h2><span data-zh>先回答一件事：你要不要自己搭</span><span data-en>Answer one question first: do you need to build one at all</span></h2>
@@ -147,6 +167,8 @@
             <input type="search" class="aq" autocomplete="off" placeholder="Cursor · Claude · Aider"></label>
           <label class="af-f"><span class="af-h"><span data-zh>抽象层</span><span data-en>Layer</span></span>
             <select class="asel-form" data-attr="family"><option value="">全部 / All</option><option value="coding-base">编程底座 / Coding base</option><option value="orchestration">编排框架 / Orchestration</option><option value="general-harness">通用 Harness / General harness</option></select></label>
+          <label class="af-f"><span class="af-h"><span data-zh>任务</span><span data-en>Task</span></span>
+            <select class="asel-task"><option value="">全部 / All</option><option value="build-agent">自己搭 agent / Build your own agent</option><option value="long-task">无人值守跑长任务 / Run long tasks unattended</option></select></label>
           <label class="af-f"><span class="af-h"><span data-zh>排序</span><span data-en>Sort</span></span>
             <select class="asel-sort"><option value="">默认 / Default</option><option value="done-desc">完整度 高 → 低 / Completeness high–low</option><option value="done-asc">完整度 低 → 高 / Completeness low–high</option></select></label>
           <span class="acount" aria-live="polite"></span>
@@ -158,7 +180,7 @@
             <p><span data-zh>给你 agent loop 或现成 CLI 的编程接口。这层的差别不在功能多少，而在<strong>它替你做多少决定</strong> —— 一个只给原语，一个把整套 CLI 连权限模型一起打包给你。</span><span data-en>A programming interface giving you an agent loop or an existing CLI. The difference here is not how much it does but <strong>how many decisions it makes for you</strong> — one hands you primitives, the other packages the whole CLI along with its permission model.</span></p>
           </div>
           <div class="grid">
-        <article class="card" style="--card-accent:#D97757" data-track="harness" data-family="coding-base" data-conf="partial" data-done="8" data-total="8" data-name="Claude Agent SDK" data-blob="claude agent sdk anthropic **它是什么**：claude code 的编程接口（python 版）。
+        <article class="card" style="--card-accent:#D97757" data-track="harness" data-family="coding-base" data-task="build-agent" data-conf="partial" data-done="8" data-total="8" data-name="Claude Agent SDK" data-blob="claude agent sdk anthropic **它是什么**：claude code 的编程接口（python 版）。
 
 它把一个成熟的 coding cli 变成 python 能驱动的对象。
 
@@ -180,7 +202,7 @@
             <a class="more" href="./claude-agent-sdk.html" aria-label="Claude Agent SDK 详情"><span data-zh>详情 →</span><span data-en>Details →</span></a>
           </div>
         </article>
-        <article class="card" style="--card-accent:#10A37F" data-track="harness" data-family="coding-base" data-conf="partial" data-done="8" data-total="8" data-name="Codex SDK" data-blob="codex sdk openai **「把 codex cli 变成 node 进程里可驱动的对象」**。官方 readme 首句就是
+        <article class="card" style="--card-accent:#10A37F" data-track="harness" data-family="coding-base" data-task="build-agent" data-conf="partial" data-done="8" data-total="8" data-name="Codex SDK" data-blob="codex sdk openai **「把 codex cli 变成 node 进程里可驱动的对象」**。官方 readme 首句就是
 「embed the codex agent in your workflows and apps」，第二句划清了形态：
 &gt; the typescript sdk **wraps** the `codex` cli from `@openai/codex`.
 &gt; it **spawns the cli** and exchanges jsonl events over stdin/stdout.">
@@ -197,7 +219,7 @@
             <a class="more" href="./codex-sdk.html" aria-label="Codex SDK 详情"><span data-zh>详情 →</span><span data-en>Details →</span></a>
           </div>
         </article>
-        <article class="card" style="--card-accent:#10A37F" data-track="harness" data-family="coding-base" data-conf="partial" data-done="8" data-total="8" data-name="OpenAI Agents SDK" data-blob="openai agents sdk openai **openai agents sdk 是「primitives-only 的多agent harness」。**
+        <article class="card" style="--card-accent:#10A37F" data-track="harness" data-family="coding-base" data-task="build-agent" data-conf="partial" data-done="8" data-total="8" data-name="OpenAI Agents SDK" data-blob="openai agents sdk openai **openai agents sdk 是「primitives-only 的多agent harness」。**
 
 官方自述 lightweight yet powerful：filesystem / 规划 / 记忆都不替你决定。">
           <div class="card-top">
@@ -213,7 +235,7 @@
             <a class="more" href="./openai-agents-sdk.html" aria-label="OpenAI Agents SDK 详情"><span data-zh>详情 →</span><span data-en>Details →</span></a>
           </div>
         </article>
-        <article class="card" style="--card-accent:#3b82f6" data-track="harness" data-family="coding-base" data-conf="partial" data-done="5" data-total="8" data-name="Pydantic AI" data-blob="pydantic ai pydantic **pydantic ai 是 pydantic 出的 python agent 库。**
+        <article class="card" style="--card-accent:#3b82f6" data-track="harness" data-family="coding-base" data-task="build-agent" data-conf="partial" data-done="5" data-total="8" data-name="Pydantic AI" data-blob="pydantic ai pydantic **pydantic ai 是 pydantic 出的 python agent 库。**
 
 主打类型安全。官方自述把两个关键词并在一起 ——
 
@@ -238,7 +260,7 @@
             <a class="more" href="./pydantic-ai.html" aria-label="Pydantic AI 详情"><span data-zh>详情 →</span><span data-en>Details →</span></a>
           </div>
         </article>
-        <article class="card" style="--card-accent:#FFD21E" data-track="harness" data-family="coding-base" data-conf="partial" data-done="3" data-total="8" data-name="smolagents" data-blob="smolagents hugging face **smolagents 是一个薄 agent 库 —— 它让 agent「用代码思考」。**
+        <article class="card" style="--card-accent:#FFD21E" data-track="harness" data-family="coding-base" data-task="build-agent" data-conf="partial" data-done="3" data-total="8" data-name="smolagents" data-blob="smolagents hugging face **smolagents 是一个薄 agent 库 —— 它让 agent「用代码思考」。**
 
 官方自述是 **&quot;barebones library for agents that think in code&quot;**（仓库 description 原文）。
 
@@ -266,7 +288,7 @@
             <p><span data-zh>把多步骤、多 Agent、要中断恢复的流程显式建成图。给的是控制力，代价是接线与状态管理都归你。</span><span data-en>Makes multi-step, multi-agent flows with resumable state explicit graphs. It gives you control; the cost is that wiring and state management are yours.</span></p>
           </div>
           <div class="grid">
-        <article class="card" style="--card-accent:#3b82f6" data-track="harness" data-family="orchestration" data-conf="partial" data-done="4" data-total="8" data-name="AG2" data-blob="ag2 ag2ai **ag2 是 autogen 停更后由社区接棒的续作。** 仓库描述直接写着 &quot;ag2 (formerly autogen)&quot;。
+        <article class="card" style="--card-accent:#3b82f6" data-track="harness" data-family="orchestration" data-task="build-agent" data-conf="partial" data-done="4" data-total="8" data-name="AG2" data-blob="ag2 ag2ai **ag2 是 autogen 停更后由社区接棒的续作。** 仓库描述直接写着 &quot;ag2 (formerly autogen)&quot;。
 
 readme 也自述维护方：
 
@@ -300,7 +322,7 @@ readme 也自述维护方：
             <a class="more" href="./ag2.html" aria-label="AG2 详情"><span data-zh>详情 →</span><span data-en>Details →</span></a>
           </div>
         </article>
-        <article class="card" style="--card-accent:#EB6658" data-track="harness" data-family="orchestration" data-conf="partial" data-done="5" data-total="8" data-name="CrewAI" data-blob="crewai crewai inc **crewai 是一个 python 框架。它用「角色分工」和「业务流程」两套比喻来编排多 agent。**
+        <article class="card" style="--card-accent:#EB6658" data-track="harness" data-family="orchestration" data-task="build-agent" data-conf="partial" data-done="5" data-total="8" data-name="CrewAI" data-blob="crewai crewai inc **crewai 是一个 python 框架。它用「角色分工」和「业务流程」两套比喻来编排多 agent。**
 官方自述是 &quot;framework for orchestrating **role-playing**, autonomous ai agents.&quot;
 
 **「role-playing」这个词容易让人低估它。** 同一份 readme 里也写着 production-grade，
@@ -320,7 +342,7 @@ readme 也自述维护方：
             <a class="more" href="./crewai.html" aria-label="CrewAI 详情"><span data-zh>详情 →</span><span data-en>Details →</span></a>
           </div>
         </article>
-        <article class="card" style="--card-accent:#4285F4" data-track="harness" data-family="orchestration" data-conf="partial" data-done="8" data-total="8" data-name="Google ADK（Agent Development Kit）" data-blob="google adk（agent development kit） google **一句话说清它是什么**：
+        <article class="card" style="--card-accent:#4285F4" data-track="harness" data-family="orchestration" data-task="build-agent" data-conf="partial" data-done="8" data-total="8" data-name="Google ADK（Agent Development Kit）" data-blob="google adk（agent development kit） google **一句话说清它是什么**：
 
 google adk 是「**code-first** 的 agent 编排框架，核心资产是一个图执行引擎」。
 它的作用是把多个 agent 组织成一条流程，不替你跑单个 agent。
@@ -344,7 +366,7 @@ google adk 是「**code-first** 的 agent 编排框架，核心资产是一个�
             <a class="more" href="./google-adk.html" aria-label="Google ADK（Agent Development Kit） 详情"><span data-zh>详情 →</span><span data-en>Details →</span></a>
           </div>
         </article>
-        <article class="card" style="--card-accent:#1C3C3C" data-track="harness" data-family="orchestration" data-conf="partial" data-done="6" data-total="8" data-name="LangGraph" data-blob="langgraph langchain inc **langgraph 是一个低层编排框架，专门用来构建有状态的 agent。**
+        <article class="card" style="--card-accent:#1C3C3C" data-track="harness" data-family="orchestration" data-task="build-agent" data-conf="partial" data-done="6" data-total="8" data-name="LangGraph" data-blob="langgraph langchain inc **langgraph 是一个低层编排框架，专门用来构建有状态的 agent。**
 
 官方自述很克制，注意那个 low-level：
 
@@ -365,7 +387,7 @@ google adk 是「**code-first** 的 agent 编排框架，核心资产是一个�
             <a class="more" href="./langgraph.html" aria-label="LangGraph 详情"><span data-zh>详情 →</span><span data-en>Details →</span></a>
           </div>
         </article>
-        <article class="card" style="--card-accent:#7C3AED" data-track="harness" data-family="orchestration" data-conf="partial" data-done="7" data-total="8" data-name="LlamaIndex Framework" data-blob="llamaindex framework llamaindex（run-llama） **一句话说清**：llamaindex 是一个 python 库。它把外部数据接进来做检索问答。
+        <article class="card" style="--card-accent:#7C3AED" data-track="harness" data-family="orchestration" data-task="build-agent" data-conf="partial" data-done="7" data-total="8" data-name="LlamaIndex Framework" data-blob="llamaindex framework llamaindex（run-llama） **一句话说清**：llamaindex 是一个 python 库。它把外部数据接进来做检索问答。
 
 **⚠ 但有件事必须先说。**
 
@@ -420,7 +442,7 @@ google adk 是「**code-first** 的 agent 编排框架，核心资产是一个�
             <a class="more" href="./llamaindex.html" aria-label="LlamaIndex Framework 详情"><span data-zh>详情 →</span><span data-en>Details →</span></a>
           </div>
         </article>
-        <article class="card" style="--card-accent:#3b82f6" data-track="harness" data-family="orchestration" data-conf="partial" data-done="8" data-total="8" data-name="Mastra" data-blob="mastra mastra ai **mastra 是「typescript 生态的全栈式 agent 框架」。**
+        <article class="card" style="--card-accent:#3b82f6" data-track="harness" data-family="orchestration" data-task="build-agent" data-conf="partial" data-done="8" data-total="8" data-name="Mastra" data-blob="mastra mastra ai **mastra 是「typescript 生态的全栈式 agent 框架」。**
 
 装一个包，agents、图工作流、memory、rag、evals、mcp、内置 server 与 studio 就都在里面。
 
@@ -444,7 +466,7 @@ langgraph 自认 low-level、不预置工具与文件系统；mastra 走 batteri
             <a class="more" href="./mastra.html" aria-label="Mastra 详情"><span data-zh>详情 →</span><span data-en>Details →</span></a>
           </div>
         </article>
-        <article class="card" style="--card-accent:#0078D4" data-track="harness" data-family="orchestration" data-conf="partial" data-done="3" data-total="8" data-name="Microsoft Agent Framework" data-blob="microsoft agent framework microsoft **它是什么**：「semantic kernel 与 autogen 合并后的微软官方 agent 底座」。
+        <article class="card" style="--card-accent:#0078D4" data-track="harness" data-family="orchestration" data-task="build-agent" data-conf="partial" data-done="3" data-total="8" data-name="Microsoft Agent Framework" data-blob="microsoft agent framework microsoft **它是什么**：「semantic kernel 与 autogen 合并后的微软官方 agent 底座」。
 
 全名 **microsoft agent framework**（本站下称 maf）。
 
@@ -481,7 +503,7 @@ langgraph 自认 low-level、不预置工具与文件系统；mastra 走 batteri
             <p><span data-zh>预置了规划、文件系统、记忆等一整套，面向通用长任务。开箱程度最高，可改性最低。</span><span data-en>Presets planning, filesystem, memory and the rest, aimed at general long-running tasks. Most ready out of the box, least modifiable.</span></p>
           </div>
           <div class="grid">
-        <article class="card" style="--card-accent:#10A37F" data-track="harness" data-family="general-harness" data-conf="partial" data-done="8" data-total="8" data-name="Deep Agents" data-blob="deep agents langchain **deep agents 是 langchain 出的通用 agent harness。**
+        <article class="card" style="--card-accent:#10A37F" data-track="harness" data-family="general-harness" data-task="long-task" data-conf="partial" data-done="8" data-total="8" data-name="Deep Agents" data-blob="deep agents langchain **deep agents 是 langchain 出的通用 agent harness。**
 
 它把 filesystem、子代理、上下文管理、skills 都预置好了。
 
@@ -506,7 +528,7 @@ langgraph 自认 low-level、不预置工具与文件系统；mastra 走 batteri
             <a class="more" href="./deepagents.html" aria-label="Deep Agents 详情"><span data-zh>详情 →</span><span data-en>Details →</span></a>
           </div>
         </article>
-        <article class="card" style="--card-accent:#FFD700" data-track="harness" data-family="general-harness" data-conf="partial" data-done="5" data-total="8" data-name="Hermes Agent" data-blob="hermes agent nous research **hermes agent 是一个常驻的跨平台个人助手，会从经验里自己攒技能。**
+        <article class="card" style="--card-accent:#FFD700" data-track="harness" data-family="general-harness" data-task="long-task" data-conf="partial" data-done="5" data-total="8" data-name="Hermes Agent" data-blob="hermes agent nous research **hermes agent 是一个常驻的跨平台个人助手，会从经验里自己攒技能。**
 
 它不绑在你的笔记本上。
 
@@ -535,7 +557,7 @@ langgraph 自认 low-level、不预置工具与文件系统；mastra 走 batteri
             <a class="more" href="./hermes-agent.html" aria-label="Hermes Agent 详情"><span data-zh>详情 →</span><span data-en>Details →</span></a>
           </div>
         </article>
-        <article class="card" style="--card-accent:#F97316" data-track="harness" data-family="general-harness" data-conf="partial" data-done="8" data-total="8" data-name="OpenHands Agent Canvas" data-blob="openhands agent canvas openhands（all-hands-ai） **它是个自托管的 agent 控制中心**。官方 readme 现在管它叫 **agent canvas**。
+        <article class="card" style="--card-accent:#F97316" data-track="harness" data-family="general-harness" data-task="long-task" data-conf="partial" data-done="8" data-total="8" data-name="OpenHands Agent Canvas" data-blob="openhands agent canvas openhands（all-hands-ai） **它是个自托管的 agent 控制中心**。官方 readme 现在管它叫 **agent canvas**。
 
 它带的是一整套栈：web gui、terminal ui、cli、rest api 都在里面。
 它管的 agent 不止自家那一个。codex、claude code、gemini 都能挂上去跑。
@@ -842,12 +864,13 @@ langgraph 自认 low-level、不预置工具与文件系统；mastra 走 batteri
  *   搜索   —— data-blob（名称 + 厂商 + 定位句）
  *   分组   —— data-form（agents 页=形态 track / harness 页=抽象层 family / tools 页无此项）
  *   核验   —— data-conf（verified / partial / stale）
+ *   任务   —— data-task（S43：空格分隔多值，卡片可挂多个任务；任务卡链 ?task=<id> 到此）
  *   排序   —— data-done & data-total（**按产品**的维度补齐数），在各自 .grid 内重排
  *
  * ⚠ 排序只在**同一个 .grid 内**进行：页面按形态/抽象层分了组，
  *   跨组重排会把分组打散（而分组本身是本站的一条判断，不能因为排序就没了）。
  *
- * URL 可还原：?q=&form=&conf=&sort= 写进地址栏。
+ * URL 可还原：?q=&form=&conf=&task=&sort= 写进地址栏。
  */
 (function () {
   'use strict';
@@ -858,6 +881,7 @@ langgraph 自认 low-level、不预置工具与文件系统；mastra 走 batteri
   var q = box.querySelector('.aq');
   var selForm = box.querySelector('.asel-form');
   var selConf = box.querySelector('.asel-conf');
+  var selTask = box.querySelector('.asel-task');
   var selSort = box.querySelector('.asel-sort');
   var count = box.querySelector('.acount');
   var allCards = Array.prototype.slice.call(document.querySelectorAll('.grid > .card'));
@@ -869,7 +893,7 @@ langgraph 自认 low-level、不预置工具与文件系统；mastra 走 batteri
   function writeUrl() {
     try {
       var u = new URL(location.href);
-      var vals = { q: q ? q.value.trim() : '', form: selForm ? selForm.value : '', conf: selConf ? selConf.value : '', sort: selSort ? selSort.value : '' };
+      var vals = { q: q ? q.value.trim() : '', form: selForm ? selForm.value : '', conf: selConf ? selConf.value : '', task: selTask ? selTask.value : '', sort: selSort ? selSort.value : '' };
       Object.keys(vals).forEach(function (k) { if (vals[k]) u.searchParams.set(k, vals[k]); else u.searchParams.delete(k); });
       history.replaceState(null, '', u.toString());
     } catch (e) { /* file:// 等场景静默降级：功能可用，地址栏不同步 */ }
@@ -888,12 +912,15 @@ langgraph 自认 low-level、不预置工具与文件系统；mastra 走 batteri
      * 由 select 的 data-attr 指明比哪个属性 —— 卡片上两个属性都有。 */
     var formAttr = selForm ? (selForm.getAttribute('data-attr') || 'track') : 'track';
     var conf = selConf ? selConf.value : '';
+    var task = selTask ? selTask.value : '';
     var shown = 0;
     allCards.forEach(function (c) {
       var okQ = !term || (c.getAttribute('data-blob') || '').indexOf(term) !== -1;
       var okForm = !form || c.getAttribute('data-' + formAttr) === form;
       var okConf = !conf || c.getAttribute('data-conf') === conf;
-      var on = okQ && okForm && okConf;
+      /* data-task 是空格分隔多值（一份档案可挂多个任务），按 token 匹配。 */
+      var okTask = !task || (c.getAttribute('data-task') || '').split(/\s+/).indexOf(task) !== -1;
+      var on = okQ && okForm && okConf && okTask;
       c.hidden = !on;
       if (on) shown++;
     });
@@ -927,7 +954,7 @@ langgraph 自认 low-level、不预置工具与文件系统；mastra 走 batteri
 
   // 首次：用 URL 参数还原
   if (q) q.value = param('q');
-  [[selForm, 'form'], [selConf, 'conf'], [selSort, 'sort']].forEach(function (pair) {
+  [[selForm, 'form'], [selConf, 'conf'], [selTask, 'task'], [selSort, 'sort']].forEach(function (pair) {
     var el = pair[0]; var v = param(pair[1]);
     if (!el || !v) return;
     /* `<select>` 遇到选项里没有的值会**静默忽略** —— 那就成了「指名筛选却被无视」。
@@ -942,7 +969,7 @@ langgraph 自认 low-level、不预置工具与文件系统；mastra 走 batteri
   });
 
   if (q) q.addEventListener('input', function () { apply(); writeUrl(); });
-  [selForm, selConf].forEach(function (s) { if (s) s.addEventListener('change', function () { apply(); writeUrl(); }); });
+  [selForm, selConf, selTask].forEach(function (s) { if (s) s.addEventListener('change', function () { apply(); writeUrl(); }); });
   if (selSort) selSort.addEventListener('change', function () { sort(); writeUrl(); });
 
   sort();
