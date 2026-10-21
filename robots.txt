@@ -1,2 +1,2 @@
 User-agent: *
-Disallow:/n/nSitemap: https://tools.specul.com/sitemap.xml
+Disallow:/n
