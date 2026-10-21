@@ -15,7 +15,7 @@
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%238b7cf8'/%3E%3Cstop offset='1' stop-color='%2322d3c5'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='48' height='48' rx='12' fill='%2305080f'/%3E%3Cpath d='M14 32 L24 12 L34 32' fill='none' stroke='url(%23g)' stroke-width='2.4' stroke-linejoin='round'/%3E%3Ccircle cx='24' cy='27' r='2.4' fill='%2322d3c5'/%3E%3C/svg%3E" />
   <link rel="stylesheet" href="brand.css" />
   <link rel="stylesheet" href="site.css" />
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Windsurf / Devin Desktop","applicationCategory":"DeveloperApplication","url":"https://windsurf.com","sameAs":"https://windsurf.com","description":"已改称 Devin Desktop（被 Cognition 收购后）——有自研模型 SWE-2、支持 ACP preview、有过 Restricted Mode 的 CVE 修复记录。","dateModified":"2026-10-08","offers":{"@type":"Offer","price":"20","priceCurrency":"USD"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Windsurf / Devin Desktop","applicationCategory":"DeveloperApplication","url":"https://windsurf.com","sameAs":"https://windsurf.com","description":"已改称 Devin Desktop（被 Cognition 收购后）——有自研模型 SWE-2、支持 ACP preview、有过 Restricted Mode 的 CVE 修复记录。","dateModified":"2026-10-08"}</script>
 </head>
 <!-- B6（2026-10-09）：--accent 原先在这里被**内联到 body 上**（style="--accent:X"），
      同时头部又写了 :root{--accent:X} —— 两处同一份值，冗余。
@@ -117,6 +117,16 @@
         <div class="warn-p"><p><strong>Not a fit for</strong> paying for one editing feature alone — the Free tier already includes unlimited inline edits and unlimited Tab completion.</p></div></span>
       </div>
 
+            <div class="panel">
+        <h2><span data-zh>中文生态</span><span data-en>China availability</span> <span class="panel-note"><span data-zh>国产 / 国内可直接用 / 备案状态 · 快照</span><span data-en>domestic / direct access / CAC filing · snapshot</span> 2026-10-20</span></h2>
+        <dl class="cn-rows">
+          <dt><span data-zh>出品属地</span><span data-en>Origin</span></dt><dd><span data-zh>国外出品</span><span data-en>foreign-made</span>　<span data-zh>国外主体（网信办公示名单未见对应备案主体）。</span><span data-en>foreign entity (no matching filing entity in the CAC registry).</span></dd>
+          <dt><span data-zh>国内使用</span><span data-en>Direct access</span></dt><dd><span data-zh>大陆可直连</span><span data-en>direct OK</span>　<span data-zh>官网 devin.ai 直连实测 200。</span><span data-en>devin.ai measured 200 direct.</span></dd>
+          <dt><span data-zh>备案状态</span><span data-en>CAC filing</span></dt><dd><span data-zh>未见于备案名单</span><span data-en>not in filing list</span>：<span data-zh>未见于网信办公示名单（2026-10-20 检索 13 批附件，https://www.cac.gov.cn/2024-04/02/c_1713729983803145.htm）；该产品未面向大陆公众提供服务，备案不适用。</span><span data-en>not in the CAC public registry (13 batch attachments searched 2026-10-20, https://www.cac.gov.cn/2024-04/02/c_1713729983803145.htm); the product does not serve the mainland public, so filing does not apply.</span></dd>
+        </dl>
+        <p class="cn-foot"><span data-zh>备案信息以网信办《生成式人工智能服务已备案信息》公示名单为准（按批次滚动更新，本站只抄编号不解读）；「大陆可直连」是本站从大陆网络直连实测的结果，不是厂商承诺。GitHub 类站点当日实测有波动，口径写在依据里。</span><span data-en>Filing status is quoted from the CAC public registry (updated batch by batch; this site copies the number and does not interpret it). "Direct access" is this site's own reachability measurement from a mainland network, not a vendor promise. GitHub-hosted sites fluctuated on the measurement day — the note says so.</span></p>
+      </div>
+
 
       <div class="block-head">
         <h2 class="t-h2"><span data-zh>固定坐标系</span><span data-en>Fixed coordinate system</span></h2>
@@ -179,23 +189,9 @@
         <ul>
 
           <li><span data-zh>不知道产品已改称 Devin Desktop，搜 Windsurf 可能找不到对应文档</span><span data-en>Not knowing the product is now Devin Desktop — searching for Windsurf may not find the matching docs</span></li>
-          <li><span data-zh>以为 Teams 是单一按席位计费，实际是「方案月费 + $40/全职席位」两层</span><span data-en>Assuming Teams is a single per-seat price — it is two layers: plan fee plus $40 per full-time seat</span></li>
-          <li><span data-zh>以为加购用量有折扣，官方说明按 API 定价</span><span data-en>Assuming add-on usage is discounted — the official docs say it is billed at API pricing</span></li>
+          <li><span data-zh>以为 Teams 是单一按席位计费，实际是「方案月费 + 席位费」两层</span><span data-en>Assuming Teams is a single per-seat price — it is two layers: plan fee plus $40 per full-time seat</span></li>
+          <li><span data-zh>以为加购用量有折扣，官方说明按 API 价格计</span><span data-en>Assuming add-on usage is discounted — the official docs say it is billed at API pricing</span></li>
         </ul>
-      </div>
-
-
-            <div class="panel is-slim">
-        <h2><span data-zh>价格</span><span data-en>Pricing</span></h2>
-        <table class="src">
-          <tbody>
-            <tr><th class="w-28"><span data-zh>月度入口</span><span data-en>Monthly entry</span></th><td><span data-zh><p>Free $0 / Pro $20 每月 / Max $200 每月 / Teams 席位 $40 每月</p></span><span data-en><p>Free $0 / Pro $20 每月 / Max $200 每月 / Teams 席位 $40 每月</p></span></td></tr>
-            <tr><th class="w-28"><span data-zh>月度数值</span><span data-en>Monthly price</span></th><td>20</td></tr>
-            <tr><th class="w-28"><span data-zh>年付</span><span data-en>Annual</span></th><td><span data-zh><p>官方定价页只列月付；年付价未列出，记为未知</p></span><span data-en><p>官方定价页只列月付；年付价未列出，记为未知</p></span></td></tr>
-            <tr><th class="w-28"><span data-zh>额度说明</span><span data-en>Quota note</span></th><td><span data-zh><p><strong>2026-10-01 官方定价页全文核实</strong>：Free $0、Pro $20/月、<strong>Max $200/月（新档）</strong>、 Teams = <strong>$80/月团队基础费 + 每全职开发者席位 $40/月</strong>（上限 200 用户）、 Enterprise 洽谈。Pro 含 OpenAI / Claude / Gemini / SpaceXAI 前沿模型与领先开源模型、 完整模型可用性、可按 API 定价加购用量。 Free 层（官方原文口径）：Light quota（额度较紧）、有限模型可用性、 <strong>无限 inline edits</strong>、<strong>无限 Tab 补全</strong> —— 补全不限量但 agent 额度有限。 <strong>Devin Desktop 与 CLI 在 2026-10-10 前免费</strong>，可访问 Devin Cloud 云端智能体。 <strong>两家官方来源数字不一致，不要当成已核实</strong>： ① 定价页写 Pro $20/mo、Max $200/mo； ② 官方博客《An Update to Our Pricing》（pricing-v2）写 Pro $15/mo、Pro Ultimate $60/mo、 Teams $30/user/mo —— 该文是 2025 年的旧制（明确说「消除 flow action credits、 只按 user prompt 计费」），<strong>现行定价页的 $20 / $200 应视为当前口径</strong>， 但本站未能确认博客是否已完全失效，故保留两条。 另：Windsurf 品牌已并入 Devin —— 定价页标题现为「Plans and Pricing | Devin」， 页脚法律实体为 Exafunction, Inc.</p></span><span data-en><p><strong>2026-10-01 官方定价页全文核实</strong>：Free $0、Pro $20/月、<strong>Max $200/月（新档）</strong>、 Teams = <strong>$80/月团队基础费 + 每全职开发者席位 $40/月</strong>（上限 200 用户）、 Enterprise 洽谈。Pro 含 OpenAI / Claude / Gemini / SpaceXAI 前沿模型与领先开源模型、 完整模型可用性、可按 API 定价加购用量。 Free 层（官方原文口径）：Light quota（额度较紧）、有限模型可用性、 <strong>无限 inline edits</strong>、<strong>无限 Tab 补全</strong> —— 补全不限量但 agent 额度有限。 <strong>Devin Desktop 与 CLI 在 2026-10-10 前免费</strong>，可访问 Devin Cloud 云端智能体。 <strong>两家官方来源数字不一致，不要当成已核实</strong>： ① 定价页写 Pro $20/mo、Max $200/mo； ② 官方博客《An Update to Our Pricing》（pricing-v2）写 Pro $15/mo、Pro Ultimate $60/mo、 Teams $30/user/mo —— 该文是 2025 年的旧制（明确说「消除 flow action credits、 只按 user prompt 计费」），<strong>现行定价页的 $20 / $200 应视为当前口径</strong>， 但本站未能确认博客是否已完全失效，故保留两条。 另：Windsurf 品牌已并入 Devin —— 定价页标题现为「Plans and Pricing | Devin」， 页脚法律实体为 Exafunction, Inc.</p></span></td></tr>
-          </tbody>
-        </table>
-        <p class="fine mt-3"><span data-zh>不同币种不做折算。优惠、地区、税费与登录后报价可能变化，购买前请到官方页面确认。</span><span data-en>No currency conversion. Discounts, regions, tax and post-login pricing can change — confirm on the official page before buying.</span></p>
       </div>
 
 
@@ -242,10 +238,11 @@
             <p><strong>这一条对本站的方法论有验证意义</strong>： <a href="https://github.com/speculcom/ai-agent-guide/blob/main/tracks/METHODOLOGY.md" target="_blank" rel="noopener">Methodology 规则 3「不跨层级混排」</a> 说的正是这类问题—— 改名后的产品如果还按旧名收录，会直接导致误导。</p>
       </div>
       <div class="panel is-slim">
-        <h2>定价结构：两层计费要特别注意</h2>
-        <div class="tbl-wrap"><table><thead><tr><th>档位</th><th>关键内容</th></tr></thead><tbody><tr><td><strong>Free</strong></td><td>Light quota、<strong>有限模型可用性</strong>、<strong>无限 inline edits</strong>、<strong>无限 Tab 补全</strong></td></tr><tr><td><strong>Pro</strong></td><td>更高额度含 <strong>OpenAI / Claude / Gemini / SpaceXAI</strong> 前沿模型 + 领先开源模型、完整模型可用性、<strong>SWE-2 免费使用</strong>、<strong>Devin Desktop 与 CLI 在 2026-10-10 前免费</strong>、可访问 Devin Cloud、<strong>按 API 定价加购用量</strong></td></tr><tr><td><strong>Teams</strong></td><td><strong>方案月费 + 每个全职开发者席位 $40/月</strong>，最多 200 用户，协作与集中计费</td></tr></tbody></table></div>
+        <h2>档位结构：两层计费要特别注意</h2>
+        <p>（报价数字按 D9 口径不存，见官方定价页。）</p>
+            <div class="tbl-wrap"><table><thead><tr><th>档位</th><th>关键内容</th></tr></thead><tbody><tr><td><strong>Free</strong></td><td>Light quota、<strong>有限模型可用性</strong>、<strong>无限 inline edits</strong>、<strong>无限 Tab 补全</strong></td></tr><tr><td><strong>Pro</strong></td><td>更高额度含 <strong>OpenAI / Claude / Gemini / SpaceXAI</strong> 前沿模型 + 领先开源模型、完整模型可用性、<strong>SWE-2 免费使用</strong>、<strong>Devin Desktop 与 CLI 有官方标注的限时免费期（2026-10-10 前）</strong>、可访问 Devin Cloud、<strong>加购用量按 API 价格计</strong></td></tr><tr><td><strong>Teams</strong></td><td><strong>两层计费：方案月费 + 按全职开发者席位计价</strong>，最多 200 用户，协作与集中计费</td></tr></tbody></table></div>
             <p><strong>三个容易踩的点</strong>：</p>
-            <div class="tbl-wrap"><table><thead><tr><th>误解</th><th>实际</th></tr></thead><tbody><tr><td>Teams 只是按席位计费</td><td><strong>两层</strong>：方案月费 + $40/全职席位/月</td></tr><tr><td>加购用量有折扣</td><td><strong>按 API 定价</strong>，即无折扣</td></tr><tr><td>免费期是长期的</td><td><strong>2026-10-10 结束</strong>（Devin Desktop 与 CLI）</td></tr></tbody></table></div>
+            <div class="tbl-wrap"><table><thead><tr><th>误解</th><th>实际</th></tr></thead><tbody><tr><td>Teams 只是按席位计费</td><td><strong>两层</strong>：方案月费 + 席位费</td></tr><tr><td>加购用量有折扣</td><td><strong>按 API 价格计</strong>，即无折扣</td></tr><tr><td>免费期是长期的</td><td><strong>2026-10-10 结束</strong>（Devin Desktop 与 CLI）</td></tr></tbody></table></div>
       </div>
       <div class="panel is-slim">
         <h2>模型供应：多供应商 + 自研模型</h2>
@@ -280,8 +277,7 @@
       </div>
       <div class="panel is-slim">
         <h2>采集限制</h2>
-        <div class="tbl-wrap"><table><thead><tr><th>页面</th><th>状态</th></tr></thead><tbody><tr><td>定价页</td><td>✅ 三档结构与价格均已核实（页面号码由 JS 渲染，直抓需渲染手段）</td></tr><tr><td>文档站</td><td>✅ 取到 9772 字符文本</td></tr><tr><td>Changelog</td><td>✅ 取到 116K 字符，含多版本发布说明</td></tr></tbody></table></div>
-            <p><strong>价格数字均已核实</strong>（Free $0 / Pro $20 / Max $200 / Teams $40/席位，见上方 pricing 段，2026-10-01 官方页）。</p>
+        <div class="tbl-wrap"><table><thead><tr><th>页面</th><th>状态</th></tr></thead><tbody><tr><td>定价页</td><td>✅ 三档结构与能力差异已核实（报价数字按 D9 口径不存）</td></tr><tr><td>文档站</td><td>✅ 取到 9772 字符文本</td></tr><tr><td>Changelog</td><td>✅ 取到 116K 字符，含多版本发布说明</td></tr></tbody></table></div>
       </div>
 
             <div class="panel is-slim">

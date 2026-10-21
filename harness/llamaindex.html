@@ -15,7 +15,7 @@
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%238b7cf8'/%3E%3Cstop offset='1' stop-color='%2322d3c5'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='48' height='48' rx='12' fill='%2305080f'/%3E%3Cpath d='M14 32 L24 12 L34 32' fill='none' stroke='url(%23g)' stroke-width='2.4' stroke-linejoin='round'/%3E%3Ccircle cx='24' cy='27' r='2.4' fill='%2322d3c5'/%3E%3C/svg%3E" />
   <link rel="stylesheet" href="../brand.css" />
   <link rel="stylesheet" href="../site.css" />
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"LlamaIndex Framework","applicationCategory":"DeveloperApplication","url":"https://developers.llamaindex.ai/","sameAs":"https://developers.llamaindex.ai/","description":"一句话说清：LlamaIndex 是一个 Python 库。它把外部数据接进来做检索问答。 ⚠ 但有件事必须先说。 官方已明确把公司重心从「编排框架」移走： The current focus of LlamaIndex is to build the best AI-powered engine for document parsing and extraction. LlamaParse is our enterprise platform for agentic OCR, parsing, extraction, indexing and more. ...the company its","dateModified":"2026-10-01","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"LlamaIndex Framework","applicationCategory":"DeveloperApplication","url":"https://developers.llamaindex.ai/","sameAs":"https://developers.llamaindex.ai/","description":"一句话说清：LlamaIndex 是一个 Python 库。它把外部数据接进来做检索问答。 ⚠ 但有件事必须先说。 官方已明确把公司重心从「编排框架」移走： The current focus of LlamaIndex is to build the best AI-powered engine for document parsing and extraction. LlamaParse is our enterprise platform for agentic OCR, parsing, extraction, indexing and more. ...the company its","dateModified":"2026-10-01"}</script>
 </head>
 <!-- B6（2026-10-09）：--accent 原先在这里被**内联到 body 上**（style="--accent:X"），
      同时头部又写了 :root{--accent:X} —— 两处同一份值，冗余。
@@ -146,6 +146,16 @@
         <div class="warn-p"><p><strong>Not a fit for</strong>: wanting the commercial platform&#39;s managed orchestration and Agent Builder (LlamaAgents); agents that read and write files in your project directory and run commands — that is the Deep Agents &quot;workspace filesystem&quot; category; needing explicit sandbox and permission boundaries — the official framework docs provide no such mechanism; needing managed &quot;keep running after shutdown&quot; execution — that is the LlamaAgents platform side.</p></div></span>
       </div>
 
+            <div class="panel">
+        <h2><span data-zh>中文生态</span><span data-en>China availability</span> <span class="panel-note"><span data-zh>国产 / 国内可直接用 / 备案状态 · 快照</span><span data-en>domestic / direct access / CAC filing · snapshot</span> 2026-10-20</span></h2>
+        <dl class="cn-rows">
+          <dt><span data-zh>出品属地</span><span data-en>Origin</span></dt><dd><span data-zh>国外出品</span><span data-en>foreign-made</span>　<span data-zh>国外主体（网信办公示名单未见对应备案主体）。</span><span data-en>foreign entity (no matching filing entity in the CAC registry).</span></dd>
+          <dt><span data-zh>国内使用</span><span data-en>Direct access</span></dt><dd><span data-zh>大陆可直连</span><span data-en>direct OK</span>　<span data-zh>官网直连实测 200。</span><span data-en>official site measured 200 direct.</span></dd>
+          <dt><span data-zh>备案状态</span><span data-en>CAC filing</span></dt><dd><span data-zh>未见于备案名单</span><span data-en>not in filing list</span>：<span data-zh>未见于网信办公示名单（2026-10-20 检索 13 批附件，https://www.cac.gov.cn/2024-04/02/c_1713729983803145.htm）；该产品未面向大陆公众提供服务，备案不适用。</span><span data-en>not in the CAC public registry (13 batch attachments searched 2026-10-20, https://www.cac.gov.cn/2024-04/02/c_1713729983803145.htm); the product does not serve the mainland public, so filing does not apply.</span></dd>
+        </dl>
+        <p class="cn-foot"><span data-zh>备案信息以网信办《生成式人工智能服务已备案信息》公示名单为准（按批次滚动更新，本站只抄编号不解读）；「大陆可直连」是本站从大陆网络直连实测的结果，不是厂商承诺。GitHub 类站点当日实测有波动，口径写在依据里。</span><span data-en>Filing status is quoted from the CAC public registry (updated batch by batch; this site copies the number and does not interpret it). "Direct access" is this site's own reachability measurement from a mainland network, not a vendor promise. GitHub-hosted sites fluctuated on the measurement day — the note says so.</span></p>
+      </div>
+
 
       <div class="block-head">
         <h2 class="t-h2"><span data-zh>固定坐标系</span><span data-en>Fixed coordinate system</span></h2>
@@ -254,43 +264,6 @@
 
 
             <div class="panel is-slim">
-        <h2><span data-zh>价格</span><span data-en>Pricing</span></h2>
-        <table class="src">
-          <tbody>
-            <tr><th class="w-28"><span data-zh>月度入口</span><span data-en>Monthly entry</span></th><td><span data-zh><p>OSS 框架免费（MIT）；LlamaParse 平台 Free $0 / Starter $50 / Pro $500 每月</p></span><span data-en><p>OSS 框架免费（MIT）；LlamaParse 平台 Free $0 / Starter $50 / Pro $500 每月</p></span></td></tr>
-            <tr><th class="w-28"><span data-zh>月度数值</span><span data-en>Monthly price</span></th><td>0</td></tr>
-            <tr><th class="w-28"><span data-zh>额度说明</span><span data-en>Quota note</span></th><td><span data-zh><p><strong>先说结论：这个项目现在的重心是 LlamaParse 文档解析平台，不是编排框架。</strong></p>
-            <p>核验依据：仓库 MIT（经license API）+ README 首屏 NOTE 段落原文（核验 2026-10-01）：</p>
-            <blockquote>&quot;The <strong>current focus</strong> of LlamaIndex is to build the best AI-powered engine for <strong>document parsing and extraction</strong>. <strong>LlamaParse</strong> is our <strong>enterprise platform</strong> for agentic OCR, parsing, extraction, indexing and more.&quot;</blockquote>
-            <p>官方同时说 OSS 框架仍然可用，但投入重心已经转移：</p>
-            <blockquote>&quot;While we still have the OSS framework available as an open toolkit that you&#39;re welcome to use, <strong>our primary focus has shifted towards LlamaParse</strong>, along with liteparse and our benchmarking efforts.&quot;</blockquote>
-            <p><strong>注意：转向的是公司投入，不是代码归属。</strong></p>
-            <p>编排（Workflows）的代码仍在 OSS core —— <code>llama_index.core.workflow</code>（2026-10-08 核验）。 商业平台 LlamaAgents 提供的是托管形态与 Agent Builder。</p>
-            <p><strong>LlamaParse 定价（2026-10-01 官方 pricing 页核实，按 credits 计费）</strong>：</p>
-            <ul><li><strong>Free $0/月</strong> —— 含 <strong>10K credits</strong></li><li><strong>Starter $50/月</strong> —— 含 <strong>40K credits</strong>，可加购至 400K</li><li><strong>Pro $500/月</strong> —— 含 <strong>400K credits</strong>，另有一次性 800K credits 赠额 （官方折算价值 $1,000），可加购至 $5,000/月</li></ul>
-            <ul><li><strong>Enterprise</strong> —— 定制</li><li><strong>三档均含 100 个用户席位</strong>；超出按 <strong>1,000 credits = $1.25</strong> 加购</li></ul>
-            <p>⚠ <strong>最关键的缺口：官方只给 credits 单价，没给「一页文档消耗多少 credits」的口径。</strong> 所以「$50 能解析多少页 PDF」在公开信息里换算不出来，选型前必须自己拿真实文档试跑。 这一点是本站明确的信息缺口，不做推测。</p>
-            <p><strong>另有一条零成本路线：LiteParse。</strong> 官方另推这个 VLM-free、可本地跑的 OSS 解析器， <strong>它不吃 credits、免费</strong>。官方自己的形容是：</p>
-            <blockquote>&quot;VLM-free fast and local OSS parsing&quot;</blockquote></span><span data-en><p><strong>先说结论：这个项目现在的重心是 LlamaParse 文档解析平台，不是编排框架。</strong></p>
-            <p>核验依据：仓库 MIT（经license API）+ README 首屏 NOTE 段落原文（核验 2026-10-01）：</p>
-            <blockquote>&quot;The <strong>current focus</strong> of LlamaIndex is to build the best AI-powered engine for <strong>document parsing and extraction</strong>. <strong>LlamaParse</strong> is our <strong>enterprise platform</strong> for agentic OCR, parsing, extraction, indexing and more.&quot;</blockquote>
-            <p>官方同时说 OSS 框架仍然可用，但投入重心已经转移：</p>
-            <blockquote>&quot;While we still have the OSS framework available as an open toolkit that you&#39;re welcome to use, <strong>our primary focus has shifted towards LlamaParse</strong>, along with liteparse and our benchmarking efforts.&quot;</blockquote>
-            <p><strong>注意：转向的是公司投入，不是代码归属。</strong></p>
-            <p>编排（Workflows）的代码仍在 OSS core —— <code>llama_index.core.workflow</code>（2026-10-08 核验）。 商业平台 LlamaAgents 提供的是托管形态与 Agent Builder。</p>
-            <p><strong>LlamaParse 定价（2026-10-01 官方 pricing 页核实，按 credits 计费）</strong>：</p>
-            <ul><li><strong>Free $0/月</strong> —— 含 <strong>10K credits</strong></li><li><strong>Starter $50/月</strong> —— 含 <strong>40K credits</strong>，可加购至 400K</li><li><strong>Pro $500/月</strong> —— 含 <strong>400K credits</strong>，另有一次性 800K credits 赠额 （官方折算价值 $1,000），可加购至 $5,000/月</li></ul>
-            <ul><li><strong>Enterprise</strong> —— 定制</li><li><strong>三档均含 100 个用户席位</strong>；超出按 <strong>1,000 credits = $1.25</strong> 加购</li></ul>
-            <p>⚠ <strong>最关键的缺口：官方只给 credits 单价，没给「一页文档消耗多少 credits」的口径。</strong> 所以「$50 能解析多少页 PDF」在公开信息里换算不出来，选型前必须自己拿真实文档试跑。 这一点是本站明确的信息缺口，不做推测。</p>
-            <p><strong>另有一条零成本路线：LiteParse。</strong> 官方另推这个 VLM-free、可本地跑的 OSS 解析器， <strong>它不吃 credits、免费</strong>。官方自己的形容是：</p>
-            <blockquote>&quot;VLM-free fast and local OSS parsing&quot;</blockquote></span></td></tr>
-          </tbody>
-        </table>
-        <p class="fine mt-3"><span data-zh>不同币种不做折算。优惠、地区、税费与登录后报价可能变化，购买前请到官方页面确认。</span><span data-en>No currency conversion. Discounts, regions, tax and post-login pricing can change — confirm on the official page before buying.</span></p>
-      </div>
-
-
-            <div class="panel is-slim">
         <h2><span data-zh>未知项清单</span><span data-en>Known unknowns</span></h2>
         <ul>
           <li>300+ 集成包的官方 vs 社区比例与维护活跃度分层</li>
@@ -314,7 +287,7 @@
             <tr><td>docs</td><td>官方文档 · LlamaIndex Framework（README 指向）</td><td><a href="https://developers.llamaindex.ai/python/framework/" target="_blank" rel="noopener">https://developers.llamaindex.ai/python/framework/</a></td></tr>
             <tr><td>docs</td><td>官方文档 · LlamaAgents（Workflows / Agent Builder，<strong>商业平台侧</strong>）</td><td><a href="https://developers.llamaindex.ai/python/llamaagents/overview/" target="_blank" rel="noopener">https://developers.llamaindex.ai/python/llamaagents/overview/</a></td></tr>
             <tr><td>docs</td><td>LlamaParse 商业平台（README 称其为 enterprise platform）</td><td><a href="https://cloud.llamaindex.ai" target="_blank" rel="noopener">https://cloud.llamaindex.ai</a></td></tr>
-            <tr><td>pricing</td><td>LlamaParse 官方定价页（Free/Starter/Pro 三档credits 额度、加购上限、1,000 credits = $1.25、LiteParse 免费 OSS，核验 2026-10-01）</td><td><a href="https://www.llamaindex.ai/pricing" target="_blank" rel="noopener">https://www.llamaindex.ai/pricing</a></td></tr>
+            <tr><td>pricing</td><td>LlamaParse 官方定价页（Free/Starter/Pro 三档 credits 额度与加购上限；报价按 D9 口径不存；LiteParse 免费 OSS，核验 2026-10-01）</td><td><a href="https://www.llamaindex.ai/pricing" target="_blank" rel="noopener">https://www.llamaindex.ai/pricing</a></td></tr>
             <tr><td>repo</td><td>run-llama/liteparse · 免费快速文本解析器（官方另立项目）</td><td><a href="https://github.com/run-llama/liteparse" target="_blank" rel="noopener">https://github.com/run-llama/liteparse</a></td></tr>
             <tr><td>changelog</td><td>Releases（v0.14.25 @ 2026-09-21）</td><td><a href="https://github.com/run-llama/llama_index/releases" target="_blank" rel="noopener">https://github.com/run-llama/llama_index/releases</a></td></tr>
             <tr><td>docs</td><td>官方文档 · Response Synthesizers（compact/refine/tree_summarize 的窗口装箱与摘要）</td><td><a href="https://developers.llamaindex.ai/python/framework/module_guides/querying/response_synthesizers/" target="_blank" rel="noopener">https://developers.llamaindex.ai/python/framework/module_guides/querying/response_synthesizers/</a></td></tr>

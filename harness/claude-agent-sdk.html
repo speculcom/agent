@@ -132,6 +132,16 @@
         <div><ul><li>you need a different model / self-hosted weights — <strong>ruled out outright</strong></li><li>you need a framework-level custom agent loop — the loop shape is decided by Claude Code</li><li>you need multi-agent orchestration — it has no first-class agents-as-tools delegation</li></ul></div></span>
       </div>
 
+            <div class="panel">
+        <h2><span data-zh>中文生态</span><span data-en>China availability</span> <span class="panel-note"><span data-zh>国产 / 国内可直接用 / 备案状态 · 快照</span><span data-en>domestic / direct access / CAC filing · snapshot</span> 2026-10-20</span></h2>
+        <dl class="cn-rows">
+          <dt><span data-zh>出品属地</span><span data-en>Origin</span></dt><dd><span data-zh>国外出品</span><span data-en>foreign-made</span>　<span data-zh>国外主体（网信办公示名单未见对应备案主体）。</span><span data-en>foreign entity (no matching filing entity in the CAC registry).</span></dd>
+          <dt><span data-zh>国内使用</span><span data-en>Direct access</span></dt><dd><span data-zh>大陆可直连</span><span data-en>direct OK</span>　<span data-zh>文档站直连实测 200。</span><span data-en>docs site measured 200 direct.</span></dd>
+          <dt><span data-zh>备案状态</span><span data-en>CAC filing</span></dt><dd><span data-zh>未见于备案名单</span><span data-en>not in filing list</span>：<span data-zh>未见于网信办公示名单（2026-10-20 检索 13 批附件，https://www.cac.gov.cn/2024-04/02/c_1713729983803145.htm）；该产品未面向大陆公众提供服务，备案不适用。</span><span data-en>not in the CAC public registry (13 batch attachments searched 2026-10-20, https://www.cac.gov.cn/2024-04/02/c_1713729983803145.htm); the product does not serve the mainland public, so filing does not apply.</span></dd>
+        </dl>
+        <p class="cn-foot"><span data-zh>备案信息以网信办《生成式人工智能服务已备案信息》公示名单为准（按批次滚动更新，本站只抄编号不解读）；「大陆可直连」是本站从大陆网络直连实测的结果，不是厂商承诺。GitHub 类站点当日实测有波动，口径写在依据里。</span><span data-en>Filing status is quoted from the CAC public registry (updated batch by batch; this site copies the number and does not interpret it). "Direct access" is this site's own reachability measurement from a mainland network, not a vendor promise. GitHub-hosted sites fluctuated on the measurement day — the note says so.</span></p>
+      </div>
+
 
       <div class="block-head">
         <h2 class="t-h2"><span data-zh>固定坐标系</span><span data-en>Fixed coordinate system</span></h2>
@@ -239,26 +249,6 @@
           <li><span data-zh>以为 MIT = 无附加条款 —— 受 Anthropic 商业条款约束（见正文）</span><span data-en>Assuming MIT means no additional terms — Anthropic&#39;s commercial terms still apply (see the body above)</span></li>
           <li><span data-zh>以为 TS 版授权与 Python 版一致 —— <strong>核验发现 TS 版无 LICENSE 文件、license API 返回 null，授权状态不明</strong>（核验 2026-09-30）</span><span data-en>Assuming the TypeScript build is licensed like the Python one: <strong>verification found no LICENSE file in the TS build, and the licence API returns null</strong>. Its licensing status is unknown (checked 2026-09-30)</span></li>
         </ul>
-      </div>
-
-
-            <div class="panel is-slim">
-        <h2><span data-zh>价格</span><span data-en>Pricing</span></h2>
-        <table class="src">
-          <tbody>
-            <tr><th class="w-28"><span data-zh>月度入口</span><span data-en>Monthly entry</span></th><td><span data-zh><p>库免费（MIT）· 模型按 Claude API 计费（无法预置月费）</p></span><span data-en><p>库免费（MIT）· 模型按 Claude API 计费（无法预置月费）</p></span></td></tr>
-            <tr><th class="w-28"><span data-zh>额度说明</span><span data-en>Quota note</span></th><td><span data-zh><p><strong>库免费，模型不免费 —— 这就是它的定价全貌。</strong></p>
-            <p>仓库是 MIT。推理费用全部按 Claude API 计费，所以月费无法预置。</p>
-            <p><strong>它也是本站十个对象里唯一不支持换 provider 的编程底座。</strong></p>
-            <p>SDK 只包装 Claude Code CLI，agent 的推理全部走 Anthropic API。 没有 litellm / any-llm 这类旁路。</p>
-            <p><strong>换模型 = 换方案，不是换配置。</strong></p></span><span data-en><p><strong>库免费，模型不免费 —— 这就是它的定价全貌。</strong></p>
-            <p>仓库是 MIT。推理费用全部按 Claude API 计费，所以月费无法预置。</p>
-            <p><strong>它也是本站十个对象里唯一不支持换 provider 的编程底座。</strong></p>
-            <p>SDK 只包装 Claude Code CLI，agent 的推理全部走 Anthropic API。 没有 litellm / any-llm 这类旁路。</p>
-            <p><strong>换模型 = 换方案，不是换配置。</strong></p></span></td></tr>
-          </tbody>
-        </table>
-        <p class="fine mt-3"><span data-zh>不同币种不做折算。优惠、地区、税费与登录后报价可能变化，购买前请到官方页面确认。</span><span data-en>No currency conversion. Discounts, regions, tax and post-login pricing can change — confirm on the official page before buying.</span></p>
       </div>
 
 

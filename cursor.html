@@ -15,7 +15,7 @@
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%238b7cf8'/%3E%3Cstop offset='1' stop-color='%2322d3c5'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='48' height='48' rx='12' fill='%2305080f'/%3E%3Cpath d='M14 32 L24 12 L34 32' fill='none' stroke='url(%23g)' stroke-width='2.4' stroke-linejoin='round'/%3E%3Ccircle cx='24' cy='27' r='2.4' fill='%2322d3c5'/%3E%3C/svg%3E" />
   <link rel="stylesheet" href="brand.css" />
   <link rel="stylesheet" href="site.css" />
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Cursor","applicationCategory":"DeveloperApplication","url":"https://cursor.com","sameAs":"https://cursor.com","description":"本分区架构最激进的三个之一： 云端 Agent 合上笔记本不中断、自托管代码不出网、代码审查拆成两个 bot 分工。","dateModified":"2026-10-03","offers":{"@type":"Offer","price":"20","priceCurrency":"USD"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Cursor","applicationCategory":"DeveloperApplication","url":"https://cursor.com","sameAs":"https://cursor.com","description":"本分区架构最激进的三个之一： 云端 Agent 合上笔记本不中断、自托管代码不出网、代码审查拆成两个 bot 分工。","dateModified":"2026-10-03"}</script>
 </head>
 <!-- B6（2026-10-09）：--accent 原先在这里被**内联到 body 上**（style="--accent:X"），
      同时头部又写了 :root{--accent:X} —— 两处同一份值，冗余。
@@ -115,8 +115,18 @@
 <span data-zh>        <div><p>需要云端 Agent 且希望合上笔记本任务继续跑的人。</p></div>
         <div><p>需要长周期（数月级）上下文维持与大规模子智能体编排的人。</p></div>
         <div><p><strong>代码不能离开自有基础设施的企业</strong>（自托管形态）。</p></div>
-        <div class="warn-p"><p><strong>不适合</strong>要求定价透明到可直接比较的人—— 各档额度倍数（1x / 3x / 20x）官方未给出具体请求数或 token 量， 只有倍数表述。</p></div></span><span data-en>        <div><p>People who want a cloud agent that keeps running when they close the laptop. People who need long-horizon (months) context retention and large-scale sub-agent orchestration. <strong>Companies whose code must not leave their own infrastructure</strong> (the self-hosted form).</p></div>
+        <div class="warn-p"><p><strong>不适合</strong>要求额度透明到可直接比较的人—— 各档额度倍数（1x / 3x / 20x）官方未给出具体请求数或 token 量， 只有倍数表述。</p></div></span><span data-en>        <div><p>People who want a cloud agent that keeps running when they close the laptop. People who need long-horizon (months) context retention and large-scale sub-agent orchestration. <strong>Companies whose code must not leave their own infrastructure</strong> (the self-hosted form).</p></div>
         <div class="warn-p"><p><strong>Not a fit for</strong> anyone requiring pricing transparent enough to compare directly — the official quota multipliers (1x / 3x / 20x) are given as multiples only, with no concrete request or token figures.</p></div></span>
+      </div>
+
+            <div class="panel">
+        <h2><span data-zh>中文生态</span><span data-en>China availability</span> <span class="panel-note"><span data-zh>国产 / 国内可直接用 / 备案状态 · 快照</span><span data-en>domestic / direct access / CAC filing · snapshot</span> 2026-10-20</span></h2>
+        <dl class="cn-rows">
+          <dt><span data-zh>出品属地</span><span data-en>Origin</span></dt><dd><span data-zh>国外出品</span><span data-en>foreign-made</span>　<span data-zh>国外主体（网信办公示名单未见对应备案主体）。</span><span data-en>foreign entity (no matching filing entity in the CAC registry).</span></dd>
+          <dt><span data-zh>国内使用</span><span data-en>Direct access</span></dt><dd><span data-zh>大陆可直连</span><span data-en>direct OK</span>　<span data-zh>官网直连实测 200。</span><span data-en>official site measured 200 direct.</span></dd>
+          <dt><span data-zh>备案状态</span><span data-en>CAC filing</span></dt><dd><span data-zh>未见于备案名单</span><span data-en>not in filing list</span>：<span data-zh>未见于网信办公示名单（2026-10-20 检索 13 批附件，https://www.cac.gov.cn/2024-04/02/c_1713729983803145.htm）；该产品未面向大陆公众提供服务，备案不适用。</span><span data-en>not in the CAC public registry (13 batch attachments searched 2026-10-20, https://www.cac.gov.cn/2024-04/02/c_1713729983803145.htm); the product does not serve the mainland public, so filing does not apply.</span></dd>
+        </dl>
+        <p class="cn-foot"><span data-zh>备案信息以网信办《生成式人工智能服务已备案信息》公示名单为准（按批次滚动更新，本站只抄编号不解读）；「大陆可直连」是本站从大陆网络直连实测的结果，不是厂商承诺。GitHub 类站点当日实测有波动，口径写在依据里。</span><span data-en>Filing status is quoted from the CAC public registry (updated batch by batch; this site copies the number and does not interpret it). "Direct access" is this site's own reachability measurement from a mainland network, not a vendor promise. GitHub-hosted sites fluctuated on the measurement day — the note says so.</span></p>
       </div>
 
 
@@ -244,38 +254,6 @@
 
 
             <div class="panel is-slim">
-        <h2><span data-zh>价格</span><span data-en>Pricing</span></h2>
-        <table class="src">
-          <tbody>
-            <tr><th class="w-28"><span data-zh>月度入口</span><span data-en>Monthly entry</span></th><td><span data-zh><p>Pro $20 / Pro+ $60 / Ultra $200（个人三档），Hobby 免费</p></span><span data-en><p>Pro $20 / Pro+ $60 / Ultra $200（个人三档），Hobby 免费</p></span></td></tr>
-            <tr><th class="w-28"><span data-zh>月度数值</span><span data-en>Monthly price</span></th><td>20</td></tr>
-            <tr><th class="w-28"><span data-zh>年付</span><span data-en>Annual</span></th><td><span data-zh><p>官方帮助页说明年付通过 dashboard 的 Upgrade 切换，未取到统一折算价</p></span><span data-en><p>官方帮助页说明年付通过 dashboard 的 Upgrade 切换，未取到统一折算价</p></span></td></tr>
-            <tr><th class="w-28"><span data-zh>额度说明</span><span data-en>Quota note</span></th><td><span data-zh><p><strong>个人 4 档 + 团队 3 档，价格已按 2026-10-01 官方页核实。</strong></p>
-            <p>个人档：</p>
-            <ul><li>Hobby 免费：无需信用卡，有限智能体请求 + Composer 访问</li><li>Pro $20/mo</li><li>Pro+ $60/mo</li><li>Ultra $200/mo</li></ul>
-            <p>团队档：</p>
-            <ul><li>Teams Standard $40/用户/mo</li><li>Teams Premium $120/用户/mo</li><li>Enterprise 定制</li></ul>
-            <p><strong>Pro+ / Ultra 不是「前沿模型专属」，而是额度倍数。</strong></p>
-            <p><strong>官方原文</strong>：Pro+ = &quot;3x Pro limits on Agent&quot;，Ultra = &quot;20x Pro limits on Agent&quot;。 三档都写 <strong>&quot;Access to frontier models&quot;</strong>。</p>
-            <p>Hobby 另有印度专属付费层 ₹649/mo（含税）。</p>
-            <p>所有价格<strong>不含税</strong>；超额用量按各模型标价后付费（on-demand billed in arrears）。</p>
-            <p>出处：官方定价页（cursor.com/pricing） 与帮助页（cursor.com/help/account-and-billing/pricing）。</p></span><span data-en><p><strong>个人 4 档 + 团队 3 档，价格已按 2026-10-01 官方页核实。</strong></p>
-            <p>个人档：</p>
-            <ul><li>Hobby 免费：无需信用卡，有限智能体请求 + Composer 访问</li><li>Pro $20/mo</li><li>Pro+ $60/mo</li><li>Ultra $200/mo</li></ul>
-            <p>团队档：</p>
-            <ul><li>Teams Standard $40/用户/mo</li><li>Teams Premium $120/用户/mo</li><li>Enterprise 定制</li></ul>
-            <p><strong>Pro+ / Ultra 不是「前沿模型专属」，而是额度倍数。</strong></p>
-            <p><strong>官方原文</strong>：Pro+ = &quot;3x Pro limits on Agent&quot;，Ultra = &quot;20x Pro limits on Agent&quot;。 三档都写 <strong>&quot;Access to frontier models&quot;</strong>。</p>
-            <p>Hobby 另有印度专属付费层 ₹649/mo（含税）。</p>
-            <p>所有价格<strong>不含税</strong>；超额用量按各模型标价后付费（on-demand billed in arrears）。</p>
-            <p>出处：官方定价页（cursor.com/pricing） 与帮助页（cursor.com/help/account-and-billing/pricing）。</p></span></td></tr>
-          </tbody>
-        </table>
-        <p class="fine mt-3"><span data-zh>不同币种不做折算。优惠、地区、税费与登录后报价可能变化，购买前请到官方页面确认。</span><span data-en>No currency conversion. Discounts, regions, tax and post-login pricing can change — confirm on the official page before buying.</span></p>
-      </div>
-
-
-            <div class="panel is-slim">
         <h2><span data-zh>未知项清单</span><span data-en>Known unknowns</span></h2>
         <ul>
           <li>各档额度倍数（1x / 3x / 20x）对应的具体请求数或 token 量</li>
@@ -336,9 +314,9 @@
             <p><strong>职责边界很清楚</strong>：代码风格和质量问题仍由 Bugbot 负责。</p>
       </div>
       <div class="panel is-slim">
-        <h2>定价结构（6 档，2026-10-01 已取到价格数字）</h2>
-        <p>官方定价页 + 帮助页逐档核实（美元，月付）：</p>
-            <div class="tbl-wrap"><table><thead><tr><th>档位</th><th>价格</th><th>关键能力</th></tr></thead><tbody><tr><td><strong>Hobby</strong></td><td>$0</td><td>无需信用卡、有限的智能体请求、Composer 访问权限。<strong>仅可用 Auto 模型</strong></td></tr><tr><td><strong>Pro</strong></td><td>$20/mo</td><td>扩展的 Agent 额度、Generous limits for Grok、前沿模型访问、Grok Bot 访问、<strong>MCP + 技能 + 钩子</strong>、云端智能体、按用量计费的 Bugbot</td></tr><tr><td><strong>Pro+</strong></td><td>$60/mo</td><td><strong>3x Pro limits on Agent</strong>，其余同 Pro，<strong>Grok Bot 用量更高</strong></td></tr><tr><td><strong>Ultra</strong></td><td>$200/mo</td><td><strong>20x Pro limits on Agent</strong>，Grok Bot 用量最高，<strong>新功能优先访问</strong></td></tr><tr><td><strong>Teams</strong></td><td>$40/用户/mo</td><td>集中计费、<strong>团队应用市场</strong>（内部规则/技能/插件）、<strong>共享团队上下文的云端智能体与自动化</strong>、Bugbot 代码审查、<strong>用量分析</strong>、团队级隐私模式、SAML/OIDC 单点登录</td></tr><tr><td><strong>Enterprise</strong></td><td>洽谈</td><td>汇总用量、发票/采购订单结算、SCIM 管理席位</td></tr></tbody></table></div>
+        <h2>档位结构（6 档，能力差异 2026-10-01 核实）</h2>
+        <p>官方定价页 + 帮助页逐档核实（报价数字按 D9 口径不存，见官方定价页）：</p>
+            <div class="tbl-wrap"><table><thead><tr><th>档位</th><th>关键能力</th></tr></thead><tbody><tr><td><strong>Hobby</strong></td><td>免费档：无需信用卡、有限的智能体请求、Composer 访问权限。<strong>仅可用 Auto 模型</strong></td></tr><tr><td><strong>Pro</strong></td><td>扩展的 Agent 额度、Generous limits for Grok、前沿模型访问、Grok Bot 访问、<strong>MCP + 技能 + 钩子</strong>、云端智能体、按用量计费的 Bugbot</td></tr><tr><td><strong>Pro+</strong></td><td><strong>3x Pro limits on Agent</strong>，其余同 Pro，<strong>Grok Bot 用量更高</strong></td></tr><tr><td><strong>Ultra</strong></td><td><strong>20x Pro limits on Agent</strong>，Grok Bot 用量最高，<strong>新功能优先访问</strong></td></tr><tr><td><strong>Teams</strong></td><td>集中计费、<strong>团队应用市场</strong>（内部规则/技能/插件）、<strong>共享团队上下文的云端智能体与自动化</strong>、Bugbot 代码审查、<strong>用量分析</strong>、团队级隐私模式、SAML/OIDC 单点登录</td></tr><tr><td><strong>Enterprise</strong></td><td>洽谈：汇总用量、发票/采购订单结算、SCIM 管理席位</td></tr></tbody></table></div>
             <p><strong>三个值得注意的设计</strong>：</p>
             <ul><li><strong>Teams 档的「用量分析」</strong>——「帮助您了解团队行为」，这类需求通常只有企业级工具才有</li><li><strong>Teams 档的「团队级隐私模式」</strong>——与自托管能力呼应</li><li><strong>Pro / Pro+ / Ultra 的差别是额度倍数，不是模型可得性</strong></li></ul>
             <p>三档都写 <strong>&quot;Access to frontier models&quot;</strong>。</p>
@@ -353,11 +331,10 @@
             <p>Cursor Router 按 cost / balance / intelligence 三档路由， <strong>按被路由到的模型标价计费</strong>。</p>
       </div>
       <div class="panel is-slim">
-        <h2>采集状态（2026-10-01 更新）</h2>
-        <p><strong>初次采集时价格数字因 JS 动态渲染未取到。</strong> <strong>本轮已通过官方帮助页补齐月付全档。</strong></p>
-            <div class="tbl-wrap"><table><thead><tr><th>页面</th><th>状态</th></tr></thead><tbody><tr><td>定价页</td><td>✅ 6 档结构与能力清单、✅ 月付价格已从帮助页补齐</td></tr><tr><td>帮助页（account-and-billing/pricing）</td><td>✅ 全档价格 + 年付切换说明 + 印度专属层</td></tr><tr><td>文档页</td><td>✅ 取到文本</td></tr><tr><td>Changelog</td><td>✅ 取到三条完整条目（09-23 / 09-10 / 09-02）</td></tr></tbody></table></div>
+        <h2>采集状态（2026-10-01 更新 · D9 修订）</h2>
+        <div class="tbl-wrap"><table><thead><tr><th>页面</th><th>状态</th></tr></thead><tbody><tr><td>定价页</td><td>✅ 6 档结构与能力清单已核实（报价数字按 D9 口径不存）</td></tr><tr><td>帮助页（account-and-billing/pricing）</td><td>✅ 档位切换机制与额度口径已核</td></tr><tr><td>文档页</td><td>✅ 取到文本</td></tr><tr><td>Changelog</td><td>✅ 取到三条完整条目（09-23 / 09-10 / 09-02）</td></tr></tbody></table></div>
             <p><strong>因此本条目标 <code>confidence: partial</code></strong>：</p>
-            <ul><li>能力侧证据充分</li><li>各档月付价格已补齐</li><li>但额度倍数（1x / 3x / 20x）无具体数值</li><li>自托管部署细节未核</li></ul>
+            <ul><li>能力侧证据充分</li><li>但额度倍数（1x / 3x / 20x）无具体数值</li><li>自托管部署细节未核</li></ul>
       </div>
 
             <div class="panel is-slim">

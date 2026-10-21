@@ -4,18 +4,18 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Knowledge Graph Memory Server — Tools | 投机取巧</title>
-  <meta name="description" content="Knowledge Graph Memory Server（Model Context Protocol）：用本地知识图谱实现跨会话持久记忆的 reference server。它记忆落盘、跨会话共享，但没有访问控制。" />
+  <meta name="description" content="Knowledge Graph Memory Server（Model Context Protocol）：用本地知识图谱做跨会话持久记忆的 reference server。它记忆落盘、跨会话共享，但没有访问控制。" />
   <link rel="canonical" href="https://agent.specul.com/tools/memory.html" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Knowledge Graph Memory Server" />
   <meta property="og:url" content="https://agent.specul.com/tools/memory.html" />
   <meta property="og:title" content="Knowledge Graph Memory Server — Tools | 投机取巧" />
-  <meta property="og:description" content="Knowledge Graph Memory Server（Model Context Protocol）：用本地知识图谱实现跨会话持久记忆的 reference server。它记忆落盘、跨会话共享，但没有访问控制。" />
+  <meta property="og:description" content="Knowledge Graph Memory Server（Model Context Protocol）：用本地知识图谱做跨会话持久记忆的 reference server。它记忆落盘、跨会话共享，但没有访问控制。" />
   <meta name="theme-color" content="#16121f" />
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%238b7cf8'/%3E%3Cstop offset='1' stop-color='%2322d3c5'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='48' height='48' rx='12' fill='%2305080f'/%3E%3Cpath d='M14 32 L24 12 L34 32' fill='none' stroke='url(%23g)' stroke-width='2.4' stroke-linejoin='round'/%3E%3Ccircle cx='24' cy='27' r='2.4' fill='%2322d3c5'/%3E%3C/svg%3E" />
   <link rel="stylesheet" href="../brand.css" />
   <link rel="stylesheet" href="../site.css" />
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Knowledge Graph Memory Server","applicationCategory":"DeveloperApplication","url":"https://www.npmjs.com/package/@modelcontextprotocol/server-memory","sameAs":"https://github.com/modelcontextprotocol/servers/tree/main/src/memory","description":"用本地知识图谱实现跨会话持久记忆的 reference server。它记忆落盘、跨会话共享，但没有访问控制。","dateModified":"2026-10-08"}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Knowledge Graph Memory Server","applicationCategory":"DeveloperApplication","url":"https://www.npmjs.com/package/@modelcontextprotocol/server-memory","sameAs":"https://github.com/modelcontextprotocol/servers/tree/main/src/memory","description":"用本地知识图谱做跨会话持久记忆的 reference server。它记忆落盘、跨会话共享，但没有访问控制。","dateModified":"2026-10-08"}</script>
 </head>
 <!-- B6（2026-10-09）：--accent 原先在这里被**内联到 body 上**（style="--accent:X"），
      同时头部又写了 :root{--accent:X} —— 两处同一份值，冗余。
@@ -107,13 +107,23 @@
         <span class="badge"><span data-zh>核验</span><span data-en>Checked</span> 2026-10-08</span>
       </div>
 
-            <div class="panel-lead"><span data-zh><p>用本地知识图谱实现跨会话持久记忆的 reference server。<strong>它记忆落盘、跨会话共享，但没有访问控制</strong>。</p></span><span data-en><p>A reference server implementing cross-session persistent memory with a local knowledge graph — <strong>memory is written to disk, shared across sessions, with no access control</strong>.</p></span></div>
+            <div class="panel-lead"><span data-zh><p>用本地知识图谱做跨会话持久记忆的 reference server。<strong>它记忆落盘、跨会话共享，但没有访问控制</strong>。</p></span><span data-en><p>A reference server implementing cross-session persistent memory with a local knowledge graph — <strong>memory is written to disk, shared across sessions, with no access control</strong>.</p></span></div>
 
             <div class="panel is-slim">
         <h2><span data-zh>适合与不适合</span><span data-en>When to use it, when not to</span></h2>
 <span data-zh>        <div><p>让 Agent 跨会话记住用户偏好、项目背景等长期信息。</p></div>
         <div class="warn-p"><p><strong>不适合存放需要审计或追溯的场景</strong>（图谱会原地修改）， <strong>也不适合存放高敏感信息</strong>——记忆文件无加密、无独立访问控制， 任何能读该文件的进程都能拿到全部记忆。</p></div></span><span data-en>        <div><p>Scenarios needing cross-session memory that survives restarts and is queryable as a graph.</p></div>
         <div class="warn-p"><p><strong>Not a fit for</strong> anything with access-control requirements — <strong>memory is written to disk with no access control.</strong></p></div></span>
+      </div>
+
+            <div class="panel">
+        <h2><span data-zh>中文生态</span><span data-en>China availability</span> <span class="panel-note"><span data-zh>国产 / 国内可直接用 / 备案状态 · 快照</span><span data-en>domestic / direct access / CAC filing · snapshot</span> 2026-10-20</span></h2>
+        <dl class="cn-rows">
+          <dt><span data-zh>出品属地</span><span data-en>Origin</span></dt><dd><span data-zh>国外出品</span><span data-en>foreign-made</span>　<span data-zh>国外主体（网信办公示名单未见对应备案主体）。</span><span data-en>foreign entity (no matching filing entity in the CAC registry).</span></dd>
+          <dt><span data-zh>国内使用</span><span data-en>Direct access</span></dt><dd><span data-zh>大陆可直连</span><span data-en>direct OK</span>　<span data-zh>官网仓库在 GitHub，大陆直连波动（同日实测 200/000 混合）；npm / PyPI 安装源实测稳定可达。</span><span data-en>Hosted on GitHub — direct reachability from mainland fluctuates (200/000 mixed on the same day); npm / PyPI install routes measured stable.</span></dd>
+          <dt><span data-zh>备案状态</span><span data-en>CAC filing</span></dt><dd><span data-zh>未见于备案名单</span><span data-en>not in filing list</span>：<span data-zh>未见于网信办公示名单（2026-10-20 检索 13 批附件，https://www.cac.gov.cn/2024-04/02/c_1713729983803145.htm）；该产品未面向大陆公众提供服务，备案不适用。</span><span data-en>not in the CAC public registry (13 batch attachments searched 2026-10-20, https://www.cac.gov.cn/2024-04/02/c_1713729983803145.htm); the product does not serve the mainland public, so filing does not apply.</span></dd>
+        </dl>
+        <p class="cn-foot"><span data-zh>备案信息以网信办《生成式人工智能服务已备案信息》公示名单为准（按批次滚动更新，本站只抄编号不解读）；「大陆可直连」是本站从大陆网络直连实测的结果，不是厂商承诺。GitHub 类站点当日实测有波动，口径写在依据里。</span><span data-en>Filing status is quoted from the CAC public registry (updated batch by batch; this site copies the number and does not interpret it). "Direct access" is this site's own reachability measurement from a mainland network, not a vendor promise. GitHub-hosted sites fluctuated on the measurement day — the note says so.</span></p>
       </div>
 
 
@@ -193,19 +203,6 @@
           <li><span data-zh>以为删除操作需要审批，实际没有，误删会影响后续所有会话</span><span data-en>Assuming deletion needs approval — it does not, and an accidental delete affects every later session</span></li>
           <li><span data-zh>以为它是简单的 key-value 存储，实际是知识图谱结构</span><span data-en>Assuming it is a plain key-value store — it is a knowledge-graph structure</span></li>
         </ul>
-      </div>
-
-
-            <div class="panel is-slim">
-        <h2><span data-zh>价格</span><span data-en>Pricing</span></h2>
-        <table class="src">
-          <tbody>
-            <tr><th class="w-28"><span data-zh>月度入口</span><span data-en>Monthly entry</span></th><td><span data-zh><p>无商业费用</p></span><span data-en><p>无商业费用</p></span></td></tr>
-            <tr><th class="w-28"><span data-zh>年付</span><span data-en>Annual</span></th><td><span data-zh><p>无商业费用</p></span><span data-en><p>无商业费用</p></span></td></tr>
-            <tr><th class="w-28"><span data-zh>额度说明</span><span data-en>Quota note</span></th><td><span data-zh><p>随 MCP servers 仓库分发，npm 包为 @modelcontextprotocol/server-memory。 实际成本来自本地 JSONL 存储占用的磁盘，不来自本 server。</p></span><span data-en><p>随 MCP servers 仓库分发，npm 包为 @modelcontextprotocol/server-memory。 实际成本来自本地 JSONL 存储占用的磁盘，不来自本 server。</p></span></td></tr>
-          </tbody>
-        </table>
-        <p class="fine mt-3"><span data-zh>不同币种不做折算。优惠、地区、税费与登录后报价可能变化，购买前请到官方页面确认。</span><span data-en>No currency conversion. Discounts, regions, tax and post-login pricing can change — confirm on the official page before buying.</span></p>
       </div>
 
 

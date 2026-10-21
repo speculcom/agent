@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Multi-agent orchestration — 深水指南 | 投机取巧</title>
+  <meta name="description" content="多 agent 编排：多个 agent 怎么分工、怎么交接、怎么收拢结果，以及什么时候根本不该上多 agent。" />
+  <link rel="canonical" href="https://agent.specul.com/tools/guides/orchestration.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Multi-agent orchestration" />
+  <meta property="og:url" content="https://agent.specul.com/tools/guides/orchestration.html" />
+  <meta property="og:title" content="Multi-agent orchestration — 深水指南 | 投机取巧" />
+  <meta property="og:description" content="多 agent 编排：多个 agent 怎么分工、怎么交接、怎么收拢结果，以及什么时候根本不该上多 agent。" />
+  <meta name="theme-color" content="#16121f" />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%238b7cf8'/%3E%3Cstop offset='1' stop-color='%2322d3c5'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='48' height='48' rx='12' fill='%2305080f'/%3E%3Cpath d='M14 32 L24 12 L34 32' fill='none' stroke='url(%23g)' stroke-width='2.4' stroke-linejoin='round'/%3E%3Ccircle cx='24' cy='27' r='2.4' fill='%2322d3c5'/%3E%3C/svg%3E" />
+  <link rel="stylesheet" href="../../brand.css" />
+  <link rel="stylesheet" href="../../site.css" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Multi-agent orchestration","description":"How multiple agents divide work, hand off, and merge results — and when not to go multi-agent at all.","dateModified":"2026-10-20"}</script>
+</head>
+<!-- B6（2026-10-09）：--accent 原先在这里被**内联到 body 上**（style="--accent:X"），
+     同时头部又写了 :root{--accent:X} —— 两处同一份值，冗余。
+     而内联样式会**赢过任何选择器**，于是主题级覆盖（html[data-theme="light"]{--accent:…}）
+     完全无效：vg 的引擎名在亮色主题下一直是 1.62:1 的金色，就是因为这条内联。
+     现在只保留头部那一处 —— 单一真相源，且可被主题覆盖。
+     ⚠ 这段注释里**不能出现反引号**：它在模板字符串内部，反引号会提前结束模板
+     （写这段时踩了第 4 次；pitfalls 里早有记录）。 -->
+<body class="brand-ambient has-tabbar">
+  <a class="t-skip" href="#main"><span data-zh>跳到主要内容</span><span data-en>Skip to main content</span></a>
+  <header class="site-header">
+    <div class="container site-bar">
+      <a class="brand" href="https://specul.com/" title="投机取巧">
+        <span class="brand-dot" aria-hidden="true"></span>
+        <span class="brand-text">
+          <span class="brand-name" id="markName" data-zh-name="投机取巧" data-en-name="Speculative Speculation">投机取巧</span>
+          <span class="brand-sub" id="markSub" data-zh-sub="Speculative Speculation" data-en-sub="">Speculative Speculation</span>
+        </span>
+      </a>
+      <nav class="nav-links" aria-label="站点导航">
+        <a href="https://specul.com/"><span data-zh>首页</span><span data-en>Home</span></a>
+        <a href="https://learn.specul.com/"><span data-zh>学 AI</span><span data-en>Learn</span></a>
+        <a href="https://agent.specul.com/" aria-current="page"><span data-zh>Agent</span><span data-en>Agent</span></a>
+        <a href="https://models.specul.com/"><span data-zh>本地模型</span><span data-en>Models</span></a>
+        <a href="https://vg.specul.com/"><span data-zh>AI 做游戏</span><span data-en>Vibe Gaming</span></a>
+        <a href="https://nav.specul.com/"><span data-zh>导航</span><span data-en>Directory</span></a>
+      </nav>
+      <!-- 2026-10-10：.nav-tools 从 nav 元素**内部**移到外面，与 .nav-links 平级。
+           放里面时窄屏下它会跟着链接一起换行：链接占满整行 → 按钮被挤到第三条
+           （实测顶栏 134px、按钮组孤零零一行）。移出来后它与品牌同行，
+           链接独占第二行居中 —— 这才是下面注释里方案 B 想要的样子。 -->
+      <span class="nav-tools">
+        <button class="icon-btn" id="themeBtn" type="button" aria-label="切换明暗主题" title="切换明暗主题">☾</button>
+        <button class="icon-btn" id="langBtn" type="button" aria-label="Switch language" title="Switch language">EN</button>
+      </span>
+      <!-- B6（2026-10-09）：窄屏（≤900px）下 .nav-links 会隐藏，这个汉堡是替代入口。
+           行为在共享 brand.js 里（一处实现、六站共用），样式在共享 brand.css。
+           无脚本时 CSS 不会显示它，而是把 .nav-links 在窄屏放出来 —— 不会出现
+           「导航被藏进一个点了没反应的按钮」。 -->
+      <button class="nav-burger" type="button" aria-label="打开菜单" aria-expanded="false" aria-controls="navDrawer">
+        <i></i><i></i><i></i>
+      </button>
+    </div>
+  </header>
+  <div class="nav-scrim"></div>
+  <aside class="nav-drawer" id="navDrawer" aria-hidden="true" aria-label="站点导航">
+    <div class="nav-drawer-h">
+      <span class="brand-name"><span data-zh>投机取巧</span><span data-en>Speculative Speculation</span></span>
+      <span class="brand-sub" data-zh-sub="Speculative Speculation" data-en-sub="">Speculative Speculation</span>
+      <button class="nav-dclose" type="button" aria-label="关闭">×</button>
+    </div>
+    <nav class="nav-drawer-list">
+      <a href="https://specul.com/"><span><span data-zh>首页</span><span data-en>Home</span></span><span class="ar" aria-hidden="true">→</span></a>
+      <a href="https://learn.specul.com/"><span><span data-zh>学 AI</span><span data-en>Learn</span></span><span class="ar" aria-hidden="true">→</span></a>
+      <a href="https://agent.specul.com/" aria-current="page"><span><span data-zh>Agent</span><span data-en>Agent</span></span><span class="ar" aria-hidden="true">→</span></a>
+      <a href="https://models.specul.com/"><span><span data-zh>本地模型</span><span data-en>Models</span></span><span class="ar" aria-hidden="true">→</span></a>
+      <a href="https://vg.specul.com/"><span><span data-zh>AI 做游戏</span><span data-en>Vibe Gaming</span></span><span class="ar" aria-hidden="true">→</span></a>
+      <a href="https://nav.specul.com/"><span><span data-zh>导航</span><span data-en>Directory</span></span><span class="ar" aria-hidden="true">→</span></a>
+    </nav>
+    <div class="nav-drawer-foot">
+      <p><span data-zh>6 个站，各管一件事</span><span data-en>Six sites, one job each</span></p>
+      <nav><a href="https://specul.com/legal.html"><span data-zh>法律条款</span><span data-en>Legal terms</span></a></nav>
+    </div>
+  </aside>
+  <main id="main">
+    <div class="container detail">
+      <a class="back" href="../">← 深水指南</a>
+      <div class="detail-head">
+        <div>
+          <h1><span data-zh>多 agent 编排</span><span data-en>Multi-agent orchestration</span></h1>
+          <div class="vendor is-caps"><span data-zh>多 agent 编排</span><span data-en>Multi-agent orchestration</span></div>
+        </div>
+      </div>
+      <div class="panel-lead"><span data-zh><p>多个 agent 怎么分工、怎么交接、怎么收拢结果，以及什么时候根本不该上多 agent。</p></span><span data-en><p>How multiple agents divide work, hand off, and merge results — and when not to go multi-agent at all.</p></span></div>
+      <div class="panel is-slim">
+        <h2><span data-zh>这一篇讲什么</span><span data-en>What this guide covers</span></h2>
+        <p><strong>多 agent 编排就是让多个 agent 分工干同一件事。</strong> 分工的理由通常有三个：上下文装不下、任务能并行、不同环节要不同专业知识。 编排的核心问题只有一个：<strong>下一步交给谁，上下文跟着谁走。</strong></p>
+            <p>本站讲机制，不排名。文中提到的产品都链到各自的档案页——档案是事实源，这篇是视角。</p>
+      </div>
+      <div class="panel is-slim">
+        <h2><span data-zh>先问一句：要不要多 agent</span><span data-en>First, do you need multi-agent?</span></h2>
+        <p>多数「想上多 agent」的需求，单 agent 加对工具和提示词就能满足。 LangGraph 官方文档把这句话放在多 agent 篇的开头：</p>
+            <blockquote>&quot;However, not every complex task requires this approach— a single agent with the right (sometimes dynamic) tools and prompt can often achieve similar results.&quot;</blockquote>
+            <p>开发者想要多 agent，通常真实想要的是三种能力之一： 上下文管理、并行化、多人分头开发。 后两个是好理由；第一个要先确认「上下文真的装不下」， 因为拆错的代价比不拆大。</p>
+      </div>
+      <div class="panel is-slim">
+        <h2><span data-zh>四种主流形态</span><span data-en>Four common shapes</span></h2>
+        <p>LangGraph 把市面上的多 agent 实现归成四类模式。</p>
+            <p><strong>Subagents（子 agent 当工具）</strong>：主 agent 把子 agent 当工具调用， 路由全部经过主 agent，由它决定何时调用哪个。 <a href="/harness/langgraph.html">LangGraph</a> 与 <a href="/harness/google-adk.html">Google ADK</a> 都属这一形态。</p>
+            <p><strong>ADK 官方原文</strong>：&quot;ADK automatically generates weather_checker and flight_booker delegation tools&quot;—— 协调 agent 声明 SubAgents 后，委派工具以各子 agent 命名。 子 agent 干完活，控制权自动回到协调 agent。</p>
+            <p><strong>Handoffs（交接）</strong>：当前 agent 把对话整个移交给下一个 agent。 <a href="/harness/openai-agents-sdk.html">OpenAI Agents SDK</a> 的官方定义是 <strong>&quot;Handoffs allow an agent to delegate tasks to another agent&quot;</strong>。 交接在模型眼里是一个工具：移交 refund agent 的工具就叫 <code>transfer_to_refund_agent</code>。</p>
+            <p><strong>CrewAI 官方原文</strong>：hierarchical 进程下 &quot;Tasks are not pre-assigned; the manager allocates tasks to agents based on their capabilities, reviews outputs, and assesses task completion&quot;。 manager 动态分派、复核输出、判断是否完成，近似 Anthropic 的 orchestrator-workers。</p>
+            <p><strong>Router（路由）</strong>：一步分类，把输入导给专门的 agent，再合成回答。 它和 Anthropic 写的 routing 模式同源：先分类，再走专门路径。</p>
+            <p><strong>自定义工作流</strong>：把编排画成图，确定性和 agent 行为混排。 适合流程本身需要被代码约束的场景——哪步必须拦、哪步可并行，写死在图里。</p>
+            <p>四种形态对照：</p>
+            <div class="tbl-wrap"><table><thead><tr><th>形态</th><th>谁决定下一步</th><th>上下文</th><th>典型场景</th></tr></thead><tbody><tr><td>Subagents</td><td>主 agent</td><td>子 agent 只看分给它的部分</td><td>任务可枚举、要并行</td></tr><tr><td>Handoffs</td><td>模型自己选</td><td>整段历史默认跟走</td><td>客服分流、专业分工</td></tr><tr><td>Router</td><td>分类器</td><td>各走各的，最后合成</td><td>输入类别清晰</td></tr><tr><td>自定义工作流</td><td>代码</td><td>按图显式传递</td><td>流程要强约束</td></tr></tbody></table></div>
+      </div>
+      <div class="panel is-slim">
+        <h2><span data-zh>交接时，上下文跟着谁走</span><span data-en>Whose context follows a handoff</span></h2>
+        <p>这是编排里最容易被忽略、出事最多的一点。</p>
+            <p><strong>OpenAI 官方原文</strong>：&quot;the new agent takes over the conversation, and gets to see the entire previous conversation history&quot;。 也就是说，交接发生时默认全量历史跟走。 要改，用 <code>input_filter</code> 过滤，或用运行配置控制交接历史的嵌套方式。</p>
+            <p>ADK 的协作模式还多一层选择，子 agent 可配成三种模式：</p>
+            <ul><li>chat（默认）：可与用户来回。</li><li>task：可追问用户，做完自动还回控制权。</li><li>single_turn：单轮执行，做完即回。</li></ul>
+            <p>官方特意提醒：这个模式只给子 agent 用，根 agent 不要配。</p>
+            <p>CrewAI 的 sequential 进程则是另一极：任务按列表顺序跑， 上一个任务的输出作为下一个的上下文。 可控，但不够灵活。</p>
+      </div>
+      <div class="panel is-slim">
+        <h2><span data-zh>失败模式</span><span data-en>Failure modes</span></h2>
+        <p><strong>上下文逐级膨胀。</strong> 每交接一次默认带上全量历史， 多跳之后提示词被历史撑爆，成本和延迟一起涨。 拆 agent 的初衷（省上下文）反而没了。</p>
+            <p><strong>职责重叠或留空。</strong> 两个 agent 都以为某件事归对方， 或者某件事谁都不接。 Anthropic 的建议是从简单做起：先优化单次调用，不够再叠加多步系统。</p>
+            <p><strong>错误复合。</strong> 单 agent 出错还能原地重试； 多 agent 一环错、环环错，且更难定位是哪一环开始的。 <strong>Anthropic 官方原文</strong>：&quot;The autonomous nature of agents means higher costs, and the potential for compounding errors.&quot;</p>
+      </div>
+      <div class="panel is-slim">
+        <h2><span data-zh>怎么选</span><span data-en>Choosing a shape</span></h2>
+        <p>一个够用的判断顺序：</p>
+            <p>1. 单 agent 加工具能解决吗？能，就停在这里。 2. 任务能被清楚切成固定几步？能，走顺序流程（CrewAI sequential、Anthropic 的 prompt chaining）。 3. 输入有明确类别、各类差异大？走 Router / routing。 4. 子任务无法预先枚举、要动态拆？走 orchestrator-workers 或 Subagents。 5. 需要人审关键节点？在自定义工作流里加人工检查点。</p>
+            <p>拆错比不拆贵。拆之前先想清楚： 每个 agent 各自的上下文里应该有什么、不应该有什么。</p>
+      </div>
+      <div class="panel is-slim">
+        <h2><span data-zh>出处</span><span data-en>Sources</span></h2>
+        <div class="tbl-wrap"><table><thead><tr><th><span data-zh>来源</span><span data-en>Source</span></th><th><span data-zh>链接</span><span data-en>URL</span></th></tr></thead><tbody>
+          <tr><td>LangGraph 官方文档 · Multi-agent（2026-10-20 直抓 200）</td><td><a href="https://docs.langchain.com/oss/python/langchain/multi-agent" target="_blank" rel="noopener">https://docs.langchain.com/oss/python/langchain/multi-agent</a></td></tr>
+          <tr><td>OpenAI Agents SDK 官方文档 · Handoffs（2026-10-20 直抓 200）</td><td><a href="https://openai.github.io/openai-agents-python/handoffs/" target="_blank" rel="noopener">https://openai.github.io/openai-agents-python/handoffs/</a></td></tr>
+          <tr><td>Google ADK 官方文档 · Collaborative workflows（2026-10-20 直抓 200）</td><td><a href="https://adk.dev/workflows/collaboration/" target="_blank" rel="noopener">https://adk.dev/workflows/collaboration/</a></td></tr>
+          <tr><td>CrewAI 官方文档 · Processes（2026-10-20 直抓 200）</td><td><a href="https://docs.crewai.com/en/concepts/processes" target="_blank" rel="noopener">https://docs.crewai.com/en/concepts/processes</a></td></tr>
+          <tr><td>Anthropic 工程博客 · Building effective agents（2026-10-20 WebFetch 核验官方页）</td><td><a href="https://www.anthropic.com/engineering/building-effective-agents" target="_blank" rel="noopener">https://www.anthropic.com/engineering/building-effective-agents</a></td></tr>
+        </tbody></table></div>
+        <p class="guide-foot"><span data-zh>核验快照：2026-10-20 · 本站不实测、不排名，未知就写未知。</span><span data-en>Verification snapshot: 2026-10-20 · no benchmarks, no rankings — unknown stays unknown.</span></p>
+      </div>
+    </div>
+  </main>
+  <footer class="site-footer">
+    <div class="container foot-row">
+      <div class="foot-brand">
+        <span class="brand-dot" aria-hidden="true"></span>
+        <span class="foot-copy">© 2026 投机取巧 · <span data-zh>Specul</span><span data-en>Specul</span></span>
+      </div>
+      <nav class="foot-links" aria-label="页脚导航">
+          <a href="https://specul.com/"><span data-zh>首页</span><span data-en>Home</span></a>
+          <a href="https://learn.specul.com/"><span data-zh>学 AI</span><span data-en>Learn</span></a>
+          <a href="https://agent.specul.com/"><span data-zh>Agent</span><span data-en>Agent</span></a>
+          <a href="https://models.specul.com/"><span data-zh>本地模型</span><span data-en>Models</span></a>
+          <a href="https://vg.specul.com/"><span data-zh>AI 做游戏</span><span data-en>Vibe Gaming</span></a>
+          <a href="https://nav.specul.com/"><span data-zh>导航</span><span data-en>Directory</span></a>
+          <a href="https://github.com/speculcom/ai-agent-guide" target="_blank" rel="noopener"><span data-zh>开源</span><span data-en>Open source</span></a>
+      </nav>
+      <nav class="foot-legal-links" aria-label="法律">
+        <a href="https://specul.com/legal.html"><span data-zh>法律条款</span><span data-en>Legal terms</span></a>
+        <a href="https://specul.com/legal.html#s6"><span data-zh>免责声明</span><span data-en>Disclaimer</span></a>
+        <a href="https://specul.com/legal.html#s8"><span data-zh>隐私与本地存储</span><span data-en>Privacy</span></a>
+      </nav>
+    </div>
+  </footer>
+<nav class="nav-tabbar" aria-label="快捷导航">
+  <a href="https://specul.com/"><span class="ti" aria-hidden="true">◎</span><span data-zh>首页</span><span data-en>Home</span></a>
+  <a href="https://learn.specul.com/"><span class="ti" aria-hidden="true">▤</span><span data-zh>学 AI</span><span data-en>Learn</span></a>
+  <a href="https://agent.specul.com/" aria-current="page"><span class="ti" aria-hidden="true">◈</span>Agent</a>
+  <a href="https://models.specul.com/"><span class="ti" aria-hidden="true">▦</span><span data-zh>模型</span><span data-en>Models</span></a>
+  <button type="button" id="tabMore" aria-controls="navDrawer" aria-expanded="false"><span class="ti" aria-hidden="true">⋯</span><span data-zh>更多</span><span data-en>More</span></button>
+</nav>
+  <script src="../../brand.js"></script>
+  <script>
+    (function () {
+      var root = document.documentElement;
+      function sync() { root.setAttribute('data-lang', root.lang === 'en' ? 'en' : 'zh'); }
+      new MutationObserver(sync).observe(root, { attributes: true, attributeFilter: ['lang'] });
+      sync();
+    })();
+  </script>
+</body>
+</html>

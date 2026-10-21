@@ -15,7 +15,7 @@
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%238b7cf8'/%3E%3Cstop offset='1' stop-color='%2322d3c5'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='48' height='48' rx='12' fill='%2305080f'/%3E%3Cpath d='M14 32 L24 12 L34 32' fill='none' stroke='url(%23g)' stroke-width='2.4' stroke-linejoin='round'/%3E%3Ccircle cx='24' cy='27' r='2.4' fill='%2322d3c5'/%3E%3C/svg%3E" />
   <link rel="stylesheet" href="../brand.css" />
   <link rel="stylesheet" href="../site.css" />
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Microsoft Agent Framework","applicationCategory":"DeveloperApplication","url":"https://learn.microsoft.com/en-us/agent-framework/","sameAs":"https://learn.microsoft.com/en-us/agent-framework/","description":"它是什么：「Semantic Kernel 与 AutoGen 合并后的微软官方 agent 底座」。 全名 Microsoft Agent Framework（本站下称 MAF）。 官方公告页把这层血缘关系写得最清楚： Microsoft Agent Framework doesn't replace Semantic Kernel and AutoGen — it builds on them. 官方 overview 页同样直白（原文）： \"It brings together and extends ideas from Semantic Kernel and AutoGen proj","dateModified":"2026-10-08","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Microsoft Agent Framework","applicationCategory":"DeveloperApplication","url":"https://learn.microsoft.com/en-us/agent-framework/","sameAs":"https://learn.microsoft.com/en-us/agent-framework/","description":"它是什么：「Semantic Kernel 与 AutoGen 合并后的微软官方 agent 底座」。 全名 Microsoft Agent Framework（本站下称 MAF）。 官方公告页把这层血缘关系写得最清楚： Microsoft Agent Framework doesn't replace Semantic Kernel and AutoGen — it builds on them. 官方 overview 页同样直白（原文）： \"It brings together and extends ideas from Semantic Kernel and AutoGen proj","dateModified":"2026-10-08"}</script>
 </head>
 <!-- B6（2026-10-09）：--accent 原先在这里被**内联到 body 上**（style="--accent:X"），
      同时头部又写了 :root{--accent:X} —— 两处同一份值，冗余。
@@ -152,6 +152,16 @@
         <div class="warn-p"><p><strong>Not a fit for</strong> running just a single agent without a graph (OpenAI Agents SDK is lighter); needing a framework-level file or process sandbox (not provided — default permissions come from the chosen provider); wanting a stack with no Azure dependency (Ollama and Foundry Local exist, but the official hosting path is still Azure-centric); requiring a stable GA API (currently <strong>public preview</strong>, so breaking changes are possible).</p></div></span>
       </div>
 
+            <div class="panel">
+        <h2><span data-zh>中文生态</span><span data-en>China availability</span> <span class="panel-note"><span data-zh>国产 / 国内可直接用 / 备案状态 · 快照</span><span data-en>domestic / direct access / CAC filing · snapshot</span> 2026-10-20</span></h2>
+        <dl class="cn-rows">
+          <dt><span data-zh>出品属地</span><span data-en>Origin</span></dt><dd><span data-zh>国外出品</span><span data-en>foreign-made</span>　<span data-zh>国外主体（网信办公示名单未见对应备案主体）。</span><span data-en>foreign entity (no matching filing entity in the CAC registry).</span></dd>
+          <dt><span data-zh>国内使用</span><span data-en>Direct access</span></dt><dd><span data-zh>大陆可直连</span><span data-en>direct OK</span>　<span data-zh>learn.microsoft.com 直连实测 200。</span><span data-en>learn.microsoft.com measured 200 direct.</span></dd>
+          <dt><span data-zh>备案状态</span><span data-en>CAC filing</span></dt><dd><span data-zh>未见于备案名单</span><span data-en>not in filing list</span>：<span data-zh>未见于网信办公示名单（2026-10-20 检索 13 批附件，https://www.cac.gov.cn/2024-04/02/c_1713729983803145.htm）；该产品未面向大陆公众提供服务，备案不适用。</span><span data-en>not in the CAC public registry (13 batch attachments searched 2026-10-20, https://www.cac.gov.cn/2024-04/02/c_1713729983803145.htm); the product does not serve the mainland public, so filing does not apply.</span></dd>
+        </dl>
+        <p class="cn-foot"><span data-zh>备案信息以网信办《生成式人工智能服务已备案信息》公示名单为准（按批次滚动更新，本站只抄编号不解读）；「大陆可直连」是本站从大陆网络直连实测的结果，不是厂商承诺。GitHub 类站点当日实测有波动，口径写在依据里。</span><span data-en>Filing status is quoted from the CAC public registry (updated batch by batch; this site copies the number and does not interpret it). "Direct access" is this site's own reachability measurement from a mainland network, not a vendor promise. GitHub-hosted sites fluctuated on the measurement day — the note says so.</span></p>
+      </div>
+
 
       <div class="block-head">
         <h2 class="t-h2"><span data-zh>固定坐标系</span><span data-en>Fixed coordinate system</span></h2>
@@ -282,34 +292,6 @@
           <li><span data-zh>以为 AutoGen / AG2 代码能原样升级 —— 官方另给迁移指南，agent 模型与 API 都变了，不是 drop-in</span><span data-en>Assuming AutoGen / AG2 code upgrades as-is — official migration guides exist, and both the agent model and the APIs changed; it is not a drop-in</span></li>
           <li><span data-zh>把 workflow checkpoint 当成上下文压缩 —— checkpoint 落盘的是 superstep 级流程状态，与会话记忆是两套机制</span><span data-en>Reading a workflow checkpoint as context compression — checkpoints persist superstep-level workflow state, a different mechanism from conversational memory</span></li>
         </ul>
-      </div>
-
-
-            <div class="panel is-slim">
-        <h2><span data-zh>价格</span><span data-en>Pricing</span></h2>
-        <table class="src">
-          <tbody>
-            <tr><th class="w-28"><span data-zh>月度入口</span><span data-en>Monthly entry</span></th><td><span data-zh><p>框架免费（MIT，自托管不限次数）；云端托管与模型调用另计</p></span><span data-en><p>框架免费（MIT，自托管不限次数）；云端托管与模型调用另计</p></span></td></tr>
-            <tr><th class="w-28"><span data-zh>月度数值</span><span data-en>Monthly price</span></th><td>0</td></tr>
-            <tr><th class="w-28"><span data-zh>年付</span><span data-en>Annual</span></th><td><span data-zh><p>未核验年付报价</p></span><span data-en><p>未核验年付报价</p></span></td></tr>
-            <tr><th class="w-28"><span data-zh>额度说明</span><span data-en>Quota note</span></th><td><span data-zh><p><strong>框架本体是 MIT 开源的，但「托管」与「模型」两处会产生费用。</strong></p>
-            <p>商业信息要按三层读。</p>
-            <p>核验依据：仓库 license API 返回 MIT（核验 2026-10-08）、 README 的 pip / dotnet 安装路径、官方 overview 页的 public preview 标注。</p>
-            <ul><li><strong>第一层（免费）</strong> —— SDK 本身。Python 走 <code>pip install agent-framework --pre</code>， .NET 走 <code>dotnet add package Microsoft.Agents.AI</code>，自托管不限次数。</li></ul>
-            <ul><li><strong>第二层（云资源计费）</strong> —— 托管与持久化。Foundry Hosted Agents 部署到 Foundry 托管基础设施；Durable Task 扩展落在 Azure Functions 或自建算力； CosmosCheckpointStorage 指向 Azure Cosmos DB。这些都按 Azure 资源计价。</li></ul>
-            <ul><li><strong>第三层（模型计费）</strong> —— 默认示例走 Microsoft Foundry / Azure OpenAI / OpenAI， 推理费用按各家 provider 走。</li></ul>
-            <p><strong>⚠ 官方未给出这三层的具体价目表</strong>（已查官方 overview 页与 README）。</p>
-            <p>所以没法折算月费，本站只记「框架免费、其余自理」。</p></span><span data-en><p><strong>框架本体是 MIT 开源的，但「托管」与「模型」两处会产生费用。</strong></p>
-            <p>商业信息要按三层读。</p>
-            <p>核验依据：仓库 license API 返回 MIT（核验 2026-10-08）、 README 的 pip / dotnet 安装路径、官方 overview 页的 public preview 标注。</p>
-            <ul><li><strong>第一层（免费）</strong> —— SDK 本身。Python 走 <code>pip install agent-framework --pre</code>， .NET 走 <code>dotnet add package Microsoft.Agents.AI</code>，自托管不限次数。</li></ul>
-            <ul><li><strong>第二层（云资源计费）</strong> —— 托管与持久化。Foundry Hosted Agents 部署到 Foundry 托管基础设施；Durable Task 扩展落在 Azure Functions 或自建算力； CosmosCheckpointStorage 指向 Azure Cosmos DB。这些都按 Azure 资源计价。</li></ul>
-            <ul><li><strong>第三层（模型计费）</strong> —— 默认示例走 Microsoft Foundry / Azure OpenAI / OpenAI， 推理费用按各家 provider 走。</li></ul>
-            <p><strong>⚠ 官方未给出这三层的具体价目表</strong>（已查官方 overview 页与 README）。</p>
-            <p>所以没法折算月费，本站只记「框架免费、其余自理」。</p></span></td></tr>
-          </tbody>
-        </table>
-        <p class="fine mt-3"><span data-zh>不同币种不做折算。优惠、地区、税费与登录后报价可能变化，购买前请到官方页面确认。</span><span data-en>No currency conversion. Discounts, regions, tax and post-login pricing can change — confirm on the official page before buying.</span></p>
       </div>
 
 

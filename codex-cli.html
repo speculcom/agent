@@ -15,7 +15,7 @@
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%238b7cf8'/%3E%3Cstop offset='1' stop-color='%2322d3c5'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='48' height='48' rx='12' fill='%2305080f'/%3E%3Cpath d='M14 32 L24 12 L34 32' fill='none' stroke='url(%23g)' stroke-width='2.4' stroke-linejoin='round'/%3E%3Ccircle cx='24' cy='27' r='2.4' fill='%2322d3c5'/%3E%3C/svg%3E" />
   <link rel="stylesheet" href="brand.css" />
   <link rel="stylesheet" href="site.css" />
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Codex CLI","applicationCategory":"DeveloperApplication","url":"https://github.com/openai/codex","sameAs":"https://github.com/openai/codex","description":"OpenAI 官方的终端编码 agent，Rust 实现，架构上强调 app server 与线程续接。","dateModified":"2026-10-08","offers":{"@type":"Offer","price":"20","priceCurrency":"USD"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Codex CLI","applicationCategory":"DeveloperApplication","url":"https://github.com/openai/codex","sameAs":"https://github.com/openai/codex","description":"OpenAI 官方的终端编码 agent，Rust 实现，架构上强调 app server 与线程续接。","dateModified":"2026-10-08"}</script>
 </head>
 <!-- B6（2026-10-09）：--accent 原先在这里被**内联到 body 上**（style="--accent:X"），
      同时头部又写了 :root{--accent:X} —— 两处同一份值，冗余。
@@ -115,6 +115,16 @@
         <div class="warn-p"><p><strong>不适合</strong>需要「沙箱逐平台实现逐条明确」的场景 —— 官方只说明 OS 级强制与 Windows 的 <code>elevated</code> / <code>unelevated</code> 档位， 未按 macOS / Linux / Windows 分别列出实现细节，采购前仍建议实测。</p></div></span><span data-en>        <div><p>Engineering work in the terminal, including CI integration or building your own client. Its architecture emphasises resumption and recovery of existing repositories.</p></div></span>
       </div>
 
+            <div class="panel">
+        <h2><span data-zh>中文生态</span><span data-en>China availability</span> <span class="panel-note"><span data-zh>国产 / 国内可直接用 / 备案状态 · 快照</span><span data-en>domestic / direct access / CAC filing · snapshot</span> 2026-10-20</span></h2>
+        <dl class="cn-rows">
+          <dt><span data-zh>出品属地</span><span data-en>Origin</span></dt><dd><span data-zh>国外出品</span><span data-en>foreign-made</span>　<span data-zh>国外主体（网信办公示名单未见对应备案主体）。</span><span data-en>foreign entity (no matching filing entity in the CAC registry).</span></dd>
+          <dt><span data-zh>国内使用</span><span data-en>Direct access</span></dt><dd><span data-zh>大陆可直连</span><span data-en>direct OK</span>　<span data-zh>官网仓库在 GitHub，大陆直连波动（同日实测 200/000 混合）；npm / PyPI 安装源实测稳定可达。</span><span data-en>Hosted on GitHub — direct reachability from mainland fluctuates (200/000 mixed on the same day); npm / PyPI install routes measured stable.</span></dd>
+          <dt><span data-zh>备案状态</span><span data-en>CAC filing</span></dt><dd><span data-zh>未见于备案名单</span><span data-en>not in filing list</span>：<span data-zh>未见于网信办公示名单（2026-10-20 检索 13 批附件，https://www.cac.gov.cn/2024-04/02/c_1713729983803145.htm）；该产品未面向大陆公众提供服务，备案不适用。</span><span data-en>not in the CAC public registry (13 batch attachments searched 2026-10-20, https://www.cac.gov.cn/2024-04/02/c_1713729983803145.htm); the product does not serve the mainland public, so filing does not apply.</span></dd>
+        </dl>
+        <p class="cn-foot"><span data-zh>备案信息以网信办《生成式人工智能服务已备案信息》公示名单为准（按批次滚动更新，本站只抄编号不解读）；「大陆可直连」是本站从大陆网络直连实测的结果，不是厂商承诺。GitHub 类站点当日实测有波动，口径写在依据里。</span><span data-en>Filing status is quoted from the CAC public registry (updated batch by batch; this site copies the number and does not interpret it). "Direct access" is this site's own reachability measurement from a mainland network, not a vendor promise. GitHub-hosted sites fluctuated on the measurement day — the note says so.</span></p>
+      </div>
+
 
       <div class="block-head">
         <h2 class="t-h2"><span data-zh>固定坐标系</span><span data-en>Fixed coordinate system</span></h2>
@@ -198,7 +208,7 @@
         <div class="axis">
           <dt><span data-zh>权限与限制</span><span data-en>Permissions & limits</span></dt>
           <dd><p>沙箱与审批边界跟随运行环境。</p>
-            <p><strong>API key 计费与订阅不是同一额度</strong>（此点已在定价说明中确认）。</p>
+            <p><strong>API key 计费与订阅不是同一额度</strong>（此点已在官方用量说明中确认）。</p>
             <p><strong>审批与沙箱模式已核验完成</strong>：官方口径（agent-approvals-security / config-advanced / config-reference）与 SDK 源码一致。</p>
             <p>审批策略用顶层 <code>approval_policy</code>：</p>
             <ul><li><code>untrusted</code> / <code>on-request</code> / <code>never</code> / <code>granular</code></li><li><code>on-failure</code>（已弃用）</li></ul>
@@ -230,28 +240,6 @@
           <li><span data-zh>以为 CLI 本身就是全部，实际还有 app server 供自建客户端接入</span><span data-en>Assuming the CLI is the whole thing — there is also an app server for custom clients</span></li>
           <li><span data-zh>以为文档站能直接 curl 抓取，可能被 CDN 拦截</span><span data-en>Assuming the docs site can be curled directly — a CDN may block it</span></li>
         </ul>
-      </div>
-
-
-            <div class="panel is-slim">
-        <h2><span data-zh>价格</span><span data-en>Pricing</span></h2>
-        <table class="src">
-          <tbody>
-            <tr><th class="w-28"><span data-zh>月度入口</span><span data-en>Monthly entry</span></th><td><span data-zh><p>随 ChatGPT 套餐（Free 有限 / Plus $20 扩量 / Pro $100 起 最大任务量）</p></span><span data-en><p>随 ChatGPT 套餐（Free 有限 / Plus $20 扩量 / Pro $100 起 最大任务量）</p></span></td></tr>
-            <tr><th class="w-28"><span data-zh>月度数值</span><span data-en>Monthly price</span></th><td>20</td></tr>
-            <tr><th class="w-28"><span data-zh>年付</span><span data-en>Annual</span></th><td><span data-zh><p>官方定价页只列月付；年付价未列出，记为未知</p></span><span data-en><p>官方定价页只列月付；年付价未列出，记为未知</p></span></td></tr>
-            <tr><th class="w-28"><span data-zh>额度说明</span><span data-en>Quota note</span></th><td><span data-zh><p><strong>额度随 ChatGPT 套餐分档给，不是「买了就有」。</strong></p>
-            <p>README 确认「Using Codex with your ChatGPT plan」—— 授权随 ChatGPT 订阅。</p>
-            <p><strong>2026-10-01 按 OpenAI 官方定价页逐档核实（美元口径）</strong>： Free $0（<strong>Codex access limited</strong>）、 Go $8、<strong>Plus $20</strong>（<strong>Expanded Codex usage</strong>）、 <strong>Pro 起 $100</strong>（<strong>Maximum Codex tasks</strong>，另标5x 或 20x 更多用量）。 Business / Enterprise 另计。</p>
-            <p>免费层只有有限额度，Plus 是「扩量」，Pro 才是「最大任务量」。</p>
-            <p><strong>API 计费与订阅授权不是同一额度</strong>（原 pitfall 仍成立）： API 走独立的按量计费，不消耗订阅内的 Codex 额度。</p></span><span data-en><p><strong>额度随 ChatGPT 套餐分档给，不是「买了就有」。</strong></p>
-            <p>README 确认「Using Codex with your ChatGPT plan」—— 授权随 ChatGPT 订阅。</p>
-            <p><strong>2026-10-01 按 OpenAI 官方定价页逐档核实（美元口径）</strong>： Free $0（<strong>Codex access limited</strong>）、 Go $8、<strong>Plus $20</strong>（<strong>Expanded Codex usage</strong>）、 <strong>Pro 起 $100</strong>（<strong>Maximum Codex tasks</strong>，另标5x 或 20x 更多用量）。 Business / Enterprise 另计。</p>
-            <p>免费层只有有限额度，Plus 是「扩量」，Pro 才是「最大任务量」。</p>
-            <p><strong>API 计费与订阅授权不是同一额度</strong>（原 pitfall 仍成立）： API 走独立的按量计费，不消耗订阅内的 Codex 额度。</p></span></td></tr>
-          </tbody>
-        </table>
-        <p class="fine mt-3"><span data-zh>不同币种不做折算。优惠、地区、税费与登录后报价可能变化，购买前请到官方页面确认。</span><span data-en>No currency conversion. Discounts, regions, tax and post-login pricing can change — confirm on the official page before buying.</span></p>
       </div>
 
 

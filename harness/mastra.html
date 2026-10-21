@@ -143,6 +143,16 @@
         <div><ul><li><strong>A Python stack</strong> (see <a href="./langgraph.html">LangGraph</a> / <a href="./pydantic-ai.html">Pydantic AI</a>)</li><li><strong>Wanting a low-level engine you control</strong> - Mastra sits higher, ships a bigger package and more conventions</li><li><strong>Refusing any commercial component</strong> - platform Studio, observability and hosted deployment are separately billed, and <code>ee/</code> needs an enterprise licence</li><li><strong>Needing a framework-provided process sandbox or network policy</strong> - that part is not in the OSS core</li></ul></div></span>
       </div>
 
+            <div class="panel">
+        <h2><span data-zh>中文生态</span><span data-en>China availability</span> <span class="panel-note"><span data-zh>国产 / 国内可直接用 / 备案状态 · 快照</span><span data-en>domestic / direct access / CAC filing · snapshot</span> 2026-10-20</span></h2>
+        <dl class="cn-rows">
+          <dt><span data-zh>出品属地</span><span data-en>Origin</span></dt><dd><span data-zh>国外出品</span><span data-en>foreign-made</span>　<span data-zh>国外主体（网信办公示名单未见对应备案主体）。</span><span data-en>foreign entity (no matching filing entity in the CAC registry).</span></dd>
+          <dt><span data-zh>国内使用</span><span data-en>Direct access</span></dt><dd><span data-zh>大陆可直连</span><span data-en>direct OK</span>　<span data-zh>官网直连实测 200。</span><span data-en>official site measured 200 direct.</span></dd>
+          <dt><span data-zh>备案状态</span><span data-en>CAC filing</span></dt><dd><span data-zh>未见于备案名单</span><span data-en>not in filing list</span>：<span data-zh>未见于网信办公示名单（2026-10-20 检索 13 批附件，https://www.cac.gov.cn/2024-04/02/c_1713729983803145.htm）；该产品未面向大陆公众提供服务，备案不适用。</span><span data-en>not in the CAC public registry (13 batch attachments searched 2026-10-20, https://www.cac.gov.cn/2024-04/02/c_1713729983803145.htm); the product does not serve the mainland public, so filing does not apply.</span></dd>
+        </dl>
+        <p class="cn-foot"><span data-zh>备案信息以网信办《生成式人工智能服务已备案信息》公示名单为准（按批次滚动更新，本站只抄编号不解读）；「大陆可直连」是本站从大陆网络直连实测的结果，不是厂商承诺。GitHub 类站点当日实测有波动，口径写在依据里。</span><span data-en>Filing status is quoted from the CAC public registry (updated batch by batch; this site copies the number and does not interpret it). "Direct access" is this site's own reachability measurement from a mainland network, not a vendor promise. GitHub-hosted sites fluctuated on the measurement day — the note says so.</span></p>
+      </div>
+
 
       <div class="block-head">
         <h2 class="t-h2"><span data-zh>固定坐标系</span><span data-en>Fixed coordinate system</span></h2>
@@ -203,7 +213,7 @@
             <ul><li><code>suspend()</code> 在某个 step 内暂停，并把状态标为 <code>suspended</code></li><li>workflow 级 <code>.sleep()/.sleepUntil()</code> 标 <code>waiting</code></li><li><code>resume({ step, resumeData })</code> 从暂停处继续；只给 <code>runId</code> 时需先 <code>createRun({ runId })</code></li><li><code>suspendData</code> 可在恢复时取回当初传给 <code>suspend()</code> 的数据</li><li><code>workflow.getWorkflowRunById()</code> + <code>createWorkflowStateReader()</code> 可从存储中恢复悬挂的 run</li></ul>
             <p><strong>Harness 层还有</strong>：</p>
             <ul><li>Durable Agents：&quot;Persist run state and let clients reconnect to its stream&quot;</li><li>Background Tasks：&quot;Run slow tools, workflows, or subagents without blocking&quot;</li><li>Schedules：cron 定时起 run</li></ul>
-            <p><strong>托管后台</strong>：Mastra 平台 Server 提供 24/7 常驻（官方定价页 Persistent Server <strong>$100/项目</strong>）。 OSS 自托管则是「你自己把进程跑起来」，关了就停。</p></dd>
+            <p><strong>托管后台</strong>：Mastra 平台 Server 提供 24/7 常驻（Persistent Server 按项目计费，单价见官方页）。 OSS 自托管则是「你自己把进程跑起来」，关了就停。</p></dd>
         </div>
         <div class="axis">
           <dt><span data-zh>工具与扩展</span><span data-en>Tools & extensions</span></dt>
@@ -255,23 +265,10 @@
         <ul>
 
           <li><span data-zh>以为 Mastra 全是 Apache-2.0 免费 —— <code>ee/</code> 目录是 source-available，生产用需企业许可，仓库 license API 返回 NOASSERTION</span><span data-en>Assuming Mastra is entirely Apache-2.0 and free - the <code>ee/</code> directory is source-available and needs an enterprise licence for production; the repo licence API returns NOASSERTION</span></li>
-          <li><span data-zh>把 Mastra Studio / 观测 / 托管部署当成框架自带 —— 那些是 Mastra 平台产品，有 Starter $0 / Teams $250 / Enterprise 计费</span><span data-en>Treating Mastra Studio / observability / hosted deployment as part of the framework - those are Mastra platform products, billed on Starter $0 / Teams $250 / Enterprise tiers</span></li>
+          <li><span data-zh>把 Mastra Studio / 观测 / 托管部署当成框架自带 —— 那些是 Mastra 平台产品，按 Starter / Teams / Enterprise 分档计费</span><span data-en>Treating Mastra Studio / observability / hosted deployment as part of the framework - those are Mastra platform products, billed on Starter $0 / Teams $250 / Enterprise tiers</span></li>
           <li><span data-zh>把 README 的「40+ providers」当作上限 —— 官方 /models 目录页写的是 213 providers / 7815 models</span><span data-en>Taking the README&#39;s &quot;40+ providers&quot; as the ceiling - the official <code>/models</code> directory page states 213 providers / 7815 models</span></li>
           <li><span data-zh>以为本地模型要改代码 —— 官方支持 OpenAI 兼容端点，推荐 LMStudio，属配置项（<code>id</code> + <code>url</code>）</span><span data-en>Assuming local models need code changes - the official path is an OpenAI-compatible endpoint with LMStudio recommended, configured via <code>id</code> + <code>url</code></span></li>
         </ul>
-      </div>
-
-
-            <div class="panel is-slim">
-        <h2><span data-zh>价格</span><span data-en>Pricing</span></h2>
-        <table class="src">
-          <tbody>
-            <tr><th class="w-28"><span data-zh>月度入口</span><span data-en>Monthly entry</span></th><td><span data-zh><p>框架 Apache-2.0 自托管免费；Mastra 平台 Starter $0 / Teams $250 月付（核验 2026-10-08）</p></span><span data-en><p>框架 Apache-2.0 自托管免费；Mastra 平台 Starter $0 / Teams $250 月付（核验 2026-10-08）</p></span></td></tr>
-            <tr><th class="w-28"><span data-zh>年付</span><span data-en>Annual</span></th><td><span data-zh><p>未核验年付报价</p></span><span data-en><p>未核验年付报价</p></span></td></tr>
-            <tr><th class="w-28"><span data-zh>额度说明</span><span data-en>Quota note</span></th><td><span data-zh><p><strong>框架免费与商业平台是两条线，要分清。</strong> 核验依据：仓库 README 的 Licensing 段（双许可）、官方定价页 mastra.ai/pricing（核验 2026-10-08）。 <strong>开源侧</strong>：README 原文 &quot;The core framework and the vast majority of this codebase is open source under <strong>Apache-2.0</strong>&quot;；但 &quot;Code in any directory named <code>ee/</code> ... is source-available under the <strong>Mastra Enterprise License</strong>&quot;，这些功能生产环境需企业许可。 <strong>商业侧（Mastra 平台）</strong>：官方定价页列三档 —— <strong>Starter $0/月</strong>（10 万 observability events、 24 CPU 小时、15 天数据保留、用户/部署/项目不限）、<strong>Teams $250/月</strong>（100 万 events、250 CPU 小时、 6 个月保留、多团队 + SSO + SOC 2 文档）、<strong>Enterprise 定制</strong>（RBAC、审计日志、SLA、专属支持）。 另单列 <strong>Persistent Server（24/7 常驻）$100/项目</strong>、Gateway 令牌 <strong>Market Rate + 5.5%</strong>。 <strong>自托管一侧</strong>：官方定价页 Self-Hosted 标签下 <strong>Free（Apache 2.0）</strong> 与 <strong>Enterprise（Licensed self-hosted features，定制）</strong> 两档，Enterprise 卖点是 RBAC/SSO/IAM、数据不出 VPC、统一年费。 <strong>官方未说明</strong> <code>ee/</code> 目录之外还有哪些功能属企业许可范围（已查仓库 README 许可段与定价页）。</p></span><span data-en><p><strong>框架免费与商业平台是两条线，要分清。</strong> 核验依据：仓库 README 的 Licensing 段（双许可）、官方定价页 mastra.ai/pricing（核验 2026-10-08）。 <strong>开源侧</strong>：README 原文 &quot;The core framework and the vast majority of this codebase is open source under <strong>Apache-2.0</strong>&quot;；但 &quot;Code in any directory named <code>ee/</code> ... is source-available under the <strong>Mastra Enterprise License</strong>&quot;，这些功能生产环境需企业许可。 <strong>商业侧（Mastra 平台）</strong>：官方定价页列三档 —— <strong>Starter $0/月</strong>（10 万 observability events、 24 CPU 小时、15 天数据保留、用户/部署/项目不限）、<strong>Teams $250/月</strong>（100 万 events、250 CPU 小时、 6 个月保留、多团队 + SSO + SOC 2 文档）、<strong>Enterprise 定制</strong>（RBAC、审计日志、SLA、专属支持）。 另单列 <strong>Persistent Server（24/7 常驻）$100/项目</strong>、Gateway 令牌 <strong>Market Rate + 5.5%</strong>。 <strong>自托管一侧</strong>：官方定价页 Self-Hosted 标签下 <strong>Free（Apache 2.0）</strong> 与 <strong>Enterprise（Licensed self-hosted features，定制）</strong> 两档，Enterprise 卖点是 RBAC/SSO/IAM、数据不出 VPC、统一年费。 <strong>官方未说明</strong> <code>ee/</code> 目录之外还有哪些功能属企业许可范围（已查仓库 README 许可段与定价页）。</p></span></td></tr>
-          </tbody>
-        </table>
-        <p class="fine mt-3"><span data-zh>不同币种不做折算。优惠、地区、税费与登录后报价可能变化，购买前请到官方页面确认。</span><span data-en>No currency conversion. Discounts, regions, tax and post-login pricing can change — confirm on the official page before buying.</span></p>
       </div>
 
 
@@ -284,7 +281,7 @@
           <li><code>ee/</code> 目录之外还有哪些功能属企业许可范围（官方 README 只给目录示例，未给完整功能清单）</li>
           <li>跨进程 / 多实例并发 resume 同一 snapshot 的冲突语义（官方未说明）</li>
           <li>Observational Memory 压缩后的信息损失与成本（本站未实测）</li>
-          <li>Mastra 平台各档的实际吞吐与超量计费在真实负载下的表现（官方仅给单价）</li>
+          <li>Mastra 平台各档的实际吞吐与超量计费在真实负载下的表现（官方只给计费口径）</li>
         </ul>
       </div>
 
@@ -308,7 +305,7 @@
             <tr><td>docs</td><td>官方文档 · Mastra 平台（Observability / Studio / Server、托管 Workspace 带 filesystem 与 sandbox）</td><td><a href="https://mastra.ai/docs/mastra-platform/overview" target="_blank" rel="noopener">https://mastra.ai/docs/mastra-platform/overview</a></td></tr>
             <tr><td>docs</td><td>官方文档 · Harness（Durable Agents、Background Tasks、Schedules、createCodingAgent）</td><td><a href="https://mastra.ai/docs/harness/overview" target="_blank" rel="noopener">https://mastra.ai/docs/harness/overview</a></td></tr>
             <tr><td>docs</td><td>官方文档 · Auth（认证可选、默认公开、JWT/SSO/RBAC、Studio 与 API 一起保护）</td><td><a href="https://mastra.ai/docs/auth/overview" target="_blank" rel="noopener">https://mastra.ai/docs/auth/overview</a></td></tr>
-            <tr><td>pricing</td><td>官方定价页（核验 2026-10-08：Platform Starter $0 / Teams $250 / Enterprise；Self-Hosted Free 与 Enterprise；Persistent Server $100/项目；Gateway +5.5%）</td><td><a href="https://mastra.ai/pricing" target="_blank" rel="noopener">https://mastra.ai/pricing</a></td></tr>
+            <tr><td>pricing</td><td>官方定价页（核验 2026-10-08：Platform 三档 Starter/Teams/Enterprise；Self-Hosted Free 与 Enterprise；Persistent Server 按项目计费；Gateway 有加价费率）</td><td><a href="https://mastra.ai/pricing" target="_blank" rel="noopener">https://mastra.ai/pricing</a></td></tr>
             <tr><td>changelog</td><td>Releases（@mastra/core 1.75.0 @ 2026-10-07）</td><td><a href="https://github.com/mastra-ai/mastra/releases" target="_blank" rel="noopener">https://github.com/mastra-ai/mastra/releases</a></td></tr>
           </tbody>
         </table>
@@ -370,8 +367,8 @@
             <blockquote><strong>Apache License 2.0</strong>: The core framework and the vast majority of this codebase is open source under Apache-2.0. <strong>Mastra Enterprise License</strong>: Code in any directory named <code>ee/</code> ... is source-available ... require a valid enterprise license for production use.</blockquote>
             <p>GitHub 的 license API 对整仓返回 <strong>NOASSERTION</strong>。 它与这段双许可声明一致：不是「无许可」，是「非标准双许可」。</p>
             <p>另一条线是 <strong>Mastra 平台</strong>（YC W25）。官方定价页（核验 2026-10-08）分两处：</p>
-            <ul><li><strong>平台三档</strong>：<strong>Starter $0/月</strong>、<strong>Teams $250/月</strong>、<strong>Enterprise 定制</strong></li><li><strong>自托管两档</strong>：Free 与 Enterprise</li></ul>
-            <p><strong>Studio、Observability、托管 Server 与 24/7 常驻（$100/项目）都是平台产品</strong>。它们不是框架自带。</p>
+            <ul><li><strong>平台三档</strong>：Starter（免费档）、Teams（付费档）、Enterprise（定制）</li><li><strong>自托管两档</strong>：Free 与 Enterprise</li></ul>
+            <p><strong>Studio、Observability、托管 Server 与 24/7 常驻都是平台产品</strong>（常驻托管按项目计费，单价见官方页）。它们不是框架自带。报价按 D9 口径不存。</p>
       </div>
       <div class="panel is-slim">
         <h2>核验说明</h2>

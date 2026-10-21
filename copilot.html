@@ -15,7 +15,7 @@
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%238b7cf8'/%3E%3Cstop offset='1' stop-color='%2322d3c5'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='48' height='48' rx='12' fill='%2305080f'/%3E%3Cpath d='M14 32 L24 12 L34 32' fill='none' stroke='url(%23g)' stroke-width='2.4' stroke-linejoin='round'/%3E%3Ccircle cx='24' cy='27' r='2.4' fill='%2322d3c5'/%3E%3C/svg%3E" />
   <link rel="stylesheet" href="brand.css" />
   <link rel="stylesheet" href="site.css" />
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"GitHub Copilot","applicationCategory":"DeveloperApplication","url":"https://github.com/features/copilot","sameAs":"https://github.com/features/copilot","description":"形态最广、生态最依附 GitHub 的一个——从网站到 CLI 到主流编辑器全覆盖，且能把任务委派给 Claude / Codex（Preview）。","dateModified":"2026-10-08","offers":{"@type":"Offer","price":"10","priceCurrency":"USD"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"GitHub Copilot","applicationCategory":"DeveloperApplication","url":"https://github.com/features/copilot","sameAs":"https://github.com/features/copilot","description":"形态最广、生态最依附 GitHub 的一个——从网站到 CLI 到主流编辑器全覆盖，且能把任务委派给 Claude / Codex（Preview）。","dateModified":"2026-10-08"}</script>
 </head>
 <!-- B6（2026-10-09）：--accent 原先在这里被**内联到 body 上**（style="--accent:X"），
      同时头部又写了 :root{--accent:X} —— 两处同一份值，冗余。
@@ -114,8 +114,18 @@
             <div class="panel is-slim">
         <h2><span data-zh>适合与不适合</span><span data-en>When to use it, when not to</span></h2>
 <span data-zh>        <div><p>已在 GitHub 生态内（用 PR / Issue / Actions 工作）的人。 需要最广编辑器覆盖的人（VS Code / JetBrains / Eclipse / Xcode 都能用）。 企业采购需要额度池治理与管理员支出控制的人。</p></div>
-        <div class="warn-p"><p><strong>不适合</strong>要求定价一次讲清的人—— 本次未能逐档确认价格数字，必须自行到官网核对。 也不适合依赖第三方 agent 委派的场景（官方标注为 Preview）。</p></div></span><span data-en>        <div><p>People already inside the GitHub ecosystem (working via PR / Issue / Actions). People who need the widest editor coverage (VS Code / JetBrains / Eclipse / Xcode). Organisations that need quota-pool governance and admin spend controls.</p></div>
+        <div class="warn-p"><p><strong>不适合</strong>依赖第三方 agent 委派的场景（官方标注为 Preview）。 报价与档位见官方 plans 页（本站按 D9 口径不存价格数字）。</p></div></span><span data-en>        <div><p>People already inside the GitHub ecosystem (working via PR / Issue / Actions). People who need the widest editor coverage (VS Code / JetBrains / Eclipse / Xcode). Organisations that need quota-pool governance and admin spend controls.</p></div>
         <div class="warn-p"><p><strong>Not a fit for</strong> anyone requiring pricing stated once and clearly — this round could not confirm the price figures tier by tier; check the official site yourself. Also not a fit if you rely on third-party agent delegation (officially marked Preview).</p></div></span>
+      </div>
+
+            <div class="panel">
+        <h2><span data-zh>中文生态</span><span data-en>China availability</span> <span class="panel-note"><span data-zh>国产 / 国内可直接用 / 备案状态 · 快照</span><span data-en>domestic / direct access / CAC filing · snapshot</span> 2026-10-20</span></h2>
+        <dl class="cn-rows">
+          <dt><span data-zh>出品属地</span><span data-en>Origin</span></dt><dd><span data-zh>国外出品</span><span data-en>foreign-made</span>　<span data-zh>国外主体（网信办公示名单未见对应备案主体）。</span><span data-en>foreign entity (no matching filing entity in the CAC registry).</span></dd>
+          <dt><span data-zh>国内使用</span><span data-en>Direct access</span></dt><dd><span data-zh>大陆可直连</span><span data-en>direct OK</span>　<span data-zh>官网仓库在 GitHub，大陆直连波动（同日实测 200/000 混合）；npm / PyPI 安装源实测稳定可达。</span><span data-en>Hosted on GitHub — direct reachability from mainland fluctuates (200/000 mixed on the same day); npm / PyPI install routes measured stable.</span></dd>
+          <dt><span data-zh>备案状态</span><span data-en>CAC filing</span></dt><dd><span data-zh>未见于备案名单</span><span data-en>not in filing list</span>：<span data-zh>未见于网信办公示名单（2026-10-20 检索 13 批附件，https://www.cac.gov.cn/2024-04/02/c_1713729983803145.htm）；该产品未面向大陆公众提供服务，备案不适用。</span><span data-en>not in the CAC public registry (13 batch attachments searched 2026-10-20, https://www.cac.gov.cn/2024-04/02/c_1713729983803145.htm); the product does not serve the mainland public, so filing does not apply.</span></dd>
+        </dl>
+        <p class="cn-foot"><span data-zh>备案信息以网信办《生成式人工智能服务已备案信息》公示名单为准（按批次滚动更新，本站只抄编号不解读）；「大陆可直连」是本站从大陆网络直连实测的结果，不是厂商承诺。GitHub 类站点当日实测有波动，口径写在依据里。</span><span data-en>Filing status is quoted from the CAC public registry (updated batch by batch; this site copies the number and does not interpret it). "Direct access" is this site's own reachability measurement from a mainland network, not a vendor promise. GitHub-hosted sites fluctuated on the measurement day — the note says so.</span></p>
       </div>
 
 
@@ -198,23 +208,8 @@
 
 
             <div class="panel is-slim">
-        <h2><span data-zh>价格</span><span data-en>Pricing</span></h2>
-        <table class="src">
-          <tbody>
-            <tr><th class="w-28"><span data-zh>月度入口</span><span data-en>Monthly entry</span></th><td><span data-zh><p>Copilot Free（2,000 补全/月）/ Pro $10 / Pro+ $39 / Max $100 每月</p></span><span data-en><p>Copilot Free（2,000 补全/月）/ Pro $10 / Pro+ $39 / Max $100 每月</p></span></td></tr>
-            <tr><th class="w-28"><span data-zh>月度数值</span><span data-en>Monthly price</span></th><td>10</td></tr>
-            <tr><th class="w-28"><span data-zh>年付</span><span data-en>Annual</span></th><td><span data-zh><p>年付按档折算（Pro $15、Pro+ $70、Max $200 每月等值），无统一折算率</p></span><span data-en><p>年付按档折算（Pro $15、Pro+ $70、Max $200 每月等值），无统一折算率</p></span></td></tr>
-            <tr><th class="w-28"><span data-zh>额度说明</span><span data-en>Quota note</span></th><td><span data-zh><p><strong>2026-10-01 用 Playwright 渲染官方 plans 页后逐档确认，月付/年付两套口径都拿到</strong>： 个人四档 —— Free $0（<strong>每月 2,000 次补全</strong>，chat 与 agent 用量有限）、 Pro $10/月、Pro+ $39/月、Max $100/月；这三档的 agent 与 chat 配额均为 <strong>Unlimited</strong>。 <strong>月付额度</strong>：Pro $15、Pro+ $70、Max $200 每月总credits（官方标注序号 6的附加说明）。 团队每用户每月 —— Pro $10、Pro+ $39、Max $100（另有 Enterprise 定制）。 <strong>年付口径数字不同</strong>（Pro $15、Pro+ $70、Max $200），页面同时呈现两套， 本站按「月付=当年付折扣后」理解，但<strong>具体折算率官方未单列，勿自行推算</strong>。 另有机制：Flex allotment（官方明确标注「Flex allotments may change over time」， 即额度可变）、可额外购买 GitHub AI Credits、 Business/Enterprise 有 Pooled usage（组织内共享额度 + 管理员支出控制）。</p></span><span data-en><p><strong>2026-10-01 用 Playwright 渲染官方 plans 页后逐档确认，月付/年付两套口径都拿到</strong>： 个人四档 —— Free $0（<strong>每月 2,000 次补全</strong>，chat 与 agent 用量有限）、 Pro $10/月、Pro+ $39/月、Max $100/月；这三档的 agent 与 chat 配额均为 <strong>Unlimited</strong>。 <strong>月付额度</strong>：Pro $15、Pro+ $70、Max $200 每月总credits（官方标注序号 6的附加说明）。 团队每用户每月 —— Pro $10、Pro+ $39、Max $100（另有 Enterprise 定制）。 <strong>年付口径数字不同</strong>（Pro $15、Pro+ $70、Max $200），页面同时呈现两套， 本站按「月付=当年付折扣后」理解，但<strong>具体折算率官方未单列，勿自行推算</strong>。 另有机制：Flex allotment（官方明确标注「Flex allotments may change over time」， 即额度可变）、可额外购买 GitHub AI Credits、 Business/Enterprise 有 Pooled usage（组织内共享额度 + 管理员支出控制）。</p></span></td></tr>
-          </tbody>
-        </table>
-        <p class="fine mt-3"><span data-zh>不同币种不做折算。优惠、地区、税费与登录后报价可能变化，购买前请到官方页面确认。</span><span data-en>No currency conversion. Discounts, regions, tax and post-login pricing can change — confirm on the official page before buying.</span></p>
-      </div>
-
-
-            <div class="panel is-slim">
         <h2><span data-zh>未知项清单</span><span data-en>Known unknowns</span></h2>
         <ul>
-          <li>各档位的完整价格对照（价格数字未逐档确认）</li>
           <li>第三方 agent 委派（Claude / Codex）的实际可用范围（官方标注 Preview）</li>
           <li>企业策略对可用能力的完整影响面</li>
           <li>cloud agent 防火墙被绕过的实际边界（官方自称可能被绕过）</li>
@@ -277,13 +272,6 @@
             <div class="tbl-wrap"><table><thead><tr><th>功能</th><th>覆盖情况</th></tr></thead><tbody><tr><td>Editors and IDEs</td><td>多编辑器支持</td></tr><tr><td>GitHub（github.com + Mobile）</td><td>覆盖</td></tr><tr><td>Agent mode</td><td>多档位提供（VS Code / Visual Studio / JetBrains / Eclipse / Xcode）</td></tr><tr><td>Integrates with MCP servers</td><td>覆盖</td></tr><tr><td>Custom instructions and agents</td><td>覆盖</td></tr><tr><td>App modernization for Java and .NET</td><td>部分档位</td></tr><tr><td>Assign work and create a pull request</td><td>部分档位</td></tr><tr><td>Code review（PR 审查）</td><td>覆盖</td></tr><tr><td><strong>File diff reviews in code editors</strong></td><td><strong>仅更高档</strong></td></tr><tr><td><strong>Custom instructions with instructions.md</strong></td><td><strong>仅更高档</strong></td></tr><tr><td><strong>Cloud agent</strong></td><td><strong>部分档位</strong></td></tr><tr><td>第三方 agent 委派（Claude / Codex）</td><td><strong>标注 Preview</strong></td></tr></tbody></table></div>
       </div>
       <div class="panel is-slim">
-        <h2>价格数字（本次采集中最完整，但需注意口径）</h2>
-        <p>官方 plans 页呈现的数字序列：</p>
-            <div class="tbl-wrap"><table><thead><tr><th>序列</th><th>数字</th></tr></thead><tbody><tr><td>个人档相关</td><td><strong>$15 / $70 / $200</strong></td></tr><tr><td>Business 档相关</td><td><strong>$100 per month</strong>、<strong>$5 / $31 / $100</strong></td></tr></tbody></table></div>
-            <p><strong>必须说明的局限</strong>： 页面同时存在月付与年付口径， 本次采集<strong>未能逐档确认每个数字对应哪个档位的哪种周期</strong>。</p>
-            <p><strong>按本站方法论，这里应该标为未知而不是猜测。</strong> 具体价格请以官网为准。</p>
-      </div>
-      <div class="panel is-slim">
         <h2>官方生态位：MCP Registry 是平台级能力</h2>
         <p>值得注意的是，GitHub 把<strong>「MCP Registry / Integrate external tools」</strong> 放在<strong>平台导航的显眼位置</strong>，与 Copilot app 并列。</p>
             <p><strong>这说明 MCP 在 GitHub 的战略里不只是「一个插件」，而是平台级基础设施。</strong></p>
@@ -291,8 +279,8 @@
       </div>
       <div class="panel is-slim">
         <h2>采集限制</h2>
-        <div class="tbl-wrap"><table><thead><tr><th>页面</th><th>状态</th></tr></thead><tbody><tr><td>plans 页</td><td>✅ 取到 71K 字符，功能逐项对照完整，⚠️ 价格数字未逐档对应</td></tr><tr><td>docs.github.com</td><td>✅ 2026-10-08 已取到模型、cloud agent、索引、内容排除、Memory、指令、防火墙等页</td></tr><tr><td>Changelog</td><td>✅ 取到 5838 字符</td></tr></tbody></table></div>
-            <p><strong>价格数字的逐档对应仍是缺口，故 confidence: partial。</strong></p>
+        <div class="tbl-wrap"><table><thead><tr><th>页面</th><th>状态</th></tr></thead><tbody><tr><td>plans 页</td><td>✅ 取到 71K 字符，功能逐项对照完整</td></tr><tr><td>docs.github.com</td><td>✅ 2026-10-08 已取到模型、cloud agent、索引、内容排除、Memory、指令、防火墙等页</td></tr><tr><td>Changelog</td><td>✅ 取到 5838 字符</td></tr></tbody></table></div>
+            <p><strong>confidence: partial 的依据</strong>：第三方 agent 委派（Preview）的实际可用范围未核验。</p>
       </div>
 
             <div class="panel is-slim">

@@ -126,6 +126,16 @@
         <div class="warn-p"><p><strong>Not a fit</strong>: needing fine-grained permission guardrails — the official docs state these are not provided, so you must build your own sandbox. Needing strict control of the agent loop shape — use a custom LangGraph graph. Wanting a lightweight harness — use LangChain <code>create_agent</code>.</p></div></span>
       </div>
 
+            <div class="panel">
+        <h2><span data-zh>中文生态</span><span data-en>China availability</span> <span class="panel-note"><span data-zh>国产 / 国内可直接用 / 备案状态 · 快照</span><span data-en>domestic / direct access / CAC filing · snapshot</span> 2026-10-20</span></h2>
+        <dl class="cn-rows">
+          <dt><span data-zh>出品属地</span><span data-en>Origin</span></dt><dd><span data-zh>国外出品</span><span data-en>foreign-made</span>　<span data-zh>国外主体（网信办公示名单未见对应备案主体）。</span><span data-en>foreign entity (no matching filing entity in the CAC registry).</span></dd>
+          <dt><span data-zh>国内使用</span><span data-en>Direct access</span></dt><dd><span data-zh>大陆可直连</span><span data-en>direct OK</span>　<span data-zh>官网仓库在 GitHub，大陆直连波动（同日实测 200/000 混合）；npm / PyPI 安装源实测稳定可达。</span><span data-en>Hosted on GitHub — direct reachability from mainland fluctuates (200/000 mixed on the same day); npm / PyPI install routes measured stable.</span></dd>
+          <dt><span data-zh>备案状态</span><span data-en>CAC filing</span></dt><dd><span data-zh>未见于备案名单</span><span data-en>not in filing list</span>：<span data-zh>未见于网信办公示名单（2026-10-20 检索 13 批附件，https://www.cac.gov.cn/2024-04/02/c_1713729983803145.htm）；该产品未面向大陆公众提供服务，备案不适用。</span><span data-en>not in the CAC public registry (13 batch attachments searched 2026-10-20, https://www.cac.gov.cn/2024-04/02/c_1713729983803145.htm); the product does not serve the mainland public, so filing does not apply.</span></dd>
+        </dl>
+        <p class="cn-foot"><span data-zh>备案信息以网信办《生成式人工智能服务已备案信息》公示名单为准（按批次滚动更新，本站只抄编号不解读）；「大陆可直连」是本站从大陆网络直连实测的结果，不是厂商承诺。GitHub 类站点当日实测有波动，口径写在依据里。</span><span data-en>Filing status is quoted from the CAC public registry (updated batch by batch; this site copies the number and does not interpret it). "Direct access" is this site's own reachability measurement from a mainland network, not a vendor promise. GitHub-hosted sites fluctuated on the measurement day — the note says so.</span></p>
+      </div>
+
 
       <div class="block-head">
         <h2 class="t-h2"><span data-zh>固定坐标系</span><span data-en>Fixed coordinate system</span></h2>
@@ -207,27 +217,9 @@
 
 
             <div class="panel is-slim">
-        <h2><span data-zh>价格</span><span data-en>Pricing</span></h2>
-        <table class="src">
-          <tbody>
-            <tr><th class="w-28"><span data-zh>月度入口</span><span data-en>Monthly entry</span></th><td><span data-zh><p>库本身免费（MIT）</p></span><span data-en><p>库本身免费（MIT）</p></span></td></tr>
-            <tr><th class="w-28"><span data-zh>额度说明</span><span data-en>Quota note</span></th><td><span data-zh><p><strong>框架免费 ≠ 运行免费。</strong></p>
-            <p>README 原文推荐搭配 LangSmith 做 tracing / evaluation / monitoring。 LangSmith 是商业产品。</p>
-            <p>另：模型推理费用自理。官方举例用 <code>model=&quot;openai:gpt-6-astra&quot;</code>。</p>
-            <p>README 的 Quickstart 示例里没提 Deep Agents 自身有托管服务。 LangSmith 的具体定价未核验（商业条款不在本档范围）。</p></span><span data-en><p><strong>框架免费 ≠ 运行免费。</strong></p>
-            <p>README 原文推荐搭配 LangSmith 做 tracing / evaluation / monitoring。 LangSmith 是商业产品。</p>
-            <p>另：模型推理费用自理。官方举例用 <code>model=&quot;openai:gpt-6-astra&quot;</code>。</p>
-            <p>README 的 Quickstart 示例里没提 Deep Agents 自身有托管服务。 LangSmith 的具体定价未核验（商业条款不在本档范围）。</p></span></td></tr>
-          </tbody>
-        </table>
-        <p class="fine mt-3"><span data-zh>不同币种不做折算。优惠、地区、税费与登录后报价可能变化，购买前请到官方页面确认。</span><span data-en>No currency conversion. Discounts, regions, tax and post-login pricing can change — confirm on the official page before buying.</span></p>
-      </div>
-
-
-            <div class="panel is-slim">
         <h2><span data-zh>未知项清单</span><span data-en>Known unknowns</span></h2>
         <ul>
-          <li>LangSmith 定价（README 推荐搭配，但商业条款未核验）</li>
+          <li>LangSmith 配套（README 推荐搭配，但商业条款未核验；报价按 D9 口径本站不采）</li>
           <li>sandbox backend 的具体可选项与隔离强度</li>
           <li>interrupt / 补充询问机制在 Deep Agents 上的暴露方式</li>
           <li>Deep Agents Code 是否与本仓同许可</li>
@@ -309,8 +301,8 @@
       <div class="panel is-slim">
         <h2>核验说明</h2>
         <p><code>confidence: partial</code> 的依据（2026-10-03 由 verified 降级）：</p>
-            <blockquote><strong>为什么降级</strong>：下方 ❌ 项的主语是<strong>本站的取证缺口</strong>，不是 &quot;官方未提供&quot;。 按 v3 铁律「未知就说未知」，这些条目存在时标 verified 属于虚高，故降为 partial。 主要缺口：LangSmith 的具体定价、LangGraph interrupt 细节、多 agent 并发文件冲突。</blockquote>
-            <ul><li>✅ 已核验：</li><li>仓库存在与星数（29,862）</li><li><strong>许可原文（MIT，经 license API）</strong></li><li>最新版本 <strong>0.7.20</strong>（2026-09-29 releases）</li><li>仓库描述原文、README 全文四条原则与九条特性清单</li><li>FAQ 三层关系原文、Security 声明原文、provider 支持范围原文、Quickstart 代码示例</li><li>❌ 未核验：</li><li>LangSmith 的具体定价</li><li>LangGraph interrupt 的细节</li><li>sandbox backend 的具体实现与可选项清单</li><li><code>CompiledStateGraph</code> 作为 sub-agent 的具体 API 形态</li><li>Deep Agents Code 的许可（它可能是另一个仓）</li></ul>
+            <blockquote><strong>为什么降级</strong>：下方 ❌ 项的主语是<strong>本站的取证缺口</strong>，不是 &quot;官方未提供&quot;。 按 v3 铁律「未知就说未知」，这些条目存在时标 verified 属于虚高，故降为 partial。 主要缺口：LangSmith 配套的商业条款、LangGraph interrupt 细节、多 agent 并发文件冲突。</blockquote>
+            <ul><li>✅ 已核验：</li><li>仓库存在与星数（29,862）</li><li><strong>许可原文（MIT，经 license API）</strong></li><li>最新版本 <strong>0.7.20</strong>（2026-09-29 releases）</li><li>仓库描述原文、README 全文四条原则与九条特性清单</li><li>FAQ 三层关系原文、Security 声明原文、provider 支持范围原文、Quickstart 代码示例</li><li>❌ 未核验：</li><li>LangSmith 配套的商业条款（报价按 D9 口径本站不采）</li><li>LangGraph interrupt 的细节</li><li>sandbox backend 的具体实现与可选项清单</li><li><code>CompiledStateGraph</code> 作为 sub-agent 的具体 API 形态</li><li>Deep Agents Code 的许可（它可能是另一个仓）</li></ul>
             <p><strong>特别记录一处二手资料偏差</strong>：竞品站（aiagentclash.com）2026-09-28 快照记 Deep Agents 为 <strong>0.7.0</strong>， 而 GitHub releases 实际为 <strong>0.7.20</strong>（2026-09-29）。</p>
             <p><strong>这印证了 v3 计划 &quot;竞品研究只作方法论参考、不作数据来源&quot; 这条规矩是必要的。</strong></p>
       </div>

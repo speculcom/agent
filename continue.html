@@ -15,7 +15,7 @@
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%238b7cf8'/%3E%3Cstop offset='1' stop-color='%2322d3c5'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='48' height='48' rx='12' fill='%2305080f'/%3E%3Cpath d='M14 32 L24 12 L34 32' fill='none' stroke='url(%23g)' stroke-width='2.4' stroke-linejoin='round'/%3E%3Ccircle cx='24' cy='27' r='2.4' fill='%2322d3c5'/%3E%3C/svg%3E" />
   <link rel="stylesheet" href="brand.css" />
   <link rel="stylesheet" href="site.css" />
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Continue","applicationCategory":"DeveloperApplication","url":"https://continue.dev","sameAs":"https://continue.dev","description":"开源、模型完全自配的 IDE 扩展。 但它已停更：Continue 被 Cursor 收购，上游仓库转入 read-only， 官网只剩收购公告 —— 代码仍可自由使用，后续不会再有更新。","dateModified":"2026-10-08","offers":{"@type":"Offer","price":"20","priceCurrency":"USD"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Continue","applicationCategory":"DeveloperApplication","url":"https://continue.dev","sameAs":"https://continue.dev","description":"开源、模型完全自配的 IDE 扩展。 但它已停更：Continue 被 Cursor 收购，上游仓库转入 read-only， 官网只剩收购公告 —— 代码仍可自由使用，后续不会再有更新。","dateModified":"2026-10-08"}</script>
 </head>
 <!-- B6（2026-10-09）：--accent 原先在这里被**内联到 body 上**（style="--accent:X"），
      同时头部又写了 :root{--accent:X} —— 两处同一份值，冗余。
@@ -120,6 +120,16 @@
         <div class="warn-p"><p><strong>Not a fit for</strong> scenarios needing ongoing maintenance and long-term evolution — the upstream repository is read-only and the company was acquired by Cursor, so it persists only in a &quot;code is still freely usable&quot; form. Also not a fit for anyone relying on official support and continued fixes.</p></div></span>
       </div>
 
+            <div class="panel">
+        <h2><span data-zh>中文生态</span><span data-en>China availability</span> <span class="panel-note"><span data-zh>国产 / 国内可直接用 / 备案状态 · 快照</span><span data-en>domestic / direct access / CAC filing · snapshot</span> 2026-10-20</span></h2>
+        <dl class="cn-rows">
+          <dt><span data-zh>出品属地</span><span data-en>Origin</span></dt><dd><span data-zh>国外出品</span><span data-en>foreign-made</span>　<span data-zh>国外主体（网信办公示名单未见对应备案主体）。</span><span data-en>foreign entity (no matching filing entity in the CAC registry).</span></dd>
+          <dt><span data-zh>国内使用</span><span data-en>Direct access</span></dt><dd><span data-zh>大陆可直连</span><span data-en>direct OK</span>　<span data-zh>官网直连实测 200。</span><span data-en>official site measured 200 direct.</span></dd>
+          <dt><span data-zh>备案状态</span><span data-en>CAC filing</span></dt><dd><span data-zh>未见于备案名单</span><span data-en>not in filing list</span>：<span data-zh>未见于网信办公示名单（2026-10-20 检索 13 批附件，https://www.cac.gov.cn/2024-04/02/c_1713729983803145.htm）；该产品未面向大陆公众提供服务，备案不适用。</span><span data-en>not in the CAC public registry (13 batch attachments searched 2026-10-20, https://www.cac.gov.cn/2024-04/02/c_1713729983803145.htm); the product does not serve the mainland public, so filing does not apply.</span></dd>
+        </dl>
+        <p class="cn-foot"><span data-zh>备案信息以网信办《生成式人工智能服务已备案信息》公示名单为准（按批次滚动更新，本站只抄编号不解读）；「大陆可直连」是本站从大陆网络直连实测的结果，不是厂商承诺。GitHub 类站点当日实测有波动，口径写在依据里。</span><span data-en>Filing status is quoted from the CAC public registry (updated batch by batch; this site copies the number and does not interpret it). "Direct access" is this site's own reachability measurement from a mainland network, not a vendor promise. GitHub-hosted sites fluctuated on the measurement day — the note says so.</span></p>
+      </div>
+
 
       <div class="block-head">
         <h2 class="t-h2"><span data-zh>固定坐标系</span><span data-en>Fixed coordinate system</span></h2>
@@ -211,32 +221,6 @@
 
 
             <div class="panel is-slim">
-        <h2><span data-zh>价格</span><span data-en>Pricing</span></h2>
-        <table class="src">
-          <tbody>
-            <tr><th class="w-28"><span data-zh>月度入口</span><span data-en>Monthly entry</span></th><td><span data-zh><p>商业线 Team $20/席/月（含 $10 额度）；Starter 按量 $3/百万 token</p></span><span data-en><p>商业线 Team $20/席/月（含 $10 额度）；Starter 按量 $3/百万 token</p></span></td></tr>
-            <tr><th class="w-28"><span data-zh>月度数值</span><span data-en>Monthly price</span></th><td>20</td></tr>
-            <tr><th class="w-28"><span data-zh>年付</span><span data-en>Annual</span></th><td><span data-zh><p>未核验年付报价</p></span><span data-en><p>未核验年付报价</p></span></td></tr>
-            <tr><th class="w-28"><span data-zh>额度说明</span><span data-en>Quota note</span></th><td><span data-zh><p><strong>两件事要分开看：扩展免费，商业线另收费。</strong></p>
-            <p><strong>核心代码是开源的，扩展本身不收费。</strong></p>
-            <p>仓库 README 原文 &quot;Apache 2.0 © 2023-2026 Continue Dev, Inc.&quot;</p>
-            <p><strong>扩展本身无授权费</strong>，模型调用费自付。 可以 BYOK，也可以用本地 Ollama。</p>
-            <p><strong>商业线卖的不是这个扩展。</strong> 现为 <strong>Continuous AI</strong>，价目取自 hub.continue.dev/pricing（2026-10-08 取到）：</p>
-            <ul><li>Starter <strong>$3 / 百万 token</strong>（pay-as-you-go）</li><li>Team <strong>$20/席/月</strong>（含 $10 credits/席）</li><li>Company 定制（含 SAML/OIDC、BYOK、SLA）</li></ul>
-            <p><strong>重要背景</strong>：Continue <strong>已被 Cursor 收购</strong>。 官网 continue.dev 现为收购公告，原 Hub 定价页 <code>continue.dev/pricing</code> 已 404， 仓库亦标为 read-only。</p></span><span data-en><p><strong>两件事要分开看：扩展免费，商业线另收费。</strong></p>
-            <p><strong>核心代码是开源的，扩展本身不收费。</strong></p>
-            <p>仓库 README 原文 &quot;Apache 2.0 © 2023-2026 Continue Dev, Inc.&quot;</p>
-            <p><strong>扩展本身无授权费</strong>，模型调用费自付。 可以 BYOK，也可以用本地 Ollama。</p>
-            <p><strong>商业线卖的不是这个扩展。</strong> 现为 <strong>Continuous AI</strong>，价目取自 hub.continue.dev/pricing（2026-10-08 取到）：</p>
-            <ul><li>Starter <strong>$3 / 百万 token</strong>（pay-as-you-go）</li><li>Team <strong>$20/席/月</strong>（含 $10 credits/席）</li><li>Company 定制（含 SAML/OIDC、BYOK、SLA）</li></ul>
-            <p><strong>重要背景</strong>：Continue <strong>已被 Cursor 收购</strong>。 官网 continue.dev 现为收购公告，原 Hub 定价页 <code>continue.dev/pricing</code> 已 404， 仓库亦标为 read-only。</p></span></td></tr>
-          </tbody>
-        </table>
-        <p class="fine mt-3"><span data-zh>不同币种不做折算。优惠、地区、税费与登录后报价可能变化，购买前请到官方页面确认。</span><span data-en>No currency conversion. Discounts, regions, tax and post-login pricing can change — confirm on the official page before buying.</span></p>
-      </div>
-
-
-            <div class="panel is-slim">
         <h2><span data-zh>未知项清单</span><span data-en>Known unknowns</span></h2>
         <ul>
           <li>仓库归档的具体日期与收购完成时间 —— 官方未给出确切日期（已查仓库 README、官网公告与 Releases）</li>
@@ -306,16 +290,17 @@
             <ul><li><strong>CLI headless</strong>：官方原文「tools that would normally prompt for approval (<code>ask</code> permission) are automatically excluded」，要写文件必须显式 <code>--allow Write</code>（或 <code>--allow &quot;*&quot;</code>）。</li></ul>
       </div>
       <div class="panel is-slim">
-        <h2>商业线定价（官方页数字）</h2>
-        <p>hub.continue.dev/pricing（2026-10-08 取到）现为 <strong>Continuous AI</strong> 的价目：</p>
-            <div class="tbl-wrap"><table><thead><tr><th>档位</th><th>价格</th><th>要点</th></tr></thead><tbody><tr><td>Starter</td><td><strong>$3 / 百万 token</strong>，pay-as-you-go</td><td>创建并运行 agent，接 Slack / Sentry / Snyk</td></tr><tr><td>Team</td><td><strong>$20 / 席 / 月</strong>（含 $10 credits/席）</td><td>团队内共享私有 agent，Gmail/GitHub SSO</td></tr><tr><td>Company</td><td>定制</td><td>SAML/OIDC、BYOK、承诺用量 / 发票 / SLA</td></tr></tbody></table></div>
+        <h2>商业线：Continuous AI（与开源扩展分开读）</h2>
+        <p>hub.continue.dev（2026-10-08 取到）现为 <strong>Continuous AI</strong> 的商业线，三档：</p>
+            <div class="tbl-wrap"><table><thead><tr><th>档位</th><th>要点</th></tr></thead><tbody><tr><td>Starter</td><td>按量计费（pay-as-you-go）：创建并运行 agent，接 Slack / Sentry / Snyk</td></tr><tr><td>Team</td><td>按席位订阅（含每席 credits）：团队内共享私有 agent，Gmail/GitHub SSO</td></tr><tr><td>Company</td><td>定制：SAML/OIDC、BYOK、承诺用量 / 发票 / SLA</td></tr></tbody></table></div>
+            <p>报价数字按 D9 口径不存，见 hub.continue.dev/pricing。</p>
             <p><strong>注意这不是 IDE 扩展的订阅</strong> —— 扩展本身免费开源。</p>
             <p>这一商业线已转向 PR 检查为主的 Continuous AI， 不再是「Continue Hub」。</p>
       </div>
       <div class="panel is-slim">
         <h2>核验说明</h2>
         <p>这份条目标为 <code>confidence: partial</code>，原因有三条：</p>
-            <ul><li><strong>已取到官方正文的</strong>：形态、模型自配、MCP、权限、许可与商业线定价。</li><li><strong>已停止维护</strong>：上游仓库 read-only、官网被收购公告替换，未来不会再更新。</li><li><strong>已无法从官方页取证的</strong>：Hub 旧价目、账户/订阅的去向等历史能力。</li></ul>
+            <ul><li><strong>已取到官方正文的</strong>：形态、模型自配、MCP、权限、许可与商业线结构。</li><li><strong>已停止维护</strong>：上游仓库 read-only、官网被收购公告替换，未来不会再更新。</li><li><strong>已无法从官方页取证的</strong>：Hub 旧价目、账户/订阅的去向等历史能力。</li></ul>
             <p>本轮核到的官方页：仓库 README 与 Releases、官网 continue.dev（含 www 变体）、 文档站首页、MCP 深潜、Model providers、Agent quick-start、 CLI quickstart 与 CLI headless、商业线定价页 hub.continue.dev/pricing。</p>
       </div>
 

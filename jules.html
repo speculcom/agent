@@ -126,6 +126,16 @@
         <div class="warn-p"><p><strong>Not a fit for</strong> work that needs a live shell you can steer while it runs (CLI/IDE agents do that better), or vague, architecture-level tasks that need heavy clarification — the official FAQ itself lists &quot;vague prompts&quot; among the common causes of a failed task.</p></div></span>
       </div>
 
+            <div class="panel">
+        <h2><span data-zh>中文生态</span><span data-en>China availability</span> <span class="panel-note"><span data-zh>国产 / 国内可直接用 / 备案状态 · 快照</span><span data-en>domestic / direct access / CAC filing · snapshot</span> 2026-10-20</span></h2>
+        <dl class="cn-rows">
+          <dt><span data-zh>出品属地</span><span data-en>Origin</span></dt><dd><span data-zh>国外出品</span><span data-en>foreign-made</span>　<span data-zh>国外主体（网信办公示名单未见对应备案主体）。</span><span data-en>foreign entity (no matching filing entity in the CAC registry).</span></dd>
+          <dt><span data-zh>国内使用</span><span data-en>Direct access</span></dt><dd><span data-zh>直连不可达</span><span data-en>direct blocked</span>　<span data-zh>jules.google 大陆直连稳定超时（同日两次 000）。</span><span data-en>jules.google times out consistently from mainland (000 twice).</span></dd>
+          <dt><span data-zh>备案状态</span><span data-en>CAC filing</span></dt><dd><span data-zh>未见于备案名单</span><span data-en>not in filing list</span>：<span data-zh>未见于网信办公示名单（2026-10-20 检索 13 批附件，https://www.cac.gov.cn/2024-04/02/c_1713729983803145.htm）；该产品未面向大陆公众提供服务，备案不适用。</span><span data-en>not in the CAC public registry (13 batch attachments searched 2026-10-20, https://www.cac.gov.cn/2024-04/02/c_1713729983803145.htm); the product does not serve the mainland public, so filing does not apply.</span></dd>
+        </dl>
+        <p class="cn-foot"><span data-zh>备案信息以网信办《生成式人工智能服务已备案信息》公示名单为准（按批次滚动更新，本站只抄编号不解读）；「大陆可直连」是本站从大陆网络直连实测的结果，不是厂商承诺。GitHub 类站点当日实测有波动，口径写在依据里。</span><span data-en>Filing status is quoted from the CAC public registry (updated batch by batch; this site copies the number and does not interpret it). "Direct access" is this site's own reachability measurement from a mainland network, not a vendor promise. GitHub-hosted sites fluctuated on the measurement day — the note says so.</span></p>
+      </div>
+
 
       <div class="block-head">
         <h2 class="t-h2"><span data-zh>固定坐标系</span><span data-en>Fixed coordinate system</span></h2>
@@ -165,7 +175,7 @@
             <p>2025-12-10 的官方更新再补两项主动能力：</p>
             <ul><li><strong>Suggested Tasks</strong> —— 在最多五个仓库上主动扫描代码、提出改进，先支持 <code>#todos</code></li><li><strong>Scheduled Tasks</strong> —— 按你设定的节奏自动执行，如依赖检查、每周例行</li></ul>
             <p>Scheduled Tasks ... you can now define the cadence and Jules will perform the task at that time</p>
-            <p><strong>并发任务数随订阅档位变化</strong>（具体数字见 pricing.note）。</p></dd>
+            <p><strong>并发任务数随订阅档位变化</strong>（具体数字见官方套餐页，本站按 D9 口径不存）。</p></dd>
         </div>
         <div class="axis">
           <dt><span data-zh>工具与扩展</span><span data-en>Tools & extensions</span></dt>
@@ -200,7 +210,7 @@
             <p>仓库访问走 Jules GitHub app 的授权范围。</p>
             <p><strong>隐私口径：官方 FAQ 明确它不用私有仓库内容训练。</strong></p>
             <p>Jules does not train on private repository content</p>
-            <p><strong>额度与计费边界</strong>：免费层与 Pro / Ultra 的具体任务数，官方可读页未列 （见 pricing.note）。但<strong>「额度按任务计、不按 token 计」</strong>这一点， 从官方 API 概念（session 即任务单位）可以读出来。</p></dd>
+            <p><strong>额度边界</strong>：免费层与 Pro / Ultra 的具体任务数，官方可读页未列 （见官方套餐页）。但<strong>「额度按任务计、不按 token 计」</strong>这一点， 从官方 API 概念（session 即任务单位）可以读出来。</p></dd>
         </div>
         <div class="axis">
           <dt><span data-zh>适合什么任务</span><span data-en>Best for</span></dt>
@@ -218,19 +228,6 @@
           <li><span data-zh>以为 API 建的任务都会等你批准计划，官方默认自动批准</span><span data-en>Assuming API-created sessions wait for you to approve the plan — they auto-approve by default</span></li>
           <li><span data-zh>把 Jules 当成本地 / IDE 里的实时 agent——它是异步云 agent</span><span data-en>Mistaking Jules for a local/IDE live agent — it is an asynchronous cloud agent</span></li>
         </ul>
-      </div>
-
-
-            <div class="panel is-slim">
-        <h2><span data-zh>价格</span><span data-en>Pricing</span></h2>
-        <table class="src">
-          <tbody>
-            <tr><th class="w-28"><span data-zh>月度入口</span><span data-en>Monthly entry</span></th><td><span data-zh><p>免费「Introductory access」；更高额度随 Google AI Pro / Ultra 订阅，无独立 Jules 定价</p></span><span data-en><p>免费「Introductory access」；更高额度随 Google AI Pro / Ultra 订阅，无独立 Jules 定价</p></span></td></tr>
-            <tr><th class="w-28"><span data-zh>年付</span><span data-en>Annual</span></th><td><span data-zh><p>无独立 Jules 年付报价（额度随 Google One 订阅，官方未单列）</p></span><span data-en><p>无独立 Jules 年付报价（额度随 Google One 订阅，官方未单列）</p></span></td></tr>
-            <tr><th class="w-28"><span data-zh>额度说明</span><span data-en>Quota note</span></th><td><span data-zh><p><strong>2026-10-08 核验</strong>：官方 GA 发布页（blog.google，2025-08-06）写「Introductory access to Jules」为免费入口、「Jules in Google AI Pro: 5x higher limits」、 「Jules in Google AI Ultra: 20x higher limits」，并注明「Specific usage limits are listed at jules.google」。Google One 官方套餐页（2026-10-08 取）在 Pro 的 「Code faster」下列「Expanded limits in AI Studio, Google Antigravity, and Jules」， Ultra 档列 Jules 的「Expanded task and concurrency limits, and access to latest models」。<strong>但 jules.google 定价页为 JS 渲染，逐档每日任务数与并发数（免费层与 Pro / Ultra 的具体数字）在可读官方页里没有列出——官方未说明（已查 jules.google 定价页、Google One AI 套餐页与 GA 发布页），故不写具体数字。</strong> 另注：官方旧文档站（jules-documentation.web.app）仍写 beta 期「2 concurrent / 5 total tasks per day」，与 GA 后的分档口径不一致，<strong>勿把 beta 数字当现行额度</strong>。</p></span><span data-en><p><strong>2026-10-08 核验</strong>：官方 GA 发布页（blog.google，2025-08-06）写「Introductory access to Jules」为免费入口、「Jules in Google AI Pro: 5x higher limits」、 「Jules in Google AI Ultra: 20x higher limits」，并注明「Specific usage limits are listed at jules.google」。Google One 官方套餐页（2026-10-08 取）在 Pro 的 「Code faster」下列「Expanded limits in AI Studio, Google Antigravity, and Jules」， Ultra 档列 Jules 的「Expanded task and concurrency limits, and access to latest models」。<strong>但 jules.google 定价页为 JS 渲染，逐档每日任务数与并发数（免费层与 Pro / Ultra 的具体数字）在可读官方页里没有列出——官方未说明（已查 jules.google 定价页、Google One AI 套餐页与 GA 发布页），故不写具体数字。</strong> 另注：官方旧文档站（jules-documentation.web.app）仍写 beta 期「2 concurrent / 5 total tasks per day」，与 GA 后的分档口径不一致，<strong>勿把 beta 数字当现行额度</strong>。</p></span></td></tr>
-          </tbody>
-        </table>
-        <p class="fine mt-3"><span data-zh>不同币种不做折算。优惠、地区、税费与登录后报价可能变化，购买前请到官方页面确认。</span><span data-en>No currency conversion. Discounts, regions, tax and post-login pricing can change — confirm on the official page before buying.</span></p>
       </div>
 
 

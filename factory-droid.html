@@ -15,7 +15,7 @@
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%238b7cf8'/%3E%3Cstop offset='1' stop-color='%2322d3c5'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='48' height='48' rx='12' fill='%2305080f'/%3E%3Cpath d='M14 32 L24 12 L34 32' fill='none' stroke='url(%23g)' stroke-width='2.4' stroke-linejoin='round'/%3E%3Ccircle cx='24' cy='27' r='2.4' fill='%2322d3c5'/%3E%3C/svg%3E" />
   <link rel="stylesheet" href="brand.css" />
   <link rel="stylesheet" href="site.css" />
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Droid","applicationCategory":"DeveloperApplication","url":"https://app.factory.ai","sameAs":"https://factory.ai","description":"Droid 是 Factory AI 的终端编码 agent。 它模型无关——官方托管、BYOK、本地模型三路并存。 它以滚动 Rate Limits + 分级自主面向企业治理。","dateModified":"2026-10-08","offers":{"@type":"Offer","price":"20","priceCurrency":"USD"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Droid","applicationCategory":"DeveloperApplication","url":"https://app.factory.ai","sameAs":"https://factory.ai","description":"Droid 是 Factory AI 的终端编码 agent。 它模型无关——官方托管、BYOK、本地模型三路并存。 它以滚动 Rate Limits + 分级自主面向企业治理。","dateModified":"2026-10-08"}</script>
 </head>
 <!-- B6（2026-10-09）：--accent 原先在这里被**内联到 body 上**（style="--accent:X"），
      同时头部又写了 :root{--accent:X} —— 两处同一份值，冗余。
@@ -117,9 +117,19 @@
 <span data-zh>        <div><p>在终端里完成端到端软件工程任务，且需要企业级治理的团队。</p></div>
         <div><p>三个重点场景：</p></div>
         <div><ul><li>已有仓库的规划 → 实现 → 测试（<code>/missions</code> 多 agent 编排）</li><li>CI/CD 自动化：<code>droid exec</code> 单次执行 + JSON 输出 + 失败非零码</li><li>需要 BYOK / 本地模型 / 气隙部署，以摆脱单一厂商锁定</li></ul></div>
-        <div class="warn-p"><p><strong>不适合</strong>只想找一个免费轻量终端助手的个人：官方最低档就是 Pro $20/月，没有免费层。</p></div>
+        <div class="warn-p"><p><strong>不适合</strong>只想找一个免费轻量终端助手的个人：官方没有免费档，最低是付费档 Pro。</p></div>
         <div><p><code>droid exec</code> 默认只读，想让它自动改文件要显式提级。</p></div></span><span data-en>        <div><p>End-to-end software engineering in the terminal for teams that need enterprise governance. Particularly good for: a plan-implement-test loop on an existing repo (<code>/missions</code> multi-agent orchestration); CI/CD automation (<code>droid exec</code> one-shot runs with JSON output and a non-zero exit on failure); organizations that need BYOK, local models or airgapped deployment to avoid a single-vendor lock-in.</p></div>
         <div class="warn-p"><p><strong>Not a fit for</strong> individuals looking for a free, lightweight terminal assistant — the lowest tier is already Pro at $20/mo, with no free plan; and <code>droid exec</code> is read-only by default, so auto-editing files requires explicitly raising the autonomy level.</p></div></span>
+      </div>
+
+            <div class="panel">
+        <h2><span data-zh>中文生态</span><span data-en>China availability</span> <span class="panel-note"><span data-zh>国产 / 国内可直接用 / 备案状态 · 快照</span><span data-en>domestic / direct access / CAC filing · snapshot</span> 2026-10-20</span></h2>
+        <dl class="cn-rows">
+          <dt><span data-zh>出品属地</span><span data-en>Origin</span></dt><dd><span data-zh>国外出品</span><span data-en>foreign-made</span>　<span data-zh>国外主体（网信办公示名单未见对应备案主体）。</span><span data-en>foreign entity (no matching filing entity in the CAC registry).</span></dd>
+          <dt><span data-zh>国内使用</span><span data-en>Direct access</span></dt><dd><span data-zh>大陆可直连</span><span data-en>direct OK</span>　<span data-zh>官网直连实测 200。</span><span data-en>official site measured 200 direct.</span></dd>
+          <dt><span data-zh>备案状态</span><span data-en>CAC filing</span></dt><dd><span data-zh>未见于备案名单</span><span data-en>not in filing list</span>：<span data-zh>未见于网信办公示名单（2026-10-20 检索 13 批附件，https://www.cac.gov.cn/2024-04/02/c_1713729983803145.htm）；该产品未面向大陆公众提供服务，备案不适用。</span><span data-en>not in the CAC public registry (13 batch attachments searched 2026-10-20, https://www.cac.gov.cn/2024-04/02/c_1713729983803145.htm); the product does not serve the mainland public, so filing does not apply.</span></dd>
+        </dl>
+        <p class="cn-foot"><span data-zh>备案信息以网信办《生成式人工智能服务已备案信息》公示名单为准（按批次滚动更新，本站只抄编号不解读）；「大陆可直连」是本站从大陆网络直连实测的结果，不是厂商承诺。GitHub 类站点当日实测有波动，口径写在依据里。</span><span data-en>Filing status is quoted from the CAC public registry (updated batch by batch; this site copies the number and does not interpret it). "Direct access" is this site's own reachability measurement from a mainland network, not a vendor promise. GitHub-hosted sites fluctuated on the measurement day — the note says so.</span></p>
       </div>
 
 
@@ -248,7 +258,7 @@
           <dd><p><strong>适合在终端里跑端到端软件工程、且需要企业级治理的团队。</strong></p>
             <p>三类团队最对得上：</p>
             <ul><li>已有仓库，想跑完规划 → 实现 → 测试的完整流程（<code>/missions</code> 多 agent 编排）</li><li>要做 CI/CD 自动化：<code>droid exec</code> 单次执行、JSON 输出、失败返回非零码</li><li>需要 BYOK / 本地模型 / 气隙部署，以此摆脱单一厂商锁定</li></ul>
-            <p><strong>不适合只想找一个免费轻量终端助手的个人</strong>——官方最低档就是 Pro $20/月。</p></dd>
+            <p><strong>不适合只想找一个免费轻量终端助手的个人</strong>——官方没有免费档，最低是付费档 Pro。</p></dd>
         </div>
       </dl>
 
@@ -264,42 +274,12 @@
 
 
             <div class="panel is-slim">
-        <h2><span data-zh>价格</span><span data-en>Pricing</span></h2>
-        <table class="src">
-          <tbody>
-            <tr><th class="w-28"><span data-zh>月度入口</span><span data-en>Monthly entry</span></th><td><span data-zh><p>Pro $20 / Plus $100 / Max $200 每月；Business / Enterprise 定制报价</p></span><span data-en><p>Pro $20 / Plus $100 / Max $200 每月；Business / Enterprise 定制报价</p></span></td></tr>
-            <tr><th class="w-28"><span data-zh>月度数值</span><span data-en>Monthly price</span></th><td>20</td></tr>
-            <tr><th class="w-28"><span data-zh>年付</span><span data-en>Annual</span></th><td><span data-zh><p>官方定价页只列月付；年付价未列出，记为官方未说明</p></span><span data-en><p>官方定价页只列月付；年付价未列出，记为官方未说明</p></span></td></tr>
-            <tr><th class="w-28"><span data-zh>额度说明</span><span data-en>Quota note</span></th><td><span data-zh><p><strong>它是付费产品，没有任何免费档；最低就是 Pro $20/月。</strong></p>
-            <p><strong>2026-10-08 按 factory.ai/pricing 与 docs.factory.ai/pricing 逐档核实（美元口径）</strong>：</p>
-            <ul><li>Pro $20/月</li><li>Plus $100/月 —— 约 5× Pro 用量，并解锁 Droid Computers（Factory 托管的云电脑）</li><li>Max $200/月 —— 约 10× Pro 用量，另有新功能抢先体验</li><li>Business —— 最多 150 席，公开页未给数字，需联系销售</li><li>Enterprise —— 不限席位，公开页未给数字，也需联系销售</li></ul>
-            <p><strong>额度机制是「滚动 Rate Limits」。</strong></p>
-            <ul><li>5 小时 / 7 天 / 30 天三个窗口独立计算</li><li>三个窗口都需有余量才能发请求</li><li>Standard Usage 先扣</li></ul>
-            <p>撞限后有两个去处：</p>
-            <ul><li><strong>Droid Core</strong> —— 一批开放权重模型，独立额度、免费</li><li><strong>Extra Usage</strong> —— 预付额度，最低 $10、永不过期</li></ul>
-            <p><strong>BYOK 也有额度，超出后按套餐计费。</strong></p>
-            <p><strong>官方原文</strong>：&quot;All Individual plans include an allowance of free BYOK usage&quot;</p></span><span data-en><p><strong>它是付费产品，没有任何免费档；最低就是 Pro $20/月。</strong></p>
-            <p><strong>2026-10-08 按 factory.ai/pricing 与 docs.factory.ai/pricing 逐档核实（美元口径）</strong>：</p>
-            <ul><li>Pro $20/月</li><li>Plus $100/月 —— 约 5× Pro 用量，并解锁 Droid Computers（Factory 托管的云电脑）</li><li>Max $200/月 —— 约 10× Pro 用量，另有新功能抢先体验</li><li>Business —— 最多 150 席，公开页未给数字，需联系销售</li><li>Enterprise —— 不限席位，公开页未给数字，也需联系销售</li></ul>
-            <p><strong>额度机制是「滚动 Rate Limits」。</strong></p>
-            <ul><li>5 小时 / 7 天 / 30 天三个窗口独立计算</li><li>三个窗口都需有余量才能发请求</li><li>Standard Usage 先扣</li></ul>
-            <p>撞限后有两个去处：</p>
-            <ul><li><strong>Droid Core</strong> —— 一批开放权重模型，独立额度、免费</li><li><strong>Extra Usage</strong> —— 预付额度，最低 $10、永不过期</li></ul>
-            <p><strong>BYOK 也有额度，超出后按套餐计费。</strong></p>
-            <p><strong>官方原文</strong>：&quot;All Individual plans include an allowance of free BYOK usage&quot;</p></span></td></tr>
-          </tbody>
-        </table>
-        <p class="fine mt-3"><span data-zh>不同币种不做折算。优惠、地区、税费与登录后报价可能变化，购买前请到官方页面确认。</span><span data-en>No currency conversion. Discounts, regions, tax and post-login pricing can change — confirm on the official page before buying.</span></p>
-      </div>
-
-
-            <div class="panel is-slim">
         <h2><span data-zh>未知项清单</span><span data-en>Known unknowns</span></h2>
         <ul>
           <li>代码库向量索引是否存在、大仓库首次建索引耗时（官方未说明，已查 CLI Reference 与 Quickstart）</li>
           <li>云端背景 agent 与 Droid Computers 的并发数值与配额（官方只说随套餐，未给数字）</li>
           <li>CLI 侧跨会话记忆的持久化边界与保留策略（官方未在 CLI 页说明，已查 CLI Overview 与 Droid Exec）</li>
-          <li>Business / Enterprise 的具体价格（官方页只写「联系销售」）</li>
+          <li>Business / Enterprise 的档位内容（官方页只写「联系销售」）</li>
         </ul>
       </div>
 
@@ -310,7 +290,7 @@
         <table class="src">
           <thead><tr><th class="w-20"><span data-zh>类型</span><span data-en>Type</span></th><th class="w-52"><span data-zh>名称</span><span data-en>Name</span></th><th><span data-zh>链接</span><span data-en>Link</span></th></tr></thead>
           <tbody>
-            <tr><td>pricing</td><td>Factory AI · 官方定价页（Pro $20 / Plus $100 / Max $200；2026-10-08 核验）</td><td><a href="https://factory.ai/pricing" target="_blank" rel="noopener">https://factory.ai/pricing</a></td></tr>
+            <tr><td>pricing</td><td>Factory AI · 官方定价页（Pro / Plus / Max 三档；报价按 D9 口径不存；2026-10-08 核验）</td><td><a href="https://factory.ai/pricing" target="_blank" rel="noopener">https://factory.ai/pricing</a></td></tr>
             <tr><td>pricing</td><td>Factory AI · 官方文档 · Plans &amp; Pricing（滚动 Rate Limits、Droid Core、Extra Usage、BYOK）</td><td><a href="https://docs.factory.ai/pricing" target="_blank" rel="noopener">https://docs.factory.ai/pricing</a></td></tr>
             <tr><td>changelog</td><td>Factory AI · 官方文档 · Full Changelog（CLI / App / API / Web / Enterprise 分面维护）</td><td><a href="https://docs.factory.ai/changelog/release-notes" target="_blank" rel="noopener">https://docs.factory.ai/changelog/release-notes</a></td></tr>
             <tr><td>changelog</td><td>Factory AI · 官方文档 · CLI Updates</td><td><a href="https://docs.factory.ai/changelog/cli-updates" target="_blank" rel="noopener">https://docs.factory.ai/changelog/cli-updates</a></td></tr>
@@ -361,7 +341,7 @@
             <p>``<code> 5-hour / 7-day / 30-day 三个窗口独立，都需有余额才能发请求 </code>``</p>
             <p><strong>这解释了「为什么刚充值还是被限」</strong>——你可能撞的是 5 小时窗口。</p>
             <p>撞限后可以切 <strong>Droid Core</strong> 继续干：它是开放权重模型池，有独立的免费额度。</p>
-            <p>也可以用 <strong>Extra Usage</strong>：预付、$10 起、不过期。</p>
+            <p>也可以用 <strong>Extra Usage</strong>：预付制、不过期（起充额见官方页，本站按 D9 口径不存）。</p>
             <p>这是本站见到的最细的额度口径之一。</p>
       </div>
       <div class="panel is-slim">
@@ -377,7 +357,7 @@
       <div class="panel is-slim">
         <h2>核验说明</h2>
         <p><code>confidence: partial</code> 的原因：</p>
-            <ul><li>✅ 已核验：定价五档与三窗口 Rate Limit 机制、Droid Core / Extra Usage / BYOK</li><li>✅ 已核验：安装三选一、CLI + Desktop + SDK 三入口</li><li>✅ 已核验：四档 Autonomy 与命令名单、MCP 两种传输与分层配置</li><li>✅ 已核验：headless <code>droid exec</code> 与自主级别、企业部署与合规自述</li><li>❌ 官方未说明：代码库索引策略与大仓库耗时、云端并发与配额数值、CLI 侧记忆的持久化边界（见「未知项清单」）</li></ul>
+            <ul><li>✅ 已核验：五档档位结构与三窗口 Rate Limit 机制、Droid Core / Extra Usage / BYOK</li><li>✅ 已核验：安装三选一、CLI + Desktop + SDK 三入口</li><li>✅ 已核验：四档 Autonomy 与命令名单、MCP 两种传输与分层配置</li><li>✅ 已核验：headless <code>droid exec</code> 与自主级别、企业部署与合规自述</li><li>❌ 官方未说明：代码库索引策略与大仓库耗时、云端并发与配额数值、CLI 侧记忆的持久化边界（见「未知项清单」）</li></ul>
             <p><strong>引用本条目时请只使用已核验部分。</strong></p>
       </div>
 

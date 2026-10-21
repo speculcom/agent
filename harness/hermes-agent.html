@@ -15,7 +15,7 @@
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%238b7cf8'/%3E%3Cstop offset='1' stop-color='%2322d3c5'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='48' height='48' rx='12' fill='%2305080f'/%3E%3Cpath d='M14 32 L24 12 L34 32' fill='none' stroke='url(%23g)' stroke-width='2.4' stroke-linejoin='round'/%3E%3Ccircle cx='24' cy='27' r='2.4' fill='%2322d3c5'/%3E%3C/svg%3E" />
   <link rel="stylesheet" href="../brand.css" />
   <link rel="stylesheet" href="../site.css" />
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Hermes Agent","applicationCategory":"DeveloperApplication","url":"https://hermes-agent.nousresearch.com/","sameAs":"https://hermes-agent.nousresearch.com/","description":"Hermes Agent 是一个常驻的跨平台个人助手，会从经验里自己攒技能。 它不绑在你的笔记本上。 官方 README 说： The self-improving AI agent built by Nous Research. It's the only agent with a built-in learning loop — it creates skills from experience, improves them during use, nudges itself to persist knowledge, searches its own past conversations","dateModified":"2026-10-01","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Hermes Agent","applicationCategory":"DeveloperApplication","url":"https://hermes-agent.nousresearch.com/","sameAs":"https://hermes-agent.nousresearch.com/","description":"Hermes Agent 是一个常驻的跨平台个人助手，会从经验里自己攒技能。 它不绑在你的笔记本上。 官方 README 说： The self-improving AI agent built by Nous Research. It's the only agent with a built-in learning loop — it creates skills from experience, improves them during use, nudges itself to persist knowledge, searches its own past conversations","dateModified":"2026-10-01"}</script>
 </head>
 <!-- B6（2026-10-09）：--accent 原先在这里被**内联到 body 上**（style="--accent:X"），
      同时头部又写了 :root{--accent:X} —— 两处同一份值，冗余。
@@ -139,6 +139,16 @@
         <div><ul><li>Coding tasks only — it is a general assistant; coding is one of many things</li><li>Using it as an embedded SDK — it is a complete runtime, not a library</li><li>A detailed &quot;state vs context&quot; layered guarantee — it has many mechanisms, but the vendor does not split them along those two layers</li></ul></div>
         <div><p>⚠ <strong>Unknown: enterprise multi-user and audit. The vendor provides no separate documentation.</strong></p></div>
         <div><blockquote>Checked the security and messaging pages: both cover only single-owner allowlist / DM pairing authorization, not multi-tenant audit.</blockquote></div></span>
+      </div>
+
+            <div class="panel">
+        <h2><span data-zh>中文生态</span><span data-en>China availability</span> <span class="panel-note"><span data-zh>国产 / 国内可直接用 / 备案状态 · 快照</span><span data-en>domestic / direct access / CAC filing · snapshot</span> 2026-10-20</span></h2>
+        <dl class="cn-rows">
+          <dt><span data-zh>出品属地</span><span data-en>Origin</span></dt><dd><span data-zh>国外出品</span><span data-en>foreign-made</span>　<span data-zh>国外主体（网信办公示名单未见对应备案主体）。</span><span data-en>foreign entity (no matching filing entity in the CAC registry).</span></dd>
+          <dt><span data-zh>国内使用</span><span data-en>Direct access</span></dt><dd><span data-zh>大陆可直连</span><span data-en>direct OK</span>　<span data-zh>官网直连实测 200。</span><span data-en>official site measured 200 direct.</span></dd>
+          <dt><span data-zh>备案状态</span><span data-en>CAC filing</span></dt><dd><span data-zh>未见于备案名单</span><span data-en>not in filing list</span>：<span data-zh>未见于网信办公示名单（2026-10-20 检索 13 批附件，https://www.cac.gov.cn/2024-04/02/c_1713729983803145.htm）；该产品未面向大陆公众提供服务，备案不适用。</span><span data-en>not in the CAC public registry (13 batch attachments searched 2026-10-20, https://www.cac.gov.cn/2024-04/02/c_1713729983803145.htm); the product does not serve the mainland public, so filing does not apply.</span></dd>
+        </dl>
+        <p class="cn-foot"><span data-zh>备案信息以网信办《生成式人工智能服务已备案信息》公示名单为准（按批次滚动更新，本站只抄编号不解读）；「大陆可直连」是本站从大陆网络直连实测的结果，不是厂商承诺。GitHub 类站点当日实测有波动，口径写在依据里。</span><span data-en>Filing status is quoted from the CAC public registry (updated batch by batch; this site copies the number and does not interpret it). "Direct access" is this site's own reachability measurement from a mainland network, not a vendor promise. GitHub-hosted sites fluctuated on the measurement day — the note says so.</span></p>
       </div>
 
 
@@ -294,57 +304,6 @@
 
 
             <div class="panel is-slim">
-        <h2><span data-zh>价格</span><span data-en>Pricing</span></h2>
-        <table class="src">
-          <tbody>
-            <tr><th class="w-28"><span data-zh>月度入口</span><span data-en>Monthly entry</span></th><td><span data-zh><p>框架免费（MIT）；推理按你选的 provider 计费；Nous Portal 另有订阅（免费层 + 付费档，官网未公开定价页）</p></span><span data-en><p>框架免费（MIT）；推理按你选的 provider 计费；Nous Portal 另有订阅（免费层 + 付费档，官网未公开定价页）</p></span></td></tr>
-            <tr><th class="w-28"><span data-zh>月度数值</span><span data-en>Monthly price</span></th><td>0</td></tr>
-            <tr><th class="w-28"><span data-zh>额度说明</span><span data-en>Quota note</span></th><td><span data-zh><p><strong>框架本身 MIT 免费，推理与后端资源自理。</strong></p>
-            <p>核验依据：仓库 MIT（经 license API）、README 的安装命令与 Nous Portal 入口。</p>
-            <p><strong>可能另外花钱的路有三条。</strong></p>
-            <p>（1）OpenAI / Anthropic 等按量的 API。</p>
-            <p>（2）<strong>Modal / Daytona 等 serverless 后端。</strong> 官方说这两家提供 &quot;serverless persistence&quot;，agent 环境空闲时休眠、按需唤醒， 而且 &quot;costing nearly nothing between sessions&quot;。</p>
-            <p>（3）自建 GPU 集群，或官方举例的 $5 VPS。</p>
-            <p><strong>⚠ Nous Portal 的计费，本轮核验结果是「官网不公开，只有第三方口径」。</strong></p>
-            <p>抓取 <code>portal.nousresearch.com</code> 首页<strong>只有定性描述，没有一个价格数字</strong>。原文写的是：</p>
-            <blockquote>&quot;the models, the tools, the cloud&quot;</blockquote>
-            <p>模型目录那句原文：</p>
-            <blockquote>&quot;spans hundreds of models from every frontier lab, with <strong>free options and Portal-only discounts</strong>&quot;</blockquote>
-            <p>也就是说，官方只说有免费选项、有 Portal 专属折扣，<strong>没给任何档位与金额</strong>。</p>
-            <p><code>portal.nousresearch.com/pricing</code> 返回 <strong>404（Page not found）</strong>。</p>
-            <p>四个互相独立的第三方来源（hostinger、moscarillo、aiidelist、standardcompute、 toolin）给出一致口径：<strong>Free $0 / Plus $20 每月含 $22 额度 / Super $100 含 $110 / Ultra $200 含 $220</strong>。它们另称付费档含 Tool Gateway （搜索/图像/语音/浏览器自动化），免费档既不含额度也不含 Tool Gateway， 额度可按月 rollover（有上限）。</p>
-            <p>⚠ <strong>这些数字本站标为「第三方口径，未获官方确认」。</strong> 四个来源一致不等于官方确认，按 v3 铁律「未知就说未知」，不写成已核实。</p>
-            <p><strong>选型前请以登录后 Portal 内的账单页为准。</strong></p>
-            <p><strong>另有一条值得单独记。</strong> 有第三方明确写出：</p>
-            <blockquote>「$20 买到 $22 额度是<strong>预付计量表</strong>，不是包月无限」</blockquote>
-            <p>即订阅价 ≠ 月度账单，实际花多少取决于用量。长 agent 循环能几天烧完一档额度。</p>
-            <p>⚠ 该说法本身也来自第三方，本站未实证。</p></span><span data-en><p><strong>框架本身 MIT 免费，推理与后端资源自理。</strong></p>
-            <p>核验依据：仓库 MIT（经 license API）、README 的安装命令与 Nous Portal 入口。</p>
-            <p><strong>可能另外花钱的路有三条。</strong></p>
-            <p>（1）OpenAI / Anthropic 等按量的 API。</p>
-            <p>（2）<strong>Modal / Daytona 等 serverless 后端。</strong> 官方说这两家提供 &quot;serverless persistence&quot;，agent 环境空闲时休眠、按需唤醒， 而且 &quot;costing nearly nothing between sessions&quot;。</p>
-            <p>（3）自建 GPU 集群，或官方举例的 $5 VPS。</p>
-            <p><strong>⚠ Nous Portal 的计费，本轮核验结果是「官网不公开，只有第三方口径」。</strong></p>
-            <p>抓取 <code>portal.nousresearch.com</code> 首页<strong>只有定性描述，没有一个价格数字</strong>。原文写的是：</p>
-            <blockquote>&quot;the models, the tools, the cloud&quot;</blockquote>
-            <p>模型目录那句原文：</p>
-            <blockquote>&quot;spans hundreds of models from every frontier lab, with <strong>free options and Portal-only discounts</strong>&quot;</blockquote>
-            <p>也就是说，官方只说有免费选项、有 Portal 专属折扣，<strong>没给任何档位与金额</strong>。</p>
-            <p><code>portal.nousresearch.com/pricing</code> 返回 <strong>404（Page not found）</strong>。</p>
-            <p>四个互相独立的第三方来源（hostinger、moscarillo、aiidelist、standardcompute、 toolin）给出一致口径：<strong>Free $0 / Plus $20 每月含 $22 额度 / Super $100 含 $110 / Ultra $200 含 $220</strong>。它们另称付费档含 Tool Gateway （搜索/图像/语音/浏览器自动化），免费档既不含额度也不含 Tool Gateway， 额度可按月 rollover（有上限）。</p>
-            <p>⚠ <strong>这些数字本站标为「第三方口径，未获官方确认」。</strong> 四个来源一致不等于官方确认，按 v3 铁律「未知就说未知」，不写成已核实。</p>
-            <p><strong>选型前请以登录后 Portal 内的账单页为准。</strong></p>
-            <p><strong>另有一条值得单独记。</strong> 有第三方明确写出：</p>
-            <blockquote>「$20 买到 $22 额度是<strong>预付计量表</strong>，不是包月无限」</blockquote>
-            <p>即订阅价 ≠ 月度账单，实际花多少取决于用量。长 agent 循环能几天烧完一档额度。</p>
-            <p>⚠ 该说法本身也来自第三方，本站未实证。</p></span></td></tr>
-          </tbody>
-        </table>
-        <p class="fine mt-3"><span data-zh>不同币种不做折算。优惠、地区、税费与登录后报价可能变化，购买前请到官方页面确认。</span><span data-en>No currency conversion. Discounts, regions, tax and post-login pricing can change — confirm on the official page before buying.</span></p>
-      </div>
-
-
-            <div class="panel is-slim">
         <h2><span data-zh>未知项清单</span><span data-en>Known unknowns</span></h2>
         <ul>
           <li>serverless 后端的唤醒延迟与跨休眠状态一致性</li>
@@ -352,7 +311,7 @@
           <li>skills 自我改进的边界（会不会越学越歪）</li>
           <li>Honcho 用户建模的数据去向与隐私</li>
           <li>Hermes 与 OpenClaw 的确切关系（团队、是否改名、迁移完整性）</li>
-          <li>Nous Portal 的<strong>官方</strong>定价（官网不公开，第三方口径未获确认）</li>
+          <li>Nous Portal 的<strong>官方</strong>档位与额度数值（官网不公开，第三方口径未获确认）</li>
           <li>Nous Portal 额度制的实际消耗速度（长 agent 循环能几天烧完一档，第三方说法未实证）</li>
           <li>Nous Portal 与 OpenRouter 的差异（同样走 credit，但模型目录与工具网关不同）</li>
           <li>本地 / 自托管模型在各后端下的可靠性（完整 provider 清单已核验）</li>
@@ -491,8 +450,7 @@
             <ul><li>仓库存在与星数（250,401，<strong>本站收录对象里最高</strong>）</li><li>许可（MIT，经 license API）、最近推送（2026-10-01，仍活跃）</li><li>最新版 <strong>v2026.9.24</strong>（releases @ 2026-09-24）</li><li>README 全文 243 行。它含定位段、六项特性表与七种终端后端原文</li><li>它还有完整的 CLI vs Messaging 对照表</li><li>十四节文档目录、OpenClaw 迁移清单、社区与许可段</li><li>仓库有中文与西语等 README 分支、Nous Portal 入口</li></ul>
             <p><strong>未核验：</strong></p>
             <ul><li>换模型后的能力对齐度与本地模型可靠性</li><li>休眠唤醒延迟与跨休眠状态一致性</li><li>「zero-context-cost」的量化值</li><li>Honcho 用户建模与 skills 自改进的实际效果</li><li>Hermes 与 OpenClaw 的确切关系</li></ul>
-            <p><strong>本轮（2026-10-01）补上的</strong>：Nous Portal 计费的<strong>官网状态</strong>已核验 —— <strong>官网不公开定价</strong>（首页只有定性描述、无一个数字；<code>/pricing</code> 返 404）。 第三方口径已记入档案，但<strong>标注为未获官方确认</strong>：</p>
-            <ul><li>Free</li><li>Plus $20 含$22</li><li>Super $100 含 $110</li><li>Ultra $200 含 $220</li></ul>
+            <p><strong>本轮（2026-10-01）补上的</strong>：Nous Portal 计费的<strong>官网状态</strong>已核验 —— <strong>官网不公开定价</strong>（首页只有定性描述、无一个数字；<code>/pricing</code> 返 404）。 第三方口径流传但<strong>未获官方确认</strong>——按 D9 口径本站不记录这些数字。</p>
             <p><strong>这条的状态：</strong> 从「完全未核验」变成「已核验到官网不公开」。</p>
       </div>
 

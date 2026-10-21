@@ -124,6 +124,16 @@
         <div><ul><li>要开箱即用的长任务工作区（用 Deep Agents 或走 SandboxAgent 路线）。</li><li>TypeScript 生态（用 openai-agents-js）。</li></ul></div></span><span data-en>        <div><p><strong>Fits</strong>: you want a thin harness with built-in guardrails / human-in-the-loop, first-class MCP support, and a Python stack. <strong>Not a fit</strong>: a ready-made long-task workspace (use Deep Agents or the SandboxAgent route); a TypeScript ecosystem (use openai-agents-js).</p></div></span>
       </div>
 
+            <div class="panel">
+        <h2><span data-zh>中文生态</span><span data-en>China availability</span> <span class="panel-note"><span data-zh>国产 / 国内可直接用 / 备案状态 · 快照</span><span data-en>domestic / direct access / CAC filing · snapshot</span> 2026-10-20</span></h2>
+        <dl class="cn-rows">
+          <dt><span data-zh>出品属地</span><span data-en>Origin</span></dt><dd><span data-zh>国外出品</span><span data-en>foreign-made</span>　<span data-zh>国外主体（网信办公示名单未见对应备案主体）。</span><span data-en>foreign entity (no matching filing entity in the CAC registry).</span></dd>
+          <dt><span data-zh>国内使用</span><span data-en>Direct access</span></dt><dd><span data-zh>大陆可直连</span><span data-en>direct OK</span>　<span data-zh>openai.github.io 直连实测 200；PyPI 实测可达。</span><span data-en>openai.github.io measured 200 direct; PyPI measured reachable.</span></dd>
+          <dt><span data-zh>备案状态</span><span data-en>CAC filing</span></dt><dd><span data-zh>未见于备案名单</span><span data-en>not in filing list</span>：<span data-zh>未见于网信办公示名单（2026-10-20 检索 13 批附件，https://www.cac.gov.cn/2024-04/02/c_1713729983803145.htm）；该产品未面向大陆公众提供服务，备案不适用。</span><span data-en>not in the CAC public registry (13 batch attachments searched 2026-10-20, https://www.cac.gov.cn/2024-04/02/c_1713729983803145.htm); the product does not serve the mainland public, so filing does not apply.</span></dd>
+        </dl>
+        <p class="cn-foot"><span data-zh>备案信息以网信办《生成式人工智能服务已备案信息》公示名单为准（按批次滚动更新，本站只抄编号不解读）；「大陆可直连」是本站从大陆网络直连实测的结果，不是厂商承诺。GitHub 类站点当日实测有波动，口径写在依据里。</span><span data-en>Filing status is quoted from the CAC public registry (updated batch by batch; this site copies the number and does not interpret it). "Direct access" is this site's own reachability measurement from a mainland network, not a vendor promise. GitHub-hosted sites fluctuated on the measurement day — the note says so.</span></p>
+      </div>
+
 
       <div class="block-head">
         <h2 class="t-h2"><span data-zh>固定坐标系</span><span data-en>Fixed coordinate system</span></h2>
@@ -233,26 +243,10 @@
 
 
             <div class="panel is-slim">
-        <h2><span data-zh>价格</span><span data-en>Pricing</span></h2>
-        <table class="src">
-          <tbody>
-            <tr><th class="w-28"><span data-zh>月度入口</span><span data-en>Monthly entry</span></th><td><span data-zh><p>库本身免费（MIT）</p></span><span data-en><p>库本身免费（MIT）</p></span></td></tr>
-            <tr><th class="w-28"><span data-zh>额度说明</span><span data-en>Quota note</span></th><td><span data-zh><p><strong>框架免费，不等于运行免费。</strong></p>
-            <p>库本身是 MIT 开源。但有三件事要自己掏钱：</p>
-            <ul><li>默认需要 <code>OPENAI_API_KEY</code>，模型推理费用自理。</li><li>官方示例全部以 OpenAI 模型为主。</li><li>Traces 默认上报到 OpenAI 的后端。可用 <code>trace</code> 相关开关禁用。</li></ul></span><span data-en><p><strong>框架免费，不等于运行免费。</strong></p>
-            <p>库本身是 MIT 开源。但有三件事要自己掏钱：</p>
-            <ul><li>默认需要 <code>OPENAI_API_KEY</code>，模型推理费用自理。</li><li>官方示例全部以 OpenAI 模型为主。</li><li>Traces 默认上报到 OpenAI 的后端。可用 <code>trace</code> 相关开关禁用。</li></ul></span></td></tr>
-          </tbody>
-        </table>
-        <p class="fine mt-3"><span data-zh>不同币种不做折算。优惠、地区、税费与登录后报价可能变化，购买前请到官方页面确认。</span><span data-en>No currency conversion. Discounts, regions, tax and post-login pricing can change — confirm on the official page before buying.</span></p>
-      </div>
-
-
-            <div class="panel is-slim">
         <h2><span data-zh>未知项清单</span><span data-en>Known unknowns</span></h2>
         <ul>
           <li>100+ provider 各自的能力对齐度矩阵</li>
-          <li>hosted sandbox client 的定价、可用区域、配额</li>
+          <li>hosted sandbox client 的可用区域、配额与计费方式（报价按 D9 口径本站不采）</li>
           <li>Sessions 后端在多进程/多机下的并发写语义</li>
           <li>litellm / any-llm extra 的实际依赖体积与升级冲突</li>
         </ul>
@@ -353,7 +347,7 @@
             <ul><li>仓库存在与星数（29,792）、许可（MIT，经 license API）。</li><li>最近推送（2026-10-01，仍活跃）。</li><li>最新版本 <strong>0.22.3</strong>（releases @ 2026-09-17）。</li><li><code>pyproject.toml</code> 全文关键项（<code>requires-python &gt;=3.10</code>、<code>mcp&gt;=1.19.0,&lt;3</code> 是核心依赖、 litellm/any-llm/sqlalchemy 均为可选 extra）。</li></ul>
             <ul><li>README 全文十项核心概念、四种运行方式代码示例。</li><li>SandboxAgent 段落与平台差异、JS 版仓元数据。</li></ul>
             <p>❌ 未核验清单：</p>
-            <ul><li>100+ provider 的实际能力对齐度。</li><li>hosted sandbox client 的定价与可用性。</li><li>Sessions 的具体后端语义。</li><li>Realtime/Voice 路径的成本。</li></ul>
+            <ul><li>100+ provider 的实际能力对齐度。</li><li>hosted sandbox client 的可用性与计费方式（报价按 D9 口径本站不采）。</li><li>Sessions 的具体后端语义。</li><li>Realtime/Voice 路径的成本。</li></ul>
       </div>
 
             <div class="panel is-slim">

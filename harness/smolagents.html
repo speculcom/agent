@@ -128,6 +128,16 @@
         <div class="warn-p"><p><strong>Not a fit</strong>: needing a vendor-hosted always-on background or resumable runs — it is a pure library and memory is not persisted to disk; unwilling to take on arbitrary-code-execution risk but also unwilling to run a remote sandbox; wanting batteries-included filesystem / memory / sub-agent orchestration.</p></div></span>
       </div>
 
+            <div class="panel">
+        <h2><span data-zh>中文生态</span><span data-en>China availability</span> <span class="panel-note"><span data-zh>国产 / 国内可直接用 / 备案状态 · 快照</span><span data-en>domestic / direct access / CAC filing · snapshot</span> 2026-10-20</span></h2>
+        <dl class="cn-rows">
+          <dt><span data-zh>出品属地</span><span data-en>Origin</span></dt><dd><span data-zh>国外出品</span><span data-en>foreign-made</span>　<span data-zh>国外主体（网信办公示名单未见对应备案主体）。</span><span data-en>foreign entity (no matching filing entity in the CAC registry).</span></dd>
+          <dt><span data-zh>国内使用</span><span data-en>Direct access</span></dt><dd><span data-zh>直连不可达</span><span data-en>direct blocked</span>　<span data-zh>文档站在 huggingface.co，大陆直连稳定超时（同日两次 000）；pip 安装走 PyPI 实测可达。</span><span data-en>docs live on huggingface.co, which times out consistently from mainland (000 twice); pip install via PyPI measured reachable.</span></dd>
+          <dt><span data-zh>备案状态</span><span data-en>CAC filing</span></dt><dd><span data-zh>未见于备案名单</span><span data-en>not in filing list</span>：<span data-zh>未见于网信办公示名单（2026-10-20 检索 13 批附件，https://www.cac.gov.cn/2024-04/02/c_1713729983803145.htm）；该产品未面向大陆公众提供服务，备案不适用。</span><span data-en>not in the CAC public registry (13 batch attachments searched 2026-10-20, https://www.cac.gov.cn/2024-04/02/c_1713729983803145.htm); the product does not serve the mainland public, so filing does not apply.</span></dd>
+        </dl>
+        <p class="cn-foot"><span data-zh>备案信息以网信办《生成式人工智能服务已备案信息》公示名单为准（按批次滚动更新，本站只抄编号不解读）；「大陆可直连」是本站从大陆网络直连实测的结果，不是厂商承诺。GitHub 类站点当日实测有波动，口径写在依据里。</span><span data-en>Filing status is quoted from the CAC public registry (updated batch by batch; this site copies the number and does not interpret it). "Direct access" is this site's own reachability measurement from a mainland network, not a vendor promise. GitHub-hosted sites fluctuated on the measurement day — the note says so.</span></p>
+      </div>
+
 
       <div class="block-head">
         <h2 class="t-h2"><span data-zh>固定坐标系</span><span data-en>Fixed coordinate system</span></h2>
@@ -223,29 +233,6 @@
 
 
             <div class="panel is-slim">
-        <h2><span data-zh>价格</span><span data-en>Pricing</span></h2>
-        <table class="src">
-          <tbody>
-            <tr><th class="w-28"><span data-zh>月度入口</span><span data-en>Monthly entry</span></th><td><span data-zh><p>库本身免费（Apache-2.0）</p></span><span data-en><p>库本身免费（Apache-2.0）</p></span></td></tr>
-            <tr><th class="w-28"><span data-zh>年付</span><span data-en>Annual</span></th><td><span data-zh><p>无付费档位（纯开源库）</p></span><span data-en><p>无付费档位（纯开源库）</p></span></td></tr>
-            <tr><th class="w-28"><span data-zh>额度说明</span><span data-en>Quota note</span></th><td><span data-zh><p><strong>框架免费，但运行不免费。而且官方没有独立定价页。</strong></p>
-            <p>库本身按 Apache-2.0 开源，没有授权费（仓库 LICENSE 核验 2026-10-08）。</p>
-            <p><strong>运行成本来自两处。</strong></p>
-            <p>一处是<strong>模型推理</strong>：HF Inference Providers 的免费账户自带 included credits 与速率限制， 升 PRO 才提高额度（见 installation 与 guided_tour 页）。</p>
-            <p>另一处是<strong>远程沙箱</strong>：E2B / Modal / Blaxel 各自按自家服务计费（见 secure_code_execution 页）。</p>
-            <p>本地模型（transformers / Ollama / mlx-lm）则推理成本落在本机。</p></span><span data-en><p><strong>框架免费，但运行不免费。而且官方没有独立定价页。</strong></p>
-            <p>库本身按 Apache-2.0 开源，没有授权费（仓库 LICENSE 核验 2026-10-08）。</p>
-            <p><strong>运行成本来自两处。</strong></p>
-            <p>一处是<strong>模型推理</strong>：HF Inference Providers 的免费账户自带 included credits 与速率限制， 升 PRO 才提高额度（见 installation 与 guided_tour 页）。</p>
-            <p>另一处是<strong>远程沙箱</strong>：E2B / Modal / Blaxel 各自按自家服务计费（见 secure_code_execution 页）。</p>
-            <p>本地模型（transformers / Ollama / mlx-lm）则推理成本落在本机。</p></span></td></tr>
-          </tbody>
-        </table>
-        <p class="fine mt-3"><span data-zh>不同币种不做折算。优惠、地区、税费与登录后报价可能变化，购买前请到官方页面确认。</span><span data-en>No currency conversion. Discounts, regions, tax and post-login pricing can change — confirm on the official page before buying.</span></p>
-      </div>
-
-
-            <div class="panel is-slim">
         <h2><span data-zh>未知项清单</span><span data-en>Known unknowns</span></h2>
         <ul>
           <li>换 provider 后 tool calling / 结构化输出的可靠性对齐（官方未说明，已查 guided_tour 与 models 参考页）</li>
@@ -253,7 +240,7 @@
           <li>把大工具输出落盘的深上下文管理（官方未说明）</li>
           <li>内建网络访问控制机制（官方未说明）</li>
           <li>进程间持久化 / 断点续跑的内建方案（官方未提供，得自己序列化 steps）</li>
-          <li>hosted 沙箱（Blaxel / E2B / Modal）的定价与配额（各由服务商页决定，不在本库文档内）</li>
+          <li>hosted 沙箱（Blaxel / E2B / Modal）的配额与计费口径（各由服务商页决定；报价按 D9 口径本站不存）</li>
         </ul>
       </div>
 

@@ -15,7 +15,7 @@
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%238b7cf8'/%3E%3Cstop offset='1' stop-color='%2322d3c5'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='48' height='48' rx='12' fill='%2305080f'/%3E%3Cpath d='M14 32 L24 12 L34 32' fill='none' stroke='url(%23g)' stroke-width='2.4' stroke-linejoin='round'/%3E%3Ccircle cx='24' cy='27' r='2.4' fill='%2322d3c5'/%3E%3C/svg%3E" />
   <link rel="stylesheet" href="../brand.css" />
   <link rel="stylesheet" href="../site.css" />
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Context7","applicationCategory":"DeveloperApplication","url":"https://github.com/upstash/context7","sameAs":"https://github.com/upstash/context7","description":"工具分区里唯一的远程托管条目 —— 为 Agent 提供版本感知的库文档，MIT 开源但核心服务在 Upstash 侧。","dateModified":"2026-10-01","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Context7","applicationCategory":"DeveloperApplication","url":"https://github.com/upstash/context7","sameAs":"https://github.com/upstash/context7","description":"工具分区里唯一的远程托管条目 —— 为 Agent 提供版本感知的库文档，MIT 开源但核心服务在 Upstash 侧。","dateModified":"2026-10-01"}</script>
 </head>
 <!-- B6（2026-10-09）：--accent 原先在这里被**内联到 body 上**（style="--accent:X"），
      同时头部又写了 :root{--accent:X} —— 两处同一份值，冗余。
@@ -116,6 +116,16 @@
         <div class="warn-p"><p><strong>Not a fit for</strong> confidential material — <strong>queries are sent to Upstash servers, so assess data leaving your machine first.</strong></p></div></span>
       </div>
 
+            <div class="panel">
+        <h2><span data-zh>中文生态</span><span data-en>China availability</span> <span class="panel-note"><span data-zh>国产 / 国内可直接用 / 备案状态 · 快照</span><span data-en>domestic / direct access / CAC filing · snapshot</span> 2026-10-20</span></h2>
+        <dl class="cn-rows">
+          <dt><span data-zh>出品属地</span><span data-en>Origin</span></dt><dd><span data-zh>国外出品</span><span data-en>foreign-made</span>　<span data-zh>国外主体（网信办公示名单未见对应备案主体）。</span><span data-en>foreign entity (no matching filing entity in the CAC registry).</span></dd>
+          <dt><span data-zh>国内使用</span><span data-en>Direct access</span></dt><dd><span data-zh>大陆可直连</span><span data-en>direct OK</span>　<span data-zh>官网仓库在 GitHub，大陆直连波动（同日实测 200/000 混合）；npm / PyPI 安装源实测稳定可达。</span><span data-en>Hosted on GitHub — direct reachability from mainland fluctuates (200/000 mixed on the same day); npm / PyPI install routes measured stable.</span></dd>
+          <dt><span data-zh>备案状态</span><span data-en>CAC filing</span></dt><dd><span data-zh>未见于备案名单</span><span data-en>not in filing list</span>：<span data-zh>未见于网信办公示名单（2026-10-20 检索 13 批附件，https://www.cac.gov.cn/2024-04/02/c_1713729983803145.htm）；该产品未面向大陆公众提供服务，备案不适用。</span><span data-en>not in the CAC public registry (13 batch attachments searched 2026-10-20, https://www.cac.gov.cn/2024-04/02/c_1713729983803145.htm); the product does not serve the mainland public, so filing does not apply.</span></dd>
+        </dl>
+        <p class="cn-foot"><span data-zh>备案信息以网信办《生成式人工智能服务已备案信息》公示名单为准（按批次滚动更新，本站只抄编号不解读）；「大陆可直连」是本站从大陆网络直连实测的结果，不是厂商承诺。GitHub 类站点当日实测有波动，口径写在依据里。</span><span data-en>Filing status is quoted from the CAC public registry (updated batch by batch; this site copies the number and does not interpret it). "Direct access" is this site's own reachability measurement from a mainland network, not a vendor promise. GitHub-hosted sites fluctuated on the measurement day — the note says so.</span></p>
+      </div>
+
 
       <div class="block-head">
         <h2 class="t-h2"><span data-zh>固定坐标系</span><span data-en>Fixed coordinate system</span></h2>
@@ -166,8 +176,8 @@
         <div class="axis">
           <dt><span data-zh>认证机制</span><span data-en>Authentication</span></dt>
           <dd><p><strong>需 API Key</strong>，通过 <code>Authorization: Bearer YOUR_API_KEY</code> 头传递。 README 说明可经 OAuth 流程由安装器自动生成 key。</p>
-            <p><strong>额度档位本轮已核验（2026-10-01，官方 plans 页）</strong>： Free <strong>1,000 次/月</strong>（Search API + Context API 合计）、</p>
-            <p>Pro <strong>2,000 次/席位/月</strong>、超出 <strong>$5 / 1,000 次</strong>不阻塞。</p>
+            <p><strong>额度档位本轮已核验（2026-10-01，官方 plans 页）</strong>： Free <strong>1,000 次/月</strong>（Search API + Context API 合计），</p>
+            <p>Pro <strong>2,000 次/席位/月</strong>、超出<strong>不阻塞</strong>（超量单价按 D9 口径不存，见官方 plans 页）。</p>
             <p>另Free 档本身就用 OAuth 2.0（官方对比表把 OAuth 2.0 列为 Free 的能力）。 ⚠ <strong>Free 超出额度后的确切行为官方页面未给答案正文</strong>，只列了问题标题。</p></dd>
         </div>
         <div class="axis">
@@ -191,44 +201,10 @@
 
 
             <div class="panel is-slim">
-        <h2><span data-zh>价格</span><span data-en>Pricing</span></h2>
-        <table class="src">
-          <tbody>
-            <tr><th class="w-28"><span data-zh>月度入口</span><span data-en>Monthly entry</span></th><td><span data-zh><p>Free $0（1,000 次/月）；Pro $10 每席位/月（2,000 次/席位）；Enterprise 定制</p></span><span data-en><p>Free $0（1,000 次/月）；Pro $10 每席位/月（2,000 次/席位）；Enterprise 定制</p></span></td></tr>
-            <tr><th class="w-28"><span data-zh>月度数值</span><span data-en>Monthly price</span></th><td>0</td></tr>
-            <tr><th class="w-28"><span data-zh>年付</span><span data-en>Annual</span></th><td><span data-zh><p>官方未列年付档（页面只有月付 per seat）</p></span><span data-en><p>官方未列年付档（页面只有月付 per seat）</p></span></td></tr>
-            <tr><th class="w-28"><span data-zh>额度说明</span><span data-en>Quota note</span></th><td><span data-zh><p><strong>开源部分为 MIT，但索引/解析/服务端是Upstash 的私有托管服务</strong> —— 官方 README 自己划了界：这个仓只托管 MCP server 的源码， API 后端、解析引擎与爬取引擎均为私有。</p>
-            <p><strong>定价（2026-10-01 核验官方 context7.com/docs/plans-pricing.md，该页是 plans 页的 307 目标）</strong>：</p>
-            <div class="tbl-wrap"><table><thead><tr><th>档</th><th>价格</th><th>含额度</th><th>超出计费</th></tr></thead><tbody><tr><td><strong>Free</strong></td><td><strong>$0</strong></td><td><strong>1,000 次/月</strong>（Search API + Context API）</td><td>阻塞</td></tr></tbody></table></div>
-            <div class="tbl-wrap"><table><thead><tr><th><strong>Pro</strong></th><th><strong>$10 每席位/月</strong></th><th><strong>2,000 次/席位</strong></th><th><strong>Unlimited（$5 / 1,000 次）</strong></th></tr></thead><tbody></tbody></table></div>
-            <div class="tbl-wrap"><table><thead><tr><th><strong>Enterprise</strong></th><th><strong>Custom</strong></th><th>Custom</th><th>Custom</th></tr></thead><tbody></tbody></table></div>
-            <p><strong>另有一项独立计费项（易被漏看）</strong>： <strong>Private Repo Parsing = $5 / 1M tokens</strong> —— 私有库文档解析按token 单独计费， 与 API 调用额度是<strong>两个独立的钱包</strong>。</p>
-            <p><strong>Free 档的三项能力</strong>（官方对比表）：Public Repos、Access Control、OAuth 2.0。</p>
-            <p><strong>Pro 解锁</strong>：Private Repos、Team Collaboration、<strong>Unlimited API Calls</strong>。</p>
-            <p><strong>Enterprise 解锁</strong>：SOC-2、SSO（SAML / OIDC）、<strong>Self-Hosted（On-Premise）</strong>， 且支持把额度与私有解析都按Custom 定制。</p>
-            <p><strong>⚠ 一条必须提醒的口径冲突</strong>：多个第三方站（aicoolies / decodo 等，2026-09 前后） 称Pro 是「5,000 次/席位」，<strong>与官方页面的 2,000 不一致</strong>。</p>
-            <p>本档案按官方页面写<strong>2,000</strong>，第三方数字视为旧制或臆测。 ⚠ Free 档超出 1,000 次后的<strong>具体行为</strong>（完全阻塞 / 降速 / 每日 bonus） 官方页面只列了问题标题、未给答案正文，本档案不做推测。</p></span><span data-en><p><strong>开源部分为 MIT，但索引/解析/服务端是Upstash 的私有托管服务</strong> —— 官方 README 自己划了界：这个仓只托管 MCP server 的源码， API 后端、解析引擎与爬取引擎均为私有。</p>
-            <p><strong>定价（2026-10-01 核验官方 context7.com/docs/plans-pricing.md，该页是 plans 页的 307 目标）</strong>：</p>
-            <div class="tbl-wrap"><table><thead><tr><th>档</th><th>价格</th><th>含额度</th><th>超出计费</th></tr></thead><tbody><tr><td><strong>Free</strong></td><td><strong>$0</strong></td><td><strong>1,000 次/月</strong>（Search API + Context API）</td><td>阻塞</td></tr></tbody></table></div>
-            <div class="tbl-wrap"><table><thead><tr><th><strong>Pro</strong></th><th><strong>$10 每席位/月</strong></th><th><strong>2,000 次/席位</strong></th><th><strong>Unlimited（$5 / 1,000 次）</strong></th></tr></thead><tbody></tbody></table></div>
-            <div class="tbl-wrap"><table><thead><tr><th><strong>Enterprise</strong></th><th><strong>Custom</strong></th><th>Custom</th><th>Custom</th></tr></thead><tbody></tbody></table></div>
-            <p><strong>另有一项独立计费项（易被漏看）</strong>： <strong>Private Repo Parsing = $5 / 1M tokens</strong> —— 私有库文档解析按token 单独计费， 与 API 调用额度是<strong>两个独立的钱包</strong>。</p>
-            <p><strong>Free 档的三项能力</strong>（官方对比表）：Public Repos、Access Control、OAuth 2.0。</p>
-            <p><strong>Pro 解锁</strong>：Private Repos、Team Collaboration、<strong>Unlimited API Calls</strong>。</p>
-            <p><strong>Enterprise 解锁</strong>：SOC-2、SSO（SAML / OIDC）、<strong>Self-Hosted（On-Premise）</strong>， 且支持把额度与私有解析都按Custom 定制。</p>
-            <p><strong>⚠ 一条必须提醒的口径冲突</strong>：多个第三方站（aicoolies / decodo 等，2026-09 前后） 称Pro 是「5,000 次/席位」，<strong>与官方页面的 2,000 不一致</strong>。</p>
-            <p>本档案按官方页面写<strong>2,000</strong>，第三方数字视为旧制或臆测。 ⚠ Free 档超出 1,000 次后的<strong>具体行为</strong>（完全阻塞 / 降速 / 每日 bonus） 官方页面只列了问题标题、未给答案正文，本档案不做推测。</p></span></td></tr>
-          </tbody>
-        </table>
-        <p class="fine mt-3"><span data-zh>不同币种不做折算。优惠、地区、税费与登录后报价可能变化，购买前请到官方页面确认。</span><span data-en>No currency conversion. Discounts, regions, tax and post-login pricing can change — confirm on the official page before buying.</span></p>
-      </div>
-
-
-            <div class="panel is-slim">
         <h2><span data-zh>未知项清单</span><span data-en>Known unknowns</span></h2>
         <ul>
           <li><strong>Free 档超出 1,000 次/月后的确切行为</strong>（官方页面只列了问题标题，未给答案正文；不做推测）</li>
-          <li>Enterprise 的具体报价</li>
+          <li>Enterprise 档的具体内容（报价按 D9 口径本站不采）</li>
           <li>文档索引的覆盖范围与更新频率（官方有「Keeping Libraries Fresh」专题，本轮未取正文）</li>
           <li>服务端 SLA</li>
           <li>官方隐私声明（只发查询与库名、不发源码与对话历史）<strong>未实测验证</strong></li>
@@ -243,7 +219,7 @@
           <thead><tr><th class="w-20"><span data-zh>类型</span><span data-en>Type</span></th><th class="w-52"><span data-zh>名称</span><span data-en>Name</span></th><th><span data-zh>链接</span><span data-en>Link</span></th></tr></thead>
           <tbody>
             <tr><td>docs</td><td>Upstash · Context7 README（API Key 与远程端点说明、<strong>「本仓只托管 MCP server 源码，API 后端/解析/爬虫为私有」的自述</strong>）</td><td><a href="https://github.com/upstash/context7" target="_blank" rel="noopener">https://github.com/upstash/context7</a></td></tr>
-            <tr><td>pricing</td><td>官方 Pricing &amp; Plans（核验 2026-10-01：Free $0/1,000 次每月、Pro $10 每席位每月/2,000 次每席位/超出 $5 每 1,000 次、Private Repo Parsing $5 每 1M tokens、Enterprise Custom 含 SOC-2/SSO/Self-Hosted；<strong>与第三方「Pro 5,000 次」冲突，按官方 2,000</strong>）</td><td><a href="https://context7.com/docs/plans-pricing.md" target="_blank" rel="noopener">https://context7.com/docs/plans-pricing.md</a></td></tr>
+            <tr><td>pricing</td><td>官方 Pricing &amp; Plans（核验 2026-10-01：Free 1,000 次每月、Pro 2,000 次每席位每月且超出不阻塞、Private Repo Parsing 是独立计费项、Enterprise Custom 含 SOC-2/SSO/Self-Hosted；报价按 D9 口径不存；<strong>与第三方「Pro 5,000 次」冲突，按官方 2,000</strong>）</td><td><a href="https://context7.com/docs/plans-pricing.md" target="_blank" rel="noopener">https://context7.com/docs/plans-pricing.md</a></td></tr>
             <tr><td>changelog</td><td>Upstash · Context7 Releases（ctx7@0.5.12）</td><td><a href="https://github.com/upstash/context7/releases" target="_blank" rel="noopener">https://github.com/upstash/context7/releases</a></td></tr>
             <tr><td>changelog</td><td>Upstash · Context7 Commits</td><td><a href="https://github.com/upstash/context7/commits/main" target="_blank" rel="noopener">https://github.com/upstash/context7/commits/main</a></td></tr>
             <tr><td>docs</td><td>Model Context Protocol · 规范</td><td><a href="https://modelcontextprotocol.io/specification" target="_blank" rel="noopener">https://modelcontextprotocol.io/specification</a></td></tr>
@@ -281,10 +257,11 @@
             <p>安装器支持 OAuth 流程自动生成 key。Free 档本身即支持 <strong>OAuth 2.0</strong>。</p>
             <p><strong>官方原话</strong>：API Key Recommended —— 获取免费 key 以获得更高额度。</p>
             <h3 class="sub-h">额度档位（2026-10-01 核验官方 plans 页）</h3>
-            <div class="tbl-wrap"><table><thead><tr><th>档</th><th>价格</th><th>含额度</th><th>超出后</th></tr></thead><tbody><tr><td><strong>Free</strong></td><td><strong>$0</strong></td><td><strong>1,000 次/月</strong></td><td>阻塞（具体行为官方未明示）</td></tr><tr><td><strong>Pro</strong></td><td><strong>$10 / 席位 / 月</strong></td><td><strong>2,000 次 / 席位</strong></td><td><strong>不阻塞，$5 / 1,000 次</strong></td></tr><tr><td><strong>Enterprise</strong></td><td><strong>Custom</strong></td><td>Custom</td><td>Custom</td></tr></tbody></table></div>
+            <p>（报价按 D9 口径不存，一律看官方 plans 页；额度是能力边界，照录。）</p>
+            <div class="tbl-wrap"><table><thead><tr><th>档</th><th>含额度</th><th>超出后</th></tr></thead><tbody><tr><td><strong>Free</strong></td><td><strong>1,000 次/月</strong></td><td>阻塞（具体行为官方未明示）</td></tr><tr><td><strong>Pro</strong></td><td><strong>2,000 次 / 席位</strong></td><td><strong>不阻塞</strong>（超量按用量另计，单价见官方页）</td></tr><tr><td><strong>Enterprise</strong></td><td>Custom</td><td>Custom</td></tr></tbody></table></div>
             <p><strong>两处最容易看错的地方</strong>：</p>
-            <p><strong>① Pro 的「Unlimited API Calls」不是「不限量免费」，是「不阻塞」。</strong> 官方对比表把 Pro 的 Additional API Calls 一栏写成 &quot;<strong>Unlimited ($5 / 1,000)</strong>&quot; —— 前半句是不阻塞，后半句才是真实单价。</p>
-            <p><strong>② Private Repo Parsing 是完全独立的计费项：$5 / 1M tokens。</strong> 它与 API 调用额度是<strong>两个钱包</strong>，Pro 的 $10 并不包含它。 要把私有库文档接进来，这笔钱要单独算。</p>
+            <p><strong>① Pro 的「Unlimited API Calls」不是「不限量免费」，是「不阻塞」。</strong> 官方对比表把 Pro 的 Additional API Calls 一栏写成 &quot;Unlimited（超量按用量计费）&quot; —— 前半句是不阻塞，后半句意味着超量要另付钱。</p>
+            <p><strong>② Private Repo Parsing 是完全独立的计费项。</strong> 它与 API 调用额度是<strong>两个钱包</strong>，Pro 的席位价并不包含它。 要把私有库文档接进来，这笔钱要单独算（单价见官方页）。</p>
             <h3 class="sub-h">第三方数字与官方不一致（已按官方为准）</h3>
             <p>多个第三方站（2026-09 前后）称 Pro 是「<strong>5,000 次/席位</strong>」—— <strong>官方页面是 2,000</strong>。本档案采官方，第三方数字视为旧制或臆测。</p>
             <h3 class="sub-h">开源的边界要划清</h3>
@@ -292,7 +269,7 @@
       </div>
       <div class="panel is-slim">
         <h2>风险评估</h2>
-        <div class="tbl-wrap"><table><thead><tr><th>风险类型</th><th>评价</th></tr></thead><tbody><tr><td>本地文件泄露</td><td><strong>无</strong> — 不碰本地文件</td></tr><tr><td>内网探测</td><td><strong>无</strong> — 不访问任意 URL</td></tr><tr><td><strong>数据出境</strong></td><td><strong>有，但范围窄</strong> — 只发<strong>文档问题 + 库名/ID</strong>；不发完整 prompt、源代码、对话历史（官方声明，见下方说明）</td></tr><tr><td>凭据风险</td><td>低 — 只用一个 API Key，无文件权限；官方还要求 agent 不要在查询里带凭据</td></tr><tr><td>服务可用性</td><td>依赖 Upstash 服务，本仓库无 releases 可保证服务状态</td></tr><tr><td><strong>预算失控</strong></td><td><strong>有</strong> — Free 超 1,000 次/月后行为不明；Pro 超出按 $5/1,000 次不阻塞；私有库解析另按 $5/1M tokens 计</td></tr></tbody></table></div>
+        <div class="tbl-wrap"><table><thead><tr><th>风险类型</th><th>评价</th></tr></thead><tbody><tr><td>本地文件泄露</td><td><strong>无</strong> — 不碰本地文件</td></tr><tr><td>内网探测</td><td><strong>无</strong> — 不访问任意 URL</td></tr><tr><td><strong>数据出境</strong></td><td><strong>有，但范围窄</strong> — 只发<strong>文档问题 + 库名/ID</strong>；不发完整 prompt、源代码、对话历史（官方声明，见下方说明）</td></tr><tr><td>凭据风险</td><td>低 — 只用一个 API Key，无文件权限；官方还要求 agent 不要在查询里带凭据</td></tr><tr><td>服务可用性</td><td>依赖 Upstash 服务，本仓库无 releases 可保证服务状态</td></tr><tr><td><strong>预算失控</strong></td><td><strong>有</strong> — Free 超 1,000 次/月后行为不明；Pro 超出不阻塞、按用量另计；私有库解析是独立计费项（单价见官方页）</td></tr></tbody></table></div>
             <p><strong>涉密场景要评估的部分</strong>：如果你查的库名、报错信息、代码片段本身敏感， 这些会离开本机。</p>
             <p><strong>但本轮补到一条官方对隐私的明确承诺</strong>（官方 FAQ 设了专题 &quot;How do you keep the privacy of my queries?&quot;）：</p>
             <p>查询只发送<strong>文档问题与库名/ID</strong>， <strong>不发送完整 prompt、源代码与对话历史</strong>； 官方并要求 agent 不要在查询里携带凭据、个人数据或专有代码。</p>

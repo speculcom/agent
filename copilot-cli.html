@@ -4,18 +4,18 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>GitHub Copilot CLI — Agents | 投机取巧</title>
-  <meta name="description" content="GitHub Copilot CLI（GitHub）：终端里的 Copilot agent，与 GitHub 订阅同源。 它能在终端里走完一条链。 &quot;读仓库 / 改代码 / 跑测试 / 开 PR / 管 Issue&quot; 都在终端里完成。 官方 README 说它 「Powered by the…" />
+  <meta name="description" content="GitHub Copilot CLI（GitHub）：Copilot 在终端里的编码 agent 形态，与 GitHub 订阅同源。 它能在终端里走完一条链。 &quot;读仓库 / 改代码 / 跑测试 / 开 PR / 管 Issue&quot; 都在终端里完成。 官方 README 说它 「Powered b…" />
   <link rel="canonical" href="https://agent.specul.com/copilot-cli.html" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="GitHub Copilot CLI" />
   <meta property="og:url" content="https://agent.specul.com/copilot-cli.html" />
   <meta property="og:title" content="GitHub Copilot CLI — Agents | 投机取巧" />
-  <meta property="og:description" content="GitHub Copilot CLI（GitHub）：终端里的 Copilot agent，与 GitHub 订阅同源。 它能在终端里走完一条链。 &quot;读仓库 / 改代码 / 跑测试 / 开 PR / 管 Issue&quot; 都在终端里完成。 官方 README 说它 「Powered by the…" />
+  <meta property="og:description" content="GitHub Copilot CLI（GitHub）：Copilot 在终端里的编码 agent 形态，与 GitHub 订阅同源。 它能在终端里走完一条链。 &quot;读仓库 / 改代码 / 跑测试 / 开 PR / 管 Issue&quot; 都在终端里完成。 官方 README 说它 「Powered b…" />
   <meta name="theme-color" content="#16121f" />
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%238b7cf8'/%3E%3Cstop offset='1' stop-color='%2322d3c5'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='48' height='48' rx='12' fill='%2305080f'/%3E%3Cpath d='M14 32 L24 12 L34 32' fill='none' stroke='url(%23g)' stroke-width='2.4' stroke-linejoin='round'/%3E%3Ccircle cx='24' cy='27' r='2.4' fill='%2322d3c5'/%3E%3C/svg%3E" />
   <link rel="stylesheet" href="brand.css" />
   <link rel="stylesheet" href="site.css" />
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"GitHub Copilot CLI","applicationCategory":"DeveloperApplication","url":"https://github.com/github/copilot-cli","sameAs":"https://docs.github.com/en/copilot/concepts/agents/about-copilot-cli","description":"终端里的 Copilot agent，与 GitHub 订阅同源。 它能在终端里走完一条链。 \"读仓库 / 改代码 / 跑测试 / 开 PR / 管 Issue\" 都在终端里完成。 官方 README 说它 「Powered by the same agentic harness as GitHub's Copilot coding agent」 它与既有 GitHub Copilot（IDE 形态）是同一产品的两种装法。 本条目只写 CLI 的差异点： 程序化入口 终端级审批 按提示词扣 premium requests 的计费方式","dateModified":"2026-10-08"}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"GitHub Copilot CLI","applicationCategory":"DeveloperApplication","url":"https://github.com/github/copilot-cli","sameAs":"https://docs.github.com/en/copilot/concepts/agents/about-copilot-cli","description":"Copilot 在终端里的编码 agent 形态，与 GitHub 订阅同源。 它能在终端里走完一条链。 \"读仓库 / 改代码 / 跑测试 / 开 PR / 管 Issue\" 都在终端里完成。 官方 README 说它 「Powered by the same agentic harness as GitHub's Copilot coding agent」 它与既有 GitHub Copilot（IDE 形态）是同一产品的两种装法。 本条目只写 CLI 的差异点： 程序化入口 终端级审批 按提示词扣 premium requests 的额度扣减方式","dateModified":"2026-10-08"}</script>
 </head>
 <!-- B6（2026-10-09）：--accent 原先在这里被**内联到 body 上**（style="--accent:X"），
      同时头部又写了 :root{--accent:X} —— 两处同一份值，冗余。
@@ -109,14 +109,14 @@
         <span class="badge"><span data-zh>核验</span><span data-en>Checked</span> 2026-10-08</span>
       </div>
 
-            <div class="panel-lead"><span data-zh><p><strong>终端里的 Copilot agent，与 GitHub 订阅同源</strong>。</p>
+            <div class="panel-lead"><span data-zh><p><strong>Copilot 在终端里的编码 agent 形态，与 GitHub 订阅同源</strong>。</p>
             <p>它能在终端里走完一条链。</p>
             <p><strong>&quot;读仓库 / 改代码 / 跑测试 / 开 PR / 管 Issue&quot;</strong> 都在终端里完成。</p>
             <p>官方 README 说它</p>
             <blockquote>「Powered by the same agentic harness as GitHub&#39;s Copilot coding agent」</blockquote>
             <p>它与既有 <a href="./copilot.html">GitHub Copilot</a>（IDE 形态）是<strong>同一产品的两种装法</strong>。</p>
             <p>本条目只写 CLI 的差异点：</p>
-            <ul><li>程序化入口</li><li>终端级审批</li><li>按提示词扣 premium requests 的计费方式</li></ul></span><span data-en><p>GitHub Copilot CLI is the Copilot coding agent that runs in your terminal, carried by the same GitHub subscription as the IDE form factor. The official README says it is &quot;Powered by the same agentic harness as GitHub&#39;s Copilot coding agent.&quot; Three things differ from the IDE form. It has a programmatic entry point (<code>copilot -p</code> / <code>--prompt</code>) that can go into scripts and CI. Approval is terminal-level: three choices on first use of a writing or executing tool, plus <code>--allow-all-tools</code> / <code>--allow-tool</code> / <code>--deny-tool</code> for unattended runs, and some official docs say denial wins. Billing is per prompt too: &quot;Each time you submit a prompt to Copilot CLI, your monthly quota of Copilot premium requests is reduced by one.&quot;</p></span></div>
+            <ul><li>程序化入口</li><li>终端级审批</li><li>按提示词扣 premium requests 的额度扣减方式</li></ul></span><span data-en><p>GitHub Copilot CLI is the Copilot coding agent that runs in your terminal, carried by the same GitHub subscription as the IDE form factor. The official README says it is &quot;Powered by the same agentic harness as GitHub&#39;s Copilot coding agent.&quot; Three things differ from the IDE form. It has a programmatic entry point (<code>copilot -p</code> / <code>--prompt</code>) that can go into scripts and CI. Approval is terminal-level: three choices on first use of a writing or executing tool, plus <code>--allow-all-tools</code> / <code>--allow-tool</code> / <code>--deny-tool</code> for unattended runs, and some official docs say denial wins. Billing is per prompt too: &quot;Each time you submit a prompt to Copilot CLI, your monthly quota of Copilot premium requests is reduced by one.&quot;</p></span></div>
 
             <div class="panel is-slim">
         <h2><span data-zh>适合与不适合</span><span data-en>When to use it, when not to</span></h2>
@@ -126,6 +126,16 @@
         <div class="warn-p"><p>也不适合想「全自动又零风险」的人：自动批准必须与隔离环境配套。官方对此有明确风险提示。</p></div></span><span data-en>        <div><p>People already in the GitHub ecosystem who want to walk the whole chain from reading a repo to opening a pull request in the terminal. The official use case gives tasks such as &quot;create a pull request on GitHub.com&quot;.</p></div>
         <div><p>People who need scripted or headless use: <code>copilot -p</code> with approval flags is CI-friendly. Anyone who wants the MCP / plugin / custom-agent surface.</p></div>
         <div class="warn-p"><p><strong>Not a fit for</strong> people who don&#39;t want a Copilot subscription, because the CLI ships with the subscription and cannot be bought on its own. Nor for anyone who wants &quot;fully autonomous and zero risk&quot;: auto-approval has to be paired with an isolated environment, and the official docs warn about that plainly.</p></div></span>
+      </div>
+
+            <div class="panel">
+        <h2><span data-zh>中文生态</span><span data-en>China availability</span> <span class="panel-note"><span data-zh>国产 / 国内可直接用 / 备案状态 · 快照</span><span data-en>domestic / direct access / CAC filing · snapshot</span> 2026-10-20</span></h2>
+        <dl class="cn-rows">
+          <dt><span data-zh>出品属地</span><span data-en>Origin</span></dt><dd><span data-zh>国外出品</span><span data-en>foreign-made</span>　<span data-zh>国外主体（网信办公示名单未见对应备案主体）。</span><span data-en>foreign entity (no matching filing entity in the CAC registry).</span></dd>
+          <dt><span data-zh>国内使用</span><span data-en>Direct access</span></dt><dd><span data-zh>大陆可直连</span><span data-en>direct OK</span>　<span data-zh>docs.github.com 直连实测 200。</span><span data-en>docs.github.com measured 200 direct.</span></dd>
+          <dt><span data-zh>备案状态</span><span data-en>CAC filing</span></dt><dd><span data-zh>未见于备案名单</span><span data-en>not in filing list</span>：<span data-zh>未见于网信办公示名单（2026-10-20 检索 13 批附件，https://www.cac.gov.cn/2024-04/02/c_1713729983803145.htm）；该产品未面向大陆公众提供服务，备案不适用。</span><span data-en>not in the CAC public registry (13 batch attachments searched 2026-10-20, https://www.cac.gov.cn/2024-04/02/c_1713729983803145.htm); the product does not serve the mainland public, so filing does not apply.</span></dd>
+        </dl>
+        <p class="cn-foot"><span data-zh>备案信息以网信办《生成式人工智能服务已备案信息》公示名单为准（按批次滚动更新，本站只抄编号不解读）；「大陆可直连」是本站从大陆网络直连实测的结果，不是厂商承诺。GitHub 类站点当日实测有波动，口径写在依据里。</span><span data-en>Filing status is quoted from the CAC public registry (updated batch by batch; this site copies the number and does not interpret it). "Direct access" is this site's own reachability measurement from a mainland network, not a vendor promise. GitHub-hosted sites fluctuated on the measurement day — the note says so.</span></p>
       </div>
 
 
@@ -236,41 +246,6 @@
 
 
             <div class="panel is-slim">
-        <h2><span data-zh>价格</span><span data-en>Pricing</span></h2>
-        <table class="src">
-          <tbody>
-            <tr><th class="w-28"><span data-zh>月度入口</span><span data-en>Monthly entry</span></th><td><span data-zh><p>随 Copilot 订阅（档位价格见 ./copilot.md）；CLI 无独立定价</p></span><span data-en><p>随 Copilot 订阅（档位价格见 ./copilot.md）；CLI 无独立定价</p></span></td></tr>
-            <tr><th class="w-28"><span data-zh>年付</span><span data-en>Annual</span></th><td><span data-zh><p>官方未单列 CLI 年付（额度随 Copilot 订阅，未核验年付口径）</p></span><span data-en><p>官方未单列 CLI 年付（额度随 Copilot 订阅，未核验年付口径）</p></span></td></tr>
-            <tr><th class="w-28"><span data-zh>额度说明</span><span data-en>Quota note</span></th><td><span data-zh><p><strong>CLI 没有独立定价，额度与 Copilot 订阅同源。</strong></p>
-            <p>关于「哪些档位能用 CLI」，官方两处口径不一致：</p>
-            <blockquote>about-copilot-cli 页写「available with the GitHub Copilot Pro, GitHub Copilot Pro+, GitHub Copilot Business and GitHub Copilot Enterprise plans」</blockquote>
-            <blockquote>cli-quickstart 页写「available with all Copilot plans」</blockquote>
-            <blockquote>2026-02-25 官方 changelog 写 GA 后「available to all Copilot subscribers」</blockquote>
-            <p><strong>两页是否含 Free 档的说法不一致</strong>（见「未知项清单」）。</p>
-            <p><strong>计费单位是 premium requests。</strong></p>
-            <blockquote>官方原文：「Each time you submit a prompt to Copilot CLI, your monthly quota of Copilot premium requests is reduced by one」</blockquote>
-            <blockquote>计费文档表单写「Each prompt to Copilot CLI uses one premium request with the default model. For other models, this is multiplied by the model&#39;s rate」</blockquote>
-            <p>Free 档官方写「up to 50 premium requests per month」。</p>
-            <p>付费档的内置模型（GPT-5 mini、GPT-4.1、GPT-4o）「do not consume any premium requests」。</p>
-            <p>官方另宣布：「Starting June 1, 2026, GitHub is moving Copilot from request-based billing to usage-based billing」。</p></span><span data-en><p><strong>CLI 没有独立定价，额度与 Copilot 订阅同源。</strong></p>
-            <p>关于「哪些档位能用 CLI」，官方两处口径不一致：</p>
-            <blockquote>about-copilot-cli 页写「available with the GitHub Copilot Pro, GitHub Copilot Pro+, GitHub Copilot Business and GitHub Copilot Enterprise plans」</blockquote>
-            <blockquote>cli-quickstart 页写「available with all Copilot plans」</blockquote>
-            <blockquote>2026-02-25 官方 changelog 写 GA 后「available to all Copilot subscribers」</blockquote>
-            <p><strong>两页是否含 Free 档的说法不一致</strong>（见「未知项清单」）。</p>
-            <p><strong>计费单位是 premium requests。</strong></p>
-            <blockquote>官方原文：「Each time you submit a prompt to Copilot CLI, your monthly quota of Copilot premium requests is reduced by one」</blockquote>
-            <blockquote>计费文档表单写「Each prompt to Copilot CLI uses one premium request with the default model. For other models, this is multiplied by the model&#39;s rate」</blockquote>
-            <p>Free 档官方写「up to 50 premium requests per month」。</p>
-            <p>付费档的内置模型（GPT-5 mini、GPT-4.1、GPT-4o）「do not consume any premium requests」。</p>
-            <p>官方另宣布：「Starting June 1, 2026, GitHub is moving Copilot from request-based billing to usage-based billing」。</p></span></td></tr>
-          </tbody>
-        </table>
-        <p class="fine mt-3"><span data-zh>不同币种不做折算。优惠、地区、税费与登录后报价可能变化，购买前请到官方页面确认。</span><span data-en>No currency conversion. Discounts, regions, tax and post-login pricing can change — confirm on the official page before buying.</span></p>
-      </div>
-
-
-            <div class="panel is-slim">
         <h2><span data-zh>未知项清单</span><span data-en>Known unknowns</span></h2>
         <ul>
           <li>CLI 与各 Copilot 档位的准确对应（Free 是否含 CLI）——官方未说明（已查 about-copilot-cli 与 cli-quickstart 两页，两页口径不一致）</li>
@@ -311,7 +286,7 @@
             <div class="panel is-slim">
         <h2>与 IDE 形态的差别（只说差异）</h2>
         <div class="tbl-wrap"><table><thead><tr><th>维度</th><th>IDE 形态（见 ./copilot.md）</th><th>CLI 形态（本条目）</th></tr></thead><tbody><tr><td>入口</td><td>编辑器 / 网站</td><td>终端 <code>copilot</code></td></tr><tr><td>非交互</td><td>一般无</td><td><strong><code>copilot -p</code> / <code>--prompt</code></strong>，可进脚本与 CI</td></tr><tr><td>审批</td><td>编辑器模式</td><td><strong>终端三选项 + <code>--allow/--deny-tool</code> 开关</strong></td></tr><tr><td>云端运行面</td><td>网站 / coding agent</td><td><code>copilot --cloud</code> 云沙箱（public preview）</td></tr><tr><td>后台委派</td><td>派 issue / 评论触发</td><td><strong>前缀 <code>&amp;</code> 把任务交给云端 coding agent</strong></td></tr></tbody></table></div>
-            <p><strong>共用的部分不重复写</strong>：模型清单、Copilot Memory、Copilot 档案价格、组织策略，均以 <a href="./copilot.html">IDE 条目</a> 为准。</p>
+            <p><strong>共用的部分不重复写</strong>：模型清单、Copilot Memory、组织策略，均以 <a href="./copilot.html">IDE 条目</a> 为准；档位报价一律看官方 plans 页。</p>
       </div>
       <div class="panel is-slim">
         <h2>程序化与安装</h2>
@@ -337,13 +312,13 @@
             <blockquote>「is heuristic and GitHub does not guarantee that all files outside trusted directories will be protected」</blockquote>
       </div>
       <div class="panel is-slim">
-        <h2>计费：按提示词扣 premium requests</h2>
+        <h2>额度：按提示词扣 premium requests</h2>
         <p>每次提示词各扣 1 次 premium request。官方原文：</p>
             <blockquote>Each time you submit a prompt to Copilot CLI, your monthly quota of Copilot premium requests is reduced by one.</blockquote>
             <p>用非默认模型时按模型倍率放大（如 Claude Opus 4.5 为 3x）。</p>
             <p>Free 档官方写每月最多 50 次 premium requests。付费档的内置模型（GPT-5 mini / GPT-4.1 / GPT-4o）不扣额度。</p>
             <p>官方并宣布自 2026-06-01 起，把 Copilot 从 request-based billing 转为 usage-based billing。</p>
-            <p>档位本身的价格见 <a href="./copilot.html">IDE 条目</a>。</p>
+            <p>档位报价见官方 plans 页（本站按 D9 口径不存价格）。</p>
       </div>
       <div class="panel is-slim">
         <h2>核验说明</h2>
@@ -356,7 +331,7 @@
             <div class="panel is-slim">
         <h2><span data-zh>相关条目</span><span data-en>Related entries</span></h2>
         <ul class="rel-list">
-          <li><span class="rel-t"><a href="./copilot.html">GitHub Copilot</a></span><span class="rel-n">同一产品的 IDE 形态；价格档位、模型清单与云端 coding agent 见该条</span></li>
+          <li><span class="rel-t"><a href="./copilot.html">GitHub Copilot</a></span><span class="rel-n">同一产品的 IDE 形态；模型清单与云端 coding agent 见该条</span></li>
           <li><span class="rel-t"><a href="./claude-code-cli.html">Claude Code CLI</a></span><span class="rel-n">同为终端编码 agent，权限审批的颗粒度可逐项对照</span></li>
           <li><span class="rel-t"><a href="./codex-cli.html">Codex CLI</a></span><span class="rel-n">同为终端编码 agent，非交互与沙箱模型不同（Codex 默认工作区沙箱，CLI 默认逐工具审批）</span></li>
           <li><span class="rel-t"><a href="/tools/github-mcp.html"><span data-zh>GitHub MCP Server</span><span data-en>GitHub MCP Server</span></a></span><span class="rel-n"><span data-zh>另一层 · 给 agent 装的工具</span><span data-en>Other layer · MCP tools</span></span></li>

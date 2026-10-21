@@ -15,7 +15,7 @@
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%238b7cf8'/%3E%3Cstop offset='1' stop-color='%2322d3c5'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='48' height='48' rx='12' fill='%2305080f'/%3E%3Cpath d='M14 32 L24 12 L34 32' fill='none' stroke='url(%23g)' stroke-width='2.4' stroke-linejoin='round'/%3E%3Ccircle cx='24' cy='27' r='2.4' fill='%2322d3c5'/%3E%3C/svg%3E" />
   <link rel="stylesheet" href="../brand.css" />
   <link rel="stylesheet" href="../site.css" />
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Google ADK（Agent Development Kit）","applicationCategory":"DeveloperApplication","url":"https://google.github.io/adk-docs/","sameAs":"https://google.github.io/adk-docs/","description":"一句话说清它是什么： Google ADK 是「code-first 的 agent 编排框架，核心资产是一个图执行引擎」。 它的作用是把多个 agent 组织成一条流程，不替你跑单个 agent。 官方 README 的第一项特性就说明了它的身份： Workflow Runtime: A graph-based execution engine for composing deterministic execution flows for agentic apps, with support for routing, fan-out/fan-in, loops, retry, state m","dateModified":"2026-10-01","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Google ADK（Agent Development Kit）","applicationCategory":"DeveloperApplication","url":"https://google.github.io/adk-docs/","sameAs":"https://google.github.io/adk-docs/","description":"一句话说清它是什么： Google ADK 是「code-first 的 agent 编排框架，核心资产是一个图执行引擎」。 它的作用是把多个 agent 组织成一条流程，不替你跑单个 agent。 官方 README 的第一项特性就说明了它的身份： Workflow Runtime: A graph-based execution engine for composing deterministic execution flows for agentic apps, with support for routing, fan-out/fan-in, loops, retry, state m","dateModified":"2026-10-01"}</script>
 </head>
 <!-- B6（2026-10-09）：--accent 原先在这里被**内联到 body 上**（style="--accent:X"），
      同时头部又写了 :root{--accent:X} —— 两处同一份值，冗余。
@@ -132,6 +132,16 @@
         <div><ul><li>只跑单个 agent、不需要图结构 —— 用 OpenAI Agents SDK 更轻</li><li>需要文件级 / 网络级沙箱边界，但不想自己实现 —— 官方未提供沙箱</li><li>长上下文压缩依赖 1.16+ 的 Context Compaction（滑动窗口）</li></ul></div></span><span data-en>        <div><p><strong>Fits</strong>: organising multiple agents into deterministic flows with branches, loops and human intervention; defining agents and tools code-first so they are testable and versionable; a team inside the Google ecosystem (Cloud Run / Vertex / Gemini); needing built-in eval and a development UI; wanting one framework across Python and TypeScript; needing tool-level human confirmation, session persistence and resume. <strong>Not a fit</strong>: running a single agent with no graph structure (OpenAI Agents SDK or Deep Agents are lighter); needing built-in file- or network-sandbox boundaries — <strong>the official docs provide none</strong>, so file access goes through the Artifacts abstraction or a tool you wire up yourself; wanting self-hosted weights out of the box without going through the LiteLLM adaptor layer.</p></div></span>
       </div>
 
+            <div class="panel">
+        <h2><span data-zh>中文生态</span><span data-en>China availability</span> <span class="panel-note"><span data-zh>国产 / 国内可直接用 / 备案状态 · 快照</span><span data-en>domestic / direct access / CAC filing · snapshot</span> 2026-10-20</span></h2>
+        <dl class="cn-rows">
+          <dt><span data-zh>出品属地</span><span data-en>Origin</span></dt><dd><span data-zh>国外出品</span><span data-en>foreign-made</span>　<span data-zh>国外主体（网信办公示名单未见对应备案主体）。</span><span data-en>foreign entity (no matching filing entity in the CAC registry).</span></dd>
+          <dt><span data-zh>国内使用</span><span data-en>Direct access</span></dt><dd><span data-zh>大陆可直连</span><span data-en>direct OK</span>　<span data-zh>官网 adk.dev 直连实测 200。</span><span data-en>adk.dev measured 200 direct.</span></dd>
+          <dt><span data-zh>备案状态</span><span data-en>CAC filing</span></dt><dd><span data-zh>未见于备案名单</span><span data-en>not in filing list</span>：<span data-zh>未见于网信办公示名单（2026-10-20 检索 13 批附件，https://www.cac.gov.cn/2024-04/02/c_1713729983803145.htm）；该产品未面向大陆公众提供服务，备案不适用。</span><span data-en>not in the CAC public registry (13 batch attachments searched 2026-10-20, https://www.cac.gov.cn/2024-04/02/c_1713729983803145.htm); the product does not serve the mainland public, so filing does not apply.</span></dd>
+        </dl>
+        <p class="cn-foot"><span data-zh>备案信息以网信办《生成式人工智能服务已备案信息》公示名单为准（按批次滚动更新，本站只抄编号不解读）；「大陆可直连」是本站从大陆网络直连实测的结果，不是厂商承诺。GitHub 类站点当日实测有波动，口径写在依据里。</span><span data-en>Filing status is quoted from the CAC public registry (updated batch by batch; this site copies the number and does not interpret it). "Direct access" is this site's own reachability measurement from a mainland network, not a vendor promise. GitHub-hosted sites fluctuated on the measurement day — the note says so.</span></p>
+      </div>
+
 
       <div class="block-head">
         <h2 class="t-h2"><span data-zh>固定坐标系</span><span data-en>Fixed coordinate system</span></h2>
@@ -239,45 +249,6 @@
           <li><span data-zh>以为只有 Python —— 还有独立的 TypeScript 仓（<code>google/adk-js</code>，1,426★），本站按粒度只收录 Python 主体</span><span data-en>Assuming it is Python-only — there is a separate TypeScript repo (<code>google/adk-js</code>, 1,426★); the Python body is the only thing indexed here</span></li>
           <li><span data-zh>搞混仓库名 —— 样例仓显示为 <code>google/adk-recipes</code>，描述里写的是 adk-samples</span><span data-en>Mixing up repo names — the sample repo shows as <code>google/adk-recipes</code> while the description says adk-samples</span></li>
         </ul>
-      </div>
-
-
-            <div class="panel is-slim">
-        <h2><span data-zh>价格</span><span data-en>Pricing</span></h2>
-        <table class="src">
-          <tbody>
-            <tr><th class="w-28"><span data-zh>月度入口</span><span data-en>Monthly entry</span></th><td><span data-zh><p>框架免费（Apache-2.0）；设 GOOGLE_GENAI_USE_ENTERPRISE 后走 Google Cloud 企业平台计费</p></span><span data-en><p>框架免费（Apache-2.0）；设 GOOGLE_GENAI_USE_ENTERPRISE 后走 Google Cloud 企业平台计费</p></span></td></tr>
-            <tr><th class="w-28"><span data-zh>月度数值</span><span data-en>Monthly price</span></th><td>0</td></tr>
-            <tr><th class="w-28"><span data-zh>额度说明</span><span data-en>Quota note</span></th><td><span data-zh><p><strong>框架免费不等于零成本。</strong> 可能花钱的地方有两处。</p>
-            <p>（1）官方给的部署目标是 <strong>Cloud Run</strong> 与 <strong>Vertex AI Agent Engine</strong>。 这两处都按云资源计费。</p>
-            <p>（2）用 Gemini 走 Google 侧计费，用其它模型走各自 provider。</p>
-            <p><strong>（3）<code>GOOGLE_GENAI_USE_ENTERPRISE</code> 是个计费路径开关。</strong> 它不是「解锁企业功能」的开关。</p>
-            <p>它把请求从 Gemini Developer API 切到 Google Cloud 企业平台 （Gemini Enterprise Agent Platform / Vertex AI），计费口径随之改变。</p>
-            <p>官方 codelab 对三个变量的说明原文（核验 2026-10-01）：</p>
-            <p><code>GOOGLE_GENAI_USE_ENTERPRISE</code> = &quot;This tells the ADK that you intend to use Google&#39;s <strong>Gemini Enterprise Agent Platform</strong> service for your Generative AI operations.&quot;</p>
-            <p><code>GOOGLE_CLOUD_PROJECT</code> = &quot;ADK needs this to correctly associate your agent with your cloud resources and <strong>enable billing</strong>.&quot;</p>
-            <p><code>GOOGLE_CLOUD_LOCATION</code> = 地域，如 <code>global</code>。</p>
-            <p><strong>⚠ 最关键的一条。</strong> 官方把 &quot;enable billing&quot; 明确挂在 <code>GOOGLE_CLOUD_PROJECT</code> 上。</p>
-            <p>设了这三个变量，agent 就落进你的 Google Cloud 项目开始计费。 不设则走 Gemini Developer API 那条路（另有其免费层与配额）。</p>
-            <p><strong>且三个变量必须成组出现。</strong> 官方所有示例都是三个一起设，没有只设其一的写法。</p>
-            <p>⚠ 官方示例里这个变量的取值不统一，有<code>1</code>（README / codelab .env）、<code>TRUE</code>、 <code>True</code>（Cloud 文档）三种写法。<strong>按Python 布尔语义大小写皆真</strong>，但取值不一致这点本身值得注意。</p>
-            <p>⚠ 具体的 Gemini 单价与 Vertex AI Agent Engine / Cloud Run 的实际费率本站未逐项核验。</p></span><span data-en><p><strong>框架免费不等于零成本。</strong> 可能花钱的地方有两处。</p>
-            <p>（1）官方给的部署目标是 <strong>Cloud Run</strong> 与 <strong>Vertex AI Agent Engine</strong>。 这两处都按云资源计费。</p>
-            <p>（2）用 Gemini 走 Google 侧计费，用其它模型走各自 provider。</p>
-            <p><strong>（3）<code>GOOGLE_GENAI_USE_ENTERPRISE</code> 是个计费路径开关。</strong> 它不是「解锁企业功能」的开关。</p>
-            <p>它把请求从 Gemini Developer API 切到 Google Cloud 企业平台 （Gemini Enterprise Agent Platform / Vertex AI），计费口径随之改变。</p>
-            <p>官方 codelab 对三个变量的说明原文（核验 2026-10-01）：</p>
-            <p><code>GOOGLE_GENAI_USE_ENTERPRISE</code> = &quot;This tells the ADK that you intend to use Google&#39;s <strong>Gemini Enterprise Agent Platform</strong> service for your Generative AI operations.&quot;</p>
-            <p><code>GOOGLE_CLOUD_PROJECT</code> = &quot;ADK needs this to correctly associate your agent with your cloud resources and <strong>enable billing</strong>.&quot;</p>
-            <p><code>GOOGLE_CLOUD_LOCATION</code> = 地域，如 <code>global</code>。</p>
-            <p><strong>⚠ 最关键的一条。</strong> 官方把 &quot;enable billing&quot; 明确挂在 <code>GOOGLE_CLOUD_PROJECT</code> 上。</p>
-            <p>设了这三个变量，agent 就落进你的 Google Cloud 项目开始计费。 不设则走 Gemini Developer API 那条路（另有其免费层与配额）。</p>
-            <p><strong>且三个变量必须成组出现。</strong> 官方所有示例都是三个一起设，没有只设其一的写法。</p>
-            <p>⚠ 官方示例里这个变量的取值不统一，有<code>1</code>（README / codelab .env）、<code>TRUE</code>、 <code>True</code>（Cloud 文档）三种写法。<strong>按Python 布尔语义大小写皆真</strong>，但取值不一致这点本身值得注意。</p>
-            <p>⚠ 具体的 Gemini 单价与 Vertex AI Agent Engine / Cloud Run 的实际费率本站未逐项核验。</p></span></td></tr>
-          </tbody>
-        </table>
-        <p class="fine mt-3"><span data-zh>不同币种不做折算。优惠、地区、税费与登录后报价可能变化，购买前请到官方页面确认。</span><span data-en>No currency conversion. Discounts, regions, tax and post-login pricing can change — confirm on the official page before buying.</span></p>
       </div>
 
 

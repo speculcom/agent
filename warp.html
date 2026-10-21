@@ -15,7 +15,7 @@
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%238b7cf8'/%3E%3Cstop offset='1' stop-color='%2322d3c5'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='48' height='48' rx='12' fill='%2305080f'/%3E%3Cpath d='M14 32 L24 12 L34 32' fill='none' stroke='url(%23g)' stroke-width='2.4' stroke-linejoin='round'/%3E%3Ccircle cx='24' cy='27' r='2.4' fill='%2322d3c5'/%3E%3C/svg%3E" />
   <link rel="stylesheet" href="brand.css" />
   <link rel="stylesheet" href="site.css" />
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Warp","applicationCategory":"DeveloperApplication","url":"https://app.warp.dev/get_warp","sameAs":"https://www.warp.dev","description":"开源的终端 agent 环境。 官方自称： 「Agentic Development Environment」 它把现代终端、编码 agent、Warp Drive 协作与云 agent / Factories 合成一个产品。","dateModified":"2026-10-08","offers":{"@type":"Offer","price":"20","priceCurrency":"USD"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Warp","applicationCategory":"DeveloperApplication","url":"https://app.warp.dev/get_warp","sameAs":"https://www.warp.dev","description":"开源的终端 agent 环境。 官方自称： 「Agentic Development Environment」 它把现代终端、编码 agent、Warp Drive 协作与云 agent / Factories 合成一个产品。","dateModified":"2026-10-08"}</script>
 </head>
 <!-- B6（2026-10-09）：--accent 原先在这里被**内联到 body 上**（style="--accent:X"），
      同时头部又写了 :root{--accent:X} —— 两处同一份值，冗余。
@@ -122,6 +122,16 @@
         <div class="warn-p"><p><strong>不适合</strong>完全不碰终端 agent、只要一个经典终端的用户。</p></div>
         <div><p>Free 档可以当现代终端用。 但云 agent、Warp Drive 协作与代码库索引都受限。</p></div></span><span data-en>        <div><p>Developers who run both shell commands and coding agent work in the terminal and want team collaboration plus cloud automation. Particularly good for: teams standardizing terminal workflows as Warp Drive Workflows / Notebooks; teams delegating background work such as issue triage or PR review to cloud agents; enterprises that need SSO, data governance or self-hosted cloud agents.</p></div>
         <div class="warn-p"><p><strong>Not a fit for</strong> people who avoid terminal agents entirely and just want a classic terminal — the Free tier works as a modern terminal, but cloud agents, Warp Drive collaboration and codebase indexing are all capped.</p></div></span>
+      </div>
+
+            <div class="panel">
+        <h2><span data-zh>中文生态</span><span data-en>China availability</span> <span class="panel-note"><span data-zh>国产 / 国内可直接用 / 备案状态 · 快照</span><span data-en>domestic / direct access / CAC filing · snapshot</span> 2026-10-20</span></h2>
+        <dl class="cn-rows">
+          <dt><span data-zh>出品属地</span><span data-en>Origin</span></dt><dd><span data-zh>国外出品</span><span data-en>foreign-made</span>　<span data-zh>国外主体（网信办公示名单未见对应备案主体）。</span><span data-en>foreign entity (no matching filing entity in the CAC registry).</span></dd>
+          <dt><span data-zh>国内使用</span><span data-en>Direct access</span></dt><dd><span data-zh>大陆可直连</span><span data-en>direct OK</span>　<span data-zh>官网直连实测 200。</span><span data-en>official site measured 200 direct.</span></dd>
+          <dt><span data-zh>备案状态</span><span data-en>CAC filing</span></dt><dd><span data-zh>未见于备案名单</span><span data-en>not in filing list</span>：<span data-zh>未见于网信办公示名单（2026-10-20 检索 13 批附件，https://www.cac.gov.cn/2024-04/02/c_1713729983803145.htm）；该产品未面向大陆公众提供服务，备案不适用。</span><span data-en>not in the CAC public registry (13 batch attachments searched 2026-10-20, https://www.cac.gov.cn/2024-04/02/c_1713729983803145.htm); the product does not serve the mainland public, so filing does not apply.</span></dd>
+        </dl>
+        <p class="cn-foot"><span data-zh>备案信息以网信办《生成式人工智能服务已备案信息》公示名单为准（按批次滚动更新，本站只抄编号不解读）；「大陆可直连」是本站从大陆网络直连实测的结果，不是厂商承诺。GitHub 类站点当日实测有波动，口径写在依据里。</span><span data-en>Filing status is quoted from the CAC public registry (updated batch by batch; this site copies the number and does not interpret it). "Direct access" is this site's own reachability measurement from a mainland network, not a vendor promise. GitHub-hosted sites fluctuated on the measurement day — the note says so.</span></p>
       </div>
 
 
@@ -257,34 +267,12 @@
 
 
             <div class="panel is-slim">
-        <h2><span data-zh>价格</span><span data-en>Pricing</span></h2>
-        <table class="src">
-          <tbody>
-            <tr><th class="w-28"><span data-zh>月度入口</span><span data-en>Monthly entry</span></th><td><span data-zh><p>Free $0 / Build $20 / Max $200 每月（Business $50/席·月；Enterprise 定制）</p></span><span data-en><p>Free $0 / Build $20 / Max $200 每月（Business $50/席·月；Enterprise 定制）</p></span></td></tr>
-            <tr><th class="w-28"><span data-zh>月度数值</span><span data-en>Monthly price</span></th><td>20</td></tr>
-            <tr><th class="w-28"><span data-zh>年付</span><span data-en>Annual</span></th><td><span data-zh><p>年付 9 折（官方切换后 Build $18、Max $180、Business $45/席·月），无统一折算说明</p></span><span data-en><p>年付 9 折（官方切换后 Build $18、Max $180、Business $45/席·月），无统一折算说明</p></span></td></tr>
-            <tr><th class="w-28"><span data-zh>额度说明</span><span data-en>Quota note</span></th><td><span data-zh><p><strong>2026-10-08 按 warp.dev/pricing 逐档核实（美元口径）。</strong> 五档是这么分的：</p>
-            <ul><li>Free $0（现代终端 + Warp Agent CLI 访问 + 自带推理，但云 agent 与 Warp Drive 访问受限）</li><li>Build 起 $20/月（含 1,500 credits = $20 的 API 价额度，并用最高代码库索引上限）</li><li>Max 起 $200/月（18,000 credits，约 12× Build）</li><li>Business $50/席·月（最多 25 席，含 SAML SSO 与团队用量指标）</li><li>Enterprise 定制（不限席位、自托管云 agent、BYOLLM、自定义索引、企业数据治理）</li></ul>
-            <p>（上面各档括号里的内容是官方页面的档位描述。）</p>
-            <p><strong>额度是 credit 制。</strong> 含额用尽后按 API 价「pay as you go」加购。 官方页面同时给出 Annual 切换价：Build $18、Max $180、Business $45。</p>
-            <p><strong>另有一套 Warp Factories（Early Access）定价。</strong> pay-as-you-go 档按 API 价加 20%。 Build / Max 档用套餐内含 credits 抵扣。</p></span><span data-en><p><strong>2026-10-08 按 warp.dev/pricing 逐档核实（美元口径）。</strong> 五档是这么分的：</p>
-            <ul><li>Free $0（现代终端 + Warp Agent CLI 访问 + 自带推理，但云 agent 与 Warp Drive 访问受限）</li><li>Build 起 $20/月（含 1,500 credits = $20 的 API 价额度，并用最高代码库索引上限）</li><li>Max 起 $200/月（18,000 credits，约 12× Build）</li><li>Business $50/席·月（最多 25 席，含 SAML SSO 与团队用量指标）</li><li>Enterprise 定制（不限席位、自托管云 agent、BYOLLM、自定义索引、企业数据治理）</li></ul>
-            <p>（上面各档括号里的内容是官方页面的档位描述。）</p>
-            <p><strong>额度是 credit 制。</strong> 含额用尽后按 API 价「pay as you go」加购。 官方页面同时给出 Annual 切换价：Build $18、Max $180、Business $45。</p>
-            <p><strong>另有一套 Warp Factories（Early Access）定价。</strong> pay-as-you-go 档按 API 价加 20%。 Build / Max 档用套餐内含 credits 抵扣。</p></span></td></tr>
-          </tbody>
-        </table>
-        <p class="fine mt-3"><span data-zh>不同币种不做折算。优惠、地区、税费与登录后报价可能变化，购买前请到官方页面确认。</span><span data-en>No currency conversion. Discounts, regions, tax and post-login pricing can change — confirm on the official page before buying.</span></p>
-      </div>
-
-
-            <div class="panel is-slim">
         <h2><span data-zh>未知项清单</span><span data-en>Known unknowns</span></h2>
         <ul>
           <li>上下文压缩策略与跨项目记忆边界（官方未说明，已查 agents/cli 与 warp-drive 两页）</li>
           <li>代码库索引的算法与首次建索引耗时（官方未说明，已查 pricing 与 agents/cli）</li>
           <li>Warp Factories 的普遍可用时间与最终计费口径（官方标注 Early Access）</li>
-          <li>Enterprise 的具体价格（官方页只写「Contact Sales」）</li>
+          <li>Enterprise 的档位内容（官方页只写「Contact Sales」）</li>
         </ul>
       </div>
 
@@ -295,7 +283,7 @@
         <table class="src">
           <thead><tr><th class="w-20"><span data-zh>类型</span><span data-en>Type</span></th><th class="w-52"><span data-zh>名称</span><span data-en>Name</span></th><th><span data-zh>链接</span><span data-en>Link</span></th></tr></thead>
           <tbody>
-            <tr><td>pricing</td><td>Warp · 官方定价页（Free / Build $20 / Max $200 / Business $50 / Enterprise；2026-10-08 核验）</td><td><a href="https://www.warp.dev/pricing" target="_blank" rel="noopener">https://www.warp.dev/pricing</a></td></tr>
+            <tr><td>pricing</td><td>Warp · 官方定价页（Free / Build / Max / Business / Enterprise 五档结构与 credit 说明；2026-10-08 核验）</td><td><a href="https://www.warp.dev/pricing" target="_blank" rel="noopener">https://www.warp.dev/pricing</a></td></tr>
             <tr><td>docs</td><td>Warp · 官方文档 · Getting started（Agentic Development Environment 定位、三种入口）</td><td><a href="https://docs.warp.dev/" target="_blank" rel="noopener">https://docs.warp.dev/</a></td></tr>
             <tr><td>docs</td><td>Warp · 官方文档 · Warp Agent CLI overview（独立终端程序、PTY、SSH、模型与 BYOK）</td><td><a href="https://docs.warp.dev/agents/cli" target="_blank" rel="noopener">https://docs.warp.dev/agents/cli</a></td></tr>
             <tr><td>docs</td><td>Warp · 官方文档 · 权限与执行 profile（三档值、auto-approve、命令名单）</td><td><a href="https://docs.warp.dev/agents/cli/permissions-and-profiles/" target="_blank" rel="noopener">https://docs.warp.dev/agents/cli/permissions-and-profiles/</a></td></tr>
@@ -352,7 +340,7 @@
       <div class="panel is-slim">
         <h2>核验说明</h2>
         <p><code>confidence: partial</code> 的原因有两条。</p>
-            <ul><li>✅ 已核验：五档定价与 credit 制、三种入口与开源客户端、 本地 / 云端两套 MCP 支持、执行 profile 三档值与 auto-approve 行为、 Warp Drive 对象类型、代码库索引与云 agent 的档位上限</li></ul>
+            <ul><li>✅ 已核验：五档档位结构与 credit 制、三种入口与开源客户端、 本地 / 云端两套 MCP 支持、执行 profile 三档值与 auto-approve 行为、 Warp Drive 对象类型、代码库索引与云 agent 的档位上限</li></ul>
             <ul><li>❌ 官方未说明：上下文压缩策略与跨项目记忆边界、索引算法与首次建索引耗时、 Warp Factories 的普遍可用时间与最终计费（见「未知项清单」）</li></ul>
             <p><strong>引用本条目时请只使用已核验部分。</strong></p>
       </div>

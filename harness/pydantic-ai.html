@@ -137,6 +137,16 @@
         <div><ul><li>TypeScript / Node 团队（看 <a href="./mastra.html">Mastra</a>）</li><li>追求最小依赖、不想引入 Pydantic 世界观</li><li>想完全避开任何商业组件（Logfire / Gateway 官方推荐但可选）</li><li>需要核心 SDK 自带进程级沙箱与网络策略</li></ul></div></span><span data-en>        <div><p><strong>A fit when:</strong> you are a Python team that wants type-safe structured output plus dependency injection for your agents; you need to turn an agent run <strong>durable</strong>, using an engine you already operate; you are doing multi-agent work (delegation / hand-off / graph); you want first-class MCP support and want MCP running <strong>locally</strong> so you keep control of credentials; you want a thin agent loop and also want the official ready-made Harness (Coder / Researcher / memory / guardrails). <strong>Not a fit when:</strong> you are on TypeScript / Node (see Mastra); you want the smallest possible dependency set and do not want to bring in Pydantic; you want to avoid every commercial component (Logfire and Gateway are official recommendations but <strong>optional</strong>); you need process-level sandboxing and network policy built into the framework — the sandbox lives in the Harness / Monty, not in the core SDK.</p></div></span>
       </div>
 
+            <div class="panel">
+        <h2><span data-zh>中文生态</span><span data-en>China availability</span> <span class="panel-note"><span data-zh>国产 / 国内可直接用 / 备案状态 · 快照</span><span data-en>domestic / direct access / CAC filing · snapshot</span> 2026-10-20</span></h2>
+        <dl class="cn-rows">
+          <dt><span data-zh>出品属地</span><span data-en>Origin</span></dt><dd><span data-zh>国外出品</span><span data-en>foreign-made</span>　<span data-zh>国外主体（网信办公示名单未见对应备案主体）。</span><span data-en>foreign entity (no matching filing entity in the CAC registry).</span></dd>
+          <dt><span data-zh>国内使用</span><span data-en>Direct access</span></dt><dd><span data-zh>大陆可直连</span><span data-en>direct OK</span>　<span data-zh>官网直连实测 200；PyPI 实测可达。</span><span data-en>official site measured 200 direct; PyPI measured reachable.</span></dd>
+          <dt><span data-zh>备案状态</span><span data-en>CAC filing</span></dt><dd><span data-zh>未见于备案名单</span><span data-en>not in filing list</span>：<span data-zh>未见于网信办公示名单（2026-10-20 检索 13 批附件，https://www.cac.gov.cn/2024-04/02/c_1713729983803145.htm）；该产品未面向大陆公众提供服务，备案不适用。</span><span data-en>not in the CAC public registry (13 batch attachments searched 2026-10-20, https://www.cac.gov.cn/2024-04/02/c_1713729983803145.htm); the product does not serve the mainland public, so filing does not apply.</span></dd>
+        </dl>
+        <p class="cn-foot"><span data-zh>备案信息以网信办《生成式人工智能服务已备案信息》公示名单为准（按批次滚动更新，本站只抄编号不解读）；「大陆可直连」是本站从大陆网络直连实测的结果，不是厂商承诺。GitHub 类站点当日实测有波动，口径写在依据里。</span><span data-en>Filing status is quoted from the CAC public registry (updated batch by batch; this site copies the number and does not interpret it). "Direct access" is this site's own reachability measurement from a mainland network, not a vendor promise. GitHub-hosted sites fluctuated on the measurement day — the note says so.</span></p>
+      </div>
+
 
       <div class="block-head">
         <h2 class="t-h2"><span data-zh>固定坐标系</span><span data-en>Fixed coordinate system</span></h2>
@@ -259,33 +269,12 @@
 
 
             <div class="panel is-slim">
-        <h2><span data-zh>价格</span><span data-en>Pricing</span></h2>
-        <table class="src">
-          <tbody>
-            <tr><th class="w-28"><span data-zh>月度入口</span><span data-en>Monthly entry</span></th><td><span data-zh><p>库本身 MIT 免费；Pydantic Logfire 观测平台 Free $0 / Pro 按量（核验 2026-10-08）</p></span><span data-en><p>库本身 MIT 免费；Pydantic Logfire 观测平台 Free $0 / Pro 按量（核验 2026-10-08）</p></span></td></tr>
-            <tr><th class="w-28"><span data-zh>年付</span><span data-en>Annual</span></th><td><span data-zh><p>未核验年付报价</p></span><span data-en><p>未核验年付报价</p></span></td></tr>
-            <tr><th class="w-28"><span data-zh>额度说明</span><span data-en>Quota note</span></th><td><span data-zh><p><strong>库永久 MIT 免费，商业价值在观测与网关两条线。</strong></p>
-            <p>核验依据：仓库 README（Logfire free tier 段）+ 官方定价页 pydantic.dev/pricing（核验 2026-10-08）。 定价页 FAQ 原文：&quot;The Pydantic Library is (always has been, always will be) <strong>completely free and permissively licensed under the MIT license</strong>. Prices displayed on this page apply to <strong>Pydantic Logfire, only</strong>.&quot;</p>
-            <p><strong>Logfire（观测）</strong>：官方定价页列 <strong>Free $0</strong>（每月 1,000 万 spans/metrics 免费、 1 个月数据保留、无需信用卡）、<strong>Pro $2/百万</strong>（超出 1,000 万后按量）、<strong>Enterprise</strong>（定制、多组织/项目/席位）。</p>
-            <p><strong>Pydantic AI Gateway</strong>：官方称 &quot;one key for every model, with cost monitoring and spending limits&quot;， 可自托管；其<strong>具体加价费率官方定价页未单列</strong>（README 只说带成本监控与预算控制）。</p>
-            <p><strong>框架免费 ≠ 运行免费</strong>：默认需自备各 provider 的 API key，推理费用自理； 官方提供内置 <code>&#39;test&#39;</code> 模型（TestModel），无 key 也能先跑通流程。</p></span><span data-en><p><strong>库永久 MIT 免费，商业价值在观测与网关两条线。</strong></p>
-            <p>核验依据：仓库 README（Logfire free tier 段）+ 官方定价页 pydantic.dev/pricing（核验 2026-10-08）。 定价页 FAQ 原文：&quot;The Pydantic Library is (always has been, always will be) <strong>completely free and permissively licensed under the MIT license</strong>. Prices displayed on this page apply to <strong>Pydantic Logfire, only</strong>.&quot;</p>
-            <p><strong>Logfire（观测）</strong>：官方定价页列 <strong>Free $0</strong>（每月 1,000 万 spans/metrics 免费、 1 个月数据保留、无需信用卡）、<strong>Pro $2/百万</strong>（超出 1,000 万后按量）、<strong>Enterprise</strong>（定制、多组织/项目/席位）。</p>
-            <p><strong>Pydantic AI Gateway</strong>：官方称 &quot;one key for every model, with cost monitoring and spending limits&quot;， 可自托管；其<strong>具体加价费率官方定价页未单列</strong>（README 只说带成本监控与预算控制）。</p>
-            <p><strong>框架免费 ≠ 运行免费</strong>：默认需自备各 provider 的 API key，推理费用自理； 官方提供内置 <code>&#39;test&#39;</code> 模型（TestModel），无 key 也能先跑通流程。</p></span></td></tr>
-          </tbody>
-        </table>
-        <p class="fine mt-3"><span data-zh>不同币种不做折算。优惠、地区、税费与登录后报价可能变化，购买前请到官方页面确认。</span><span data-en>No currency conversion. Discounts, regions, tax and post-login pricing can change — confirm on the official page before buying.</span></p>
-      </div>
-
-
-            <div class="panel is-slim">
         <h2><span data-zh>未知项清单</span><span data-en>Known unknowns</span></h2>
         <ul>
           <li>核心 SDK 不经 Harness 时的文件访问默认边界（官方未说明，已查 overview 与 harness 页）</li>
           <li>核心 SDK 是否有进程/网络级沙箱与内置权限边界（官方未说明，沙箱在 Harness / Monty）</li>
           <li>Harness compaction 的默认裁剪策略与阈值（官方未说明）</li>
-          <li>Pydantic AI Gateway 的加价费率与计费细节（官方定价页未单列）</li>
+          <li>Pydantic AI Gateway 的计费细节（官方定价页未单列；费率按 D9 口径本站不采）</li>
           <li>八种 durable 引擎之间的功能对齐度（官方未说明）</li>
           <li>不同 provider 之间行为完全等价性（官方已声明「取决于所选模型与 API」）</li>
           <li>A2A 移除后官方在 2.0 的替代路线（官方指向 datalayer/fasta2a）</li>
@@ -309,7 +298,7 @@
             <tr><td>docs</td><td>官方文档 · Dependencies（类型安全依赖注入、RunContext、可覆盖以便测试）</td><td><a href="https://pydantic.dev/docs/ai/core-concepts/dependencies/" target="_blank" rel="noopener">https://pydantic.dev/docs/ai/core-concepts/dependencies/</a></td></tr>
             <tr><td>docs</td><td>官方文档 · Multi-agent Applications（五个复杂度层级：单 agent、delegation、hand-off、graph、Deep Agents）</td><td><a href="https://pydantic.dev/docs/ai/guides/multi-agent-applications/" target="_blank" rel="noopener">https://pydantic.dev/docs/ai/guides/multi-agent-applications/</a></td></tr>
             <tr><td>docs</td><td>官方文档 · Agent2Agent (A2A)（to_a2a 1.x 弃用、2.0 移除；fasta2a 迁至 datalayer/fasta2a）</td><td><a href="https://pydantic.dev/docs/ai/integrations/a2a/" target="_blank" rel="noopener">https://pydantic.dev/docs/ai/integrations/a2a/</a></td></tr>
-            <tr><td>pricing</td><td>官方定价页（核验 2026-10-08：Pydantic 库永久 MIT 免费；Logfire Free $0 含 1,000 万 spans/月，Pro $2/百万）</td><td><a href="https://pydantic.dev/pricing/" target="_blank" rel="noopener">https://pydantic.dev/pricing/</a></td></tr>
+            <tr><td>pricing</td><td>官方定价页（核验 2026-10-08：Pydantic 库永久 MIT 免费；Logfire 免费档含 1,000 万 spans/月、另有 Pro 档；报价按 D9 口径不存）</td><td><a href="https://pydantic.dev/pricing/" target="_blank" rel="noopener">https://pydantic.dev/pricing/</a></td></tr>
             <tr><td>changelog</td><td>Releases（v2.54.0 @ 2026-10-02）</td><td><a href="https://github.com/pydantic/pydantic-ai/releases" target="_blank" rel="noopener">https://github.com/pydantic/pydantic-ai/releases</a></td></tr>
           </tbody>
         </table>

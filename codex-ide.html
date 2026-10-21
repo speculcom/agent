@@ -121,6 +121,16 @@
         <div><p>Also note: local tasks depend on the editor process staying alive, so &quot;keep running after shutdown&quot; requires cloud delegation (Codex Cloud).</p></div></span>
       </div>
 
+            <div class="panel">
+        <h2><span data-zh>中文生态</span><span data-en>China availability</span> <span class="panel-note"><span data-zh>国产 / 国内可直接用 / 备案状态 · 快照</span><span data-en>domestic / direct access / CAC filing · snapshot</span> 2026-10-20</span></h2>
+        <dl class="cn-rows">
+          <dt><span data-zh>出品属地</span><span data-en>Origin</span></dt><dd><span data-zh>国外出品</span><span data-en>foreign-made</span>　<span data-zh>国外主体（网信办公示名单未见对应备案主体）。</span><span data-en>foreign entity (no matching filing entity in the CAC registry).</span></dd>
+          <dt><span data-zh>国内使用</span><span data-en>Direct access</span></dt><dd><span data-zh>直连不可达</span><span data-en>direct blocked</span>　<span data-zh>developers.openai.com 大陆直连被拦（403），走代理 200——拦截发生在网络层，不是反爬。</span><span data-en>developers.openai.com returns 403 direct from mainland but 200 via proxy — the block is at the network layer, not anti-bot.</span></dd>
+          <dt><span data-zh>备案状态</span><span data-en>CAC filing</span></dt><dd><span data-zh>未见于备案名单</span><span data-en>not in filing list</span>：<span data-zh>未见于网信办公示名单（2026-10-20 检索 13 批附件，https://www.cac.gov.cn/2024-04/02/c_1713729983803145.htm）；该产品未面向大陆公众提供服务，备案不适用。</span><span data-en>not in the CAC public registry (13 batch attachments searched 2026-10-20, https://www.cac.gov.cn/2024-04/02/c_1713729983803145.htm); the product does not serve the mainland public, so filing does not apply.</span></dd>
+        </dl>
+        <p class="cn-foot"><span data-zh>备案信息以网信办《生成式人工智能服务已备案信息》公示名单为准（按批次滚动更新，本站只抄编号不解读）；「大陆可直连」是本站从大陆网络直连实测的结果，不是厂商承诺。GitHub 类站点当日实测有波动，口径写在依据里。</span><span data-en>Filing status is quoted from the CAC public registry (updated batch by batch; this site copies the number and does not interpret it). "Direct access" is this site's own reachability measurement from a mainland network, not a vendor promise. GitHub-hosted sites fluctuated on the measurement day — the note says so.</span></p>
+      </div>
+
 
       <div class="block-head">
         <h2 class="t-h2"><span data-zh>固定坐标系</span><span data-en>Fixed coordinate system</span></h2>
@@ -206,19 +216,6 @@
           <li><span data-zh>以为 IDE 扩展与 CLI 是两套独立系统，app server 架构让它们共享会话</span><span data-en>Assuming the IDE extension and the CLI are two separate systems — the app server architecture lets them share sessions</span></li>
           <li><span data-zh>以为 IDE 扩展的权限体系与 CLI 不同——两者共用 config.toml，沙箱与审批一致</span><span data-en>Assuming the IDE extension has its own permission model — both share config.toml, and the sandbox and approvals are the same</span></li>
         </ul>
-      </div>
-
-
-            <div class="panel is-slim">
-        <h2><span data-zh>价格</span><span data-en>Pricing</span></h2>
-        <table class="src">
-          <tbody>
-            <tr><th class="w-28"><span data-zh>月度入口</span><span data-en>Monthly entry</span></th><td><span data-zh><p>随 ChatGPT 套餐，档位见定价页</p></span><span data-en><p>随 ChatGPT 套餐，档位见定价页</p></span></td></tr>
-            <tr><th class="w-28"><span data-zh>年付</span><span data-en>Annual</span></th><td><span data-zh><p>未收录年付报价</p></span><span data-en><p>未收录年付报价</p></span></td></tr>
-            <tr><th class="w-28"><span data-zh>额度说明</span><span data-en>Quota note</span></th><td><span data-zh><p>与 <a href="./codex-cli.html">CLI 形态</a> 共享同一授权：随 ChatGPT 订阅。 <strong>API 计费与订阅不是同一额度。</strong> 取证：官方 IDE 文档站对 curl 返回 403（2026-10-08 改用 WebFetch 取到定价页，模型档位已核）； 额度细则未逐档录入，以官方定价页为准。</p></span><span data-en><p>与 <a href="./codex-cli.html">CLI 形态</a> 共享同一授权：随 ChatGPT 订阅。 <strong>API 计费与订阅不是同一额度。</strong> 取证：官方 IDE 文档站对 curl 返回 403（2026-10-08 改用 WebFetch 取到定价页，模型档位已核）； 额度细则未逐档录入，以官方定价页为准。</p></span></td></tr>
-          </tbody>
-        </table>
-        <p class="fine mt-3"><span data-zh>不同币种不做折算。优惠、地区、税费与登录后报价可能变化，购买前请到官方页面确认。</span><span data-en>No currency conversion. Discounts, regions, tax and post-login pricing can change — confirm on the official page before buying.</span></p>
       </div>
 
 

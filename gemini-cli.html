@@ -15,7 +15,7 @@
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%238b7cf8'/%3E%3Cstop offset='1' stop-color='%2322d3c5'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='48' height='48' rx='12' fill='%2305080f'/%3E%3Cpath d='M14 32 L24 12 L34 32' fill='none' stroke='url(%23g)' stroke-width='2.4' stroke-linejoin='round'/%3E%3Ccircle cx='24' cy='27' r='2.4' fill='%2322d3c5'/%3E%3C/svg%3E" />
   <link rel="stylesheet" href="brand.css" />
   <link rel="stylesheet" href="site.css" />
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Gemini CLI","applicationCategory":"DeveloperApplication","url":"https://github.com/google-gemini/gemini-cli","sameAs":"https://github.com/google-gemini/gemini-cli","description":"Google 官方的开源终端 agent，npx 免安装启动。 明确支持 MCP，另有非交互脚本模式。","dateModified":"2026-09-29","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Gemini CLI","applicationCategory":"DeveloperApplication","url":"https://github.com/google-gemini/gemini-cli","sameAs":"https://github.com/google-gemini/gemini-cli","description":"Google 官方的开源终端 agent，npx 免安装启动。 明确支持 MCP，另有非交互脚本模式。","dateModified":"2026-09-29"}</script>
 </head>
 <!-- B6（2026-10-09）：--accent 原先在这里被**内联到 body 上**（style="--accent:X"），
      同时头部又写了 :root{--accent:X} —— 两处同一份值，冗余。
@@ -123,6 +123,16 @@
         <div class="warn-p"><p><strong>Not a fit for</strong> treating quota as unlimited. The free tier has clear daily limits: 6,000 code requests + 240 chats/day. And CLI and agent-mode quota are counted together.</p></div></span>
       </div>
 
+            <div class="panel">
+        <h2><span data-zh>中文生态</span><span data-en>China availability</span> <span class="panel-note"><span data-zh>国产 / 国内可直接用 / 备案状态 · 快照</span><span data-en>domestic / direct access / CAC filing · snapshot</span> 2026-10-20</span></h2>
+        <dl class="cn-rows">
+          <dt><span data-zh>出品属地</span><span data-en>Origin</span></dt><dd><span data-zh>国外出品</span><span data-en>foreign-made</span>　<span data-zh>国外主体（网信办公示名单未见对应备案主体）。</span><span data-en>foreign entity (no matching filing entity in the CAC registry).</span></dd>
+          <dt><span data-zh>国内使用</span><span data-en>Direct access</span></dt><dd><span data-zh>大陆可直连</span><span data-en>direct OK</span>　<span data-zh>官网仓库在 GitHub，大陆直连波动（同日实测 200/000 混合）；npm / PyPI 安装源实测稳定可达。</span><span data-en>Hosted on GitHub — direct reachability from mainland fluctuates (200/000 mixed on the same day); npm / PyPI install routes measured stable.</span></dd>
+          <dt><span data-zh>备案状态</span><span data-en>CAC filing</span></dt><dd><span data-zh>未见于备案名单</span><span data-en>not in filing list</span>：<span data-zh>未见于网信办公示名单（2026-10-20 检索 13 批附件，https://www.cac.gov.cn/2024-04/02/c_1713729983803145.htm）；该产品未面向大陆公众提供服务，备案不适用。</span><span data-en>not in the CAC public registry (13 batch attachments searched 2026-10-20, https://www.cac.gov.cn/2024-04/02/c_1713729983803145.htm); the product does not serve the mainland public, so filing does not apply.</span></dd>
+        </dl>
+        <p class="cn-foot"><span data-zh>备案信息以网信办《生成式人工智能服务已备案信息》公示名单为准（按批次滚动更新，本站只抄编号不解读）；「大陆可直连」是本站从大陆网络直连实测的结果，不是厂商承诺。GitHub 类站点当日实测有波动，口径写在依据里。</span><span data-en>Filing status is quoted from the CAC public registry (updated batch by batch; this site copies the number and does not interpret it). "Direct access" is this site's own reachability measurement from a mainland network, not a vendor promise. GitHub-hosted sites fluctuated on the measurement day — the note says so.</span></p>
+      </div>
+
 
       <div class="block-head">
         <h2 class="t-h2"><span data-zh>固定坐标系</span><span data-en>Fixed coordinate system</span></h2>
@@ -171,7 +181,7 @@
             <p>输出可选 JSON 或 stream-json，供 CI 与自动化调用。</p>
             <p><strong>执行环境归你</strong>：官方未提供厂商托管的常驻执行环境。 仓库里的 GitHub Action 也跑在你仓库的 CI runner 上。</p>
             <p><strong>中断可恢复</strong>：checkpointing 与 <code>/chat save</code> / <code>/resume</code> 可以保存和恢复会话。 开关是 <code>general.checkpointing.enabled</code>。 <code>general.sessionRetention</code> 默认保留 30 天。 超期自动清理。</p>
-            <p><strong>额度</strong>就是 pricing 轴里的每日请求上限。 官方未另设云端额度。</p></dd>
+            <p><strong>额度</strong>就是官方用量口径里的每日请求上限。 官方未另设云端额度。</p></dd>
         </div>
         <div class="axis">
           <dt><span data-zh>工具与扩展</span><span data-en>Tools & extensions</span></dt>
@@ -232,36 +242,6 @@
           <li><span data-zh>以为 npx 形态会污染本地环境，实际是免安装的临时运行</span><span data-en>Assuming the npx form pollutes your local environment — it runs temporarily with no install</span></li>
           <li><span data-zh>忽略 MCP 能力，README 明确把它列为可扩展特性</span><span data-en>Overlooking MCP support — the repository README lists it explicitly as an extensibility feature</span></li>
         </ul>
-      </div>
-
-
-            <div class="panel is-slim">
-        <h2><span data-zh>价格</span><span data-en>Pricing</span></h2>
-        <table class="src">
-          <tbody>
-            <tr><th class="w-28"><span data-zh>月度入口</span><span data-en>Monthly entry</span></th><td><span data-zh><p>个人层免费（无需信用卡），Code Assist 个人版 6,000 代码请求/日 + 240 对话/日</p></span><span data-en><p>个人层免费（无需信用卡），Code Assist 个人版 6,000 代码请求/日 + 240 对话/日</p></span></td></tr>
-            <tr><th class="w-28"><span data-zh>月度数值</span><span data-en>Monthly price</span></th><td>0</td></tr>
-            <tr><th class="w-28"><span data-zh>年付</span><span data-en>Annual</span></th><td><span data-zh><p>个人层无年付（免费）；Google Developer Program Premium 为 $299/年</p></span><span data-en><p>个人层无年付（免费）；Google Developer Program Premium 为 $299/年</p></span></td></tr>
-            <tr><th class="w-28"><span data-zh>额度说明</span><span data-en>Quota note</span></th><td><span data-zh><p><strong>免费层有硬额度，而且 CLI 与代理模式共用一份。</strong></p>
-            <p>免费层「Gemini Code Assist for individuals」<strong>无需信用卡</strong>，额度是：</p>
-            <ul><li><strong>每天 6,000 次代码相关请求</strong>（代码生成与补全）</li><li><strong>每天 240 次对话请求</strong></li><li>每用户<strong>每秒 2 次请求</strong></li></ul>
-            <p>最关键的一条机制，直接影响选型：</p>
-            <p><strong>CLI 与代理模式的额度合并计算，跨模型不分开算。</strong> 官方原文「Quotas for requests from Gemini Code Assist agent mode and Gemini CLI are combined」，且「一个提示可能产生多个模型请求」。 额度按<strong>与任意模型版本或系列（Pro、Flash）的全部互动次数累计</strong>。 达到上限后须等配额重置才能继续。</p>
-            <p>付费层与其它路径：</p>
-            <ul><li>Gemini Code Assist Standard <strong>1,500 请求/用户/日</strong></li><li>Enterprise <strong>2,000 请求/用户/日</strong></li><li>云端版另给 960 次/日的 Cloud Assist 面板请求</li><li>个体开发者可订阅 Google AI Pro / AI Ultra / Developer Program premium 以提高上限</li></ul>
-            <p>Gemini CLI on GitHub 的用量<strong>不计入常规额度</strong> —— 它走独立配额，PR 审查每天至少 100 次。</p>
-            <p>Apache-2.0 开源，支持 npx 直接运行无需安装。 额度内容于 <strong>2026-10-01 按官方 quotas 文档核实</strong>（此前记为未知）。</p></span><span data-en><p><strong>免费层有硬额度，而且 CLI 与代理模式共用一份。</strong></p>
-            <p>免费层「Gemini Code Assist for individuals」<strong>无需信用卡</strong>，额度是：</p>
-            <ul><li><strong>每天 6,000 次代码相关请求</strong>（代码生成与补全）</li><li><strong>每天 240 次对话请求</strong></li><li>每用户<strong>每秒 2 次请求</strong></li></ul>
-            <p>最关键的一条机制，直接影响选型：</p>
-            <p><strong>CLI 与代理模式的额度合并计算，跨模型不分开算。</strong> 官方原文「Quotas for requests from Gemini Code Assist agent mode and Gemini CLI are combined」，且「一个提示可能产生多个模型请求」。 额度按<strong>与任意模型版本或系列（Pro、Flash）的全部互动次数累计</strong>。 达到上限后须等配额重置才能继续。</p>
-            <p>付费层与其它路径：</p>
-            <ul><li>Gemini Code Assist Standard <strong>1,500 请求/用户/日</strong></li><li>Enterprise <strong>2,000 请求/用户/日</strong></li><li>云端版另给 960 次/日的 Cloud Assist 面板请求</li><li>个体开发者可订阅 Google AI Pro / AI Ultra / Developer Program premium 以提高上限</li></ul>
-            <p>Gemini CLI on GitHub 的用量<strong>不计入常规额度</strong> —— 它走独立配额，PR 审查每天至少 100 次。</p>
-            <p>Apache-2.0 开源，支持 npx 直接运行无需安装。 额度内容于 <strong>2026-10-01 按官方 quotas 文档核实</strong>（此前记为未知）。</p></span></td></tr>
-          </tbody>
-        </table>
-        <p class="fine mt-3"><span data-zh>不同币种不做折算。优惠、地区、税费与登录后报价可能变化，购买前请到官方页面确认。</span><span data-en>No currency conversion. Discounts, regions, tax and post-login pricing can change — confirm on the official page before buying.</span></p>
       </div>
 
 

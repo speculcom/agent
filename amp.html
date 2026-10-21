@@ -15,7 +15,7 @@
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%238b7cf8'/%3E%3Cstop offset='1' stop-color='%2322d3c5'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='48' height='48' rx='12' fill='%2305080f'/%3E%3Cpath d='M14 32 L24 12 L34 32' fill='none' stroke='url(%23g)' stroke-width='2.4' stroke-linejoin='round'/%3E%3Ccircle cx='24' cy='27' r='2.4' fill='%2322d3c5'/%3E%3C/svg%3E" />
   <link rel="stylesheet" href="brand.css" />
   <link rel="stylesheet" href="site.css" />
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Amp","applicationCategory":"DeveloperApplication","url":"https://ampcode.com/","sameAs":"https://ampcode.com","description":"Amp 是 Sourcegraph 出的前沿编码 agent，CLI + 云端 orb + runner 三执行面。 发一句提示就能合上笔记本继续跑。 它多模型前沿路由，Oracle 提供「第二意见」模型。","dateModified":"2026-10-08","offers":{"@type":"Offer","price":"20","priceCurrency":"USD"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Amp","applicationCategory":"DeveloperApplication","url":"https://ampcode.com/","sameAs":"https://ampcode.com","description":"Amp 是 Sourcegraph 出的前沿编码 agent，CLI + 云端 orb + runner 三执行面。 发一句提示就能合上笔记本继续跑。 它多模型前沿路由，Oracle 提供「第二意见」模型。","dateModified":"2026-10-08"}</script>
 </head>
 <!-- B6（2026-10-09）：--accent 原先在这里被**内联到 body 上**（style="--accent:X"），
      同时头部又写了 :root{--accent:X} —— 两处同一份值，冗余。
@@ -124,6 +124,16 @@
         <div class="warn-p"><p><strong>Not a fit for</strong> anyone who assumes tools are gated by approval — officially, &quot;By default, Amp does not ask for approval before running tools&quot;. Approval takes a custom policy plugin that you write yourself.</p></div></span>
       </div>
 
+            <div class="panel">
+        <h2><span data-zh>中文生态</span><span data-en>China availability</span> <span class="panel-note"><span data-zh>国产 / 国内可直接用 / 备案状态 · 快照</span><span data-en>domestic / direct access / CAC filing · snapshot</span> 2026-10-20</span></h2>
+        <dl class="cn-rows">
+          <dt><span data-zh>出品属地</span><span data-en>Origin</span></dt><dd><span data-zh>国外出品</span><span data-en>foreign-made</span>　<span data-zh>国外主体（网信办公示名单未见对应备案主体）。</span><span data-en>foreign entity (no matching filing entity in the CAC registry).</span></dd>
+          <dt><span data-zh>国内使用</span><span data-en>Direct access</span></dt><dd><span data-zh>大陆可直连</span><span data-en>direct OK</span>　<span data-zh>官网直连实测 200。</span><span data-en>official site measured 200 direct.</span></dd>
+          <dt><span data-zh>备案状态</span><span data-en>CAC filing</span></dt><dd><span data-zh>未见于备案名单</span><span data-en>not in filing list</span>：<span data-zh>未见于网信办公示名单（2026-10-20 检索 13 批附件，https://www.cac.gov.cn/2024-04/02/c_1713729983803145.htm）；该产品未面向大陆公众提供服务，备案不适用。</span><span data-en>not in the CAC public registry (13 batch attachments searched 2026-10-20, https://www.cac.gov.cn/2024-04/02/c_1713729983803145.htm); the product does not serve the mainland public, so filing does not apply.</span></dd>
+        </dl>
+        <p class="cn-foot"><span data-zh>备案信息以网信办《生成式人工智能服务已备案信息》公示名单为准（按批次滚动更新，本站只抄编号不解读）；「大陆可直连」是本站从大陆网络直连实测的结果，不是厂商承诺。GitHub 类站点当日实测有波动，口径写在依据里。</span><span data-en>Filing status is quoted from the CAC public registry (updated batch by batch; this site copies the number and does not interpret it). "Direct access" is this site's own reachability measurement from a mainland network, not a vendor promise. GitHub-hosted sites fluctuated on the measurement day — the note says so.</span></p>
+      </div>
+
 
       <div class="block-head">
         <h2 class="t-h2"><span data-zh>固定坐标系</span><span data-en>Fixed coordinate system</span></h2>
@@ -223,45 +233,15 @@
 
           <li><span data-zh>以为默认会在执行工具前请求批准——官方明确默认不审批</span><span data-en>Assuming tools run only after approval — officially, Amp does not ask for approval before running tools.</span></li>
           <li><span data-zh>以为有独立 VS Code 扩展——实际靠 CLI + ide connect 接入（VS Code/Cursor/Windsurf/Zed/Neovim）</span><span data-en>Expecting a standalone VS Code extension — integration is via the CLI and <code>ide connect</code> (VS Code / Cursor / Windsurf / Zed / Neovim).</span></li>
-          <li><span data-zh>把 $20/mo 当成全部开销——orbs 按分钟、超量按 credits 另计</span><span data-en>Treating $20/mo as the whole cost — orbs are billed by the minute and overage is charged against credits.</span></li>
+          <li><span data-zh>把订阅当成全部开销——orbs 按分钟、超量按 credits 另计</span><span data-en>Treating $20/mo as the whole cost — orbs are billed by the minute and overage is charged against credits.</span></li>
         </ul>
-      </div>
-
-
-            <div class="panel is-slim">
-        <h2><span data-zh>价格</span><span data-en>Pricing</span></h2>
-        <table class="src">
-          <tbody>
-            <tr><th class="w-28"><span data-zh>月度入口</span><span data-en>Monthly entry</span></th><td><span data-zh><p>Hobby 免费 / Individual $20 每月（Megawatt、Gigawatt 两级）/ Teams 不加价 / Enterprise 定制</p></span><span data-en><p>Hobby 免费 / Individual $20 每月（Megawatt、Gigawatt 两级）/ Teams 不加价 / Enterprise 定制</p></span></td></tr>
-            <tr><th class="w-28"><span data-zh>月度数值</span><span data-en>Monthly price</span></th><td>20</td></tr>
-            <tr><th class="w-28"><span data-zh>年付</span><span data-en>Annual</span></th><td><span data-zh><p>未核验年付报价</p></span><span data-en><p>未核验年付报价</p></span></td></tr>
-            <tr><th class="w-28"><span data-zh>额度说明</span><span data-en>Quota note</span></th><td><span data-zh><p><strong>定价按官方定价页核实（ampcode.com/pricing 与 ampcode.com/docs/pricing，2026-10-08）</strong>：Hobby 免费。</p>
-            <p>Individual <strong>$20/mo</strong>。官方页以 Megawatt / Gigawatt 两级切换呈现。</p>
-            <p>官方另称 Megawatt 平均 60% 折扣、Gigawatt 平均 65% 折扣。</p>
-            <p>Teams「No extra charge」；Enterprise 定制。</p>
-            <p>官方原文「Start free. Scale your orbs and team.」</p>
-            <p><strong>真正按量计费的是用法。</strong> Amp 对 provider 的 API 价不加价。</p>
-            <p>超量可购 paid credits（购买后 12 个月过期）。non-model 工具（如 web search）也消耗 credits。</p>
-            <p><strong>orbs 按分钟计费、独立额度。</strong> 暂停中的 orb 不计费。</p>
-            <p>官方另说明：用自带 Key / 订阅时<strong>无 Amp token 费用或上限</strong>。</p></span><span data-en><p><strong>定价按官方定价页核实（ampcode.com/pricing 与 ampcode.com/docs/pricing，2026-10-08）</strong>：Hobby 免费。</p>
-            <p>Individual <strong>$20/mo</strong>。官方页以 Megawatt / Gigawatt 两级切换呈现。</p>
-            <p>官方另称 Megawatt 平均 60% 折扣、Gigawatt 平均 65% 折扣。</p>
-            <p>Teams「No extra charge」；Enterprise 定制。</p>
-            <p>官方原文「Start free. Scale your orbs and team.」</p>
-            <p><strong>真正按量计费的是用法。</strong> Amp 对 provider 的 API 价不加价。</p>
-            <p>超量可购 paid credits（购买后 12 个月过期）。non-model 工具（如 web search）也消耗 credits。</p>
-            <p><strong>orbs 按分钟计费、独立额度。</strong> 暂停中的 orb 不计费。</p>
-            <p>官方另说明：用自带 Key / 订阅时<strong>无 Amp token 费用或上限</strong>。</p></span></td></tr>
-          </tbody>
-        </table>
-        <p class="fine mt-3"><span data-zh>不同币种不做折算。优惠、地区、税费与登录后报价可能变化，购买前请到官方页面确认。</span><span data-en>No currency conversion. Discounts, regions, tax and post-login pricing can change — confirm on the official page before buying.</span></p>
       </div>
 
 
             <div class="panel is-slim">
         <h2><span data-zh>未知项清单</span><span data-en>Known unknowns</span></h2>
         <ul>
-          <li>Individual 档 Megawatt 与 Gigawatt 的<strong>具体额度差</strong>：官方定价页以切换形式呈现，本页并列展示的是默认那一级的 $20/mo 与 45,000 分钟 orb 时长</li>
+          <li>Individual 档 Megawatt 与 Gigawatt 的<strong>具体额度差</strong>：官方定价页以切换形式呈现，未并列给出（orb 时长额度见官方页；报价按 D9 口径不存）</li>
           <li>官方定价页 FAQ 的<strong>问答正文</strong>：本页只抓到问题标题，具体答复内容未展开</li>
           <li>orb 的并发上限与单次最长时长：官方未说明（已查 docs/orbs 与定价页）</li>
           <li>自托管部署：官方安全参考称为空（明确不支持），未提供任何自托管路径</li>
@@ -276,7 +256,7 @@
           <thead><tr><th class="w-20"><span data-zh>类型</span><span data-en>Type</span></th><th class="w-52"><span data-zh>名称</span><span data-en>Name</span></th><th><span data-zh>链接</span><span data-en>Link</span></th></tr></thead>
           <tbody>
             <tr><td>docs</td><td>Amp · 官方首页（frontier agent / orbs，2026-10-08 取到）</td><td><a href="https://ampcode.com/" target="_blank" rel="noopener">https://ampcode.com/</a></td></tr>
-            <tr><td>pricing</td><td>Amp · 官方定价页（Hobby 免费 / Individual $20/mo / Teams / Enterprise）</td><td><a href="https://ampcode.com/pricing" target="_blank" rel="noopener">https://ampcode.com/pricing</a></td></tr>
+            <tr><td>pricing</td><td>Amp · 官方定价页（Hobby 免费 / Individual / Teams / Enterprise 四档；报价按 D9 口径不存）</td><td><a href="https://ampcode.com/pricing" target="_blank" rel="noopener">https://ampcode.com/pricing</a></td></tr>
             <tr><td>changelog</td><td>Amp · Chronicle（官方更新日志，含 2026-09-24、2026-08-25 等条目）</td><td><a href="https://ampcode.com/chronicle" target="_blank" rel="noopener">https://ampcode.com/chronicle</a></td></tr>
             <tr><td>docs</td><td>Amp · Owner&#39;s Manual（Agent Modes / AGENTS.md / Orbs / CLI / Pricing）</td><td><a href="https://ampcode.com/manual" target="_blank" rel="noopener">https://ampcode.com/manual</a></td></tr>
             <tr><td>docs</td><td>Amp Docs · CLI（安装、--executor、IDE 连接、Streaming JSON）</td><td><a href="https://ampcode.com/docs/cli" target="_blank" rel="noopener">https://ampcode.com/docs/cli</a></td></tr>

@@ -55,4 +55,10 @@
   <url><loc>https://agent.specul.com/tools/playwright.html</loc><priority>0.7</priority></url>
   <url><loc>https://agent.specul.com/tools/sequential-thinking.html</loc><priority>0.7</priority></url>
   <url><loc>https://agent.specul.com/tools/time.html</loc><priority>0.7</priority></url>
+  <url><loc>https://agent.specul.com/tools/guides/agent-memory.html</loc><priority>0.7</priority></url>
+  <url><loc>https://agent.specul.com/tools/guides/cost-control.html</loc><priority>0.7</priority></url>
+  <url><loc>https://agent.specul.com/tools/guides/evaluation.html</loc><priority>0.7</priority></url>
+  <url><loc>https://agent.specul.com/tools/guides/guardrails.html</loc><priority>0.7</priority></url>
+  <url><loc>https://agent.specul.com/tools/guides/orchestration.html</loc><priority>0.7</priority></url>
+  <url><loc>https://agent.specul.com/tools/guides/planning.html</loc><priority>0.7</priority></url>
 </urlset>

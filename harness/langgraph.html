@@ -132,6 +132,16 @@
         <div class="warn-p"><p><strong>不适合</strong>：需要内建沙箱或文件级权限边界（官方未提供此类机制，2026-10-08 核验）； 想要开箱即用的文件系统与子代理（走 Deep Agents）；不想额外依赖 LangChain 生态。</p></div></span><span data-en>        <div><p><strong>Fits</strong>: agent flows that run long and must resume precisely from an interruption; a human stepping into the middle of a flow to change state; managing working memory and cross-session memory separately; an explicit graph structure (branches, loops, subgraphs); teams on Python. <strong>Not a fit</strong>: needing built-in sandboxing or file-level permission boundaries (official docs do not provide such a mechanism — checked the README and the interrupts page); wanting a filesystem and sub-agents out of the box (go with Deep Agents, the higher-level package built on LangGraph); not wanting an extra dependency on the LangChain ecosystem — model access usually goes through it.</p></div></span>
       </div>
 
+            <div class="panel">
+        <h2><span data-zh>中文生态</span><span data-en>China availability</span> <span class="panel-note"><span data-zh>国产 / 国内可直接用 / 备案状态 · 快照</span><span data-en>domestic / direct access / CAC filing · snapshot</span> 2026-10-20</span></h2>
+        <dl class="cn-rows">
+          <dt><span data-zh>出品属地</span><span data-en>Origin</span></dt><dd><span data-zh>国外出品</span><span data-en>foreign-made</span>　<span data-zh>国外主体（网信办公示名单未见对应备案主体）。</span><span data-en>foreign entity (no matching filing entity in the CAC registry).</span></dd>
+          <dt><span data-zh>国内使用</span><span data-en>Direct access</span></dt><dd><span data-zh>大陆可直连</span><span data-en>direct OK</span>　<span data-zh>docs.langchain.com 直连实测 200；PyPI 安装源实测可达。</span><span data-en>docs.langchain.com measured 200 direct; PyPI install route measured reachable.</span></dd>
+          <dt><span data-zh>备案状态</span><span data-en>CAC filing</span></dt><dd><span data-zh>未见于备案名单</span><span data-en>not in filing list</span>：<span data-zh>未见于网信办公示名单（2026-10-20 检索 13 批附件，https://www.cac.gov.cn/2024-04/02/c_1713729983803145.htm）；该产品未面向大陆公众提供服务，备案不适用。</span><span data-en>not in the CAC public registry (13 batch attachments searched 2026-10-20, https://www.cac.gov.cn/2024-04/02/c_1713729983803145.htm); the product does not serve the mainland public, so filing does not apply.</span></dd>
+        </dl>
+        <p class="cn-foot"><span data-zh>备案信息以网信办《生成式人工智能服务已备案信息》公示名单为准（按批次滚动更新，本站只抄编号不解读）；「大陆可直连」是本站从大陆网络直连实测的结果，不是厂商承诺。GitHub 类站点当日实测有波动，口径写在依据里。</span><span data-en>Filing status is quoted from the CAC public registry (updated batch by batch; this site copies the number and does not interpret it). "Direct access" is this site's own reachability measurement from a mainland network, not a vendor promise. GitHub-hosted sites fluctuated on the measurement day — the note says so.</span></p>
+      </div>
+
 
       <div class="block-head">
         <h2 class="t-h2"><span data-zh>固定坐标系</span><span data-en>Fixed coordinate system</span></h2>
@@ -244,33 +254,13 @@
 
 
             <div class="panel is-slim">
-        <h2><span data-zh>价格</span><span data-en>Pricing</span></h2>
-        <table class="src">
-          <tbody>
-            <tr><th class="w-28"><span data-zh>月度入口</span><span data-en>Monthly entry</span></th><td><span data-zh><p>框架免费（MIT）；LangSmith（调试/评估/部署）是独立商业产品</p></span><span data-en><p>框架免费（MIT）；LangSmith（调试/评估/部署）是独立商业产品</p></span></td></tr>
-            <tr><th class="w-28"><span data-zh>额度说明</span><span data-en>Quota note</span></th><td><span data-zh><p><strong>框架 MIT 与 LangSmith 是两件事。</strong></p>
-            <p><strong>README 里 LangSmith 出现 4 次</strong>，分别指向调试可视化、agent eval 与部署平台。 README 首屏还放了一个 TIP，引导读者去用 LangSmith：</p>
-            <blockquote>&quot;For developing, debugging, and deploying AI agents and LLM applications, see LangSmith&quot;</blockquote>
-            <p>⚠ LangSmith 的定价与免费额度未逐档核实。 <strong>不开 LangSmith 也能完整跑</strong>（OSS 库独立运行，官方文档 2026-10-08 核验）。</p>
-            <p>另有 LangSmith Deployment，官方描述里有 &quot;Discover, reuse, configure, and share agents across teams&quot;。 它是托管平台，本条不收录。</p></span><span data-en><p><strong>框架 MIT 与 LangSmith 是两件事。</strong></p>
-            <p><strong>README 里 LangSmith 出现 4 次</strong>，分别指向调试可视化、agent eval 与部署平台。 README 首屏还放了一个 TIP，引导读者去用 LangSmith：</p>
-            <blockquote>&quot;For developing, debugging, and deploying AI agents and LLM applications, see LangSmith&quot;</blockquote>
-            <p>⚠ LangSmith 的定价与免费额度未逐档核实。 <strong>不开 LangSmith 也能完整跑</strong>（OSS 库独立运行，官方文档 2026-10-08 核验）。</p>
-            <p>另有 LangSmith Deployment，官方描述里有 &quot;Discover, reuse, configure, and share agents across teams&quot;。 它是托管平台，本条不收录。</p></span></td></tr>
-          </tbody>
-        </table>
-        <p class="fine mt-3"><span data-zh>不同币种不做折算。优惠、地区、税费与登录后报价可能变化，购买前请到官方页面确认。</span><span data-en>No currency conversion. Discounts, regions, tax and post-login pricing can change — confirm on the official page before buying.</span></p>
-      </div>
-
-
-            <div class="panel is-slim">
         <h2><span data-zh>未知项清单</span><span data-en>Known unknowns</span></h2>
         <ul>
           <li>checkpoint 在跨机器 / 多进程并发下的写冲突与恢复语义</li>
           <li>superstep 级落盘的性能与写入量代价</li>
           <li>长期记忆的具体存储后端（官方只给 store 抽象，未指明后端）</li>
           <li>interrupts 修改状态后的重入边界</li>
-          <li>LangSmith 的定价、免费额度，以及不用它时 LangGraph 是否完整可用</li>
+          <li>LangSmith 配套的免费额度与商业条款（报价按 D9 口径本站不采），以及不用它时 LangGraph 是否完整可用</li>
           <li>Python 与 JS/TS 版的能力对齐度</li>
         </ul>
       </div>
@@ -370,13 +360,13 @@
       <div class="panel is-slim">
         <h2>核验说明</h2>
         <p><code>confidence: partial</code> 的依据（2026-10-03 由 verified 降级）：</p>
-            <blockquote><strong>为什么降级</strong>：正文「未知项清单」里仍有主语是<strong>本站</strong>的取证缺口 （如「多进程并发写同一 thread 的冲突语义」「interrupts 重入边界」 「LangSmith 定价」），已不是「官方未提供」那一类。 按 v3 铁律「未知就说未知」，标 verified 属于虚高 —— 降为 partial。 <strong>2026-10-08 补核验</strong>：短期记忆裁剪（Trim / Delete / Summarize）、 长期记忆（store 语义搜索 + 内容过滤）、<code>langchain-mcp-adapters</code>、 「可不用 LangChain」四项已从缺口移出。</blockquote>
+            <blockquote><strong>为什么降级</strong>：正文「未知项清单」里仍有主语是<strong>本站</strong>的取证缺口 （如「多进程并发写同一 thread 的冲突语义」「interrupts 重入边界」 「LangSmith 配套的商业条款」），已不是「官方未提供」那一类。 按 v3 铁律「未知就说未知」，标 verified 属于虚高 —— 降为 partial。 <strong>2026-10-08 补核验</strong>：短期记忆裁剪（Trim / Delete / Summarize）、 长期记忆（store 语义搜索 + 内容过滤）、<code>langchain-mcp-adapters</code>、 「可不用 LangChain」四项已从缺口移出。</blockquote>
             <ul><li>✅ 已核验：仓库存在与星数（42,538）、许可（MIT，经 license API）、</li></ul>
             <blockquote>最近推送（2026-10-01，仍活跃）、官方首页全文（定位、三项核心能力、 Deep Agents 上下层关系、Pregel/Beam/NetworkX 溯源、can be used without LangChain）、 <code>libs/checkpoint/README.md</code> 的 &quot;save graph state at every superstep&quot; 原文、 <code>libs/</code> 下 9 个子包清单（<code>checkpoint</code>、<code>checkpoint-sqlite</code>、<code>checkpoint-postgres</code>、 <code>prebuilt</code>、<code>cli</code>、<code>sdk-py</code>、<code>sdk-js</code>、<code>checkpoint-conformance</code> 等）、 releases 列表 6 条（含 latest 不可靠的实测记录）</blockquote>
             <ul><li>⚠ 未核验且<strong>属于官方未提供</strong>（不属于本站缺口）：工具系统、文件系统、</li></ul>
             <blockquote>模型 provider 清单 —— 本站已如实记为 「不在其职责范围内」而非「未查到」</blockquote>
             <ul><li>⚠ 未核验且<strong>是本站缺口</strong>（构成降为 partial 的直接依据）：</li></ul>
-            <blockquote>superstep 落盘性能代价、interrupts 重入边界、 多进程并发写同一 thread 的冲突语义（官方未说明）、 长期记忆的具体存储后端、LangSmith 定价、Python 与 JS/TS 版的能力对齐度</blockquote>
+            <blockquote>superstep 落盘性能代价、interrupts 重入边界、 多进程并发写同一 thread 的冲突语义（官方未说明）、 长期记忆的具体存储后端、LangSmith 配套的商业条款、Python 与 JS/TS 版的能力对齐度</blockquote>
       </div>
 
             <div class="panel is-slim">

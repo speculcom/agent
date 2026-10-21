@@ -15,7 +15,7 @@
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%238b7cf8'/%3E%3Cstop offset='1' stop-color='%2322d3c5'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='48' height='48' rx='12' fill='%2305080f'/%3E%3Cpath d='M14 32 L24 12 L34 32' fill='none' stroke='url(%23g)' stroke-width='2.4' stroke-linejoin='round'/%3E%3Ccircle cx='24' cy='27' r='2.4' fill='%2322d3c5'/%3E%3C/svg%3E" />
   <link rel="stylesheet" href="../brand.css" />
   <link rel="stylesheet" href="../site.css" />
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"CrewAI","applicationCategory":"DeveloperApplication","url":"https://crewai.com","sameAs":"https://crewai.com","description":"CrewAI 是一个 Python 框架。它用「角色分工」和「业务流程」两套比喻来编排多 agent。 官方自述是 \"Framework for orchestrating role-playing, autonomous AI agents.\" 「role-playing」这个词容易让人低估它。 同一份 README 里也写着 production-grade， 并明确承诺： \"Move from experiment to production without changing frameworks.\"","dateModified":"2026-10-08","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"CrewAI","applicationCategory":"DeveloperApplication","url":"https://crewai.com","sameAs":"https://crewai.com","description":"CrewAI 是一个 Python 框架。它用「角色分工」和「业务流程」两套比喻来编排多 agent。 官方自述是 \"Framework for orchestrating role-playing, autonomous AI agents.\" 「role-playing」这个词容易让人低估它。 同一份 README 里也写着 production-grade， 并明确承诺： \"Move from experiment to production without changing frameworks.\"","dateModified":"2026-10-08"}</script>
 </head>
 <!-- B6（2026-10-09）：--accent 原先在这里被**内联到 body 上**（style="--accent:X"），
      同时头部又写了 :root{--accent:X} —— 两处同一份值，冗余。
@@ -131,6 +131,16 @@
         <div class="warn-p"><p><strong>不适合</strong>三类场景：</p></div>
         <div><ul><li>需要进程 / 容器级沙箱或网络访问控制（官方无此机制）</li><li>需要把工作记忆与长期记忆分开管理（CrewAI 已统一成一个 Memory 类）</li><li>需要厂商托管的真后台（纯库，要自己部署）</li></ul></div></span><span data-en>        <div><p><strong>Fits</strong>: tasks that can be expressed as &quot;a team with defined roles&quot; (Crews); business logic that stays in ordinary Python with explicit control over the execution path (Flows); running on local models (the official docs name Ollama and LM Studio); needing MCP and A2A; a Python stack.</p></div>
         <div class="warn-p"><p><strong>Not a fit</strong>: requiring process- or container-level sandboxing, or network access control — the official docs provide no such mechanism, guardrails only validate task output, and file tools are confined to <code>base_dir</code>; needing working memory and long-term memory managed separately — CrewAI has unified them into one <code>Memory</code> class, the opposite of LangGraph&#39;s split design; needing a genuinely vendor-hosted background — it is a pure library, so you deploy it to your own server or VPC.</p></div></span>
+      </div>
+
+            <div class="panel">
+        <h2><span data-zh>中文生态</span><span data-en>China availability</span> <span class="panel-note"><span data-zh>国产 / 国内可直接用 / 备案状态 · 快照</span><span data-en>domestic / direct access / CAC filing · snapshot</span> 2026-10-20</span></h2>
+        <dl class="cn-rows">
+          <dt><span data-zh>出品属地</span><span data-en>Origin</span></dt><dd><span data-zh>国外出品</span><span data-en>foreign-made</span>　<span data-zh>国外主体（网信办公示名单未见对应备案主体）。</span><span data-en>foreign entity (no matching filing entity in the CAC registry).</span></dd>
+          <dt><span data-zh>国内使用</span><span data-en>Direct access</span></dt><dd><span data-zh>大陆可直连</span><span data-en>direct OK</span>　<span data-zh>官网直连实测 200。</span><span data-en>official site measured 200 direct.</span></dd>
+          <dt><span data-zh>备案状态</span><span data-en>CAC filing</span></dt><dd><span data-zh>未见于备案名单</span><span data-en>not in filing list</span>：<span data-zh>未见于网信办公示名单（2026-10-20 检索 13 批附件，https://www.cac.gov.cn/2024-04/02/c_1713729983803145.htm）；该产品未面向大陆公众提供服务，备案不适用。</span><span data-en>not in the CAC public registry (13 batch attachments searched 2026-10-20, https://www.cac.gov.cn/2024-04/02/c_1713729983803145.htm); the product does not serve the mainland public, so filing does not apply.</span></dd>
+        </dl>
+        <p class="cn-foot"><span data-zh>备案信息以网信办《生成式人工智能服务已备案信息》公示名单为准（按批次滚动更新，本站只抄编号不解读）；「大陆可直连」是本站从大陆网络直连实测的结果，不是厂商承诺。GitHub 类站点当日实测有波动，口径写在依据里。</span><span data-en>Filing status is quoted from the CAC public registry (updated batch by batch; this site copies the number and does not interpret it). "Direct access" is this site's own reachability measurement from a mainland network, not a vendor promise. GitHub-hosted sites fluctuated on the measurement day — the note says so.</span></p>
       </div>
 
 
@@ -261,44 +271,13 @@
 
 
             <div class="panel is-slim">
-        <h2><span data-zh>价格</span><span data-en>Pricing</span></h2>
-        <table class="src">
-          <tbody>
-            <tr><th class="w-28"><span data-zh>月度入口</span><span data-en>Monthly entry</span></th><td><span data-zh><p>OSS 框架免费（MIT，自托管不限次数）；AMP 托管平台 Basic $0 / Enterprise 定制</p></span><span data-en><p>OSS 框架免费（MIT，自托管不限次数）；AMP 托管平台 Basic $0 / Enterprise 定制</p></span></td></tr>
-            <tr><th class="w-28"><span data-zh>月度数值</span><span data-en>Monthly price</span></th><td>0</td></tr>
-            <tr><th class="w-28"><span data-zh>额度说明</span><span data-en>Quota note</span></th><td><span data-zh><p><strong>开源部分与商业部分要分清。</strong></p>
-            <p>核验依据：仓库 MIT（经license API）、README 的 pip 安装路径、官方定价页（核验 2026-10-01）。 商业线是 README 单列一节的 <strong>Crew Control Plane</strong>（对外称 CrewAI AMP）。</p>
-            <p><strong>⚠ 官方定价页当前只列两档，且这一条本身就是个坑。</strong></p>
-            <p><strong>Basic $0</strong> 包含 Visual editor + AI copilot、GitHub 集成、 <strong>每月 50 次 workflow executions</strong>。注意<strong>上限就是 50 次</strong>： 官方对比表里 Basic 的「Additional executions」一栏写的是「—」， <strong>即没有自助加购通道</strong>。</p>
-            <p><strong>Enterprise 定制</strong>包含 SSO / RBAC / workload identity / PII redaction / policies。部署可选 CrewAI 云、你的自有 VPC、或你自己的基础设施。</p>
-            <p>onboarding 是 45 天；forward deployed engineering 与培训按需另购。 Enterprise 的执行次数是 &quot;Sized to workflow&quot; + <strong>Flexible overage</strong>，即按实际用量谈。</p>
-            <p><strong>⚠ 第三方定价站上的数字与官方页不一致，本站不采信</strong>：抓取时多个来源分别给出 Professional ~$25/mo、Basic $99/mo、Standard $6K/yr、Ultra $120K/yr 等， <strong>官方定价页上不存在这些档位</strong>（只有 Basic 与 Enterprise 两档）， 应属旧制或臆测。<strong>本站只写官方页面上能读到的两档。</strong></p>
-            <p><strong>另一条要读出来的事实</strong>：Enterprise 明确写部署可落在 <strong>CrewAI 云 / 客户自有 VPC / 客户自有基础设施</strong>。 即以下这行 README 原文在商业侧确实兑现：</p>
-            <blockquote>On-premise and Cloud Deployment Options</blockquote>
-            <p>也<strong>没有强制必须联网授权的表述</strong>。</p></span><span data-en><p><strong>开源部分与商业部分要分清。</strong></p>
-            <p>核验依据：仓库 MIT（经license API）、README 的 pip 安装路径、官方定价页（核验 2026-10-01）。 商业线是 README 单列一节的 <strong>Crew Control Plane</strong>（对外称 CrewAI AMP）。</p>
-            <p><strong>⚠ 官方定价页当前只列两档，且这一条本身就是个坑。</strong></p>
-            <p><strong>Basic $0</strong> 包含 Visual editor + AI copilot、GitHub 集成、 <strong>每月 50 次 workflow executions</strong>。注意<strong>上限就是 50 次</strong>： 官方对比表里 Basic 的「Additional executions」一栏写的是「—」， <strong>即没有自助加购通道</strong>。</p>
-            <p><strong>Enterprise 定制</strong>包含 SSO / RBAC / workload identity / PII redaction / policies。部署可选 CrewAI 云、你的自有 VPC、或你自己的基础设施。</p>
-            <p>onboarding 是 45 天；forward deployed engineering 与培训按需另购。 Enterprise 的执行次数是 &quot;Sized to workflow&quot; + <strong>Flexible overage</strong>，即按实际用量谈。</p>
-            <p><strong>⚠ 第三方定价站上的数字与官方页不一致，本站不采信</strong>：抓取时多个来源分别给出 Professional ~$25/mo、Basic $99/mo、Standard $6K/yr、Ultra $120K/yr 等， <strong>官方定价页上不存在这些档位</strong>（只有 Basic 与 Enterprise 两档）， 应属旧制或臆测。<strong>本站只写官方页面上能读到的两档。</strong></p>
-            <p><strong>另一条要读出来的事实</strong>：Enterprise 明确写部署可落在 <strong>CrewAI 云 / 客户自有 VPC / 客户自有基础设施</strong>。 即以下这行 README 原文在商业侧确实兑现：</p>
-            <blockquote>On-premise and Cloud Deployment Options</blockquote>
-            <p>也<strong>没有强制必须联网授权的表述</strong>。</p></span></td></tr>
-          </tbody>
-        </table>
-        <p class="fine mt-3"><span data-zh>不同币种不做折算。优惠、地区、税费与登录后报价可能变化，购买前请到官方页面确认。</span><span data-en>No currency conversion. Discounts, regions, tax and post-login pricing can change — confirm on the official page before buying.</span></p>
-      </div>
-
-
-            <div class="panel is-slim">
         <h2><span data-zh>未知项清单</span><span data-en>Known unknowns</span></h2>
         <ul>
           <li>换 provider 后 tool calling / structured output 的可靠性（官方未说明）</li>
           <li>容器部署时的默认权限（官方未说明，已查 Files 页与 FileReadTool 页）</li>
           <li>OSS 是否有网络访问控制的官方机制（官方未说明）</li>
           <li>A2A（Agent-to-Agent）规范与生态现状（外部协议，不在本站研究范围）</li>
-          <li>AMP Enterprise 的具体报价（官方仅标 Custom）</li>
+          <li>AMP Enterprise 的档位内容（官方仅标 Custom）</li>
           <li>Basic 档 50 次/月上限之后，除 Enterprise 洽谈外是否有自助加购路径（官方对比表该栏为「—」）</li>
           <li>MCP / A2A 接入的实际使用门槛</li>
         </ul>
@@ -404,9 +383,9 @@
         <p>README 单列一节 Crew Control Plane Key Features，七项全是商业产品特征：</p>
             <ul><li>Tracing &amp; Observability（实时指标、日志、trace）</li><li>Unified Control Plane（集中管控与扩缩）</li><li>Seamless Integrations（企业系统集成）</li><li><strong>Advanced Security</strong>（官方原文：&quot;Built-in robust security and compliance measures&quot;）</li><li>24/7 Support（专属企业支持）</li><li><strong>On-premise and Cloud Deployment Options</strong>（CrewAI AMP 两种部署形态）</li></ul>
             <p><strong>注意其中「Advanced Security」这一条</strong> —— 如果你用 CrewAI 的理由之一是权限边界，<strong>开源版并没有这一项</strong>。</p>
-            <h3 class="sub-h">AMP 定价：官方页只有两档，且这本身是个坑</h3>
-            <p>2026-10-01 核验官方定价页，<strong>只有两档</strong>：</p>
-            <div class="tbl-wrap"><table><thead><tr><th>档位</th><th>价格</th><th>执行次数</th><th>席位</th></tr></thead><tbody><tr><td><strong>Basic</strong></td><td><strong>$0</strong></td><td><strong>50 次/月，上限就是 50</strong></td><td>1</td></tr><tr><td><strong>Enterprise</strong></td><td><strong>定制</strong></td><td>&quot;Sized to workflow&quot; + Flexible overage</td><td>不限</td></tr></tbody></table></div>
+            <h3 class="sub-h">AMP 档位：官方页只有两档，且这本身是个坑</h3>
+            <p>2026-10-01 核验官方定价页，<strong>只有两档</strong>（报价按 D9 口径不存，见官方页）：</p>
+            <div class="tbl-wrap"><table><thead><tr><th>档位</th><th>执行次数</th><th>席位</th></tr></thead><tbody><tr><td><strong>Basic</strong>（免费档）</td><td><strong>50 次/月，上限就是 50</strong></td><td>1</td></tr><tr><td><strong>Enterprise</strong>（定制）</td><td>&quot;Sized to workflow&quot; + Flexible overage</td><td>不限</td></tr></tbody></table></div>
             <p><strong>Basic 包含</strong>：</p>
             <ul><li>Visual editor + AI copilot、GitHub 集成、<strong>Export as MCP server</strong>、Export as UI component</li><li>Guardrails、Human-in-the-loop input、Cron scheduling</li><li>Tracing、OpenTelemetry、LLM testing、AI agent training</li><li>Usage dashboard、Token count、自动扩缩、社区支持</li></ul>
             <p><strong>Enterprise 才解锁</strong>：</p>
@@ -419,20 +398,19 @@
             <p>Enterprise 明确写可部署在 CrewAI 云。它也支持你自己的 VPC / 你自己的基础设施。 这也兑现了 README 那句原文：</p>
             <blockquote>On-premise and Cloud Deployment Options</blockquote>
             <p><strong>官方页也没有任何强制联网授权的表述。</strong></p>
-            <p><strong>结论三：第三方定价站的数字一律不可信。</strong></p>
-            <p>核验时多个来源分别给出 Professional ~$25/mo、Basic $99/mo、Standard $6K/yr、 Pro $12K/yr、Enterprise $60K/yr、Ultra $120K/yr —— <strong>官方定价页上根本没有这些档位</strong>。</p>
-            <p>有一个来源自己就标注了「$25 那档来自第三方聚合站，不在官方页上」。 <strong>本站只采官方页面读得到的数字。</strong></p>
+            <p><strong>结论三：第三方报价站不可信。</strong></p>
+            <p>核验时多个第三方来源给出的档位与报价，<strong>官方定价页上根本没有这些档位</strong> （有来源自己都标注「那一档来自第三方聚合站，不在官方页上」）。 <strong>本站只采官方页面读得到的事实</strong>——按 D9 口径，本站连官方报价也不存，只给官方页链接。</p>
       </div>
       <div class="panel is-slim">
         <h2>核验说明</h2>
         <p><code>confidence: partial</code> 的依据：</p>
             <p><strong>为什么仍是 partial（A6.2 本轮后）</strong>：八维已全部从「未核验」改为结论， 但仍有三处<strong>官方确实没写</strong>、只能记「官方未说明」的项 —— 换 provider 后 tool calling / structured output 的可靠性、容器部署时的默认权限、 OSS 是否有网络访问控制的官方机制。</p>
-            <p>此外 A2A 规范属外部协议、AMP 报价官方仅标 Custom。 这些不是「没查到」，是官方文档本身没给，故仍不足以升到 verified。</p>
+            <p>此外 A2A 规范属外部协议、AMP Enterprise 官方仅标 Custom。 这些不是「没查到」，是官方文档本身没给，故仍不足以升到 verified。</p>
             <p><strong>A6.2 本轮补齐的官方源</strong>：</p>
             <ul><li><code>concepts/checkpointing</code>（落盘粒度 / 后端 / 恢复 / fork）</li><li><code>concepts/flows</code>（<code>@persist</code> 与 <code>SQLiteFlowPersistence</code>）</li><li><code>learn/llm-connections</code>（provider 清单与默认模型 <code>gpt-4o-mini</code>）</li><li><code>concepts/memory</code>（统一 Memory、scope、存储与 consolidation）</li><li><code>concepts/tasks</code>（Task Guardrails 机制）</li><li><code>concepts/knowledge</code>（存储与 memory 关系）</li><li><code>mcp/security</code>（MCP 安全无内置防护）</li><li><code>FileReadTool</code> 页（<code>base_dir</code> 路径沙箱）</li><li><code>lib/crewai/pyproject.toml</code>（<code>mcp~=1.28.1</code> 在核心依赖、<code>a2a</code> 为可选 extra）</li></ul>
             <p>已核验（存量）：仓库存在与星数（59,246）、许可（MIT，经 license API）、 最近推送（2026-10-01，仍活跃）、最新版 <strong>1.15.23</strong>（releases @ 2026-09-28）、 README 关键段落（双抽象、七项 Key Features、模型接入、Crews/Flows FAQ、 MarketState 结构化状态示例、Telemetry 与 License 段）。</p>
-            <p><strong>本轮（2026-10-01）补上的</strong>：CrewAI AMP 定价。官方页两档，已写进正文表格。 Enterprise 的部署形态（客户自有 VPC / 自有基础设施）。无强制联网授权表述。</p>
-            <p><strong>核验方法</strong>：先试 <code>_audit/fetch-pricing.mjs</code> 渲染 <code>crewai.com/pricing</code> 超时， 改用 WebFetch 直接取官方页正文。</p>
+            <p><strong>本轮（2026-10-01）补上的</strong>：CrewAI AMP 档位结构。官方页两档，已写进正文表格。 Enterprise 的部署形态（客户自有 VPC / 自有基础设施）。无强制联网授权表述。</p>
+            <p><strong>核验方法</strong>：先试渲染抓取 <code>crewai.com/pricing</code> 超时， 改用 WebFetch 直接取官方页正文。</p>
       </div>
 
             <div class="panel is-slim">

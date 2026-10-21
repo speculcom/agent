@@ -127,6 +127,16 @@
         <div><p>⚠ One more capability boundary: <strong>if you need a compaction API exposed at the SDK layer, it does not have one.</strong> The CLI side has <code>compact_prompt</code> / <code>experimental_compact_prompt_file</code> plus <code>PreCompact</code> / <code>PostCompact</code> hooks, but the SDK layer has no dedicated compaction interface — config pass-through is the only route.</p></div></span>
       </div>
 
+            <div class="panel">
+        <h2><span data-zh>中文生态</span><span data-en>China availability</span> <span class="panel-note"><span data-zh>国产 / 国内可直接用 / 备案状态 · 快照</span><span data-en>domestic / direct access / CAC filing · snapshot</span> 2026-10-20</span></h2>
+        <dl class="cn-rows">
+          <dt><span data-zh>出品属地</span><span data-en>Origin</span></dt><dd><span data-zh>国外出品</span><span data-en>foreign-made</span>　<span data-zh>国外主体（网信办公示名单未见对应备案主体）。</span><span data-en>foreign entity (no matching filing entity in the CAC registry).</span></dd>
+          <dt><span data-zh>国内使用</span><span data-en>Direct access</span></dt><dd><span data-zh>直连不可达</span><span data-en>direct blocked</span>　<span data-zh>developers.openai.com 大陆直连被拦（403），走代理 200。</span><span data-en>developers.openai.com 403 direct from mainland, 200 via proxy.</span></dd>
+          <dt><span data-zh>备案状态</span><span data-en>CAC filing</span></dt><dd><span data-zh>未见于备案名单</span><span data-en>not in filing list</span>：<span data-zh>未见于网信办公示名单（2026-10-20 检索 13 批附件，https://www.cac.gov.cn/2024-04/02/c_1713729983803145.htm）；该产品未面向大陆公众提供服务，备案不适用。</span><span data-en>not in the CAC public registry (13 batch attachments searched 2026-10-20, https://www.cac.gov.cn/2024-04/02/c_1713729983803145.htm); the product does not serve the mainland public, so filing does not apply.</span></dd>
+        </dl>
+        <p class="cn-foot"><span data-zh>备案信息以网信办《生成式人工智能服务已备案信息》公示名单为准（按批次滚动更新，本站只抄编号不解读）；「大陆可直连」是本站从大陆网络直连实测的结果，不是厂商承诺。GitHub 类站点当日实测有波动，口径写在依据里。</span><span data-en>Filing status is quoted from the CAC public registry (updated batch by batch; this site copies the number and does not interpret it). "Direct access" is this site's own reachability measurement from a mainland network, not a vendor promise. GitHub-hosted sites fluctuated on the measurement day — the note says so.</span></p>
+      </div>
+
 
       <div class="block-head">
         <h2 class="t-h2"><span data-zh>固定坐标系</span><span data-en>Fixed coordinate system</span></h2>
@@ -231,18 +241,6 @@
           <li><span data-zh>把 <code>sandbox_workspace_write.network_access</code> 与 SDK 的 <code>networkAccessEnabled</code> 当成两套东西 —— 后者才是 SDK 层入口，前者是 config透传的写法</span><span data-en>Treating <code>sandbox_workspace_write.network_access</code> and the SDK&#39;s <code>networkAccessEnabled</code> as two separate things — the latter is the SDK-level entry point; the former is a config passthrough</span></li>
           <li><span data-zh>把 OpenAI Agents SDK（纯 Python 库）当成本 SDK 的同类替代 —— 形态不同，见 layer_position</span><span data-en>Treating OpenAI Agents SDK (a pure Python library) as a like-for-like alternative — the forms differ, see layer_position</span></li>
         </ul>
-      </div>
-
-
-            <div class="panel is-slim">
-        <h2><span data-zh>价格</span><span data-en>Pricing</span></h2>
-        <table class="src">
-          <tbody>
-            <tr><th class="w-28"><span data-zh>月度入口</span><span data-en>Monthly entry</span></th><td><span data-zh><p>SDK 本身免费（Apache-2.0），推理按你接的 provider 计费</p></span><span data-en><p>SDK 本身免费（Apache-2.0），推理按你接的 provider 计费</p></span></td></tr>
-            <tr><th class="w-28"><span data-zh>额度说明</span><span data-en>Quota note</span></th><td><span data-zh><p><strong>三条计费路径要分清</strong>： （1）SDK 与 CLI 都开源免费，跑起来要 OpenAI API key 或 ChatGPT 额度； （2）可以配 <code>baseUrl</code> 指向自建/第三方网关，此时计费跟着那个网关走； （3）OpenAI 另有 Codex Web（chatgpt.com/codex）这条云端产品线， 那是订阅制，与本地 SDK 不是同一件事。</p></span><span data-en><p><strong>三条计费路径要分清</strong>： （1）SDK 与 CLI 都开源免费，跑起来要 OpenAI API key 或 ChatGPT 额度； （2）可以配 <code>baseUrl</code> 指向自建/第三方网关，此时计费跟着那个网关走； （3）OpenAI 另有 Codex Web（chatgpt.com/codex）这条云端产品线， 那是订阅制，与本地 SDK 不是同一件事。</p></span></td></tr>
-          </tbody>
-        </table>
-        <p class="fine mt-3"><span data-zh>不同币种不做折算。优惠、地区、税费与登录后报价可能变化，购买前请到官方页面确认。</span><span data-en>No currency conversion. Discounts, regions, tax and post-login pricing can change — confirm on the official page before buying.</span></p>
       </div>
 
 
